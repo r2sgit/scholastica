@@ -1,11 +1,10 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { MODULES } from '../../content/modules';
+import { useProgress } from '../../lib/progress';
 import TopBar from '../../components/TopBar';
-
-const STORAGE_KEY = 'scholastica_v1';
 
 /* ── All 18 modules for the rail ─────────────────────────────── */
 const ALL_MODULES = [
@@ -31,22 +30,6 @@ const ALL_MODULES = [
 
 /* Map rail index → content module id */
 const RAIL_TO_MODULE_ID: Record<number, number> = { 0: 0, 5: 5, 12: 12 };
-
-interface ModuleProgress {
-  lessonsComplete: boolean[];
-  scores: Array<{ correct: number; total: number; missedIds: string[] } | null>;
-}
-
-function getProgress(): Record<number, ModuleProgress> {
-  if (typeof window === 'undefined') return {};
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return {};
-    return JSON.parse(raw).progress || {};
-  } catch {
-    return {};
-  }
-}
 
 /* ── Vine SVG ─────────────────────────────────────────────── */
 function VineDivider() {
@@ -86,17 +69,13 @@ const M0_BLURBS: Record<string, string> = {
 
 export default function ModuleMapPage() {
   const router = useRouter();
-  const [progress, setProgress] = useState<Record<number, ModuleProgress>>({});
+  const { getModuleProgress } = useProgress();
   const [activeModuleId, setActiveModuleId] = useState(0);
-
-  useEffect(() => {
-    setProgress(getProgress());
-  }, []);
 
   const activeModule = MODULES.find(m => m.id === activeModuleId);
   if (!activeModule) return null;
 
-  const mp = progress[activeModuleId];
+  const mp = getModuleProgress(activeModuleId);
   const lessonsComplete = mp?.lessonsComplete || [];
   const scores = mp?.scores || [];
   const doneCount = lessonsComplete.filter(Boolean).length;
