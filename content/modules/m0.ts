@@ -61,7 +61,7 @@ export const m0: ModuleMeta = {
               id: `b`,
               text: `Whether it exists at all.`,
               correct: true,
-              feedback: `Two completely different questions. The first asks <em>what</em> the apple is. This one asks <em>that</em> the apple is. The two feel similar in English — but they are not. Holding that gap open is the first move of the whole tradition.`,
+              feedback: `Two completely different questions. The first asks <em>what</em> the apple is. This one asks whether the apple is at all. The two feel similar in English — but they are not. Holding that gap open is the first move of the whole tradition.`,
             },
             {
               id: `c`,
