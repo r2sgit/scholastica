@@ -187,8 +187,9 @@ export default function LandingScreen() {
             preserveAspectRatio="xMidYMid meet"
           />
 
-          {/* DR-02 grotesque (far left) */}
+          {/* DR-02 grotesque (far left) — hidden on mobile */}
           <image
+            className="ftue-dr-outer"
             href="/images/drolleries/dr-02.png"
             x="55" y="192" width="60" height="80"
             preserveAspectRatio="xMidYMid meet"
@@ -196,6 +197,7 @@ export default function LandingScreen() {
 
           {/* DR-08 fox-scholar (left of center) */}
           <image
+            className="ftue-dr-inner-left"
             href="/images/drolleries/dr-08.png"
             x="154" y="185" width="62" height="80"
             preserveAspectRatio="xMidYMid meet"
@@ -203,13 +205,15 @@ export default function LandingScreen() {
 
           {/* DR-03 hare (right of center) */}
           <image
+            className="ftue-dr-inner-right"
             href="/images/drolleries/dr-03.png"
             x="254" y="185" width="42" height="80"
             preserveAspectRatio="xMidYMid meet"
           />
 
-          {/* DR-12 stag (far right) */}
+          {/* DR-12 stag (far right) — hidden on mobile */}
           <image
+            className="ftue-dr-outer"
             href="/images/drolleries/dr-12-stag.png"
             x="350" y="192" width="50" height="80"
             preserveAspectRatio="xMidYMid meet"

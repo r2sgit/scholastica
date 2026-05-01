@@ -727,16 +727,17 @@ a { color: inherit; text-decoration: none; }
 .feedback-panel .lat { font-style: italic; font-weight: 500; color: var(--vermillion); }
 .feedback-panel .lat-inline { font-style: italic; font-weight: 500; }
 
-/* Pendant wrapper — visible on tablet, hidden on mobile */
-.pendant-wrapper { display: block; }
+/* Pendant wrapper — hidden on desktop, visible on mobile/tablet ≤720px */
+.pendant-wrapper { display: none; }
 
 /* ============================================================
    Responsive — Tablet (<=768px)
    ============================================================ */
-@media (max-width: 768px) {
+@media (max-width: 720px) {
   button, [role="button"] { min-height: 44px; }
 
   .drollery { display: none !important; }
+  .pendant-wrapper { display: block; }
 
   .card { max-width: 100%; margin: 0 16px; }
   .quaestio { font-size: 21px; }
@@ -774,6 +775,9 @@ a { color: inherit; text-decoration: none; }
   .modules-rail { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 1180px) {
-  .drollery { display: none; }
+/* FTUE frontispiece: hide outer drolleries on mobile */
+@media (max-width: 480px) {
+  .ftue-dr-outer { display: none; }
+  .ftue-dr-inner-left  { transform: translateX(-40px); }
+  .ftue-dr-inner-right { transform: translateX(40px); }
 }

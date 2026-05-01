@@ -2,6 +2,7 @@
 
 import { Suspense, useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 
 const STORAGE_KEY = 'scholastica_v1';
 
@@ -51,9 +52,9 @@ function TopBarInner({ moduleId, lessonIdx, lessonTitle, lessonNum }: TopBarProp
 
   return (
     <div className="topbar">
-      <div className="wordmark">
+      <Link href="/modules" className="wordmark" style={{ textDecoration: 'none', color: 'inherit' }}>
         Scholastica<span className="dot" aria-hidden="true" />
-      </div>
+      </Link>
 
       <div className="breadcrumb">
         {moduleId !== undefined && lessonIdx !== undefined ? (
