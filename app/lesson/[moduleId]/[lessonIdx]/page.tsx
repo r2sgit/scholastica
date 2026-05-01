@@ -134,7 +134,7 @@ function QuizCardInner() {
   const results = answers.map(a => a.attempted ? a.correct : null);
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--canvas)', position: 'relative' }}>
+    <div className="quiz-layout" style={{ minHeight: '100vh', background: 'var(--canvas)', position: 'relative' }}>
       <DrolleryMargin moduleId={moduleId} />
 
       <div style={{ position: 'relative', zIndex: 2 }}>
