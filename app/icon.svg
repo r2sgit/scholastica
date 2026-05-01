@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="#FAF6EE"/>
+  
+  <!-- S in a blackletter style using paths -->
+  <!-- Built from geometric strokes approximating Emeritus Display character weight -->
+  <text x="5" y="25" 
+        font-family="Georgia, 'Times New Roman', serif" 
+        font-size="26" 
+        font-weight="700"
+        font-style="normal"
+        fill="#3B3228"
+        letter-spacing="-1">S</text>
+  
+  <!-- Vermillion dot accent — top right, mirroring wordmark treatment -->
+  <circle cx="26" cy="7" r="4" fill="#A42F23"/>
+</svg>
