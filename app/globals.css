@@ -786,7 +786,7 @@ a { color: inherit; text-decoration: none; }
 .pendant-wrapper {
   display: none;
   position: absolute;
-  bottom: 80px;
+  bottom: 170px;
   right: max(16px, calc(50% - 300px));
   width: 92px;
   pointer-events: none;
@@ -838,10 +838,10 @@ a { color: inherit; text-decoration: none; }
   .btn { width: 100%; }
 
   .topbar { padding: 10px 16px; gap: 8px; }
-  .curriculum-path { gap: 6px; }
-  .cp-label { font-size: 9px; letter-spacing: 0.1em; }
-  .cp-num   { font-size: 12px; }
-  .cp-fleuron { font-size: 11px; margin: 0 2px; }
+  .curriculum-path { gap: 8px; }
+  .cp-label  { font-size: 11px; letter-spacing: 0.12em; }
+  .cp-num    { font-size: 14px; }
+  .cp-fleuron { font-size: 13px; margin: 0 3px; }
   .card-area { padding-bottom: 220px; }
 }
 
