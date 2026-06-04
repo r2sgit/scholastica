@@ -168,7 +168,7 @@ function QuizCardInner() {
           </div>
         )}
 
-        <div style={{ padding: '32px 24px 80px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div className="card-area">
           <article className="card">
             {/* Progress bar */}
             <div className="card-progress-bar">
@@ -229,9 +229,9 @@ function QuizCardInner() {
             )}
           </article>
 
-          {/* Mouse pendant — tablet only (hidden on mobile via CSS) */}
-          <div className="pendant-wrapper">
-            <DrolleryPendant answerState={answerState} />
+          {/* Pendant — tablet/mobile only (CSS controls visibility) */}
+          <div className={`pendant-wrapper${answerState !== 'idle' ? ` ${answerState}` : ''}`}>
+            <DrolleryPendant />
           </div>
         </div>
       </div>

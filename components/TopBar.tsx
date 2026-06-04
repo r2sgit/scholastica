@@ -56,33 +56,43 @@ function TopBarInner({ moduleId, lessonIdx, lessonTitle, lessonNum }: TopBarProp
         Scholastica<span className="dot" aria-hidden="true" />
       </Link>
 
-      <div className="breadcrumb">
-        {moduleId !== undefined && lessonIdx !== undefined ? (
+      <nav className="curriculum-path" aria-label="Course location">
+        {moduleId !== undefined && (
           <>
-            <b>Module {moduleId}</b> &middot; Lesson {lessonNum ?? lessonIdx + 1}
-            {lessonTitle && (
-              <span className="breadcrumb-title"> &mdash; {lessonTitle}</span>
-            )}
+            <span className="cp-tier module">
+              <span className="cp-label">Module</span>
+              <span className="cp-num">{moduleId}</span>
+            </span>
+            <span className="cp-fleuron" aria-hidden="true">\u2766</span>
+            <span className="cp-tier lesson">
+              <span className="cp-label">Lesson</span>
+              <span className="cp-num">{lessonNum ?? (lessonIdx !== undefined ? lessonIdx + 1 : '')}</span>
+              {lessonTitle && (
+                <>
+                  <span className="cp-sep">\u00B7</span>
+                  <span className="cp-name">{lessonTitle}</span>
+                </>
+              )}
+            </span>
           </>
-        ) : moduleId !== undefined ? (
-          <>Module <b>{moduleId}</b> of XVIII</>
-        ) : null}
+        )}
+      </nav>
+
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, justifySelf: 'end' }}>
+        {isReview && (
+          <span className="env-badge show">
+            m{moduleId ?? '?'} \u00B7 prod
+          </span>
+        )}
+        <button
+          className="mute-btn"
+          onClick={toggleMute}
+          aria-label={muted ? 'Unmute sound' : 'Mute sound'}
+          title={muted ? 'Sound off' : 'Sound on'}
+        >
+          {muted ? '\uD83D\uDD07' : '\uD83D\uDD0A'}
+        </button>
       </div>
-
-      {isReview && (
-        <span className="env-badge show">
-          m{moduleId ?? '?'} &middot; prod
-        </span>
-      )}
-
-      <button
-        className="mute-btn"
-        onClick={toggleMute}
-        aria-label={muted ? 'Unmute sound' : 'Mute sound'}
-        title={muted ? 'Sound off' : 'Sound on'}
-      >
-        {muted ? '\uD83D\uDD07' : '\uD83D\uDD0A'}
-      </button>
     </div>
   );
 }
@@ -92,7 +102,8 @@ export default function TopBar(props: TopBarProps) {
     <Suspense fallback={
       <div className="topbar">
         <div className="wordmark">Scholastica<span className="dot" aria-hidden="true" /></div>
-        <div className="breadcrumb" />
+        <nav className="curriculum-path" aria-label="Course location" />
+        <div />
       </div>
     }>
       <TopBarInner {...props} />
