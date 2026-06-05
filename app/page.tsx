@@ -250,10 +250,10 @@ export default function LandingScreen() {
           className="cta fade-in-3"
           id="beginBtn"
           type="button"
-          aria-label="Begin Module 0 Foundations"
+          aria-label="Begin Module I · Foundations"
           onClick={handleBegin}
         >
-          <span>Begin Module&nbsp;0 &middot; <em>Foundations</em></span>
+          <span>Begin Module&nbsp;I &middot; <em>Foundations</em></span>
           <span className="arrow" aria-hidden="true">&rarr;</span>
         </button>
 

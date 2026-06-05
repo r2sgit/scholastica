@@ -8,24 +8,24 @@ import TopBar from '../../components/TopBar';
 
 /* ── All 18 modules for the rail ─────────────────────────────── */
 const ALL_MODULES = [
-  { n: '0',     t: 'Foundations',                          sub: 'Fundamenta',            active: true  },
-  { n: 'I',     t: 'Act and Potency',                     sub: 'Actus et Potentia',      active: false },
-  { n: 'II',    t: 'Being and Essence',                   sub: 'Esse et Essentia',       active: false },
-  { n: 'III',   t: 'Hylomorphism',                        sub: 'Hylemorphismus',         active: false },
-  { n: 'IV',    t: 'Substance, Suppositum, Person',       sub: 'Suppositum et Persona',  active: false },
-  { n: 'V',     t: 'Logic',                               sub: 'Logica',                 active: true  },
-  { n: 'VI',    t: 'The Transcendentals',                 sub: 'Transcendentalia',       active: false },
-  { n: 'VII',   t: 'The Four Causes',                     sub: 'Quattuor Causae',        active: false },
-  { n: 'VIII',  t: 'The Soul and Its Faculties',           sub: 'De Anima',               active: false },
-  { n: 'IX',    t: 'Intellect and Knowledge',             sub: 'Intellectus et Cognitio',active: false },
-  { n: 'X',     t: 'Semiotics — Signs and Meaning',       sub: 'De Signis',              active: false },
-  { n: 'XI',    t: 'Will, Appetite, and the Passions',    sub: 'Voluntas et Passiones',  active: false },
-  { n: 'XII',   t: 'Natural Law and the Human Act',       sub: 'Lex Naturalis',          active: true  },
-  { n: 'XIII',  t: 'Virtues and Habits',                  sub: 'De Virtutibus',          active: false },
-  { n: 'XIV',   t: 'The Grammar of Distinctions',         sub: 'Distinctiones',          active: false },
-  { n: 'XV',    t: 'Analogy of Being',                    sub: 'Analogia Entis',         active: false },
-  { n: 'XVI',   t: 'Method of the Summa',                 sub: 'Modus Summae',           active: false },
-  { n: 'XVII',  t: 'Existential Thomism — The Debate',    sub: 'De Esse',                active: false },
+  { n: 'I',      t: 'Foundations',                          sub: 'Fundamenta',            active: true  },
+  { n: 'II',    t: 'Act and Potency',                      sub: 'Actus et Potentia',      active: false },
+  { n: 'III',   t: 'Being and Essence',                    sub: 'Esse et Essentia',       active: false },
+  { n: 'IV',    t: 'Hylomorphism',                         sub: 'Hylemorphismus',         active: false },
+  { n: 'V',     t: 'Substance, Suppositum, Person',        sub: 'Suppositum et Persona',  active: false },
+  { n: 'VI',    t: 'Logic',                                sub: 'Logica',                 active: true  },
+  { n: 'VII',   t: 'The Transcendentals',                  sub: 'Transcendentalia',       active: false },
+  { n: 'VIII',  t: 'The Four Causes',                      sub: 'Quattuor Causae',        active: false },
+  { n: 'IX',    t: 'The Soul and Its Faculties',           sub: 'De Anima',               active: false },
+  { n: 'X',     t: 'Intellect and Knowledge',              sub: 'Intellectus et Cognitio',active: false },
+  { n: 'XI',    t: 'Semiotics — Signs and Meaning',        sub: 'De Signis',              active: false },
+  { n: 'XII',   t: 'Will, Appetite, and the Passions',     sub: 'Voluntas et Passiones',  active: false },
+  { n: 'XIII',  t: 'Natural Law and the Human Act',        sub: 'Lex Naturalis',          active: true  },
+  { n: 'XIV',   t: 'Virtues and Habits',                   sub: 'De Virtutibus',          active: false },
+  { n: 'XV',    t: 'The Grammar of Distinctions',          sub: 'Distinctiones',          active: false },
+  { n: 'XVI',   t: 'Analogy of Being',                     sub: 'Analogia Entis',         active: false },
+  { n: 'XVII',  t: 'Method of the Summa',                  sub: 'Modus Summae',           active: false },
+  { n: 'XVIII', t: 'Existential Thomism — The Debate',     sub: 'De Esse',                active: false },
 ];
 
 /* Map rail index → content module id */
@@ -244,7 +244,7 @@ export default function ModuleMapPage() {
         </div>
 
         <div className="map-colophon">
-          <em>Scholastica</em> &nbsp;&middot;&nbsp; 18 modules &nbsp;&middot;&nbsp; Module 0 through Module XVII
+          <em>Scholastica</em> &nbsp;&middot;&nbsp; 18 modules &nbsp;&middot;&nbsp; Module I through Module XVIII
         </div>
       </div>
     </div>
