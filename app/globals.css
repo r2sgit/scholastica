@@ -710,6 +710,8 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   margin: 0 auto;
   padding: 32px 36px;
+  position: relative;
+  overflow: hidden;
 }
 
 .card-progress-bar {

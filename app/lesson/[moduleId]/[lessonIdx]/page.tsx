@@ -194,7 +194,7 @@ function QuizCardInner() {
               />
               <span className="q-counter">
                 <span style={{color:'var(--vermillion)',fontVariantCaps:'all-small-caps',letterSpacing:'0.06em'}}>
-                  {'Æ'}stio {toRoman(questionIdx + 1)}
+                  {'QUÆSTIO'} {toRoman(questionIdx + 1)}
                 </span>
                 <span style={{color:'var(--ink-faint)',margin:'0 4px'}}>{'·'}</span>
                 <span style={{fontVariantCaps:'all-small-caps',color:'var(--ink-faint)',letterSpacing:'0.06em'}}>
