@@ -59,15 +59,11 @@ function TopBarInner({ moduleId, lessonIdx, lessonTitle, lessonNum }: TopBarProp
       <nav className="curriculum-path" aria-label="Course location">
         {moduleId !== undefined && (
           <>
-            <span className="cp-tier module">
-              <span className="cp-label">Module</span>
-              <span className="cp-num">{moduleId}</span>
-            </span>
-            <span className="cp-fleuron" aria-hidden="true">{'\u2766\ufe0e'}</span>
-            <span className="cp-tier lesson" style={{ gap: '4px' }}>
-              <span className="cp-label">Lesson</span>
-              <span className="cp-num">{lessonNum ?? lessonIdx !== undefined ? lessonIdx + 1 : ''}</span>
-            </span>
+            <span className="cp-label">Module</span>
+            <span className="cp-num">{moduleId}</span>
+            <span className="cp-fleuron" aria-hidden="true">\u2726</span>
+            <span className="cp-label">Lesson</span>
+            <span className="cp-num">{lessonNum != null ? lessonNum : lessonIdx !== undefined ? lessonIdx + 1 : ''}</span>
           </>
         )}
       </nav>

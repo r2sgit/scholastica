@@ -263,16 +263,11 @@ a { color: inherit; text-decoration: none; }
 .curriculum-path {
   display: flex;
   align-items: baseline;
-  gap: 12px;
+  flex-wrap: nowrap;
+  gap: 5px;
   font-family: 'Fraunces', Georgia, serif;
   white-space: nowrap;
-  flex-wrap: nowrap;
   justify-self: center;
-}
-.cp-tier {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 5px;
 }
 .cp-label {
   font-size: 12px;
@@ -288,21 +283,12 @@ a { color: inherit; text-decoration: none; }
   font-variant-caps: all-small-caps;
   letter-spacing: 0.06em;
 }
-.cp-sep {
-  color: var(--ink-faint);
-  font-size: 14px;
-  margin: 0 2px;
-}
-.cp-name {
-  font-size: 15px;
-  font-style: italic;
-  color: var(--ink);
-  font-weight: 500;
-}
 .cp-fleuron {
   color: var(--gold);
-  font-size: 15px;
+  font-size: 10px;
   margin: 0 4px;
+  position: relative;
+  top: -1px;
 }
 
 .mute-btn {
@@ -838,10 +824,10 @@ a { color: inherit; text-decoration: none; }
   .btn { width: 100%; }
 
   .topbar { padding: 10px 16px; gap: 8px; }
-  .curriculum-path { gap: 8px; }
+  .curriculum-path { gap: 6px; }
   .cp-label  { font-size: 11px; letter-spacing: 0.12em; }
   .cp-num    { font-size: 14px; }
-  .cp-fleuron { font-size: 13px; margin: 0 3px; }
+  .cp-fleuron { font-size: 9px; margin: 0 3px; }
   .card-area { padding-bottom: 220px; }
 }
 
@@ -870,8 +856,6 @@ a { color: inherit; text-decoration: none; }
 
   .pendant-wrapper { width: 72px; }
 
-  .cp-name { display: none; }
-  .cp-sep  { display: none; }
 }
 
 @media (max-width: 860px) {
