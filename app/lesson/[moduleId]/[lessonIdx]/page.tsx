@@ -12,6 +12,17 @@ import FeedbackPanel from '../../../../components/FeedbackPanel';
 import MCQ from '../../../../components/MCQ';
 import DrolleryMargin from '../../../../components/DrolleryMargin';
 import DrolleryPendant from '../../../../components/DrolleryPendant';
+import CardVines from '../../../../components/CardVines';
+
+function toRoman(n: number): string {
+  const vals = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
+  const syms = ['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I'];
+  let result = '';
+  for (let i = 0; i < vals.length; i++) {
+    while (n >= vals[i]) { result += syms[i]; n -= vals[i]; }
+  }
+  return result;
+}
 
 function QuizCardInner() {
   const params = useParams();
@@ -143,6 +154,7 @@ function QuizCardInner() {
           lessonIdx={lessonIdx}
           lessonTitle={lesson.title}
           lessonNum={lesson.num}
+          moduleTitle={mod.title}
         />
 
         {/* Review mode question selector */}
@@ -170,6 +182,7 @@ function QuizCardInner() {
 
         <div className="card-area">
           <article className="card">
+            <CardVines />
             {/* Progress bar */}
             <div className="card-progress-bar">
               <ProgressDots
@@ -179,7 +192,15 @@ function QuizCardInner() {
                 reviewMode={reviewMode}
                 onDotClick={handleDotClick}
               />
-              <span className="q-counter">Q {questionIdx + 1} / {questions.length}</span>
+              <span className="q-counter">
+                <span style={{color:'var(--vermillion)',fontVariantCaps:'all-small-caps',letterSpacing:'0.06em'}}>
+                  {'Æ'}stio {toRoman(questionIdx + 1)}
+                </span>
+                <span style={{color:'var(--ink-faint)',margin:'0 4px'}}>{'·'}</span>
+                <span style={{fontVariantCaps:'all-small-caps',color:'var(--ink-faint)',letterSpacing:'0.06em'}}>
+                  {toRoman(questions.length).toLowerCase()}
+                </span>
+              </span>
             </div>
 
             {/* Card head */}

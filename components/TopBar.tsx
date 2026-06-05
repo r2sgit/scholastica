@@ -33,9 +33,10 @@ interface TopBarProps {
   lessonIdx?: number;
   lessonTitle?: string;
   lessonNum?: string;
+  moduleTitle?: string;
 }
 
-function TopBarInner({ moduleId, lessonIdx, lessonTitle, lessonNum }: TopBarProps) {
+function TopBarInner({ moduleId, lessonIdx, lessonTitle, lessonNum, moduleTitle }: TopBarProps) {
   const searchParams = useSearchParams();
   const isReview = searchParams.get('review') === '1';
   const [muted, setMutedState] = useState(false);
@@ -61,9 +62,21 @@ function TopBarInner({ moduleId, lessonIdx, lessonTitle, lessonNum }: TopBarProp
           <>
             <span className="cp-label">Module</span>
             <span className="cp-num">{moduleId}</span>
-            <span className="cp-fleuron" aria-hidden="true">{'\u2726'}</span>
+            {moduleTitle && (
+              <>
+                <span className="cp-sep">{'\u00b7'}</span>
+                <span className="cp-name">{moduleTitle}</span>
+              </>
+            )}
+            <span className="cp-fleuron" aria-hidden="true" />
             <span className="cp-label">Lesson</span>
             <span className="cp-num">{lessonNum != null ? lessonNum : lessonIdx !== undefined ? lessonIdx + 1 : ''}</span>
+            {lessonTitle && (
+              <>
+                <span className="cp-sep">{'\u00b7'}</span>
+                <span className="cp-name">{lessonTitle}</span>
+              </>
+            )}
           </>
         )}
       </nav>
