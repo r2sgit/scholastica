@@ -61,7 +61,7 @@ function TopBarInner({ moduleId, lessonIdx, lessonTitle, lessonNum }: TopBarProp
           <>
             <span className="cp-label">Module</span>
             <span className="cp-num">{moduleId}</span>
-            <span className="cp-fleuron" aria-hidden="true">\u2726</span>
+            <span className="cp-fleuron" aria-hidden="true">{'\u2726'}</span>
             <span className="cp-label">Lesson</span>
             <span className="cp-num">{lessonNum != null ? lessonNum : lessonIdx !== undefined ? lessonIdx + 1 : ''}</span>
           </>
