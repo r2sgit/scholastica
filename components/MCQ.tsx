@@ -11,19 +11,36 @@ interface MCQProps {
 
 interface MCQOption {
   id: string;
+  label?: string;
   text: string;
-  correct: boolean;
+  correct?: boolean;
   feedback: string;
 }
 
 export default function MCQ({ question, onAnswer, disabled }: MCQProps) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const options = (question.payload.options as MCQOption[]) || [];
+  // Two correctness encodings exist: m0 marks options with `correct: true`;
+  // m1+ (and the tf/fallacy types throughout) carry payload.correct_option_id.
+  const correctOptionId = question.payload.correct_option_id as string | undefined;
+
+  function isCorrectOption(opt: MCQOption): boolean {
+    if (correctOptionId !== undefined) return opt.id === correctOptionId;
+    return opt.correct === true;
+  }
 
   function handleSelect(opt: MCQOption) {
     if (disabled || selectedId !== null) return;
     setSelectedId(opt.id);
-    onAnswer(opt.correct, opt.feedback, question.doctrine_line);
+    const correct = isCorrectOption(opt);
+    let feedback = opt.feedback;
+    // precision_check: structurally an MCQ; on a correct answer the precise
+    // correction is appended to the feedback (prototype adapter behavior).
+    const correction = question.payload.correction as string | undefined;
+    if (question.type === 'precision_check' && correct && correction) {
+      feedback = `${feedback} <em>Precisely: ${correction}</em>`;
+    }
+    onAnswer(correct, feedback, question.doctrine_line);
   }
 
   return (
@@ -31,8 +48,8 @@ export default function MCQ({ question, onAnswer, disabled }: MCQProps) {
       {options.map((opt) => {
         const isSelected = selectedId === opt.id;
         const isAnswered = selectedId !== null;
-        const isCorrect = isSelected && opt.correct;
-        const isWrong = isSelected && !opt.correct;
+        const isCorrect = isSelected && isCorrectOption(opt);
+        const isWrong = isSelected && !isCorrectOption(opt);
 
         let borderColor = 'var(--border)';
         let borderWidth = 1;
@@ -72,7 +89,7 @@ export default function MCQ({ question, onAnswer, disabled }: MCQProps) {
                 marginBottom: 4,
               }}
             >
-              Respondeo:
+              {opt.label || 'Respondeo:'}
             </div>
             <div
               style={{

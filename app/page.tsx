@@ -261,7 +261,7 @@ export default function LandingScreen() {
         <div className="colophon fade-in-4">
           <span>XVIII modules</span>
           <span className="sep">&middot;</span>
-          <span>VII lessons each</span>
+          <span>V&ndash;VII lessons each</span>
           <span className="sep">&middot;</span>
           <span className="lat">incipiens ad sapientiam</span>
         </div>

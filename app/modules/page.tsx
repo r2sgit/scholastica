@@ -9,8 +9,8 @@ import TopBar from '../../components/TopBar';
 /* ── All 18 modules for the rail ─────────────────────────────── */
 const ALL_MODULES = [
   { n: 'I',      t: 'Foundations',                          sub: 'Fundamenta',            active: true  },
-  { n: 'II',    t: 'Act and Potency',                      sub: 'Actus et Potentia',      active: false },
-  { n: 'III',   t: 'Being and Essence',                    sub: 'Esse et Essentia',       active: false },
+  { n: 'II',    t: 'Act and Potency',                      sub: 'Actus et Potentia',      active: true  },
+  { n: 'III',   t: 'Being and Essence',                    sub: 'Esse et Essentia',       active: true  },
   { n: 'IV',    t: 'Hylomorphism',                         sub: 'Hylemorphismus',         active: false },
   { n: 'V',     t: 'Substance, Suppositum, Person',        sub: 'Suppositum et Persona',  active: false },
   { n: 'VI',    t: 'Logic',                                sub: 'Logica',                 active: true  },
@@ -29,7 +29,30 @@ const ALL_MODULES = [
 ];
 
 /* Map rail index → content module id */
-const RAIL_TO_MODULE_ID: Record<number, number> = { 0: 0, 5: 5, 12: 12 };
+const RAIL_TO_MODULE_ID: Record<number, number> = { 0: 0, 1: 1, 2: 2, 5: 5, 12: 12 };
+
+/* Eyebrow Latin + aim copy for modules whose content files predate the
+   latin/aim fields. Newer modules carry these in their own data. */
+const LEGACY_LATIN: Record<number, string> = {
+  0: 'Fundamenta',
+  5: 'Logica',
+  12: 'Lex Naturalis',
+};
+const LEGACY_AIM: Record<number, string> = {
+  0: 'The seven distinctions you need in hand before any Thomistic argument will sit still long enough to be examined.',
+  5: 'Aristotelian logic as Aquinas inherited it — the organon that makes his arguments walk.',
+  12: 'Natural law, the human act, and the moral vocabulary that follows from them.',
+};
+
+function toRoman(n: number): string {
+  const vals = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
+  const syms = ['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I'];
+  let r = '';
+  for (let i = 0; i < vals.length; i++) {
+    while (n >= vals[i]) { r += syms[i]; n -= vals[i]; }
+  }
+  return r;
+}
 
 /* ── Vine SVG ─────────────────────────────────────────────── */
 function VineDivider() {
@@ -122,16 +145,14 @@ export default function ModuleMapPage() {
         <div className="module-hd">
           <div className="module-copy">
             <div className="eyebrow">
-              {activeModule.label} &middot;{' '}
+              Module {toRoman(activeModuleId + 1)} &middot; {activeModule.title} &middot;{' '}
               <span className="small-caps" style={{ color: 'var(--ink-soft)', letterSpacing: '0.08em', fontSize: 13 }}>
-                {activeModuleId === 0 ? 'Fundamenta' : activeModuleId === 5 ? 'Logica' : 'Lex Naturalis'}
+                {activeModule.latin ?? LEGACY_LATIN[activeModuleId] ?? ''}
               </span>
             </div>
             <h1><em>{activeModule.title}</em></h1>
             <p className="aim">
-              {activeModuleId === 0 && 'The seven distinctions you need in hand before any Thomistic argument will sit still long enough to be examined.'}
-              {activeModuleId === 5 && 'Aristotelian logic as Aquinas inherited it — the organon that makes his arguments walk.'}
-              {activeModuleId === 12 && 'Natural law, the human act, and the moral vocabulary that follows from them.'}
+              {activeModule.aim ?? LEGACY_AIM[activeModuleId] ?? ''}
             </p>
           </div>
         </div>
@@ -175,7 +196,7 @@ export default function ModuleMapPage() {
           {activeModule.lessons.map((lesson, idx) => {
             const status = getLessonStatus(idx);
             const isCapstone = idx === activeModule.lessons.length - 1;
-            const blurb = M0_BLURBS[lesson.title] || '';
+            const blurb = activeModuleId === 0 ? (M0_BLURBS[lesson.title] || '') : '';
 
             return (
               <li
@@ -225,7 +246,7 @@ export default function ModuleMapPage() {
               key={i}
               className={`mrail ${m.active ? 'active' : 'locked'}`}
               onClick={() => m.active && handleModuleSwitch(i)}
-              style={m.active && i === (activeModuleId === 0 ? 0 : activeModuleId === 5 ? 5 : 12) ? { borderColor: 'var(--gold)', borderWidth: 2 } : undefined}
+              style={m.active && RAIL_TO_MODULE_ID[i] === activeModuleId ? { borderColor: 'var(--gold)', borderWidth: 2 } : undefined}
             >
               <div className="n">{m.n}</div>
               <div className="t">{m.t}</div>

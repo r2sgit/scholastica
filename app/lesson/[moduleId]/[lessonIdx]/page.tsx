@@ -10,6 +10,9 @@ import TopBar from '../../../../components/TopBar';
 import ProgressDots from '../../../../components/ProgressDots';
 import FeedbackPanel from '../../../../components/FeedbackPanel';
 import MCQ from '../../../../components/MCQ';
+import MatchPair from '../../../../components/MatchPair';
+import SyllogismBuilder from '../../../../components/SyllogismBuilder';
+import FillBlank from '../../../../components/FillBlank';
 import DrolleryMargin from '../../../../components/DrolleryMargin';
 import DrolleryPendant from '../../../../components/DrolleryPendant';
 import CardVines from '../../../../components/CardVines';
@@ -271,13 +274,22 @@ function ExerciseRenderer({
   onAnswer: (correct: boolean, feedback: string, doctrineTag?: string) => void;
   disabled: boolean;
 }) {
-  // M0 only uses mcq, true_false_with_reason, distinction_application
-  // All three use the same MCQ UI
   switch (question.type) {
+    // Single-select types all share the MCQ UI. precision_check additionally
+    // appends its correction to correct-answer feedback (handled in MCQ).
     case 'mcq':
     case 'true_false_with_reason':
     case 'distinction_application':
+    case 'spot_the_fallacy':
+    case 'close_reading':
+    case 'precision_check':
       return <MCQ question={question} onAnswer={onAnswer} disabled={disabled} />;
+    case 'match_pair':
+      return <MatchPair question={question} onAnswer={onAnswer} disabled={disabled} />;
+    case 'syllogism_builder':
+      return <SyllogismBuilder question={question} onAnswer={onAnswer} disabled={disabled} />;
+    case 'fill_blank':
+      return <FillBlank question={question} onAnswer={onAnswer} disabled={disabled} />;
     default:
       return (
         <div style={{ padding: 20, color: 'var(--ink-faint)', fontStyle: 'italic' }}>

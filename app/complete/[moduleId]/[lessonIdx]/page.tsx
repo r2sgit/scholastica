@@ -2,7 +2,7 @@
 
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, Suspense } from 'react';
-import { getModule, MODULES } from '../../../../content/modules';
+import { getModule } from '../../../../content/modules';
 import { playSound, type SoundId } from '../../../../lib/sound';
 
 /* ── Vine Divider ─────────────────────────────────────────── */
@@ -92,14 +92,8 @@ function FinScreenInner() {
 
   function handleNextLesson() {
     if (isLastLesson) {
-      // Find next module in MODULES array
-      const curIdx = MODULES.findIndex(m => m.id === moduleId);
-      const nextMod = curIdx !== -1 ? MODULES[curIdx + 1] : undefined;
-      if (nextMod) {
-        router.push(`/lesson/${nextMod.id}/0`);
-      } else {
-        router.push('/modules');
-      }
+      // Module complete: back to the module map
+      router.push('/modules');
     } else {
       router.push(`/lesson/${moduleId}/${lessonIdx + 1}`);
     }
@@ -221,11 +215,7 @@ function FinScreenInner() {
             onMouseOver={(e) => (e.currentTarget.style.background = 'var(--gold-deep)')}
             onMouseOut={(e) => (e.currentTarget.style.background = 'var(--gold)')}
           >
-            {isLastLesson
-              ? (MODULES.findIndex(m => m.id === moduleId) < MODULES.length - 1
-                ? 'Next Module →'
-                : 'Back to Module Map →')
-              : 'Next Lesson →'}
+            {isLastLesson ? 'Back to Module Map →' : 'Next Lesson →'}
           </button>
 
           {missedIds.length > 0 && (
