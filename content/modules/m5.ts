@@ -43,6 +43,7 @@ export const m5: ModuleMeta = {
               feedback: `Also true, but the inference exceeds the premises. The premises tell us that Socrates is mortal because he is a man — they say nothing about Greeks as a group. A valid inference goes only as far as the premises allow.`,
             }
             ],
+            correct_option_id: `a`,
           },
         },
         {
@@ -144,6 +145,7 @@ export const m5: ModuleMeta = {
               feedback: `<em>Denial of the antecedent.</em> From <em>"all apples are fruits"</em> we cannot conclude that <em>only</em> apples are fruits — pears, plums, and figs all qualify. The argument is invalid; the conclusion is also false.`,
             }
             ],
+            correct_option_id: `a`,
           },
         },
         {
@@ -171,6 +173,7 @@ export const m5: ModuleMeta = {
               feedback: `That is <em>psychology</em> — the empirical science of human cognition. Logic is normative, not descriptive: it studies how the mind <em>should</em> move when it reasons rightly, not how it <em>does</em> move on any given Tuesday.`,
             }
             ],
+            correct_option_id: `a`,
           },
         }
       ],
@@ -218,6 +221,7 @@ export const m5: ModuleMeta = {
               feedback: `<em>Tall</em> is a predicable accident — it may or may not belong to a particular man, and tells us nothing essential about what man is. The <span class="lat">genus</span> names what is essential and shared.`,
             }
             ],
+            correct_option_id: `a`,
           },
         },
         {
@@ -355,6 +359,7 @@ export const m5: ModuleMeta = {
               feedback: `Risibility does not vary in the way literacy does. The <em>capacity</em> for laughter belongs to every man as such, even when the act of laughing does not occur in this moment. Literacy varies because the capacity itself can fail to develop. The two are not on the same footing.`,
             }
             ],
+            correct_option_id: `a`,
           },
         },
         {
@@ -452,6 +457,7 @@ export const m5: ModuleMeta = {
               feedback: `They are five distinct kinds of relation. Confusing them is exactly what the predicables exist to prevent. <span class="lat">Genus</span> shares; <span class="lat">differentia</span> distinguishes; <span class="lat">species</span> is what they together name; <span class="lat">proprium</span> follows necessarily; <span class="lat">accidens</span> attaches contingently.`,
             }
             ],
+            correct_option_id: `a`,
           },
         }
       ],
@@ -627,6 +633,7 @@ export const m5: ModuleMeta = {
               feedback: `The opposite of the Aristotelian-Thomistic move. Accidents are <em>not reducible</em> to substance — they are real features distinct from substance, but ones that <em>inhere in</em> substance. Reductive accounts erase the categorical distinction the predicaments exist to mark.`,
             }
             ],
+            correct_option_id: `a`,
           },
         },
         {
@@ -722,6 +729,7 @@ export const m5: ModuleMeta = {
               feedback: `Frequency in everyday predication is irrelevant. We say "this is red" more often than "this is a substance," but redness presupposes a red <em>thing</em>. Predication frequency does not determine categorical priority.`,
             }
             ],
+            correct_option_id: `a`,
           },
         }
       ],
@@ -871,6 +879,7 @@ export const m5: ModuleMeta = {
               feedback: `That is the <em>fourth</em> mode — effect from cause necessarily (heat/fire). The third mode is ontological: it names the way substance exists <em>in itself</em>, against accidents that exist <em>in another</em>.`,
             }
             ],
+            correct_option_id: `a`,
           },
         },
         {
@@ -963,6 +972,7 @@ export const m5: ModuleMeta = {
               feedback: `You've stacked the four modes as if they were requirements that compound. They are alternatives, not requirements. Each demonstrative premise belongs to <em>one</em> of the four (or, rarely, more than one if the connection is multiply <em>per se</em>). The demonstrator picks among the four; he does not stack them all into a single argument.`,
             }
             ],
+            correct_option_id: `a`,
           },
         }
       ],
@@ -1010,6 +1020,7 @@ export const m5: ModuleMeta = {
               feedback: `Three statements connected by "therefore" are exactly what a syllogism is. Two premises and a conclusion, with a shared middle term, is the smallest formal unit of inference. The medievals built an entire technical apparatus around classifying these.`,
             }
             ],
+            correct_option_id: `a`,
           },
         },
         {
@@ -1173,6 +1184,7 @@ export const m5: ModuleMeta = {
               feedback: `You've imposed a grammatical restriction the rule does not impose. The middle can be any term — noun, adjective, predicate phrase — as long as it appears in both premises with the same meaning. Logic governs the form of inference, not the parts of speech.`,
             }
             ],
+            correct_option_id: `a`,
           },
         }
       ],
@@ -1344,6 +1356,7 @@ export const m5: ModuleMeta = {
               feedback: `Universal acceptance is dialectical, not demonstrative. Many demonstrative premises require careful explanation before they are even understood — and once understood, are accepted because of their <em>per se</em> connection, not because of consensus. <em>Scientia</em> is grounded in reality, not in popularity.`,
             }
             ],
+            correct_option_id: `a`,
           },
         },
         {
@@ -1371,6 +1384,7 @@ export const m5: ModuleMeta = {
               feedback: `You've conflated demonstration with rhetoric. Rhetoric persuades; dialectic argues from probable premises; demonstration produces knowledge from necessary premises. The Aristotelian-Thomistic tradition keeps these three apart sharply.`,
             }
             ],
+            correct_option_id: `a`,
           },
         }
       ],
@@ -1687,6 +1701,7 @@ export const m5: ModuleMeta = {
               feedback: `Module 5 is a logic course, not a Latin or composition course. The skills it gives you are technical-logical: spotting fallacies, identifying figures, recognizing when premises are <em>per se</em>, knowing when an opponent has denied a first principle. Translation and composition are separate disciplines.`,
             }
             ],
+            correct_option_id: `a`,
           },
         }
       ],

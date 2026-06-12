@@ -43,6 +43,7 @@ export const m12: ModuleMeta = {
               feedback: `Frustration is a <em>circumstance</em>, not a defeat of voluntariness. People act under provocation all the time and remain responsible for what they then choose. The will moved by reason — even reason inflamed — is still the will. <span class="lat-inline">Actus humanus</span> requires deliberation, not tranquility.`,
             }
             ],
+            correct_option_id: `a`,
           },
         },
         {
@@ -173,6 +174,7 @@ export const m12: ModuleMeta = {
               feedback: `Startle does not contaminate the surrounding deliberate acts. The cut continues to be willed even while a reflex passes through the body. Aquinas's whole point is that the categories nest — a person can be performing a human act and a non-human one at the same time.`,
             }
             ],
+            correct_option_id: `a`,
           },
         },
         {
@@ -200,6 +202,7 @@ export const m12: ModuleMeta = {
               feedback: `The distinction has nothing to do with audience. A private deliberate act is <span class="lat-inline">actus humanus</span>; a public reflex is <span class="lat-inline">actus hominis</span>. The category turns on the will, not on who is watching.`,
             }
             ],
+            correct_option_id: `a`,
           },
         }
       ],
@@ -241,6 +244,7 @@ export const m12: ModuleMeta = {
               feedback: `Hunger is indeed a circumstance, but "morally neutral" treats the object — taking another's property — as if it had no character of its own. The whole point of the <span class="lat-inline">fontes</span> is that the object has its own species independent of circumstances.`,
             }
             ],
+            correct_option_id: `a`,
           },
         },
         {
@@ -395,6 +399,7 @@ export const m12: ModuleMeta = {
               feedback: `Also a real axiom, also Thomistic, also not the one. <span class="lat-inline">Agere sequitur esse</span> grounds activity in nature; the moral evaluation axiom is downstream of it. The question is asking for the rule that <em>scores</em> the act.`,
             }
             ],
+            correct_option_id: `a`,
           },
         },
         {
@@ -422,6 +427,7 @@ export const m12: ModuleMeta = {
               feedback: `The mapping has scrambled the object into circumstances. The object is what the act <em>is</em> — not the conditions surrounding it. Hold these apart and the whole moral grammar holds together.`,
             }
             ],
+            correct_option_id: `a`,
           },
         }
       ],
@@ -527,6 +533,7 @@ export const m12: ModuleMeta = {
               feedback: `Aquinas is explicit: <span class="lat-inline">synderesis</span> grasps its principles <em>without learning them</em>. They are <span class="lat-inline">per se nota</span> — known through themselves, immediately. Moral training shapes <span class="lat-inline">conscientia</span>, the application; synderesis is the layer training presupposes.`,
             }
             ],
+            correct_option_id: `a`,
           },
         },
         {
@@ -622,6 +629,7 @@ export const m12: ModuleMeta = {
               feedback: `The sentimentalist reduction. Aquinas's principle does not run through feeling; it runs through reason's apprehension of the good. Feeling can track the good (when well-formed) or miss it; the principle is independent of either case.`,
             }
             ],
+            correct_option_id: `a`,
           },
         }
       ],
@@ -788,6 +796,7 @@ export const m12: ModuleMeta = {
               feedback: `Both are reason — both belong to the practical intellect. Feeling is something else entirely. Don't smuggle the modern intuition that conscience is affective into a tradition that emphatically denies it.`,
             }
             ],
+            correct_option_id: `a`,
           },
         },
         {
@@ -843,6 +852,7 @@ export const m12: ModuleMeta = {
               feedback: `The other half-truth, in the other direction. Aquinas says the will at variance with even erring reason is evil — that is, conscience genuinely binds, even when it conflicts with the rule. The position is not "rule beats conscience" any more than "conscience beats rule." Both real, both binding, both with their own duties attached.`,
             }
             ],
+            correct_option_id: `a`,
           },
         }
       ],
@@ -1058,6 +1068,7 @@ export const m12: ModuleMeta = {
               feedback: `The contrast between command and inclination is real but it is not the right axis. Natural law itself contains both inclinations <em>and</em> precepts (the precepts are derived from the inclinations). Divine positive law is not necessary because natural law lacks <em>commands</em>; it is necessary because human beings are ordered to a supernatural end that natural law's commands and inclinations alike cannot reach.`,
             }
             ],
+            correct_option_id: `a`,
           },
         },
         {
@@ -1091,6 +1102,7 @@ export const m12: ModuleMeta = {
               feedback: `A real and beloved Thomistic axiom, and one that matters to the architecture of the four laws (it is what makes <span class="lat-inline">lex divina positiva</span> intelligible alongside the natural law). But it speaks to the relation of grace and nature, not natural law and eternal law. The axiom you want uses <span class="lat-inline">participatio</span>.`,
             }
             ],
+            correct_option_id: `a`,
           },
         }
       ],
@@ -1269,6 +1281,7 @@ export const m12: ModuleMeta = {
               feedback: `The contingent-facts angle is not what's doing the work here. Aquinas is clear that the obscuring of secondary precepts comes from <em>defects in practical reason</em> (&lsquo;the reason is perverted by passion, or evil habit, or an evil disposition of nature&rsquo;) — not from environmental contingency. The Germans were not approving theft because their climate was unusual; they were approving it because their custom had deflected practical reason from a derivable conclusion.`,
             }
             ],
+            correct_option_id: `a`,
           },
         },
         {
@@ -1302,6 +1315,7 @@ export const m12: ModuleMeta = {
               feedback: `You named the three orders but stopped before the rest of the structure. Each order of inclination gives rise to <em>primary precepts</em> (the immediate practical judgment) and <em>secondary precepts</em> (the conclusions drawn from primary precepts in particular conditions). Without that further articulation, the three orders are inert. Q. 94 a. 4 spends most of its energy on what happens at the secondary-precept level — that is where the article's qualifications live.`,
             }
             ],
+            correct_option_id: `a`,
           },
         }
       ],
@@ -1544,6 +1558,7 @@ export const m12: ModuleMeta = {
               feedback: `This loses everything Module 12 was built to add. The doctor's case turned precisely on <em>not</em> applying <span class="lat-inline">lex</span> mechanically — on holding object, intention, and circumstance distinct so each could do its proper work. Mechanical rule-following is the deformation of natural-law reasoning, not its product.`,
             }
             ],
+            correct_option_id: `a`,
           },
         }
       ],
