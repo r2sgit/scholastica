@@ -594,49 +594,6 @@ a { color: inherit; text-decoration: none; }
 .btn:hover { background: var(--ink-soft); }
 .btn em { font-style: italic; }
 
-/* Locked-modules rail */
-.modules-rail {
-  width: 100%;
-  max-width: 720px;
-  margin: 40px auto 0;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-}
-.mrail {
-  background: transparent;
-  border: 1px solid var(--border-soft);
-  border-radius: 10px;
-  padding: 14px 14px 16px;
-  color: var(--ink-faint);
-  font-size: 13px;
-  line-height: 1.3;
-}
-.mrail .n {
-  font-family: "Emeritus", serif;
-  font-size: 18px;
-  color: var(--ink-faint);
-  margin-bottom: 4px;
-  line-height: 1;
-}
-.mrail .t { color: var(--ink-soft); font-size: 13px; font-style: italic; }
-.mrail .sub-lat { color: var(--ink-faint); font-size: 11px; font-style: italic; margin-top: 2px; }
-.mrail.active {
-  border-color: var(--ink-soft);
-  background: var(--paper);
-  box-shadow: var(--shadow-row);
-  cursor: pointer;
-}
-.mrail.active .n { color: var(--ink); }
-.mrail.active .t { color: var(--ink); font-style: normal; }
-.mrail.locked .pad {
-  margin-top: 4px;
-  font-size: 10.5px;
-  letter-spacing: 0.12em;
-  font-variant-caps: all-small-caps;
-  color: var(--ink-faint);
-}
-
 /* Header vine */
 .header-vine {
   margin: -8px 0 16px;
@@ -661,18 +618,6 @@ a { color: inherit; text-decoration: none; }
 }
 .lesson.capstone .txt h3 { font-size: 22px; }
 .lesson.capstone .txt .tag { color: var(--gold); }
-
-/* Map colophon */
-.map-colophon {
-  margin-top: 56px;
-  padding-top: 22px;
-  color: var(--ink-faint);
-  font-size: 12.5px;
-  font-style: italic;
-  text-align: center;
-  letter-spacing: 0.02em;
-}
-.map-colophon em { color: var(--ink-soft); font-weight: 500; }
 
 /* Canvas art */
 .canvas-art {
@@ -911,7 +856,6 @@ a { color: inherit; text-decoration: none; }
 
   .topbar .wordmark { font-size: 28px; }
 
-  .modules-rail { grid-template-columns: repeat(2, 1fr); }
   .module-copy h1 { font-size: 32px; }
   .module-copy .aim { font-size: 15px; }
   .lesson { grid-template-columns: 44px 1fr; padding: 16px 8px; }
@@ -928,7 +872,6 @@ a { color: inherit; text-decoration: none; }
 }
 
 @media (max-width: 860px) {
-  .modules-rail { grid-template-columns: repeat(2, 1fr); }
   .cp-name { display: none; }
   .cp-sep  { display: none; }
 }
@@ -1136,3 +1079,179 @@ a { color: inherit; text-decoration: none; }
 .syllogism-recap-row.no .recap-chosen { color: var(--wrong); }
 .recap-arrow { color: var(--ink-faint); }
 .recap-correct { color: var(--correct); font-weight: 500; }
+
+/* ═══ Course map (/modules) — from scholastica-module-map-v2-mockup ═══ */
+.cm-stage {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 8px 28px 64px;
+}
+.cm-hero { margin: 10px 0 8px; }
+
+/* Act sections */
+.cm-act { margin-top: 38px; }
+.cm-act-hd {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 4px;
+}
+.cm-act-hd .n {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.2em;
+  font-size: 13px;
+  color: var(--gold-deep);
+}
+.cm-act-hd h2 { font-size: 21px; font-weight: 600; margin: 0; }
+.cm-act-hd .line { flex: 1; height: 1px; background: var(--border-soft); }
+.cm-act-sub {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin: 0 0 14px;
+}
+
+/* Card grid */
+.cm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+  gap: 14px;
+}
+.cm-card {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 16px 14px;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  min-height: 128px;
+  display: flex;
+  flex-direction: column;
+}
+.cm-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 2px 6px 26px rgba(59, 50, 40, 0.10);
+  border-color: var(--gold);
+}
+.cm-numeral {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ink-faint);
+  transition: color .18s;
+}
+.cm-card:hover .cm-numeral { color: var(--gold); }
+.cm-card h3 {
+  margin: 0 42px 2px 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.cm-sub { font-size: 12.5px; color: var(--ink-soft); font-style: italic; }
+.cm-aim {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  line-height: 1.45;
+  margin-top: 7px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height .22s ease, opacity .22s ease;
+}
+.cm-card:hover .cm-aim { max-height: 64px; opacity: 1; }
+.cm-foot {
+  margin-top: auto;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cm-pips { display: flex; gap: 4px; flex-wrap: wrap; }
+.cm-pip {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+}
+.cm-pip.done { background: var(--correct); border-color: var(--correct); }
+.cm-pip.part { background: var(--gold); border-color: var(--gold); }
+.cm-status {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.12em;
+  font-size: 11.5px;
+  color: var(--gold-deep);
+}
+.cm-card.complete .cm-status { color: var(--correct); }
+
+/* In scriptorio: being written, not gated — aims still reveal */
+.cm-card.scriptorio { cursor: default; background: transparent; border-style: dashed; }
+.cm-card.scriptorio h3 { color: var(--ink-faint); }
+.cm-card.scriptorio .cm-sub { color: var(--ink-faint); }
+.cm-card.scriptorio .cm-numeral { color: var(--border); }
+.cm-card.scriptorio:hover { transform: none; box-shadow: none; border-color: var(--border); }
+.cm-card.scriptorio:hover .cm-aim { max-height: 64px; opacity: 1; }
+.cm-card.scriptorio .cm-status { color: var(--ink-faint); }
+
+/* Destination: M XVIII */
+.cm-card.destination { border-color: var(--gold); }
+.cm-card.destination .cm-numeral { color: var(--gold); }
+.cm-card.destination.scriptorio:hover { border-color: var(--gold); }
+
+/* Colophon (interim footer until the G0 app-shell pass) */
+.cm-colophon {
+  margin-top: 54px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+.cm-colophon .rule {
+  width: 120px;
+  height: 1px;
+  background: var(--border);
+  margin: 0 auto 12px;
+}
+
+/* Breadcrumb link in TopBar */
+.cp-crumb {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.14em;
+  font-size: 14px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color .15s;
+}
+.cp-crumb:hover { color: var(--gold-deep); }
+
+/* Module-detail lesson rows: hover consistent with the map cards */
+.lesson {
+  border-radius: 10px;
+  transition: background .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+.lesson:hover {
+  transform: translateY(-2px);
+  background: var(--paper);
+  box-shadow: inset 0 0 0 1px var(--gold), 1px 3px 14px rgba(59, 50, 40, 0.08);
+}
+
+/* Touch devices: hover-reveals degrade to always-visible aims */
+@media (hover: none) {
+  .cm-aim { max-height: 64px; opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cm-card, .cm-aim { transition: none; }
+  .cm-card:hover { transform: none; }
+  .lesson { transition: background .18s ease; }
+  .lesson:hover { transform: none; }
+}
+
+/* Continue cards (course map hero + module detail) stack on small screens */
+@media (max-width: 720px) {
+  .continue { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .continue .mk { display: none; }
+  .cm-stage { padding: 8px 16px 56px; }
+}

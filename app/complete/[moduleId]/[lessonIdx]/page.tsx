@@ -92,8 +92,8 @@ function FinScreenInner() {
 
   function handleNextLesson() {
     if (isLastLesson) {
-      // Module complete: back to the module map
-      router.push('/modules');
+      // Module complete: back to this module's detail page
+      router.push(`/modules/${moduleId}`);
     } else {
       router.push(`/lesson/${moduleId}/${lessonIdx + 1}`);
     }
@@ -215,7 +215,7 @@ function FinScreenInner() {
             onMouseOver={(e) => (e.currentTarget.style.background = 'var(--gold-deep)')}
             onMouseOut={(e) => (e.currentTarget.style.background = 'var(--gold)')}
           >
-            {isLastLesson ? 'Back to Module Map →' : 'Next Lesson →'}
+            {isLastLesson ? 'Back to Module →' : 'Next Lesson →'}
           </button>
 
           {missedIds.length > 0 && (

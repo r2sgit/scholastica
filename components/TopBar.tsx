@@ -34,6 +34,8 @@ interface TopBarProps {
   lessonTitle?: string;
   lessonNum?: string;
   moduleTitle?: string;
+  /** Show a "Modules /" crumb linking back to the course map */
+  modulesCrumb?: boolean;
 }
 
 function toRoman(n: number): string {
@@ -46,7 +48,7 @@ function toRoman(n: number): string {
   return r;
 }
 
-function TopBarInner({ moduleId, lessonIdx, lessonTitle, lessonNum, moduleTitle }: TopBarProps) {
+function TopBarInner({ moduleId, lessonIdx, lessonTitle, lessonNum, moduleTitle, modulesCrumb }: TopBarProps) {
   const searchParams = useSearchParams();
   const isReview = searchParams.get('review') === '1';
   const [muted, setMutedState] = useState(false);
@@ -70,6 +72,12 @@ function TopBarInner({ moduleId, lessonIdx, lessonTitle, lessonNum, moduleTitle 
       <nav className="curriculum-path" aria-label="Course location">
         {moduleId !== undefined && (
           <>
+            {modulesCrumb && (
+              <>
+                <Link href="/modules" className="cp-crumb">Modules</Link>
+                <span className="cp-sep">/</span>
+              </>
+            )}
             <span className="cp-label">Module</span>
             <span className="cp-num">{toRoman(moduleId + 1)}</span>
             {moduleTitle && (
@@ -78,13 +86,17 @@ function TopBarInner({ moduleId, lessonIdx, lessonTitle, lessonNum, moduleTitle 
                 <span className="cp-name">{moduleTitle}</span>
               </>
             )}
-            <span className="cp-fleuron" aria-hidden="true" />
-            <span className="cp-label">Lesson</span>
-            <span className="cp-num">{lessonNum != null ? lessonNum : lessonIdx !== undefined ? lessonIdx + 1 : ''}</span>
-            {lessonTitle && (
+            {(lessonNum != null || lessonIdx !== undefined) && (
               <>
-                <span className="cp-sep">{'\u00b7'}</span>
-                <span className="cp-name">{lessonTitle}</span>
+                <span className="cp-fleuron" aria-hidden="true" />
+                <span className="cp-label">Lesson</span>
+                <span className="cp-num">{lessonNum != null ? lessonNum : lessonIdx !== undefined ? lessonIdx + 1 : ''}</span>
+                {lessonTitle && (
+                  <>
+                    <span className="cp-sep">{'\u00b7'}</span>
+                    <span className="cp-name">{lessonTitle}</span>
+                  </>
+                )}
               </>
             )}
           </>
