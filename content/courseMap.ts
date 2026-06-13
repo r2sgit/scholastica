@@ -85,7 +85,7 @@ export const COURSE_MAP: CourseMapEntry[] = [
     aim: 'How one word can be true of God and of breakfast without lying.' },
   { id: 16, numeral: 'XVII',  title: 'Method of the Summa',              latin: 'Modus Summae',           act: 4, built: false,
     aim: 'Read Aquinas unassisted. The objections are friends.' },
-  { id: 17, numeral: 'XVIII', title: 'Existential Thomism — The Debate', latin: 'De Esse',                act: 4, built: false, destination: true,
+  { id: 17, numeral: 'XVIII', title: 'Existential Thomism — The Debate', latin: 'De Esse',                act: 4, built: true, destination: true,
     aim: 'The destination: a live disputation, a fair fight, and a verdict you can defend.' },
 ];
 

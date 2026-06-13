@@ -106,3 +106,5 @@ emit_module(os.path.join(ROOT, '..', 'm1-content.json'),
             os.path.join(ROOT, 'content', 'modules', 'm1.ts'), 'm1', 'Act and Potency')
 emit_module(os.path.join(ROOT, '..', 'm2-content.json'),
             os.path.join(ROOT, 'content', 'modules', 'm2.ts'), 'm2', 'Being and Essence')
+emit_module(os.path.join(ROOT, '..', 'm17-content.json'),
+            os.path.join(ROOT, 'content', 'modules', 'm17.ts'), 'm17', 'Existential Thomism')

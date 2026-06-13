@@ -12,6 +12,7 @@ import FeedbackPanel from '../../../../components/FeedbackPanel';
 import MCQ from '../../../../components/MCQ';
 import MatchPair from '../../../../components/MatchPair';
 import SyllogismBuilder from '../../../../components/SyllogismBuilder';
+import DialogueBranch from '../../../../components/DialogueBranch';
 import FillBlank from '../../../../components/FillBlank';
 import DrolleryMargin from '../../../../components/DrolleryMargin';
 import DrolleryPendant from '../../../../components/DrolleryPendant';
@@ -288,6 +289,8 @@ function ExerciseRenderer({
       return <MatchPair question={question} onAnswer={onAnswer} disabled={disabled} />;
     case 'syllogism_builder':
       return <SyllogismBuilder question={question} onAnswer={onAnswer} disabled={disabled} />;
+    case 'dialogue_branch':
+      return <DialogueBranch question={question} onAnswer={onAnswer} disabled={disabled} />;
     case 'fill_blank':
       return <FillBlank question={question} onAnswer={onAnswer} disabled={disabled} />;
     default:
