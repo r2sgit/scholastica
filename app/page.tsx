@@ -1,7 +1,11 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import { useRouter } from 'next/navigation';
+import { useEffect, useRef, useState, Suspense } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { readProgress } from '../lib/progress';
+import { getRank, getThesesEarned } from '../lib/gamification';
+import { THESES } from '../content/theses';
+import DrolleryCourt from '../components/DrolleryCourt';
 
 const STORAGE_KEY = 'scholastica_v1';
 
@@ -23,6 +27,26 @@ function setIntroSeen(): void {
     data.introSeen = true;
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
   } catch { /* noop */ }
+}
+
+function toRomanLower(n: number): string {
+  const vals = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
+  const syms = ['m','cm','d','cd','c','xc','l','xl','x','ix','v','iv','i'];
+  let r = '';
+  for (let i = 0; i < vals.length; i++) {
+    while (n >= vals[i]) { r += syms[i]; n -= vals[i]; }
+  }
+  return r;
+}
+
+/** Returning-visitor rank line: `incipiens · vii of xxiv theses earned`
+    (zero earned reads `incipiens · the theses await`). */
+function rankLine(): string {
+  const data = readProgress();
+  const rank = getRank(data, THESES);
+  const count = getThesesEarned(data, THESES).length;
+  if (count === 0) return `${rank} · the theses await`;
+  return `${rank} · ${toRomanLower(count)} of xxiv theses earned`;
 }
 
 /* ── Drifting motes particle system ────────────────────────── */
@@ -134,29 +158,47 @@ function initMotes(canvas: HTMLCanvasElement) {
 
 /* ── Component ─────────────────────────────────────────────── */
 
-export default function LandingScreen() {
+function LandingScreenInner() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
+  // ?door=1 = a deliberate visit via the wordmark: render, never auto-forward.
+  const deliberate = searchParams.get('door') === '1';
+  // 'first' until we know; then 'first' | 'returning'. Resolved client-side so
+  // the static first paint stays neutral.
+  const [mode, setMode] = useState<'first' | 'returning'>('first');
+  const [line, setLine] = useState('');
+
   useEffect(() => {
-    if (getIntroSeen()) {
+    const seen = getIntroSeen();
+    if (seen && !deliberate) {
       router.replace('/modules');
       return;
+    }
+    if (seen) {
+      setMode('returning');
+      setLine(rankLine());
     }
     if (canvasRef.current) {
       const cleanup = initMotes(canvasRef.current);
       return cleanup;
     }
-  }, [router]);
+  }, [router, deliberate]);
 
   function handleBegin() {
     setIntroSeen();
     router.push('/modules');
   }
 
+  const returning = mode === 'returning';
+
   return (
     <div className="ftue-body">
       <canvas id="motes" ref={canvasRef} aria-hidden="true" />
+
+      {/* The Drollery Court grows around the wordmark as modules complete. */}
+      <DrolleryCourt />
 
       <main className="stage" role="main">
         {/* Wordmark */}
@@ -245,19 +287,31 @@ export default function LandingScreen() {
           <p>Scholastica is the way back in. One distinction at a time, in his order and pace.</p>
         </div>
 
-        {/* CTA */}
+        {/* CTA — first visit begins the course; a returning learner simply
+            re-enters. Both lead to the course map. */}
         <button
           className="cta fade-in-3"
           id="beginBtn"
           type="button"
-          aria-label="Begin Module I · Foundations"
+          aria-label={returning ? 'Enter the course' : 'Begin Module I · Foundations'}
           onClick={handleBegin}
         >
-          <span>Begin Module&nbsp;I &middot; <em>Foundations</em></span>
+          {returning ? (
+            <span>Enter</span>
+          ) : (
+            <span>Begin Module&nbsp;I &middot; <em>Foundations</em></span>
+          )}
           <span className="arrow" aria-hidden="true">&rarr;</span>
         </button>
 
-        {/* Colophon */}
+        {/* Returning rank line — the door knows who is arriving. */}
+        {returning && line && (
+          <div className="threshold-rank fade-in-3" aria-label={`Rank: ${line}`}>
+            {line}
+          </div>
+        )}
+
+        {/* FTUE colophon (Threshold-only; distinct from the site colophon) */}
         <div className="colophon fade-in-4">
           <span>XVIII modules</span>
           <span className="sep">&middot;</span>
@@ -267,5 +321,13 @@ export default function LandingScreen() {
         </div>
       </main>
     </div>
+  );
+}
+
+export default function LandingScreen() {
+  return (
+    <Suspense fallback={<div className="ftue-body" />}>
+      <LandingScreenInner />
+    </Suspense>
   );
 }

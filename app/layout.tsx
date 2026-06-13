@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Colophon from "../components/Colophon";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://scholastica.io"),
@@ -29,7 +30,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Colophon />
+      </body>
     </html>
   );
 }

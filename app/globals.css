@@ -233,6 +233,57 @@ a { color: inherit; text-decoration: none; }
   opacity: 0.55;
 }
 
+/* Returning-visitor rank line beneath the CTA (the door learns your name) */
+.threshold-rank {
+  margin-top: 16px;
+  font-family: "Fraunces", serif;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.16em;
+  font-size: 13px;
+  color: var(--ink-faint);
+}
+
+/* ── The Drollery Court ── grows in the Threshold margins as modules
+   complete. Positioned around the centered wordmark, behind the stage. */
+@keyframes drolleryIn {
+  from { opacity: 0; transform: translateY(8px) scale(0.96); }
+  to   { opacity: 0.92; transform: translateY(0) scale(1); }
+}
+.drollery-court {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.court-drollery {
+  position: absolute;
+  opacity: 0.92;
+  animation: drolleryIn 620ms ease 280ms both;
+}
+.court-drollery img { display: block; height: auto; }
+.court-jubilant {
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  transform: translateX(120px);
+  animation: drolleryIn 620ms ease 280ms both;
+  opacity: 0.95;
+  pointer-events: none;
+}
+.court-jubilant img { display: block; height: auto; }
+
+@media (max-width: 480px) {
+  /* Mobile: the court thins to a curated subset; the leftmost/rightmost
+     outliers fall away so the spread never crowds the copy. */
+  .court-drollery { transform: scale(0.82); }
+  .court-drollery:nth-of-type(n+5) { display: none; }
+  .court-jubilant { transform: translateX(70px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .court-drollery, .court-jubilant { animation: none; opacity: 0.92; }
+}
+
 /* ============================================================
    TopBar
    ============================================================ */
@@ -304,6 +355,25 @@ a { color: inherit; text-decoration: none; }
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+/* Quiet section nav (Modules · Theses · Vocabularium) */
+.tb-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.tb-nav-link {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.12em;
+  font-size: 13px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color .15s;
+  white-space: nowrap;
+}
+.tb-nav-link:hover { color: var(--gold-deep); }
+.tb-nav-link.active { color: var(--gold); }
 
 .mute-btn {
   background: none;
@@ -1216,6 +1286,87 @@ a { color: inherit; text-decoration: none; }
 .cm-card.destination { border-color: var(--gold); }
 .cm-card.destination .cm-numeral { color: var(--gold); }
 .cm-card.destination.scriptorio:hover { border-color: var(--gold); }
+
+/* 404 — Non inventum */
+.notfound-stage {
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 72px 24px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn .4s ease both;
+}
+.notfound-drollery { width: 120px; height: auto; opacity: 0.9; margin-bottom: 12px; }
+.notfound-title {
+  font-family: 'Fraunces', serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+.notfound-title em { font-style: italic; }
+.notfound-body {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin: 0 0 28px;
+}
+.notfound-door {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 26px;
+  background: var(--gold);
+  color: var(--paper);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background .2s;
+}
+.notfound-door:hover { background: var(--gold-deep); }
+@media (prefers-reduced-motion: reduce) {
+  .notfound-stage { animation: none; }
+}
+
+/* Site colophon — shared shell footer on every page except the Threshold */
+.site-colophon {
+  margin: 0 auto;
+  padding: 40px 24px 48px;
+  max-width: 1080px;
+  text-align: center;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 12px;
+  color: var(--ink-faint);
+  line-height: 1.7;
+}
+.site-colophon .rule {
+  width: 120px;
+  height: 1px;
+  background: var(--border);
+  margin: 0 auto 16px;
+}
+.site-colophon .sc-wordmark {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+.site-colophon .sc-wordmark em { font-style: italic; color: var(--ink-soft); }
+.site-colophon .sc-line { letter-spacing: 0.04em; }
+.site-colophon .sc-line a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: color .15s, border-color .15s;
+}
+.site-colophon .sc-line a:hover { color: var(--gold-deep); border-bottom-color: var(--gold); }
+.site-colophon .sc-line em { font-style: italic; }
+.site-colophon .sc-fin {
+  margin-top: 8px;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.18em;
+  color: var(--ink-faint);
+}
 
 /* Colophon (interim footer until the G0 app-shell pass) */
 .cm-colophon {

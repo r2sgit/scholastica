@@ -1,7 +1,7 @@
 'use client';
 
 import { Suspense, useState, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, usePathname } from 'next/navigation';
 import Link from 'next/link';
 
 const STORAGE_KEY = 'scholastica_v1';
@@ -48,8 +48,15 @@ function toRoman(n: number): string {
   return r;
 }
 
+const NAV_ITEMS: { href: string; label: string }[] = [
+  { href: '/modules', label: 'Modules' },
+  { href: '/theses', label: 'Theses' },
+  { href: '/vocabularium', label: 'Vocabularium' },
+];
+
 function TopBarInner({ moduleId, lessonIdx, lessonTitle, lessonNum, moduleTitle, modulesCrumb }: TopBarProps) {
   const searchParams = useSearchParams();
+  const pathname = usePathname();
   const isReview = searchParams.get('review') === '1';
   const [muted, setMutedState] = useState(false);
 
@@ -63,9 +70,21 @@ function TopBarInner({ moduleId, lessonIdx, lessonTitle, lessonNum, moduleTitle,
     setMutedPref(next);
   }
 
+  // Active route for the quiet nav: a section is active when the path starts
+  // with its href (so /modules/2 and /lesson highlight Modules sensibly).
+  function isActive(href: string): boolean {
+    if (href === '/modules') {
+      return pathname === '/modules' || pathname.startsWith('/modules/') ||
+        pathname.startsWith('/lesson/') || pathname.startsWith('/complete/');
+    }
+    return pathname === href || pathname.startsWith(href + '/');
+  }
+
   return (
     <div className="topbar">
-      <Link href="/modules" className="wordmark" style={{ textDecoration: 'none', color: 'inherit' }}>
+      {/* Wordmark returns to the Threshold (a place, not an interstitial).
+          ?door=1 renders it without auto-forward. */}
+      <Link href="/?door=1" className="wordmark" style={{ textDecoration: 'none', color: 'inherit' }}>
         Scholastica<span className="dot" aria-hidden="true" />
       </Link>
 
@@ -103,12 +122,25 @@ function TopBarInner({ moduleId, lessonIdx, lessonTitle, lessonNum, moduleTitle,
         )}
       </nav>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, justifySelf: 'end' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 14, justifySelf: 'end' }}>
+        <nav className="tb-nav" aria-label="Sections">
+          {NAV_ITEMS.map(item => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`tb-nav-link${isActive(item.href) ? ' active' : ''}`}
+              aria-current={isActive(item.href) ? 'page' : undefined}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
         {isReview && (
           <span className="env-badge show">
             m{moduleId ?? '?'}{' \u00B7 '}prod
           </span>
         )}
+        {/* Settings slot reserved (no settings page yet). */}
         <button
           className="mute-btn"
           onClick={toggleMute}

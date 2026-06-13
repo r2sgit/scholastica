@@ -5,7 +5,6 @@ import { MODULES } from '../../content/modules';
 import { COURSE_MAP, ACTS, type CourseMapEntry } from '../../content/courseMap';
 import { useProgress, type ModuleProgress } from '../../lib/progress';
 import TopBar from '../../components/TopBar';
-import Colophon from '../../components/Colophon';
 
 function toRoman(n: number): string {
   const vals = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
@@ -182,8 +181,6 @@ export default function CourseMapPage() {
             </div>
           </div>
         ))}
-
-        <Colophon />
       </div>
     </div>
   );

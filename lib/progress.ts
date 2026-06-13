@@ -34,14 +34,34 @@ export interface StorageSchema {
     muted: boolean;
     latinDensity: 'ample' | 'balanced' | 'spare';
   };
+  /* ── Gamification fields (G-session). All optional-with-default for
+     migration safety: readStorage() merges over getDefault(), so a
+     returning learner who has none of these never loses progress. ── */
+  sineErrore: Record<number, boolean[]>;   // moduleId -> per-lesson gold marks, sticky once earned
+  thesesEarned: number[];                  // thesis n's whose unlock ceremony has PLAYED (ceremony-once guard)
+  habitus: { days: string[] };             // ISO dates (YYYY-MM-DD, local) on which >=1 lesson completed; append-only, dedup'd, capped
 }
+
+const HABITUS_CAP = 400;
 
 function getDefault(): StorageSchema {
   return {
     introSeen: false,
     progress: {},
     prefs: { muted: false, latinDensity: 'balanced' },
+    sineErrore: {},
+    thesesEarned: [],
+    habitus: { days: [] },
   };
+}
+
+/** Local-time ISO date (YYYY-MM-DD), not UTC: the habit follows the
+    learner's own calendar day. */
+export function localISODate(d: Date = new Date()): string {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
 }
 
 function readStorage(): StorageSchema {
@@ -119,6 +139,30 @@ export function useProgress() {
     mp.lessonsComplete[lessonIdx] = true;
     mp.scores[lessonIdx] = score;
     next.progress[moduleId] = mp;
+
+    // Sine Errore mark: a perfect first pass earns the gold mark. Sticky —
+    // a later imperfect retake never unsets it (precision was demonstrated,
+    // the trace persists). §20.4 / G1.
+    if (score.missedIds.length === 0 && score.correct === score.total) {
+      const marks = { ...(next.sineErrore || {}) };
+      const lessonMarks = [...(marks[moduleId] || [])];
+      lessonMarks[lessonIdx] = true;
+      marks[moduleId] = lessonMarks;
+      next.sineErrore = marks;
+    }
+
+    // Habitus: record today (local date) as a day of practice. Append-only,
+    // dedup'd, capped. Feeds the Habitus Meter (§20.6 / G4); renders nothing
+    // until that vine ships.
+    const today = localISODate();
+    const days = next.habitus?.days || [];
+    if (!days.includes(today)) {
+      const appended = [...days, today];
+      next.habitus = { days: appended.length > HABITUS_CAP ? appended.slice(-HABITUS_CAP) : appended };
+    } else {
+      next.habitus = { days };
+    }
+
     save(next);
   }, [data, save]);
 
@@ -136,9 +180,22 @@ export function useProgress() {
     save({ ...data, prefs: { ...data.prefs, ...update } });
   }, [data, save]);
 
+  /** Mark a thesis's unlock ceremony as having played (ceremony-once guard).
+      Accepts multiple n's at once; dedup'd. G2. */
+  const markThesesCeremonyPlayed = useCallback((ns: number[]) => {
+    const have = new Set(data.thesesEarned || []);
+    const merged = [...have];
+    let changed = false;
+    for (const n of ns) if (!have.has(n)) { merged.push(n); changed = true; }
+    if (changed) save({ ...data, thesesEarned: merged.sort((a, b) => a - b) });
+  }, [data, save]);
+
   return {
+    data,
+    save,
     getModuleProgress,
     markLessonComplete,
+    markThesesCeremonyPlayed,
     isIntroSeen,
     setIntroSeen,
     prefs,
@@ -147,6 +204,12 @@ export function useProgress() {
 }
 
 /* ── Standalone helpers (no hook needed) ─────────────────── */
+
+/** Read the full unified schema, migrations applied, defaults merged.
+    For pages that derive rank / earned theses outside the hook. */
+export function readProgress(): StorageSchema {
+  return readStorage();
+}
 
 export function getMuted(): boolean {
   if (typeof window === 'undefined') return false;
