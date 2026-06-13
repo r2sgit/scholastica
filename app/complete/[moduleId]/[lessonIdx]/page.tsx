@@ -1,9 +1,12 @@
 'use client';
 
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, Suspense } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { getModule } from '../../../../content/modules';
 import { playSound, type SoundId } from '../../../../lib/sound';
+import { readProgress } from '../../../../lib/progress';
+import { getRank, type Rank } from '../../../../lib/gamification';
+import { THESES } from '../../../../content/theses';
 
 /* ── Vine Divider ─────────────────────────────────────────── */
 function VineDivider() {
@@ -70,6 +73,14 @@ function FinScreenInner() {
   const lesson = mod?.lessons[lessonIdx];
   const isPerfect = correct === total;
   const isLastLesson = mod ? lessonIdx >= mod.lessons.length - 1 : false;
+
+  // Rank is read from storage on the client (after markLessonComplete has
+  // written this lesson). Shown only on module-complete fins, never every
+  // lesson, never as a badge. §20.2 / G1.
+  const [rank, setRank] = useState<Rank | null>(null);
+  useEffect(() => {
+    setRank(getRank(readProgress(), THESES));
+  }, []);
 
   // Play sound on mount
   useEffect(() => {
@@ -180,6 +191,39 @@ function FinScreenInner() {
           }}
           dangerouslySetInnerHTML={{ __html: fin.body }}
         />
+
+        {/* Rank — only on a module-complete fin. perfectus carries the
+            self-aware joke; lesser ranks get one quiet small-caps line. */}
+        {isLastLesson && rank && (
+          rank === 'perfectus' ? (
+            <p
+              style={{
+                fontSize: 16,
+                color: 'var(--ink-soft)',
+                lineHeight: 1.55,
+                fontStyle: 'italic',
+                maxWidth: 480,
+                margin: '0 auto 8px',
+              }}
+            >
+              You are now, by the course&rsquo;s own reckoning, <em>perfectus</em>.
+              Aquinas reserved the word for the saints in glory, so do try to wear
+              it lightly.
+            </p>
+          ) : (
+            <div
+              style={{
+                fontVariantCaps: 'all-small-caps',
+                letterSpacing: '0.16em',
+                fontSize: 13,
+                color: 'var(--ink-faint)',
+                margin: '4px 0 0',
+              }}
+            >
+              {rank}
+            </div>
+          )
+        )}
 
         {/* Score pips */}
         <ScorePips correct={correct} total={total} missedIds={missedIds} />

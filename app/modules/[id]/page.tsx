@@ -68,7 +68,7 @@ const M0_BLURBS: Record<string, string> = {
 export default function ModuleDetailPage() {
   const params = useParams();
   const router = useRouter();
-  const { getModuleProgress } = useProgress();
+  const { data, getModuleProgress } = useProgress();
 
   const moduleId = Number(params.id);
   const mod = getModule(moduleId);
@@ -83,6 +83,7 @@ export default function ModuleDetailPage() {
   const mp = getModuleProgress(moduleId);
   const lessonsComplete = mp?.lessonsComplete || [];
   const scores = mp?.scores || [];
+  const sineMarks = data.sineErrore?.[moduleId] || [];
   const doneCount = lessonsComplete.filter(Boolean).length;
   const totalLessons = mod.lessons.length;
   const pct = totalLessons > 0 ? Math.round(100 * doneCount / totalLessons) : 0;
@@ -93,11 +94,12 @@ export default function ModuleDetailPage() {
   const firstIncomplete = mod.lessons.findIndex((_, i) => !lessonsComplete[i]);
   const nextIdx = firstIncomplete === -1 ? 0 : firstIncomplete;
 
-  function getLessonStatus(idx: number): 'complete' | 'mistakes' | 'available' {
+  // Sine errore is sticky: a perfect first pass earns the gold mark and a
+  // later imperfect retake never removes it. 'done' = complete without the
+  // mark; 'available' = not yet begun.
+  function getLessonStatus(idx: number): 'sine' | 'done' | 'available' {
     if (!lessonsComplete[idx]) return 'available';
-    const sc = scores[idx];
-    if (sc && sc.correct === sc.total) return 'complete';
-    return 'mistakes';
+    return sineMarks[idx] ? 'sine' : 'done';
   }
 
   function getScoreText(idx: number): string {
@@ -198,15 +200,15 @@ export default function ModuleDetailPage() {
                 <div className="rightcol">
                   <span className="state">
                     <span className="dot" />
-                    {status === 'complete' ? 'Complete' : status === 'mistakes' ? 'Complete · review' : 'Available'}
+                    {status === 'available' ? 'Available' : 'Complete'}
                   </span>
                   <span className="score-line">
                     {status === 'available' ? (
                       'Not yet begun'
-                    ) : status === 'complete' ? (
+                    ) : status === 'sine' ? (
                       <><b>{getScoreText(idx)}</b> &middot; <em>sine errore</em></>
                     ) : (
-                      <><b>{getScoreText(idx)}</b> &middot; one to revisit</>
+                      <b>{getScoreText(idx)}</b>
                     )}
                   </span>
                 </div>

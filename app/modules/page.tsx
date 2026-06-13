@@ -3,7 +3,9 @@
 import { useRouter } from 'next/navigation';
 import { MODULES } from '../../content/modules';
 import { COURSE_MAP, ACTS, type CourseMapEntry } from '../../content/courseMap';
-import { useProgress, type ModuleProgress } from '../../lib/progress';
+import { useProgress, type ModuleProgress, type StorageSchema } from '../../lib/progress';
+import { getRank } from '../../lib/gamification';
+import { THESES } from '../../content/theses';
 import TopBar from '../../components/TopBar';
 
 function toRoman(n: number): string {
@@ -21,20 +23,25 @@ interface ModuleState {
   title: string;
   total: number;
   done: number;
-  /** per-lesson: 'done' (perfect) | 'part' (complete with mistakes) | 'todo' */
-  pips: ('done' | 'part' | 'todo')[];
-  allPerfect: boolean;
+  /** per-lesson dot: 'sine' (sticky perfect first pass, gold mark) |
+      'done' (complete, with mistakes) | 'todo' (not yet begun) */
+  pips: ('sine' | 'done' | 'todo')[];
+  /** every lesson carries a sine errore mark → module-level flourish */
+  allSineErrore: boolean;
 }
 
-function buildState(id: number, mp: ModuleProgress | undefined): ModuleState | undefined {
+function buildState(
+  id: number,
+  mp: ModuleProgress | undefined,
+  marks: boolean[] | undefined,
+): ModuleState | undefined {
   const mod = MODULES.find(m => m.id === id);
   if (!mod) return undefined;
   const lessonsComplete = mp?.lessonsComplete || [];
-  const scores = mp?.scores || [];
-  const pips = mod.lessons.map((_, i): 'done' | 'part' | 'todo' => {
+  const sine = marks || [];
+  const pips = mod.lessons.map((_, i): 'sine' | 'done' | 'todo' => {
     if (!lessonsComplete[i]) return 'todo';
-    const sc = scores[i];
-    return sc && sc.correct === sc.total ? 'done' : 'part';
+    return sine[i] ? 'sine' : 'done';
   });
   const done = pips.filter(p => p !== 'todo').length;
   return {
@@ -43,7 +50,7 @@ function buildState(id: number, mp: ModuleProgress | undefined): ModuleState | u
     total: mod.lessons.length,
     done,
     pips,
-    allPerfect: done === mod.lessons.length && pips.every(p => p === 'done'),
+    allSineErrore: done === mod.lessons.length && pips.every(p => p === 'sine'),
   };
 }
 
@@ -113,13 +120,14 @@ function ModuleCard({ entry, state }: { entry: CourseMapEntry; state?: ModuleSta
   if (entry.built && state) {
     if (state.done === 0) status = 'Available';
     else if (state.done < state.total) status = 'In progress';
-    else { status = state.allPerfect ? 'Complete · sine errore' : 'Complete'; complete = true; }
+    else { status = state.allSineErrore ? 'Complete · sine errore' : 'Complete'; complete = true; }
   }
 
   const cls = [
     'cm-card',
     !entry.built && 'scriptorio',
     complete && 'complete',
+    state?.allSineErrore && 'sine-errore',
     entry.destination && 'destination',
   ].filter(Boolean).join(' ');
 
@@ -139,7 +147,7 @@ function ModuleCard({ entry, state }: { entry: CourseMapEntry; state?: ModuleSta
         {entry.built && state && (
           <div className="cm-pips">
             {state.pips.map((p, i) => (
-              <span key={i} className={`cm-pip${p === 'done' ? ' done' : p === 'part' ? ' part' : ''}`} />
+              <span key={i} className={`cm-pip${p === 'sine' ? ' sine' : p === 'done' ? ' done' : ''}`} />
             ))}
           </div>
         )}
@@ -152,18 +160,26 @@ function ModuleCard({ entry, state }: { entry: CourseMapEntry; state?: ModuleSta
 /* ── Course map page ──────────────────────────────────────── */
 
 export default function CourseMapPage() {
-  const { getModuleProgress } = useProgress();
+  const { data, getModuleProgress } = useProgress();
 
   const states = MODULES
-    .map(m => buildState(m.id, getModuleProgress(m.id)))
+    .map(m => buildState(m.id, getModuleProgress(m.id), data.sineErrore?.[m.id]))
     .filter((s): s is ModuleState => !!s);
   const stateById = new Map(states.map(s => [s.id, s]));
+
+  const rank = getRank(data as StorageSchema, THESES);
 
   return (
     <div className="map-page">
       <TopBar />
 
       <div className="cm-stage" style={{ animation: 'fadeIn .4s ease both' }}>
+        {/* Module-map header strip: rank shown subtly, never as a badge or a
+            progress-bar-to-next-rank. (G4 hangs the habitus vine here too.) */}
+        <div className="cm-header">
+          <span className="cm-rank" aria-label={`Rank: ${rank}`}>{rank}</span>
+        </div>
+
         <ContinueHero states={states} />
 
         {ACTS.map(act => (
