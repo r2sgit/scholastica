@@ -211,6 +211,19 @@ export function readProgress(): StorageSchema {
   return readStorage();
 }
 
+/** Record thesis ceremonies as played (ceremony-once guard), reading and
+    writing localStorage directly. Idempotent. Standalone (not via the hook)
+    so the Theses Board can record reliably from a mount effect without
+    stale-closure or effect-cleanup hazards. */
+export function recordThesesCeremonyPlayed(ns: number[]): void {
+  if (typeof window === 'undefined') return;
+  const data = readStorage();
+  const have = new Set(data.thesesEarned || []);
+  let changed = false;
+  for (const n of ns) if (!have.has(n)) { have.add(n); changed = true; }
+  if (changed) writeStorage({ ...data, thesesEarned: [...have].sort((a, b) => a - b) });
+}
+
 export function getMuted(): boolean {
   if (typeof window === 'undefined') return false;
   try {

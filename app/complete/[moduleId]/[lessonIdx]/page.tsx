@@ -4,9 +4,10 @@ import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState, Suspense } from 'react';
 import { getModule } from '../../../../content/modules';
 import { playSound, type SoundId } from '../../../../lib/sound';
+import Link from 'next/link';
 import { readProgress } from '../../../../lib/progress';
-import { getRank, type Rank } from '../../../../lib/gamification';
-import { THESES } from '../../../../content/theses';
+import { getRank, getThesesEarned, type Rank } from '../../../../lib/gamification';
+import { THESES, type Thesis } from '../../../../content/theses';
 
 /* ── Vine Divider ─────────────────────────────────────────── */
 function VineDivider() {
@@ -78,9 +79,22 @@ function FinScreenInner() {
   // written this lesson). Shown only on module-complete fins, never every
   // lesson, never as a badge. §20.2 / G1.
   const [rank, setRank] = useState<Rank | null>(null);
+  // Theses this module completion newly satisfies (taught by this module,
+  // now earned, not yet ceremonied). The announcement only; the board itself
+  // owns the illuminated-initial animation and the ceremony-once guard.
+  const [newTheses, setNewTheses] = useState<Thesis[]>([]);
   useEffect(() => {
-    setRank(getRank(readProgress(), THESES));
-  }, []);
+    const data = readProgress();
+    setRank(getRank(data, THESES));
+    if (isLastLesson) {
+      const earned = new Set(getThesesEarned(data, THESES));
+      const played = new Set(data.thesesEarned || []);
+      const fresh = THESES.filter(
+        t => t.modules_teach.includes(moduleId) && earned.has(t.n) && !played.has(t.n)
+      ).sort((a, b) => a.n - b.n);
+      setNewTheses(fresh);
+    }
+  }, [isLastLesson, moduleId]);
 
   // Play sound on mount
   useEffect(() => {
@@ -223,6 +237,22 @@ function FinScreenInner() {
               {rank}
             </div>
           )
+        )}
+
+        {/* Newly earned theses — the unlock announcement, with a door to the
+            board where the illuminated entry animates. */}
+        {newTheses.length > 0 && (
+          <div className="fin-theses">
+            {newTheses.map(t => (
+              <div className="fin-thesis" key={t.n}>
+                <div className="fin-thesis-earned">Thesis {t.numeral} earned</div>
+                <p className="fin-thesis-line">{t.unlock_line}</p>
+              </div>
+            ))}
+            <Link href="/theses" className="fin-thesis-door">
+              Enter the Theses Board &rarr;
+            </Link>
+          </div>
         )}
 
         {/* Score pips */}

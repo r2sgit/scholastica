@@ -1325,6 +1325,185 @@ a { color: inherit; text-decoration: none; }
 .cm-card.destination .cm-numeral { color: var(--gold); }
 .cm-card.destination.scriptorio:hover { border-color: var(--gold); }
 
+/* Fin-screen thesis-unlock announcement */
+.fin-theses {
+  margin: 8px auto 4px;
+  max-width: 480px;
+  text-align: center;
+}
+.fin-thesis { margin-bottom: 14px; }
+.fin-thesis-earned {
+  font-family: 'Emeritus', serif;
+  font-size: 18px;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.fin-thesis-line {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.fin-thesis-door {
+  display: inline-block;
+  margin-top: 6px;
+  font-family: 'Fraunces', serif;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.12em;
+  font-size: 14px;
+  color: var(--gold-deep);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 1px;
+}
+.fin-thesis-door:hover { color: var(--gold); }
+
+/* ═══ Theses Board (/theses) — §20.1 / G2 ═══ */
+.theses-stage {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 16px 28px 24px;
+}
+.theses-head { text-align: center; margin: 8px 0 32px; }
+.theses-title {
+  font-family: 'Fraunces', serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 14px;
+}
+.theses-xxiv {
+  font-family: 'Emeritus', serif;
+  font-size: 38px;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+}
+.theses-sub {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--ink-soft);
+  max-width: 540px;
+  margin: 10px auto 0;
+  line-height: 1.5;
+}
+
+.theses-group { margin-top: 30px; }
+.theses-group-label {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.22em;
+  font-size: 13px;
+  color: var(--gold-deep);
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--border-soft);
+}
+.theses-list { display: flex; flex-direction: column; gap: 12px; }
+
+.thesis-card {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 18px;
+  align-items: start;
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+.thesis-numeral {
+  font-family: 'Emeritus', serif;
+  font-size: 30px;
+  line-height: 1;
+  text-align: center;
+}
+
+/* Earned — illuminated */
+.thesis-card.earned {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 14px rgba(59, 50, 40, 0.05);
+}
+.thesis-card.earned .thesis-numeral {
+  color: var(--gold);
+  padding: 8px 4px;
+  border-radius: 8px;
+  background: color-mix(in oklab, var(--gold) 9%, var(--paper));
+  border: 1px solid color-mix(in oklab, var(--gold) 35%, var(--border));
+  box-shadow: inset 0 0 0 2px var(--paper), inset 0 0 0 3px color-mix(in oklab, var(--vermillion) 22%, transparent);
+  text-shadow: 0 1px 0 color-mix(in oklab, var(--gold-deep) 60%, transparent);
+}
+.thesis-latin {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.thesis-english {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin-top: 8px;
+}
+.thesis-unlock {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--gold-deep);
+  border-left: 2px solid var(--gold);
+  padding-left: 12px;
+  margin: 14px 0 2px;
+}
+
+/* Locked — dimmed and textless */
+.thesis-card.locked {
+  background: transparent;
+  border: 1px dashed var(--border);
+  align-items: center;
+}
+.thesis-card.locked .thesis-numeral { color: var(--ink-faint); opacity: 0.5; }
+.thesis-locked-line {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.12em;
+  font-size: 13px;
+  color: var(--ink-faint);
+}
+
+/* Unlock ceremony — illuminated-initial animation */
+@keyframes illuminate {
+  0%   { transform: scale(0.7); opacity: 0; }
+  55%  { transform: scale(1.12); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes illuminateGlow {
+  0%   { box-shadow: inset 0 0 0 2px var(--paper), 0 0 0 0 color-mix(in oklab, var(--gold) 55%, transparent); }
+  60%  { box-shadow: inset 0 0 0 2px var(--paper), 0 0 18px 4px color-mix(in oklab, var(--gold) 45%, transparent); }
+  100% { box-shadow: inset 0 0 0 2px var(--paper), 0 0 0 0 color-mix(in oklab, var(--gold) 0%, transparent); }
+}
+.thesis-card.ceremony { animation: fadeIn 600ms ease both; }
+.thesis-card.ceremony .thesis-numeral {
+  animation: illuminate 900ms cubic-bezier(0.2, 0.7, 0.25, 1) both, illuminateGlow 1400ms ease 200ms both;
+}
+.thesis-card.ceremony .thesis-unlock { animation: fadeIn 500ms ease 500ms both; }
+
+@media (max-width: 560px) {
+  .thesis-card { grid-template-columns: 48px 1fr; gap: 12px; padding: 14px 14px; }
+  .thesis-numeral { font-size: 24px; }
+  .theses-stage { padding: 12px 16px 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .thesis-card.ceremony,
+  .thesis-card.ceremony .thesis-numeral,
+  .thesis-card.ceremony .thesis-unlock { animation: none; }
+}
+
 /* 404 — Non inventum */
 .notfound-stage {
   max-width: 540px;
