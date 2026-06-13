@@ -1295,13 +1295,32 @@ a { color: inherit; text-decoration: none; }
 }
 .cm-card.sine-errore .cm-status { color: var(--gold-deep); }
 
-/* Module-map header strip (rank, and later the habitus vine) */
+/* Module-map header strip (habitus vine left, rank right) */
 .cm-header {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  min-height: 22px;
+  min-height: 44px;
   margin: 2px 0 4px;
+}
+.cm-rank { margin-left: auto; }  /* always pinned right, vine present or not */
+
+/* Habitus Meter — fullness only, no numbers, no tooltip */
+.habitus { display: flex; flex-direction: column; align-items: center; gap: 1px; }
+.habitus-vine { display: block; overflow: visible; }
+.habitus-label {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.18em;
+  font-size: 11px;
+  color: var(--ink-faint);
+}
+.habitus-leaf { opacity: 0; animation: fadeIn 420ms ease both; }
+.habitus-berry { animation: berryIn 480ms ease 700ms both; }
+.habitus-vine.no-anim .habitus-leaf { animation: none; opacity: 0.85; }
+.habitus-vine.no-anim .habitus-berry { animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  .habitus-leaf { animation: none; opacity: 0.85; }
+  .habitus-berry { animation: none; }
 }
 .cm-rank {
   font-family: 'Fraunces', Georgia, serif;

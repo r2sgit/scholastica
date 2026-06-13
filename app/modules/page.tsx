@@ -7,6 +7,7 @@ import { useProgress, type ModuleProgress, type StorageSchema } from '../../lib/
 import { getRank } from '../../lib/gamification';
 import { THESES } from '../../content/theses';
 import TopBar from '../../components/TopBar';
+import HabitusVine from '../../components/HabitusVine';
 
 function toRoman(n: number): string {
   const vals = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
@@ -174,9 +175,11 @@ export default function CourseMapPage() {
       <TopBar />
 
       <div className="cm-stage" style={{ animation: 'fadeIn .4s ease both' }}>
-        {/* Module-map header strip: rank shown subtly, never as a badge or a
-            progress-bar-to-next-rank. (G4 hangs the habitus vine here too.) */}
+        {/* Module-map header strip: the habitus vine on the left (fullness
+            only, no numbers) and the rank on the right (subtle, never a badge
+            or a progress-bar-to-next-rank). */}
         <div className="cm-header">
+          <HabitusVine />
           <span className="cm-rank" aria-label={`Rank: ${rank}`}>{rank}</span>
         </div>
 
