@@ -1,0 +1,290 @@
+{
+  "meta": {
+    "title": "The 24 Thomistic Theses",
+    "decree": "Postquam sanctissimus, Sacred Congregation of Studies, July 27, 1914",
+    "decree_citation": "AAS 6 (1914) 383-386; confirmed as normae directivae AAS 8 (1916) 157",
+    "english_translation": "P. Lumbreras, O.P., 'The Twenty-Four Fundamental Theses of Official Catholic Philosophy' (standard English). Punctuation lightly normalized: em-dashes replaced per handbook section 10; wording untouched.",
+    "latin_verification": "Latin triangulated from two independent transcriptions (franciscan-archive.org/thomas/24theses.html and exlaodicea.wordpress.com), each correcting the other's typos. Three judgment calls, flagged loudly below in verification_flags. NEVER paraphrase these texts; they are quoted doctrine.",
+    "verification_flags": [
+      "THESIS XXII: RESOLVED 2026-06-13 (R2 session). The disputed motion clause is confirmed correct: 'a rebus quae moventur et sui motus principium adaequatum esse non possunt, ad primum motorem immobilem'. Verified against a third independent source (Collin, Manuel de philosophie thomiste, Tequi 1926) which agrees verbatim, plus the laodicea transcription (citing AAS 8 (1916) 157) which matches this JSON character-for-character. The franciscan-archive variant ('ad sui motus principium et primum motorem immobilem') was the corruption; outvoted 2-to-1 and contradicted by the Lumbreras English. Treat as source-final for the Theses Board. One non-substantive variant noted: tail reads 'dirigit ad finem' (AAS/laodicea printing, retained here); Collin's 1926 manual reads 'in finem'. We follow AAS. Residual caveat: compared three published transcriptions, not a photograph of the AAS page; risk on the disputed clause is effectively nil.",
+      "THESIS IV: RESOLVED 2026-06-13. 'proportionalitatis' confirmed against Collin (Tequi 1926): 'analogia tum attributionis tum proportionalitatis'. The online-transcription corruption ('proportionalitis' / 'proportionalitas') is overruled.",
+      "THESIS III: RESOLVED 2026-06-13. 'naturam habent qua esse coarctatur' (ablative 'qua', not 'quae') confirmed against Collin (Tequi 1926), which reads 'qua' verbatim.",
+      "Orthography normalized to i-form (subiecto not subjecto), 'exsistit' retained in Thesis II per franciscan transcription; these are conventional variants, not substantive."
+    ],
+    "mapping_rules": {
+      "modules_teach": "Gating set per handbook section 20.1: the thesis unlocks when ALL listed modules are complete. Content module ids 0-17 (0-indexed; renumber alongside the section 16 renumbering when it lands).",
+      "modules_touch": "Non-gating: modules that revisit or deepen the thesis. M17 recapitulates the deep theses; it never gates an unlock, or everything would pile up at the end.",
+      "provisional": "True when the gating set includes any unbuilt module (blueprint-level coarse mapping, per blueprint header). Verify each row against the decree text during that module's content pass; that verification is Claude-side diligence per decisions doc section 2.",
+      "groups": "Lumbreras' own division: ontology (I-VII), cosmology (VIII-XII), psychology (XIII-XXI), theodicy (XXII-XXIV)."
+    },
+    "unlock_lines": "One sentence each, Commentator voice per handbook section 7 (Chestertonian: warm, witty, never sneering, deflates itself first). Em-dash-free. Spoken at the section 20.1 unlock ceremony.",
+    "authored": "G-session, 2026-06-12 (Fable window). Claude-proposed mapping under delegated diligence; lines authored this session."
+  },
+  "theses": [
+    {
+      "n": 1,
+      "numeral": "I",
+      "group": "ontology",
+      "latin": "Potentia et actus ita dividunt ens, ut quidquid est, vel sit actus purus, vel ex potentia et actu tamquam primis atque intrinsecis principiis necessario coalescat.",
+      "english": "Potency and Act so divide being that whatsoever exists either is a Pure Act, or is necessarily composed of Potency and Act, as to its primordial and intrinsic principles.",
+      "modules_teach": [1],
+      "modules_touch": [2, 17],
+      "provisional": false,
+      "unlock_line": "You have learned the one sentence that sorts everything in existence into two piles, and one of the piles has a single occupant."
+    },
+    {
+      "n": 2,
+      "numeral": "II",
+      "group": "ontology",
+      "latin": "Actus, utpote perfectio, non limitatur nisi per potentiam, quae est capacitas perfectionis. Proinde in quo ordine actus est purus, in eodem nonnisi illimitatus et unicus exsistit; ubi vero est finitus ac multiplex, in veram incidit cum potentia compositionem.",
+      "english": "Act, because it is perfection, is not limited except by Potency, which is capacity for perfection. Therefore, in the order in which the Act is pure, it is unlimited and unique; but in that in which it is finite and manifold, it comes into a true composition with Potency.",
+      "modules_teach": [1, 2],
+      "modules_touch": [17],
+      "provisional": false,
+      "unlock_line": "Nothing limits a perfection except a capacity for receiving it, which is why your coffee cools and God does not."
+    },
+    {
+      "n": 3,
+      "numeral": "III",
+      "group": "ontology",
+      "latin": "Quapropter in absoluta ipsius esse ratione unus subsistit Deus, unus est simplicissimus, cetera cuncta quae ipsum esse participant, naturam habent qua esse coarctatur, ac tamquam distinctis realiter principiis, essentia et esse constant.",
+      "english": "Wherefore, in the exclusive domain of existence itself God alone subsists, He alone is the most simple. Everything else, which participates in existence, has a nature whereby existence is restricted, and is composed of essence and existence as of two really distinct principles.",
+      "modules_teach": [2],
+      "modules_touch": [14, 17],
+      "provisional": false,
+      "unlock_line": "What a thing is and that it is are really distinct in everything except the One in whom they were never two."
+    },
+    {
+      "n": 4,
+      "numeral": "IV",
+      "group": "ontology",
+      "latin": "Ens, quod denominatur ab esse, non univoce de Deo ac de creaturis dicitur, nec tamen prorsus aequivoce, sed analogice, analogia tum attributionis tum proportionalitatis.",
+      "english": "Being, which derives its name from existence, is not predicated univocally of God and creatures; nor yet merely equivocally, but analogically, by the analogy both of attribution and of proportionality.",
+      "modules_teach": [15],
+      "modules_touch": [6, 17],
+      "provisional": true,
+      "unlock_line": "You can now say that breakfast is good and that God is good without lying in either direction."
+    },
+    {
+      "n": 5,
+      "numeral": "V",
+      "group": "ontology",
+      "latin": "Est praeterea in omni creatura realis compositio subiecti subsistentis cum formis secundario additis, sive accidentibus: ea vero, nisi esse realiter in essentia distincta reciperetur, intelligi non posset.",
+      "english": "There is, moreover, in every creature a real composition of subsisting subject with forms secondarily added, that is, accidents; but such a composition could not be understood unless the existence were received into a distinct essence.",
+      "modules_teach": [4],
+      "modules_touch": [2],
+      "provisional": true,
+      "unlock_line": "The apple's blush comes and goes while the apple remains, and you have just earned the metaphysics of both facts."
+    },
+    {
+      "n": 6,
+      "numeral": "VI",
+      "group": "ontology",
+      "latin": "Praeter absoluta accidentia est etiam relativum, sive ad aliquid. Quamvis enim ad aliquid non significet secundum propriam rationem aliquid alicui inhaerens, saepe tamen causam in rebus habet, et ideo realem entitatem distinctam a subiecto.",
+      "english": "Besides the absolute accidents there is also a relative accident, or 'toward something.' For although 'toward something' does not mean, by its own nature, anything inhering in something, frequently, however, it has a cause in things, and, therefore, a real entity distinct from the subject.",
+      "modules_teach": [4],
+      "modules_touch": [],
+      "provisional": true,
+      "unlock_line": "Fatherhood is not a thing lodged inside the father, yet it is perfectly real, and you can now defend that without blinking."
+    },
+    {
+      "n": 7,
+      "numeral": "VII",
+      "group": "ontology",
+      "latin": "Creatura spiritualis est in sua essentia omnino simplex. Sed remanet in ea compositio duplex: essentiae cum esse et substantiae cum accidentibus.",
+      "english": "The spiritual creature is as to its essence altogether simple. Yet there remains a twofold composition in it: that, namely, of essence with existence and that of substance with accidents.",
+      "modules_teach": [2],
+      "modules_touch": [8, 17],
+      "provisional": false,
+      "unlock_line": "Even the angels are composite, which should comfort you and humble them in roughly equal measure."
+    },
+    {
+      "n": 8,
+      "numeral": "VIII",
+      "group": "cosmology",
+      "latin": "Creatura vero corporalis est quoad ipsam essentiam composita potentia et actu; quae potentia et actus ordinis essentiae, materiae et formae nominibus designantur.",
+      "english": "The corporeal creature, on the contrary, is in its very essence composed of Potency and Act. Such a Potency and Act of the essential order are designated by the names of matter and form.",
+      "modules_teach": [3],
+      "modules_touch": [1],
+      "provisional": true,
+      "unlock_line": "Every body you have ever met is a partnership of stuff and shape so intimate that neither partner can exist alone."
+    },
+    {
+      "n": 9,
+      "numeral": "IX",
+      "group": "cosmology",
+      "latin": "Earum partium neutra per se esse habet, nec per se producitur vel corrumpitur, nec ponitur in praedicamento nisi reductive ut principium substantiale.",
+      "english": "Neither of those parts has existence, properly speaking; nor is produced or destroyed; nor is placed in a Category except by way of reduction, as a substantial principle.",
+      "modules_teach": [3],
+      "modules_touch": [],
+      "provisional": true,
+      "unlock_line": "Matter and form are principles of a thing rather than things, which is why no one has ever tripped over a form."
+    },
+    {
+      "n": 10,
+      "numeral": "X",
+      "group": "cosmology",
+      "latin": "Etsi corpoream naturam extensio in partes integrales consequitur, non tamen idem est corpori esse substantiam et esse quantum. Substantia quippe ratione sui indivisibilis est, non quidem ad modum puncti, sed ad modum eius quod est extra ordinem dimensionis. Quantitas vero, quae extensionem substantiae tribuit, a substantia realiter differt, et est veri nominis accidens.",
+      "english": "Although extension into integral parts follows corporeal nature, it is not, however, the same for a body to be a substance and to be extended. For substance of itself is indivisible; not certainly after the manner of a point, but after the manner of that which is outside the order of dimension. On the other hand, quantity, which makes substance to be extended, really differs from substance, and is a veritable accident.",
+      "modules_teach": [3],
+      "modules_touch": [4],
+      "provisional": true,
+      "unlock_line": "A substance is not its size, which is why you remain entirely yourself on a diet."
+    },
+    {
+      "n": 11,
+      "numeral": "XI",
+      "group": "cosmology",
+      "latin": "Quantitate signata materia principium est individuationis, id est, numericae distinctionis, quae in puris spiritibus esse non potest, unius individui ab alio in eadem natura specifica.",
+      "english": "Matter as subjected to quantity is the principle of individuation or numerical distinction (impossible among pure spirits) whereby individuals of the same species are distinct from each other.",
+      "modules_teach": [3],
+      "modules_touch": [],
+      "provisional": true,
+      "unlock_line": "There is exactly one of you, and the reason is your matter rather than your soul, which is more flattering to matter than anyone expected."
+    },
+    {
+      "n": 12,
+      "numeral": "XII",
+      "group": "cosmology",
+      "latin": "Eadem efficitur quantitate ut corpus circumscriptive sit in loco, et in uno tantum loco de quacumque potentia per hunc modum esse possit.",
+      "english": "It is also quantity that makes a body to be circumscriptively in one place and to be incapable, by any means, of such a presence in any other place.",
+      "modules_teach": [3],
+      "modules_touch": [],
+      "provisional": true,
+      "unlock_line": "Quantity keeps your body in one place at a time, a courtesy you have enjoyed all your life without once thanking it."
+    },
+    {
+      "n": 13,
+      "numeral": "XIII",
+      "group": "psychology",
+      "latin": "Corpora dividuntur bifariam: quaedam enim sunt viventia, quaedam expertia vitae. In viventibus, ut in eodem subiecto pars movens et pars mota per se habeantur, forma substantialis, animae nomine designata, requirit organicam dispositionem, seu partes heterogeneas.",
+      "english": "Bodies are divided into two classes: some are living, others without life. In living bodies, in order to have intrinsically a moving part and a moved part in the same subject, the substantial form, called the soul, requires an organic disposition, or heterogeneous parts.",
+      "modules_teach": [8],
+      "modules_touch": [3],
+      "provisional": true,
+      "unlock_line": "The difference between a living thing and a corpse was never the parts; it is the form that made the parts an organism."
+    },
+    {
+      "n": 14,
+      "numeral": "XIV",
+      "group": "psychology",
+      "latin": "Vegetalis et sensilis ordinis animae nequaquam per se subsistunt, nec per se producuntur, sed sunt tantummodo ut principium quo vivens est et vivit, et cum a materia se totis dependeant, corrupto composito, eo ipso per accidens corrumpuntur.",
+      "english": "Souls of the vegetative and sensitive order, properly speaking, do not subsist and are not produced, but merely exist and are produced as a principle whereby the living thing exists and lives. Since they depend entirely on matter, at the dissolution of the compound, they are indirectly destroyed.",
+      "modules_teach": [8],
+      "modules_touch": [],
+      "provisional": true,
+      "unlock_line": "The soul of a geranium is real, does its work faithfully, and perishes with the geranium, having never owned anything in its own name."
+    },
+    {
+      "n": 15,
+      "numeral": "XV",
+      "group": "psychology",
+      "latin": "Contra, per se subsistit anima humana, quae, cum subiecto sufficienter disposito potest infundi, a Deo creatur, et sua natura incorruptibilis est atque immortalis.",
+      "english": "On the contrary, the human soul subsists by itself, and is created by God when it can be infused into a sufficiently disposed subject, and is incorruptible and immortal by nature.",
+      "modules_teach": [8],
+      "modules_touch": [17],
+      "provisional": true,
+      "unlock_line": "Your soul subsists, was created, and does not die, which is rather a lot to be told in a single sentence."
+    },
+    {
+      "n": 16,
+      "numeral": "XVI",
+      "group": "psychology",
+      "latin": "Eadem anima rationalis ita unitur corpori, ut sit eiusdem forma substantialis unica, et per ipsam habet homo ut sit homo et animal et vivens et corpus et substantia et ens. Tribuit igitur anima homini omnem gradum perfectionis essentialem; insuper communicat corpori actum essendi quo ipsa est.",
+      "english": "This same rational soul is so united to the body as to be its single substantial form. By it man is man, and animal, and living, and body, and substance, and being. Soul, therefore, gives man every essential degree of perfection. It communicates to the body, furthermore, the act of existence whereby itself exists.",
+      "modules_teach": [8],
+      "modules_touch": [4],
+      "provisional": true,
+      "unlock_line": "One form makes you man, animal, living, body, substance, and being, so you are at least six things and exactly one."
+    },
+    {
+      "n": 17,
+      "numeral": "XVII",
+      "group": "psychology",
+      "latin": "Duplicis ordinis facultates, organicae et inorganicae, ex anima humana per naturalem resultantiam emanant: priores, ad quas sensus pertinent, in composito subiectantur, posteriores in anima sola. Est igitur intellectus facultas ab organo intrinsece independens.",
+      "english": "Faculties of a twofold order, organic and inorganic, naturally spring from the human soul. The subject of the organic, to which sense belongs, is the compound. The subject of the inorganic is the soul alone. The intellect, then, is a faculty intrinsically independent of any organ.",
+      "modules_teach": [9],
+      "modules_touch": [8],
+      "provisional": true,
+      "unlock_line": "Your eyes need your body and your intellect does not, which is why glasses exist and thinking caps never will."
+    },
+    {
+      "n": 18,
+      "numeral": "XVIII",
+      "group": "psychology",
+      "latin": "Immaterialitatem necessario sequitur intellectualitas, et ita quidem ut secundum gradus elongationis a materia, sint quoque gradus intellectualitatis. Adaequatum intellectionis obiectum est communiter ipsum ens; proprium vero intellectus humani in praesenti statu unionis, quidditatibus abstractis a conditionibus materialibus continetur.",
+      "english": "Intellectuality necessarily follows immateriality, and in such a manner that the degree of intellectuality is in proportion to the remoteness from matter. The adequate object of intellection is being as such; but the proper object of the human intellect, in the present state of union, is restricted to the essences abstracted from material conditions.",
+      "modules_teach": [9],
+      "modules_touch": [17],
+      "provisional": true,
+      "unlock_line": "Understanding grows as matter loosens its grip, a scale on which you sit comfortably between the angels and the oysters."
+    },
+    {
+      "n": 19,
+      "numeral": "XIX",
+      "group": "psychology",
+      "latin": "Cognitionem ergo accipimus a rebus sensibilibus. Cum autem sensibile non sit intelligibile in actu, praeter intellectum formaliter intelligentem, admittenda est in anima virtus activa, quae species intelligibiles a phantasmatibus abstrahat.",
+      "english": "We, therefore, receive our knowledge from sensible things. But since no sensible thing is actually intelligible, besides the intellect which is properly intelligent we must admit in the soul an active power which abstracts the intelligible forms from the phantasms.",
+      "modules_teach": [9],
+      "modules_touch": [10],
+      "provisional": true,
+      "unlock_line": "Nothing sensible is intelligible until the agent intellect lights it up, so the owl's lantern was inside you all along."
+    },
+    {
+      "n": 20,
+      "numeral": "XX",
+      "group": "psychology",
+      "latin": "Per has species directe universalia cognoscimus; singularia sensu attingimus, tum etiam intellectu per conversionem ad phantasmata; ad cognitionem vero spiritualium per analogiam ascendimus.",
+      "english": "Through these species we directly know the universal; the singular we know by the senses, and also by the intellect through a conversion to the phantasms; we rise by analogy to the knowledge of the spiritual.",
+      "modules_teach": [9],
+      "modules_touch": [15],
+      "provisional": true,
+      "unlock_line": "The mind grasps the universal straight on and the singular by turning back, like a man who recognizes the crowd before his own brother."
+    },
+    {
+      "n": 21,
+      "numeral": "XXI",
+      "group": "psychology",
+      "latin": "Intellectum sequitur, non praecedit, voluntas, quae necessario appetit id quod sibi praesentatur tamquam bonum ex omni parte explens appetitum, sed inter plura bona, quae iudicio mutabili appetenda proponuntur, libere eligit. Sequitur proinde electio iudicium practicum ultimum; at quod sit ultimum, voluntas efficit.",
+      "english": "The will follows, does not precede, the intellect; it necessarily desires that which is offered to it as a good which entirely satisfies the appetite; it freely chooses among several good things that are proposed as desirable by the wavering judgment. Election, then, follows the last practical judgment; still, it is the will which determines it to be the last.",
+      "modules_teach": [11],
+      "modules_touch": [12, 13],
+      "provisional": true,
+      "unlock_line": "The will follows the intellect everywhere except into necessity, and that one exception is your freedom."
+    },
+    {
+      "n": 22,
+      "numeral": "XXII",
+      "group": "theodicy",
+      "latin": "Deum esse neque immediata intuitione percipimus, neque a priori demonstramus, sed utique a posteriori, hoc est, per ea quae facta sunt, ducto argumento ab effectibus ad causam: videlicet, a rebus quae moventur et sui motus principium adaequatum esse non possunt, ad primum motorem immobilem; a processu rerum mundanarum e causis inter se subordinatis, ad primam causam incausatam; a corruptibilibus quae aequaliter se habent ad esse et non esse, ad ens absolute necessarium; ab iis quae secundum minoratas perfectiones essendi, vivendi, intelligendi, plus et minus sunt, vivunt, intelligunt, ad eum qui est maxime intelligens, maxime vivens, maxime ens; denique, ab ordine universi ad intellectum separatum, qui res ordinavit, disposuit, et dirigit ad finem.",
+      "english": "That God exists we do not know by immediate intuition, nor do we demonstrate it a priori, but certainly a posteriori, that is, by things which are made, arguing from effect to cause: namely, from things which are in movement and cannot be the adequate principle of their motion, to the first mover immovable; from the procession of worldly things from causes which are subordinated to each other, to the first uncaused cause; from corruptible things, which are indifferent alike to being and non-being, to the absolutely necessary being; from things which, according to their limited perfection of existence, life, intelligence, are more or less perfect in their being, their life, their intelligence, to Him who is intelligent, living, and being in the highest degree; finally, from the order which exists in the universe, to the existence of a separate intelligence which ordained, disposed, and directs things to their end.",
+      "modules_teach": [17],
+      "modules_touch": [1, 7],
+      "provisional": true,
+      "mapping_note": "WEAKEST ROW in the mapping. No module is dedicated to natural theology; M1 teaches the First Way, M7 the causal machinery, M17 the convergence. Gated on M17 so the five ways unlock where the course's deepest theses converge. Revisit at the M17 content pass.",
+      "unlock_line": "No one intuits God and no one proves him a priori; you climb to him from moved and borrowed things, and the ladder holds."
+    },
+    {
+      "n": 23,
+      "numeral": "XXIII",
+      "group": "theodicy",
+      "latin": "Divina essentia, per hoc quod exercitae actualitati ipsius esse identificatur, seu per hoc quod est ipsum Esse subsistens, in sua veluti metaphysica ratione bene nobis constituta proponitur, et per hoc idem rationem nobis exhibet suae infinitatis in perfectione.",
+      "english": "The Divine Essence is well proposed to us as constituted in its metaphysical concept by its identity with the exercised actuality of its existence, or, in other terms, as the very subsisting being; and by the same token it exhibits to us the reason of its infinity in perfection.",
+      "modules_teach": [17],
+      "modules_touch": [2],
+      "provisional": true,
+      "unlock_line": "God is not a being that happens to have existence but subsistent Existence itself, the shortest sentence in theology and the deepest."
+    },
+    {
+      "n": 24,
+      "numeral": "XXIV",
+      "group": "theodicy",
+      "latin": "Ipsa igitur puritate sui esse, a finitis omnibus rebus secernitur Deus. Inde infertur primo, mundum nonnisi per creationem a Deo procedere potuisse; deinde virtutem creativam, qua per se primo attingitur ens in quantum ens, nec miraculose ulli finitae naturae esse communicabilem; nullum denique creatum agens in esse cuiuscumque effectus influere, nisi motione accepta a prima causa.",
+      "english": "By the very purity of His being God is, therefore, distinguished from all finite beings. Hence, in the first place, it is inferred that the world could not have proceeded from God except through creation; secondly, that the creative power, which directly affects being as being, cannot be communicated, even miraculously, to any finite nature; and, finally, that no created agent exercises any influence on the being of any effect except through a motion received from the first cause.",
+      "modules_teach": [17],
+      "modules_touch": [7],
+      "provisional": true,
+      "unlock_line": "Only the purity of esse creates, which is why nothing you ever make will be from nothing, and why you yourself were."
+    }
+  ]
+}
