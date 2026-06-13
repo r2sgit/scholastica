@@ -80,7 +80,7 @@ export default function VocabulariumPage() {
                     type="button"
                     className="vocab-pill"
                     onClick={() => setActive(t)}
-                    aria-label={`${t.latin} — ${t.english}`}
+                    aria-label={`${t.latin}, ${t.english}`}
                   >
                     {t.latin}
                   </button>
