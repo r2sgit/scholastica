@@ -18,16 +18,24 @@ import { getModulesComplete } from '../lib/gamification';
 const ASSET_MANIFEST = new Set<string>([
   'dr-01', 'dr-02', 'dr-03', 'dr-04', 'dr-05', 'dr-06', 'dr-07', 'dr-08',
   'dr-12-stag', 'dr-13-small',
+  'dr-14-small', 'dr-15-small', 'dr-16-small', 'dr-18-small', 'dr-20-small', 'dr-26-small', 'dr-27-small',
 ]);
 
 // Per-module right-margin drollery (handbook §6 table; mirrors
-// components/DrolleryMargin.tsx). Modules with a pending commission (M2 → DR-14,
-// M17 → DR-27) simply have no entry and never join until their asset lands.
+// components/DrolleryMargin.tsx). A module joins the Court only when complete,
+// so banked assets for not-yet-built modules (M3/M4/M7/M16) wait harmlessly here.
 const MODULE_DROLLERY: Record<number, string> = {
   0: 'dr-02',
   1: 'dr-13-small',
+  2: 'dr-14-small',
+  3: 'dr-15-small',
+  4: 'dr-16-small',
   5: 'dr-08',
+  7: 'dr-18-small',
+  9: 'dr-20-small',
   12: 'dr-12-stag',
+  16: 'dr-26-small',
+  17: 'dr-27-small',
 };
 
 // The four already drawn into the frontispiece SVG. Court additions exclude
@@ -93,7 +101,7 @@ export default function DrolleryCourt() {
             className={`court-drollery court-${side}`}
             style={{ top, ...pos }}
           >
-            <img src={asset(slug)} alt="" style={{ width: size, height: 'auto' }} />
+            <img src={asset(slug)} alt="" style={{ width: size, height: size, objectFit: 'contain' }} />
           </div>
         );
       })}
