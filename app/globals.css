@@ -411,6 +411,25 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative; /* anchors the margin drolleries */
+}
+
+/* Course-map margin drolleries — the original four, restored (R2, 2026-06-14).
+   Manuscript-margin art flanking the top of the course: dr-01 scribe (TL),
+   dr-02 grotesque (TR), dr-03 hare (BL), dr-04 monkey (BR). Decorative and
+   non-interactive; hidden when the viewport can't host them outside the
+   1080px content column. */
+.course-margin-art { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+.course-droll { position: absolute; }
+.course-droll img { display: block; width: 100%; height: auto; opacity: 0.96;
+  filter: drop-shadow(0 8px 18px rgba(59, 50, 40, 0.10)); }
+.cd-tl { left:  max(8px, calc(50% - 604px)); top: 156px; width: 104px; }
+.cd-tr { right: max(8px, calc(50% - 604px)); top: 156px; width: 104px; }
+.cd-bl { left:  max(8px, calc(50% - 600px)); top: 556px; width: 86px;  }
+.cd-br { right: max(8px, calc(50% - 606px)); top: 556px; width: 98px;  }
+@media (max-width: 1240px) { .course-margin-art { display: none; } }
+@media (prefers-reduced-motion: no-preference) {
+  .course-droll { opacity: 0; animation: fadeIn 620ms ease 280ms both; }
 }
 
 .map-stage {

@@ -174,6 +174,15 @@ export default function CourseMapPage() {
     <div className="map-page">
       <TopBar />
 
+      {/* The original four margin drolleries, restored. Decorative; the assets
+          all exist in /public/images/drolleries, so no 404 guard is needed. */}
+      <div className="course-margin-art" aria-hidden="true">
+        <div className="course-droll cd-tl"><img src="/images/drolleries/dr-01.png" alt="" /></div>
+        <div className="course-droll cd-tr"><img src="/images/drolleries/dr-02.png" alt="" /></div>
+        <div className="course-droll cd-bl"><img src="/images/drolleries/dr-03.png" alt="" /></div>
+        <div className="course-droll cd-br"><img src="/images/drolleries/dr-04.png" alt="" /></div>
+      </div>
+
       <div className="cm-stage" style={{ animation: 'fadeIn .4s ease both' }}>
         {/* Module-map header strip: the habitus vine on the left (fullness
             only, no numbers) and the rank on the right (subtle, never a badge
