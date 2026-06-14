@@ -185,6 +185,18 @@ function QuizCardInner() {
         <div className="card-area">
           <article className="card">
             <CardVines />
+            {/* Card head — lesson identity leads the card. The lesson name is
+                the title of the question, so it sits at the very top, above the
+                progress/counter row, and larger than the QUÆSTIO counter. */}
+            <div className="card-head">
+              <span className="lesson-eyebrow">
+                <span className="le-label">Lesson</span>{' '}
+                <span className="le-num">{lesson.num != null ? lesson.num : lessonIdx + 1}</span>
+                <span className="le-sep">{' · '}</span>
+                <span className="le-name">{lesson.title}</span>
+              </span>
+            </div>
+
             {/* Progress bar */}
             <div className="card-progress-bar">
               <ProgressDots
@@ -202,17 +214,6 @@ function QuizCardInner() {
                 <span style={{fontVariantCaps:'all-small-caps',color:'var(--ink-faint)',letterSpacing:'0.06em'}}>
                   {toRoman(questions.length).toLowerCase()}
                 </span>
-              </span>
-            </div>
-
-            {/* Card head — lesson identity, relocated from the top bar so long
-                lesson titles have full width instead of overflowing one line. */}
-            <div className="card-head">
-              <span className="lesson-eyebrow">
-                <span className="le-label">Lesson</span>{' '}
-                <span className="le-num">{lesson.num != null ? lesson.num : lessonIdx + 1}</span>
-                <span className="le-sep">{' · '}</span>
-                <span className="le-name">{lesson.title}</span>
               </span>
             </div>
 
