@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { readProgress } from '../../../../lib/progress';
 import { getRank, getThesesEarned, type Rank } from '../../../../lib/gamification';
 import { THESES, type Thesis } from '../../../../content/theses';
+import Prose from '../../../../components/Prose';
 
 /* ── Vine Divider ─────────────────────────────────────────── */
 function VineDivider() {
@@ -165,7 +166,8 @@ function FinScreenInner() {
         </span>
 
         {/* Chestertonian heading */}
-        <h1
+        <Prose
+          as="h1"
           style={{
             fontFamily: '"Fraunces", serif',
             fontSize: 24,
@@ -174,7 +176,7 @@ function FinScreenInner() {
             lineHeight: 1.35,
             margin: '0 0 12px',
           }}
-          dangerouslySetInnerHTML={{ __html: fin.heading }}
+          html={fin.heading}
         />
 
         {/* Score subtitle */}
@@ -192,7 +194,8 @@ function FinScreenInner() {
         <VineDivider />
 
         {/* Fin body */}
-        <div
+        <Prose
+          as="div"
           style={{
             fontSize: 17,
             color: 'var(--ink-soft)',
@@ -203,7 +206,7 @@ function FinScreenInner() {
             marginLeft: 'auto',
             marginRight: 'auto',
           }}
-          dangerouslySetInnerHTML={{ __html: fin.body }}
+          html={fin.body}
         />
 
         {/* Rank — only on a module-complete fin. perfectus carries the

@@ -14,6 +14,7 @@ import MatchPair from '../../../../components/MatchPair';
 import SyllogismBuilder from '../../../../components/SyllogismBuilder';
 import DialogueBranch from '../../../../components/DialogueBranch';
 import FillBlank from '../../../../components/FillBlank';
+import Prose from '../../../../components/Prose';
 import DrolleryMargin from '../../../../components/DrolleryMargin';
 import DrolleryPendant from '../../../../components/DrolleryPendant';
 import CardVines from '../../../../components/CardVines';
@@ -213,10 +214,7 @@ function QuizCardInner() {
             </div>
 
             {/* Stem */}
-            <h2
-              className="quaestio"
-              dangerouslySetInnerHTML={{ __html: currentQuestion.stem }}
-            />
+            <Prose as="h2" className="quaestio" html={currentQuestion.stem} />
 
             {/* Exercise renderer */}
             <ExerciseRenderer
@@ -278,12 +276,15 @@ function ExerciseRenderer({
   switch (question.type) {
     // Single-select types all share the MCQ UI. precision_check additionally
     // appends its correction to correct-answer feedback (handled in MCQ).
+    // 'sequence' is a single-select over ordering options (payload.options +
+    // correct_option_id), so it renders through the same MCQ UI.
     case 'mcq':
     case 'true_false_with_reason':
     case 'distinction_application':
     case 'spot_the_fallacy':
     case 'close_reading':
     case 'precision_check':
+    case 'sequence':
       return <MCQ question={question} onAnswer={onAnswer} disabled={disabled} />;
     case 'match_pair':
       return <MatchPair question={question} onAnswer={onAnswer} disabled={disabled} />;

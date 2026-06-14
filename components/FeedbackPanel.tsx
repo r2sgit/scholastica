@@ -1,5 +1,7 @@
 'use client';
 
+import Prose from './Prose';
+
 interface FeedbackPanelProps {
   type: 'correct' | 'wrong';
   body: string;
@@ -33,13 +35,14 @@ export default function FeedbackPanel({ type, body, doctrineTag }: FeedbackPanel
       >
         Respondeo:
       </div>
-      <div
+      <Prose
+        as="div"
         style={{
           fontSize: 17,
           lineHeight: 1.55,
           color: 'var(--ink)',
         }}
-        dangerouslySetInnerHTML={{ __html: body }}
+        html={body}
       />
       {doctrineTag && (
         <span

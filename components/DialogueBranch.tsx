@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import type { Question } from '../content/types';
 import { playSound } from '../lib/sound';
+import Prose from './Prose';
 
 interface DialogueBranchProps {
   question: Question;
@@ -74,9 +75,10 @@ export default function DialogueBranch({ question, onAnswer, disabled }: Dialogu
 
   return (
     <div>
-      <div
+      <Prose
+        as="div"
         className="commentator-line"
-        dangerouslySetInnerHTML={{ __html: payload.commentatorLine }}
+        html={payload.commentatorLine}
       />
 
       <div className="branch-options" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -135,9 +137,10 @@ export default function DialogueBranch({ question, onAnswer, disabled }: Dialogu
           >
             Try again
           </div>
-          <div
+          <Prose
+            as="div"
             style={{ fontSize: 17, lineHeight: 1.55, color: 'var(--ink)' }}
-            dangerouslySetInnerHTML={{ __html: lastFeedback }}
+            html={lastFeedback}
           />
         </div>
       )}

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import type { Question } from '../content/types';
+import Prose from './Prose';
 
 interface MatchPairProps {
   question: Question;
@@ -148,9 +149,10 @@ export default function MatchPair({ question, onAnswer, disabled }: MatchPairPro
   return (
     <div>
       {payload.instruction && (
-        <div
+        <Prose
+          as="div"
           className="syllogism-instruction"
-          dangerouslySetInnerHTML={{ __html: payload.instruction }}
+          html={payload.instruction}
         />
       )}
       <div className="match-pair-grid">
