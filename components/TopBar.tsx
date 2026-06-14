@@ -30,9 +30,6 @@ function setMutedPref(muted: boolean): void {
 
 interface TopBarProps {
   moduleId?: number;
-  lessonIdx?: number;
-  lessonTitle?: string;
-  lessonNum?: string;
   moduleTitle?: string;
   /** Show a "Modules /" crumb linking back to the course map */
   modulesCrumb?: boolean;
@@ -54,7 +51,7 @@ const NAV_ITEMS: { href: string; label: string }[] = [
   { href: '/vocabularium', label: 'Vocabularium' },
 ];
 
-function TopBarInner({ moduleId, lessonIdx, lessonTitle, lessonNum, moduleTitle, modulesCrumb }: TopBarProps) {
+function TopBarInner({ moduleId, moduleTitle, modulesCrumb }: TopBarProps) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const isReview = searchParams.get('review') === '1';
@@ -105,19 +102,8 @@ function TopBarInner({ moduleId, lessonIdx, lessonTitle, lessonNum, moduleTitle,
                 <span className="cp-name">{moduleTitle}</span>
               </>
             )}
-            {(lessonNum != null || lessonIdx !== undefined) && (
-              <>
-                <span className="cp-fleuron" aria-hidden="true" />
-                <span className="cp-label">Lesson</span>
-                <span className="cp-num">{lessonNum != null ? lessonNum : lessonIdx !== undefined ? lessonIdx + 1 : ''}</span>
-                {lessonTitle && (
-                  <>
-                    <span className="cp-sep">{'\u00b7'}</span>
-                    <span className="cp-name">{lessonTitle}</span>
-                  </>
-                )}
-              </>
-            )}
+            {/* Lesson number + title moved into the card head (long titles
+                overflowed this single line); the bar now carries the module only. */}
           </>
         )}
       </nav>

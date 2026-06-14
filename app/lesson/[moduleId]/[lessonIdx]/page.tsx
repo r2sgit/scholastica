@@ -156,9 +156,6 @@ function QuizCardInner() {
       <div style={{ position: 'relative', zIndex: 2 }}>
         <TopBar
           moduleId={moduleId}
-          lessonIdx={lessonIdx}
-          lessonTitle={lesson.title}
-          lessonNum={lesson.num}
           moduleTitle={mod.title}
         />
 
@@ -208,9 +205,15 @@ function QuizCardInner() {
               </span>
             </div>
 
-            {/* Card head */}
+            {/* Card head — lesson identity, relocated from the top bar so long
+                lesson titles have full width instead of overflowing one line. */}
             <div className="card-head">
-              <span className="quaestio-label">Quaestio</span>
+              <span className="lesson-eyebrow">
+                <span className="le-label">Lesson</span>{' '}
+                <span className="le-num">{lesson.num != null ? lesson.num : lessonIdx + 1}</span>
+                <span className="le-sep">{' · '}</span>
+                <span className="le-name">{lesson.title}</span>
+              </span>
             </div>
 
             {/* Stem */}
