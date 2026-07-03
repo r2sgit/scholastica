@@ -23,19 +23,19 @@ const ASSET_MANIFEST = new Set<string>([
 
 // Per-module right-margin drollery (handbook §6 table; mirrors
 // components/DrolleryMargin.tsx). A module joins the Court only when complete,
-// so banked assets for not-yet-built modules (M3/M4/M7/M16) wait harmlessly here.
+// so banked assets for not-yet-built modules (M4/M5/M8/M17) wait harmlessly here.
 const MODULE_DROLLERY: Record<number, string> = {
-  0: 'dr-02',
-  1: 'dr-13-small',
-  2: 'dr-14-small',
-  3: 'dr-15-small',
-  4: 'dr-16-small',
-  5: 'dr-08',
-  7: 'dr-18-small',
-  9: 'dr-20-small',
-  12: 'dr-12-stag',
-  16: 'dr-26-small',
-  17: 'dr-27-small',
+  1: 'dr-02',
+  2: 'dr-13-small',
+  3: 'dr-14-small',
+  4: 'dr-15-small',
+  5: 'dr-16-small',
+  6: 'dr-08',
+  8: 'dr-18-small',
+  10: 'dr-20-small',
+  13: 'dr-12-stag',
+  17: 'dr-26-small',
+  18: 'dr-27-small',
 };
 
 // The four already drawn into the frontispiece SVG. Court additions exclude

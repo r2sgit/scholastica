@@ -17,7 +17,7 @@ export interface MCQOption {
   id: string;
   label?: string;      // small-caps prefix, e.g. "Respondeo:" / "Statement:"
   text: string;        // may contain HTML
-  correct?: boolean;   // m0 style; m1+ encode payload.correct_option_id instead
+  correct?: boolean;   // Module 1 style; Module 2+ encode payload.correct_option_id instead
   feedback: string;    // may contain HTML
 }
 

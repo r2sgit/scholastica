@@ -9,14 +9,14 @@ import TopBar from '../../../components/TopBar';
 /* Eyebrow Latin + aim copy for modules whose content files predate the
    latin/aim fields. Newer modules carry these in their own data. */
 const LEGACY_LATIN: Record<number, string> = {
-  0: 'Fundamenta',
-  5: 'Logica',
-  12: 'Lex Naturalis',
+  1: 'Fundamenta',
+  6: 'Logica',
+  13: 'Lex Naturalis',
 };
 const LEGACY_AIM: Record<number, string> = {
-  0: 'The seven distinctions you need in hand before any Thomistic argument will sit still long enough to be examined.',
-  5: 'Aristotelian logic as Aquinas inherited it — the organon that makes his arguments walk.',
-  12: 'Natural law, the human act, and the moral vocabulary that follows from them.',
+  1: 'The seven distinctions you need in hand before any Thomistic argument will sit still long enough to be examined.',
+  6: 'Aristotelian logic as Aquinas inherited it — the organon that makes his arguments walk.',
+  13: 'Natural law, the human act, and the moral vocabulary that follows from them.',
 };
 
 function toRoman(n: number): string {
@@ -54,7 +54,7 @@ function VineDivider() {
   );
 }
 
-/* ── Lesson descriptions (M0-specific, for the lesson list) ── */
+/* ── Lesson descriptions (Module 1-specific, for the lesson list) ── */
 const M0_BLURBS: Record<string, string> = {
   'The Two Questions': 'What a thing is, and that it is — the distinction at the root of everything else.',
   'Act and Potency': "Why a log can burn before it does. Aquinas' hinge, inherited from Aristotle.",
@@ -123,7 +123,7 @@ export default function ModuleDetailPage() {
         <div className="module-hd">
           <div className="module-copy">
             <div className="eyebrow">
-              Module {toRoman(moduleId + 1)} &middot; {mod.title} &middot;{' '}
+              Module {toRoman(moduleId)} &middot; {mod.title} &middot;{' '}
               <span className="small-caps" style={{ color: 'var(--ink-soft)', letterSpacing: '0.08em', fontSize: 13 }}>
                 {mod.latin ?? LEGACY_LATIN[moduleId] ?? ''}
               </span>
@@ -174,7 +174,7 @@ export default function ModuleDetailPage() {
           {mod.lessons.map((lesson, idx) => {
             const status = getLessonStatus(idx);
             const isCapstone = idx === mod.lessons.length - 1;
-            const blurb = moduleId === 0 ? (M0_BLURBS[lesson.title] || '') : '';
+            const blurb = moduleId === 1 ? (M0_BLURBS[lesson.title] || '') : '';
 
             return (
               <li

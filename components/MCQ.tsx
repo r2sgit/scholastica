@@ -20,8 +20,8 @@ interface MCQOption {
 export default function MCQ({ question, onAnswer, disabled }: MCQProps) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const options = (question.payload.options as MCQOption[]) || [];
-  // Two correctness encodings exist: m0 marks options with `correct: true`;
-  // m1+ (and the tf/fallacy types throughout) carry payload.correct_option_id.
+  // Two correctness encodings exist: Module 1 marks options with `correct: true`;
+  // Module 2+ (and the tf/fallacy types throughout) carry payload.correct_option_id.
   const correctOptionId = question.payload.correct_option_id as string | undefined;
 
   function isCorrectOption(opt: MCQOption): boolean {

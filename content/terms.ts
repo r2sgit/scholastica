@@ -24,9 +24,9 @@ const raw = data as unknown as { meta: Record<string, unknown>; terms: Term[] };
 export const TERMS: Term[] = raw.terms;
 
 /** Has this module had at least one lesson completed? Structural terms (the
-    game grammar) are met immediately, so they ride on M0's first lesson. */
+    game grammar) are met immediately, so they ride on Module 1's first lesson. */
 function moduleStarted(mod: TermModule, progress: StorageSchema['progress']): boolean {
-  const id = mod === 'structural' ? 0 : mod;
+  const id = mod === 'structural' ? 1 : mod;
   const mp = progress?.[id];
   return !!mp && Array.isArray(mp.lessonsComplete) && mp.lessonsComplete.some(Boolean);
 }
@@ -52,6 +52,6 @@ export function termGroupsInOrder(): TermModule[] {
   const present = new Set<TermModule>(TERMS.map(t => t.module));
   const out: TermModule[] = [];
   if (present.has('structural')) out.push('structural');
-  for (let i = 0; i <= 17; i++) if (present.has(i)) out.push(i);
+  for (let i = 1; i <= 18; i++) if (present.has(i)) out.push(i);
   return out;
 }

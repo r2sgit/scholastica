@@ -5,7 +5,7 @@
     "generated": "2026-06-12",
     "generator": "scripts/export-terms.mjs (re-runnable; do not hand-edit this file)",
     "count": 175,
-    "accumulation_rule": "A term renders in the Vocabularium only once earned: its introducing module has at least one completed lesson. status:planned terms belong to unbuilt modules and never render until their module ships. module:\"structural\" terms are earned with M0 lesson 1 (the game grammar is met immediately)."
+    "accumulation_rule": "A term renders in the Vocabularium only once earned: its introducing module has at least one completed lesson. status:planned terms belong to unbuilt modules and never render until their module ships. module:\"structural\" terms are earned with Module 1 lesson 1 (the game grammar is met immediately)."
   },
   "terms": [
     {
@@ -80,7 +80,7 @@
     },
     {
       "latin": "esse / essentia",
-      "module": 0,
+      "module": 1,
       "lesson": 1,
       "status": "built",
       "english": "act of being / essence",
@@ -90,7 +90,7 @@
     },
     {
       "latin": "potentia / actus",
-      "module": 0,
+      "module": 1,
       "lesson": 2,
       "status": "built",
       "english": "potency / act",
@@ -100,7 +100,7 @@
     },
     {
       "latin": "res / distinctio realis",
-      "module": 0,
+      "module": 1,
       "lesson": 3,
       "status": "built",
       "english": "real thing / real distinction",
@@ -110,7 +110,7 @@
     },
     {
       "latin": "causa materialis / causa formalis / causa efficiens / causa finalis",
-      "module": 0,
+      "module": 1,
       "lesson": 4,
       "status": "built",
       "english": "material cause / formal cause / efficient cause / final cause",
@@ -120,7 +120,7 @@
     },
     {
       "latin": "materia / forma",
-      "module": 0,
+      "module": 1,
       "lesson": 5,
       "status": "built",
       "english": "matter / form",
@@ -130,7 +130,7 @@
     },
     {
       "latin": "substantia / accidens",
-      "module": 0,
+      "module": 1,
       "lesson": 6,
       "status": "built",
       "english": "substance / accident",
@@ -143,7 +143,7 @@
       "english": "act",
       "gloss": "Perfection, actuality, that which makes a thing determinate and real. The positive principle. Act is always prior to potency in being.",
       "precision": "From Aristotle's *energeia/entelecheia*. In Aquinas, *esse* itself is the supreme act (*actus essendi*). Do not translate as \"action\"; that is *actio*.",
-      "module": 1,
+      "module": 2,
       "status": "built"
     },
     {
@@ -151,7 +151,7 @@
       "english": "potency / capacity",
       "gloss": "The real capacity to receive or be limited by an act. Potency is not mere absence; it is a real ontological principle ordered toward act.",
       "precision": "Two types exist: active potency (capacity to act *on* another) and passive potency (capacity to receive an act). Module 1 treats primarily passive potency. Never render potency as mere lack; that is the Scotistic error the course corrects.",
-      "module": 1,
+      "module": 2,
       "status": "built"
     },
     {
@@ -159,7 +159,7 @@
       "english": "Pure Act",
       "gloss": "God alone. No composition of act and potency; no unrealized capacity, no limitation, no receiving of perfection from another.",
       "precision": "The terminus of the argument from motion and from contingency. Every composed being requires an uncomposed cause. The phrase is technical; do not use without the gloss in any lesson where it first appears.",
-      "module": 1,
+      "module": 2,
       "status": "built"
     },
     {
@@ -167,7 +167,7 @@
       "english": "composition",
       "gloss": "The union of two really distinct principles in a single being. Every finite being has at least one composition of act and potency.",
       "precision": "Three kinds: matter/form (hylomorphic), substance/accident, esse/essentia (metaphysical). The last is the most fundamental. When a lesson uses *compositio* without qualification, it usually means the act/potency composition generally, not any specific kind.",
-      "module": 1,
+      "module": 2,
       "status": "built"
     },
     {
@@ -175,7 +175,7 @@
       "english": "perfection",
       "gloss": "A positive determination of being. That which constitutes a thing as fully what it is. Act is the source of perfection; potency receives it.",
       "precision": "Not \"improvement\" in the colloquial sense. Perfection here = being what you are, fully. Transcendental perfections (being, truth, goodness) are unlimited in God, limited by essence in creatures.",
-      "module": 1,
+      "module": 2,
       "status": "built"
     },
     {
@@ -183,7 +183,7 @@
       "english": "limitation",
       "gloss": "The restriction of an act by the potency that receives it. Esse is unlimited in itself; it is limited by the essence that receives it.",
       "precision": "Key to the real distinction debate (Module 17). The strict Thomistic line (Cajetan): essence limits esse as a *positive ontological principle*, a real potency to act. The Gilsonian/esseist drift collapses essence to a mere shadow or mode of esse. This tension is not resolved until Module 17.",
-      "module": 1,
+      "module": 2,
       "status": "built"
     },
     {
@@ -191,7 +191,7 @@
       "english": "active potency",
       "gloss": "Capacity to act on another: to produce, to move, to cause.",
       "precision": "Distinct from passive potency. Fire has active potency with respect to wood; wood has passive potency with respect to fire. Both are real.",
-      "module": 1,
+      "module": 2,
       "status": "built"
     },
     {
@@ -199,7 +199,7 @@
       "english": "passive potency",
       "gloss": "Capacity to receive an act from another.",
       "precision": "This is the primary sense in the act/potency pair as introduced. Passive does not mean defective; it is the ontological condition for receiving any perfection.",
-      "module": 1,
+      "module": 2,
       "status": "built"
     },
     {
@@ -207,7 +207,7 @@
       "english": "the act of being / to-be",
       "gloss": "That by which a thing is. The innermost act of all acts and the perfection of all perfections (*actus omnium actuum, perfectio omnium perfectionum*). Not existence as a bare fact but the very actuality of a being.",
       "precision": "Gilson's existential emphasis is correct: *esse* is not just logical existence; it is the most intense metaphysical principle. But *esse* must be received by a real essence; it is not self-diffusive to the point of swallowing essences (contra the Gilsonian drift). Do not translate as simply \"existence\"; that loses the act-character.",
-      "module": 2,
+      "module": 3,
       "status": "planned"
     },
     {
@@ -215,7 +215,7 @@
       "english": "act of being",
       "gloss": "Aquinas's technical term for *esse* considered as act. The act by which a being is. Distinct from the essence that receives it.",
       "precision": "The term that makes Aquinas's metaphysics decisively different from Aristotle's: not just form as act, but *esse* as the act of the form itself. When teaching this, always pair with *essentia*; the two are inseparable in the exposition even though really distinct in creatures.",
-      "module": 2,
+      "module": 3,
       "status": "built"
     },
     {
@@ -223,7 +223,7 @@
       "english": "essence",
       "gloss": "That which a thing is: the quiddity, the whatness, the nature. In creatures, essence is a real ontological principle distinct from esse and ordered toward it as potency to act.",
       "precision": "Not mere concept, not mere limitation. The strict Thomistic line (Cajetan, Garrigou-Lagrange): essence is a *positive* ontological principle, a real potency to receive esse. The Gilsonian drift makes essence a shadow or limitation of esse, which (on the strict reading) dissolves it. This is the fault line of Module 17.",
-      "module": 2,
+      "module": 3,
       "status": "planned"
     },
     {
@@ -231,7 +231,7 @@
       "english": "quiddity / whatness",
       "gloss": "Literally \"what-ness.\" Synonym for essence, emphasizing the answer to \"what is it?\" (*quid est?*).",
       "precision": "Interchangeable with *essentia* in most contexts. *Quidditas* tends to appear when the emphasis is epistemological (what the intellect grasps); *essentia* tends to appear in ontological contexts (the real principle).",
-      "module": 2,
+      "module": 3,
       "status": "built"
     },
     {
@@ -239,7 +239,7 @@
       "english": "nature",
       "gloss": "Essence considered as the principle of operation. What a thing is, considered as the source of its characteristic activities.",
       "precision": "Three distinct uses in the curriculum: (1) here, as synonym for essence-as-operative-principle; (2) in Module 4, as the nature that a *suppositum* possesses and operates through; (3) colloquially (avoid). Always gloss on first use in each module.",
-      "module": 2,
+      "module": 3,
       "status": "planned"
     },
     {
@@ -247,7 +247,7 @@
       "english": "real distinction",
       "gloss": "A distinction that holds in the thing itself, independently of any mind considering it. Esse and essentia are really distinct in every creature.",
       "precision": "The \"really distinct\" claim is what separates Aquinas from all mere conceptual-distinction readings. The Gilsonian camp accepts the language but (on the strict reading) empties it: if essence is just esse's own self-limitation, the distinction is not between two positive principles. This is M17 content; introduce here as the claim, develop in M17 as the debate.",
-      "module": 2,
+      "module": 3,
       "status": "planned"
     },
     {
@@ -255,7 +255,7 @@
       "english": "common being",
       "gloss": "Being as it is predicated of all beings: the most general notion of being. Distinct from *esse* as the individual act of a particular being.",
       "precision": "The universal notion under which all beings fall, but which has no existence apart from individual beings. Avoid introducing without glossing both senses of *esse*; this is a place where the shift between levels confuses beginners.",
-      "module": 2,
+      "module": 3,
       "status": "built"
     },
     {
@@ -263,7 +263,7 @@
       "english": "being (participial)",
       "gloss": "A being: the thing that has *esse*. From the present participle of *esse*.",
       "precision": "Distinguished from *esse* as the act: *ens* is the thing that is; *esse* is the act by which it is. In transcendental contexts (Module 6), *ens* is the first transcendental.",
-      "module": 2,
+      "module": 3,
       "status": "planned"
     },
     {
@@ -271,7 +271,7 @@
       "english": "participation",
       "gloss": "The relation by which a finite being *has* esse without *being* esse. Every creature participates in being; God alone *is* being (*esse subsistens*).",
       "precision": "Platonic structure deployed in Thomistic metaphysics: the many participate in the one not by emanation but by real causation (efficient and exemplary). Participation without a *real* essence to do the participating collapses into Neoplatonism.",
-      "module": 2,
+      "module": 3,
       "status": "built"
     },
     {
@@ -279,7 +279,7 @@
       "english": "subsistent being / subsistent esse",
       "gloss": "Being that subsists through itself, by its own essence. God alone. Every other being has esse *by reception*.",
       "precision": "The contrast term for created being. God is *esse subsistens*; creatures *have* esse. The distinction between having and being esse is the metaphysical root of the Creator/creature divide.",
-      "module": 2,
+      "module": 3,
       "status": "built"
     },
     {
@@ -287,7 +287,7 @@
       "english": "prime matter",
       "gloss": "Pure potency. Matter stripped of every determination: no size, no color, no properties. The ultimate subject of substantial change.",
       "precision": "Never exists without form; it is a limiting concept, not an empirical residue. \"Show me prime matter\" is the wrong question; the right question is what is left when you subtract every formal determination conceptually. Do not conflate with \"the raw materials\" of a thing; that is *materia secunda* (already determined matter).",
-      "module": 3,
+      "module": 4,
       "status": "built"
     },
     {
@@ -295,7 +295,7 @@
       "english": "substantial form",
       "gloss": "The act by which a thing *is* what it is at the most fundamental level: not a feature it has, but what makes it this *kind* of thing.",
       "precision": "Not the shape (that is a spatial accident). The substantial form of a human being is the soul. When substantial form is lost, the thing does not merely change; it ceases to be that kind of thing. This is why death is not change but corruption.",
-      "module": 3,
+      "module": 4,
       "status": "built"
     },
     {
@@ -303,7 +303,7 @@
       "english": "accidental form",
       "gloss": "A form that modifies an already-existing substance without constituting it. Color, size, disposition: all accidental forms.",
       "precision": "Note the overlap with *accidens* from M0: accidental forms are what give rise to accidents. The distinction form/accident is a way of speaking about the same reality from different directions.",
-      "module": 3,
+      "module": 4,
       "status": "built"
     },
     {
@@ -311,7 +311,7 @@
       "english": "hylomorphic composite",
       "gloss": "The whole substance resulting from the union of matter and form. A concrete individual being.",
       "precision": "Not a mere sum of two things; matter and form are principles *of* the composite, not separable parts. The composite is the actual existing thing; matter and form are real but not separately existing.",
-      "module": 3,
+      "module": 4,
       "status": "built"
     },
     {
@@ -319,7 +319,7 @@
       "english": "substantial change / generation",
       "gloss": "Change in which a substance comes to be: a new substantial form is acquired and the old one lost.",
       "precision": "Requires *materia prima* as the continuous subject: something must persist through the change (matter), even as the form is entirely replaced. Contrast with *alteratio*.",
-      "module": 3,
+      "module": 4,
       "status": "built"
     },
     {
@@ -327,7 +327,7 @@
       "english": "corruption / ceasing to be",
       "gloss": "Change in which a substance ceases to be: its substantial form is lost and another acquired by the matter. The paper's side of the burning.",
       "precision": "One event, two descriptions: the corruption of one substance *is* the generation of another (*generatio unius est corruptio alterius*). Never a gap of bare matter in between. Death is the paradigm corruption of a living thing, not its largest alteration.",
-      "module": 3,
+      "module": 4,
       "status": "built"
     },
     {
@@ -335,7 +335,7 @@
       "english": "accidental change / alteration",
       "gloss": "Change in which a substance acquires or loses an accidental form while remaining the same substance.",
       "precision": "Socrates tanning, water warming, iron rusting: the substance persists, an accident changes. The contrast with *generatio* is crucial: substantial form lost means the thing is gone; accidental form lost means the thing merely changed.",
-      "module": 3,
+      "module": 4,
       "status": "built"
     },
     {
@@ -343,7 +343,7 @@
       "english": "individuation by designated matter",
       "gloss": "The principle by which one member of a species is this individual rather than that one. Socrates is individuated from Plato by designated matter: this particular matter, here and now.",
       "precision": "Designated (*signata*) matter = matter as actually located and quantified. The key point: what makes Socrates Socrates is not his form (that is shared with other humans) but the particular matter this form informs. This creates the classic problem of angels: immaterial, they have no matter to individuate them, so each angel is its own species.",
-      "module": 3,
+      "module": 4,
       "status": "built"
     },
     {
@@ -351,7 +351,7 @@
       "english": "suppositum / individual substance",
       "gloss": "The concrete individual of a nature: the particular this-thing, considered as existing, subsisting, and acting in its own right.",
       "precision": "Every *suppositum* has a nature; not every nature is a *suppositum* (hypostatic union). The *suppositum* is what answers \"who?\" or \"what individual?\" and not \"what kind?\" (that is the nature/essence).",
-      "module": 4,
+      "module": 5,
       "status": "built"
     },
     {
@@ -359,7 +359,7 @@
       "english": "person",
       "gloss": "A *suppositum* of a rational nature. A rational individual subsisting in its own right.",
       "precision": "Boethius's definition: *naturae rationalis individua substantia* (individual substance of a rational nature). The key Christological application: Christ has two natures (divine and human) but *one person* (one divine *suppositum*). The human nature does not have its own *suppositum*; it subsists in the divine person.",
-      "module": 4,
+      "module": 5,
       "status": "built"
     },
     {
@@ -367,7 +367,7 @@
       "english": "hypostasis",
       "gloss": "Greek synonym for *suppositum*. Used in Trinitarian and Christological theology: one divine nature, three hypostases (persons).",
       "precision": "Technical term from the Greek councils. In Latin scholasticism, interchangeable with *suppositum* in most contexts. The Christological controversy (*hypostatic union*) is the paradigm case.",
-      "module": 4,
+      "module": 5,
       "status": "built"
     },
     {
@@ -375,7 +375,7 @@
       "english": "subsistence",
       "gloss": "The mode by which a nature exists in its own right: as its own subject, not as a modification of another.",
       "precision": "What is added to a nature to make it a *suppositum*. The debate: is *subsistentia* something real added to the nature, or just the nature itself considered as not inhering in another? Thomism tends toward the former.",
-      "module": 4,
+      "module": 5,
       "status": "planned"
     },
     {
@@ -383,7 +383,7 @@
       "english": "genus",
       "gloss": "The broader class under which a species falls. Predicated of many species with respect to what they are.",
       "precision": "\"Animal\" is the genus of \"human being.\" The genus is predicated essentially but not specifically; it does not capture what makes a species *this* species.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
@@ -391,7 +391,7 @@
       "english": "species",
       "gloss": "The specific kind. Predicated of individuals essentially and specifically.",
       "precision": "\"Human being\" is the species under the genus \"animal.\" Do not conflate with the biological taxonomy sense; here *species* means the precise kind, fully characterized.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
@@ -399,7 +399,7 @@
       "english": "specific difference",
       "gloss": "The feature that distinguishes one species from another within the same genus.",
       "precision": "\"Rational\" is the differentia of \"human being\" within \"animal.\" Genus + differentia = definition.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
@@ -407,7 +407,7 @@
       "english": "property / proper accident",
       "gloss": "A feature that follows necessarily from the essence even though it is not part of the definition.",
       "precision": "\"Capable of laughter\" (*risibile*) is a *proprium* of human beings; it follows from rationality, but rationality is not the same as the capacity for laughter. *Proprium* is convertible with the species but not identical to the essence.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
@@ -415,112 +415,112 @@
       "english": "accident (predicable)",
       "gloss": "A feature that a subject can have or lack without ceasing to be what it is.",
       "precision": "This is *accidens* in the predicable sense, not the category sense. Being pale, being tall: these are accidents of a human being that the human being can lose. Distinct from accidental form (ontological) and from *accidens* as the 2nd-10th categories. Register all three uses separately.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
       "latin": "substantia (as category)",
       "english": "substance",
       "gloss": "Being that exists in itself. The first and primary category; the others are modes of accident.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
       "latin": "quantitas",
       "english": "quantity",
       "gloss": "The extension of matter; makes a substance large or small, divisible into parts.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
       "latin": "qualitas",
       "english": "quality",
       "gloss": "A modification of substance that specifies it further: color, shape, virtue, skill, disposition.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
       "latin": "relatio",
       "english": "relation",
       "gloss": "The ordering of one thing to another: fatherhood, similarity, equality.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
       "latin": "actio",
       "english": "action",
       "gloss": "The influx of a cause on an effect; the exercise of active power.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
       "latin": "passio",
       "english": "passion / reception",
       "gloss": "The receiving of an action: being moved, being heated, being known.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
       "latin": "ubi",
       "english": "where / place",
       "gloss": "The presence of a body in a place.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
       "latin": "quando",
       "english": "when / time",
       "gloss": "Position in time.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
       "latin": "situs",
       "english": "position / posture",
       "gloss": "The ordering of parts in place: sitting, standing, prone.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
       "latin": "habitus (as category)",
       "english": "state / having",
       "gloss": "The relation of a body to what surrounds or covers it: being clothed, armed.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
       "latin": "per se primo modo",
       "english": "per se in the first mode",
       "gloss": "The predicate is in the definition of the subject. \"Animal is sensitive\": sensitivity is part of what it is to be an animal.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
       "latin": "per se secundo modo",
       "english": "per se in the second mode",
       "gloss": "The subject is in the definition of the predicate. \"The snub is in the nose\": snubness requires nose to be defined.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
       "latin": "per se tertio modo",
       "english": "per se in the third mode",
       "gloss": "Predication of substance. \"Socrates is a man\": this is said of Socrates not as of a subject, but as of what Socrates *is*.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
       "latin": "per se quarto modo",
       "english": "per se in the fourth mode",
       "gloss": "Cause-and-effect: the predicate follows from the subject by necessity. \"The triangle has 180 degrees.\"",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
       "latin": "per accidens",
       "english": "per accident",
       "gloss": "Predication that does not belong through the subject's nature; it just happens to be the case.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
@@ -528,7 +528,7 @@
       "english": "syllogism",
       "gloss": "A formal argument in which a conclusion follows necessarily from two premises sharing a middle term.",
       "precision": "The tool, not the goal. Aquinas values demonstration over bare syllogism; a valid syllogism from false premises proves nothing.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
@@ -536,7 +536,7 @@
       "english": "demonstration",
       "gloss": "A syllogism that produces *scientia* (certain knowledge) because its premises are necessary and per se.",
       "precision": "The strict sense requires *per se primo modo* or *per se quarto modo* predication in at least one premise. Most argument in philosophy is dialectic, not demonstration.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
@@ -544,7 +544,7 @@
       "english": "demonstration of the reasoned fact",
       "gloss": "Demonstration from cause to effect: the \"why.\" The highest form; explains not only that something is the case but *why*.",
       "precision": "From *propter quid* = \"on account of which.\" This is the gold standard of scientia.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
@@ -552,7 +552,7 @@
       "english": "demonstration of the fact",
       "gloss": "Demonstration from effect to cause: the \"that.\" Valid but less perfect; proves something is the case without explaining why.",
       "precision": "From *quia* = \"that.\" The arguments for God's existence are largely *demonstratio quia* (from effects to the cause we cannot directly observe).",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
@@ -560,7 +560,7 @@
       "english": "dialectic",
       "gloss": "Argument from probable premises; the form most philosophical discussion actually takes.",
       "precision": "Not inferior to demonstration in all contexts; dialectic is the mode of genuine inquiry when demonstration is unavailable. Do not treat as a slur.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
@@ -568,7 +568,7 @@
       "english": "induction",
       "gloss": "Movement from particular instances to a universal principle.",
       "precision": "In Aristotle's and Aquinas's epistemology, induction is what grounds the first principles of demonstration; it is not mere generalization but an intellectual grasp of the universal in the particular.",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
@@ -576,7 +576,7 @@
       "english": "science / certain knowledge",
       "gloss": "Knowledge through causes: certain, universal, and necessary. The goal of demonstration.",
       "precision": "Not \"science\" in the modern empirical sense. *Scientia* in scholastic philosophy = systematic knowledge ordered by causes. Theology is a *scientia* (subalternated to the science of the blessed).",
-      "module": 5,
+      "module": 6,
       "status": "built"
     },
     {
@@ -584,7 +584,7 @@
       "english": "being",
       "gloss": "The first transcendental. Everything that is, insofar as it is.",
       "precision": "Not \"beings\" (plural) but *being* as a noun: the participial form of *esse*. Already introduced in Module 2 but now systematized.",
-      "module": 6,
+      "module": 7,
       "status": "planned"
     },
     {
@@ -592,7 +592,7 @@
       "english": "thing / reality",
       "gloss": "What a being is: the *quidditas* side of being. Being considered as having a nature.",
       "precision": "Note: *res* was introduced at M0 in the *distinctio realis* lesson (real thing, independent of mind). Here it enters the transcendental list as a positive characterization.",
-      "module": 6,
+      "module": 7,
       "status": "planned"
     },
     {
@@ -600,7 +600,7 @@
       "english": "the one",
       "gloss": "Unity: every being is undivided in itself.",
       "precision": "Not numerical oneness but transcendental unity; every being is one thing, not internally contradictory.",
-      "module": 6,
+      "module": 7,
       "status": "planned"
     },
     {
@@ -608,7 +608,7 @@
       "english": "the true",
       "gloss": "Every being is knowable in principle; capable of being known by an intellect.",
       "precision": "Transcendental truth is in the *intellect* (the knowing mind) as conforming to being. *Adaequatio rei et intellectus* works in both directions: the thing is true when it conforms to a creative intellect (divine mind); the intellect is true when it conforms to the thing.",
-      "module": 6,
+      "module": 7,
       "status": "planned"
     },
     {
@@ -616,7 +616,7 @@
       "english": "the good",
       "gloss": "Every being is desirable in principle; ordered toward an end.",
       "precision": "Transcendental goodness = ontological perfection plus orderedness to an end. The good does not add a feature to being; it expresses being from the perspective of appetite and will.",
-      "module": 6,
+      "module": 7,
       "status": "planned"
     },
     {
@@ -624,7 +624,7 @@
       "english": "the beautiful",
       "gloss": "Every being, insofar as it has integrity, proportion, and clarity, is beautiful.",
       "precision": "Debated: is *pulchrum* a distinct transcendental or reducible to *verum* plus *bonum*? Aquinas treats it as connected to both (it pleases when seen). The course should flag this as a genuine open question in the tradition.",
-      "module": 6,
+      "module": 7,
       "status": "planned"
     },
     {
@@ -632,7 +632,7 @@
       "english": "something / otherness",
       "gloss": "Every being is *other* than what it is not.",
       "precision": "The negative transcendental: being is *aliquid* = *aliud quid* = \"other than something.\" Not nothing, not its negation.",
-      "module": 6,
+      "module": 7,
       "status": "planned"
     },
     {
@@ -640,63 +640,63 @@
       "english": "convertibility with being",
       "gloss": "The transcendentals are coextensive with being; they add no new beings, only a new perspective.",
       "precision": "The scholastic axiom. Misunderstanding this produces the error of thinking the transcendentals are a list of *types* of being rather than aspects of *all* being.",
-      "module": 6,
+      "module": 7,
       "status": "planned"
     },
     {
       "latin": "causa materialis",
       "english": "material cause",
       "gloss": "The matter out of which something is made: the underlying subject of change.",
-      "module": 7,
+      "module": 8,
       "status": "planned"
     },
     {
       "latin": "causa formalis",
       "english": "formal cause",
       "gloss": "The form that makes a thing *this kind* of thing: the organizing and specifying principle.",
-      "module": 7,
+      "module": 8,
       "status": "planned"
     },
     {
       "latin": "causa efficiens",
       "english": "efficient cause",
       "gloss": "The agent that brings a thing into being: the source of motion or change.",
-      "module": 7,
+      "module": 8,
       "status": "planned"
     },
     {
       "latin": "causa finalis",
       "english": "final cause",
       "gloss": "The end or goal for the sake of which the agent acts.",
-      "module": 7,
+      "module": 8,
       "status": "planned"
     },
     {
       "latin": "finis",
       "english": "end / goal",
       "gloss": "The terminus toward which an agent acts. Every agent acts for an end; this is the principle of finality.",
-      "module": 7,
+      "module": 8,
       "status": "planned"
     },
     {
       "latin": "finis operis",
       "english": "end of the work",
       "gloss": "The end built into the action itself by its nature: what this type of action is ordered to.",
-      "module": 7,
+      "module": 8,
       "status": "planned"
     },
     {
       "latin": "finis operantis",
       "english": "end of the agent",
       "gloss": "The additional intention the agent brings to the action.",
-      "module": 7,
+      "module": 8,
       "status": "planned"
     },
     {
       "latin": "causa instrumentalis",
       "english": "instrumental cause",
       "gloss": "A cause that acts only in virtue of being moved by a principal cause. The carpenter's tool.",
-      "module": 7,
+      "module": 8,
       "status": "planned"
     },
     {
@@ -704,7 +704,7 @@
       "english": "soul",
       "gloss": "The substantial form of a living body. Not a thing inside the body; the form that makes the body *this kind* of body.",
       "precision": "Hylomorphic definition, not Cartesian dualism. The soul is not imprisoned in the body; it is the body's formal principle. The rational soul is the form of the human body.",
-      "module": 8,
+      "module": 9,
       "status": "planned"
     },
     {
@@ -712,7 +712,7 @@
       "english": "vegetative soul",
       "gloss": "The soul-level responsible for nutrition, growth, and reproduction. Present in plants, animals, and humans.",
       "precision": "Each level includes the powers of the levels below. The rational soul includes vegetative and sensitive powers.",
-      "module": 8,
+      "module": 9,
       "status": "planned"
     },
     {
@@ -720,7 +720,7 @@
       "english": "sensitive soul",
       "gloss": "The soul-level responsible for sensation and local motion. Present in animals and humans.",
       "precision": "Includes both interior and exterior senses, plus appetite.",
-      "module": 8,
+      "module": 9,
       "status": "planned"
     },
     {
@@ -728,7 +728,7 @@
       "english": "rational soul",
       "gloss": "The soul-level responsible for intellect and rational will. Proper to humans.",
       "precision": "The human soul is the only material form that is also subsistent; it can exist without the body (demonstrating immortality). This is the key difference from animal sensitive souls.",
-      "module": 8,
+      "module": 9,
       "status": "planned"
     },
     {
@@ -736,7 +736,7 @@
       "english": "powers of the soul",
       "gloss": "The faculties through which the soul operates: its distinct operative capacities.",
       "precision": "The powers are distinguished by their acts, and acts by their objects. A real distinction holds between the soul and its powers in Aquinas (disputed by some).",
-      "module": 8,
+      "module": 9,
       "status": "planned"
     },
     {
@@ -744,7 +744,7 @@
       "english": "exterior senses",
       "gloss": "The five external senses: sight, hearing, smell, taste, touch.",
       "precision": "Each faculty is specified by its proper sensible: color for sight, sound for hearing, etc.",
-      "module": 8,
+      "module": 9,
       "status": "planned"
     },
     {
@@ -752,7 +752,7 @@
       "english": "interior senses",
       "gloss": "Common sense, imagination, cogitative power (*vis cogitativa* in humans, *vis aestimativa* in animals), and memory.",
       "precision": "The interior senses process and integrate what the exterior senses deliver. The *phantasma* is their product.",
-      "module": 8,
+      "module": 9,
       "status": "planned"
     },
     {
@@ -760,7 +760,7 @@
       "english": "phantasm / sense image",
       "gloss": "The representation of a sensible object retained and worked on by the interior senses. The material from which the active intellect abstracts the intelligible species.",
       "precision": "Not a mental picture in the Cartesian sense. The *phantasma* is the sense-level representation; the *species intelligibilis* is the intellect's own reception of the form.",
-      "module": 8,
+      "module": 9,
       "status": "planned"
     },
     {
@@ -768,7 +768,7 @@
       "english": "intellect",
       "gloss": "The rational power of the soul ordered to the universal and the immaterial.",
       "precision": "Distinguished into active (*intellectus agens*) and possible (*intellectus possibilis*). Not identical with *ratio* (discursive reasoning), which is the movement from one known thing to another.",
-      "module": 8,
+      "module": 9,
       "status": "planned"
     },
     {
@@ -776,7 +776,7 @@
       "english": "active intellect / agent intellect",
       "gloss": "The abstractive power: what strips the *phantasma* of its individuating material conditions and produces the *species intelligibilis*.",
       "precision": "Does the active work of making the intelligible form actually intelligible. Aquinas holds it is part of the soul (against Averroes's separate intellect).",
-      "module": 8,
+      "module": 9,
       "status": "planned"
     },
     {
@@ -784,7 +784,7 @@
       "english": "possible intellect / passive intellect",
       "gloss": "The receptive power: what receives the *species intelligibilis* and is thereby actualized toward understanding.",
       "precision": "\"Possible\" = potential, receptive. Before receiving the species, it is like a blank tablet. Once actualized, it forms the *verbum mentis*.",
-      "module": 8,
+      "module": 9,
       "status": "planned"
     },
     {
@@ -792,7 +792,7 @@
       "english": "will",
       "gloss": "The rational appetite: the appetite proper to a being with intellect, ordered to the good as known.",
       "precision": "Not identical with desire (*appetitus sensitivus*). The will is ordered to the good *as intellectually apprehended*, not just felt.",
-      "module": 8,
+      "module": 9,
       "status": "planned"
     },
     {
@@ -800,168 +800,168 @@
       "english": "free choice / free will",
       "gloss": "The faculty of self-determination with respect to means. The will freely chooses among goods that do not compel it.",
       "precision": "Not freedom from the good; the will is necessarily ordered to the good in general. Freedom operates with respect to particular goods that do not exhaust the good.",
-      "module": 8,
+      "module": 9,
       "status": "planned"
     },
     {
       "latin": "abstractio",
       "english": "abstraction",
       "gloss": "The operation by which the active intellect extracts the universal intelligible form from the particular phantasm.",
-      "module": 9,
+      "module": 10,
       "status": "planned"
     },
     {
       "latin": "tres gradus abstractionis",
       "english": "three degrees of abstraction",
       "gloss": "The three levels at which the intellect abstracts from matter: (1) natural philosophy, from individual but not common matter; (2) mathematics, from all sensible matter; (3) metaphysics, from all matter.",
-      "module": 9,
+      "module": 10,
       "status": "planned"
     },
     {
       "latin": "species intelligibilis",
       "english": "intelligible species",
       "gloss": "The form by which the intellect knows an object: not the object itself, but the likeness through which the intellect is assimilated to the object.",
-      "module": 9,
+      "module": 10,
       "status": "planned"
     },
     {
       "latin": "verbum mentis",
       "english": "mental word / interior word",
       "gloss": "The concept formed by the intellect after it has been actualized by the species: the product of understanding.",
-      "module": 9,
+      "module": 10,
       "status": "planned"
     },
     {
       "latin": "tres operationes intellectus",
       "english": "three operations of the intellect",
       "gloss": "Simple apprehension (grasping a quiddity), judgment (composing or dividing), reasoning (moving from known to unknown).",
-      "module": 9,
+      "module": 10,
       "status": "planned"
     },
     {
       "latin": "adaequatio rei et intellectus",
       "english": "conformity of thing and intellect",
       "gloss": "The scholastic definition of truth: the mind's conformity to the thing, or (in divine understanding) the thing's conformity to the mind.",
-      "module": 9,
+      "module": 10,
       "status": "planned"
     },
     {
       "latin": "universale",
       "english": "universal",
       "gloss": "A form predicated of many: genus, species, differentia, proprium, accident. Aquinas's position: universals exist formally in the mind but have a foundation in things (*universale post rem* as mental, *universale in re* as foundation).",
-      "module": 9,
+      "module": 10,
       "status": "planned"
     },
     {
       "latin": "signum",
       "english": "sign",
       "gloss": "Whatever represents something other than itself to a knowing faculty.",
-      "module": 10,
+      "module": 11,
       "status": "planned"
     },
     {
       "latin": "signum formale",
       "english": "formal sign",
       "gloss": "A sign that represents without first being known itself: the *species intelligibilis* is the paradigm. It is the medium through which the object is known, not an object of knowledge in its own right.",
-      "module": 10,
+      "module": 11,
       "status": "planned"
     },
     {
       "latin": "signum instrumentale",
       "english": "instrumental sign",
       "gloss": "A sign that is first known as a thing and then as representing something else: words, images, smoke as sign of fire.",
-      "module": 10,
+      "module": 11,
       "status": "planned"
     },
     {
       "latin": "signum naturale",
       "english": "natural sign",
       "gloss": "A sign that signifies by nature, not by convention: smoke signifies fire naturally.",
-      "module": 10,
+      "module": 11,
       "status": "planned"
     },
     {
       "latin": "signum ad placitum",
       "english": "conventional sign",
       "gloss": "A sign that signifies by convention: words in any natural language.",
-      "module": 10,
+      "module": 11,
       "status": "planned"
     },
     {
       "latin": "significatio",
       "english": "signification",
       "gloss": "The relation of sign to signified: the formal character of a sign as sign.",
-      "module": 10,
+      "module": 11,
       "status": "planned"
     },
     {
       "latin": "modus significandi",
       "english": "mode of signifying",
       "gloss": "The grammatical-logical form in which a term signifies its object; may differ from the *modus essendi* (way of being) of the object. Key for the theology of divine names.",
-      "module": 10,
+      "module": 11,
       "status": "planned"
     },
     {
       "latin": "res significata",
       "english": "the signified thing",
       "gloss": "The object to which the sign refers.",
-      "module": 10,
+      "module": 11,
       "status": "planned"
     },
     {
       "latin": "suppositio",
       "english": "supposition",
       "gloss": "The reference of a term as used in a particular context: what the term stands for in a given utterance.",
-      "module": 10,
+      "module": 11,
       "status": "planned"
     },
     {
       "latin": "conceptus / verbum mentis",
       "english": "concept / mental word",
       "gloss": "The interior representation formed by the intellect: the formal sign par excellence.",
-      "module": 10,
+      "module": 11,
       "status": "planned"
     },
     {
       "latin": "nomen",
       "english": "name / noun",
       "gloss": "A term that signifies a thing with a determinate mode: the primary bearer of *significatio* in language.",
-      "module": 10,
+      "module": 11,
       "status": "planned"
     },
     {
       "latin": "appetitus",
       "english": "appetite",
       "gloss": "The faculty ordered to the good: the tendency of a being toward what perfects it.",
-      "module": 11,
+      "module": 12,
       "status": "planned"
     },
     {
       "latin": "appetitus concupiscibilis",
       "english": "concupiscible appetite",
       "gloss": "The part of the sensitive appetite ordered to the pleasurable good: love, desire, delight, hatred, aversion, grief.",
-      "module": 11,
+      "module": 12,
       "status": "planned"
     },
     {
       "latin": "appetitus irascibilis",
       "english": "irascible appetite",
       "gloss": "The part of the sensitive appetite ordered to the difficult good: hope, despair, courage, fear, anger.",
-      "module": 11,
+      "module": 12,
       "status": "planned"
     },
     {
       "latin": "passiones animae",
       "english": "passions of the soul",
       "gloss": "The movements of the sensitive appetite: not mere feelings but real ontological motions toward or away from apprehended goods and evils.",
-      "module": 11,
+      "module": 12,
       "status": "planned"
     },
     {
       "latin": "amor",
       "english": "love",
       "gloss": "The first and most fundamental passion: the affective response to the apprehended good. All other passions are reducible to love and its derivatives.",
-      "module": 11,
+      "module": 12,
       "status": "planned"
     },
     {
@@ -969,7 +969,7 @@
       "english": "human act",
       "gloss": "An act elicited with knowledge and will: an act for which the agent is morally responsible.",
       "precision": "Distinct from *actus hominis*. This distinction is one of the most important QA items in M12; every exercise touching morality must use these correctly.",
-      "module": 12,
+      "module": 13,
       "status": "built"
     },
     {
@@ -977,7 +977,7 @@
       "english": "act of a human",
       "gloss": "An act that happens in a human being but without full deliberation or freedom: reflexes, digestion, breathing, acts of passion exceeding rational control.",
       "precision": "Not morally imputable in the full sense. The *actus humanus* / *actus hominis* cut is prior to all discussion of moral evaluation.",
-      "module": 12,
+      "module": 13,
       "status": "built"
     },
     {
@@ -985,7 +985,7 @@
       "english": "sources of morality",
       "gloss": "The three elements that together determine the moral character of an act: object, end, and circumstances. All three must be good for the act to be good.",
       "precision": "A common error is treating intention (*finis operantis*) as the sole or dominant determinant. The object (*finis operis*) specifies the act first. An act intrinsically evil by object cannot be made good by intention.",
-      "module": 12,
+      "module": 13,
       "status": "built"
     },
     {
@@ -993,7 +993,7 @@
       "english": "moral object",
       "gloss": "The proximate end of the action as defined by reason: what the action *is*, prescinding from circumstances and the agent's further intention.",
       "precision": "Not the physical act but the act as specified by reason. \"Killing an innocent person\" and \"executing a criminal\" may be physically similar but are different moral objects.",
-      "module": 12,
+      "module": 13,
       "status": "built"
     },
     {
@@ -1001,7 +1001,7 @@
       "english": "circumstances",
       "gloss": "The morally relevant conditions surrounding an act: who, what, where, by what means, why, how, when.",
       "precision": "Circumstances can increase or diminish moral goodness or evil; they cannot change a bad act into a good one. Common error: thinking circumstances determine morality in full (consequentialism).",
-      "module": 12,
+      "module": 13,
       "status": "built"
     },
     {
@@ -1009,7 +1009,7 @@
       "english": "intention of the end",
       "gloss": "The agent's further purpose in performing the act: the *finis operantis*.",
       "precision": "A good intention does not sanctify an evil act. \"The end does not justify the means\" = the *finis operantis* does not override a bad *objectum*.",
-      "module": 12,
+      "module": 13,
       "status": "built"
     },
     {
@@ -1017,7 +1017,7 @@
       "english": "happiness / beatitude",
       "gloss": "The final end of the human person: perfect fulfillment of the rational appetite in the vision of God.",
       "precision": "Not mere subjective contentment. *Beatitudo* is objective: the intellect's perfect act directed to perfect truth (*Deus sub ratione bonitatis*). Natural happiness (the philosopher's) is real but insufficient; supernatural beatitude requires grace.",
-      "module": 12,
+      "module": 13,
       "status": "built"
     },
     {
@@ -1025,7 +1025,7 @@
       "english": "ultimate end",
       "gloss": "The last end: that for the sake of which all other ends are pursued, which is itself pursued for its own sake and not as a means.",
       "precision": "Everything the will does is ordered (explicitly or implicitly) to *finis ultimus*. Aquinas argues this must be one; the will cannot have two ultimate ends.",
-      "module": 12,
+      "module": 13,
       "status": "built"
     },
     {
@@ -1033,7 +1033,7 @@
       "english": "practical syllogism",
       "gloss": "The structure of practical reasoning: universal principle, particular application, action.",
       "precision": "Not the same as theoretical syllogism; the conclusion is an *action*, not a proposition. *Synderesis* supplies the major premise; *conscientia* applies it to the case.",
-      "module": 12,
+      "module": 13,
       "status": "built"
     },
     {
@@ -1041,7 +1041,7 @@
       "english": "synderesis",
       "gloss": "The habitual knowledge of the first principles of practical reason: the innate inclination toward the good and away from evil.",
       "precision": "Not a faculty but a *habitus*: a stable disposition of the practical intellect. The major premise of the practical syllogism is supplied by *synderesis*.",
-      "module": 12,
+      "module": 13,
       "status": "built"
     },
     {
@@ -1049,7 +1049,7 @@
       "english": "conscience",
       "gloss": "The act of applying moral knowledge to a particular act: practical reason in its application to concrete choice.",
       "precision": "Not the *synderesis* (which holds the principles); conscience is the *application*. Error in conscience is possible and sometimes excusable; a *certain* conscience (even if objectively erroneous) must be followed.",
-      "module": 12,
+      "module": 13,
       "status": "built"
     },
     {
@@ -1057,7 +1057,7 @@
       "english": "first practical principles",
       "gloss": "The foundational principles of natural law, self-evident to practical reason: \"Do good and avoid evil\" as the primary; specific inclinations beneath it.",
       "precision": "The foundational principle is formal; it does not specify what counts as good. The content comes from the natural inclinations.",
-      "module": 12,
+      "module": 13,
       "status": "built"
     },
     {
@@ -1065,7 +1065,7 @@
       "english": "eternal law",
       "gloss": "The rational ordering of all things by God: the divine reason directing all things to their proper ends. The ultimate foundation of all law.",
       "precision": "Not arbitrary divine will (voluntarism) but divine *reason*. The eternal law is not promulgated to humans directly; it is participated through natural law.",
-      "module": 12,
+      "module": 13,
       "status": "built"
     },
     {
@@ -1073,7 +1073,7 @@
       "english": "natural law",
       "gloss": "The rational creature's participation in the eternal law. The natural inclinations of reason, properly ordered, toward the good.",
       "precision": "Not a list of rules but a *participation* in the eternal law: the creature's innate rational ordering toward its proper good and end. The content is derived from the natural inclinations (life, procreation, truth, society).",
-      "module": 12,
+      "module": 13,
       "status": "built"
     },
     {
@@ -1081,7 +1081,7 @@
       "english": "human (positive) law",
       "gloss": "Particular determinations of natural law made by legitimate authority for the common good.",
       "precision": "*Lex humana* is just only when it conforms to *lex naturalis*. An unjust law is not law in the full sense (*lex iniusta non est lex*: Augustine, cited by Aquinas).",
-      "module": 12,
+      "module": 13,
       "status": "built"
     },
     {
@@ -1089,7 +1089,7 @@
       "english": "divine positive law",
       "gloss": "Law directly promulgated by God through revelation: Old Law and New Law.",
       "precision": "Supplements natural law for what reason alone cannot determine (sacramental form, specific ritual prescriptions) or where natural law is unclear in fallen human reason.",
-      "module": 12,
+      "module": 13,
       "status": "built"
     },
     {
@@ -1097,7 +1097,7 @@
       "english": "choice",
       "gloss": "The act of the will by which it freely selects a particular good among alternatives presented by reason.",
       "precision": "*Electio* presupposes *consilium* (deliberation) and *intentio* (intention of the end). It is the joint act of will and reason most properly characteristic of moral life.",
-      "module": 12,
+      "module": 13,
       "status": "built"
     },
     {
@@ -1105,7 +1105,7 @@
       "english": "habit / habitus",
       "gloss": "A stable disposition of a faculty that inclines it readily and pleasantly toward a certain kind of act.",
       "precision": "Note: *habitus* as category (Module 5) = \"having\" as accidental category. *Habitus* here = virtue-related disposition. Same word, different sense. Always gloss in context. The virtue *habitus* is a quality (second category), not the state-of-having category.",
-      "module": 13,
+      "module": 14,
       "status": "planned"
     },
     {
@@ -1113,7 +1113,7 @@
       "english": "virtue",
       "gloss": "A good habitus: a stable disposition that inclines toward acts perfective of the agent.",
       "precision": "From *vir* (man) with the sense of force. Not mere behavior pattern; virtue is a real quality of the soul that makes the agent capable of acting well readily, pleasantly, and in the right way.",
-      "module": 13,
+      "module": 14,
       "status": "planned"
     },
     {
@@ -1121,7 +1121,7 @@
       "english": "theological virtues",
       "gloss": "Faith, hope, and charity: virtues infused by God, ordered immediately to God as their object.",
       "precision": "Not acquired by human effort but infused. They exceed the natural order and cannot be obtained by repetition of acts.",
-      "module": 13,
+      "module": 14,
       "status": "planned"
     },
     {
@@ -1129,7 +1129,7 @@
       "english": "cardinal virtues",
       "gloss": "Prudence, justice, fortitude, and temperance: the four \"hinge\" virtues on which the moral life turns.",
       "precision": "\"Cardinal\" from *cardo* (hinge). Acquired by habituation; each has an intellectual and volitional dimension. Prudence governs the others.",
-      "module": 13,
+      "module": 14,
       "status": "planned"
     },
     {
@@ -1137,7 +1137,7 @@
       "english": "prudence",
       "gloss": "The intellectual virtue that governs practical reason: right reason applied to action (*recta ratio agibilium*).",
       "precision": "Not mere shrewdness or calculation. Prudence is the virtue that enables the agent to find the right *means* to the right *end* in the particular case. It presupposes right ends (virtue of will) and delivers right choice.",
-      "module": 13,
+      "module": 14,
       "status": "planned"
     },
     {
@@ -1145,7 +1145,7 @@
       "english": "intellectual virtues",
       "gloss": "The five virtues of the theoretical and practical intellect: understanding (*intellectus*), science (*scientia*), wisdom (*sapientia*), art (*ars*), prudence (*prudentia*).",
       "precision": "Acquired (except perhaps for the light of *intellectus*). They perfect the intellect as intellect, not as orderer of action (except prudence).",
-      "module": 13,
+      "module": 14,
       "status": "planned"
     },
     {
@@ -1153,189 +1153,189 @@
       "english": "wisdom",
       "gloss": "The intellectual virtue that considers the highest causes: the supreme perfection of the theoretical intellect.",
       "precision": "Wisdom judges all things by the highest causes and orders the other intellectual virtues under itself. In theology, sacra doctrina is a wisdom (*sapientia*) because it judges all things by divine revelation.",
-      "module": 13,
+      "module": 14,
       "status": "planned"
     },
     {
       "latin": "distinctio realis",
       "english": "real distinction",
       "gloss": "A distinction holding between two things that actually differ in the thing itself, independently of any mind.",
-      "module": 14,
+      "module": 15,
       "status": "planned"
     },
     {
       "latin": "distinctio rationis",
       "english": "logical / mental distinction",
       "gloss": "A distinction that holds only in the mind's consideration of one thing under different aspects.",
-      "module": 14,
+      "module": 15,
       "status": "planned"
     },
     {
       "latin": "distinctio rationis ratiocinatae",
       "english": "distinction of reason with a foundation in reality",
       "gloss": "A mental distinction that is not arbitrary; it has a real foundation in the thing's different relations or aspects.",
-      "module": 14,
+      "module": 15,
       "status": "planned"
     },
     {
       "latin": "distinctio rationis ratiocinantis",
       "english": "distinction of pure reason",
       "gloss": "A mental distinction with no foundation in the thing; purely a product of the mind's double consideration.",
-      "module": 14,
+      "module": 15,
       "status": "planned"
     },
     {
       "latin": "distinctio formalis (Scotus)",
       "english": "formal distinction",
       "gloss": "Scotus's third option between real and mental: a distinction in the thing itself but short of a real distinction between two really separable items.",
-      "module": 14,
+      "module": 15,
       "status": "planned"
     },
     {
       "latin": "distinctio modalis",
       "english": "modal distinction",
       "gloss": "A distinction between a thing and its mode: less than a real distinction, more than a mental one.",
-      "module": 14,
+      "module": 15,
       "status": "planned"
     },
     {
       "latin": "per se / per accidens",
       "english": "essential / accidental",
       "gloss": "In itself / through another. Per se = through the thing's own nature; per accidens = through something else happening to be the case.",
-      "module": 14,
+      "module": 15,
       "status": "planned"
     },
     {
       "latin": "in se / in alio",
       "english": "in itself / in another",
       "gloss": "Substance (*in se*) vs. accident (*in alio*): the fundamental ontological divide.",
-      "module": 14,
+      "module": 15,
       "status": "planned"
     },
     {
       "latin": "actus primus / actus secundus",
       "english": "first act / second act",
       "gloss": "First act = the form or soul constituting a being; second act = the operation flowing from that form. Soul is first act of the body; seeing is second act of the eye.",
-      "module": 14,
+      "module": 15,
       "status": "planned"
     },
     {
       "latin": "univocum",
       "english": "univocal",
       "gloss": "A term predicated of multiple subjects in exactly the same sense: \"animal\" said of dogs and cats.",
-      "module": 15,
+      "module": 16,
       "status": "planned"
     },
     {
       "latin": "aequivocum",
       "english": "equivocal",
       "gloss": "A term predicated of multiple subjects in entirely different senses: \"bat\" (flying mammal vs. baseball implement).",
-      "module": 15,
+      "module": 16,
       "status": "planned"
     },
     {
       "latin": "analogum",
       "english": "analogical",
       "gloss": "A term predicated of multiple subjects in a sense that is partly the same, partly different: \"healthy\" said of the organism, the food, the complexion, the medicine.",
-      "module": 15,
+      "module": 16,
       "status": "planned"
     },
     {
       "latin": "analogia attributionis",
       "english": "analogy of attribution",
       "gloss": "Analogy in which one subject is the primary analogate and others are secondary, related to the primary. \"Healthy\" primarily of the organism; secondarily of food (causing health), urine (signifying it), etc.",
-      "module": 15,
+      "module": 16,
       "status": "planned"
     },
     {
       "latin": "analogia proportionalitatis",
       "english": "analogy of proportionality",
       "gloss": "Analogy in which the same relation holds in each analogate: as A is to B, so C is to D. Being said of substance and accident: as substance is to its being, so accident is to its being, but differently.",
-      "module": 15,
+      "module": 16,
       "status": "planned"
     },
     {
       "latin": "via negativa / via remotionis",
       "english": "negative way",
       "gloss": "The method of knowing God by denying finite perfections of him: God is not limited, not composite, not temporal.",
-      "module": 15,
+      "module": 16,
       "status": "planned"
     },
     {
       "latin": "via eminentiae",
       "english": "way of eminence",
       "gloss": "The method of knowing God by affirming finite perfections of him in an unlimited, eminent mode: God is not merely good but *goodness itself*.",
-      "module": 15,
+      "module": 16,
       "status": "planned"
     },
     {
       "latin": "quaestio",
       "english": "question",
       "gloss": "See Structural Terms above. Here treated as a formal object of study, not just a UI label.",
-      "module": 16,
+      "module": 17,
       "status": "planned"
     },
     {
       "latin": "articulus",
       "english": "article",
       "gloss": "See Structural Terms above.",
-      "module": 16,
+      "module": 17,
       "status": "planned"
     },
     {
       "latin": "sed contra",
       "english": "on the contrary",
       "gloss": "See Structural Terms above.",
-      "module": 16,
+      "module": 17,
       "status": "planned"
     },
     {
       "latin": "respondeo dicendum",
       "english": "I respond that it must be said",
       "gloss": "See Structural Terms above.",
-      "module": 16,
+      "module": 17,
       "status": "planned"
     },
     {
       "latin": "disputatio",
       "english": "disputation",
       "gloss": "See Structural Terms above.",
-      "module": 16,
+      "module": 17,
       "status": "planned"
     },
     {
       "latin": "structura Summae Theologiae",
       "english": "structure of the Summa Theologiae",
       "gloss": "The three-part structure: Prima Pars (God and creation), Secunda Pars (the moral order, divided Prima Secundae and Secunda Secundae), Tertia Pars (Christ and the sacraments).",
-      "module": 16,
+      "module": 17,
       "status": "planned"
     },
     {
       "latin": "actus omnium actuum",
       "english": "act of all acts",
       "gloss": "Aquinas's description of *esse*: the most fundamental actuality, on which all other acts depend.",
-      "module": 17,
+      "module": 18,
       "status": "planned"
     },
     {
       "latin": "perfectio omnium perfectionum",
       "english": "perfection of all perfections",
       "gloss": "*Esse* as the supreme perfection: all other perfections are participations in or specifications of it.",
-      "module": 17,
+      "module": 18,
       "status": "planned"
     },
     {
       "latin": "esse ut actus",
       "english": "esse as act",
       "gloss": "The strict Thomistic reading: *esse* is an act, and it is really distinct from the essence that receives and limits it.",
-      "module": 17,
+      "module": 18,
       "status": "planned"
     },
     {
       "latin": "essentia ut potentia",
       "english": "essence as potency",
       "gloss": "The strict Thomistic position: essence is the potency that receives and limits *esse*. Essence is *positive*, a real ontological principle, not a shadow.",
-      "module": 17,
+      "module": 18,
       "status": "planned"
     }
   ]

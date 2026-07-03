@@ -76,7 +76,7 @@ function ContinueHero({ states }: { states: ModuleState[] }) {
           <div className="t">The rest of the course is in the scriptorium</div>
           <div className="m">Revisit any module below to review</div>
         </div>
-        <button className="btn" onClick={() => router.push('/modules/0')}>
+        <button className="btn" onClick={() => router.push('/modules/1')}>
           Review &mdash; <em>repetere</em>
         </button>
       </div>
@@ -93,7 +93,7 @@ function ContinueHero({ states }: { states: ModuleState[] }) {
       <div className="mk">{'☛'}</div>
       <div className="who">
         <div className="k">
-          {beginning ? 'Begin' : 'Continue'} &middot; Module {toRoman(target.id + 1)} &middot; {target.title}
+          {beginning ? 'Begin' : 'Continue'} &middot; Module {toRoman(target.id)} &middot; {target.title}
         </div>
         <div className="t">
           Lectio {lesson.num} &mdash; {lesson.title} &middot; <span className="lat">{lesson.latin}</span>

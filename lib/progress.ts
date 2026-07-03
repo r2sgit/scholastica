@@ -11,9 +11,9 @@ const LEGACY_KEYS = [
   'scholastica_m12_progress',
 ];
 const LEGACY_MODULE_IDS: Record<string, number> = {
-  scholastica_m0_progress: 0,
-  scholastica_m5_progress: 5,
-  scholastica_m12_progress: 12,
+  scholastica_m0_progress: 1,
+  scholastica_m5_progress: 6,
+  scholastica_m12_progress: 13,
 };
 
 export interface ScoreEntry {
@@ -40,8 +40,12 @@ export interface StorageSchema {
   sineErrore: Record<number, boolean[]>;   // moduleId -> per-lesson gold marks, sticky once earned
   thesesEarned: number[];                  // thesis n's whose unlock ceremony has PLAYED (ceremony-once guard)
   habitus: { days: string[] };             // ISO dates (YYYY-MM-DD, local) on which >=1 lesson completed; append-only, dedup'd, capped
+  /* ── Schema version (Great Renumber, P1). Absent or < 2 means module ids
+     are still 0-indexed on disk and need the +1 shift below. ── */
+  schemaVersion?: number;
 }
 
+const CURRENT_SCHEMA_VERSION = 2;
 const HABITUS_CAP = 400;
 
 function getDefault(): StorageSchema {
@@ -52,6 +56,35 @@ function getDefault(): StorageSchema {
     sineErrore: {},
     thesesEarned: [],
     habitus: { days: [] },
+    schemaVersion: CURRENT_SCHEMA_VERSION,
+  };
+}
+
+/** Shift the numeric keys of a Record<number, T> by +1. Used only for the
+    one-time module-renumbering migration (0-indexed -> 1-indexed). Non-numeric
+    or malformed keys are dropped defensively (there should be none). */
+function shiftKeys<T>(rec: Record<number, T>): Record<number, T> {
+  const out: Record<number, T> = {};
+  for (const key of Object.keys(rec)) {
+    const n = Number(key);
+    if (!Number.isFinite(n)) continue;
+    out[n + 1] = rec[n as unknown as keyof typeof rec];
+  }
+  return out;
+}
+
+/** One-time migration: modules were renumbered from 0-indexed (M0..M17) to
+    1-indexed (Module 1..18). Any stored data below schemaVersion 2 has its
+    progress/sineErrore keys shifted by +1 to match. thesesEarned, habitus,
+    prefs, and introSeen are untouched — theses are numbered independently
+    of modules and never shifted. */
+function migrateSchemaV2(data: StorageSchema): StorageSchema {
+  if ((data.schemaVersion ?? 1) >= CURRENT_SCHEMA_VERSION) return data;
+  return {
+    ...data,
+    progress: shiftKeys(data.progress || {}),
+    sineErrore: shiftKeys(data.sineErrore || {}),
+    schemaVersion: CURRENT_SCHEMA_VERSION,
   };
 }
 
@@ -68,7 +101,20 @@ function readStorage(): StorageSchema {
   if (typeof window === 'undefined') return getDefault();
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) return { ...getDefault(), ...JSON.parse(raw) };
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      // Determine the on-disk schema version BEFORE merging over getDefault():
+      // getDefault() stamps the current version, and merging first would mask
+      // legacy (versionless) data as already migrated.
+      const storedVersion = parsed.schemaVersion ?? 1;
+      const merged: StorageSchema = { ...getDefault(), ...parsed };
+      if (storedVersion < CURRENT_SCHEMA_VERSION) {
+        const migrated = migrateSchemaV2({ ...merged, schemaVersion: storedVersion });
+        writeStorage(migrated);
+        return migrated;
+      }
+      return merged;
+    }
   } catch { /* fall through */ }
   return getDefault();
 }

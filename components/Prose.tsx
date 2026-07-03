@@ -6,7 +6,7 @@ import Term from './Term';
 
    Lesson prose is stored as HTML strings and rendered via dangerouslySetInnerHTML.
    This component walks such a string and wraps each Latin-marked term — either
-   <span class="lat">…</span> (m1/m2/m17 convention) or <em>…</em> (m0/m5/m12
+   <span class="lat">…</span> (m2/m3/m18 convention) or <em>…</em> (m1/m6/m13
    convention) — in the inline <Term> popover, rendering everything else verbatim.
 
    Safety: <Term> gates on the glossary (findTerm + isTermEarned). Only earned,

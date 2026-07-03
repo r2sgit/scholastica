@@ -1,10 +1,10 @@
 import type { ModuleMeta } from '../types';
 
-export const m12: ModuleMeta = {
-  id: 12,
+export const m13: ModuleMeta = {
+  id: 13,
   title: `Natural Law`,
   short: `Natural Law`,
-  label: `Module 12 · Natural Law`,
+  label: `Module 13 · Natural Law`,
   lessons: [
     {
       id: `m12-l1`,

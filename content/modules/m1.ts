@@ -2,1036 +2,1391 @@ import type { ModuleMeta } from '../types';
 
 export const m1: ModuleMeta = {
   id: 1,
-  title: `Act and Potency`,
-  short: `Act and Potency`,
-  label: `Module 1 · Act and Potency`,
-  latin: `Actus et Potentia`,
-  aim: `Every finite being is composed of act (the positive, determining, perfecting principle) and potency (the real capacity to receive or be limited by act). God alone is Pure Act, with no composition. The act/potency distinction is the master key: every other distinction in the system is a species of it.`,
+  title: `Foundations`,
+  short: `Foundations`,
+  label: `Module 1 · Foundations`,
   lessons: [
     {
-      id: `m1-l1`,
+      id: `m0-l1`,
       num: `I`,
-      title: `The Two Poles`,
-      latin: `actus  ·  potentia`,
-      tag: `actus  ·  potentia`,
+      title: `The Two Questions`,
+      latin: `essentia / esse`,
+      tag: `essentia  ·  esse`,
       fin: {
-        tag: `actus  ·  potentia`,
-        heading: `Every finite thing is stretched between two poles. Neither is nothing.`,
-        body: `<em>Actus</em> and <em>potentia</em> are not a metaphor. They are the two real principles of which every creature is composed. Aristotle discovered the grammar; Aquinas sharpened it until it could carry the weight of creation itself.`,
+        tag: `essentia  ·  esse`,
+        heading: `Every thing you will ever examine has two questions in front of it.`,
+        body: `<em>Esse</em> is not <em>essentia.</em> That a tree exists is not the same fact as what a tree is. Modernity collapsed these; Aquinas held them apart with a patience that bordered on stubbornness. He was right to. Nearly every argument in the course eventually reaches back to this distinction — which is as good a reason as any to begin here.`,
       },
       questions: [
         {
-          id: `m1-l1-q1`,
+          id: `m0-l1-q1`,
           type: "mcq",
-          stem: `A sculptor stands before an untouched block of marble. What does the marble already possess, in relation to the statue it might become?`,
+          stem: `Look at an apple sitting on a table. When you ask <em>"What is this?"</em>, you are asking…`,
           payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "Nothing at all, until the sculptor begins to carve.",
-                "feedback": "The marble has genuine readiness before the sculptor touches it. That readiness is built into what marble is. The name for it is <span class=\"lat\">potentia</span>: a real ontological principle, not an emptiness waiting to be filled."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "A real capacity to receive the form of a statue.",
-                "feedback": "Respondeo: a real capacity, not a mere absence. The marble genuinely can become a statue, and that <em>can</em> is <span class=\"lat\">potentia</span>: a real principle ordered toward act."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "The actual form of the statue, simply hidden inside the stone.",
-                "feedback": "That is the Michelangelo myth, not the Thomistic account. The form is not hiding inside; it does not exist yet. What the marble has is a real capacity to receive the form. That capacity is <span class=\"lat\">potentia</span>."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "A capacity that exists only in the sculptor's mind, projected onto the stone.",
-                "feedback": "The capacity is in the marble, not in the mind. A different block of granite or a cloud of smoke could not become this statue, no matter what the sculptor imagines. Real <span class=\"lat\">potentia</span> is in the thing itself."
-              }
-            ],
-            "correct_option_id": "b"
-          },
-        },
-        {
-          id: `m1-l1-q2`,
-          type: "mcq",
-          stem: `The sculptor finishes. The marble is fully shaped, the form realized. What principle does the realized form represent?`,
-          payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "<span class=\"lat\">Actus</span>: the perfection fully realized in the matter.",
-                "feedback": "Respondeo: <span class=\"lat\">actus</span> is always the positive, determining, perfecting principle. The form as realized is act. The marble that received it was potency. This is the master pair."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "<span class=\"lat\">Potentia</span>: the marble's capacity to be shaped further.",
-                "feedback": "<span class=\"lat\">Potentia</span> remains in the statue (it could be re-carved or destroyed), but it is not what the question points at. The realized form, the positive determination now actually present, is <span class=\"lat\">actus</span>."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "<span class=\"lat\">Materia</span>: the underlying matter that has taken on a new shape.",
-                "feedback": "<span class=\"lat\">Materia</span> is the receptive material substrate, the marble as capable of receiving form. The completed form is not the matter. It is what the matter received, namely <span class=\"lat\">actus</span>."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "<span class=\"lat\">Compositio</span>: the union of matter and form in the finished statue.",
-                "feedback": "<span class=\"lat\">Compositio</span> names the union of two principles, not one of them by itself. The realized form is one of the principles in the composition: it is the <span class=\"lat\">actus</span> that the matter received."
-              }
-            ],
-            "correct_option_id": "a"
-          },
-        },
-        {
-          id: `m1-l1-q3`,
-          type: "mcq",
-          stem: `Maria can read Greek. Right now she is asleep. Did her ability to read Greek vanish when she fell asleep?`,
-          payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "Yes. An ability exists only while it is being exercised; sleep erases it until morning.",
-                "feedback": "Then every pianist would lose the piano nightly and relearn it at breakfast. Something real persists through the sleep. Hold on to that something."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "It does not vanish, but it weakens: capacities fade the moment they stop being used.",
-                "feedback": "Capacities can fade over years of neglect, but that is a different fact. Tonight, asleep, her Greek is exactly as real as it was at dinner. Unused is not diminished."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "No. The ability remains fully real while she sleeps; it is simply not being used.",
-                "feedback": "Respondeo: fully real, completely unused. A capacity can be present without being exercised. You have just felt the distinction this whole module runs on."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "The question is confused: sleeping people have no abilities, only memories of past performances.",
-                "feedback": "A memory of reading Greek would not let her read a new sentence tomorrow. Her ability does. What she carries through the night is more than a record; it is a readiness."
-              }
-            ],
-            "correct_option_id": "c"
-          },
-        },
-        {
-          id: `m1-l1-q4`,
-          type: "distinction_application",
-          stem: `Maria again, awake this time but holding a closed book. She has the unexercised capacity to read Greek. How does her case sit on the act/potency grid?`,
-          payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "Pure act, since the person actually exists and capacities not yet exercised do not show up in being.",
-                "feedback": "Existing in act and being in act in every respect are different. The person exists, yes, but every unexercised capacity is a real potency. Pure Act means no unrealized capacity at all; that is reserved for God."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "Pure potency in the relevant respect, since the Greek-reading has never been actualized.",
-                "feedback": "Pure potency, taken strictly, is non-being. The person is in act as existing, in act as rational, in act in many respects. Only one respect, the unexercised reading, is in potency. The case is not pure potency because the person already exists and has actualized many capacities."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "Act in some respects, potency in another: actually existing and rational, in potency to the unexercised Greek.",
-                "feedback": "Respondeo: act in some respects, potency in another. Act and potency are always indexed to a respect: this thing, in this respect. The person is in act qua existing, in act qua rational animal; in potency qua the unexercised capacity to read Greek. Both poles are real; neither cancels the other."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "Neither act nor potency: an unexercised capacity is a psychological disposition, not an ontological principle.",
-                "feedback": "This collapses real potency into mere psychology. But the capacity is grounded in what the person is; a stone has no capacity to read Greek, however dispositionally we describe it. <span class=\"lat\">Potentia</span> is a real ontological principle, not just a way of speaking about minds."
-              }
-            ],
-            "correct_option_id": "c"
-          },
-        },
-        {
-          id: `m1-l1-q5`,
-          type: "match_pair",
-          stem: `Pair each principle with the role it plays in the metaphysics of finite being. <em>Tap a principle, then tap its role. Tap a paired item to release it.</em>`,
-          latin_tag: `actus  ·  potentia`,
-          doctrine_line: `The two poles of finite being. Everything else in the system is a species of this composition.`,
-          lesson_complete: true,
-          payload: {
-            "left_set": [
-              {
-                "id": "L1",
-                "text": "<span class=\"lat\">actus</span>"
-              },
-              {
-                "id": "L2",
-                "text": "<span class=\"lat\">potentia</span>"
-              },
-              {
-                "id": "L3",
-                "text": "<span class=\"lat\">actus purus</span>"
-              },
-              {
-                "id": "L4",
-                "text": "<span class=\"lat\">compositio</span>"
-              }
-            ],
-            "right_set": [
-              {
-                "id": "R1",
-                "text": "the determining perfection a thing actually has"
-              },
-              {
-                "id": "R2",
-                "text": "the real capacity to receive a determining perfection"
-              },
-              {
-                "id": "R3",
-                "text": "being with no potency, no composition, no unrealized capacity"
-              },
-              {
-                "id": "R4",
-                "text": "the union of two really distinct principles in one being"
-              }
-            ],
-            "correct_pairs": [
-              [
-                "L1",
-                "R1"
-              ],
-              [
-                "L2",
-                "R2"
-              ],
-              [
-                "L3",
-                "R3"
-              ],
-              [
-                "L4",
-                "R4"
-              ]
-            ],
-            "feedback": {
-              "all_correct": "All four locked. Act is the positive principle; potency is its real receiver; their union is composition; the unique case of act with no potency is Pure Act. The four key terms of M1 in their four roles.",
-              "partial_correct": "Some pairs landed; others did not. The four divide cleanly: act and potency are the two principles, composition is their union, Pure Act is the case where there is no composition at all.",
-              "per_pair_corrections": [
-                {
-                  "left_id": "L1",
-                  "wrong_right_id": "R2",
-                  "feedback": "<span class=\"lat\">Actus</span> is the determining perfection, not the receiving capacity. The receiving capacity is <span class=\"lat\">potentia</span>."
-                },
-                {
-                  "left_id": "L2",
-                  "wrong_right_id": "R1",
-                  "feedback": "<span class=\"lat\">Potentia</span> is not the determining perfection; it is the real capacity to receive that perfection."
-                },
-                {
-                  "left_id": "L3",
-                  "wrong_right_id": "R4",
-                  "feedback": "<span class=\"lat\">Actus Purus</span> is the negation of composition, not a composition. <span class=\"lat\">Compositio</span> names the union; Pure Act is the unique case without it."
-                },
-                {
-                  "left_id": "L4",
-                  "wrong_right_id": "R3",
-                  "feedback": "<span class=\"lat\">Compositio</span> is the union of two distinct principles in one being; the case of being with no composition at all is <span class=\"lat\">Actus Purus</span>."
-                }
-              ]
+            options: [
+            {
+              id: `a`,
+              text: `Whether the apple exists in the room.`,
+              correct: false,
+              feedback: `Not quite — that's a different question, and we'll meet it next. <em>"What is this?"</em> is asking about the <em>kind</em> of thing in front of you.`,
+            },
+            {
+              id: `b`,
+              text: `What kind of thing this is.`,
+              correct: true,
+              feedback: `Right. Asking <em>what</em> something is — apple, dog, table, person — is asking about its kind. About what it would be missing if it stopped being one.`,
+            },
+            {
+              id: `c`,
+              text: `How heavy the apple is.`,
+              correct: false,
+              feedback: `That's a question about a <em>property</em> of this particular apple. The "what is it?" question is more fundamental — it asks what <em>kind</em> of thing this is at all.`,
             }
+            ],
+          },
+        },
+        {
+          id: `m0-l1-q2`,
+          type: "mcq",
+          stem: `And when you ask <em>"Is there an apple on the table?"</em>, you are asking…`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `What kind of thing it is.`,
+              correct: false,
+              feedback: `That was the previous question. This one is different — try the option that's simpler and more basic.`,
+            },
+            {
+              id: `b`,
+              text: `Whether it exists at all.`,
+              correct: true,
+              feedback: `Two completely different questions. The first asks <em>what</em> the apple is. This one asks whether the apple is at all. The two feel similar in English — but they are not. Holding that gap open is the first move of the whole tradition.`,
+            },
+            {
+              id: `c`,
+              text: `What it would taste like.`,
+              correct: false,
+              feedback: `Closer to the "what is it?" family — a question about the apple's nature. "Is there one?" asks something simpler: does the thing actually <em>exist</em>?`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l1-q3`,
+          type: "mcq",
+          stem: `Four questions below. Which one is asking <em>WHAT</em> something is — not whether it exists?`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `Is the dog in the yard?`,
+              correct: false,
+              feedback: `A "that-it-is" question — does the dog exist in this place right now? You're after the other kind.`,
+            },
+            {
+              id: `b`,
+              text: `What, exactly, is a unicorn?`,
+              correct: true,
+              feedback: `Yes. And notice: we can ask <em>what</em> a unicorn is even though no unicorn <em>exists</em> anywhere. The two questions are completely independent of each other. That small fact will turn out to matter enormously.`,
+            },
+            {
+              id: `c`,
+              text: `Did Julius Caesar ever live?`,
+              correct: false,
+              feedback: `A "that-it-is" question — did Caesar ever exist in the world? You're after the other kind: what <em>kind</em> of thing something is.`,
+            },
+            {
+              id: `d`,
+              text: `Are there ghosts?`,
+              correct: false,
+              feedback: `Another "that-it-is" question — do ghosts actually exist? You're after the other kind.`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l1-q4`,
+          type: "mcq",
+          stem: `Two questions. Two ancient names. Which pairing is right?`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `"What it is" = <span class="lat">esse</span>  ·  "That it is" = <span class="lat">essentia</span>`,
+              correct: false,
+              feedback: `Switched. Try the other pairing — these two words are easy to mix up in their first hour together.`,
+            },
+            {
+              id: `b`,
+              text: `"What it is" = <span class="lat">essentia</span>  ·  "That it is" = <span class="lat">esse</span>`,
+              correct: true,
+              feedback: `Two of the oldest words in metaphysics. <span class="lat">Essentia</span>: what something is — its essence, its kind. <span class="lat">Esse</span>: that it is — the very act of being. Hold onto them. Half the tradition rides on the difference between them.`,
+            },
+            {
+              id: `c`,
+              text: `"What it is" = <span class="lat">causa</span>  ·  "That it is" = <span class="lat">materia</span>`,
+              correct: false,
+              feedback: `Different vocabulary entirely — those words come later. The two ancient names for the "what" and the "that" are <span class="lat">essentia</span> and <span class="lat">esse</span>.`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l1-q5`,
+          type: "mcq",
+          stem: `We can describe perfectly well WHAT a unicorn is — a horned horse — even though no unicorn EXISTS anywhere. So a unicorn has…`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `<span class="lat">Essentia</span> but not <span class="lat">esse</span>.`,
+              correct: true,
+              feedback: `Exactly. We can know what a unicorn <em>is</em> without there being any actual unicorn. For Thomas, this is one of the great clues hiding in plain sight: in created things, what-it-is and that-it-is can come apart. They <em>don't have to</em> come together.`,
+            },
+            {
+              id: `b`,
+              text: `<span class="lat">Esse</span> but not <span class="lat">essentia</span>.`,
+              correct: false,
+              feedback: `Reversed. The unicorn does not <em>exist</em> (so no <span class="lat">esse</span>), but we can still say what it would <em>be</em> if it did (so it has <span class="lat">essentia</span>).`,
+            },
+            {
+              id: `c`,
+              text: `Both <span class="lat">essentia</span> and <span class="lat">esse</span>.`,
+              correct: false,
+              feedback: `Almost — but the unicorn doesn't actually exist anywhere. It has <span class="lat">essentia</span> (we know what it would be) but no <span class="lat">esse</span> (no actual being).`,
+            },
+            {
+              id: `d`,
+              text: `Neither.`,
+              correct: false,
+              feedback: `Not quite. We <em>can</em> talk about what a unicorn is — that's its <span class="lat">essentia</span>. What it lacks is <span class="lat">esse</span> — actual existence.`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l1-q6`,
+          type: "mcq",
+          stem: `Last one. Which sentence uses <span class="lat">essentia</span> and <span class="lat">esse</span> correctly?`,
+          latin_tag: `essentia  ·  esse`,
+          doctrine_line: `Lesson 1 of 7 complete · Six more before the seven doors open.`,
+          lesson_complete: true,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `Every real apple has both <span class="lat">essentia</span> (it IS an apple) and <span class="lat">esse</span> (it exists).`,
+              correct: true,
+              feedback: `Yes. Every existing thing has both — <em>what</em> it is, and <em>that</em> it is. Two questions, two answers, two distinct realities. The whole tradition opens from here.`,
+            },
+            {
+              id: `b`,
+              text: `<span class="lat">Essentia</span> means existence; <span class="lat">esse</span> means kind.`,
+              correct: false,
+              feedback: `Reversed. <span class="lat">Essentia</span> is the WHAT (the kind). <span class="lat">Esse</span> is the THAT (the existing). Easy to flip — re-read the names once or twice until they stick.`,
+            },
+            {
+              id: `c`,
+              text: `<span class="lat">Esse</span> is the kind of thing it is; <span class="lat">essentia</span> is whether it exists.`,
+              correct: false,
+              feedback: `Also reversed. <span class="lat">Essentia</span> = the kind. <span class="lat">Esse</span> = the act of being.`,
+            }
+            ],
           },
         }
       ],
     },
     {
-      id: `m1-l2`,
+      id: `m0-l2`,
       num: `II`,
-      title: `Act is Prior`,
-      latin: `actus  ·  prior`,
-      tag: `actus  ·  prior`,
+      title: `Act and Potency`,
+      latin: `potentia / actus`,
+      tag: `potentia  ·  actus`,
       fin: {
-        tag: `actus  ·  prior`,
-        heading: `Potency exists for the sake of act. Not the other way.`,
-        body: `In time, we often see the potential before the actual: the seed before the tree. But in being, act is always prior. The seed exists <em>for</em> the tree; the capacity exists <em>for</em> what it can receive. A world of pure potency would not exist at all.`,
+        tag: `potentia  ·  actus`,
+        heading: `Change requires that a thing be not yet what it is becoming.`,
+        body: `Potency is real capacity; act is real perfection. The marble is potentially a statue — not metaphorically, really. Aristotle built this engine for the physics of change; Aquinas ran it all the way to a conclusion Aristotle did not reach: that there must be something that is Pure Act, with no potency at all. That conclusion is not Module 0. But this lesson is why it is available.`,
       },
       questions: [
         {
-          id: `m1-l2-q1`,
+          id: `m0-l2-q1`,
           type: "mcq",
-          stem: `An acorn lies on the ground. Ask it the rudest possible question: what are you <em>for</em>?`,
+          stem: `A match sits dry and whole in a box. It has never been struck. It can produce fire — but right now it is not on fire. What are we pointing at when we say it "can produce fire"?`,
           payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "For nothing. An acorn simply is what it is; aims belong to minds, and acorns have none.",
-                "feedback": "Yet everything about the acorn is structured: the shell, the stored food, the seed. Structure aimed at nothing is a strange kind of structure. Look again at where it all points."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "For the oak. Everything in its structure is organized toward becoming one.",
-                "feedback": "Respondeo: for the oak. The acorn's whole architecture points beyond itself. A capacity is not just an openness; it is an arrow. Keep that arrow in view for the rest of this lesson."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "For remaining an acorn: things aim first of all at staying exactly what they already are.",
-                "feedback": "Things do preserve themselves, but the acorn preserves itself precisely so it can stop being an acorn. Its self-keeping serves its becoming. The aim runs forward."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "For whatever finds a use for it: food for a squirrel, decoration for a desk. Its point comes from outside.",
-                "feedback": "Outsiders can borrow it for their purposes, but the squirrel did not put the oak inside the acorn. The aim was there before any user arrived. It is built in."
-              }
+            options: [
+            {
+              id: `a`,
+              text: `A real capacity built into the match — what it is ready to do, not yet done.`,
+              correct: true,
+              feedback: `Right. The match has a genuine readiness for fire — not just our wish, but something built into the match's nature. That readiness and the actual burning are two different things. Holding them apart is the move.`,
+            },
+            {
+              id: `b`,
+              text: `What the match is actually doing right now.`,
+              correct: false,
+              feedback: `That would describe the match <em>on fire</em> — which it isn't. You're after what we're pointing at when we say it <em>can</em> produce fire, before anything happens.`,
+            },
+            {
+              id: `c`,
+              text: `A description of what the match does after we strike it.`,
+              correct: false,
+              feedback: `That's the outcome <em>after</em> — what happens once the capacity is exercised. We're asking about what the match has <em>before</em> we do anything to it.`,
+            }
             ],
-            "correct_option_id": "b"
           },
         },
         {
-          id: `m1-l2-q2`,
+          id: `m0-l2-q2`,
           type: "mcq",
-          stem: `Back to the acorn and its oak. The acorn comes first in time; no one disputes the calendar. But in being, in the order of what exists for the sake of what, which is prior, and why? (The tradition calls this priority in being <em>ontological</em> priority.)`,
+          stem: `An acorn lies on the ground. It can grow into an oak. Right now it is an acorn. Which option describes what the acorn actually <em>is</em> right now — not what it might become?`,
           payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "The oak. The acorn's whole nature is ordered toward it; potency exists for the sake of act.",
-                "feedback": "Respondeo: potency exists for the sake of act. The acorn's whole being is ordered toward the oak. Act is ontologically prior even when potency comes first in time."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "The acorn, since whatever exists earlier in time has a kind of priority over what depends on it for its origin.",
-                "feedback": "You read priority in being as priority in time. Aquinas separates the two. The acorn precedes the oak temporally; the oak is prior in being, because the acorn's whole nature is to be a capacity for the oak."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "Neither. Time settles nothing here, and both are equally real members of one natural sequence.",
-                "feedback": "Half right: temporal succession does not establish priority of being. But priority of being is real and runs in a definite direction. Act is what potency exists for; therefore the oak is prior to the acorn in being, even when not in time."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "Both equally, since act and potency are correlative principles and neither has priority of being apart from the other.",
-                "feedback": "Correlative does not mean equal in priority. The principles are correlative because each is intelligible only in relation to the other, but the relation is asymmetric: potency is for the sake of act, not the other way."
-              }
+            options: [
+            {
+              id: `a`,
+              text: `It has the power to grow into an oak.`,
+              correct: false,
+              feedback: `That's a real capacity of the acorn — important, and we'll name it soon. But you're after the description of what it actually <em>is</em> right now, not what it can do.`,
+            },
+            {
+              id: `b`,
+              text: `It is an acorn — small, hard, here on the ground.`,
+              correct: true,
+              feedback: `Yes. The other options all describe real capacities — things the acorn can genuinely do or become. But "it is an acorn, right now" names what it actually is at this moment. Two different things, and both real.`,
+            },
+            {
+              id: `c`,
+              text: `It will one day produce hundreds of acorns itself.`,
+              correct: false,
+              feedback: `A real future capacity — something the acorn can genuinely do. But you're after what it actually <em>is</em> right now, not what it might become.`,
+            },
+            {
+              id: `d`,
+              text: `It could become firewood instead.`,
+              correct: false,
+              feedback: `Also a real capacity — the acorn could become firewood. But you're after what it actually <em>is</em> right now.`,
+            }
             ],
-            "correct_option_id": "a"
           },
         },
         {
-          id: `m1-l2-q3`,
+          id: `m0-l2-q3`,
           type: "mcq",
-          stem: `Your coffee has gone lukewarm. Next to the cold room it counts as hot; next to the kettle it counts as cold. Someone declares: "Nothing can be both hot and cold. That coffee is impossible." What is missing from their sentence?`,
+          stem: `The "can-be" — a thing's capacity, its readiness for something — has a Latin name. Which pairing is correct?`,
           payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "Nothing is missing. Hot and cold genuinely exclude each other, so the coffee really is a contradiction.",
-                "feedback": "Then every lukewarm drink on earth would be a logical scandal. The coffee is innocent; the sentence is sloppy. Something needs to be added to it."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "A measurement is missing: until a thermometer is produced, hot and cold are too vague to contradict.",
-                "feedback": "Numbers would sharpen the vagueness, but the rescue does not come from precision instruments. Even with exact degrees, the coffee is still warmer than one thing and cooler than another. The fix is elsewhere."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "The speaker is missing: hot for you may be cold for me; the sentence needs to say for whom.",
-                "feedback": "Tempting, but this trades a small problem for a large one: it makes hot and cold matters of opinion. The coffee's two temperatures are real comparisons, not two feelings. The missing piece is in the sentence, not in the speaker."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "Two qualifiers are missing: in the same respect, and at the same time.",
-                "feedback": "Respondeo: in the same respect, at the same time. You have just acquired a precision instrument the tradition uses constantly. When this module says a thing cannot be in potency and in act, listen for the qualifier: in the same respect. It will be doing the heavy lifting."
-              }
+            options: [
+            {
+              id: `a`,
+              text: `The "can-be" = <span class="lat">potentia</span>`,
+              correct: true,
+              feedback: `<span class="lat">Potentia</span> — potency, capacity, readiness-for-something. Not mere abstract possibility, but a real feature of the thing: what it can genuinely do or become given its nature. The match has <span class="lat">potentia</span> for fire. The acorn has <span class="lat">potentia</span> for becoming an oak.`,
+            },
+            {
+              id: `b`,
+              text: `The "can-be" = <span class="lat">actus</span>`,
+              correct: false,
+              feedback: `<span class="lat">Actus</span> is the other half — what something actually is right now. The "can-be" is <span class="lat">potentia</span>.`,
+            },
+            {
+              id: `c`,
+              text: `The "can-be" = <span class="lat">essentia</span>`,
+              correct: false,
+              feedback: `<span class="lat">Essentia</span> was Lesson 1 — what a thing <em>is</em> in kind. The word for what it <em>can be</em> is <span class="lat">potentia</span>. Different question.`,
+            }
             ],
-            "correct_option_id": "d"
           },
         },
         {
-          id: `m1-l2-q4`,
+          id: `m0-l2-q4`,
           type: "mcq",
-          stem: `Pure potency means potency with no act whatsoever: no form, no determination, bare capacity for nothing in particular. Why can such a world not exist?`,
+          stem: `And the "is-right-now" — what something actually and fully is at this moment — is called?`,
           payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "Because God created the world with form, and pure potency without any form cannot persist.",
-                "feedback": "True theologically, but the argument does not require theology. On metaphysical grounds alone: potency is real only as ordered toward act. Stripped of that, it is nothing. The argument is structural, not historical."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "Because potency is real only as ordered toward a determinate act; a capacity ordered toward nothing at all is indistinguishable from non-being.",
-                "feedback": "Respondeo: potency is real only as ordered toward a determinate act. Pure potency, capacity for nothing, is no capacity at all. Act must be real for potency to be real."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "Because potency requires a mind to recognize it as an unrealized possibility.",
-                "feedback": "Potency is a real ontological principle, not a mental recognition. The problem with pure potency is not epistemological but metaphysical: it has nothing to be ordered toward."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "Because pure potency would have no determinate kind, and only determinate kinds are real beings.",
-                "feedback": "Closer in form to the right answer, but the determination claim shifts the argument toward essence. The deeper point is that potency without any act it is for is potency of nothing, which is non-being. The kind-claim is a downstream consequence, not the basic move."
-              }
+            options: [
+            {
+              id: `a`,
+              text: `<span class="lat">potentia</span>`,
+              correct: false,
+              feedback: `<span class="lat">Potentia</span> is the capacity, the "can-be." You're after the word for what something fully, actually <em>is</em> right now. That's the other half.`,
+            },
+            {
+              id: `b`,
+              text: `<span class="lat">actus</span>`,
+              correct: true,
+              feedback: `<span class="lat">Actus</span> — act, actuality. What is fully there, fully realized, right now. The burning match is in <span class="lat">actus</span> as fire. Notice: <span class="lat">actus</span> doesn't merely mean "action" — it means the thing having fully arrived at what it is. The opposite of potency.`,
+            },
+            {
+              id: `c`,
+              text: `<span class="lat">esse</span>`,
+              correct: false,
+              feedback: `<span class="lat">Esse</span> is the act of existing itself — from Lesson 1. <span class="lat">Actus</span> is broader: the full realization of what something is right now, not just that it exists at all.`,
+            }
             ],
-            "correct_option_id": "b"
           },
         },
         {
-          id: `m1-l2-q5`,
-          type: "true_false_with_reason",
-          stem: `TRUE or FALSE: <em>Act is prior to potency in being because act is always the efficient cause of potency.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
+          id: `m0-l2-q5`,
+          type: "mcq",
+          stem: `A block of marble can be carved into a statue. Right now it is a block. Which sentence is correct?`,
           payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "TRUE. Act produces potency and so comes first in being; the priority is straightforwardly causal.",
-                "feedback": "You picked up the truth that act is prior, but the reason is wrong. Aquinas does not claim that act efficiently produces potency. The priority is one of perfection and end: potency is for the sake of act."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "TRUE. Act efficiently causes the existence of potency, since potency must be brought into being by something already actual.",
-                "feedback": "True that no potency exists without an actual subject. But that is a different claim from the one in the proposition. Priority of act over potency is a priority of perfection and end, not of efficient causation in this direction."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "FALSE. Act is prior because potency is ordered toward act as its perfection and end, not because act efficiently produces potency.",
-                "feedback": "Respondeo: priority in being is a priority of perfection and end. The potency is for the sake of the act it can receive. Efficient causation is a different question. The acorn is not efficiently caused by the oak it will become."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "FALSE. Act and potency are simultaneous principles in any being; neither is prior in any sense.",
-                "feedback": "Simultaneity in time does not exclude priority in nature. Two principles can coexist in one being while one is metaphysically prior to the other. The question is about that order, not about temporal succession."
-              }
+            options: [
+            {
+              id: `a`,
+              text: `The marble has <span class="lat">potentia</span> for being a statue; it is in <span class="lat">actus</span> as a block.`,
+              correct: true,
+              feedback: `Exactly. The marble is fully, actually there as a block — that is its <span class="lat">actus</span> right now. And it genuinely can become a statue — that is its <span class="lat">potentia</span>. Both are real. Neither is imaginary.`,
+            },
+            {
+              id: `b`,
+              text: `The marble has <span class="lat">actus</span> for being a statue; it is in <span class="lat">potentia</span> as a block.`,
+              correct: false,
+              feedback: `Switched. <span class="lat">Potentia</span> is the capacity, the "can-be." <span class="lat">Actus</span> is the "is-right-now." The block is in <span class="lat">actus</span> as a block — not in <span class="lat">potentia</span> as one.`,
+            },
+            {
+              id: `c`,
+              text: `The marble has <span class="lat">potentia</span> for being a statue and is already in <span class="lat">actus</span> as a statue.`,
+              correct: false,
+              feedback: `Not yet — the marble is in <span class="lat">actus</span> as a block. The statue is what it has <span class="lat">potentia</span> for. Once carved, the statue will be the <span class="lat">actus</span>; any further capacity for change will be new <span class="lat">potentia</span>.`,
+            },
+            {
+              id: `d`,
+              text: `The marble has neither <span class="lat">potentia</span> nor <span class="lat">actus</span> until the sculptor works on it.`,
+              correct: false,
+              feedback: `The marble has real <span class="lat">potentia</span> right now — built into what marble is. And it is in <span class="lat">actus</span> as a block right now. Both are real before the sculptor touches it. The sculptor doesn't create the capacity; he exercises it.`,
+            }
             ],
-            "correct_option_id": "c"
           },
         },
         {
-          id: `m1-l2-q6`,
-          type: "syllogism_builder",
-          stem: `Construct the self-movement argument. Place each statement in its correct role: universal premise, particular premise, conclusion.`,
-          latin_tag: `actus  ·  prior`,
-          doctrine_line: `Act is always prior in being. This is why the argument from motion terminates in Pure Act.`,
+          id: `m0-l2-q6`,
+          type: "mcq",
+          stem: `Last one. Which sentence uses <span class="lat">potentia</span> and <span class="lat">actus</span> correctly?`,
+          latin_tag: `potentia  ·  actus`,
+          doctrine_line: `Lesson 2 of 7 complete · Five more before the seven doors open.`,
           lesson_complete: true,
           payload: {
-            "instruction": "Three statements; three roles. The universal states the principle that governs every passage from potency to act. The particular closes the apparent loophole. The conclusion names what follows.",
-            "components": [
-              {
-                "id": "c1",
-                "text": "Whatever passes from potency to act in a given respect requires something already in act in that respect to bring it there.",
-                "role": "major"
-              },
-              {
-                "id": "c2",
-                "text": "No being can be simultaneously in potency and in act in the same respect at the same time.",
-                "role": "minor"
-              },
-              {
-                "id": "c3",
-                "text": "Therefore no being can move itself from potency to act in the same respect: every actualization requires an external principle already in act.",
-                "role": "conclusion"
-              }
-            ],
-            "feedback": {
-              "correct": "Yes. The universal states the general principle covering every passage from potency to act. The particular blocks the only apparent escape: that a thing could actualize itself. The conclusion names what follows: every movement from potency to act requires something external already in act. This is the metaphysical engine behind every argument from change.",
-              "incorrect": "Look at what each statement does. The universal gives the principle that covers every case of potency passing to act. The particular closes the loophole that a thing might actualize itself in the same respect. The conclusion names what follows from both."
+            options: [
+            {
+              id: `a`,
+              text: `Cold water is in <span class="lat">actus</span> as cold right now; it has <span class="lat">potentia</span> to be heated.`,
+              correct: true,
+              feedback: `Yes. Cold water is actually cold — that is its <span class="lat">actus</span>. And it genuinely can be heated — that is its <span class="lat">potentia</span>. Every change in the world runs through this pair: a real capacity meeting a real present state. Thomas uses <span class="lat">potentia</span> and <span class="lat">actus</span> to explain motion, causality, and finally the divine nature itself.`,
             },
-            "doctrineTag": "actus · potentia"
+            {
+              id: `b`,
+              text: `Cold water is in <span class="lat">potentia</span> as cold right now; it has <span class="lat">actus</span> to be heated.`,
+              correct: false,
+              feedback: `Switched. What something <em>is</em> right now is <span class="lat">actus</span>. What it can become is <span class="lat">potentia</span>. The cold is what the water actually is; being heated is what it has the capacity for.`,
+            },
+            {
+              id: `c`,
+              text: `<span class="lat">Potentia</span> and <span class="lat">actus</span> are just other words for <span class="lat">essentia</span> and <span class="lat">esse</span>.`,
+              correct: false,
+              feedback: `Different pair entirely. <span class="lat">Essentia</span> and <span class="lat">esse</span> are from Lesson 1 — what something is, and that it is. <span class="lat">Potentia</span> and <span class="lat">actus</span> are a new cut: what something can be, and what it is right now. The tradition holds all four together.`,
+            }
+            ],
           },
         }
       ],
     },
     {
-      id: `m1-l3`,
+      id: `m0-l3`,
       num: `III`,
-      title: `Act/Potency in Change`,
-      latin: `mutatio`,
-      tag: `mutatio`,
+      title: `Real Things`,
+      latin: `res / distinctio realis`,
+      tag: `res  ·  distinctio realis`,
       fin: {
-        tag: `mutatio`,
-        heading: `What moves is not what moves itself.`,
-        body: `Every change is a passage from potency to act in some subject. The subject persists as what it is; what changes is what it can be. Accidental change leaves the substance standing; substantial change reaches the form itself, leaving only matter. Grasping this distinction is not a fine point. It is the whole metaphysics of motion, and everything that follows about causation depends on it.`,
+        tag: `res  ·  distinctio realis`,
+        heading: `Not everything the mind can distinguish is distinguished in the thing.`,
+        body: `A real distinction holds independently of whether any mind ever notices it. A notional distinction is the mind’s own construction — useful, sometimes necessary, never to be confused with the real article. The <em>esse</em>/<em>essentia</em> distinction in creatures is real; in God, it is not. Much of later Thomistic argument hangs on getting this diagnostic right before anything else.`,
       },
       questions: [
         {
-          id: `m1-l3-q1`,
+          id: `m0-l3-q1`,
           type: "mcq",
-          stem: `Two small disasters at your desk. You bend a paperclip out of shape, and you burn a sheet of paper to ash. Both "changed." Did the same depth of thing happen to each?`,
+          stem: `The tree outside your window stands there whether or not you are looking at it. Your idea of the tree only exists while you are thinking it. Which one has being independently of any mind?`,
           payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "No. The paperclip survives its change; the paper does not.",
-                "feedback": "Respondeo: two depths. The paperclip is still a paperclip, just embarrassed. The paper is simply gone; ash is not paper in a new outfit. This lesson gives both depths their names."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "Yes. Both are rearrangements of the same underlying material, differing only in how fast and how violently the pieces move.",
-                "feedback": "That account makes the two cases equal by deleting what is interesting about both. If everything is rearrangement, nothing is ever truly destroyed, and the paper should still be somewhere. It is not. Depth matters."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "Yes. Both things end up different from how they started, which is all that the word change means.",
-                "feedback": "By that standard a haircut and a cremation are the same event in different sizes. The word change covers both cases, but covering is not explaining. Ask what survived each one."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "No. The paperclip did not genuinely change at all, since bending touches nothing about what it is.",
-                "feedback": "It genuinely changed: it really was straight and really is bent. The point is not that shallow change is fake, but that it is shallow. The thing beneath the shape held on. With the paper, nothing held on."
-              }
+            options: [
+            {
+              id: `a`,
+              text: `Your idea of the tree.`,
+              correct: false,
+              feedback: `The idea lives precisely in your thinking of it. Stop thinking, and the idea stops. The tree keeps standing.`,
+            },
+            {
+              id: `b`,
+              text: `The tree outside.`,
+              correct: true,
+              feedback: `Yes. The tree stands whether anyone notices it or not. Your idea of it borrows its existence from your act of thinking — stop thinking, and the idea stops. The tree doesn't. Two very different kinds of "thing."`,
+            },
+            {
+              id: `c`,
+              text: `Both are exactly the same kind of thing.`,
+              correct: false,
+              feedback: `They're not. One has its being on its own. The other has its being only while being thought. That gap will turn out to matter enormously.`,
+            }
             ],
-            "correct_option_id": "a"
           },
         },
         {
-          id: `m1-l3-q2`,
+          id: `m0-l3-q2`,
           type: "mcq",
-          stem: `A bronze ingot is melted, poured into a mold, and cast as a horse. The same bronze; a new shape. What kind of change is this, and why?`,
+          stem: `You notice that the coffee cup and the pen on your desk are both small, both here, both yours. The "similarity" you just noticed — where does it exist?`,
           payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "Substantial change. The ingot ceased to exist and a new substance, the bronze horse, came to be from different matter.",
-                "correct": false,
-                "feedback": "The matter is the same bronze throughout; no new substance came from different matter. The substance, bronze, persists. Only its shape, an accident, changed. Substantial change requires the matter to receive a genuinely new substantial form, not merely a new shape."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "Accidental change. Bronze is bronze before and after; what changed is the shape, an accidental form inhering in the same persistent substance.",
-                "correct": true,
-                "feedback": "Respondeo: accidental change. Bronze is bronze before and after. What changed is the shape, an accidental form inhering in the same substance. The substance was in potency to this shape, and passed to act when it received it. The underlying what-it-is did not change."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "Both at once: the new shape is accidental, but melting and re-solidifying changed the matter substantially.",
-                "correct": false,
-                "feedback": "Liquid and solid bronze are still bronze; state of matter is an accidental modification, not a change of substance. The what-it-is of the bronze was never replaced. Both phases of the process are accidental change."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "Neither. Shape is a human projection; the bronze merely moved from one arrangement to another.",
-                "correct": false,
-                "feedback": "Shape is an accidental form, a real but non-essential determination of the substance. Denying the reality of accidental forms collapses the act/potency distinction in the accidental order. The bronze was genuinely in potency to this shape, and is now in act with respect to it."
-              }
+            options: [
+            {
+              id: `a`,
+              text: `In your mind, holding the two objects together and comparing them.`,
+              correct: true,
+              feedback: `Exactly. The cup and the pen are genuinely there on the desk. But "their similarity" only comes into being when a mind holds them together and notices it. Remove the observer, and the similarity vanishes — even though both objects remain exactly as they were.`,
+            },
+            {
+              id: `b`,
+              text: `In the objects themselves, independent of any comparison.`,
+              correct: false,
+              feedback: `The objects are real, yes. But "their similarity" requires a mind to hold them together. The cup and the pen don't compare themselves.`,
+            },
+            {
+              id: `c`,
+              text: `It doesn't exist at all.`,
+              correct: false,
+              feedback: `It does exist — but only in your thinking. That's the point: some things have a real but mind-dependent existence. Not nothing, but not independent either.`,
+            }
             ],
-            "correct_option_id": "b"
           },
         },
         {
-          id: `m1-l3-q3`,
-          type: "distinction_application",
-          stem: `A caterpillar enters a cocoon and emerges as a butterfly. The same matter persists, but the organism that emerges has fundamentally different organs, operations, and form of life. Accidental or substantial change?`,
+          id: `m0-l3-q3`,
+          type: "mcq",
+          stem: `The Latin word for a real thing — something with being of its own, independent of any mind thinking it — is?`,
           payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "Accidental change. The matter is continuous; what looks like a new organism is the same substance reorganized at the accidental level.",
-                "correct": false,
-                "feedback": "If the same substance persists, it cannot have a genuinely different form of life, different organs, and different capacities. A substance is what it is by its substantial form. Where a new substantial form arises, a new substance arises, regardless of material continuity."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "Substantial change. The caterpillar ceases; the same matter receives a new substantial form.",
-                "correct": true,
-                "feedback": "Respondeo: substantial change. The caterpillar's form of life, its capacities and operations, is replaced by a genuinely different one. Material continuity does not guarantee substantial continuity. What persists through the change is matter, not the caterpillar-substance itself."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "Neither. Act and potency fit inanimate matter; living change is governed by DNA instead.",
-                "correct": false,
-                "feedback": "Living things are not exempt from the act/potency framework; they illustrate it at its most vivid. The caterpillar is in potency to a certain range of forms; metamorphosis is the actualization of that potency at the deepest level. DNA describes the mechanism; act/potency describes the metaphysical structure."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "Both at once: accidental change at the surface, substantial change in the organs beneath.",
-                "correct": false,
-                "feedback": "A change is either substantial or accidental, not both in the same respect at the same time. The change reaches the substantial form itself, making it substantial. The simultaneous accidental changes in properties are downstream of the substantial change, not a second kind of change layered on top of it."
-              }
+            options: [
+            {
+              id: `a`,
+              text: `<span class="lat">res</span>`,
+              correct: true,
+              feedback: `<span class="lat">Res</span> — thing, reality. A <span class="lat">res</span> has its being on its own, not borrowed from any mind. The tree is a <span class="lat">res</span>. The stone is a <span class="lat">res</span>. The "similarity" you noticed between the cup and the pen is not — it lives only in the comparison.`,
+            },
+            {
+              id: `b`,
+              text: `<span class="lat">actus</span>`,
+              correct: false,
+              feedback: `<span class="lat">Actus</span> is from Lesson 2 — what something fully is right now. The word for a real thing, something with being of its own, is <span class="lat">res</span>.`,
+            },
+            {
+              id: `c`,
+              text: `<span class="lat">esse</span>`,
+              correct: false,
+              feedback: `<span class="lat">Esse</span> is the act of existing — close, but it names the act, not the thing that has it. <span class="lat">Res</span> names the reality: the thing that stands on its own.`,
+            }
             ],
-            "correct_option_id": "b"
           },
         },
         {
-          id: `m1-l3-q4`,
-          type: "true_false_with_reason",
-          stem: `TRUE or FALSE: <em>In substantial change, what persists through the change is primary matter, not the substance itself.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
+          id: `m0-l3-q4`,
+          type: "mcq",
+          stem: `When two things are genuinely different in reality itself — not just divided by how the mind is looking at them — the tradition calls this a?`,
           payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "TRUE. The substance perishes with its form; what persists is primary matter, pure potency beneath both forms.",
-                "correct": true,
-                "feedback": "Respondeo: true, and precisely stated. The substance is what it is by its substantial form. When the form is replaced, the substance ceases; the matter, which is pure potency for substantial form, persists as the substrate of the change. This is why matter is the principle of continuity in generation and corruption."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "TRUE. Matter persists, but the substance survives too, its form diminished rather than replaced.",
-                "correct": false,
-                "feedback": "A diminished substantial form is still that form, making this an accidental change at most. Substantial change means the replacement of one substantial form by another, not the reduction of the existing one. If any degree of the original form persists, the substance persists."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "FALSE. The substance persists as the subject; what is replaced is only a deep accident.",
-                "correct": false,
-                "feedback": "If the substance persists, the change is accidental. A 'deep accident' whose replacement leaves the substance standing is still an accident. Substantial change means the replacement of the substantial form itself, which is why the substance ceases."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "FALSE. Primary matter is a mere abstraction; what persists is a minimal underlying substance.",
-                "correct": false,
-                "feedback": "Primary matter is not an abstraction but a real principle, the pure potency that is the substrate of substantial change. It cannot exist separately without a substantial form, but it is genuinely real as the receiving principle. Without a real receiving principle, substantial change would require creation ex nihilo at every turn."
-              }
+            options: [
+            {
+              id: `a`,
+              text: `Distinctio rationis — a distinction of reason, in the mind only.`,
+              correct: false,
+              feedback: `That's the other kind — a distinction that only exists in the mind's way of approaching one thing. You're after the kind that holds in reality itself, before any mind arrives.`,
+            },
+            {
+              id: `b`,
+              text: `<span class="lat">Distinctio realis</span> — a real distinction, in the thing itself.`,
+              correct: true,
+              feedback: `<span class="lat">Distinctio realis</span> — a real distinction. It holds in the thing itself, not only in how we think about it. Heat and light from a flame are really distinct: two genuinely different realities, not just two ways the mind divides one thing. This will matter enormously when we ask whether <span class="lat">essentia</span> and <span class="lat">esse</span> are really distinct in creatures.`,
+            },
+            {
+              id: `c`,
+              text: `It doesn't matter — a distinction is a distinction.`,
+              correct: false,
+              feedback: `It matters enormously. A real distinction means two genuinely different realities. A logical distinction means one reality the mind is approaching from two angles. Confusing them is one of the most consequential mistakes in the tradition — and outside it.`,
+            }
             ],
-            "correct_option_id": "a"
           },
         },
         {
-          id: `m1-l3-q5`,
-          type: "spot_the_fallacy",
-          stem: `Three descriptions of a change. Which one gets the act/potency structure of change backwards?`,
-          latin_tag: `mutatio`,
-          doctrine_line: `Omne quod movetur ab alio movetur.`,
+          id: `m0-l3-q5`,
+          type: "mcq",
+          stem: `A flame produces both heat and light. Are heat and light really distinct — or is this only a distinction the mind is making?`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `Really distinct — heat and light are genuinely different realities, even in the same flame.`,
+              correct: true,
+              feedback: `Yes. You can have heat without light — a heated iron rod glows red before it emits visible light. You can have light without heat — a cold LED. If they were really one thing, you could not separate them even in principle. They can be separated, so the distinction holds in reality itself.`,
+            },
+            {
+              id: `b`,
+              text: `A distinction of reason only — really one thing, divided by the mind.`,
+              correct: false,
+              feedback: `Test it: can you have heat without light? Yes — a heated iron rod. Light without heat? Yes — a cold LED. If they were really one thing, you could not have one without the other even in principle. You can. So the distinction is real, not just mental.`,
+            },
+            {
+              id: `c`,
+              text: `It depends on whether anyone is observing the flame.`,
+              correct: false,
+              feedback: `The distinction between heat and light doesn't require an observer. It holds in the things themselves — which is precisely what makes it a <span class="lat">distinctio realis</span>.`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l3-q6`,
+          type: "mcq",
+          stem: `Last one. A philosopher defines a human being as a "rational animal." He then says the same person is a "human being." Is the distinction between "rational animal" and "human being" real — or only in the mind?`,
+          latin_tag: `res  ·  distinctio realis`,
+          doctrine_line: `Lesson 3 of 7 complete · Four more before the seven doors open.`,
           lesson_complete: true,
           payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Statement:",
-                "text": "The cold iron is in potency to heat; the fire brings it to act.",
-                "correct": false,
-                "feedback": "Sound. The iron lacks heat and has the real capacity to receive it. The fire, already in act with respect to heat, communicates that act. Potency precedes act in time; the act is the terminus, not the starting point."
-              },
-              {
-                "id": "b",
-                "label": "Statement:",
-                "text": "The marble is in potency to the statue; the sculptor actualizes it by imposing the form.",
-                "correct": false,
-                "feedback": "Sound. The marble has the real capacity to receive the form of the statue; the form, once impressed, is the act that terminates the potency. The statue is the end of the change, not its beginning."
-              },
-              {
-                "id": "c",
-                "label": "Statement:",
-                "text": "The seed contains the tree already in act; growth merely externalizes what was fully present from the start.",
-                "correct": true,
-                "feedback": "Respondeo: you spotted it. The seed does not contain the tree in act; it contains the tree in potency. If the tree were fully in act from the start, there would be no change, only revelation. Growth is a genuine passage from potency to act, requiring external actualization at each stage. Collapsing the distinction turns change into theater."
-              },
-              {
-                "id": "d",
-                "label": "Statement:",
-                "text": "In accidental change the substance is in potency to an accident; in substantial change the matter to a new form.",
-                "correct": false,
-                "feedback": "Sound. This correctly maps the potency/act structure across both kinds of change. In each case the receiving subject is in potency; the form received is the act. The only difference is whether the receiving subject is substance (accidental change) or matter (substantial change)."
-              }
+            options: [
+            {
+              id: `a`,
+              text: `Real distinction — "rational animal" and "human being" are two different things in the person.`,
+              correct: false,
+              feedback: `Try to separate them in reality: is there a "human being" here without a "rational animal"? No — they are the same thing, named twice. A <span class="lat">distinctio realis</span> requires two genuinely different realities that could, at least in principle, be separated. These cannot be. The distinction lives entirely in how the mind is approaching one reality.`,
+            },
+            {
+              id: `b`,
+              text: `Distinction of reason — one reality, approached from two conceptual angles.`,
+              correct: true,
+              feedback: `Respondeo: a <span class="lat">distinctio rationis</span> — and the cleanest possible example of one. "Rational animal" (genus + differentia) and "human being" (species name) pick out precisely the same essence from two different angles of the mind's approach. No new reality appears. No real separation is possible. The distinction is entirely in the concepts, not in the thing. Holding this line — knowing when a distinction is real and when it is only mental — opens the door to every precise argument in the tradition.`,
+            },
+            {
+              id: `c`,
+              text: `We cannot know without more information about this particular person.`,
+              correct: false,
+              feedback: `The question is not about this particular person's characteristics — it is about the concepts "rational animal" and "human being" and whether they pick out different realities or the same one approached twice. That we can determine by analysis alone, with no further information needed.`,
+            }
             ],
-            "correct_option_id": "c"
           },
         }
       ],
     },
     {
-      id: `m1-l4`,
+      id: `m0-l4`,
       num: `IV`,
-      title: `The First Way`,
-      latin: `primum movens`,
-      tag: `primum movens`,
+      title: `The Four Causes`,
+      latin: `causa materialis, formalis, efficiens, finalis`,
+      tag: `causa materialis  ·  formalis  ·  efficiens  ·  finalis`,
       fin: {
-        tag: `actus purus`,
-        heading: `Pure Act. No composition. No limit. No dependence.`,
-        body: `Every finite being is composed of act and potency; it has its act from something else. Follow that chain to its necessary terminus and you reach a being that is simply act, with no potency, no unrealized capacity, no receiver. That is what the argument requires.`,
+        tag: `causa materialis  ·  formalis  ·  efficiens  ·  finalis`,
+        heading: `One question — <em>Why?</em> — and four answers that cannot be reduced to one.`,
+        body: `Modern science narrowed causation to the efficient cause: the push. Aquinas retained all four because reality insisted on it — the stuff something is made of, the form that makes it this thing, the agent that brought it about, and the end toward which it acts. Lose the final cause and you lose the ability to say what anything is <em>for.</em> Most of the modern confusion about nature, ethics, and technology is precisely that loss.`,
       },
       questions: [
         {
-          id: `m1-l4-q1`,
+          id: `m0-l4-q1`,
           type: "mcq",
-          stem: `Whatever is moved is moved by another. A hand moves a stick, which moves a stone. If the hand stops, the stone stops instantly, regardless of how many links are in the chain. What does this show about a series of moved movers?`,
+          stem: `Someone asks: <em>"Why is this table here?"</em> Here are four real answers — each a kind of <em>why</em>:<br><br>·  What is it made of?<br>·  What shape or design makes it a table?<br>·  Who built it?<br>·  What is it for?<br><br>Which sentence best describes these four answers, taken together?`,
           payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "It shows the series must have begun at some point in the past.",
-                "feedback": "The argument is not about time. Aquinas grants that a temporal series could in principle extend infinitely. The point is about hierarchical dependence right now: each mover in the series moves only insofar as it is being moved at this moment. The regress is simultaneous, not sequential."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "It shows the series needs a first member that moves without being moved; with no first, nothing moves at all.",
-                "feedback": "Respondeo: each member of the series moves only insofar as it is currently being actualized by the next. The hand, stick, and stone move together, not in sequence. Remove the unmoved first and the whole series loses its motion simultaneously. The series requires a first mover that is not itself moved."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "It shows that infinite series cannot exist, since every real collection of things must be finite in number.",
-                "feedback": "Aquinas does not claim that infinite series are impossible in general. He grants the possibility of an infinite temporal series of causes. The impossibility he argues is specific: a hierarchical series of simultaneously-dependent movers cannot be infinite, because the dependence runs all the way through at once."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "It shows motion is self-explanatory once begun; a first cause matters only for origins.",
-                "feedback": "The hand-stick-stone example shows exactly the opposite: the first mover is required not just to start the motion but to sustain it at every moment. If the hand stops now, the stone stops now. The first mover is a continuous sustaining cause, not merely an initiating one."
-              }
-            ],
-            "correct_option_id": "b"
-          },
-        },
-        {
-          id: `m1-l4-q2`,
-          type: "syllogism_builder",
-          stem: `You have walked the chain: the stone, the stick, the hand. Now construct the First Way itself. Place each statement in its correct role: universal premise, particular premise, conclusion.`,
-          payload: {
-            "instruction": "Three statements; three roles. The universal states the principle every motion obeys. The particular rules out the endless chain. The conclusion names what must exist.",
-            "components": [
-              {
-                "id": "c1",
-                "text": "Whatever is moved from potency to act is moved by something already in act.",
-                "role": "major"
-              },
-              {
-                "id": "c2",
-                "text": "A series of moved movers cannot regress without a first, for without a first mover nothing in the series would move at all; yet things evidently move.",
-                "role": "minor"
-              },
-              {
-                "id": "c3",
-                "text": "Therefore a first mover exists, itself unmoved: a being in act with no potency for motion.",
-                "role": "conclusion"
-              }
-            ],
-            "feedback": {
-              "correct": "Respondeo: the First Way entire. The universal is Lesson 1's principle wearing its motion clothes. The particular observes that an endless chain of borrowed motion explains nothing, while motion is plainly given. The conclusion follows of necessity: a first mover, itself unmoved. You did not memorize this argument; you built it.",
-              "incorrect": "Look at what each statement does. One states the law governing every passage from potency to act. One closes the loophole of the endless chain by appeal to what is evident. One names what follows. The argument only breathes in that order."
+            options: [
+            {
+              id: `a`,
+              text: `They all answer the same question, just in different words.`,
+              correct: false,
+              feedback: `But they don't. "Made of" is not a synonym for "designed as"; "who built it" is not a synonym for "what it is for." They are four different questions hiding inside a single <em>why</em>. That difference is the lesson.`,
             },
-            "doctrineTag": "primum movens"
-          },
-        },
-        {
-          id: `m1-l4-q3`,
-          type: "mcq",
-          stem: `The First Way concludes that there must be a first mover, itself unmoved. Which description of this first mover follows necessarily from the argument?`,
-          payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "A being that existed before all other beings and set them in motion at the beginning of time.",
-                "feedback": "The argument does not establish temporal priority. The first mover is not first-in-time but first-in-the-order-of-dependence. It is the sustaining cause of motion right now, not merely the historical initiator."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "A being in act with no potency for motion: incapable of being moved at all.",
-                "feedback": "Respondeo: to be unmoved is not merely to happen to be at rest. It is to have no potency for motion, no capacity to receive actuation from another. The unmoved mover is not moved because there is no potency in it to be actualized. This is what Pure Act means."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "A being with greater power than all other movers combined, able to move without itself being moved by anything stronger.",
-                "feedback": "Greater power is still a finite perfection, and a very powerful being could still have unrealized capacity. The first mover required by the argument is not merely the strongest mover but the one with no potency for motion whatsoever."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "A being that moves by choice rather than by being moved.",
-                "feedback": "Choice as the ground of unmoved motion shifts the argument to will and intellect before establishing that this being exists at all. The First Way establishes the existence of an unmoved first cause from the structure of motion itself, before any attributes like intellect or will are assigned."
-              }
+            {
+              id: `b`,
+              text: `They each point at a real but different feature of the table.`,
+              correct: true,
+              feedback: `Right. Aristotle's insight is that <em>why</em> is not one question. It is at least four — the material, the form, the maker, the purpose. Each is a real answer; none reduces to the others. The next questions will give them their proper names.`,
+            },
+            {
+              id: `c`,
+              text: `Only one is a real "why"; the other three are different questions in disguise.`,
+              correct: false,
+              feedback: `That is the modern habit — reducing <em>why</em> to a single kind, usually efficient cause ("who or what made it"). The Aristotelian move is the opposite: <em>all four</em> are real kinds of <em>why</em>, and confusing them produces confusing answers.`,
+            },
+            {
+              id: `d`,
+              text: `Three are "whys" the table itself can answer; the fourth requires a person.`,
+              correct: false,
+              feedback: `An interesting cut, but the wrong one. "Who built it" is no more about a person than "what is it for" is — both name a feature of the table-being-a-table (its maker, its purpose). All four answers describe the table in different ways. There is no clean three-and-one split here.`,
+            }
             ],
-            "correct_option_id": "b"
           },
         },
         {
-          id: `m1-l4-q4`,
+          id: `m0-l4-q2`,
           type: "mcq",
-          stem: `Pure Act means a being with no potency whatsoever. What follows from this for composition?`,
-          latin_tag: `primum movens`,
-          doctrine_line: `The argument from motion terminates in Pure Act: a being with no composition, no unrealized capacity, no dependence.`,
+          stem: `"Why is this a table?" — "Because it is made of oak." That answer is giving the…`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `The stuff it is made from — the material cause.`,
+              correct: true,
+              feedback: `Right. The material cause answers "what is it made of?" — the underlying stuff that receives the form. Oak, bronze, flesh, marble. Remove the material and the thing does not exist; but the material alone does not explain the shape or the purpose.`,
+            },
+            {
+              id: `b`,
+              text: `The shape or design that makes it a table — the formal cause.`,
+              correct: false,
+              feedback: `The formal cause would answer "what makes it <em>this kind</em> of thing?" — the design, the structure, the defining shape. "It is made of oak" is answering a different question: what is the underlying stuff?`,
+            },
+            {
+              id: `c`,
+              text: `The carpenter who built it — the efficient cause.`,
+              correct: false,
+              feedback: `The efficient cause would name the maker — the agent who acted on the material. "It is made of oak" is naming the material itself, not the maker.`,
+            },
+            {
+              id: `d`,
+              text: `The purpose it was built for — the final cause.`,
+              correct: false,
+              feedback: `The final cause would answer "what is it <em>for</em>?" — the end or purpose. "It is made of oak" names the stuff, not the purpose.`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l4-q3`,
+          type: "mcq",
+          stem: `"Why is this a table and not a pile of wood?" — "Because it has the structure, the legs, the flat surface — the design that makes it a table." That is the…`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `Material cause — the stuff it is made from.`,
+              correct: false,
+              feedback: `The material cause is the oak itself. "The structure that makes it a table" is not the stuff — it is the organizing principle, the form, that turns the stuff into <em>this kind</em> of thing.`,
+            },
+            {
+              id: `b`,
+              text: `Formal cause — the structure or form that makes it what it is.`,
+              correct: true,
+              feedback: `Yes. The formal cause answers "what makes this <em>this kind</em> of thing rather than another?" The form is the organizing principle — the shape, structure, or essence — that specifies the material and turns a pile of oak into a table. <span class="lat">Forma dat esse</span>: form gives being. That phrase will appear again.`,
+            },
+            {
+              id: `c`,
+              text: `Efficient cause — the carpenter who built it.`,
+              correct: false,
+              feedback: `The efficient cause is the agent who acted — the carpenter. "The design that makes it a table" is not the agent; it is the principle the agent imposed on the material.`,
+            },
+            {
+              id: `d`,
+              text: `Final cause — the purpose it serves.`,
+              correct: false,
+              feedback: `The final cause is the end or purpose — what the table is <em>for</em>. The formal cause is what makes it <em>be</em> a table, not what it is used for.`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l4-q4`,
+          type: "mcq",
+          stem: `"Why does this table exist?" — "Because a carpenter shaped the oak into it." The carpenter is the…`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `Material cause.`,
+              correct: false,
+              feedback: `The material cause is the oak. The carpenter is not what the table is made <em>of</em> — the carpenter is what acted on the material to bring the table into being.`,
+            },
+            {
+              id: `b`,
+              text: `Formal cause.`,
+              correct: false,
+              feedback: `The formal cause is the design — the structure that makes it a table. The carpenter imposed that form but is not the form itself.`,
+            },
+            {
+              id: `c`,
+              text: `Efficient cause — the agent that brought it into being.`,
+              correct: true,
+              feedback: `The efficient cause is the agent — the thing that acts and produces the effect. The carpenter works on oak and produces a table. In later lessons, the efficient cause becomes the key to asking about God: is there a first uncaused cause? That question runs through this one.`,
+            },
+            {
+              id: `d`,
+              text: `Final cause.`,
+              correct: false,
+              feedback: `The final cause is the purpose — what the table is built <em>for</em>. The carpenter is the one who acts to produce the table, not the purpose of the table.`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l4-q5`,
+          type: "mcq",
+          stem: `"Why did the carpenter build the table?" — "To have a surface to work on." The purpose, the end — that is the…`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `Material cause.`,
+              correct: false,
+              feedback: `The material cause is the oak. "To have a surface to work on" is not the stuff — it is the end, the purpose that directed the whole action.`,
+            },
+            {
+              id: `b`,
+              text: `Formal cause.`,
+              correct: false,
+              feedback: `The formal cause is the structure that makes it a table. The end — what it is <em>for</em> — is a different kind of answer entirely.`,
+            },
+            {
+              id: `c`,
+              text: `Efficient cause.`,
+              correct: false,
+              feedback: `The efficient cause is the carpenter — the agent who acted. "To have a surface to work on" is not the agent; it is the purpose the agent was aiming at.`,
+            },
+            {
+              id: `d`,
+              text: `Final cause — the end or purpose the thing is ordered toward.`,
+              correct: true,
+              feedback: `The final cause is the end — the <span class="lat">finis</span>, the purpose or goal that the agent acts <em>for</em>. Thomas holds that every agent acts for an end; purposeless action is not action but accident. The final cause is arguably the most important of the four — it is the cause of the causes, since the end is what sets the other three in motion.`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l4-q6`,
+          type: "mcq",
+          stem: `Now the Latin. Match the four causes to their names. Which pairing is correct?`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `Stuff = <span class="lat">causa finalis</span> · Form = <span class="lat">causa efficiens</span> · Maker = <span class="lat">causa materialis</span> · Purpose = <span class="lat">causa formalis</span>`,
+              correct: false,
+              feedback: `Completely shuffled. Take them one at a time: <span class="lat">causa materialis</span> is the material (the stuff). <span class="lat">causa formalis</span> is the form (what makes it this kind of thing). <span class="lat">causa efficiens</span> is the efficient cause (the maker). <span class="lat">causa finalis</span> is the final cause (the purpose).`,
+            },
+            {
+              id: `b`,
+              text: `Stuff = <span class="lat">causa materialis</span> · Form = <span class="lat">causa formalis</span> · Maker = <span class="lat">causa efficiens</span> · Purpose = <span class="lat">causa finalis</span>`,
+              correct: true,
+              feedback: `Four Latin names, four kinds of "why." <span class="lat">Causa materialis</span>: the underlying stuff. <span class="lat">Causa formalis</span>: the organizing principle. <span class="lat">Causa efficiens</span>: the agent that produces. <span class="lat">Causa finalis</span>: the end it is ordered toward. Every causal explanation in the tradition sorts into one of these four.`,
+            },
+            {
+              id: `c`,
+              text: `Stuff = <span class="lat">causa formalis</span> · Form = <span class="lat">causa materialis</span> · Maker = <span class="lat">causa finalis</span> · Purpose = <span class="lat">causa efficiens</span>`,
+              correct: false,
+              feedback: `Material and formal are swapped, and efficient and final are swapped. The material cause is the <em>stuff</em>; the formal cause is the <em>organizing principle</em> imposed on it.`,
+            },
+            {
+              id: `d`,
+              text: `Stuff = <span class="lat">causa materialis</span> · Form = <span class="lat">causa formalis</span> · Maker = <span class="lat">causa finalis</span> · Purpose = <span class="lat">causa efficiens</span>`,
+              correct: false,
+              feedback: `Two right, two swapped. <span class="lat">Causa materialis</span> and <span class="lat">causa formalis</span> you have. But the maker is <span class="lat">causa efficiens</span> — the agent that produces — and the purpose is <span class="lat">causa finalis</span> — the end it is ordered toward. Don't let the verbal echo between <em>efficiens</em> and <em>finalis</em> obscure which is which.`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l4-q7`,
+          type: "mcq",
+          stem: `Last one. A bird builds a nest: twigs and leaves are woven into a bowl shape, by the bird, to shelter eggs. Assign each element to its cause.`,
+          latin_tag: `causa materialis  ·  formalis  ·  efficiens  ·  finalis`,
+          doctrine_line: `Lesson 4 of 7 complete · Three more before the seven doors open.`,
           lesson_complete: true,
           payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "Pure Act is composed of act and a special kind of unlimited potency that matches its infinite perfection.",
-                "feedback": "There is no unlimited potency. Potency is always the limiting, receiving principle. An infinite potency would be a contradiction: a capacity without limit is no capacity at all. Pure Act has no potency, and therefore no composition of any kind."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "Pure Act is simple: no composition of act and potency, no matter and form, no essence distinct from its act of being.",
-                "feedback": "Respondeo: where there is no potency, there is no composition. No matter, because matter is potency for form. No essence distinct from esse, because essence is potency for esse. No limit, because limits require a receiving potency. Pure Act is simply, uncomplicatedly, act. This is divine simplicity."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "Pure Act is composed of many acts at once, with no potency between them.",
-                "feedback": "A composition of many acts would require something to hold them together, which reintroduces potency. Pure Act is not a collection of acts but the one unlimited act. Multiplicity requires composition; composition requires potency; Pure Act excludes potency."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "Pure Act has no composition now, but could acquire some by choosing to create.",
-                "feedback": "Real relations in God to creatures are rational relations, not real ones on God's side. Creation does not add anything to Pure Act. A being that could acquire composition would have the potency for composition, which contradicts Pure Act."
-              }
+            options: [
+            {
+              id: `a`,
+              text: `Twigs and leaves = formal · Bowl shape = material · Bird = final · Shelter eggs = efficient.`,
+              correct: false,
+              feedback: `Everything is shuffled. The twigs and leaves are the <em>stuff</em> — that is the material cause. The bowl shape is the organizing principle — the formal cause. The bird is the agent — the efficient cause. Sheltering eggs is the purpose — the final cause.`,
+            },
+            {
+              id: `b`,
+              text: `Twigs and leaves = material · Bowl shape = formal · Bird = efficient · Shelter eggs = final.`,
+              correct: true,
+              feedback: `All four in one image: <span class="lat">causa materialis</span> (the twigs), <span class="lat">causa formalis</span> (the bowl structure), <span class="lat">causa efficiens</span> (the bird that acts), <span class="lat">causa finalis</span> (the end it is ordered to). Notice that the final cause — sheltering eggs — is what set the whole thing in motion. The end is first in intention, last in execution.`,
+            },
+            {
+              id: `c`,
+              text: `Twigs and leaves = efficient · Bowl shape = final · Bird = material · Shelter eggs = formal.`,
+              correct: false,
+              feedback: `The bird is not the material — the bird is the <em>agent</em>, the efficient cause. The twigs and leaves are the material. The bowl shape is the form. Sheltering eggs is the end.`,
+            },
+            {
+              id: `d`,
+              text: `Twigs and leaves = formal · Bowl shape = material · Bird = efficient · Shelter eggs = final.`,
+              correct: false,
+              feedback: `Right on the bird and the eggs — the bird is the <span class="lat">causa efficiens</span> (the agent), and sheltering eggs is the <span class="lat">causa finalis</span> (the end). But the inert principles are swapped: twigs and leaves are the <em>stuff</em> (<span class="lat">causa materialis</span>), and the bowl shape is the <em>organizing principle</em> (<span class="lat">causa formalis</span>), not the other way around. Stuff doesn't organize itself into a bowl; that's what form does.`,
+            }
             ],
-            "correct_option_id": "b"
           },
         }
       ],
     },
     {
-      id: `m1-l5`,
+      id: `m0-l5`,
       num: `V`,
-      title: `Recapitulatio`,
-      latin: `recapitulatio`,
-      tag: `recapitulatio`,
+      title: `Matter and Form`,
+      latin: `materia / forma`,
+      tag: `materia  ·  forma`,
       fin: {
-        tag: `recapitulatio`,
-        heading: `You did not learn a vocabulary. You acquired a grid.`,
-        body: `Act and potency are not two words to remember but two poles every finite thing is stretched between, and you can now find them in a marble block, a burning log, and an argument for God. Module 2 asks the question this grid was built for: what happens when act and potency are applied, not to motion, but to being itself. That a thing is, and what a thing is, are about to meet the two poles. Bring the grid.`,
+        tag: `materia  ·  forma`,
+        heading: `A body is never bare matter — it is always already <em>this kind</em> of thing.`,
+        body: `Matter is pure potency: the sheer capacity to receive form, without any of its own. Form is the act that makes a body what it is. Neither subsists without the other in natural things; you can separate them in the mind, but doing so in reality dissolves the substance. This is hylomorphism — Aristotle’s insight, refined by Aquinas into a precise instrument for every argument about bodies, souls, and sacraments.`,
       },
       questions: [
         {
-          id: `m1-l5-q1`,
-          type: "match_pair",
-          stem: `Four images carried this module. Pair each with the principle it taught. <em>Tap an image, then tap its principle. Tap a paired item to release it.</em>`,
+          id: `m0-l5-q1`,
+          type: "mcq",
+          stem: `A sculptor starts with a block of marble. He carves it into a figure of a man. Later another sculptor chips it into a fish. Through every stage — rough block, man, fish — what remains constant?`,
           payload: {
-            "left_set": [
-              {
-                "id": "L1",
-                "text": "the untouched marble"
-              },
-              {
-                "id": "L2",
-                "text": "the acorn and the oak"
-              },
-              {
-                "id": "L3",
-                "text": "the bronze cast as a horse"
-              },
-              {
-                "id": "L4",
-                "text": "the caterpillar and the butterfly"
-              }
-            ],
-            "right_set": [
-              {
-                "id": "R1",
-                "text": "potency is a real capacity in the thing itself, not a projection of the mind"
-              },
-              {
-                "id": "R2",
-                "text": "act is prior to potency in being, even where potency comes first in time"
-              },
-              {
-                "id": "R3",
-                "text": "accidental change: the same substance receives a new determination"
-              },
-              {
-                "id": "R4",
-                "text": "substantial change: the substantial form is replaced while primary matter persists"
-              }
-            ],
-            "correct_pairs": [
-              [
-                "L1",
-                "R1"
-              ],
-              [
-                "L2",
-                "R2"
-              ],
-              [
-                "L3",
-                "R3"
-              ],
-              [
-                "L4",
-                "R4"
-              ]
-            ],
-            "feedback": {
-              "all_correct": "All four locked. The marble gave you real potency; the acorn gave you the priority of act; the bronze and the caterpillar gave you the two depths of change. A module is owned when its images carry its principles.",
-              "partial_correct": "Some pairs landed; others did not. Walk back through the images: what did the marble already possess? Which is prior, acorn or oak, and in what sense? What persisted in the bronze, and what persisted in the caterpillar?"
+            options: [
+            {
+              id: `a`,
+              text: `The shape of the sculpture.`,
+              correct: false,
+              feedback: `That changed entirely — man became fish. You're after what persisted through every change, indifferent to the shape imposed on it.`,
             },
-            "doctrineTag": "recapitulatio"
-          },
-        },
-        {
-          id: `m1-l5-q2`,
-          type: "distinction_application",
-          stem: `A fresh case, no rehearsal. A dry oak log burns in the fireplace until only ash remains. Apply the module's grid: what kind of change is this, and what persists through it?`,
-          payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "An accidental change: the log takes on a new color and texture while remaining what it was.",
-                "feedback": "Check what remains. Ash is not dark wood; nothing answering to the form of wood survives the fire. When the substance itself is gone, the change ran deeper than any accident."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "A substantial change: the form of wood is lost, new forms are received, and primary matter persists beneath the exchange.",
-                "feedback": "Respondeo: substantial change. The wood ceases to be wood; what persists is not the substance but primary matter, the pure capacity that receives first one substantial form and then another. This is the caterpillar's lesson at full depth."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "An annihilation followed by a fresh creation: the wood passes into nothing and the ash begins from nothing.",
-                "feedback": "You made the change too deep. Annihilation and creation would break the continuity, yet the continuity is real: this ash came from this log, by a process nature performs every night. Something persisted, and its name is primary matter."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "No change in the strict sense: the same particles are merely rearranged, and the particles stay exactly what they are.",
-                "feedback": "That is the materialist reduction, and it quietly deletes the grid. If only rearrangement happens, nothing ever passes from potency to act and nothing is ever generated or corrupted. The price of that account is that there was never really wood, or ash, or you. Aquinas declines to pay it."
-              }
+            {
+              id: `b`,
+              text: `The marble itself.`,
+              correct: true,
+              feedback: `The marble is there before any shape, through every shape, after every shape. The shape comes and goes; the marble persists. That persistence is the first clue that two different principles are at work — the stuff, and the organizing of it.`,
+            },
+            {
+              id: `c`,
+              text: `The sculptor's intention.`,
+              correct: false,
+              feedback: `The sculptor's intention is a real cause — but not what remains in the marble when the sculptor leaves. You're after what's in the sculpture itself: the marble, not the plan.`,
+            }
             ],
-            "correct_option_id": "b"
           },
         },
         {
-          id: `m1-l5-q3`,
-          type: "true_false_with_reason",
-          stem: `TRUE or FALSE: <em>Act is prior to potency in every sense, including time.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
-          payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "TRUE. What is in potency must be preceded in time by the act it is ordered toward.",
-                "feedback": "The acorn refutes this. The acorn precedes its own oak in time, and there is nothing incoherent in that. The terminus of an ordering must be prior in nature and perfection, not in the calendar."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "TRUE. In any one thing the actuality arrives before the capacity, as the oak before its acorn.",
-                "feedback": "You reached for the right example and bent it. The oak that drops the acorn is indeed prior to that acorn, but the proposition claims priority in every sense for every case, and the acorn now lying on the ground precedes in time the oak it can become."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "FALSE. In time the acorn often wins; the priority of act is priority in being and perfection.",
-                "feedback": "Respondeo: false, and for that reason. Temporally the acorn wins the race; ontologically the oak was always the point. Priority of act is priority of perfection and end. Get the senses of priority straight and Lesson 2 is permanently yours."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "FALSE. Act and potency are strictly simultaneous in every respect, so neither principle can be prior to the other in any sense.",
-                "feedback": "You corrected one overstatement with another. Act and potency do coexist in every finite being, but coexistence is not equality. Potency is ordered toward act as toward its end, and what a thing is for stands prior in being to what merely awaits it."
-              }
-            ],
-            "correct_option_id": "c"
-          },
-        },
-        {
-          id: `m1-l5-q4`,
+          id: `m0-l5-q2`,
           type: "mcq",
-          stem: `One sentence to carry the whole module out the door. Which is correct?`,
+          stem: `Here are two things: (1) the lumber that makes up a chair, and (2) the arrangement — the back, the seat, the legs, the joinery — that makes the lumber fit for sitting. Are these two things the same thing said twice, or genuinely different?`,
           payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "Every finite being is composed of act and potency; what passes from potency to act is moved by another; the chain of movers ends in Pure Act.",
-                "feedback": "Respondeo: the module in one breath. Two poles, one engine, one terminus. Lessons 1 through 4 are each a clause of this sentence, and the sentence is the spine of everything the course builds from here."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "Only the actual is real; potency is a polite name for nothing yet; change just swaps actualities.",
-                "feedback": "That is the Megarian move, and Aristotle spent a chapter of the <em>Metaphysics</em> burying it. If potency is nothing, the unstruck match and the wet log are equally incapable of fire, and nothing can ever change at all. Real potency is the price of a world that moves."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "All is flux; act and potency are mind-made perspectives on one process, answering to nothing in things.",
-                "feedback": "Heraclitus at the door. But flux itself is unintelligible without the grid: a passage must be a passage of something, from a real capacity to a real determination. Deny the poles and you do not get pure process; you get nothing to describe."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "Every chain of movers must have started long ago; the First Way proves the universe began, and Pure Act started it.",
-                "feedback": "The most common misreading of the First Way, and worth losing a point to meet now. The argument concerns dependence here and now, not origins long ago: the stone moves only while the hand does. Aquinas thought reason alone could not prove the world began. The first mover is first in the order of act, not first on a timeline."
-              }
+            options: [
+            {
+              id: `a`,
+              text: `The same thing said twice — wood is wood, chair is just a word for some wood.`,
+              correct: false,
+              feedback: `Then why is a pile of lumber not a chair? The pile has the same wood. Something is genuinely missing — not more wood, but a principle of organization that makes the wood be what it is.`,
+            },
+            {
+              id: `b`,
+              text: `Genuinely different — the stuff and the organizing structure are distinct principles.`,
+              correct: true,
+              feedback: `Yes. The stuff can exist without the structure (a timber yard full of lumber), and the structure can be destroyed while the same stuff persists (a fire produces ash from the same wood). Two distinct principles, both real.`,
+            },
+            {
+              id: `c`,
+              text: `One is important (the structure), the other is irrelevant — you can ignore the material.`,
+              correct: false,
+              feedback: `You cannot have the structure floating free of any material. The form without matter would not be a chair — it would be a mathematical idea of a chair. In physical things, you need both.`,
+            }
             ],
-            "correct_option_id": "a"
           },
         },
         {
-          id: `m1-l5-q5`,
+          id: `m0-l5-q3`,
           type: "mcq",
-          stem: `Last one. Which sentence uses the module's vocabulary correctly?`,
-          latin_tag: `recapitulatio`,
-          doctrine_line: `Four lessons, one grid. Module 2 applies it to being itself.`,
+          stem: `The underlying stuff — the marble, the lumber, the clay — that can receive any number of different shapes: this has a Latin name. Which?`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `<span class="lat">materia</span>`,
+              correct: true,
+              feedback: `<span class="lat">Materia</span> — matter, the underlying stuff. Not matter in the modern physicist's sense of "tiny particles," but the metaphysical principle: the substratum that persists through change and receives form. The clay has <span class="lat">materia</span>; the bowl-shape is what comes over it.`,
+            },
+            {
+              id: `b`,
+              text: `<span class="lat">forma</span>`,
+              correct: false,
+              feedback: `<span class="lat">Forma</span> is the other half — the organizing structure that makes a thing be this kind of thing. The underlying stuff that receives the form is <span class="lat">materia</span>.`,
+            },
+            {
+              id: `c`,
+              text: `<span class="lat">potentia</span>`,
+              correct: false,
+              feedback: `Close in spirit — <span class="lat">potentia</span> (Lesson 2) names a thing's capacity for change. <span class="lat">Materia</span> is related but more specific: it's the underlying stuff itself. The marble's capacity to receive shapes is its <span class="lat">potentia</span>; the marble is the <span class="lat">materia</span>.`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l5-q4`,
+          type: "mcq",
+          stem: `And the organizing principle — the structure that makes this lump of matter be a horse, a ship, a man — the intelligible shape that determines what kind of thing it is:`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `That is <span class="lat">materia</span>.`,
+              correct: false,
+              feedback: `<span class="lat">Materia</span> is the stuff. The principle that organizes the stuff into this kind of thing is its other half.`,
+            },
+            {
+              id: `b`,
+              text: `That is <span class="lat">forma</span>.`,
+              correct: true,
+              feedback: `<span class="lat">Forma</span> — form. Not merely a visual shape, but the organizing principle that makes matter be this kind of thing. The horse-form makes this matter be a horse. Without it you have matter, but no horse. Thomas borrowed the word from Aristotle and never gave it back.`,
+            },
+            {
+              id: `c`,
+              text: `That is <span class="lat">causa</span>.`,
+              correct: false,
+              feedback: `<span class="lat">Causa</span> (Lesson 4) named the four kinds of "why." The organizing principle inside a thing — what makes this matter be this kind of thing — is <span class="lat">forma</span>.`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l5-q5`,
+          type: "mcq",
+          stem: `A chunk of iron is smelted and forged into a sword. Apply the distinction. What has changed, and what has stayed the same?`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `The <span class="lat">materia</span> (iron) changed; the <span class="lat">forma</span> (structure) stayed the same.`,
+              correct: false,
+              feedback: `Reversed. The iron persists through the forge — the smelting does not create new iron. What changed is what the iron is organized into: from raw-iron-form to sword-form.`,
+            },
+            {
+              id: `b`,
+              text: `The <span class="lat">materia</span> (iron) persisted; a new <span class="lat">forma</span> (sword-structure) was imposed on it.`,
+              correct: true,
+              feedback: `Exactly. The iron is there before and after the forge. The form — what the iron is organized into — is new. This is the classic account of substantial change: same matter, new form.`,
+            },
+            {
+              id: `c`,
+              text: `Both <span class="lat">materia</span> and <span class="lat">forma</span> changed entirely — a wholly new thing appeared.`,
+              correct: false,
+              feedback: `If entirely new matter appeared from nothing, that would be creation ex nihilo — reserved for God. The forge works with the iron that is already there. The <span class="lat">materia</span> persists; only the <span class="lat">forma</span> is new.`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l5-q6`,
+          type: "mcq",
+          stem: `Thomas holds that every bodily creature is a composite of <span class="lat">materia</span> and <span class="lat">forma</span>. This oak tree is this particular matter (these fibers, this sap) organized by oak-form. If the <span class="lat">forma</span> were entirely removed — if the oak-form ceased — what would remain?`,
+          latin_tag: `materia  ·  forma`,
+          doctrine_line: `Lesson 5 of 7 complete · Two more before the seven doors open.`,
           lesson_complete: true,
           payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "The sleeping musician is in <span class=\"lat\">actus</span> with respect to her skill, since the skill fully exists in her even while unexercised.",
-                "feedback": "Close, and the case is genuinely subtle. The sleeping musician holds her skill as a stable possession, but with respect to the exercise of it she is in potency until she plays. Aquinas would say she is in first act regarding the habit and in potency regarding the use. The sentence flattens that distinction."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "<span class=\"lat\">Materia prima</span> is the simplest complete substance, the basic stuff that all larger substances are assembled from.",
-                "feedback": "That description fits an atom, not <span class=\"lat\">materia prima</span>. Primary matter is not a substance at all and never exists bare; it is pure potency, the capacity that persists beneath substantial change, always already under some form."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "The frozen pond is in <span class=\"lat\">potentia</span> toward being water, since ice and water are two different substances.",
-                "feedback": "The grid is right and the chemistry is wrong. Ice and water are one substance in two accidental states; melting is an accidental change, not a substantial one. The pond is in potency toward being liquid, not toward being a different thing."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "<span class=\"lat\">Actus purus</span> admits of no <span class=\"lat\">potentia</span> whatsoever, and so cannot change, acquire, or lose anything at all.",
-                "feedback": "Respondeo: exactly right, and stated with the right severity. No potency means no possible acquisition and no possible loss; Pure Act is not the most changeable being but the least, which is to say not changeable at all. You are using the words the way the tradition uses them."
-              }
+            options: [
+            {
+              id: `a`,
+              text: `A simpler kind of tree.`,
+              correct: false,
+              feedback: `Any tree at all requires some form of tree. Without <span class="lat">forma</span>, you don't get a simpler organism — you lose the organism entirely.`,
+            },
+            {
+              id: `b`,
+              text: `Undifferentiated matter — no longer an oak or anything determinate.`,
+              correct: true,
+              feedback: `Respondeo: it is the <span class="lat">materia</span> alone — matter without form, pure potentiality, no longer organized into any kind of thing. This is what Thomas calls <em>materia prima</em>: not nothing, but nothing determinate. Form is what makes matter be something.  Opens the door to the Act of Creation and the intelligibility of natural kinds.`,
+            },
+            {
+              id: `c`,
+              text: `The pure <span class="lat">esse</span> of the oak, free of material limits.`,
+              correct: false,
+              feedback: `<span class="lat">Esse</span> (Lesson 1) is the act of existence — a different cut entirely. Removing <span class="lat">forma</span> from a material thing does not leave <span class="lat">esse</span> behind; it leaves undifferentiated <span class="lat">materia</span>.`,
+            }
             ],
-            "correct_option_id": "d"
+          },
+        }
+      ],
+    },
+    {
+      id: `m0-l6`,
+      num: `VI`,
+      title: `Substance and Accident`,
+      latin: `substantia / accidens`,
+      tag: `substantia  ·  accidens`,
+      fin: {
+        tag: `substantia  ·  accidens`,
+        heading: `A substance is what a thing <em>is;</em> an accident is what it happens to <em>have.</em>`,
+        body: `Substance subsists in itself; accidents inhere in substance as their subject. Socrates is pale, tall, seated — none of that is Socrates, but all of it belongs to him. The distinction sounds harmless until you need it for the harder cases: soul and body, person and nature, the Eucharist. Keep it sharp.`,
+      },
+      questions: [
+        {
+          id: `m0-l6-q1`,
+          type: "mcq",
+          stem: `Socrates is a man. He is also pale, seated, in Athens, and moderately pleased with himself this morning. Tomorrow he may be tanned, standing, in Corinth, and considerably less pleased. Through all these changes, Socrates remains Socrates. What kind of changes are the second set?`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `Changes that make Socrates a different kind of being.`,
+              correct: false,
+              feedback: `A change that makes you a different kind of being is a different and rarer thing — death, for instance, or (in the tradition's boldest claim) a spiritual transformation. Getting a tan is not that.`,
+            },
+            {
+              id: `b`,
+              text: `Changes in how Socrates happens to be, without changing what he fundamentally is.`,
+              correct: true,
+              feedback: `Yes. He's still a man, still Socrates. These changes are real — his pallor is really there — but they belong to him without constituting what he is. They are real features that happen to a substance, not what the substance is.`,
+            },
+            {
+              id: `c`,
+              text: `Changes in Socrates's <span class="lat">materia</span> — his body — not his <span class="lat">forma</span>.`,
+              correct: false,
+              feedback: `Good use of Lesson 5. But the <span class="lat">materia</span>/<span class="lat">forma</span> cut and the distinction we are learning today are different knives. Today's question is not about what Socrates is made of, but about the difference between what he fundamentally <em>is</em> and how he <em>happens</em> to be.`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l6-q2`,
+          type: "mcq",
+          stem: `Four descriptions of a person. One of them is different in kind — it names what the person fundamentally IS, not how they happen to be. Which?`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `Being six feet tall.`,
+              correct: false,
+              feedback: `Height is a real property — and a very constant one — but you could change your height (in principle) without ceasing to be what you are. It belongs to the person; it does not constitute the person.`,
+            },
+            {
+              id: `b`,
+              text: `Being currently seated.`,
+              correct: false,
+              feedback: `This one changes every time you stand up. Clearly a property that belongs to you in this moment without being what you are.`,
+            },
+            {
+              id: `c`,
+              text: `Being pale-skinned.`,
+              correct: false,
+              feedback: `A real feature of this person — but not what they fundamentally are. You're after the description that names what they <em>are</em> in their own right.`,
+            },
+            {
+              id: `d`,
+              text: `Being a human being.`,
+              correct: true,
+              feedback: `Yes. Being a human being is not how this person happens to be at the moment — it is what they are. Lose it and you lose Socrates entirely. The other three are real properties belonging to a substance; this is what the substance is.`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l6-q3`,
+          type: "mcq",
+          stem: `The fundamental kind of thing a being is — what it is in its own right, not how it happens to be — has a Latin name:`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `<span class="lat">accidens</span>`,
+              correct: false,
+              feedback: `<span class="lat">Accidens</span> (accident) is the other half — the real properties that belong to a thing without constituting what it is. The fundamental kind of being a thing is has a different name.`,
+            },
+            {
+              id: `b`,
+              text: `<span class="lat">substantia</span>`,
+              correct: true,
+              feedback: `<span class="lat">Substantia</span> — substance, from <em>sub-stare</em>, "to stand under." The substance is what stands under all its changing properties, what the thing is in its own right. Every dog is a substance; being brown or tired or hungry are accidents belonging to that substance.`,
+            },
+            {
+              id: `c`,
+              text: `<span class="lat">potentia</span>`,
+              correct: false,
+              feedback: `<span class="lat">Potentia</span> (Lesson 2) is a capacity — what a thing can do or become. The name for what a thing fundamentally <em>is</em>, as distinct from how it happens to be, is <span class="lat">substantia</span>.`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l6-q4`,
+          type: "mcq",
+          stem: `And the real properties that genuinely belong to a substance — height, color, location, posture, temperature — without constituting what it is:`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `These are <span class="lat">substantia</span>.`,
+              correct: false,
+              feedback: `<span class="lat">Substantia</span> is what a thing is in its own right. These properties are real, but they belong to a substance rather than being what the substance is. They have their own name.`,
+            },
+            {
+              id: `b`,
+              text: `These are <span class="lat">accidentia</span>.`,
+              correct: true,
+              feedback: `<span class="lat">Accidentia</span> — accidents. Not "accidental" in the modern English sense of random or unimportant — accidents can be very stable and deeply characteristic. The word means: a property that belongs to a substance without constituting what that substance is. All nine Aristotelian categories beyond substance (quantity, quality, relation, place, time, posture, condition, action, passivity) are accidents.`,
+            },
+            {
+              id: `c`,
+              text: `These are <span class="lat">forma</span>.`,
+              correct: false,
+              feedback: `<span class="lat">Forma</span> (Lesson 5) is the organizing principle that makes matter be a kind of thing. <span class="lat">Accidentia</span> are real properties belonging to an already-constituted substance — a different level of analysis.`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l6-q5`,
+          type: "mcq",
+          stem: `A green apple left in the sun turns red. The color has changed. Has the apple ceased to be an apple?`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `Yes — color is part of what makes it an apple.`,
+              correct: false,
+              feedback: `Color is a real property of this apple. But apples come green, red, and yellow — the color does not constitute the apple-substance. The change of color is a change in an accident, not in the substance.`,
+            },
+            {
+              id: `b`,
+              text: `No — color is an <span class="lat">accidens</span>; the <span class="lat">substantia</span> (apple) persists through the change.`,
+              correct: true,
+              feedback: `Respondeo: it is a change in <span class="lat">accidens</span>, not <span class="lat">substantia</span>. The substance persists through many accidental changes. This is also why you can identify the same dog over time despite constant changes in weight, color, and temperament — the substance is not dissolved by its accidents.`,
+            },
+            {
+              id: `c`,
+              text: `It depends — some color changes destroy a substance, others do not.`,
+              correct: false,
+              feedback: `Color as such is a quality — an accident. An apple turning red is an accidental change. If the apple decomposed entirely, something more substantial would be at stake — but color change alone does not reach the substance.`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l6-q6`,
+          type: "mcq",
+          stem: `In the Church's teaching on the Eucharist, the appearances of bread and wine — their size, shape, taste, color — remain after the consecration. But what the elements fundamentally ARE has changed. Using Lesson 6 vocabulary: those remaining appearances are…`,
+          latin_tag: `substantia  ·  accidens`,
+          doctrine_line: `Lesson 6 of 7 complete · One more — the capstone.`,
+          lesson_complete: true,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `The <span class="lat">substantia</span> of the bread, which has survived.`,
+              correct: false,
+              feedback: `That is precisely what the Church denies. The whole point of the doctrine is that the <span class="lat">substantia</span> has changed — what remains is something else.`,
+            },
+            {
+              id: `b`,
+              text: `The <span class="lat">accidentia</span> of the bread — the real properties that belonged to the bread-substance, now without their original subject.`,
+              correct: true,
+              feedback: `Respondeo: the appearances are the <span class="lat">accidentia</span> of bread — size, color, taste, texture — real properties that remain. The <span class="lat">substantia</span> has changed: what was bread is now something else entirely. The doctrine uses this distinction with great precision. One more lesson and the seven doors open.`,
+            },
+            {
+              id: `c`,
+              text: `The <span class="lat">forma</span> of bread, which the consecration cannot reach.`,
+              correct: false,
+              feedback: `A form-without-matter would already be something unusual. The tradition's account of the Eucharist goes deeper than <span class="lat">forma</span> alone — it is the <span class="lat">substantia</span> entire that has changed, leaving the <span class="lat">accidentia</span> in place.`,
+            }
+            ],
+          },
+        }
+      ],
+    },
+    {
+      id: `m0-l7`,
+      num: `Cap.`,
+      title: `Recapitulatio`,
+      latin: `septem distinctiones`,
+      tag: `septem distinctiones`,
+      fin: {
+        tag: `septem distinctiones`,
+        heading: `Module 0 complete.`,
+        body: `Seven distinctions: esse/essentia, actus/potentia, the real/notional divide, the four causes, materia/forma, substantia/accidens. Aquinas did not invent them; he found them in Aristotle, sharpened them, and turned them into instruments of an argument that spans metaphysics, ethics, sacramental theology, and the nature of God. You now hold the kit. Module 5 builds the logical machinery that runs on top of it.`,
+      },
+      questions: [
+        {
+          id: `m0-l7-q1`,
+          type: "mcq",
+          stem: `Six lessons, six distinctions. Let's find them again. Which Latin pair belongs to Lesson 1 — the question about what a thing IS versus THAT it is?`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `<span class="lat">materia</span> / <span class="lat">forma</span>`,
+              correct: false,
+              feedback: `Those are Lesson 5 — the stuff and the organizing structure of a material thing. You're after the pair that divided the "what" from the "that."`,
+            },
+            {
+              id: `b`,
+              text: `<span class="lat">essentia</span> / <span class="lat">esse</span>`,
+              correct: true,
+              feedback: `Yes. <span class="lat">Essentia</span>: what a thing is — its kind, its nature. <span class="lat">Esse</span>: that it is — the very act of being. The first distinction, and the one that runs deepest through the tradition. Everything else, in a sense, is commentary.`,
+            },
+            {
+              id: `c`,
+              text: `<span class="lat">substantia</span> / <span class="lat">accidens</span>`,
+              correct: false,
+              feedback: `Those are Lesson 6 — the thing itself versus how it happens to be. You're after the pair that divided the "what" (the essence) from the "that" (the act of being).`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l7-q2`,
+          type: "mcq",
+          stem: `An acorn lying on the ground has never grown into a tree. It is not a tree. Yet it genuinely can become one. This "can-become" is named:`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `<span class="lat">actus</span>`,
+              correct: false,
+              feedback: `<span class="lat">Actus</span> is what the acorn actually is right now — its present state. The "can-become" is its other half.`,
+            },
+            {
+              id: `b`,
+              text: `<span class="lat">potentia</span>`,
+              correct: true,
+              feedback: `<span class="lat">Potentia</span> — potency, capacity, genuine readiness. Not wishful thinking about the acorn, but a real feature of its nature: it is constituted to become an oak. Lesson 2 in brief.`,
+            },
+            {
+              id: `c`,
+              text: `<span class="lat">materia</span>`,
+              correct: false,
+              feedback: `<span class="lat">Materia</span> (Lesson 5) is the underlying stuff — in this case, the physical acorn itself. The capacity to become an oak is its <span class="lat">potentia</span>.`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l7-q3`,
+          type: "mcq",
+          stem: `Two chemists examine a gold ring. One says: "This is yellow." The other says: "This is gold." Using Lesson 6, how do these two statements relate?`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `Being yellow is an <span class="lat">accidens</span>; being gold is the <span class="lat">substantia</span>.`,
+              correct: true,
+              feedback: `Precisely. Gold is the substance — what the ring fundamentally is. Yellow is a real property of this gold, but gold can be found in other colors (white gold, rose gold), and yellow can be found in things that are not gold. The color belongs to the substance; it does not constitute it.`,
+            },
+            {
+              id: `b`,
+              text: `Being yellow is the <span class="lat">substantia</span>; being gold is an <span class="lat">accidens</span>.`,
+              correct: false,
+              feedback: `Reversed. The substance is what the thing fundamentally is — gold. Yellowness is a real property of this gold, but it does not constitute what the metal is. A white gold ring is still gold.`,
+            },
+            {
+              id: `c`,
+              text: `Both are <span class="lat">substantia</span> — they're both saying the same fundamental thing.`,
+              correct: false,
+              feedback: `If they were the same, you could substitute one for the other without loss. But "this is yellow" and "this is gold" answer different questions: one names a quality, the other names what the thing is.`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l7-q4`,
+          type: "mcq",
+          stem: `A philosopher asks: "Why does the eye see?" There are four real answers hiding in that "why." Which one is the <span class="lat">causa finalis</span> — the answer that names the end or purpose?`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `Because its tissues are transparent to light.`,
+              correct: false,
+              feedback: `The material cause — what the eye is made of, which is the right kind of stuff for seeing. A real "why," but not the one about purpose.`,
+            },
+            {
+              id: `b`,
+              text: `Because its structure is organized for receiving visual information.`,
+              correct: false,
+              feedback: `The formal cause — the organization that makes this matter be an eye at all. Also a real "why," but the question asks for the cause that names the end.`,
+            },
+            {
+              id: `c`,
+              text: `Because the developing organism produced it.`,
+              correct: false,
+              feedback: `The efficient cause — the agent that brought the eye into being. Real, but you're after the "why" that looks forward to the eye's function rather than backward to its origin.`,
+            },
+            {
+              id: `d`,
+              text: `Because sight is what eyes are for.`,
+              correct: true,
+              feedback: `The <span class="lat">causa finalis</span> — the final cause, the end or purpose. "The eye sees in order to see" sounds trivial until you notice that modern accounts of biology have quietly restored it: organs have functions, DNA has targets, organisms aim at outcomes. Aristotle has been right all along; the vocabulary just went underground.`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l7-q5`,
+          type: "mcq",
+          stem: `We learned in Lesson 3 that some distinctions are real (<span class="lat">distinctio realis</span>) and some are only in the mind. Using what we know: is the distinction between a thing's <span class="lat">essentia</span> and its <span class="lat">esse</span> — between what it is and that it is — real or only mental?`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `Only mental — the distinction is just a way of talking about the same thing from two angles.`,
+              correct: false,
+              feedback: `This is a genuine position in the tradition — Scotus and others have argued for it. But in the strict Thomistic line: if the distinction were only mental, every creature would exist necessarily just by having a nature. A unicorn would exist. The real distinction between <span class="lat">essentia</span> and <span class="lat">esse</span> is what makes creatures genuinely contingent.`,
+            },
+            {
+              id: `b`,
+              text: `Real — the strict Thomistic position is that <span class="lat">essentia</span> and <span class="lat">esse</span> are really distinct in every creature.`,
+              correct: true,
+              feedback: `Respondeo: this is the <span class="lat">distinctio realis</span> at the heart of Thomas's metaphysics. Essence is a real positive principle; esse is a real positive act; and they are really distinct — related as potency to act. In God alone are they identical. This is the nerve of the whole system.`,
+            },
+            {
+              id: `c`,
+              text: `Neither — Thomas did not hold a clear position on this.`,
+              correct: false,
+              feedback: `This is one of the places where Thomas is clearest. The real distinction between essence and esse in creatures — and the identity of essence and esse in God — is central to the <em>De Ente et Essentia</em> and the <em>Summa Contra Gentiles</em>.`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l7-q6`,
+          type: "mcq",
+          stem: `A statue of a horse is melted down and recast as a sword. Using Lesson 5: what changed, what persisted — and what Lesson 2 term names the bronze's capacity to receive either form?`,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `The <span class="lat">forma</span> changed (horse → sword); the <span class="lat">materia</span> (bronze) persisted; and the bronze's capacity for either form is its <span class="lat">potentia</span>.`,
+              correct: true,
+              feedback: `Precisely. Three lessons working together: <span class="lat">materia</span> / <span class="lat">forma</span> from Lesson 5, and <span class="lat">potentia</span> from Lesson 2. The bronze is in <span class="lat">potentia</span> to many forms. A particular form actualizes that potency. The forge changes the form; the bronze persists as the underlying matter.`,
+            },
+            {
+              id: `b`,
+              text: `The <span class="lat">materia</span> changed; the <span class="lat">forma</span> persisted; the capacity is its <span class="lat">actus</span>.`,
+              correct: false,
+              feedback: `Both halves are reversed. The bronze (<span class="lat">materia</span>) persists; the shape (<span class="lat">forma</span>) changes. And the capacity to receive either form is <span class="lat">potentia</span>, not <span class="lat">actus</span> — <span class="lat">actus</span> names what the bronze actually is at any given moment.`,
+            },
+            {
+              id: `c`,
+              text: `Both <span class="lat">materia</span> and <span class="lat">forma</span> changed; this was a case of creation.`,
+              correct: false,
+              feedback: `Creation from nothing is a theological category — it requires no pre-existing material at all. The forge works with bronze that already exists. The <span class="lat">materia</span> persists; only the <span class="lat">forma</span> is new.`,
+            }
+            ],
+          },
+        },
+        {
+          id: `m0-l7-q7`,
+          type: "mcq",
+          stem: `The six distinctions you have learned — <span class="lat">essentia</span>/<span class="lat">esse</span>, <span class="lat">potentia</span>/<span class="lat">actus</span>, <span class="lat">res</span>/<span class="lat">distinctio realis</span>, the four <span class="lat">causae</span>, <span class="lat">materia</span>/<span class="lat">forma</span>, <span class="lat">substantia</span>/<span class="lat">accidens</span> — are all different ways of doing what?`,
+          latin_tag: `septem distinctiones`,
+          doctrine_line: `Module 0 complete · The seven doors are open.`,
+          lesson_complete: true,
+          payload: {
+            options: [
+            {
+              id: `a`,
+              text: `Dividing things into categories we invented to organize our language.`,
+              correct: false,
+              feedback: `The Thomistic claim is stronger than that. These distinctions track something real — they are found in the things, not merely imposed on them. The tradition's wager is that the world is intelligible precisely because it has this kind of structure.`,
+            },
+            {
+              id: `b`,
+              text: `Seeing the real composition of beings — the principles that make them be what they are.`,
+              correct: true,
+              feedback: `Respondeo: all six are ways of reading the real structure of things. Not categories we project onto a structureless world, but principles discovered in the world by careful attention. This is the Thomistic realism: the world is intelligible because it really is composed this way. Module 0 complete. Seven doors open. Doors 1 through 17 await.`,
+            },
+            {
+              id: `c`,
+              text: `Naming what we cannot know about being — gesturing at a mystery beyond concepts.`,
+              correct: false,
+              feedback: `The opposite of the Thomistic position. Thomas is an optimist about intellect: the mind can genuinely grasp the real structure of things. The distinctions are not gestures toward darkness; they are the light on the path.`,
+            }
+            ],
           },
         }
       ],

@@ -95,7 +95,7 @@ function TopBarInner({ moduleId, moduleTitle, modulesCrumb }: TopBarProps) {
               </>
             )}
             <span className="cp-label">Module</span>
-            <span className="cp-num">{toRoman(moduleId + 1)}</span>
+            <span className="cp-num">{toRoman(moduleId)}</span>
             {moduleTitle && (
               <>
                 <span className="cp-sep">{'\u00b7'}</span>

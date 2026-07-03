@@ -2,317 +2,167 @@ import type { ModuleMeta } from '../types';
 
 export const m2: ModuleMeta = {
   id: 2,
-  title: `Being and Essence`,
-  short: `Being and Essence`,
-  label: `Module 2 · Being and Essence`,
-  latin: `De Ente et Essentia`,
-  aim: `Esse (the act of being) and essentia (essence) are really distinct in creatures. Esse is act; essentia is the potency that receives and limits it. In God they are identical.`,
+  title: `Act and Potency`,
+  short: `Act and Potency`,
+  label: `Module 2 · Act and Potency`,
+  latin: `Actus et Potentia`,
+  aim: `Every finite being is composed of act (the positive, determining, perfecting principle) and potency (the real capacity to receive or be limited by act). God alone is Pure Act, with no composition. The act/potency distinction is the master key: every other distinction in the system is a species of it.`,
   lessons: [
     {
-      id: `m2-l1`,
+      id: `m1-l1`,
       num: `I`,
-      title: `The Two Questions Return`,
-      latin: `essentia  ·  esse`,
-      tag: `essentia  ·  esse`,
+      title: `The Two Poles`,
+      latin: `actus  ·  potentia`,
+      tag: `actus  ·  potentia`,
       fin: {
-        tag: `essentia  ·  esse`,
-        heading: `You have been asking two questions since the apple. Now they become two principles.`,
-        body: `That a thing is and what a thing is came apart in your hands in Foundations. This module makes the separation precise: <em>essentia</em> and <em>esse</em> are really distinct principles in everything that is not God. The unicorn was the clue. You can know an essence perfectly and still not know whether it is.`,
+        tag: `actus  ·  potentia`,
+        heading: `Every finite thing is stretched between two poles. Neither is nothing.`,
+        body: `<em>Actus</em> and <em>potentia</em> are not a metaphor. They are the two real principles of which every creature is composed. Aristotle discovered the grammar; Aquinas sharpened it until it could carry the weight of creation itself.`,
       },
       questions: [
         {
-          id: `m2-l1-q1`,
+          id: `m1-l1-q1`,
           type: "mcq",
-          stem: `An apple sits on a table. Two facts about it: it is an apple, and it is. Are those the same fact?`,
+          stem: `A sculptor stands before an untouched block of marble. What does the marble already possess, in relation to the statue it might become?`,
           payload: {
             "options": [
               {
                 "id": "a",
                 "label": "Respondeo:",
-                "text": "Yes. To be an apple just is to exist as one.",
-                "feedback": "Then no apple could ever stop existing without ceasing to have been an apple at all. The orchard's whole history says otherwise. Two facts, not one."
+                "text": "Nothing at all, until the sculptor begins to carve.",
+                "feedback": "The marble has genuine readiness before the sculptor touches it. That readiness is built into what marble is. The name for it is <span class=\"lat\">potentia</span>: a real ontological principle, not an emptiness waiting to be filled."
               },
               {
                 "id": "b",
                 "label": "Respondeo:",
-                "text": "No. What it is and that it is are two different facts about it.",
-                "feedback": "Respondeo: two facts. You met this distinction at the very start of the course. This module turns it from an observation into a piece of metaphysics."
+                "text": "A real capacity to receive the form of a statue.",
+                "feedback": "Respondeo: a real capacity, not a mere absence. The marble genuinely can become a statue, and that <em>can</em> is <span class=\"lat\">potentia</span>: a real principle ordered toward act."
               },
               {
                 "id": "c",
                 "label": "Respondeo:",
-                "text": "The first is a fact; the second is just a manner of speaking.",
-                "feedback": "That a thing exists is the least manner-of-speaking fact there is. Remove it and there is nothing left to speak about."
+                "text": "The actual form of the statue, simply hidden inside the stone.",
+                "feedback": "That is the Michelangelo myth, not the Thomistic account. The form is not hiding inside; it does not exist yet. What the marble has is a real capacity to receive the form. That capacity is <span class=\"lat\">potentia</span>."
               },
               {
                 "id": "d",
                 "label": "Respondeo:",
-                "text": "They are the same fact described at two levels of detail.",
-                "feedback": "More detail about what an apple is never adds up to the fact that this one exists. You can complete the description and still have to check the table."
+                "text": "A capacity that exists only in the sculptor's mind, projected onto the stone.",
+                "feedback": "The capacity is in the marble, not in the mind. A different block of granite or a cloud of smoke could not become this statue, no matter what the sculptor imagines. Real <span class=\"lat\">potentia</span> is in the thing itself."
               }
             ],
             "correct_option_id": "b"
           },
         },
         {
-          id: `m2-l1-q2`,
+          id: `m1-l1-q2`,
           type: "mcq",
-          stem: `You know exactly what a unicorn is: one horn, four hooves, the whole portrait. Has knowing all that told you whether any unicorn exists?`,
+          stem: `The sculptor finishes. The marble is fully shaped, the form realized. What principle does the realized form represent?`,
           payload: {
             "options": [
               {
                 "id": "a",
                 "label": "Respondeo:",
-                "text": "Yes. A complete definition includes whether the thing is real.",
-                "feedback": "Then dictionaries would settle zoology. The definition is complete as a definition and silent about existence. That silence is the discovery."
+                "text": "<span class=\"lat\">Actus</span>: the perfection fully realized in the matter.",
+                "feedback": "Respondeo: <span class=\"lat\">actus</span> is always the positive, determining, perfecting principle. The form as realized is act. The marble that received it was potency. This is the master pair."
               },
               {
                 "id": "b",
                 "label": "Respondeo:",
-                "text": "Yes, indirectly: the more detailed the essence, the more likely it exists.",
-                "feedback": "Detail adds clarity, not reality. The unicorn's portrait can grow forever without a single one appearing in the garden."
+                "text": "<span class=\"lat\">Potentia</span>: the marble's capacity to be shaped further.",
+                "feedback": "<span class=\"lat\">Potentia</span> remains in the statue (it could be re-carved or destroyed), but it is not what the question points at. The realized form, the positive determination now actually present, is <span class=\"lat\">actus</span>."
               },
               {
                 "id": "c",
                 "label": "Respondeo:",
-                "text": "No. The what-it-is is fully known, and the whether-it-is remains open.",
-                "feedback": "Respondeo: fully known, still open. Aquinas makes this exact move with a phoenix instead of a unicorn, and you will read him make it later in this module."
+                "text": "<span class=\"lat\">Materia</span>: the underlying matter that has taken on a new shape.",
+                "feedback": "<span class=\"lat\">Materia</span> is the receptive material substrate, the marble as capable of receiving form. The completed form is not the matter. It is what the matter received, namely <span class=\"lat\">actus</span>."
               },
               {
                 "id": "d",
                 "label": "Respondeo:",
-                "text": "The question is unfair, since imaginary things have no essence to know.",
-                "feedback": "Yet you do know what a unicorn is; that is why you can spot a wrong drawing of one. The knowability of the essence is precisely what makes its silence about existence so interesting."
-              }
-            ],
-            "correct_option_id": "c"
-          },
-        },
-        {
-          id: `m2-l1-q3`,
-          type: "mcq",
-          stem: `The two principles have names. Which pairing is correct?`,
-          payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "<span class=\"lat\">essentia</span> is the act by which a thing is; <span class=\"lat\">esse</span> is what it is.",
-                "feedback": "Inverted. <span class=\"lat\">Esse</span> is the act of being, the answer to whether; <span class=\"lat\">essentia</span> is the what. Swap them back and the grid from Module 1 clicks into place."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "<span class=\"lat\">essentia</span> is the thing itself; <span class=\"lat\">esse</span> is our concept of it.",
-                "feedback": "Both principles are in the thing, not in us. Your concept of the apple did not put the apple on the table."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "<span class=\"lat\">essentia</span> and <span class=\"lat\">esse</span> are two words for the same principle.",
-                "feedback": "If they were, knowing what a unicorn is would settle whether one exists. You just saw that it does not. Two words, two principles."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "<span class=\"lat\">essentia</span> is what a thing is; <span class=\"lat\">esse</span> is the act by which it is.",
-                "feedback": "Respondeo: exactly. <span class=\"lat\">Essentia</span> answers the first question, <span class=\"lat\">esse</span> answers the second, and in creatures they are really distinct. The rest of the module unpacks that sentence."
-              }
-            ],
-            "correct_option_id": "d"
-          },
-        },
-        {
-          id: `m2-l1-q4`,
-          type: "distinction_application",
-          stem: `The dodo. Its essence is thoroughly known: anatomists can describe it bone by bone. Since 1681, no dodo has existed. What does the case show?`,
-          payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "That essences go on existing somewhere after their things are gone.",
-                "feedback": "That is Plato's answer, not Aquinas's. The dodo's essence survives in our knowledge and in God's, not in some museum of forms. What the case shows is simpler and sharper."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "That what-something-is does not include that-it-is.",
-                "feedback": "Respondeo: the essence is fully intelligible while the <span class=\"lat\">esse</span> is gone. If existence were part of the what, extinction would make dodos indescribable. It made them describable and absent."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "That extinction destroyed the essence along with the birds.",
-                "feedback": "Then the anatomists would have nothing to describe and the word dodo would mean nothing. The what survives in knowledge; the that does not survive at all."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "That the dodo now exists in a weaker, merely historical way.",
-                "feedback": "Existence does not come in discount versions. The dodo is known, remembered, and simply not. The clean edge of that 'not' is the lesson."
-              }
-            ],
-            "correct_option_id": "b"
-          },
-        },
-        {
-          id: `m2-l1-q5`,
-          type: "true_false_with_reason",
-          stem: `TRUE or FALSE: <em>In a creature, <span class="lat">esse</span> is one part of the essence, the way wings are part of a bird.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
-          latin_tag: `essentia  ·  esse`,
-          doctrine_line: `What a thing is never tells you that it is. Two questions, two principles.`,
-          lesson_complete: true,
-          payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "TRUE. Whatever a thing has must be part of what it is.",
-                "feedback": "Then the unicorn's full portrait would have settled its existence, and the dodo's loss of <span class=\"lat\">esse</span> would have torn a hole in its anatomy. Having is not the same as being-part-of-the-what."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "TRUE. Esse is the deepest part of the essence, beneath all the others.",
-                "feedback": "Deepest changes nothing: a part of the what would show up in the definition, and <span class=\"lat\">esse</span> never does. It stands to the essence as act to potency, not as part to whole."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "FALSE. Esse is the act the essence receives, not a part of the what.",
-                "feedback": "Respondeo: received act, not component. The essence is the capacity; <span class=\"lat\">esse</span> actualizes it. You have used this grid since the marble. It was built for this."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "FALSE. Esse and essence are unrelated, each standing on its own.",
-                "feedback": "Too far. They are really distinct but never apart in the existing thing: no essence floats free of being, no <span class=\"lat\">esse</span> arrives without a what. Distinct principles, one thing."
-              }
-            ],
-            "correct_option_id": "c"
-          },
-        }
-      ],
-    },
-    {
-      id: `m2-l2`,
-      num: `II`,
-      title: `Composition`,
-      latin: `compositio`,
-      tag: `compositio`,
-      fin: {
-        tag: `compositio`,
-        heading: `Every creature is composed. That is not a flaw. It is what makes it a creature.`,
-        body: `Composition of act and potency is the structure of finitude. What composition shows is dependence, and dependence points to a source.`,
-      },
-      questions: [
-        {
-          id: `m2-l2-q1`,
-          type: "mcq",
-          stem: `Could there be a creature with no unrealized capacities at all, nothing it could still become, lose, or undergo?`,
-          payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "Yes. A perfect creature would have outgrown all its capacities.",
-                "feedback": "A creature with no potency left would be pure act, and pure act is not a rank a creature reaches. It is what Module 1's argument reserved for the unmoved mover alone."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "Yes, in principle, though none happens to exist.",
-                "feedback": "The block is not bad luck but structure: to be a creature is to receive being, and a receiver is a potency. No potency, no creature."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "No. To be a creature is to be composed of act and potency.",
-                "feedback": "Respondeo: composition is not a flaw in creatures; it is what being a creature means. This lesson finds the deepest layer of that composition."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "No, but only because every creature has a body that can change.",
-                "feedback": "Close, but the net is wider than bodies. An angel has no body and is still composed, as this lesson will show. The deepest composition is not matter and form."
-              }
-            ],
-            "correct_option_id": "c"
-          },
-        },
-        {
-          id: `m2-l2-q2`,
-          type: "mcq",
-          stem: `A finite being has unrealized capacities: it could change, develop, be affected. This shows it is...`,
-          payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "Composed of act and potency, since unrealized capacity is real potency in an existing being.",
-                "feedback": "Respondeo: unrealized capacity is potency. A being with potency is a being composed of act and potency. Every finite being has unrealized capacities; Pure Act has none."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "Pure act, since to actually exist is already to be in act in every respect.",
-                "feedback": "Existing as a being is being in act, but in act in some respect, not every respect. The unrealized capacities ARE the potency-side of the composition. Pure Act is reserved for what has zero unrealized capacities."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "Without essence, since a real essence would foreclose any unrealized capacity.",
-                "feedback": "Essence is precisely the real potency that receives and limits <span class=\"lat\">esse</span>. Having an essence is what makes a being finite and composed, not the absence of one. Unrealized capacities are downstream of having an essence at all."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "Composed of substance and accident, with unrealized capacities being merely accidental modifications.",
-                "feedback": "Substance/accident is one composition, but it presupposes the deeper composition of <span class=\"lat\">esse</span> and <span class=\"lat\">essentia</span>. Unrealized capacities are not just accidents; they are real potencies in the substance itself."
+                "text": "<span class=\"lat\">Compositio</span>: the union of matter and form in the finished statue.",
+                "feedback": "<span class=\"lat\">Compositio</span> names the union of two principles, not one of them by itself. The realized form is one of the principles in the composition: it is the <span class=\"lat\">actus</span> that the matter received."
               }
             ],
             "correct_option_id": "a"
           },
         },
         {
-          id: `m2-l2-q3`,
+          id: `m1-l1-q3`,
           type: "mcq",
-          stem: `Three kinds of composition: matter/form, substance/accident, <span class="lat">esse</span>/<span class="lat">essentia</span>. Which is most fundamental?`,
+          stem: `Maria can read Greek. Right now she is asleep. Did her ability to read Greek vanish when she fell asleep?`,
           payload: {
             "options": [
               {
                 "id": "a",
                 "label": "Respondeo:",
-                "text": "<span class=\"lat\">Materia</span> and <span class=\"lat\">forma</span>, because matter receiving form is the most concrete and observable composition we encounter.",
-                "feedback": "Hylomorphic composition is real and important but applies only to material beings. The deepest composition must apply to all creatures, including angels and pure spirits."
+                "text": "Yes. An ability exists only while it is being exercised; sleep erases it until morning.",
+                "feedback": "Then every pianist would lose the piano nightly and relearn it at breakfast. Something real persists through the sleep. Hold on to that something."
               },
               {
                 "id": "b",
                 "label": "Respondeo:",
-                "text": "<span class=\"lat\">Esse</span> and <span class=\"lat\">essentia</span>, because the act of being received into essence holds in every creature without exception, including purely spiritual ones.",
-                "feedback": "Respondeo: matter/form applies only to material beings. Substance/accident involves properties. But the <span class=\"lat\">esse</span>/<span class=\"lat\">essentia</span> composition applies to every finite being, angels and stones alike. The deepest composition."
+                "text": "It does not vanish, but it weakens: capacities fade the moment they stop being used.",
+                "feedback": "Capacities can fade over years of neglect, but that is a different fact. Tonight, asleep, her Greek is exactly as real as it was at dinner. Unused is not diminished."
               },
               {
                 "id": "c",
                 "label": "Respondeo:",
-                "text": "<span class=\"lat\">Substantia</span> and <span class=\"lat\">accidens</span>, because we know any being only through the accidents that inhere in its substance.",
-                "feedback": "A real composition, but not the deepest. Even a bare substance, stripped of all accidents, is still composed of <span class=\"lat\">esse</span> and <span class=\"lat\">essentia</span>, still finite, still receiving its being."
+                "text": "No. The ability remains fully real while she sleeps; it is simply not being used.",
+                "feedback": "Respondeo: fully real, completely unused. A capacity can be present without being exercised. You have just felt the distinction this whole module runs on."
               },
               {
                 "id": "d",
                 "label": "Respondeo:",
-                "text": "Body and soul (<span class=\"lat\">corpus</span> and <span class=\"lat\">anima</span>), because this composition organizes the human knower who grasps all the others.",
-                "feedback": "Body and soul is a real composition in human beings, but it applies only to ensouled bodies, not to all creatures. The deepest composition must run through angels (no body) and minerals (no soul) alike. That is <span class=\"lat\">esse</span>/<span class=\"lat\">essentia</span>."
+                "text": "The question is confused: sleeping people have no abilities, only memories of past performances.",
+                "feedback": "A memory of reading Greek would not let her read a new sentence tomorrow. Her ability does. What she carries through the night is more than a record; it is a readiness."
               }
             ],
-            "correct_option_id": "b"
+            "correct_option_id": "c"
           },
         },
         {
-          id: `m2-l2-q4`,
+          id: `m1-l1-q4`,
+          type: "distinction_application",
+          stem: `Maria again, awake this time but holding a closed book. She has the unexercised capacity to read Greek. How does her case sit on the act/potency grid?`,
+          payload: {
+            "options": [
+              {
+                "id": "a",
+                "label": "Respondeo:",
+                "text": "Pure act, since the person actually exists and capacities not yet exercised do not show up in being.",
+                "feedback": "Existing in act and being in act in every respect are different. The person exists, yes, but every unexercised capacity is a real potency. Pure Act means no unrealized capacity at all; that is reserved for God."
+              },
+              {
+                "id": "b",
+                "label": "Respondeo:",
+                "text": "Pure potency in the relevant respect, since the Greek-reading has never been actualized.",
+                "feedback": "Pure potency, taken strictly, is non-being. The person is in act as existing, in act as rational, in act in many respects. Only one respect, the unexercised reading, is in potency. The case is not pure potency because the person already exists and has actualized many capacities."
+              },
+              {
+                "id": "c",
+                "label": "Respondeo:",
+                "text": "Act in some respects, potency in another: actually existing and rational, in potency to the unexercised Greek.",
+                "feedback": "Respondeo: act in some respects, potency in another. Act and potency are always indexed to a respect: this thing, in this respect. The person is in act qua existing, in act qua rational animal; in potency qua the unexercised capacity to read Greek. Both poles are real; neither cancels the other."
+              },
+              {
+                "id": "d",
+                "label": "Respondeo:",
+                "text": "Neither act nor potency: an unexercised capacity is a psychological disposition, not an ontological principle.",
+                "feedback": "This collapses real potency into mere psychology. But the capacity is grounded in what the person is; a stone has no capacity to read Greek, however dispositionally we describe it. <span class=\"lat\">Potentia</span> is a real ontological principle, not just a way of speaking about minds."
+              }
+            ],
+            "correct_option_id": "c"
+          },
+        },
+        {
+          id: `m1-l1-q5`,
           type: "match_pair",
-          stem: `Match each term to its role. <em>Tap a term, then tap its description. Tap a paired item to release it.</em>`,
+          stem: `Pair each principle with the role it plays in the metaphysics of finite being. <em>Tap a principle, then tap its role. Tap a paired item to release it.</em>`,
+          latin_tag: `actus  ·  potentia`,
+          doctrine_line: `The two poles of finite being. Everything else in the system is a species of this composition.`,
+          lesson_complete: true,
           payload: {
             "left_set": [
               {
@@ -325,29 +175,29 @@ export const m2: ModuleMeta = {
               },
               {
                 "id": "L3",
-                "text": "<span class=\"lat\">compositio</span>"
+                "text": "<span class=\"lat\">actus purus</span>"
               },
               {
                 "id": "L4",
-                "text": "<span class=\"lat\">actus primus</span>"
+                "text": "<span class=\"lat\">compositio</span>"
               }
             ],
             "right_set": [
               {
                 "id": "R1",
-                "text": "the positive, determining, perfecting principle"
+                "text": "the determining perfection a thing actually has"
               },
               {
                 "id": "R2",
-                "text": "the real capacity to receive and be limited by act"
+                "text": "the real capacity to receive a determining perfection"
               },
               {
                 "id": "R3",
-                "text": "the union of two really distinct principles in one being"
+                "text": "being with no potency, no composition, no unrealized capacity"
               },
               {
                 "id": "R4",
-                "text": "the first act: the substantial form that makes a thing be what it is, prior to all its operations"
+                "text": "the union of two really distinct principles in one being"
               }
             ],
             "correct_pairs": [
@@ -369,598 +219,448 @@ export const m2: ModuleMeta = {
               ]
             ],
             "feedback": {
-              "all_correct": "All four locked. Act is the positive determining principle; potency is the real receptive capacity; composition is their union in one being; and substantial form is the first act, the act by which a thing simply is what it is before doing anything.",
-              "partial_correct": "Some pairs landed; others did not. Re-read the corrections below carefully; the easiest swap to make is between <span class=\"lat\">actus</span>/<span class=\"lat\">potentia</span> and the role each plays in the act/potency relation.",
+              "all_correct": "All four locked. Act is the positive principle; potency is its real receiver; their union is composition; the unique case of act with no potency is Pure Act. The four key terms of M1 in their four roles.",
+              "partial_correct": "Some pairs landed; others did not. The four divide cleanly: act and potency are the two principles, composition is their union, Pure Act is the case where there is no composition at all.",
               "per_pair_corrections": [
                 {
                   "left_id": "L1",
                   "wrong_right_id": "R2",
-                  "feedback": "<span class=\"lat\">Actus</span> is not the receiving capacity. It is the positive, determining principle. The receiving capacity is <span class=\"lat\">potentia</span>."
+                  "feedback": "<span class=\"lat\">Actus</span> is the determining perfection, not the receiving capacity. The receiving capacity is <span class=\"lat\">potentia</span>."
                 },
                 {
                   "left_id": "L2",
                   "wrong_right_id": "R1",
-                  "feedback": "<span class=\"lat\">Potentia</span> is not the determining perfection. It is the real capacity to receive that perfection. The determining principle is <span class=\"lat\">actus</span>."
+                  "feedback": "<span class=\"lat\">Potentia</span> is not the determining perfection; it is the real capacity to receive that perfection."
                 },
                 {
                   "left_id": "L3",
                   "wrong_right_id": "R4",
-                  "feedback": "<span class=\"lat\">Compositio</span> is the union of two principles in one being, not the case where there is no composition. The being with no composition is <span class=\"lat\">Actus Purus</span>."
+                  "feedback": "<span class=\"lat\">Actus Purus</span> is the negation of composition, not a composition. <span class=\"lat\">Compositio</span> names the union; Pure Act is the unique case without it."
                 },
                 {
                   "left_id": "L4",
                   "wrong_right_id": "R3",
-                  "feedback": "<span class=\"lat\">Actus Purus</span> is not a composition; it is the negation of composition. The being whose <span class=\"lat\">esse</span> is not received into any essence."
+                  "feedback": "<span class=\"lat\">Compositio</span> is the union of two distinct principles in one being; the case of being with no composition at all is <span class=\"lat\">Actus Purus</span>."
                 }
               ]
             }
           },
+        }
+      ],
+    },
+    {
+      id: `m1-l2`,
+      num: `II`,
+      title: `Act is Prior`,
+      latin: `actus  ·  prior`,
+      tag: `actus  ·  prior`,
+      fin: {
+        tag: `actus  ·  prior`,
+        heading: `Potency exists for the sake of act. Not the other way.`,
+        body: `In time, we often see the potential before the actual: the seed before the tree. But in being, act is always prior. The seed exists <em>for</em> the tree; the capacity exists <em>for</em> what it can receive. A world of pure potency would not exist at all.`,
+      },
+      questions: [
+        {
+          id: `m1-l2-q1`,
+          type: "mcq",
+          stem: `An acorn lies on the ground. Ask it the rudest possible question: what are you <em>for</em>?`,
+          payload: {
+            "options": [
+              {
+                "id": "a",
+                "label": "Respondeo:",
+                "text": "For nothing. An acorn simply is what it is; aims belong to minds, and acorns have none.",
+                "feedback": "Yet everything about the acorn is structured: the shell, the stored food, the seed. Structure aimed at nothing is a strange kind of structure. Look again at where it all points."
+              },
+              {
+                "id": "b",
+                "label": "Respondeo:",
+                "text": "For the oak. Everything in its structure is organized toward becoming one.",
+                "feedback": "Respondeo: for the oak. The acorn's whole architecture points beyond itself. A capacity is not just an openness; it is an arrow. Keep that arrow in view for the rest of this lesson."
+              },
+              {
+                "id": "c",
+                "label": "Respondeo:",
+                "text": "For remaining an acorn: things aim first of all at staying exactly what they already are.",
+                "feedback": "Things do preserve themselves, but the acorn preserves itself precisely so it can stop being an acorn. Its self-keeping serves its becoming. The aim runs forward."
+              },
+              {
+                "id": "d",
+                "label": "Respondeo:",
+                "text": "For whatever finds a use for it: food for a squirrel, decoration for a desk. Its point comes from outside.",
+                "feedback": "Outsiders can borrow it for their purposes, but the squirrel did not put the oak inside the acorn. The aim was there before any user arrived. It is built in."
+              }
+            ],
+            "correct_option_id": "b"
+          },
         },
         {
-          id: `m2-l2-q5`,
+          id: `m1-l2-q2`,
+          type: "mcq",
+          stem: `Back to the acorn and its oak. The acorn comes first in time; no one disputes the calendar. But in being, in the order of what exists for the sake of what, which is prior, and why? (The tradition calls this priority in being <em>ontological</em> priority.)`,
+          payload: {
+            "options": [
+              {
+                "id": "a",
+                "label": "Respondeo:",
+                "text": "The oak. The acorn's whole nature is ordered toward it; potency exists for the sake of act.",
+                "feedback": "Respondeo: potency exists for the sake of act. The acorn's whole being is ordered toward the oak. Act is ontologically prior even when potency comes first in time."
+              },
+              {
+                "id": "b",
+                "label": "Respondeo:",
+                "text": "The acorn, since whatever exists earlier in time has a kind of priority over what depends on it for its origin.",
+                "feedback": "You read priority in being as priority in time. Aquinas separates the two. The acorn precedes the oak temporally; the oak is prior in being, because the acorn's whole nature is to be a capacity for the oak."
+              },
+              {
+                "id": "c",
+                "label": "Respondeo:",
+                "text": "Neither. Time settles nothing here, and both are equally real members of one natural sequence.",
+                "feedback": "Half right: temporal succession does not establish priority of being. But priority of being is real and runs in a definite direction. Act is what potency exists for; therefore the oak is prior to the acorn in being, even when not in time."
+              },
+              {
+                "id": "d",
+                "label": "Respondeo:",
+                "text": "Both equally, since act and potency are correlative principles and neither has priority of being apart from the other.",
+                "feedback": "Correlative does not mean equal in priority. The principles are correlative because each is intelligible only in relation to the other, but the relation is asymmetric: potency is for the sake of act, not the other way."
+              }
+            ],
+            "correct_option_id": "a"
+          },
+        },
+        {
+          id: `m1-l2-q3`,
+          type: "mcq",
+          stem: `Your coffee has gone lukewarm. Next to the cold room it counts as hot; next to the kettle it counts as cold. Someone declares: "Nothing can be both hot and cold. That coffee is impossible." What is missing from their sentence?`,
+          payload: {
+            "options": [
+              {
+                "id": "a",
+                "label": "Respondeo:",
+                "text": "Nothing is missing. Hot and cold genuinely exclude each other, so the coffee really is a contradiction.",
+                "feedback": "Then every lukewarm drink on earth would be a logical scandal. The coffee is innocent; the sentence is sloppy. Something needs to be added to it."
+              },
+              {
+                "id": "b",
+                "label": "Respondeo:",
+                "text": "A measurement is missing: until a thermometer is produced, hot and cold are too vague to contradict.",
+                "feedback": "Numbers would sharpen the vagueness, but the rescue does not come from precision instruments. Even with exact degrees, the coffee is still warmer than one thing and cooler than another. The fix is elsewhere."
+              },
+              {
+                "id": "c",
+                "label": "Respondeo:",
+                "text": "The speaker is missing: hot for you may be cold for me; the sentence needs to say for whom.",
+                "feedback": "Tempting, but this trades a small problem for a large one: it makes hot and cold matters of opinion. The coffee's two temperatures are real comparisons, not two feelings. The missing piece is in the sentence, not in the speaker."
+              },
+              {
+                "id": "d",
+                "label": "Respondeo:",
+                "text": "Two qualifiers are missing: in the same respect, and at the same time.",
+                "feedback": "Respondeo: in the same respect, at the same time. You have just acquired a precision instrument the tradition uses constantly. When this module says a thing cannot be in potency and in act, listen for the qualifier: in the same respect. It will be doing the heavy lifting."
+              }
+            ],
+            "correct_option_id": "d"
+          },
+        },
+        {
+          id: `m1-l2-q4`,
+          type: "mcq",
+          stem: `Pure potency means potency with no act whatsoever: no form, no determination, bare capacity for nothing in particular. Why can such a world not exist?`,
+          payload: {
+            "options": [
+              {
+                "id": "a",
+                "label": "Respondeo:",
+                "text": "Because God created the world with form, and pure potency without any form cannot persist.",
+                "feedback": "True theologically, but the argument does not require theology. On metaphysical grounds alone: potency is real only as ordered toward act. Stripped of that, it is nothing. The argument is structural, not historical."
+              },
+              {
+                "id": "b",
+                "label": "Respondeo:",
+                "text": "Because potency is real only as ordered toward a determinate act; a capacity ordered toward nothing at all is indistinguishable from non-being.",
+                "feedback": "Respondeo: potency is real only as ordered toward a determinate act. Pure potency, capacity for nothing, is no capacity at all. Act must be real for potency to be real."
+              },
+              {
+                "id": "c",
+                "label": "Respondeo:",
+                "text": "Because potency requires a mind to recognize it as an unrealized possibility.",
+                "feedback": "Potency is a real ontological principle, not a mental recognition. The problem with pure potency is not epistemological but metaphysical: it has nothing to be ordered toward."
+              },
+              {
+                "id": "d",
+                "label": "Respondeo:",
+                "text": "Because pure potency would have no determinate kind, and only determinate kinds are real beings.",
+                "feedback": "Closer in form to the right answer, but the determination claim shifts the argument toward essence. The deeper point is that potency without any act it is for is potency of nothing, which is non-being. The kind-claim is a downstream consequence, not the basic move."
+              }
+            ],
+            "correct_option_id": "b"
+          },
+        },
+        {
+          id: `m1-l2-q5`,
+          type: "true_false_with_reason",
+          stem: `TRUE or FALSE: <em>Act is prior to potency in being because act is always the efficient cause of potency.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
+          payload: {
+            "options": [
+              {
+                "id": "a",
+                "label": "Respondeo:",
+                "text": "TRUE. Act produces potency and so comes first in being; the priority is straightforwardly causal.",
+                "feedback": "You picked up the truth that act is prior, but the reason is wrong. Aquinas does not claim that act efficiently produces potency. The priority is one of perfection and end: potency is for the sake of act."
+              },
+              {
+                "id": "b",
+                "label": "Respondeo:",
+                "text": "TRUE. Act efficiently causes the existence of potency, since potency must be brought into being by something already actual.",
+                "feedback": "True that no potency exists without an actual subject. But that is a different claim from the one in the proposition. Priority of act over potency is a priority of perfection and end, not of efficient causation in this direction."
+              },
+              {
+                "id": "c",
+                "label": "Respondeo:",
+                "text": "FALSE. Act is prior because potency is ordered toward act as its perfection and end, not because act efficiently produces potency.",
+                "feedback": "Respondeo: priority in being is a priority of perfection and end. The potency is for the sake of the act it can receive. Efficient causation is a different question. The acorn is not efficiently caused by the oak it will become."
+              },
+              {
+                "id": "d",
+                "label": "Respondeo:",
+                "text": "FALSE. Act and potency are simultaneous principles in any being; neither is prior in any sense.",
+                "feedback": "Simultaneity in time does not exclude priority in nature. Two principles can coexist in one being while one is metaphysically prior to the other. The question is about that order, not about temporal succession."
+              }
+            ],
+            "correct_option_id": "c"
+          },
+        },
+        {
+          id: `m1-l2-q6`,
           type: "syllogism_builder",
-          stem: `Construct the composition argument. Place each statement in its correct role: universal premise, particular premise, conclusion.`,
-          latin_tag: `compositio`,
-          doctrine_line: `Composition of esse and essentia is the metaphysical structure of creaturely dependence.`,
+          stem: `Construct the self-movement argument. Place each statement in its correct role: universal premise, particular premise, conclusion.`,
+          latin_tag: `actus  ·  prior`,
+          doctrine_line: `Act is always prior in being. This is why the argument from motion terminates in Pure Act.`,
           lesson_complete: true,
           payload: {
-            "instruction": "Three statements; three roles. The universal states the general metaphysical principle about composed beings. The particular applies it to every finite being. The conclusion names what follows about any finite being's relation to its actuality.",
+            "instruction": "Three statements; three roles. The universal states the principle that governs every passage from potency to act. The particular closes the apparent loophole. The conclusion names what follows.",
             "components": [
               {
                 "id": "c1",
-                "text": "Whatever is composed of potency and act has its act from something other than itself, since a potency cannot actualize itself.",
+                "text": "Whatever passes from potency to act in a given respect requires something already in act in that respect to bring it there.",
                 "role": "major"
               },
               {
                 "id": "c2",
-                "text": "Every finite being is composed of potency and act.",
+                "text": "No being can be simultaneously in potency and in act in the same respect at the same time.",
                 "role": "minor"
               },
               {
                 "id": "c3",
-                "text": "Therefore no finite being is the source of its own actuality: each has its act from something external to it.",
+                "text": "Therefore no being can move itself from potency to act in the same respect: every actualization requires an external principle already in act.",
                 "role": "conclusion"
               }
             ],
             "feedback": {
-              "correct": "Yes. The universal principle holds for everything composed of potency and act. The particular places finite beings squarely under that principle. The conclusion follows: no finite being stands in its own actuality. This is the metaphysical ground for the dependence of composite beings.",
-              "incorrect": "The argument has three joints. The universal gives the principle about composed beings and self-actualization. The particular identifies finite beings as composed. The conclusion names what follows: no finite being can be the ground of its own actuality."
+              "correct": "Yes. The universal states the general principle covering every passage from potency to act. The particular blocks the only apparent escape: that a thing could actualize itself. The conclusion names what follows: every movement from potency to act requires something external already in act. This is the metaphysical engine behind every argument from change.",
+              "incorrect": "Look at what each statement does. The universal gives the principle that covers every case of potency passing to act. The particular closes the loophole that a thing might actualize itself in the same respect. The conclusion names what follows from both."
             },
-            "doctrineTag": "compositio · dependentia"
+            "doctrineTag": "actus · potentia"
           },
         }
       ],
     },
     {
-      id: `m2-l3`,
+      id: `m1-l3`,
       num: `III`,
-      title: `The Limit Principle`,
-      latin: `actus  ·  limitatio`,
-      tag: `actus  ·  limitatio`,
+      title: `Act/Potency in Change`,
+      latin: `mutatio`,
+      tag: `mutatio`,
       fin: {
-        tag: `actus  ·  limitatio`,
-        heading: `Act is not limited except by the potency that receives it.`,
-        body: `Left to itself, act is unlimited. <em>Esse</em> considered in itself is not this-much or that-much, it simply is. What limits it is the essence that receives it, as a vessel limits the water it holds. That is not a metaphor. It is the argument.`,
+        tag: `mutatio`,
+        heading: `What moves is not what moves itself.`,
+        body: `Every change is a passage from potency to act in some subject. The subject persists as what it is; what changes is what it can be. Accidental change leaves the substance standing; substantial change reaches the form itself, leaving only matter. Grasping this distinction is not a fine point. It is the whole metaphysics of motion, and everything that follows about causation depends on it.`,
       },
       questions: [
         {
-          id: `m2-l3-q1`,
+          id: `m1-l3-q1`,
           type: "mcq",
-          stem: `The axiom <em>actus non limitatur nisi per potentiam</em> (act is not limited except by potency) applies to <span class="lat">esse</span> as the deepest act in a creature. What follows from it?`,
+          stem: `Two small disasters at your desk. You bend a paperclip out of shape, and you burn a sheet of paper to ash. Both "changed." Did the same depth of thing happen to each?`,
           payload: {
             "options": [
               {
                 "id": "a",
                 "label": "Respondeo:",
-                "text": "<span class=\"lat\">Esse</span> in itself is unlimited; it is limited only by the <span class=\"lat\">essentia</span> that receives it.",
-                "feedback": "Respondeo: <span class=\"lat\">esse</span> as act is not this-kind or that-much in itself. It is limited when received into an <span class=\"lat\">essentia</span> that is really distinct from it and acts as potency to it. The <span class=\"lat\">essentia</span> is a real receptive principle, and that reception is what limits."
+                "text": "No. The paperclip survives its change; the paper does not.",
+                "feedback": "Respondeo: two depths. The paperclip is still a paperclip, just embarrassed. The paper is simply gone; ash is not paper in a new outfit. This lesson gives both depths their names."
               },
               {
                 "id": "b",
                 "label": "Respondeo:",
-                "text": "<span class=\"lat\">Esse</span> is always limited because being and limitation are convertible terms in any real metaphysics.",
-                "feedback": "Being and limitation are not convertible. The argument is that <span class=\"lat\">esse</span> is unlimited in itself; limitation comes from the receiving potency. In God, <span class=\"lat\">esse</span> is not received, so it is not limited."
+                "text": "Yes. Both are rearrangements of the same underlying material, differing only in how fast and how violently the pieces move.",
+                "feedback": "That account makes the two cases equal by deleting what is interesting about both. If everything is rearrangement, nothing is ever truly destroyed, and the paper should still be somewhere. It is not. Depth matters."
               },
               {
                 "id": "c",
                 "label": "Respondeo:",
-                "text": "<span class=\"lat\">Esse</span> limits itself by its own nature, since to exist is already to be a determinate kind of thing.",
-                "feedback": "If <span class=\"lat\">esse</span> limited itself, the limit would come from the act itself. But act is the positive principle. The limiting principle must be a distinct potency, namely <span class=\"lat\">essentia</span> as a real positive potency that receives <span class=\"lat\">esse</span>."
+                "text": "Yes. Both things end up different from how they started, which is all that the word change means.",
+                "feedback": "By that standard a haircut and a cremation are the same event in different sizes. The word change covers both cases, but covering is not explaining. Ask what survived each one."
               },
               {
                 "id": "d",
                 "label": "Respondeo:",
-                "text": "<span class=\"lat\">Esse</span> is unlimited only in God; in creatures, <span class=\"lat\">esse</span> is intrinsically limited and needs no separate receiving principle.",
-                "feedback": "If creaturely <span class=\"lat\">esse</span> were intrinsically limited, no axiom about how limitation arises would do any work. The whole point of <em>actus non limitatur nisi per potentiam</em> is that limitation comes from a real distinct receiving potency, the <span class=\"lat\">essentia</span>."
+                "text": "No. The paperclip did not genuinely change at all, since bending touches nothing about what it is.",
+                "feedback": "It genuinely changed: it really was straight and really is bent. The point is not that shallow change is fake, but that it is shallow. The thing beneath the shape held on. With the paper, nothing held on."
               }
             ],
             "correct_option_id": "a"
           },
         },
         {
-          id: `m2-l3-q2`,
-          type: "precision_check",
-          stem: `A claim that would pass at most dinner tables: <em>"Essence limits esse the way a cup limits water."</em> Close. What is technically wrong with it?`,
-          payload: {
-            "statement": "Essence limits esse the way a cup limits water.",
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "Nothing is wrong; it is the standard Thomistic image.",
-                "feedback": "It is a common image, and Thomists do reach for it. But press it and it leaks: a cup is a separate thing standing outside the water. Essence is not outside its esse. The image needs a correction it cannot give itself."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "The cup is external to the water; essence is an intrinsic principle, not a container.",
-                "feedback": "Respondeo: that is the slip. A cup and its water are two things; essence and esse are two principles of one thing. Essence receives and limits from within, as a real positive capacity, not as a vessel standing apart. Keep the image for beginners; keep the correction for yourself."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "Water exists before it enters the cup; the image is fine apart from that.",
-                "feedback": "You found a real leak, but the smaller one. Esse is indeed not a pre-existing stuff waiting to be poured. The deeper slip is what the cup is: an external container, where essence is an intrinsic receiving principle."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "The image fails because esse cannot be limited by anything at all.",
-                "feedback": "Overcorrected. Act is not limited except by potency, and in creatures it really is limited: this is the axiom, not its denial. The question is how essence limits, not whether."
-              }
-            ],
-            "correct_option_id": "b",
-            "correction": "Essence limits esse not as a container from outside but as an intrinsic receiving potency: a real, positive principle composing one being with the act it receives."
-          },
-        },
-        {
-          id: `m2-l3-q3`,
-          type: "true_false_with_reason",
-          stem: `TRUE or FALSE: <em>The essence of a creature limits its <span class="lat">esse</span> the way a mold limits poured bronze, making essence a real positive principle, not a shadow of <span class="lat">esse</span>.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
-          payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "TRUE. The mold and bronze are both physical, and so are <span class=\"lat\">essentia</span> and <span class=\"lat\">esse</span>: both must be real for them to compose.",
-                "feedback": "True that essence and <span class=\"lat\">esse</span> must both be real, but the mold/bronze analogy is not about both being physical (they are not). The point is that limitation requires a real limiting principle, and that principle is the <span class=\"lat\">essentia</span>."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "TRUE. A real limit requires a real limiting principle; <span class=\"lat\">essentia</span> is a positive ontological reality, a real receiving potency for <span class=\"lat\">esse</span>.",
-                "feedback": "Respondeo: a real limit requires a real limiting principle. The <span class=\"lat\">essentia</span> is a positive ontological reality, a real potency. This is Cajetan's strict line: <span class=\"lat\">essentia</span> as <span class=\"lat\">res</span>, a genuine positive principle, not a mere limiting mode of <span class=\"lat\">esse</span>."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "FALSE. The mold is positive but <span class=\"lat\">essentia</span> is negative; in the analogy, limitation works by the absence of further <span class=\"lat\">esse</span>, not by a real principle.",
-                "feedback": "This is the Gilsonian drift the strict line resists. If <span class=\"lat\">essentia</span> is mere absence, there is no real receiver in the composition, and the real distinction collapses. The strict line insists that <span class=\"lat\">essentia</span> is a positive real principle."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "FALSE. The mold itself does not limit anything; <span class=\"lat\">esse</span> is limited by where there is no more <span class=\"lat\">esse</span>, by privation rather than by <span class=\"lat\">essentia</span>.",
-                "feedback": "Privation explains nothing on its own; you need a real receiver for the privation to belong to. The mold image works precisely because the mold is something, not nothing. The same holds for <span class=\"lat\">essentia</span>."
-              }
-            ],
-            "correct_option_id": "b"
-          },
-        },
-        {
-          id: `m2-l3-q4`,
+          id: `m1-l3-q2`,
           type: "mcq",
-          stem: `A purely spiritual creature has no matter and no matter/form composition. Yet it is finite: it has a determinate nature and limited perfections. What composition accounts for its finitude?`,
+          stem: `A bronze ingot is melted, poured into a mold, and cast as a horse. The same bronze; a new shape. What kind of change is this, and why?`,
           payload: {
             "options": [
               {
                 "id": "a",
                 "label": "Respondeo:",
-                "text": "None. A pure spirit is simple; its finitude is only a label, not a real structure.",
+                "text": "Substantial change. The ingot ceased to exist and a new substance, the bronze horse, came to be from different matter.",
                 "correct": false,
-                "feedback": "Finitude is not a label; it is a real limitation on the being. Real limitations require real principles. If there is no composition at all, there is no principle within the being to account for why its perfections are this-much and no more. Pure simplicity without composition belongs only to what has no limitation."
+                "feedback": "The matter is the same bronze throughout; no new substance came from different matter. The substance, bronze, persists. Only its shape, an accident, changed. Substantial change requires the matter to receive a genuinely new substantial form, not merely a new shape."
               },
               {
                 "id": "b",
                 "label": "Respondeo:",
-                "text": "Substance and accident only. Without matter, the only composition available is between what the being is and the accidents that modify it.",
-                "correct": false,
-                "feedback": "Substance/accident composition explains how a being can have properties beyond its essence; it does not explain why the essence itself is limited in the first place. A purely spiritual creature's essence is already limited before any accidents are considered. A deeper composition is required."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "Esse and essentia. The spirit's act of being is received into a real essence that limits it.",
+                "text": "Accidental change. Bronze is bronze before and after; what changed is the shape, an accidental form inhering in the same persistent substance.",
                 "correct": true,
-                "feedback": "Respondeo: esse/essentia composition holds in every creature, with or without matter. A purely spiritual creature has no matter, but it does have a determinate nature, a real essentia, that receives and limits its esse. This is why the limit principle applies even to the highest spiritual creatures."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "Matter and form in a spiritual mode: a spiritual matter receives the spirit's form.",
-                "correct": false,
-                "feedback": "Spiritual or 'intelligible' matter is a disputed scholastic category, and Aquinas explicitly rejects it for angels. The composition that accounts for the finitude of a purely spiritual creature is not matter/form but esse/essentia: the act of being received into a real nature that limits it."
-              }
-            ],
-            "correct_option_id": "c"
-          },
-        },
-        {
-          id: `m2-l3-q5`,
-          type: "spot_the_fallacy",
-          stem: `The axiom <em>actus non limitatur nisi per potentiam</em> (act is not limited except by potency) has three readings below. Which one misapplies it by treating <span class="lat">essentia</span> as mere negation rather than a real positive principle?`,
-          latin_tag: `actus  ·  limitatio`,
-          doctrine_line: `The axiom of limitation is the key to the real distinction between esse and essentia in every creature.`,
-          lesson_complete: true,
-          payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Statement:",
-                "text": "In any creature, <span class=\"lat\">esse</span> is unlimited in itself; it is limited only by the real <span class=\"lat\">essentia</span> that receives it, as potency limits act.",
-                "correct": false,
-                "feedback": "Sound. This is the axiom applied correctly: <span class=\"lat\">essentia</span> is a real positive principle, a receiving potency, not a shadow. The limitation on a creature's <span class=\"lat\">esse</span> is the effect of a real receiving principle. The error is elsewhere."
-              },
-              {
-                "id": "b",
-                "label": "Statement:",
-                "text": "A creature's <span class=\"lat\">esse</span> is not intrinsically limited; it is limited because a real <span class=\"lat\">essentia</span> receives it and thereby contains it within a determinate degree of perfection.",
-                "correct": false,
-                "feedback": "Sound. The limit is not baked into <span class=\"lat\">esse</span> itself; it comes from the receiving principle. A real receiving principle, <span class=\"lat\">essentia</span>, is required to account for the real limitation. The error is elsewhere."
-              },
-              {
-                "id": "c",
-                "label": "Statement:",
-                "text": "<span class=\"lat\">Essentia</span> must be a real positive principle, not mere negation, because a negation cannot receive anything; only a real potency can receive a real act.",
-                "correct": false,
-                "feedback": "Sound. This gives the philosophical reason for why <span class=\"lat\">essentia</span> must be a genuine positive principle: reception requires a real receiver. A negation has no positive being and therefore no receiving capacity. The error is elsewhere."
-              },
-              {
-                "id": "d",
-                "label": "Statement:",
-                "text": "<span class=\"lat\">Esse</span> is limited simply by not extending beyond a certain point; <span class=\"lat\">essentia</span> names the boundary where <span class=\"lat\">esse</span> stops, not a real positive receiving principle.",
-                "correct": true,
-                "feedback": "Respondeo: you spotted it. This collapses <span class=\"lat\">essentia</span> into mere absence of <span class=\"lat\">esse</span>. But the axiom requires a real receiving potency to account for the limit: <span class=\"lat\">esse</span> is limited only BY a potency, not by its own failure to continue. If <span class=\"lat\">essentia</span> is just the boundary where <span class=\"lat\">esse</span> stops, there is no real potency doing the limiting, and the composition quietly dissolves."
-              }
-            ],
-            "correct_option_id": "d"
-          },
-        }
-      ],
-    },
-    {
-      id: `m2-l4`,
-      num: `IV`,
-      title: `Participation`,
-      latin: `participatio`,
-      tag: `participatio`,
-      fin: {
-        tag: `participatio`,
-        heading: `Everything you have ever met was borrowing.`,
-        body: `The moon shines with light that is not its own, the iron burns with borrowed fire, and every creature is with an act of being it received. <em>Participatio</em> is the tradition's name for that universal borrowing. Follow the loans back far enough and you reach the one case that is not a loan.`,
-      },
-      questions: [
-        {
-          id: `m2-l4-q1`,
-          type: "mcq",
-          stem: `The moon is bright tonight. Is the brightness its own?`,
-          payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "Yes. Whatever a thing displays, it owns.",
-                "feedback": "Wait for the eclipse. What a thing displays on loan, the lender can interrupt. Owned light has no off switch held by someone else."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "No. It shines with light received from the sun.",
-                "feedback": "Respondeo: received light. The moon really shines, and the shining is really not its own. Hold both halves; the whole lesson lives between them."
+                "feedback": "Respondeo: accidental change. Bronze is bronze before and after. What changed is the shape, an accidental form inhering in the same substance. The substance was in potency to this shape, and passed to act when it received it. The underlying what-it-is did not change."
               },
               {
                 "id": "c",
                 "label": "Respondeo:",
-                "text": "The question confuses physics with philosophy.",
-                "feedback": "The physics is the philosophy here, which is why the image has served for two thousand years. Borrowed brightness is the most visible case of a structure this lesson generalizes."
+                "text": "Both at once: the new shape is accidental, but melting and re-solidifying changed the matter substantially.",
+                "correct": false,
+                "feedback": "Liquid and solid bronze are still bronze; state of matter is an accidental modification, not a change of substance. The what-it-is of the bronze was never replaced. Both phases of the process are accidental change."
               },
               {
                 "id": "d",
                 "label": "Respondeo:",
-                "text": "Partly: the moon contributes some brightness of its own.",
-                "feedback": "Generous to the moon, but no. Its contribution is a surface that receives well. Receiving well is not a small thing; it is just not owning."
+                "text": "Neither. Shape is a human projection; the bronze merely moved from one arrangement to another.",
+                "correct": false,
+                "feedback": "Shape is an accidental form, a real but non-essential determination of the substance. Denying the reality of accidental forms collapses the act/potency distinction in the accidental order. The bronze was genuinely in potency to this shape, and is now in act with respect to it."
               }
             ],
             "correct_option_id": "b"
           },
         },
         {
-          id: `m2-l4-q2`,
-          type: "mcq",
-          stem: `The iron glows in the forge. It is genuinely hot. Hot by its own essence, or hot by sharing in the fire's heat?`,
-          payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "By its own essence: once hot, the heat belongs to the iron.",
-                "feedback": "Pull it from the forge and watch the ownership expire. What belongs by essence does not fade when the source steps away."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "By sharing in the fire's heat: the iron has what the fire is.",
-                "feedback": "Respondeo: the iron has heat; fire is hot of itself. The tradition's word for having-what-another-is is <span class=\"lat\">participatio</span>. Now ask the question about being itself."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "Neither: heat is just molecular motion, so the question dissolves.",
-                "feedback": "The physics describes the heat; it does not answer whose it is. Restate it in molecules and the iron still got its motion from the fire. The structure survives the vocabulary."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "Both equally: source and receiver own the heat in the same way.",
-                "feedback": "In the same way is exactly what the case denies. The fire heats without being heated; the iron is heated. One gives from what it is; one has what it got."
-              }
-            ],
-            "correct_option_id": "b"
-          },
-        },
-        {
-          id: `m2-l4-q3`,
+          id: `m1-l3-q3`,
           type: "distinction_application",
-          stem: `Now the master case. Apply the iron-and-fire structure to being itself: creatures exist, God exists. Where does the structure place each?`,
+          stem: `A caterpillar enters a cocoon and emerges as a butterfly. The same matter persists, but the organism that emerges has fundamentally different organs, operations, and form of life. Accidental or substantial change?`,
           payload: {
             "options": [
               {
                 "id": "a",
                 "label": "Respondeo:",
-                "text": "Creatures are the fire; God is the iron, receiving being from the world.",
-                "feedback": "Reversed. The world cannot lend what it only borrowed. Run the loans backward and the lender at the end owes nothing to anyone."
+                "text": "Accidental change. The matter is continuous; what looks like a new organism is the same substance reorganized at the accidental level.",
+                "correct": false,
+                "feedback": "If the same substance persists, it cannot have a genuinely different form of life, different organs, and different capacities. A substance is what it is by its substantial form. Where a new substantial form arises, a new substance arises, regardless of material continuity."
               },
               {
                 "id": "b",
                 "label": "Respondeo:",
-                "text": "Both creatures and God participate in some larger being beyond them.",
-                "feedback": "Then the larger being would be God, and the question would simply restart. The structure terminates in something that is of itself, or it never terminates at all."
+                "text": "Substantial change. The caterpillar ceases; the same matter receives a new substantial form.",
+                "correct": true,
+                "feedback": "Respondeo: substantial change. The caterpillar's form of life, its capacities and operations, is replaced by a genuinely different one. Material continuity does not guarantee substantial continuity. What persists through the change is matter, not the caterpillar-substance itself."
               },
               {
                 "id": "c",
                 "label": "Respondeo:",
-                "text": "Creatures are the iron: they have esse by participation. God is esse of himself.",
-                "feedback": "Respondeo: creatures have being as the iron has heat; God is being as fire is hot, and more than that image can carry. <span class=\"lat\">Participatio</span> is the structure of the whole created order."
+                "text": "Neither. Act and potency fit inanimate matter; living change is governed by DNA instead.",
+                "correct": false,
+                "feedback": "Living things are not exempt from the act/potency framework; they illustrate it at its most vivid. The caterpillar is in potency to a certain range of forms; metamorphosis is the actualization of that potency at the deepest level. DNA describes the mechanism; act/potency describes the metaphysical structure."
               },
               {
                 "id": "d",
                 "label": "Respondeo:",
-                "text": "The analogy fails: existence cannot be received, only had outright.",
-                "feedback": "Your own existence is the counterexample: it began, it is sustained, it can end. Everything about it has the shape of something received."
-              }
-            ],
-            "correct_option_id": "c"
-          },
-        },
-        {
-          id: `m2-l4-q4`,
-          type: "true_false_with_reason",
-          stem: `TRUE or FALSE: <em>To say creatures participate in being means each creature owns a small piece of God.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
-          payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "TRUE. Participation means taking part, and a part of being is a part of God.",
-                "feedback": "That arithmetic ends in pantheism, where the tradition refuses to go. God has no parts to hand out. Participation is receiving a likeness, not collecting a fragment."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "TRUE. Creatures are pieces of God, though the pieces stay distinct from him.",
-                "feedback": "Distinct pieces of a being with no parts is not a position; it is a contradiction with good manners. The dependence is real, the piecing is not."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "FALSE. Each creature receives its own created act of being, not a fragment of the divine.",
-                "feedback": "Respondeo: the creature's <span class=\"lat\">esse</span> is its own, created, finite, received. God lends nothing of his substance; he causes being that is genuinely the creature's. Participation names dependence, not division."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "FALSE. Creatures do not depend on God for being once they exist.",
-                "feedback": "Right judgment, wrong reason, and the wrong reason costs everything. The moon does not bank its brightness. Creatures are sustained in being at every moment, or they are not at all."
-              }
-            ],
-            "correct_option_id": "c"
-          },
-        },
-        {
-          id: `m2-l4-q5`,
-          type: "mcq",
-          stem: `Two terms close this lesson. Which pairing is correct?`,
-          latin_tag: `participatio`,
-          doctrine_line: `Creatures have being. One being is it.`,
-          lesson_complete: true,
-          payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "<span class=\"lat\">esse commune</span> is God's being; <span class=\"lat\">esse subsistens</span> is the being of creatures.",
-                "feedback": "Reversed. God is not the common being of things, as if creation were made of God-stuff. He is being standing of itself; creatures share in <span class=\"lat\">esse commune</span>."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "Both terms name the same thing seen from two angles.",
-                "feedback": "They name the two sides of the deepest divide there is: being as received and common, being as subsisting and unique. Collapse the terms and the divide goes with them."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "<span class=\"lat\">esse commune</span> is a genus that contains both God and creatures.",
-                "feedback": "The tradition is firm here: God is not inside any genus, not even being-in-general. He is the cause of <span class=\"lat\">esse commune</span>, not its biggest member."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "<span class=\"lat\">esse commune</span> is the being creatures share; <span class=\"lat\">esse subsistens</span> is being that stands of itself: God.",
-                "feedback": "Respondeo: <span class=\"lat\">esse commune</span> is the act of being as found across all creatures; <span class=\"lat\">esse subsistens</span> is being subsisting of itself, which is God alone. The next lesson stays with that second term."
-              }
-            ],
-            "correct_option_id": "d"
-          },
-        }
-      ],
-    },
-    {
-      id: `m2-l5`,
-      num: `V`,
-      title: `When What and That Coincide`,
-      latin: `esse subsistens`,
-      tag: `esse subsistens`,
-      fin: {
-        tag: `esse subsistens`,
-        heading: `You have read the sentence the whole course turns on.`,
-        body: `Aquinas's phoenix is your unicorn: an essence fully known, existence still an open question. From that one observation the real distinction follows, and with it the single exception: a being whose what simply is its that. Module 1 called it Pure Act. This module calls it <em>esse subsistens</em>. They are the same answer arrived at from two roads.`,
-      },
-      questions: [
-        {
-          id: `m2-l5-q1`,
-          type: "close_reading",
-          stem: `<div class="cr-passage"><p>Whatever is not in the concept of the essence or quiddity comes from outside the essence and enters into composition with the essence. Now, every essence or quiddity can be understood without anything being understood about its act of existing: I can understand what a man is, or what a phoenix is, and yet not know whether either has existence in reality. It is clear, therefore, that the act of existing is other than the essence or quiddity, unless perhaps there is a thing whose quiddity is its very act of existing.</p><div class="cr-cite">De Ente et Essentia, cap. 3 (Leonine numbering; cap. 4 in some translations) · trans. verified against the Corpus Thomisticum Latin</div></div><br>What is the hinge of the argument?`,
-          payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "Phoenixes do not exist, so essence and existence must differ.",
-                "feedback": "The phoenix's absence is the illustration, not the engine. The argument would run just as well with the man, who does exist. What matters is what understanding an essence fails to tell you."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "Essences are understood fully without their existence being known; so esse is other than essence.",
-                "feedback": "Respondeo: the hinge exactly. If existing were inside the what, knowing the what would settle the whether. It never does. Therefore <span class=\"lat\">esse</span> comes to the essence from beyond it, with one possible exception the last clause leaves open."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "Whatever is outside an essence cannot ever belong to the thing.",
-                "feedback": "Backwards: the passage says what is outside the essence enters into composition with it. Esse belongs to the thing intimately. It just does not belong to the what."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "Some things, like the man, carry existence inside their essence.",
-                "feedback": "Reread the passage: the man and the phoenix stand on the same side. Understanding either essence leaves existence unknown. The exception the text reserves is not the man."
+                "text": "Both at once: accidental change at the surface, substantial change in the organs beneath.",
+                "correct": false,
+                "feedback": "A change is either substantial or accidental, not both in the same respect at the same time. The change reaches the substantial form itself, making it substantial. The simultaneous accidental changes in properties are downstream of the substantial change, not a second kind of change layered on top of it."
               }
             ],
             "correct_option_id": "b"
           },
         },
         {
-          id: `m2-l5-q2`,
-          type: "mcq",
-          stem: `The passage ends with a door: <em>unless there is a thing whose quiddity is its very act of existing</em>. What would such a being have to be like?`,
+          id: `m1-l3-q4`,
+          type: "true_false_with_reason",
+          stem: `TRUE or FALSE: <em>In substantial change, what persists through the change is primary matter, not the substance itself.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
           payload: {
             "options": [
               {
                 "id": "a",
                 "label": "Respondeo:",
-                "text": "Uncomposed and unique: no essence receiving esse, no potency limiting act.",
-                "feedback": "Respondeo: nothing receives, so nothing limits, so nothing is composed. And there cannot be two such, for there would be nothing to tell them apart. The chain from Module 1 ended at this same door."
+                "text": "TRUE. The substance perishes with its form; what persists is primary matter, pure potency beneath both forms.",
+                "correct": true,
+                "feedback": "Respondeo: true, and precisely stated. The substance is what it is by its substantial form. When the form is replaced, the substance ceases; the matter, which is pure potency for substantial form, persists as the substrate of the change. This is why matter is the principle of continuity in generation and corruption."
               },
               {
                 "id": "b",
                 "label": "Respondeo:",
-                "text": "The largest and oldest of beings, with the most essence and the most esse.",
-                "feedback": "Superlatives miss the point. This being does not have more of the two principles; it is not two principles at all. Different in kind, not in quantity."
+                "text": "TRUE. Matter persists, but the substance survives too, its form diminished rather than replaced.",
+                "correct": false,
+                "feedback": "A diminished substantial form is still that form, making this an accidental change at most. Substantial change means the replacement of one substantial form by another, not the reduction of the existing one. If any degree of the original form persists, the substance persists."
               },
               {
                 "id": "c",
                 "label": "Respondeo:",
-                "text": "A being whose essence is unusually well matched to its act of existing.",
-                "feedback": "A perfect match is still a pair. The clause says quiddity IS the act of existing: identity, not harmony. The difference between those words is the whole lesson."
+                "text": "FALSE. The substance persists as the subject; what is replaced is only a deep accident.",
+                "correct": false,
+                "feedback": "If the substance persists, the change is accidental. A 'deep accident' whose replacement leaves the substance standing is still an accident. Substantial change means the replacement of the substantial form itself, which is why the substance ceases."
               },
               {
                 "id": "d",
                 "label": "Respondeo:",
-                "text": "An abstraction: existence in general, considered apart from things.",
-                "feedback": "Existence-in-general subsists nowhere; it is common, not standing of itself. The clause points at <span class=\"lat\">esse subsistens</span>, which is the opposite of an abstraction: the most real of all."
+                "text": "FALSE. Primary matter is a mere abstraction; what persists is a minimal underlying substance.",
+                "correct": false,
+                "feedback": "Primary matter is not an abstraction but a real principle, the pure potency that is the substrate of substantial change. It cannot exist separately without a substantial form, but it is genuinely real as the receiving principle. Without a real receiving principle, substantial change would require creation ex nihilo at every turn."
               }
             ],
             "correct_option_id": "a"
           },
         },
         {
-          id: `m2-l5-q3`,
-          type: "true_false_with_reason",
-          stem: `TRUE or FALSE: <em>In God, essence and esse fit together perfectly.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
-          payload: {
-            "options": [
-              {
-                "id": "a",
-                "label": "Respondeo:",
-                "text": "TRUE. God's essence and esse correspond without any gap.",
-                "feedback": "A correspondence without gaps is still two things corresponding. The strict claim is stronger and stranger: in God there are not two to fit. His essence is his esse."
-              },
-              {
-                "id": "b",
-                "label": "Respondeo:",
-                "text": "TRUE. In God the composition is perfect rather than partial.",
-                "feedback": "Perfect composition is still composition, and composition means a receiver, and a receiver means potency. The argument removed all of that. What remains is not well-fitted parts but no parts."
-              },
-              {
-                "id": "c",
-                "label": "Respondeo:",
-                "text": "FALSE. There is no fitting because there are not two: God's essence is his esse.",
-                "feedback": "Respondeo: identity, not harmony. Fit together perfectly smuggles in the very twoness the doctrine denies. Catching that smuggle is precision; you just did the course's signature move."
-              },
-              {
-                "id": "d",
-                "label": "Respondeo:",
-                "text": "FALSE. God has esse but no essence of any kind.",
-                "feedback": "Overcorrected into a different error. God is not essence-less; his essence simply is his act of being. Say it that way and both truths survive."
-              }
-            ],
-            "correct_option_id": "c"
-          },
-        },
-        {
-          id: `m2-l5-q4`,
-          type: "mcq",
-          stem: `Last one. Which sentence uses the lesson's vocabulary correctly?`,
-          latin_tag: `esse subsistens`,
-          doctrine_line: `One case with no composition. The argument required it; the tradition names it.`,
+          id: `m1-l3-q5`,
+          type: "spot_the_fallacy",
+          stem: `Three descriptions of a change. Which one gets the act/potency structure of change backwards?`,
+          latin_tag: `mutatio`,
+          doctrine_line: `Omne quod movetur ab alio movetur.`,
           lesson_complete: true,
           payload: {
             "options": [
               {
                 "id": "a",
-                "label": "Respondeo:",
-                "text": "Every creature is its own <span class=\"lat\">esse subsistens</span>, since each one really exists.",
-                "feedback": "Really existing is not subsisting as being itself. Creatures have received esse; none of them IS its esse. One being subsists as being, and you are not it. Neither am I, for what it is worth."
+                "label": "Statement:",
+                "text": "The cold iron is in potency to heat; the fire brings it to act.",
+                "correct": false,
+                "feedback": "Sound. The iron lacks heat and has the real capacity to receive it. The fire, already in act with respect to heat, communicates that act. Potency precedes act in time; the act is the terminus, not the starting point."
               },
               {
                 "id": "b",
-                "label": "Respondeo:",
-                "text": "The phoenix proves essences cannot be known until the thing exists.",
-                "feedback": "The passage argued the exact opposite: the phoenix's essence is known while its existence is not. That is what pries the two principles apart."
+                "label": "Statement:",
+                "text": "The marble is in potency to the statue; the sculptor actualizes it by imposing the form.",
+                "correct": false,
+                "feedback": "Sound. The marble has the real capacity to receive the form of the statue; the form, once impressed, is the act that terminates the potency. The statue is the end of the change, not its beginning."
               },
               {
                 "id": "c",
-                "label": "Respondeo:",
-                "text": "In creatures <span class=\"lat\">quidditas</span> receives <span class=\"lat\">esse</span>; in God they are identical.",
-                "feedback": "Respondeo: the whole lesson in one sentence, and every term in its right place. <span class=\"lat\">Quidditas</span> is the essence as definable; in everything but God it receives an act of being it is not."
+                "label": "Statement:",
+                "text": "The seed contains the tree already in act; growth merely externalizes what was fully present from the start.",
+                "correct": true,
+                "feedback": "Respondeo: you spotted it. The seed does not contain the tree in act; it contains the tree in potency. If the tree were fully in act from the start, there would be no change, only revelation. Growth is a genuine passage from potency to act, requiring external actualization at each stage. Collapsing the distinction turns change into theater."
               },
               {
                 "id": "d",
-                "label": "Respondeo:",
-                "text": "God participates in <span class=\"lat\">esse commune</span> more fully than any creature does.",
-                "feedback": "God does not participate at all; participation is the creature's relation. He is the subsisting source of what creatures share. The direction of the loan never reverses."
+                "label": "Statement:",
+                "text": "In accidental change the substance is in potency to an accident; in substantial change the matter to a new form.",
+                "correct": false,
+                "feedback": "Sound. This correctly maps the potency/act structure across both kinds of change. In each case the receiving subject is in potency; the form received is the act. The only difference is whether the receiving subject is substance (accidental change) or matter (substantial change)."
               }
             ],
             "correct_option_id": "c"
@@ -969,56 +669,205 @@ export const m2: ModuleMeta = {
       ],
     },
     {
-      id: `m2-l6`,
-      num: `VI`,
+      id: `m1-l4`,
+      num: `IV`,
+      title: `The First Way`,
+      latin: `primum movens`,
+      tag: `primum movens`,
+      fin: {
+        tag: `actus purus`,
+        heading: `Pure Act. No composition. No limit. No dependence.`,
+        body: `Every finite being is composed of act and potency; it has its act from something else. Follow that chain to its necessary terminus and you reach a being that is simply act, with no potency, no unrealized capacity, no receiver. That is what the argument requires.`,
+      },
+      questions: [
+        {
+          id: `m1-l4-q1`,
+          type: "mcq",
+          stem: `Whatever is moved is moved by another. A hand moves a stick, which moves a stone. If the hand stops, the stone stops instantly, regardless of how many links are in the chain. What does this show about a series of moved movers?`,
+          payload: {
+            "options": [
+              {
+                "id": "a",
+                "label": "Respondeo:",
+                "text": "It shows the series must have begun at some point in the past.",
+                "feedback": "The argument is not about time. Aquinas grants that a temporal series could in principle extend infinitely. The point is about hierarchical dependence right now: each mover in the series moves only insofar as it is being moved at this moment. The regress is simultaneous, not sequential."
+              },
+              {
+                "id": "b",
+                "label": "Respondeo:",
+                "text": "It shows the series needs a first member that moves without being moved; with no first, nothing moves at all.",
+                "feedback": "Respondeo: each member of the series moves only insofar as it is currently being actualized by the next. The hand, stick, and stone move together, not in sequence. Remove the unmoved first and the whole series loses its motion simultaneously. The series requires a first mover that is not itself moved."
+              },
+              {
+                "id": "c",
+                "label": "Respondeo:",
+                "text": "It shows that infinite series cannot exist, since every real collection of things must be finite in number.",
+                "feedback": "Aquinas does not claim that infinite series are impossible in general. He grants the possibility of an infinite temporal series of causes. The impossibility he argues is specific: a hierarchical series of simultaneously-dependent movers cannot be infinite, because the dependence runs all the way through at once."
+              },
+              {
+                "id": "d",
+                "label": "Respondeo:",
+                "text": "It shows motion is self-explanatory once begun; a first cause matters only for origins.",
+                "feedback": "The hand-stick-stone example shows exactly the opposite: the first mover is required not just to start the motion but to sustain it at every moment. If the hand stops now, the stone stops now. The first mover is a continuous sustaining cause, not merely an initiating one."
+              }
+            ],
+            "correct_option_id": "b"
+          },
+        },
+        {
+          id: `m1-l4-q2`,
+          type: "syllogism_builder",
+          stem: `You have walked the chain: the stone, the stick, the hand. Now construct the First Way itself. Place each statement in its correct role: universal premise, particular premise, conclusion.`,
+          payload: {
+            "instruction": "Three statements; three roles. The universal states the principle every motion obeys. The particular rules out the endless chain. The conclusion names what must exist.",
+            "components": [
+              {
+                "id": "c1",
+                "text": "Whatever is moved from potency to act is moved by something already in act.",
+                "role": "major"
+              },
+              {
+                "id": "c2",
+                "text": "A series of moved movers cannot regress without a first, for without a first mover nothing in the series would move at all; yet things evidently move.",
+                "role": "minor"
+              },
+              {
+                "id": "c3",
+                "text": "Therefore a first mover exists, itself unmoved: a being in act with no potency for motion.",
+                "role": "conclusion"
+              }
+            ],
+            "feedback": {
+              "correct": "Respondeo: the First Way entire. The universal is Lesson 1's principle wearing its motion clothes. The particular observes that an endless chain of borrowed motion explains nothing, while motion is plainly given. The conclusion follows of necessity: a first mover, itself unmoved. You did not memorize this argument; you built it.",
+              "incorrect": "Look at what each statement does. One states the law governing every passage from potency to act. One closes the loophole of the endless chain by appeal to what is evident. One names what follows. The argument only breathes in that order."
+            },
+            "doctrineTag": "primum movens"
+          },
+        },
+        {
+          id: `m1-l4-q3`,
+          type: "mcq",
+          stem: `The First Way concludes that there must be a first mover, itself unmoved. Which description of this first mover follows necessarily from the argument?`,
+          payload: {
+            "options": [
+              {
+                "id": "a",
+                "label": "Respondeo:",
+                "text": "A being that existed before all other beings and set them in motion at the beginning of time.",
+                "feedback": "The argument does not establish temporal priority. The first mover is not first-in-time but first-in-the-order-of-dependence. It is the sustaining cause of motion right now, not merely the historical initiator."
+              },
+              {
+                "id": "b",
+                "label": "Respondeo:",
+                "text": "A being in act with no potency for motion: incapable of being moved at all.",
+                "feedback": "Respondeo: to be unmoved is not merely to happen to be at rest. It is to have no potency for motion, no capacity to receive actuation from another. The unmoved mover is not moved because there is no potency in it to be actualized. This is what Pure Act means."
+              },
+              {
+                "id": "c",
+                "label": "Respondeo:",
+                "text": "A being with greater power than all other movers combined, able to move without itself being moved by anything stronger.",
+                "feedback": "Greater power is still a finite perfection, and a very powerful being could still have unrealized capacity. The first mover required by the argument is not merely the strongest mover but the one with no potency for motion whatsoever."
+              },
+              {
+                "id": "d",
+                "label": "Respondeo:",
+                "text": "A being that moves by choice rather than by being moved.",
+                "feedback": "Choice as the ground of unmoved motion shifts the argument to will and intellect before establishing that this being exists at all. The First Way establishes the existence of an unmoved first cause from the structure of motion itself, before any attributes like intellect or will are assigned."
+              }
+            ],
+            "correct_option_id": "b"
+          },
+        },
+        {
+          id: `m1-l4-q4`,
+          type: "mcq",
+          stem: `Pure Act means a being with no potency whatsoever. What follows from this for composition?`,
+          latin_tag: `primum movens`,
+          doctrine_line: `The argument from motion terminates in Pure Act: a being with no composition, no unrealized capacity, no dependence.`,
+          lesson_complete: true,
+          payload: {
+            "options": [
+              {
+                "id": "a",
+                "label": "Respondeo:",
+                "text": "Pure Act is composed of act and a special kind of unlimited potency that matches its infinite perfection.",
+                "feedback": "There is no unlimited potency. Potency is always the limiting, receiving principle. An infinite potency would be a contradiction: a capacity without limit is no capacity at all. Pure Act has no potency, and therefore no composition of any kind."
+              },
+              {
+                "id": "b",
+                "label": "Respondeo:",
+                "text": "Pure Act is simple: no composition of act and potency, no matter and form, no essence distinct from its act of being.",
+                "feedback": "Respondeo: where there is no potency, there is no composition. No matter, because matter is potency for form. No essence distinct from esse, because essence is potency for esse. No limit, because limits require a receiving potency. Pure Act is simply, uncomplicatedly, act. This is divine simplicity."
+              },
+              {
+                "id": "c",
+                "label": "Respondeo:",
+                "text": "Pure Act is composed of many acts at once, with no potency between them.",
+                "feedback": "A composition of many acts would require something to hold them together, which reintroduces potency. Pure Act is not a collection of acts but the one unlimited act. Multiplicity requires composition; composition requires potency; Pure Act excludes potency."
+              },
+              {
+                "id": "d",
+                "label": "Respondeo:",
+                "text": "Pure Act has no composition now, but could acquire some by choosing to create.",
+                "feedback": "Real relations in God to creatures are rational relations, not real ones on God's side. Creation does not add anything to Pure Act. A being that could acquire composition would have the potency for composition, which contradicts Pure Act."
+              }
+            ],
+            "correct_option_id": "b"
+          },
+        }
+      ],
+    },
+    {
+      id: `m1-l5`,
+      num: `V`,
       title: `Recapitulatio`,
       latin: `recapitulatio`,
       tag: `recapitulatio`,
       fin: {
         tag: `recapitulatio`,
-        heading: `The most important sentence in the course is now yours.`,
-        body: `In everything that is not God, what it is and that it is are really distinct; in God they are identical. You can now say it, defend it, and recognize its counterfeits. Module 3 takes the same grid into wood and bronze and bodies, where matter meets form. The unicorn, the iron, and the phoenix stay with you. They have more work to do.`,
+        heading: `You did not learn a vocabulary. You acquired a grid.`,
+        body: `Act and potency are not two words to remember but two poles every finite thing is stretched between, and you can now find them in a marble block, a burning log, and an argument for God. Module 2 asks the question this grid was built for: what happens when act and potency are applied, not to motion, but to being itself. That a thing is, and what a thing is, are about to meet the two poles. Bring the grid.`,
       },
       questions: [
         {
-          id: `m2-l6-q1`,
+          id: `m1-l5-q1`,
           type: "match_pair",
           stem: `Four images carried this module. Pair each with the principle it taught. <em>Tap an image, then tap its principle. Tap a paired item to release it.</em>`,
           payload: {
             "left_set": [
               {
                 "id": "L1",
-                "text": "the unicorn, perfectly defined"
+                "text": "the untouched marble"
               },
               {
                 "id": "L2",
-                "text": "the mold and the poured bronze"
+                "text": "the acorn and the oak"
               },
               {
                 "id": "L3",
-                "text": "the iron glowing in the forge"
+                "text": "the bronze cast as a horse"
               },
               {
                 "id": "L4",
-                "text": "the phoenix in Aquinas's text"
+                "text": "the caterpillar and the butterfly"
               }
             ],
             "right_set": [
               {
                 "id": "R1",
-                "text": "knowing an essence never settles existence"
+                "text": "potency is a real capacity in the thing itself, not a projection of the mind"
               },
               {
                 "id": "R2",
-                "text": "essence receives and limits the act of being"
+                "text": "act is prior to potency in being, even where potency comes first in time"
               },
               {
                 "id": "R3",
-                "text": "creatures have being by participation"
+                "text": "accidental change: the same substance receives a new determination"
               },
               {
                 "id": "R4",
-                "text": "esse is other than essence, with one possible exception"
+                "text": "substantial change: the substantial form is replaced while primary matter persists"
               }
             ],
             "correct_pairs": [
@@ -1040,164 +889,149 @@ export const m2: ModuleMeta = {
               ]
             ],
             "feedback": {
-              "all_correct": "All four locked. The unicorn opened the gap, the mold showed how essence limits, the iron showed the borrowing, and the phoenix carried the argument itself. A module is owned when its images carry its principles.",
-              "partial_correct": "Some pairs landed. Walk the images again: what did defining the unicorn fail to tell you? What did the mold do to the bronze? Whose heat was in the iron? And what did Aquinas's phoenix leave open?"
+              "all_correct": "All four locked. The marble gave you real potency; the acorn gave you the priority of act; the bronze and the caterpillar gave you the two depths of change. A module is owned when its images carry its principles.",
+              "partial_correct": "Some pairs landed; others did not. Walk back through the images: what did the marble already possess? Which is prior, acorn or oak, and in what sense? What persisted in the bronze, and what persisted in the caterpillar?"
             },
             "doctrineTag": "recapitulatio"
           },
         },
         {
-          id: `m2-l6-q2`,
-          type: "mcq",
-          stem: `The deepest act/potency composition in creatures is...`,
+          id: `m1-l5-q2`,
+          type: "distinction_application",
+          stem: `A fresh case, no rehearsal. A dry oak log burns in the fireplace until only ash remains. Apply the module's grid: what kind of change is this, and what persists through it?`,
           payload: {
             "options": [
               {
                 "id": "a",
                 "label": "Respondeo:",
-                "text": "<span class=\"lat\">Materia</span> and <span class=\"lat\">forma</span>, the composition that explains every physical change, from accidents to substantial transformations.",
-                "feedback": "<span class=\"lat\">Materia</span>/<span class=\"lat\">forma</span> is real and important but applies only to material beings. The deepest composition must apply to every finite being, including purely spiritual ones."
+                "text": "An accidental change: the log takes on a new color and texture while remaining what it was.",
+                "feedback": "Check what remains. Ash is not dark wood; nothing answering to the form of wood survives the fire. When the substance itself is gone, the change ran deeper than any accident."
               },
               {
                 "id": "b",
                 "label": "Respondeo:",
-                "text": "<span class=\"lat\">Substantia</span> and <span class=\"lat\">accidens</span>, the composition between what a thing fundamentally is and the qualities that modify it.",
-                "feedback": "Not the deepest. A bare substance, stripped of all accidents, is still composed of <span class=\"lat\">esse</span> and <span class=\"lat\">essentia</span>, still finite, still receiving its being."
+                "text": "A substantial change: the form of wood is lost, new forms are received, and primary matter persists beneath the exchange.",
+                "feedback": "Respondeo: substantial change. The wood ceases to be wood; what persists is not the substance but primary matter, the pure capacity that receives first one substantial form and then another. This is the caterpillar's lesson at full depth."
               },
               {
                 "id": "c",
                 "label": "Respondeo:",
-                "text": "<span class=\"lat\">Esse</span> and <span class=\"lat\">essentia</span>, the act of being received into an <span class=\"lat\">essentia</span> that limits it; this composition holds in every creature without exception.",
-                "feedback": "Respondeo: this composition applies to every creature without exception, angels and stones alike. It is the metaphysics of participation: all finite <span class=\"lat\">esse</span> is received, participated, limited by a real <span class=\"lat\">essentia</span>."
+                "text": "An annihilation followed by a fresh creation: the wood passes into nothing and the ash begins from nothing.",
+                "feedback": "You made the change too deep. Annihilation and creation would break the continuity, yet the continuity is real: this ash came from this log, by a process nature performs every night. Something persisted, and its name is primary matter."
               },
               {
                 "id": "d",
                 "label": "Respondeo:",
-                "text": "<span class=\"lat\">Genus</span> and <span class=\"lat\">species</span>, since logical structure underlies all metaphysical structure and applies to every being whatsoever.",
-                "feedback": "<span class=\"lat\">Genus</span>/<span class=\"lat\">species</span> is a logical composition, a way the mind structures its concepts. The deepest composition is metaphysical, in the things themselves: <span class=\"lat\">esse</span> received into <span class=\"lat\">essentia</span>."
+                "text": "No change in the strict sense: the same particles are merely rearranged, and the particles stay exactly what they are.",
+                "feedback": "That is the materialist reduction, and it quietly deletes the grid. If only rearrangement happens, nothing ever passes from potency to act and nothing is ever generated or corrupted. The price of that account is that there was never really wood, or ash, or you. Aquinas declines to pay it."
               }
             ],
-            "correct_option_id": "c"
+            "correct_option_id": "b"
           },
         },
         {
-          id: `m2-l6-q3`,
-          type: "fill_blank",
-          stem: `Complete the master-key parallel that runs through the system. <em>Tap a term from the bank to fill each blank.</em><br><br><span style="font-family:'Fraunces',serif; font-size:18px; line-height:1.7; padding:14px 0; display:inline-block;">Matter is to <span class="fb-blank" data-blank="b1">______</span> as <span class="fb-blank" data-blank="b2">______</span> is to <em>esse</em>.<br>In every finite being, two principles compose: one as <span class="fb-blank" data-blank="b3">______</span>, the other as potency.</span>`,
-          payload: {
-            "blanks": [
-              {
-                "id": "b1",
-                "correct_answers": [
-                  "form",
-                  "forma"
-                ],
-                "case_sensitive": false
-              },
-              {
-                "id": "b2",
-                "correct_answers": [
-                  "essence",
-                  "essentia"
-                ],
-                "case_sensitive": false
-              },
-              {
-                "id": "b3",
-                "correct_answers": [
-                  "act",
-                  "actus"
-                ],
-                "case_sensitive": false
-              }
-            ],
-            "word_bank": [
-              "form",
-              "essence",
-              "act",
-              "potency",
-              "matter",
-              "esse",
-              "accident",
-              "substance",
-              "compositio"
-            ],
-            "feedback": {
-              "all_correct": "Master key. Matter is to form as essence is to <span class=\"lat\">esse</span>: in each pair the first principle is potency to the second, which is act. Substance and accident play the same game in another register. Hold this and the rest of Thomism becomes legible.",
-              "partial_correct": "Some of the parallel is right. Each composition pairs a receiving potency with a determining act. Matter receives form; <span class=\"lat\">essentia</span> receives <span class=\"lat\">esse</span>; in every finite being, one side is potency, the other is act.",
-              "fully_wrong": "Reach for <em>form</em>, <em>essence</em>, and <em>act</em>. The pattern is: every finite composition has a potency side and an act side. Identify which terms in the bank name the act side of each pair."
-            }
-          },
-        },
-        {
-          id: `m2-l6-q4`,
+          id: `m1-l5-q3`,
           type: "true_false_with_reason",
-          stem: `TRUE or FALSE: <em>The real distinction means essence and esse are two things joined together.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
+          stem: `TRUE or FALSE: <em>Act is prior to potency in every sense, including time.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
           payload: {
             "options": [
               {
                 "id": "a",
                 "label": "Respondeo:",
-                "text": "TRUE. Really distinct means really two, and two reals are two things.",
-                "feedback": "Two principles, not two things. A thing has essence and esse; it is not built by gluing a what-block to an is-block. Misplace this and the whole doctrine turns into carpentry."
+                "text": "TRUE. What is in potency must be preceded in time by the act it is ordered toward.",
+                "feedback": "The acorn refutes this. The acorn precedes its own oak in time, and there is nothing incoherent in that. The terminus of an ordering must be prior in nature and perfection, not in the calendar."
               },
               {
                 "id": "b",
                 "label": "Respondeo:",
-                "text": "TRUE. The creature is the joint where the thing called essence meets the thing called esse.",
-                "feedback": "Neither principle is a thing on its own: no essence floats unactualized, no esse arrives without a what. The creature is not a joint; it is the one being its two principles compose."
+                "text": "TRUE. In any one thing the actuality arrives before the capacity, as the oak before its acorn.",
+                "feedback": "You reached for the right example and bent it. The oak that drops the acorn is indeed prior to that acorn, but the proposition claims priority in every sense for every case, and the acorn now lying on the ground precedes in time the oak it can become."
               },
               {
                 "id": "c",
                 "label": "Respondeo:",
-                "text": "FALSE. They are two real principles of one thing, not two things.",
-                "feedback": "Respondeo: really distinct, never apart, jointly composing one being. Hold principles-not-things and you are safe from the two worst caricatures of the doctrine at once."
+                "text": "FALSE. In time the acorn often wins; the priority of act is priority in being and perfection.",
+                "feedback": "Respondeo: false, and for that reason. Temporally the acorn wins the race; ontologically the oak was always the point. Priority of act is priority of perfection and end. Get the senses of priority straight and Lesson 2 is permanently yours."
               },
               {
                 "id": "d",
                 "label": "Respondeo:",
-                "text": "FALSE. The distinction is only in our way of thinking about the creature.",
-                "feedback": "That is the rationalist exit, and the unicorn blocks it: the gap between what and whether is in things, not just in thought. The dodo did not go extinct in our concepts."
+                "text": "FALSE. Act and potency are strictly simultaneous in every respect, so neither principle can be prior to the other in any sense.",
+                "feedback": "You corrected one overstatement with another. Act and potency do coexist in every finite being, but coexistence is not equality. Potency is ordered toward act as toward its end, and what a thing is for stands prior in being to what merely awaits it."
               }
             ],
             "correct_option_id": "c"
           },
         },
         {
-          id: `m2-l6-q5`,
+          id: `m1-l5-q4`,
           type: "mcq",
           stem: `One sentence to carry the whole module out the door. Which is correct?`,
+          payload: {
+            "options": [
+              {
+                "id": "a",
+                "label": "Respondeo:",
+                "text": "Every finite being is composed of act and potency; what passes from potency to act is moved by another; the chain of movers ends in Pure Act.",
+                "feedback": "Respondeo: the module in one breath. Two poles, one engine, one terminus. Lessons 1 through 4 are each a clause of this sentence, and the sentence is the spine of everything the course builds from here."
+              },
+              {
+                "id": "b",
+                "label": "Respondeo:",
+                "text": "Only the actual is real; potency is a polite name for nothing yet; change just swaps actualities.",
+                "feedback": "That is the Megarian move, and Aristotle spent a chapter of the <em>Metaphysics</em> burying it. If potency is nothing, the unstruck match and the wet log are equally incapable of fire, and nothing can ever change at all. Real potency is the price of a world that moves."
+              },
+              {
+                "id": "c",
+                "label": "Respondeo:",
+                "text": "All is flux; act and potency are mind-made perspectives on one process, answering to nothing in things.",
+                "feedback": "Heraclitus at the door. But flux itself is unintelligible without the grid: a passage must be a passage of something, from a real capacity to a real determination. Deny the poles and you do not get pure process; you get nothing to describe."
+              },
+              {
+                "id": "d",
+                "label": "Respondeo:",
+                "text": "Every chain of movers must have started long ago; the First Way proves the universe began, and Pure Act started it.",
+                "feedback": "The most common misreading of the First Way, and worth losing a point to meet now. The argument concerns dependence here and now, not origins long ago: the stone moves only while the hand does. Aquinas thought reason alone could not prove the world began. The first mover is first in the order of act, not first on a timeline."
+              }
+            ],
+            "correct_option_id": "a"
+          },
+        },
+        {
+          id: `m1-l5-q5`,
+          type: "mcq",
+          stem: `Last one. Which sentence uses the module's vocabulary correctly?`,
           latin_tag: `recapitulatio`,
-          doctrine_line: `The real distinction owned. Module 3 takes the grid into the physical world.`,
+          doctrine_line: `Four lessons, one grid. Module 2 applies it to being itself.`,
           lesson_complete: true,
           payload: {
             "options": [
               {
                 "id": "a",
                 "label": "Respondeo:",
-                "text": "Existence is the deepest layer of every essence, discovered by careful definition.",
-                "feedback": "No definition ever coughed up an existence; the unicorn's portrait stayed a portrait. Esse is not the basement of the what. It is the act the what receives."
+                "text": "The sleeping musician is in <span class=\"lat\">actus</span> with respect to her skill, since the skill fully exists in her even while unexercised.",
+                "feedback": "Close, and the case is genuinely subtle. The sleeping musician holds her skill as a stable possession, but with respect to the exercise of it she is in potency until she plays. Aquinas would say she is in first act regarding the habit and in potency regarding the use. The sentence flattens that distinction."
               },
               {
                 "id": "b",
                 "label": "Respondeo:",
-                "text": "In every creature, essence receives and limits esse; in God, essence and esse are identical.",
-                "feedback": "Respondeo: the module in one breath. Composition in everything made, identity in the maker, and participation as the bridge between them. Modules 1 and 2 are now one argument with two vocabularies."
+                "text": "<span class=\"lat\">Materia prima</span> is the simplest complete substance, the basic stuff that all larger substances are assembled from.",
+                "feedback": "That description fits an atom, not <span class=\"lat\">materia prima</span>. Primary matter is not a substance at all and never exists bare; it is pure potency, the capacity that persists beneath substantial change, always already under some form."
               },
               {
                 "id": "c",
                 "label": "Respondeo:",
-                "text": "Essence is an illusion of language; only acts of existing are real.",
-                "feedback": "Then nothing would be anything in particular: existing, but of no kind. The dodo and the unicorn would be indistinguishable. Essence is not the enemy of esse; it is its receiver."
+                "text": "The frozen pond is in <span class=\"lat\">potentia</span> toward being water, since ice and water are two different substances.",
+                "feedback": "The grid is right and the chemistry is wrong. Ice and water are one substance in two accidental states; melting is an accidental change, not a substantial one. The pond is in potency toward being liquid, not toward being a different thing."
               },
               {
                 "id": "d",
                 "label": "Respondeo:",
-                "text": "Essence and esse are identical in creatures, and really distinct only in God.",
-                "feedback": "Exactly inverted, and worth a careful look because it sounds so close. Identity belongs to God alone; the distinction belongs to everything else. Swap them back and you have the doctrine."
+                "text": "<span class=\"lat\">Actus purus</span> admits of no <span class=\"lat\">potentia</span> whatsoever, and so cannot change, acquire, or lose anything at all.",
+                "feedback": "Respondeo: exactly right, and stated with the right severity. No potency means no possible acquisition and no possible loss; Pure Act is not the most changeable being but the least, which is to say not changeable at all. You are using the words the way the tradition uses them."
               }
             ],
-            "correct_option_id": "b"
+            "correct_option_id": "d"
           },
         }
       ],

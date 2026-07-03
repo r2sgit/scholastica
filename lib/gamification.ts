@@ -16,8 +16,8 @@ export interface ThesisGate {
   modules_teach: number[];
 }
 
-// Act I is module ids 0..4 (handbook §20.2).
-const ACT_I_IDS = [0, 1, 2, 3, 4];
+// Act I is module ids 1..5 (handbook §20.2).
+const ACT_I_IDS = [1, 2, 3, 4, 5];
 const TOTAL_MODULES = COURSE_MAP.length; // 18
 const TOTAL_THESES = 24;
 
@@ -55,8 +55,8 @@ export function getThesesEarned(data: StorageSchema, theses: ThesisGate[]): numb
 
 /** §20.2 ranks, from real state only — never points.
     - incipiens: default.
-    - proficiens: Act I (ids 0–4) complete AND >= half of the theses whose
-      ENTIRE modules_teach set lies within ids 0–4 are earned.
+    - proficiens: Act I (ids 1–5) complete AND >= half of the theses whose
+      ENTIRE modules_teach set lies within ids 1–5 are earned.
     - perfectus: all 18 modules complete AND all 24 theses earned. */
 export function getRank(data: StorageSchema, theses: ThesisGate[]): Rank {
   const complete = new Set(getModulesComplete(data));

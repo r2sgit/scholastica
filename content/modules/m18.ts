@@ -1,10 +1,10 @@
 import type { ModuleMeta } from '../types';
 
-export const m17: ModuleMeta = {
-  id: 17,
+export const m18: ModuleMeta = {
+  id: 18,
   title: `The Existential Thomism Debate`,
   short: `Existential Thomism`,
-  label: `Module 17 · The Existential Thomism Debate`,
+  label: `Module 18 · The Existential Thomism Debate`,
   latin: `De Esse et Essentia: Disputatio`,
   aim: `Esse is the act of all acts; essentia is the real positive potency that receives it. Fair fight, strict line wins: both halves of Aquinas's text, or neither.`,
   lessons: [
