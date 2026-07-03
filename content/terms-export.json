@@ -246,7 +246,7 @@
       "latin": "distinctio realis",
       "english": "real distinction",
       "gloss": "A distinction that holds in the thing itself, independently of any mind considering it. Esse and essentia are really distinct in every creature.",
-      "precision": "The \"really distinct\" claim is what separates Aquinas from all mere conceptual-distinction readings. The Gilsonian camp accepts the language but (on the strict reading) empties it: if essence is just esse's own self-limitation, the distinction is not between two positive principles. This is M17 content; introduce here as the claim, develop in M17 as the debate.",
+      "precision": "The \"really distinct\" claim is what separates Aquinas from all mere conceptual-distinction readings. The Gilsonian camp accepts the language but (on the strict reading) empties it: if essence is just esse's own self-limitation, the distinction is not between two positive principles. This is M18 content; introduce here as the claim, develop in M18 as the debate.",
       "module": 3,
       "status": "planned"
     },
@@ -302,7 +302,7 @@
       "latin": "forma accidentalis",
       "english": "accidental form",
       "gloss": "A form that modifies an already-existing substance without constituting it. Color, size, disposition: all accidental forms.",
-      "precision": "Note the overlap with *accidens* from M0: accidental forms are what give rise to accidents. The distinction form/accident is a way of speaking about the same reality from different directions.",
+      "precision": "Note the overlap with *accidens* from M1: accidental forms are what give rise to accidents. The distinction form/accident is a way of speaking about the same reality from different directions.",
       "module": 4,
       "status": "built"
     },
@@ -591,7 +591,7 @@
       "latin": "res",
       "english": "thing / reality",
       "gloss": "What a being is: the *quidditas* side of being. Being considered as having a nature.",
-      "precision": "Note: *res* was introduced at M0 in the *distinctio realis* lesson (real thing, independent of mind). Here it enters the transcendental list as a positive characterization.",
+      "precision": "Note: *res* was introduced at M1 in the *distinctio realis* lesson (real thing, independent of mind). Here it enters the transcendental list as a positive characterization.",
       "module": 7,
       "status": "planned"
     },
@@ -968,7 +968,7 @@
       "latin": "actus humanus",
       "english": "human act",
       "gloss": "An act elicited with knowledge and will: an act for which the agent is morally responsible.",
-      "precision": "Distinct from *actus hominis*. This distinction is one of the most important QA items in M12; every exercise touching morality must use these correctly.",
+      "precision": "Distinct from *actus hominis*. This distinction is one of the most important QA items in M13; every exercise touching morality must use these correctly.",
       "module": 13,
       "status": "built"
     },

@@ -7,7 +7,7 @@ export const m6: ModuleMeta = {
   label: `Module 6 · Logic`,
   lessons: [
     {
-      id: `m5-l1`,
+      id: `m6-l1`,
       num: `I`,
       title: `Necessity vs. Coincidence`,
       latin: `logica · ars artium`,
@@ -15,11 +15,11 @@ export const m6: ModuleMeta = {
       fin: {
         tag: `logica  ·  ars artium`,
         heading: `Logic is the art of arts — it governs the use of every other art.`,
-        body: `<em>Logica</em> does not tell you what exists; it tells you how to think about what exists without making avoidable errors. The first question it forces is whether you are dealing with necessity or coincidence — whether things are as they are because they must be, or merely because they happen to be. The rest of Module 5 depends on keeping that question in view.`,
+        body: `<em>Logica</em> does not tell you what exists; it tells you how to think about what exists without making avoidable errors. The first question it forces is whether you are dealing with necessity or coincidence — whether things are as they are because they must be, or merely because they happen to be. The rest of Module 6 depends on keeping that question in view.`,
       },
       questions: [
         {
-          id: `m5-l1-e1`,
+          id: `m6-l1-e1`,
           type: "mcq",
           stem: `Two statements: <em>"All men are mortal."</em> and <em>"Socrates is a man."</em><br><br>Which conclusion follows <em>necessarily</em> from these two premises?`,
           payload: {
@@ -47,7 +47,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l1-e2`,
+          id: `m6-l1-e2`,
           type: "true_false_with_reason",
           stem: `Consider this argument: <em>"It rained yesterday; therefore my dog is hungry."</em><br><br>Is this inference valid? Pick the correct judgment <em>and</em> the best reason.`,
           payload: {
@@ -81,7 +81,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l1-e3`,
+          id: `m6-l1-e3`,
           type: "spot_the_fallacy",
           stem: `An argument:<br><br>· Every politician is a citizen.<br>· Some citizens are saints.<br>· Therefore: some politicians are saints.<br><br>The conclusion does not follow. What is the structural problem?`,
           payload: {
@@ -115,7 +115,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l1-e4`,
+          id: `m6-l1-e4`,
           type: "mcq",
           stem: `Which of the following arguments has a conclusion that follows <em>necessarily</em> from its premises?`,
           payload: {
@@ -149,7 +149,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l1-e5`,
+          id: `m6-l1-e5`,
           type: "mcq",
           stem: `Last one. Logic is best described as which of the following?`,
           payload: {
@@ -179,7 +179,7 @@ export const m6: ModuleMeta = {
       ],
     },
     {
-      id: `m5-l2`,
+      id: `m6-l2`,
       num: `II`,
       title: `The Five Predicables`,
       latin: `genus · species · differentia · proprium · accidens`,
@@ -191,7 +191,7 @@ export const m6: ModuleMeta = {
       },
       questions: [
         {
-          id: `m5-l2-e1`,
+          id: `m6-l2-e1`,
           type: "mcq",
           stem: `Of the following predicates of <em>man</em>, which one is the <span class="lat">genus</span>?`,
           payload: {
@@ -225,7 +225,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l2-e2`,
+          id: `m6-l2-e2`,
           type: "match_pair",
           stem: `Now match each predicable to its description. <em>Tap a predicable, then tap its description. Tap a paired item to release it.</em>`,
           payload: {
@@ -329,7 +329,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l2-e3`,
+          id: `m6-l2-e3`,
           type: "mcq",
           stem: `Two predicates of <em>man</em>: <em>risible</em> (capable of laughter) and <em>literate</em> (able to read). Both are real. Which is the <span class="lat">proprium</span>, and why?`,
           payload: {
@@ -363,7 +363,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l2-e4`,
+          id: `m6-l2-e4`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>Rationality is a predicable accident of man.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
           payload: {
@@ -397,7 +397,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l2-e5`,
+          id: `m6-l2-e5`,
           type: "fill_blank",
           stem: `Complete the formula. <em>Tap a term from the bank to fill each blank.</em><br><br><span style="font-family:'Fraunces', serif; font-size:22px; padding:14px 0; display:inline-block;"><span class="lat">species</span>  =  <span class="fb-blank" data-blank="b1">______</span>  +  <span class="fb-blank" data-blank="b2">______</span></span>`,
           payload: {
@@ -433,7 +433,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l2-e6`,
+          id: `m6-l2-e6`,
           type: "mcq",
           stem: `Last one. Which sentence captures the structure of the predicables?`,
           payload: {
@@ -463,7 +463,7 @@ export const m6: ModuleMeta = {
       ],
     },
     {
-      id: `m5-l3`,
+      id: `m6-l3`,
       num: `III`,
       title: `The Ten Predicaments`,
       latin: `praedicamenta · substantia · accidens`,
@@ -471,11 +471,11 @@ export const m6: ModuleMeta = {
       fin: {
         tag: `praedicamenta  ·  substantia  ·  accidens`,
         heading: `Before you reason about things, you need to know what kind of thing you are reasoning about.`,
-        body: `Substance, quantity, quality, relation, place, time, posture, habit, action, passion — ten irreducibly different ways a thing can be described. They are not just a list. They are the logical backbone of the distinction between substance and accident that Module 0 introduced in metaphysical terms. Here it becomes operational.`,
+        body: `Substance, quantity, quality, relation, place, time, posture, habit, action, passion — ten irreducibly different ways a thing can be described. They are not just a list. They are the logical backbone of the distinction between substance and accident that Module 1 introduced in metaphysical terms. Here it becomes operational.`,
       },
       questions: [
         {
-          id: `m5-l3-e1`,
+          id: `m6-l3-e1`,
           type: "match_pair",
           stem: `Five of the ten predicaments. Match each Latin term to its English description. <em>Tap a term, then tap its description. Tap a paired item to release it.</em>`,
           payload: {
@@ -569,7 +569,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l3-e2`,
+          id: `m6-l3-e2`,
           type: "distinction_application",
           stem: `Now the other five predicaments. For each statement about Socrates, identify which predicament is being predicated.<br><br>· Socrates is teaching.<br>· Socrates is being taught a lesson by his wife.<br>· Socrates is sitting.<br>· Socrates is wearing his cloak.<br>· Socrates lived in the 5th century BC.<br><br>Which mapping is correct, in order?`,
           payload: {
@@ -603,7 +603,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l3-e3`,
+          id: `m6-l3-e3`,
           type: "mcq",
           stem: `Why is <em>substance</em> the primary predicament — not just first in the list, but the one all the others depend on?`,
           payload: {
@@ -637,7 +637,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l3-e4`,
+          id: `m6-l3-e4`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>God can be classified under one of the ten predicaments.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
           payload: {
@@ -652,7 +652,7 @@ export const m6: ModuleMeta = {
                 "id": "b",
                 "label": "Respondeo:",
                 "text": "FALSE — the predicaments organize creaturely being. God transcends them, since the categorical structure exists for finite beings, not for being itself.",
-                "feedback": `Right. The ten predicaments organize <em>finite</em>, created being. God transcends the categories — not by lacking being, but by exceeding the categorical structure that finite being requires. (Forward link: this is one of the seeds of the <span class="lat">analogia entis</span> in Module 15 — being is predicated of God and creatures <em>analogically</em>, not univocally.)`
+                "feedback": `Right. The ten predicaments organize <em>finite</em>, created being. God transcends the categories — not by lacking being, but by exceeding the categorical structure that finite being requires. (Forward link: this is one of the seeds of the <span class="lat">analogia entis</span> in Module 16 — being is predicated of God and creatures <em>analogically</em>, not univocally.)`
               },
               {
                 "id": "c",
@@ -671,7 +671,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l3-e5`,
+          id: `m6-l3-e5`,
           type: "distinction_application",
           stem: `An accident <em>inheres in</em> a substance — it cannot exist on its own. Which of the following is the clearest example of an accident — a feature that <em>cannot</em> exist on its own and must inhere in some substance?`,
           payload: {
@@ -705,7 +705,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l3-e6`,
+          id: `m6-l3-e6`,
           type: "mcq",
           stem: `Last one. Which of the following best captures the structure of the predicaments?`,
           payload: {
@@ -735,7 +735,7 @@ export const m6: ModuleMeta = {
       ],
     },
     {
-      id: `m5-l4`,
+      id: `m6-l4`,
       num: `IV`,
       title: `The Four Per Se Modes`,
       latin: `per se · primo · secundo · tertio · quarto`,
@@ -747,7 +747,7 @@ export const m6: ModuleMeta = {
       },
       questions: [
         {
-          id: `m5-l4-e1`,
+          id: `m6-l4-e1`,
           type: "close_reading",
           stem: `<p style="margin: 0 0 14px;">Aquinas, commenting on Aristotle's <em>Posterior Analytics</em>, distinguishes four ways something can be said <em>per se</em>. Read the passage:</p><div class="cr-audio-controls"><button class="cr-audio-play" data-audio-id="audio-m5-l4-e1" type="button" aria-label="Listen to passage read aloud"><span class="cr-audio-icon">▶</span><span class="cr-audio-label">Listen</span></button></div><div class="cr-passage"><p><span class="cr-mode">First mode</span> <em>(primo)</em>. The first way of saying something <em>per se</em> is when the definition itself, or something expressed in the definition, is predicated of the thing defined. Thus "line" is stated in the definition of triangle, hence "line" is in triangle <em>per se</em>.</p><p><span class="cr-mode">Second mode</span> <em>(secundo)</em>. The second mode is when the preposition <em>per</em> implies a relationship of material cause, when the subject belongs to the definition of the predicate. As when we say "a snub nose is a concave nose," for nose is in the very definition of snub.</p><p><span class="cr-mode">Third mode</span> <em>(tertio</em> — TAIR-tsee-oh<em>)</em>. A third mode is when <em>per se</em> signifies something existing in isolation, not predicated of any subject, but subsisting in itself. Thus Socrates and Plato, as singulars in the genus of substance, are said to be <em>per se</em>.</p><p><span class="cr-mode">Fourth mode</span> <em>(quarto)</em>. The fourth mode is when whatever is attributed to a thing because of itself is said of it <em>per se</em>; the predicate belongs to the subject through the subject's own nature. As when we say, "Slaughtered, it died."</p><p>Any predication that meets none of these four conditions holds <em>per accidens</em>, by contingency rather than by nature.</p><div class="cr-cite">Adapted from Aquinas, <em>In Posteriora Analytica</em>, Lib. I, lect. 10, nn. 3, 4, 6, 7.</div></div><p style="margin: 14px 0 0;">Hold those four names: <em>primo</em>, <em>secundo</em>, <em>tertio</em>, <em>quarto</em>. The next questions will use them. Which statement best captures the four modes Aquinas lays out in this passage?</p>`,
           payload: {
@@ -781,7 +781,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l4-e2`,
+          id: `m6-l4-e2`,
           type: "distinction_application",
           stem: `For each predication, identify which <em>per se</em> mode it exemplifies — or whether it is <em>per accidens</em>.<br><br>· <em>Man is rational.</em><br>· <em>Snub is concave.</em><br>· <em>Socrates is musical.</em><br>· <em>The effect of fire is heat.</em><br><br>Which mapping is correct?`,
           payload: {
@@ -815,7 +815,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l4-e3`,
+          id: `m6-l4-e3`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>A demonstrative premise can be per accidens.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
           payload: {
@@ -849,7 +849,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l4-e4`,
+          id: `m6-l4-e4`,
           type: "mcq",
           stem: `Which of the following is the clearest example of <em>per se tertio modo</em> — the third mode of <em>per se</em> belonging?`,
           payload: {
@@ -883,7 +883,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l4-e5`,
+          id: `m6-l4-e5`,
           type: "fill_blank",
           stem: `Complete the formula. The fourth <em>per se</em> mode names the mode of effect-from-cause:<br><br><span style="font-family:'Fraunces',serif; font-size:20px; padding:14px 0; display:inline-block;">Effect proceeds from cause  <span class="fb-blank" data-blank="b1">______</span>  <em>per se quarto</em>.</span>`,
           payload: {
@@ -914,7 +914,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l4-e6`,
+          id: `m6-l4-e6`,
           type: "syllogism_builder",
           stem: `Construct a demonstration of <em>"A triangle has interior angles summing to two right angles"</em> using only <em>per se primo</em> premises (premises whose predicate is in the subject's definition). Which of the following constructions is valid?`,
           payload: {
@@ -948,7 +948,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l4-e7`,
+          id: `m6-l4-e7`,
           type: "mcq",
           stem: `Last one. Why do the four <em>per se</em> modes matter for demonstration?`,
           payload: {
@@ -978,7 +978,7 @@ export const m6: ModuleMeta = {
       ],
     },
     {
-      id: `m5-l5`,
+      id: `m6-l5`,
       num: `V`,
       title: `The Syllogism`,
       latin: `syllogismus · figurae`,
@@ -990,7 +990,7 @@ export const m6: ModuleMeta = {
       },
       questions: [
         {
-          id: `m5-l5-e1`,
+          id: `m6-l5-e1`,
           type: "mcq",
           stem: `Consider the argument:<br><br>· All birds have feathers.<br>· A robin is a bird.<br>· Therefore, a robin has feathers.<br><br>Two premises share a term ("bird") that does not appear in the conclusion. The medieval logicians called that term the <em>middle term</em>, and they classified arguments by where the middle term sits in the two premises. This argument places the middle term as the <em>subject</em> of the major premise and the <em>predicate</em> of the minor. Which figure is this — and what is its name?`,
           payload: {
@@ -1024,7 +1024,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l5-e2`,
+          id: `m6-l5-e2`,
           type: "syllogism_builder",
           stem: `Construct a valid syllogism whose conclusion is: <em>"Some philosophers are mortal."</em><br><br>Which of the following constructions is valid?`,
           payload: {
@@ -1058,7 +1058,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l5-e3`,
+          id: `m6-l5-e3`,
           type: "spot_the_fallacy",
           stem: `An argument:<br><br>· All trees are plants.<br>· All roses are plants.<br>· Therefore, all trees are roses.<br><br>The conclusion is obviously absurd; the form is also flawed. What is the formal flaw?`,
           payload: {
@@ -1092,7 +1092,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l5-e4`,
+          id: `m6-l5-e4`,
           type: "spot_the_fallacy",
           stem: `Another argument:<br><br>· If a man is a Dominican, he is a Catholic.<br>· This man is a Catholic.<br>· Therefore, this man is a Dominican.<br><br>The conclusion does not follow. What is the formal flaw?`,
           payload: {
@@ -1126,7 +1126,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l5-e5`,
+          id: `m6-l5-e5`,
           type: "sequence",
           stem: `A categorical syllogism has three propositions arranged in a canonical order. Which sequence is correct?`,
           payload: {
@@ -1160,7 +1160,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l5-e6`,
+          id: `m6-l5-e6`,
           type: "mcq",
           stem: `Last one. Which of the following best states the rule that valid categorical syllogisms must obey concerning the middle term?`,
           payload: {
@@ -1190,7 +1190,7 @@ export const m6: ModuleMeta = {
       ],
     },
     {
-      id: `m5-l6`,
+      id: `m6-l6`,
       num: `VI`,
       title: `Demonstration: Propter Quid and Quia`,
       latin: `demonstratio · propter quid · quia`,
@@ -1202,7 +1202,7 @@ export const m6: ModuleMeta = {
       },
       questions: [
         {
-          id: `m5-l6-e1`,
+          id: `m6-l6-e1`,
           type: "close_reading",
           stem: `<blockquote style="margin: 14px 0 18px; padding: 14px 18px; border-left: 3px solid var(--gold); background: color-mix(in oklab, var(--canvas) 40%, transparent); font-family: 'Fraunces', serif; font-style: italic; font-size: 15px; line-height: 1.55; color: var(--ink-soft);"><p style="margin: 0 0 10px;">Demonstration is twofold: One, which is through the cause, and is called <em>propter quid</em>, and this is to argue from what is prior absolutely. The other is through the effect, and is called a demonstration <em>quia</em>; this is to argue from what is prior relatively only to us. When an effect is better known to us than its cause, from the effect we proceed to the knowledge of the cause...</p><p style="margin: 0;">...The existence of God, in so far as it is not self-evident to us, can be demonstrated from those of His effects which are known to us.</p><div style="margin-top:10px; font-size: 11px; font-style: normal; color: var(--ink-faint); letter-spacing: 0.5px;">— Aquinas, <em>Summa Theologiae</em> I, q. 2, a. 2, <em>respondeo</em>. English Dominican Province trans. Selections.</div></blockquote>Hold the two names — <em>propter quid</em> ("because of which" — through the cause) and <em>quia</em> ("that" — through the effect). Which best captures Aquinas's point?`,
           payload: {
@@ -1236,7 +1236,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l6-e2`,
+          id: `m6-l6-e2`,
           type: "distinction_application",
           stem: `For each inference, identify whether it is <em>propter quid</em> (cause to effect) or <em>quia</em> (effect to cause).<br><br>· The bridge is wet because it has just rained.<br>· It must have rained, because the bridge is wet.<br>· The triangle's angles sum to 180° because of the definition of triangle.<br>· There must be a first cause, because we observe motion.<br><br>Which mapping is correct, in order?`,
           payload: {
@@ -1264,7 +1264,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l6-e3`,
+          id: `m6-l6-e3`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>A demonstration "quia" is weaker than a demonstration "propter quid" — at most, it produces probable belief rather than scientific knowledge.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
           payload: {
@@ -1298,7 +1298,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l6-e4`,
+          id: `m6-l6-e4`,
           type: "syllogism_builder",
           stem: `Reconstruct the First Way (the argument from motion) as a demonstration <em>quia</em>. Which of the following constructions captures Aquinas's argument?`,
           payload: {
@@ -1332,7 +1332,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l6-e5`,
+          id: `m6-l6-e5`,
           type: "mcq",
           stem: `What is required of demonstrative premises that is not required of dialectical premises?`,
           payload: {
@@ -1360,7 +1360,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l6-e6`,
+          id: `m6-l6-e6`,
           type: "mcq",
           stem: `Last one. Which axiom best captures the structure of demonstration?`,
           payload: {
@@ -1390,19 +1390,19 @@ export const m6: ModuleMeta = {
       ],
     },
     {
-      id: `m5-l7`,
+      id: `m6-l7`,
       num: `VII`,
       title: `Capstone — First Principles`,
       latin: `principia · primorum · contradictionis`,
       tag: `principia  ·  primorum  ·  contradictionis`,
       fin: {
         tag: `principia  ·  primorum  ·  contradictionis`,
-        heading: `Module 5 complete.`,
-        body: `Logic is the art of arts because it is the instrument of every other science. The syllogism, the five predicables, the ten predicaments, the <em>per se</em> modes, demonstration <em>propter quid</em> and <em>quia</em> — these are the working parts. The principle of non-contradiction is not one instrument among others; it is the ground on which all of them stand. Module 12 puts the whole apparatus to work.`,
+        heading: `Module 6 complete.`,
+        body: `Logic is the art of arts because it is the instrument of every other science. The syllogism, the five predicables, the ten predicaments, the <em>per se</em> modes, demonstration <em>propter quid</em> and <em>quia</em> — these are the working parts. The principle of non-contradiction is not one instrument among others; it is the ground on which all of them stand. Module 13 puts the whole apparatus to work.`,
       },
       questions: [
         {
-          id: `m5-l7-e1`,
+          id: `m6-l7-e1`,
           type: "close_reading",
           stem: `<blockquote style="margin: 14px 0 18px; padding: 14px 18px; border-left: 3px solid var(--gold); background: color-mix(in oklab, var(--canvas) 40%, transparent); font-family: 'Fraunces', serif; font-style: italic; font-size: 15px; line-height: 1.55; color: var(--ink-soft);"><p style="margin: 0 0 10px;">The same thing cannot at the same time and in the same respect both be and not be. This is the firmest of all principles — it cannot be demonstrated, since every demonstration presupposes it; and yet it cannot be denied without absurdity, since the very act of denying it is itself an act of asserting and not denying.</p><p style="margin: 0;">It is therefore <em>per se notum</em> — known immediately, by anyone who understands the terms. The principle of non-contradiction is what makes argument possible at all.</p><div style="margin-top:10px; font-size: 11px; font-style: normal; color: var(--ink-faint); letter-spacing: 0.5px;">— after Aquinas, <em>In Metaphysica</em>, Lib. IV, lect. 5–6 [paraphrase; verbatim Larcher / Rowan trans. queued for ship]</div></blockquote>Why does Aquinas hold that the principle of non-contradiction (PNC) cannot be demonstrated?`,
           payload: {
@@ -1436,7 +1436,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l7-e2`,
+          id: `m6-l7-e2`,
           type: "match_pair",
           stem: `Six first principles of demonstration. Match each to its formula.`,
           payload: {
@@ -1547,7 +1547,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l7-e3`,
+          id: `m6-l7-e3`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>The principle of sufficient reason and the principle of causality are the same principle, named twice.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
           payload: {
@@ -1581,7 +1581,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l7-e4`,
+          id: `m6-l7-e4`,
           type: "spot_the_fallacy",
           stem: `Consider this argument:<br><br>· I deny the principle of non-contradiction.<br>· Therefore I am not contradicting myself by denying it.<br><br>What is the formal flaw?`,
           payload: {
@@ -1615,7 +1615,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l7-e5`,
+          id: `m6-l7-e5`,
           type: "distinction_application",
           stem: `For each statement, identify which first principle is most directly at stake.<br><br>· "A thing cannot both be and not be at the same time and in the same respect."<br>· "There is a reason this universe exists rather than nothing."<br>· "Every agent acts for some end."<br>· "Either it is raining or it is not raining (with no third possibility)."<br>· "Every effect has a cause."<br><br>Which mapping is correct, in order?`,
           payload: {
@@ -1643,7 +1643,7 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l7-e6`,
+          id: `m6-l7-e6`,
           type: "syllogism_builder",
           stem: `Construct a demonstration <em>quia</em> for the existence of a necessary being, using the principle of sufficient reason as the major premise. Which construction succeeds?`,
           payload: {
@@ -1677,28 +1677,28 @@ export const m6: ModuleMeta = {
           },
         },
         {
-          id: `m5-l7-e7`,
+          id: `m6-l7-e7`,
           type: "mcq",
-          stem: `Last one. After Module 5, you can do which of the following that you could not do before?`,
+          stem: `Last one. After Module 6, you can do which of the following that you could not do before?`,
           payload: {
             options: [
             {
               id: `a`,
               text: `Take a Thomistic argument, identify its syllogistic structure, locate its <em>per se</em> premises, check its validity, and recognize when an objection denies a first principle rather than refutes an argument.`,
               correct: undefined,
-              feedback: `Right. The whole module has been training this capacity — first the predicables and predicaments to know what kinds of terms appear in arguments, then the four <em>per se</em> modes to know what kinds of premises hold, then the syllogism to check validity, then demonstration to know when an inference produces <em>scientia</em>, and finally the first principles to know when an objection has stepped outside argument as such. Module 5 complete. The instrument is now in your hand. <em>Distinguo.</em>`,
+              feedback: `Right. The whole module has been training this capacity — first the predicables and predicaments to know what kinds of terms appear in arguments, then the four <em>per se</em> modes to know what kinds of premises hold, then the syllogism to check validity, then demonstration to know when an inference produces <em>scientia</em>, and finally the first principles to know when an objection has stepped outside argument as such. Module 6 complete. The instrument is now in your hand. <em>Distinguo.</em>`,
             },
             {
               id: `b`,
               text: `Recite the Five Ways from memory and explain each step of Aquinas's arguments for God's existence.`,
               correct: undefined,
-              feedback: `A worthy goal, but Module 5 is about the <em>tools</em> of reasoning, not specific arguments for God. The Five Ways draw on the tools you now have (especially the principles of motion, causality, contingency), and you can now identify <em>which</em> kind of demonstration each of them is (all <em>quia</em>), but the arguments themselves are not the content of Module 5.`,
+              feedback: `A worthy goal, but Module 6 is about the <em>tools</em> of reasoning, not specific arguments for God. The Five Ways draw on the tools you now have (especially the principles of motion, causality, contingency), and you can now identify <em>which</em> kind of demonstration each of them is (all <em>quia</em>), but the arguments themselves are not the content of Module 6.`,
             },
             {
               id: `c`,
               text: `Translate Aquinas's commentaries from Latin into English and write Aristotelian commentaries of your own.`,
               correct: undefined,
-              feedback: `Module 5 is a logic course, not a Latin or composition course. The skills it gives you are technical-logical: spotting fallacies, identifying figures, recognizing when premises are <em>per se</em>, knowing when an opponent has denied a first principle. Translation and composition are separate disciplines.`,
+              feedback: `Module 6 is a logic course, not a Latin or composition course. The skills it gives you are technical-logical: spotting fallacies, identifying figures, recognizing when premises are <em>per se</em>, knowing when an opponent has denied a first principle. Translation and composition are separate disciplines.`,
             }
             ],
             correct_option_id: `a`,

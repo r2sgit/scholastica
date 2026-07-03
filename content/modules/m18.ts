@@ -9,7 +9,7 @@ export const m18: ModuleMeta = {
   aim: `Esse is the act of all acts; essentia is the real positive potency that receives it. Fair fight, strict line wins: both halves of Aquinas's text, or neither.`,
   lessons: [
     {
-      id: `m17-l1`,
+      id: `m18-l1`,
       num: `I`,
       title: `What the Fight Is About`,
       latin: `disputatio`,
@@ -21,7 +21,7 @@ export const m18: ModuleMeta = {
       },
       questions: [
         {
-          id: `m17-l1-q1`,
+          id: `m18-l1-q1`,
           type: "mcq",
           stem: `The cup and the water. Essence receives and limits <span class="lat">esse</span> from within, as a real capacity, not an outside container: you made that correction yourself once. One question was left standing. Which?`,
           payload: {
@@ -55,7 +55,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l1-q2`,
+          id: `m18-l1-q2`,
           type: "mcq",
           stem: `Before the fight, the agreements. Which statement do <em>both</em> camps affirm?`,
           payload: {
@@ -89,7 +89,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l1-q3`,
+          id: `m18-l1-q3`,
           type: "mcq",
           stem: `The iron glows with the fire's heat: creatures have <span class="lat">esse</span> by participation. Now suppose essence is not a real positive principle. What happens to that picture?`,
           payload: {
@@ -123,7 +123,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l1-q4`,
+          id: `m18-l1-q4`,
           type: "precision_check",
           stem: `A claim you might hear from a friendly reader: <em>"If essence is only esse limiting itself, nothing important is lost. The creature still exists either way."</em> What is wrong with it?`,
           payload: {
@@ -159,7 +159,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l1-q5`,
+          id: `m18-l1-q5`,
           type: "mcq",
           stem: `Two benches in the disputation. Which lineup is correct?`,
           payload: {
@@ -193,7 +193,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l1-q6`,
+          id: `m18-l1-q6`,
           type: "mcq",
           stem: `The scholastic disputation has a shape: the opposing case is stated at its strongest, <span class="lat">videtur quod</span> ('it seems that'), before it is answered, <span class="lat">respondeo</span> ('I answer'). What does that shape demand of you here?`,
           latin_tag: `disputatio`,
@@ -232,7 +232,7 @@ export const m18: ModuleMeta = {
       ],
     },
     {
-      id: `m17-l2`,
+      id: `m18-l2`,
       num: `II`,
       title: `The Strict Line`,
       latin: `essentia ut potentia`,
@@ -244,7 +244,7 @@ export const m18: ModuleMeta = {
       },
       questions: [
         {
-          id: `m17-l2-q1`,
+          id: `m18-l2-q1`,
           type: "mcq",
           stem: `The mold and the poured bronze. The strict line begins exactly here. What does the image insist on?`,
           payload: {
@@ -278,7 +278,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l2-q2`,
+          id: `m18-l2-q2`,
           type: "close_reading",
           stem: `<div class="cr-passage"><p>An act, a perfection, which in its own order is of itself unlimited (for example, existence or wisdom or love) cannot in fact be limited except by something else not of its own order, something which is related to that perfection and gives the reason for that limitation. Now, nothing else can be assigned as limiting that act, that perfection, except the real potency, the capacity for receiving that act, that perfection.</p><p>Besides existence there is a real capacity which receives and limits existence. This capacity, this recipient, which limits existence, is not nothing, is not privation, is not imperfect existence; it is real objective potency, really distinct from existence.</p><div class="cr-cite">Garrigou-Lagrange, Reality: A Synthesis of Thomistic Thought, ch. 5, selections · trans. Cummins · verified against the EWTN library text</div></div><br>What is the engine of the argument?`,
           payload: {
@@ -312,7 +312,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l2-q3`,
+          id: `m18-l2-q3`,
           type: "mcq",
           stem: `The strict line has its formula: <span class="lat">essentia ut potentia</span>, 'essence as potency.' Said precisely, what does it claim?`,
           payload: {
@@ -346,7 +346,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l2-q4`,
+          id: `m18-l2-q4`,
           type: "distinction_application",
           stem: `A finite angel: no matter, no body, pure spirit, and still a creature. Four sentences about its finitude; the strict line accepts one. Which?`,
           payload: {
@@ -380,7 +380,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l2-q5`,
+          id: `m18-l2-q5`,
           type: "mcq",
           stem: `The first of the 24 Thomistic theses, the Church's 1914 charter of strict Thomism, says that whatever exists 'is either pure act, or then is necessarily composed of potency and act, as of two primary and intrinsic principles.' What follows for essence?`,
           payload: {
@@ -414,7 +414,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l2-q6`,
+          id: `m18-l2-q6`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>From Cajetan's commentaries to John of St. Thomas's course to Garrigou-Lagrange's classrooms to Dominicans writing today, Bonino among them, the strict bench is held together by loyalty to the commentators rather than by an argument.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
           latin_tag: `essentia ut potentia`,
@@ -453,7 +453,7 @@ export const m18: ModuleMeta = {
       ],
     },
     {
-      id: `m17-l3`,
+      id: `m18-l3`,
       num: `III`,
       title: `The Existential Reading`,
       latin: `actus omnium actuum`,
@@ -465,7 +465,7 @@ export const m18: ModuleMeta = {
       },
       questions: [
         {
-          id: `m17-l3-q1`,
+          id: `m18-l3-q1`,
           type: "mcq",
           stem: `Aquinas: <span class="lat">esse est actualitas omnium actuum, et propter hoc est perfectio omnium perfectionum</span>, 'esse is the actuality of all acts, and for this reason the perfection of all perfections' (De potentia q.7 a.2 ad 9). The existential readers begin here. What do they hear?`,
           payload: {
@@ -499,7 +499,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l3-q2`,
+          id: `m18-l3-q2`,
           type: "close_reading",
           stem: `<div class="cr-passage"><p>But Thomas Aquinas could not posit existence (esse) as the act of a substance itself actualized by its form, without making a decision which, with respect to the metaphysics of Aristotle, was nothing less than a revolution. He had precisely to achieve the dissociation of the two notions of form and act. This is precisely what he has done and what probably remains, even today, the greatest contribution ever made by any single man to the science of being.</p><p>Supreme in their own order, substantial forms remain the prime acts of their substances, but, though there be no form of the form, there is an act of the form. In other words, the form is such an act as still remains in potency to another act, namely, existence.</p><div class="cr-cite">Étienne Gilson, Being and Some Philosophers, 2nd ed. (Toronto: PIMS, 1952), ch. V, pp. 174-175 · verified against the Internet Archive scan</div></div><br>What is Gilson claiming for Aquinas?`,
           payload: {
@@ -533,7 +533,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l3-q3`,
+          id: `m18-l3-q3`,
           type: "mcq",
           stem: `Gilson again: finite essences 'entail both limitation and determination, because each of them is the formal delimitation of a possible being' (Being and Some Philosophers, 2nd ed., pp. 183-184). On the existential reading, what is essence?`,
           payload: {
@@ -567,7 +567,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l3-q4`,
+          id: `m18-l3-q4`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>On the existential reading, essence is nothing at all.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
           payload: {
@@ -601,7 +601,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l3-q5`,
+          id: `m18-l3-q5`,
           type: "mcq",
           stem: `Gilson aimed the reading at a real enemy: centuries of philosophy that treated being as a catalogue of definable essences, with existence as a stamp at the bottom of the page. 'God knows essences, but He says existences' (Being and Some Philosophers, 2nd ed., ch. V). What is the reading guarding?`,
           payload: {
@@ -635,7 +635,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l3-q6`,
+          id: `m18-l3-q6`,
           type: "mcq",
           stem: `Close the case for the objectors. Which sentence states the existential thesis exactly?`,
           latin_tag: `actus omnium actuum`,
@@ -674,7 +674,7 @@ export const m18: ModuleMeta = {
       ],
     },
     {
-      id: `m17-l4`,
+      id: `m18-l4`,
       num: `IV`,
       title: `The Disputation: Objections`,
       latin: `videtur quod`,
@@ -686,7 +686,7 @@ export const m18: ModuleMeta = {
       },
       questions: [
         {
-          id: `m17-l4-q1`,
+          id: `m18-l4-q1`,
           type: "mcq",
           stem: `<span class="lat">Videtur quod</span>, 'it seems that': a disputation opens with the case against the position to be defended, stated at its strongest. Why?`,
           payload: {
@@ -720,7 +720,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l4-q2`,
+          id: `m18-l4-q2`,
           type: "syllogism_builder",
           stem: `Build the first existential objection in proper form, as the objector would build it. Place each statement in its role: universal premise, particular premise, conclusion.`,
           payload: {
@@ -750,7 +750,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l4-q3`,
+          id: `m18-l4-q3`,
           type: "dialogue_branch",
           stem: `The second objection must come from Aquinas's own pen. Give the Commentator the strong one.`,
           payload: {
@@ -777,7 +777,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l4-q4`,
+          id: `m18-l4-q4`,
           type: "mcq",
           stem: `The third objection argues from images: 'The surface of a pond is perfectly real, yet it is not a second pond. Why must the limit of esse be a second principle?' What gives this objection its force?`,
           payload: {
@@ -811,7 +811,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l4-q5`,
+          id: `m18-l4-q5`,
           type: "mcq",
           stem: `Three objections stand: nothing-apart, the act of all acts, the boundary. The disputation turns. What must the <span class="lat">respondeo</span> ('I answer') do to win?`,
           latin_tag: `videtur quod`,
@@ -850,7 +850,7 @@ export const m18: ModuleMeta = {
       ],
     },
     {
-      id: `m17-l5`,
+      id: `m18-l5`,
       num: `V`,
       title: `The Disputation: Replies`,
       latin: `respondeo`,
@@ -862,7 +862,7 @@ export const m18: ModuleMeta = {
       },
       questions: [
         {
-          id: `m17-l5-q1`,
+          id: `m18-l5-q1`,
           type: "mcq",
           stem: `Return to De potentia q.7 a.2 ad 9. The objectors quoted its first half. The same reply continues: <span class="lat">non sic determinatur esse per aliud sicut potentia per actum, sed magis sicut actus per potentiam</span>, 'esse is not determined by another as potency by act, but rather as act by potency.' What has happened?`,
           payload: {
@@ -896,7 +896,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l5-q2`,
+          id: `m18-l5-q2`,
           type: "dialogue_branch",
           stem: `The first objection returns for its answer. Distinguish.`,
           payload: {
@@ -923,7 +923,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l5-q3`,
+          id: `m18-l5-q3`,
           type: "precision_check",
           stem: `A summary you might hear from a sympathetic student: <em>"The strict line answers Gilson by showing that essences exist before they receive esse."</em> What is wrong with it?`,
           payload: {
@@ -959,7 +959,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l5-q4`,
+          id: `m18-l5-q4`,
           type: "mcq",
           stem: `The pond surface returns: 'a limit need not be a thing.' The strict line answers with a question of its own: what makes <em>this</em> esse finite, and this-much rather than that-much? Why does the boundary picture fail?`,
           payload: {
@@ -993,7 +993,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l5-q5`,
+          id: `m18-l5-q5`,
           type: "mcq",
           stem: `Gilson himself wrote that the act of existing 'is what enables essence to act as a formal cause, and to make actual being to be such a being' (Being and Some Philosophers, 2nd ed., pp. 173-174). The strict line underlines the sentence. Why?`,
           payload: {
@@ -1027,7 +1027,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l5-q6`,
+          id: `m18-l5-q6`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>By calling essence a real positive potency, the strict line makes it a second act beside esse.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
           latin_tag: `respondeo`,
@@ -1066,7 +1066,7 @@ export const m18: ModuleMeta = {
       ],
     },
     {
-      id: `m17-l6`,
+      id: `m18-l6`,
       num: `VI`,
       title: `The Verdict and the Cost`,
       latin: `esse ut actus`,
@@ -1078,7 +1078,7 @@ export const m18: ModuleMeta = {
       },
       questions: [
         {
-          id: `m17-l6-q1`,
+          id: `m18-l6-q1`,
           type: "mcq",
           stem: `Verdicts need criteria. The course finds for the strict line. Which criterion does the heaviest work?`,
           payload: {
@@ -1112,7 +1112,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l6-q2`,
+          id: `m18-l6-q2`,
           type: "mcq",
           stem: `Name the casualty. If essence is only esse's self-limitation, which structure fails first?`,
           payload: {
@@ -1146,7 +1146,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l6-q3`,
+          id: `m18-l6-q3`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>The existential reading was an enemy of Thomism.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
           payload: {
@@ -1180,7 +1180,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l6-q4`,
+          id: `m18-l6-q4`,
           type: "mcq",
           stem: `Worthy opponents leave gifts. What does the strict line keep from the existential reading?`,
           payload: {
@@ -1214,7 +1214,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l6-q5`,
+          id: `m18-l6-q5`,
           type: "mcq",
           stem: `After the verdict, the formed Thomist holds a posture. Which sentence states it?`,
           payload: {
@@ -1248,7 +1248,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l6-q6`,
+          id: `m18-l6-q6`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>Winning this disputation costs the strict line nothing.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
           latin_tag: `esse ut actus`,
@@ -1287,7 +1287,7 @@ export const m18: ModuleMeta = {
       ],
     },
     {
-      id: `m17-l7`,
+      id: `m18-l7`,
       num: `VII`,
       title: `Recapitulatio Totius Cursus`,
       latin: `recapitulatio`,
@@ -1299,7 +1299,7 @@ export const m18: ModuleMeta = {
       },
       questions: [
         {
-          id: `m17-l7-q1`,
+          id: `m18-l7-q1`,
           type: "match_pair",
           stem: `Six images carried the course. Pair each with the principle it taught. <em>Tap an image, then tap its principle. Tap a paired item to release it.</em>`,
           payload: {
@@ -1389,7 +1389,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l7-q2`,
+          id: `m18-l7-q2`,
           type: "mcq",
           stem: `One sentence has carried more weight with every module. Which is it, stated whole?`,
           payload: {
@@ -1423,7 +1423,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l7-q3`,
+          id: `m18-l7-q3`,
           type: "fill_blank",
           stem: `Complete the course's master key one last time. <em>Tap a term from the bank to fill each blank.</em><br><br><span style="font-family:'Fraunces',serif; font-size:18px; line-height:1.7; padding:14px 0; display:inline-block;"><em>Esse</em> is the act of all <span class="fb-blank" data-blank="b1">______</span>; the essence that receives it is real <span class="fb-blank" data-blank="b2">______</span>, not a shadow and not a boundary; and in <span class="fb-blank" data-blank="b3">______</span> alone essence and esse are identical.</span>`,
           payload: {
@@ -1472,7 +1472,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l7-q4`,
+          id: `m18-l7-q4`,
           type: "mcq",
           stem: `Why does the course end at a debate rather than at a new doctrine?`,
           payload: {
@@ -1506,7 +1506,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l7-q5`,
+          id: `m18-l7-q5`,
           type: "match_pair",
           stem: `The debate kept its own images. Pair each with what it stood for. <em>Tap an image, then tap its meaning. Tap a paired item to release it.</em>`,
           payload: {
@@ -1572,7 +1572,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l7-q6`,
+          id: `m18-l7-q6`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>Completing this course makes you a master of St. Thomas.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
           payload: {
@@ -1606,7 +1606,7 @@ export const m18: ModuleMeta = {
           },
         },
         {
-          id: `m17-l7-q7`,
+          id: `m18-l7-q7`,
           type: "mcq",
           stem: `Last question of the course. Where do you go from here?`,
           latin_tag: `recapitulatio`,
@@ -1617,7 +1617,7 @@ export const m18: ModuleMeta = {
               {
                 "id": "a",
                 "label": "Respondeo:",
-                "text": "Back to Module 0, in an endless loop.",
+                "text": "Back to Module 1, in an endless loop.",
                 "feedback": "The doors you opened stay open; there is no need to live in the hallway. Recapitulation is for owning the road, not for walking it forever."
               },
               {

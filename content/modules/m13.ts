@@ -7,7 +7,7 @@ export const m13: ModuleMeta = {
   label: `Module 13 · Natural Law`,
   lessons: [
     {
-      id: `m12-l1`,
+      id: `m13-l1`,
       num: `I`,
       title: `Actus Humanus / Actus Hominis`,
       latin: `actus humanus · actus hominis`,
@@ -19,7 +19,7 @@ export const m13: ModuleMeta = {
       },
       questions: [
         {
-          id: `m12-l1-q1`,
+          id: `m13-l1-q1`,
           type: "mcq",
           stem: `A man, falling asleep at his desk, knocks over a coffee cup. Another man, frustrated by a meeting, deliberately knocks over a coffee cup. Aquinas distinguishes <em>actus humanus</em> — a deliberate human act, willed through reason — from <em>actus hominis</em> — an act <em>of</em> a man, performed without deliberation (a reflex, a motion in sleep, an autonomic stir). Which is which?`,
           payload: {
@@ -47,7 +47,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l1-q2`,
+          id: `m13-l1-q2`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE — every act performed by a human being is a <em>human act</em> in Aquinas's technical sense. Pick the correct judgment <em>and</em> the best reason.`,
           payload: {
@@ -82,7 +82,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l1-q3`,
+          id: `m13-l1-q3`,
           type: "distinction_application",
           stem: `Which of the following is <em>actus humanus</em> — a deliberate act fully attributable to the agent?`,
           payload: {
@@ -116,7 +116,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l1-q4`,
+          id: `m13-l1-q4`,
           type: "close_reading",
           stem: `<div class="cr-passage"><p>Of actions done by man those alone are properly called &ldquo;human,&rdquo; which are proper to man as man. Now man differs from irrational animals in this, that he is master of his actions. Wherefore those actions alone are properly called human, of which man is master. Now man is master of his actions through his reason and will; whence, too, the free-will is defined as &ldquo;the faculty and will of reason.&rdquo; Therefore those actions are properly called human which proceed from a deliberate will.</p><div class="cr-cite">ST I-II q. 1 a. 1, <em>respondeo</em></div></div><br>Which of these statements best captures Aquinas's argument in the passage?`,
           payload: {
@@ -150,7 +150,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l1-q5`,
+          id: `m13-l1-q5`,
           type: "mcq",
           stem: `A surgeon, mid-operation, reflexively flinches at a loud noise but completes the cut without harm. Which statement is true?`,
           payload: {
@@ -178,7 +178,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l1-q6`,
+          id: `m13-l1-q6`,
           type: "mcq",
           stem: `Which sentence uses <em>actus humanus</em> and <em>actus hominis</em> correctly?`,
           payload: {
@@ -208,7 +208,7 @@ export const m13: ModuleMeta = {
       ],
     },
     {
-      id: `m12-l2`,
+      id: `m13-l2`,
       num: `II`,
       title: `The Three Sources of Morality`,
       latin: `fontes moralitatis`,
@@ -220,7 +220,7 @@ export const m13: ModuleMeta = {
       },
       questions: [
         {
-          id: `m12-l2-q1`,
+          id: `m13-l2-q1`,
           type: "mcq",
           stem: `A man steals to feed his family. The act of theft has which moral character, evaluated through the <em>fontes moralitatis</em>?`,
           payload: {
@@ -248,7 +248,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l2-q2`,
+          id: `m13-l2-q2`,
           type: "distinction_application",
           stem: `For each scenario, which <em>fons moralitatis</em> is most decisively out of order? Pick the example whose <em>intentio finis</em> (the agent's intended end) is the source of disorder.`,
           payload: {
@@ -282,7 +282,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l2-q3`,
+          id: `m13-l2-q3`,
           type: "syllogism_builder",
           stem: `Construct the practical syllogism. Place each element in its correct role — universal premise, particular premise, conclusion-as-action.`,
           payload: {
@@ -312,7 +312,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l2-q4`,
+          id: `m13-l2-q4`,
           type: "dialogue_branch",
           stem: `A friend pushes back on the three sources. How do you answer?`,
           payload: {
@@ -341,7 +341,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l2-q5`,
+          id: `m13-l2-q5`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>&ldquo;A morally indifferent act is one whose object, end, and circumstances are all neutral.&rdquo;</em> Pick judgment <em>and</em> best reason.`,
           payload: {
@@ -375,7 +375,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l2-q6`,
+          id: `m13-l2-q6`,
           type: "mcq",
           stem: `Which axiom captures the structure of moral evaluation according to the <em>fontes moralitatis</em>?`,
           payload: {
@@ -403,7 +403,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l2-q7`,
+          id: `m13-l2-q7`,
           type: "mcq",
           stem: `Match the three sources of morality to their Latin terms.`,
           payload: {
@@ -433,7 +433,7 @@ export const m13: ModuleMeta = {
       ],
     },
     {
-      id: `m12-l3`,
+      id: `m13-l3`,
       num: `III`,
       title: `The Practical Syllogism and Synderesis`,
       latin: `synderesis · bonum est faciendum`,
@@ -445,7 +445,7 @@ export const m13: ModuleMeta = {
       },
       questions: [
         {
-          id: `m12-l3-q1`,
+          id: `m13-l3-q1`,
           type: "close_reading",
           stem: `<div class="cr-passage"><p>Now a certain order is to be found in those things that are apprehended universally. For that which, before aught else, falls under apprehension, is &ldquo;being,&rdquo; the notion of which is included in all things whatsoever a man apprehends. Wherefore the first indemonstrable principle is that &ldquo;the same thing cannot be affirmed and denied at the same time,&rdquo; which is based on the notion of &ldquo;being&rdquo; and &ldquo;not-being&rdquo;: and on this principle all others are based. Now as &ldquo;being&rdquo; is the first thing that falls under the apprehension simply, so &ldquo;good&rdquo; is the first thing that falls under the apprehension of the practical reason, which is directed to action: since every agent acts for an end under the aspect of good. Consequently the first principle of practical reason is one founded on the notion of good, viz. that &ldquo;good is that which all things seek after.&rdquo; Hence this is the first precept of law, that &ldquo;good is to be done and pursued, and evil is to be avoided.&rdquo;</p><div class="cr-cite">ST I-II q. 94 a. 2, <em>respondeo</em></div></div><br>Which best captures the analogy Aquinas is drawing?`,
           payload: {
@@ -473,7 +473,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l3-q2`,
+          id: `m13-l3-q2`,
           type: "syllogism_builder",
           stem: `A young woman is at a stranger's door. She hears a child crying inside. She has no obligation to enter, but she does. Reconstruct the practical syllogism that ran through her mind in roughly the form Aquinas would render it.`,
           payload: {
@@ -503,7 +503,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l3-q3`,
+          id: `m13-l3-q3`,
           type: "mcq",
           stem: `<em>Synderesis</em> is best described as…`,
           payload: {
@@ -537,7 +537,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l3-q4`,
+          id: `m13-l3-q4`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>Synderesis can err.</em> Pick judgment <em>and</em> best reason.`,
           payload: {
@@ -571,7 +571,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l3-q5`,
+          id: `m13-l3-q5`,
           type: "distinction_application",
           stem: `Which of the following is at the level of <em>synderesis</em> — pure first principle, not an application to a case?`,
           payload: {
@@ -605,7 +605,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l3-q6`,
+          id: `m13-l3-q6`,
           type: "mcq",
           stem: `<em>Bonum est faciendum et prosequendum, malum vitandum</em> is best translated as…`,
           payload: {
@@ -635,7 +635,7 @@ export const m13: ModuleMeta = {
       ],
     },
     {
-      id: `m12-l4`,
+      id: `m13-l4`,
       num: `IV`,
       title: `Conscientia — the Binding Judgment`,
       latin: `conscientia`,
@@ -647,7 +647,7 @@ export const m13: ModuleMeta = {
       },
       questions: [
         {
-          id: `m12-l4-q1`,
+          id: `m13-l4-q1`,
           type: "close_reading",
           stem: `<div class="cr-passage"><p>And since the object of the will is that which is proposed by the reason, as stated above, from the very fact that a thing is proposed by the reason as being evil, the will by tending thereto becomes evil. And this is the case not only in indifferent matters, but also in those that are good or evil in themselves. For not only indifferent matters can receive the character of goodness or malice accidentally; but also that which is good, can receive the character of evil, or that which is evil, can receive the character of goodness, on account of the reason apprehending it as such. For instance, to refrain from fornication is good: yet the will does not tend to this good except in so far as it is proposed by the reason. If, therefore, the erring reason propose it as an evil, the will tends to it as to something evil. Consequently the will is evil, because it wills evil, not indeed that which is evil in itself, but that which is evil accidentally, through being apprehended as such by the reason. We must therefore conclude that, absolutely speaking, every will at variance with reason, whether right or erring, is always evil.</p><div class="cr-cite">ST I-II q. 19 a. 5, <em>respondeo</em></div></div><br>Which reading is closest to Aquinas's argument?`,
           payload: {
@@ -675,7 +675,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l4-q2`,
+          id: `m13-l4-q2`,
           type: "dialogue_branch",
           stem: `A friend invokes conscience as the end of the argument. How do you respond?`,
           payload: {
@@ -704,7 +704,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l4-q3`,
+          id: `m13-l4-q3`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>&ldquo;A vincibly erroneous conscience excuses the agent from moral responsibility.&rdquo;</em> Pick judgment <em>and</em> best reason.`,
           payload: {
@@ -738,7 +738,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l4-q4`,
+          id: `m13-l4-q4`,
           type: "distinction_application",
           stem: `Which scenario describes a <em>vincibly erroneous</em> conscience — one whose error is the agent's own fault?`,
           payload: {
@@ -772,7 +772,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l4-q5`,
+          id: `m13-l4-q5`,
           type: "mcq",
           stem: `Which axiom captures the relationship between <em>synderesis</em> and <em>conscientia</em>?`,
           payload: {
@@ -800,7 +800,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l4-q6`,
+          id: `m13-l4-q6`,
           type: "close_reading",
           stem: `<div class="cr-passage"><p>If then reason or conscience err with an error that is involuntary, either directly or through negligence, so that one errs about what one ought to know; then such an error of reason or conscience does not excuse the will, that abides by that erring reason or conscience, from being evil. But if the error arise from ignorance of some circumstance, and without any negligence, so that it cause the act to be involuntary, then that error of reason or conscience excuses the will, that abides by that erring reason, from being evil.</p><div class="cr-cite">ST I-II q. 19 a. 6, <em>respondeo</em></div></div><br>What is Aquinas's <em>qualified</em> answer?`,
           payload: {
@@ -828,7 +828,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l4-q7`,
+          id: `m13-l4-q7`,
           type: "mcq",
           stem: `Which best captures the Thomistic position on conscience?`,
           payload: {
@@ -858,7 +858,7 @@ export const m13: ModuleMeta = {
       ],
     },
     {
-      id: `m12-l5`,
+      id: `m13-l5`,
       num: `V`,
       title: `The Fourfold Law`,
       latin: `lex aeterna · naturalis · humana · divina positiva`,
@@ -870,7 +870,7 @@ export const m13: ModuleMeta = {
       },
       questions: [
         {
-          id: `m12-l5-q1`,
+          id: `m13-l5-q1`,
           type: "close_reading",
           stem: `<div class="cr-passage"><p>As stated above, a law is imposed on others by way of a rule and measure. Now a rule or measure is imposed by being applied to those who are to be ruled and measured by it. Wherefore, in order that a law obtain the binding force which is proper to a law, it must needs be applied to the men who have to be ruled by it. Such application is made by its being notified to them by promulgation. Wherefore promulgation is necessary for the law to obtain its force.</p><p>Thus from the four preceding articles, the definition of law may be gathered; and it is nothing else than an ordinance of reason for the common good, made by him who has care of the community, and promulgated.</p><div class="cr-cite">ST I-II q. 90 a. 4, <em>respondeo</em></div></div><br>Aquinas's definition of law gathers four elements. Which of these is <em>not</em> one of them?`,
           payload: {
@@ -904,7 +904,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l5-q2`,
+          id: `m13-l5-q2`,
           type: "match_pair",
           stem: `Four kinds of law in Aquinas. Match each kind to its definition.`,
           payload: {
@@ -970,7 +970,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l5-q3`,
+          id: `m13-l5-q3`,
           type: "distinction_application",
           stem: `Each of these statements operates in the register of one of the four laws — sometimes more than one. <em>(i)</em> &ldquo;Goods of the body should be preserved.&rdquo; <em>(ii)</em> &ldquo;Speed limits in school zones are 25 mph.&rdquo; <em>(iii)</em> &ldquo;Honor your father and mother.&rdquo; <em>(iv)</em> &ldquo;God's plan directs all things to their proper ends.&rdquo; Which assignment is correct?`,
           payload: {
@@ -1004,7 +1004,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l5-q4`,
+          id: `m13-l5-q4`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>&ldquo;A human law contrary to the natural law binds in conscience.&rdquo;</em> Pick judgment <em>and</em> best reason.`,
           payload: {
@@ -1038,7 +1038,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l5-q5`,
+          id: `m13-l5-q5`,
           type: "mcq",
           stem: `Why must there be a <span class="lat-inline">lex divina positiva</span> in addition to the natural law?`,
           payload: {
@@ -1072,7 +1072,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l5-q6`,
+          id: `m13-l5-q6`,
           type: "mcq",
           stem: `Which axiom best captures the relationship between <em>natural</em> law and <em>eternal</em> law?`,
           payload: {
@@ -1081,7 +1081,7 @@ export const m13: ModuleMeta = {
               id: `a`,
               text: `<span class="lat-inline">Lex naturalis nihil aliud est quam participatio legis aeternae in rationali creatura</span> — Natural law is nothing other than the rational creature's participation in the eternal.`,
               correct: undefined,
-              feedback: `Yes — and notice the Latin: <span class="lat-inline">nihil aliud quam</span>, &lsquo;nothing other than.&rsquo; Aquinas is not saying natural law <em>resembles</em> eternal law, or <em>derives from</em> it. Natural law simply <em>is</em> the rational creature's participation in eternal law — the eternal law as the rational creature reads it from within its own nature. Lose this, and the four laws lose their nesting; hold this, and Module 12's Thomistic political philosophy stands.`,
+              feedback: `Yes — and notice the Latin: <span class="lat-inline">nihil aliud quam</span>, &lsquo;nothing other than.&rsquo; Aquinas is not saying natural law <em>resembles</em> eternal law, or <em>derives from</em> it. Natural law simply <em>is</em> the rational creature's participation in eternal law — the eternal law as the rational creature reads it from within its own nature. Lose this, and the four laws lose their nesting; hold this, and Module 13's Thomistic political philosophy stands.`,
             },
             {
               id: `b`,
@@ -1108,7 +1108,7 @@ export const m13: ModuleMeta = {
       ],
     },
     {
-      id: `m12-l6`,
+      id: `m13-l6`,
       num: `VI`,
       title: `Natural Law in Detail`,
       latin: `prima principia · praecepta secundaria`,
@@ -1120,7 +1120,7 @@ export const m13: ModuleMeta = {
       },
       questions: [
         {
-          id: `m12-l6-q1`,
+          id: `m13-l6-q1`,
           type: "distinction_application",
           stem: `Aquinas distinguishes <em>three orders of natural inclination</em> in ST I-II q. 94 a. 2: <em>first</em>, what we share with all substances (e.g., self-preservation); <em>second</em>, what we share with other animals (e.g., procreation, care of offspring); <em>third</em>, what is proper to rational creatures (e.g., seeking truth, living in political community). For each, identify which order it belongs to: <em>(i)</em> preserving one's own life; <em>(ii)</em> raising children; <em>(iii)</em> seeking truth about God; <em>(iv)</em> living in political society.`,
           payload: {
@@ -1154,7 +1154,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l6-q2`,
+          id: `m13-l6-q2`,
           type: "close_reading",
           stem: `<div class="cr-passage"><p>As stated above, to the natural law belongs those things to which a man is inclined naturally: and among these it is proper to man to be inclined to act according to reason. Now the process of reason is from the common to the proper. The practical reason, on the other hand, is busied with contingent matters, about which human actions are concerned: and consequently, although there is necessity in the general principles, the more we descend to matters of detail, the more frequently we encounter defects. Accordingly then in speculative matters truth is the same in all men, both as to principles and as to conclusions. But in matters of action, truth or practical rectitude is not the same for all, as to matters of detail, but only as to the general principles: and where there is the same rectitude in matters of detail, it is not equally known to all.</p><p>It is therefore evident that, as regards the general principles whether of speculative or of practical reason, truth or rectitude is the same for all, and is equally known by all. But as to the proper conclusions of the practical reason, neither is the truth or rectitude the same for all, nor, where it is the same, is it equally known by all.</p><p>Consequently we must say that the natural law, as to general principles, is the same for all, both as to rectitude and as to knowledge. But as to certain matters of detail, which are conclusions, as it were, of those general principles, it is the same for all in the majority of cases, both as to rectitude and as to knowledge; and yet in some few cases it may fail, both as to rectitude, by reason of certain obstacles, and as to knowledge, since in some the reason is perverted by passion, or evil habit, or an evil disposition of nature; thus formerly, theft, although it is expressly contrary to the natural law, was not considered wrong among the Germans, as Julius Caesar relates.</p><div class="cr-cite">ST I-II q. 94 a. 4, <em>respondeo</em></div></div><br>What is Aquinas's <em>qualified</em> answer to whether the natural law is the same in all?`,
           payload: {
@@ -1188,7 +1188,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l6-q3`,
+          id: `m13-l6-q3`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>&ldquo;The natural law can change.&rdquo;</em> Pick judgment <em>and</em> best reason.`,
           payload: {
@@ -1222,7 +1222,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l6-q4`,
+          id: `m13-l6-q4`,
           type: "dialogue_branch",
           stem: `A friend pulls you into a coffee-shop argument. How do you answer?`,
           payload: {
@@ -1251,7 +1251,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l6-q5`,
+          id: `m13-l6-q5`,
           type: "mcq",
           stem: `Why are some <em>secondary</em> precepts of the natural law obscured in this or that culture, while the <em>primary</em> precepts are not?`,
           payload: {
@@ -1285,7 +1285,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l6-q6`,
+          id: `m13-l6-q6`,
           type: "mcq",
           stem: `Which best captures the structure of the natural law as Aquinas develops it in ST I-II q. 94?`,
           payload: {
@@ -1321,21 +1321,21 @@ export const m13: ModuleMeta = {
       ],
     },
     {
-      id: `m12-l7`,
+      id: `m13-l7`,
       num: `VII`,
       title: `Capstone — A Hard Case`,
       latin: `Distinguo`,
       tag: `Distinguo`,
       fin: {
         tag: `Distinguo`,
-        heading: `Module 12 complete.`,
+        heading: `Module 13 complete.`,
         body: `You can now take a hard moral case and unpack it through the <em>fontes moralitatis</em>, <em>synderesis</em>/<em>conscientia</em>, the practical syllogism, and the fourfold law — without confusing the object with the intention.`,
       },
       questions: [
         {
-          id: `m12-l7-q1`,
+          id: `m13-l7-q1`,
           type: "distinction_application",
-          stem: `A doctor faces this case: a terminally ill patient, in significant pain, repeatedly asks for a lethal dose. The doctor refuses. Which Module 12 distinctions are doing the moral work in the doctor's refusal?`,
+          stem: `A doctor faces this case: a terminally ill patient, in significant pain, repeatedly asks for a lethal dose. The doctor refuses. Which Module 13 distinctions are doing the moral work in the doctor's refusal?`,
           payload: {
             "options": [
               {
@@ -1367,7 +1367,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l7-q2`,
+          id: `m13-l7-q2`,
           type: "close_reading",
           stem: `<div class="cr-passage"><p>An individual man may be considered in two ways: first, in himself; secondly, in relation to something else. If we consider a man in himself, it is unlawful to kill any man, since in every man though he be sinful, we ought to love the nature which God has made, and which is destroyed by slaying him. Nevertheless, as stated above, the slaying of a sinner becomes lawful in relation to the common good, which is corrupted by sin. On the other hand the life of righteous men preserves and forwards the common good, since they are the chief part of the community. Therefore it is in no way lawful to slay the innocent.</p><div class="cr-cite">ST II-II q. 64 a. 6, <em>respondeo</em></div></div><br>What is the load-bearing claim in the final sentence — &lsquo;Therefore it is in no way lawful to slay the innocent&rsquo;?`,
           payload: {
@@ -1401,7 +1401,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l7-q3`,
+          id: `m13-l7-q3`,
           type: "syllogism_builder",
           stem: `Construct the practical syllogism the doctor's <span class="lat-inline">synderesis</span> and <span class="lat-inline">conscientia</span> run together in the lethal-dose case.`,
           payload: {
@@ -1431,7 +1431,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l7-q4`,
+          id: `m13-l7-q4`,
           type: "dialogue_branch",
           stem: `A friend, reading over your shoulder, presses you with the hardest version of the question. How do you answer?`,
           payload: {
@@ -1460,7 +1460,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l7-q5`,
+          id: `m13-l7-q5`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>&ldquo;In a case where conscience genuinely judges X to be obligatory and X is in fact intrinsically evil, the agent is fully exonerated by following conscience.&rdquo;</em> Pick judgment <em>and</em> best reason.`,
           payload: {
@@ -1494,7 +1494,7 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l7-q6`,
+          id: `m13-l7-q6`,
           type: "distinction_application",
           stem: `In the doctor's reasoning — which holds that intentional killing of an innocent is wrong even with mercy as motive — which kind of law is doing the most work?`,
           payload: {
@@ -1528,22 +1528,22 @@ export const m13: ModuleMeta = {
           },
         },
         {
-          id: `m12-l7-q7`,
+          id: `m13-l7-q7`,
           type: "mcq",
-          stem: `After Module 12, you can now do which of the following that you could not do before?`,
+          stem: `After Module 13, you can now do which of the following that you could not do before?`,
           payload: {
             options: [
             {
               id: `a`,
               text: `Unpack a hard moral case through <span class="lat-inline">fontes moralitatis</span>, <span class="lat-inline">conscientia</span>, the practical syllogism, and the fourfold law.`,
               correct: undefined,
-              feedback: `Yes. <span class="lat-inline">Distinguo</span> — the whole tradition's defense against bad reasoning, in one Latin verb. After Module 12 you can take a hard moral case and run it through the actual apparatus: <span class="lat-inline">fontes moralitatis</span> (object, intention, circumstances) holds the act apart from its outcomes; <span class="lat-inline">synderesis</span>/<span class="lat-inline">conscientia</span> holds the principles apart from their applications; the practical syllogism holds the universal apart from the particular and the conclusion (which is an act); the fourfold law holds the registers apart so the right kind of reason can do the right kind of work. None of this is ornamental. Every hard moral question — yours, your children's, the polity's — runs on rails this module just laid down. Use them carefully.`,
+              feedback: `Yes. <span class="lat-inline">Distinguo</span> — the whole tradition's defense against bad reasoning, in one Latin verb. After Module 13 you can take a hard moral case and run it through the actual apparatus: <span class="lat-inline">fontes moralitatis</span> (object, intention, circumstances) holds the act apart from its outcomes; <span class="lat-inline">synderesis</span>/<span class="lat-inline">conscientia</span> holds the principles apart from their applications; the practical syllogism holds the universal apart from the particular and the conclusion (which is an act); the fourfold law holds the registers apart so the right kind of reason can do the right kind of work. None of this is ornamental. Every hard moral question — yours, your children's, the polity's — runs on rails this module just laid down. Use them carefully.`,
             },
             {
               id: `b`,
-              text: `Settle any case by intuition alone — Module 12 has trained the <span class="lat-inline">habitus</span> sufficiently.`,
+              text: `Settle any case by intuition alone — Module 13 has trained the <span class="lat-inline">habitus</span> sufficiently.`,
               correct: undefined,
-              feedback: `You skipped the apparatus. Module 12 trained intuition only insofar as it trained <em>distinction-making</em> — and distinctions are not intuitions; they are precise tools for cases where intuition alone would slip. The Thomistic answer to a hard case is not &lsquo;trust your gut&rsquo; but <span class="lat-inline">distinguo</span>: separate object from intention, circumstance from object, principle from application. The apparatus is the gain.`,
+              feedback: `You skipped the apparatus. Module 13 trained intuition only insofar as it trained <em>distinction-making</em> — and distinctions are not intuitions; they are precise tools for cases where intuition alone would slip. The Thomistic answer to a hard case is not &lsquo;trust your gut&rsquo; but <span class="lat-inline">distinguo</span>: separate object from intention, circumstance from object, principle from application. The apparatus is the gain.`,
             },
             {
               id: `c`,
@@ -1555,7 +1555,7 @@ export const m13: ModuleMeta = {
               id: `d`,
               text: `Apply <span class="lat-inline">lex</span> mechanically without weighing object, intention, or circumstance.`,
               correct: undefined,
-              feedback: `This loses everything Module 12 was built to add. The doctor's case turned precisely on <em>not</em> applying <span class="lat-inline">lex</span> mechanically — on holding object, intention, and circumstance distinct so each could do its proper work. Mechanical rule-following is the deformation of natural-law reasoning, not its product.`,
+              feedback: `This loses everything Module 13 was built to add. The doctor's case turned precisely on <em>not</em> applying <span class="lat-inline">lex</span> mechanically — on holding object, intention, and circumstance distinct so each could do its proper work. Mechanical rule-following is the deformation of natural-law reasoning, not its product.`,
             }
             ],
             correct_option_id: `a`,

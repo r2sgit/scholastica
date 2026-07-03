@@ -9,7 +9,7 @@ export const m3: ModuleMeta = {
   aim: `Esse (the act of being) and essentia (essence) are really distinct in creatures. Esse is act; essentia is the potency that receives and limits it. In God they are identical.`,
   lessons: [
     {
-      id: `m2-l1`,
+      id: `m3-l1`,
       num: `I`,
       title: `The Two Questions Return`,
       latin: `essentia  ·  esse`,
@@ -21,7 +21,7 @@ export const m3: ModuleMeta = {
       },
       questions: [
         {
-          id: `m2-l1-q1`,
+          id: `m3-l1-q1`,
           type: "mcq",
           stem: `An apple sits on a table. Two facts about it: it is an apple, and it is. Are those the same fact?`,
           payload: {
@@ -55,7 +55,7 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l1-q2`,
+          id: `m3-l1-q2`,
           type: "mcq",
           stem: `You know exactly what a unicorn is: one horn, four hooves, the whole portrait. Has knowing all that told you whether any unicorn exists?`,
           payload: {
@@ -89,7 +89,7 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l1-q3`,
+          id: `m3-l1-q3`,
           type: "mcq",
           stem: `The two principles have names. Which pairing is correct?`,
           payload: {
@@ -98,7 +98,7 @@ export const m3: ModuleMeta = {
                 "id": "a",
                 "label": "Respondeo:",
                 "text": "<span class=\"lat\">essentia</span> is the act by which a thing is; <span class=\"lat\">esse</span> is what it is.",
-                "feedback": "Inverted. <span class=\"lat\">Esse</span> is the act of being, the answer to whether; <span class=\"lat\">essentia</span> is the what. Swap them back and the grid from Module 1 clicks into place."
+                "feedback": "Inverted. <span class=\"lat\">Esse</span> is the act of being, the answer to whether; <span class=\"lat\">essentia</span> is the what. Swap them back and the grid from Module 2 clicks into place."
               },
               {
                 "id": "b",
@@ -123,7 +123,7 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l1-q4`,
+          id: `m3-l1-q4`,
           type: "distinction_application",
           stem: `The dodo. Its essence is thoroughly known: anatomists can describe it bone by bone. Since 1681, no dodo has existed. What does the case show?`,
           payload: {
@@ -157,7 +157,7 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l1-q5`,
+          id: `m3-l1-q5`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>In a creature, <span class="lat">esse</span> is one part of the essence, the way wings are part of a bird.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
           latin_tag: `essentia  ·  esse`,
@@ -196,7 +196,7 @@ export const m3: ModuleMeta = {
       ],
     },
     {
-      id: `m2-l2`,
+      id: `m3-l2`,
       num: `II`,
       title: `Composition`,
       latin: `compositio`,
@@ -208,7 +208,7 @@ export const m3: ModuleMeta = {
       },
       questions: [
         {
-          id: `m2-l2-q1`,
+          id: `m3-l2-q1`,
           type: "mcq",
           stem: `Could there be a creature with no unrealized capacities at all, nothing it could still become, lose, or undergo?`,
           payload: {
@@ -217,7 +217,7 @@ export const m3: ModuleMeta = {
                 "id": "a",
                 "label": "Respondeo:",
                 "text": "Yes. A perfect creature would have outgrown all its capacities.",
-                "feedback": "A creature with no potency left would be pure act, and pure act is not a rank a creature reaches. It is what Module 1's argument reserved for the unmoved mover alone."
+                "feedback": "A creature with no potency left would be pure act, and pure act is not a rank a creature reaches. It is what Module 2's argument reserved for the unmoved mover alone."
               },
               {
                 "id": "b",
@@ -242,7 +242,7 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l2-q2`,
+          id: `m3-l2-q2`,
           type: "mcq",
           stem: `A finite being has unrealized capacities: it could change, develop, be affected. This shows it is...`,
           payload: {
@@ -276,7 +276,7 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l2-q3`,
+          id: `m3-l2-q3`,
           type: "mcq",
           stem: `Three kinds of composition: matter/form, substance/accident, <span class="lat">esse</span>/<span class="lat">essentia</span>. Which is most fundamental?`,
           payload: {
@@ -310,7 +310,7 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l2-q4`,
+          id: `m3-l2-q4`,
           type: "match_pair",
           stem: `Match each term to its role. <em>Tap a term, then tap its description. Tap a paired item to release it.</em>`,
           payload: {
@@ -397,7 +397,7 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l2-q5`,
+          id: `m3-l2-q5`,
           type: "syllogism_builder",
           stem: `Construct the composition argument. Place each statement in its correct role: universal premise, particular premise, conclusion.`,
           latin_tag: `compositio`,
@@ -432,7 +432,7 @@ export const m3: ModuleMeta = {
       ],
     },
     {
-      id: `m2-l3`,
+      id: `m3-l3`,
       num: `III`,
       title: `The Limit Principle`,
       latin: `actus  ·  limitatio`,
@@ -444,7 +444,7 @@ export const m3: ModuleMeta = {
       },
       questions: [
         {
-          id: `m2-l3-q1`,
+          id: `m3-l3-q1`,
           type: "mcq",
           stem: `The axiom <em>actus non limitatur nisi per potentiam</em> (act is not limited except by potency) applies to <span class="lat">esse</span> as the deepest act in a creature. What follows from it?`,
           payload: {
@@ -478,7 +478,7 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l3-q2`,
+          id: `m3-l3-q2`,
           type: "precision_check",
           stem: `A claim that would pass at most dinner tables: <em>"Essence limits esse the way a cup limits water."</em> Close. What is technically wrong with it?`,
           payload: {
@@ -514,7 +514,7 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l3-q3`,
+          id: `m3-l3-q3`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>The essence of a creature limits its <span class="lat">esse</span> the way a mold limits poured bronze, making essence a real positive principle, not a shadow of <span class="lat">esse</span>.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
           payload: {
@@ -548,7 +548,7 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l3-q4`,
+          id: `m3-l3-q4`,
           type: "mcq",
           stem: `A purely spiritual creature has no matter and no matter/form composition. Yet it is finite: it has a determinate nature and limited perfections. What composition accounts for its finitude?`,
           payload: {
@@ -586,7 +586,7 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l3-q5`,
+          id: `m3-l3-q5`,
           type: "spot_the_fallacy",
           stem: `The axiom <em>actus non limitatur nisi per potentiam</em> (act is not limited except by potency) has three readings below. Which one misapplies it by treating <span class="lat">essentia</span> as mere negation rather than a real positive principle?`,
           latin_tag: `actus  ·  limitatio`,
@@ -629,7 +629,7 @@ export const m3: ModuleMeta = {
       ],
     },
     {
-      id: `m2-l4`,
+      id: `m3-l4`,
       num: `IV`,
       title: `Participation`,
       latin: `participatio`,
@@ -641,7 +641,7 @@ export const m3: ModuleMeta = {
       },
       questions: [
         {
-          id: `m2-l4-q1`,
+          id: `m3-l4-q1`,
           type: "mcq",
           stem: `The moon is bright tonight. Is the brightness its own?`,
           payload: {
@@ -675,7 +675,7 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l4-q2`,
+          id: `m3-l4-q2`,
           type: "mcq",
           stem: `The iron glows in the forge. It is genuinely hot. Hot by its own essence, or hot by sharing in the fire's heat?`,
           payload: {
@@ -709,7 +709,7 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l4-q3`,
+          id: `m3-l4-q3`,
           type: "distinction_application",
           stem: `Now the master case. Apply the iron-and-fire structure to being itself: creatures exist, God exists. Where does the structure place each?`,
           payload: {
@@ -743,7 +743,7 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l4-q4`,
+          id: `m3-l4-q4`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>To say creatures participate in being means each creature owns a small piece of God.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
           payload: {
@@ -777,7 +777,7 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l4-q5`,
+          id: `m3-l4-q5`,
           type: "mcq",
           stem: `Two terms close this lesson. Which pairing is correct?`,
           latin_tag: `participatio`,
@@ -816,7 +816,7 @@ export const m3: ModuleMeta = {
       ],
     },
     {
-      id: `m2-l5`,
+      id: `m3-l5`,
       num: `V`,
       title: `When What and That Coincide`,
       latin: `esse subsistens`,
@@ -824,11 +824,11 @@ export const m3: ModuleMeta = {
       fin: {
         tag: `esse subsistens`,
         heading: `You have read the sentence the whole course turns on.`,
-        body: `Aquinas's phoenix is your unicorn: an essence fully known, existence still an open question. From that one observation the real distinction follows, and with it the single exception: a being whose what simply is its that. Module 1 called it Pure Act. This module calls it <em>esse subsistens</em>. They are the same answer arrived at from two roads.`,
+        body: `Aquinas's phoenix is your unicorn: an essence fully known, existence still an open question. From that one observation the real distinction follows, and with it the single exception: a being whose what simply is its that. Module 2 called it Pure Act. This module calls it <em>esse subsistens</em>. They are the same answer arrived at from two roads.`,
       },
       questions: [
         {
-          id: `m2-l5-q1`,
+          id: `m3-l5-q1`,
           type: "close_reading",
           stem: `<div class="cr-passage"><p>Whatever is not in the concept of the essence or quiddity comes from outside the essence and enters into composition with the essence. Now, every essence or quiddity can be understood without anything being understood about its act of existing: I can understand what a man is, or what a phoenix is, and yet not know whether either has existence in reality. It is clear, therefore, that the act of existing is other than the essence or quiddity, unless perhaps there is a thing whose quiddity is its very act of existing.</p><div class="cr-cite">De Ente et Essentia, cap. 3 (Leonine numbering; cap. 4 in some translations) · trans. verified against the Corpus Thomisticum Latin</div></div><br>What is the hinge of the argument?`,
           payload: {
@@ -862,7 +862,7 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l5-q2`,
+          id: `m3-l5-q2`,
           type: "mcq",
           stem: `The passage ends with a door: <em>unless there is a thing whose quiddity is its very act of existing</em>. What would such a being have to be like?`,
           payload: {
@@ -871,7 +871,7 @@ export const m3: ModuleMeta = {
                 "id": "a",
                 "label": "Respondeo:",
                 "text": "Uncomposed and unique: no essence receiving esse, no potency limiting act.",
-                "feedback": "Respondeo: nothing receives, so nothing limits, so nothing is composed. And there cannot be two such, for there would be nothing to tell them apart. The chain from Module 1 ended at this same door."
+                "feedback": "Respondeo: nothing receives, so nothing limits, so nothing is composed. And there cannot be two such, for there would be nothing to tell them apart. The chain from Module 2 ended at this same door."
               },
               {
                 "id": "b",
@@ -896,7 +896,7 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l5-q3`,
+          id: `m3-l5-q3`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>In God, essence and esse fit together perfectly.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
           payload: {
@@ -930,7 +930,7 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l5-q4`,
+          id: `m3-l5-q4`,
           type: "mcq",
           stem: `Last one. Which sentence uses the lesson's vocabulary correctly?`,
           latin_tag: `esse subsistens`,
@@ -969,7 +969,7 @@ export const m3: ModuleMeta = {
       ],
     },
     {
-      id: `m2-l6`,
+      id: `m3-l6`,
       num: `VI`,
       title: `Recapitulatio`,
       latin: `recapitulatio`,
@@ -977,11 +977,11 @@ export const m3: ModuleMeta = {
       fin: {
         tag: `recapitulatio`,
         heading: `The most important sentence in the course is now yours.`,
-        body: `In everything that is not God, what it is and that it is are really distinct; in God they are identical. You can now say it, defend it, and recognize its counterfeits. Module 3 takes the same grid into wood and bronze and bodies, where matter meets form. The unicorn, the iron, and the phoenix stay with you. They have more work to do.`,
+        body: `In everything that is not God, what it is and that it is are really distinct; in God they are identical. You can now say it, defend it, and recognize its counterfeits. Module 4 takes the same grid into wood and bronze and bodies, where matter meets form. The unicorn, the iron, and the phoenix stay with you. They have more work to do.`,
       },
       questions: [
         {
-          id: `m2-l6-q1`,
+          id: `m3-l6-q1`,
           type: "match_pair",
           stem: `Four images carried this module. Pair each with the principle it taught. <em>Tap an image, then tap its principle. Tap a paired item to release it.</em>`,
           payload: {
@@ -1047,7 +1047,7 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l6-q2`,
+          id: `m3-l6-q2`,
           type: "mcq",
           stem: `The deepest act/potency composition in creatures is...`,
           payload: {
@@ -1081,7 +1081,7 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l6-q3`,
+          id: `m3-l6-q3`,
           type: "fill_blank",
           stem: `Complete the master-key parallel that runs through the system. <em>Tap a term from the bank to fill each blank.</em><br><br><span style="font-family:'Fraunces',serif; font-size:18px; line-height:1.7; padding:14px 0; display:inline-block;">Matter is to <span class="fb-blank" data-blank="b1">______</span> as <span class="fb-blank" data-blank="b2">______</span> is to <em>esse</em>.<br>In every finite being, two principles compose: one as <span class="fb-blank" data-blank="b3">______</span>, the other as potency.</span>`,
           payload: {
@@ -1130,7 +1130,7 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l6-q4`,
+          id: `m3-l6-q4`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>The real distinction means essence and esse are two things joined together.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
           payload: {
@@ -1164,11 +1164,11 @@ export const m3: ModuleMeta = {
           },
         },
         {
-          id: `m2-l6-q5`,
+          id: `m3-l6-q5`,
           type: "mcq",
           stem: `One sentence to carry the whole module out the door. Which is correct?`,
           latin_tag: `recapitulatio`,
-          doctrine_line: `The real distinction owned. Module 3 takes the grid into the physical world.`,
+          doctrine_line: `The real distinction owned. Module 4 takes the grid into the physical world.`,
           lesson_complete: true,
           payload: {
             "options": [
@@ -1182,7 +1182,7 @@ export const m3: ModuleMeta = {
                 "id": "b",
                 "label": "Respondeo:",
                 "text": "In every creature, essence receives and limits esse; in God, essence and esse are identical.",
-                "feedback": "Respondeo: the module in one breath. Composition in everything made, identity in the maker, and participation as the bridge between them. Modules 1 and 2 are now one argument with two vocabularies."
+                "feedback": "Respondeo: the module in one breath. Composition in everything made, identity in the maker, and participation as the bridge between them. Modules 2 and 3 are now one argument with two vocabularies."
               },
               {
                 "id": "c",

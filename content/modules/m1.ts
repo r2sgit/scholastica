@@ -7,7 +7,7 @@ export const m1: ModuleMeta = {
   label: `Module 1 · Foundations`,
   lessons: [
     {
-      id: `m0-l1`,
+      id: `m1-l1`,
       num: `I`,
       title: `The Two Questions`,
       latin: `essentia / esse`,
@@ -19,7 +19,7 @@ export const m1: ModuleMeta = {
       },
       questions: [
         {
-          id: `m0-l1-q1`,
+          id: `m1-l1-q1`,
           type: "mcq",
           stem: `Look at an apple sitting on a table. When you ask <em>"What is this?"</em>, you are asking…`,
           payload: {
@@ -46,7 +46,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l1-q2`,
+          id: `m1-l1-q2`,
           type: "mcq",
           stem: `And when you ask <em>"Is there an apple on the table?"</em>, you are asking…`,
           payload: {
@@ -73,7 +73,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l1-q3`,
+          id: `m1-l1-q3`,
           type: "mcq",
           stem: `Four questions below. Which one is asking <em>WHAT</em> something is — not whether it exists?`,
           payload: {
@@ -106,7 +106,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l1-q4`,
+          id: `m1-l1-q4`,
           type: "mcq",
           stem: `Two questions. Two ancient names. Which pairing is right?`,
           payload: {
@@ -133,7 +133,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l1-q5`,
+          id: `m1-l1-q5`,
           type: "mcq",
           stem: `We can describe perfectly well WHAT a unicorn is — a horned horse — even though no unicorn EXISTS anywhere. So a unicorn has…`,
           payload: {
@@ -166,7 +166,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l1-q6`,
+          id: `m1-l1-q6`,
           type: "mcq",
           stem: `Last one. Which sentence uses <span class="lat">essentia</span> and <span class="lat">esse</span> correctly?`,
           latin_tag: `essentia  ·  esse`,
@@ -198,7 +198,7 @@ export const m1: ModuleMeta = {
       ],
     },
     {
-      id: `m0-l2`,
+      id: `m1-l2`,
       num: `II`,
       title: `Act and Potency`,
       latin: `potentia / actus`,
@@ -206,11 +206,11 @@ export const m1: ModuleMeta = {
       fin: {
         tag: `potentia  ·  actus`,
         heading: `Change requires that a thing be not yet what it is becoming.`,
-        body: `Potency is real capacity; act is real perfection. The marble is potentially a statue — not metaphorically, really. Aristotle built this engine for the physics of change; Aquinas ran it all the way to a conclusion Aristotle did not reach: that there must be something that is Pure Act, with no potency at all. That conclusion is not Module 0. But this lesson is why it is available.`,
+        body: `Potency is real capacity; act is real perfection. The marble is potentially a statue — not metaphorically, really. Aristotle built this engine for the physics of change; Aquinas ran it all the way to a conclusion Aristotle did not reach: that there must be something that is Pure Act, with no potency at all. That conclusion is not Module 1. But this lesson is why it is available.`,
       },
       questions: [
         {
-          id: `m0-l2-q1`,
+          id: `m1-l2-q1`,
           type: "mcq",
           stem: `A match sits dry and whole in a box. It has never been struck. It can produce fire — but right now it is not on fire. What are we pointing at when we say it "can produce fire"?`,
           payload: {
@@ -237,7 +237,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l2-q2`,
+          id: `m1-l2-q2`,
           type: "mcq",
           stem: `An acorn lies on the ground. It can grow into an oak. Right now it is an acorn. Which option describes what the acorn actually <em>is</em> right now — not what it might become?`,
           payload: {
@@ -270,7 +270,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l2-q3`,
+          id: `m1-l2-q3`,
           type: "mcq",
           stem: `The "can-be" — a thing's capacity, its readiness for something — has a Latin name. Which pairing is correct?`,
           payload: {
@@ -297,7 +297,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l2-q4`,
+          id: `m1-l2-q4`,
           type: "mcq",
           stem: `And the "is-right-now" — what something actually and fully is at this moment — is called?`,
           payload: {
@@ -324,7 +324,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l2-q5`,
+          id: `m1-l2-q5`,
           type: "mcq",
           stem: `A block of marble can be carved into a statue. Right now it is a block. Which sentence is correct?`,
           payload: {
@@ -357,7 +357,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l2-q6`,
+          id: `m1-l2-q6`,
           type: "mcq",
           stem: `Last one. Which sentence uses <span class="lat">potentia</span> and <span class="lat">actus</span> correctly?`,
           latin_tag: `potentia  ·  actus`,
@@ -389,7 +389,7 @@ export const m1: ModuleMeta = {
       ],
     },
     {
-      id: `m0-l3`,
+      id: `m1-l3`,
       num: `III`,
       title: `Real Things`,
       latin: `res / distinctio realis`,
@@ -401,7 +401,7 @@ export const m1: ModuleMeta = {
       },
       questions: [
         {
-          id: `m0-l3-q1`,
+          id: `m1-l3-q1`,
           type: "mcq",
           stem: `The tree outside your window stands there whether or not you are looking at it. Your idea of the tree only exists while you are thinking it. Which one has being independently of any mind?`,
           payload: {
@@ -428,7 +428,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l3-q2`,
+          id: `m1-l3-q2`,
           type: "mcq",
           stem: `You notice that the coffee cup and the pen on your desk are both small, both here, both yours. The "similarity" you just noticed — where does it exist?`,
           payload: {
@@ -455,7 +455,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l3-q3`,
+          id: `m1-l3-q3`,
           type: "mcq",
           stem: `The Latin word for a real thing — something with being of its own, independent of any mind thinking it — is?`,
           payload: {
@@ -482,7 +482,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l3-q4`,
+          id: `m1-l3-q4`,
           type: "mcq",
           stem: `When two things are genuinely different in reality itself — not just divided by how the mind is looking at them — the tradition calls this a?`,
           payload: {
@@ -509,7 +509,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l3-q5`,
+          id: `m1-l3-q5`,
           type: "mcq",
           stem: `A flame produces both heat and light. Are heat and light really distinct — or is this only a distinction the mind is making?`,
           payload: {
@@ -536,7 +536,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l3-q6`,
+          id: `m1-l3-q6`,
           type: "mcq",
           stem: `Last one. A philosopher defines a human being as a "rational animal." He then says the same person is a "human being." Is the distinction between "rational animal" and "human being" real — or only in the mind?`,
           latin_tag: `res  ·  distinctio realis`,
@@ -568,7 +568,7 @@ export const m1: ModuleMeta = {
       ],
     },
     {
-      id: `m0-l4`,
+      id: `m1-l4`,
       num: `IV`,
       title: `The Four Causes`,
       latin: `causa materialis, formalis, efficiens, finalis`,
@@ -580,7 +580,7 @@ export const m1: ModuleMeta = {
       },
       questions: [
         {
-          id: `m0-l4-q1`,
+          id: `m1-l4-q1`,
           type: "mcq",
           stem: `Someone asks: <em>"Why is this table here?"</em> Here are four real answers — each a kind of <em>why</em>:<br><br>·  What is it made of?<br>·  What shape or design makes it a table?<br>·  Who built it?<br>·  What is it for?<br><br>Which sentence best describes these four answers, taken together?`,
           payload: {
@@ -613,7 +613,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l4-q2`,
+          id: `m1-l4-q2`,
           type: "mcq",
           stem: `"Why is this a table?" — "Because it is made of oak." That answer is giving the…`,
           payload: {
@@ -646,7 +646,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l4-q3`,
+          id: `m1-l4-q3`,
           type: "mcq",
           stem: `"Why is this a table and not a pile of wood?" — "Because it has the structure, the legs, the flat surface — the design that makes it a table." That is the…`,
           payload: {
@@ -679,7 +679,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l4-q4`,
+          id: `m1-l4-q4`,
           type: "mcq",
           stem: `"Why does this table exist?" — "Because a carpenter shaped the oak into it." The carpenter is the…`,
           payload: {
@@ -712,7 +712,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l4-q5`,
+          id: `m1-l4-q5`,
           type: "mcq",
           stem: `"Why did the carpenter build the table?" — "To have a surface to work on." The purpose, the end — that is the…`,
           payload: {
@@ -745,7 +745,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l4-q6`,
+          id: `m1-l4-q6`,
           type: "mcq",
           stem: `Now the Latin. Match the four causes to their names. Which pairing is correct?`,
           payload: {
@@ -778,7 +778,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l4-q7`,
+          id: `m1-l4-q7`,
           type: "mcq",
           stem: `Last one. A bird builds a nest: twigs and leaves are woven into a bowl shape, by the bird, to shelter eggs. Assign each element to its cause.`,
           latin_tag: `causa materialis  ·  formalis  ·  efficiens  ·  finalis`,
@@ -816,7 +816,7 @@ export const m1: ModuleMeta = {
       ],
     },
     {
-      id: `m0-l5`,
+      id: `m1-l5`,
       num: `V`,
       title: `Matter and Form`,
       latin: `materia / forma`,
@@ -828,7 +828,7 @@ export const m1: ModuleMeta = {
       },
       questions: [
         {
-          id: `m0-l5-q1`,
+          id: `m1-l5-q1`,
           type: "mcq",
           stem: `A sculptor starts with a block of marble. He carves it into a figure of a man. Later another sculptor chips it into a fish. Through every stage — rough block, man, fish — what remains constant?`,
           payload: {
@@ -855,7 +855,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l5-q2`,
+          id: `m1-l5-q2`,
           type: "mcq",
           stem: `Here are two things: (1) the lumber that makes up a chair, and (2) the arrangement — the back, the seat, the legs, the joinery — that makes the lumber fit for sitting. Are these two things the same thing said twice, or genuinely different?`,
           payload: {
@@ -882,7 +882,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l5-q3`,
+          id: `m1-l5-q3`,
           type: "mcq",
           stem: `The underlying stuff — the marble, the lumber, the clay — that can receive any number of different shapes: this has a Latin name. Which?`,
           payload: {
@@ -909,7 +909,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l5-q4`,
+          id: `m1-l5-q4`,
           type: "mcq",
           stem: `And the organizing principle — the structure that makes this lump of matter be a horse, a ship, a man — the intelligible shape that determines what kind of thing it is:`,
           payload: {
@@ -936,7 +936,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l5-q5`,
+          id: `m1-l5-q5`,
           type: "mcq",
           stem: `A chunk of iron is smelted and forged into a sword. Apply the distinction. What has changed, and what has stayed the same?`,
           payload: {
@@ -963,7 +963,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l5-q6`,
+          id: `m1-l5-q6`,
           type: "mcq",
           stem: `Thomas holds that every bodily creature is a composite of <span class="lat">materia</span> and <span class="lat">forma</span>. This oak tree is this particular matter (these fibers, this sap) organized by oak-form. If the <span class="lat">forma</span> were entirely removed — if the oak-form ceased — what would remain?`,
           latin_tag: `materia  ·  forma`,
@@ -995,7 +995,7 @@ export const m1: ModuleMeta = {
       ],
     },
     {
-      id: `m0-l6`,
+      id: `m1-l6`,
       num: `VI`,
       title: `Substance and Accident`,
       latin: `substantia / accidens`,
@@ -1007,7 +1007,7 @@ export const m1: ModuleMeta = {
       },
       questions: [
         {
-          id: `m0-l6-q1`,
+          id: `m1-l6-q1`,
           type: "mcq",
           stem: `Socrates is a man. He is also pale, seated, in Athens, and moderately pleased with himself this morning. Tomorrow he may be tanned, standing, in Corinth, and considerably less pleased. Through all these changes, Socrates remains Socrates. What kind of changes are the second set?`,
           payload: {
@@ -1034,7 +1034,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l6-q2`,
+          id: `m1-l6-q2`,
           type: "mcq",
           stem: `Four descriptions of a person. One of them is different in kind — it names what the person fundamentally IS, not how they happen to be. Which?`,
           payload: {
@@ -1067,7 +1067,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l6-q3`,
+          id: `m1-l6-q3`,
           type: "mcq",
           stem: `The fundamental kind of thing a being is — what it is in its own right, not how it happens to be — has a Latin name:`,
           payload: {
@@ -1094,7 +1094,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l6-q4`,
+          id: `m1-l6-q4`,
           type: "mcq",
           stem: `And the real properties that genuinely belong to a substance — height, color, location, posture, temperature — without constituting what it is:`,
           payload: {
@@ -1121,7 +1121,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l6-q5`,
+          id: `m1-l6-q5`,
           type: "mcq",
           stem: `A green apple left in the sun turns red. The color has changed. Has the apple ceased to be an apple?`,
           payload: {
@@ -1148,7 +1148,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l6-q6`,
+          id: `m1-l6-q6`,
           type: "mcq",
           stem: `In the Church's teaching on the Eucharist, the appearances of bread and wine — their size, shape, taste, color — remain after the consecration. But what the elements fundamentally ARE has changed. Using Lesson 6 vocabulary: those remaining appearances are…`,
           latin_tag: `substantia  ·  accidens`,
@@ -1180,19 +1180,19 @@ export const m1: ModuleMeta = {
       ],
     },
     {
-      id: `m0-l7`,
+      id: `m1-l7`,
       num: `Cap.`,
       title: `Recapitulatio`,
       latin: `septem distinctiones`,
       tag: `septem distinctiones`,
       fin: {
         tag: `septem distinctiones`,
-        heading: `Module 0 complete.`,
-        body: `Seven distinctions: esse/essentia, actus/potentia, the real/notional divide, the four causes, materia/forma, substantia/accidens. Aquinas did not invent them; he found them in Aristotle, sharpened them, and turned them into instruments of an argument that spans metaphysics, ethics, sacramental theology, and the nature of God. You now hold the kit. Module 5 builds the logical machinery that runs on top of it.`,
+        heading: `Module 1 complete.`,
+        body: `Seven distinctions: esse/essentia, actus/potentia, the real/notional divide, the four causes, materia/forma, substantia/accidens. Aquinas did not invent them; he found them in Aristotle, sharpened them, and turned them into instruments of an argument that spans metaphysics, ethics, sacramental theology, and the nature of God. You now hold the kit. Module 6 builds the logical machinery that runs on top of it.`,
       },
       questions: [
         {
-          id: `m0-l7-q1`,
+          id: `m1-l7-q1`,
           type: "mcq",
           stem: `Six lessons, six distinctions. Let's find them again. Which Latin pair belongs to Lesson 1 — the question about what a thing IS versus THAT it is?`,
           payload: {
@@ -1219,7 +1219,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l7-q2`,
+          id: `m1-l7-q2`,
           type: "mcq",
           stem: `An acorn lying on the ground has never grown into a tree. It is not a tree. Yet it genuinely can become one. This "can-become" is named:`,
           payload: {
@@ -1246,7 +1246,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l7-q3`,
+          id: `m1-l7-q3`,
           type: "mcq",
           stem: `Two chemists examine a gold ring. One says: "This is yellow." The other says: "This is gold." Using Lesson 6, how do these two statements relate?`,
           payload: {
@@ -1273,7 +1273,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l7-q4`,
+          id: `m1-l7-q4`,
           type: "mcq",
           stem: `A philosopher asks: "Why does the eye see?" There are four real answers hiding in that "why." Which one is the <span class="lat">causa finalis</span> — the answer that names the end or purpose?`,
           payload: {
@@ -1306,7 +1306,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l7-q5`,
+          id: `m1-l7-q5`,
           type: "mcq",
           stem: `We learned in Lesson 3 that some distinctions are real (<span class="lat">distinctio realis</span>) and some are only in the mind. Using what we know: is the distinction between a thing's <span class="lat">essentia</span> and its <span class="lat">esse</span> — between what it is and that it is — real or only mental?`,
           payload: {
@@ -1333,7 +1333,7 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l7-q6`,
+          id: `m1-l7-q6`,
           type: "mcq",
           stem: `A statue of a horse is melted down and recast as a sword. Using Lesson 5: what changed, what persisted — and what Lesson 2 term names the bronze's capacity to receive either form?`,
           payload: {
@@ -1360,11 +1360,11 @@ export const m1: ModuleMeta = {
           },
         },
         {
-          id: `m0-l7-q7`,
+          id: `m1-l7-q7`,
           type: "mcq",
           stem: `The six distinctions you have learned — <span class="lat">essentia</span>/<span class="lat">esse</span>, <span class="lat">potentia</span>/<span class="lat">actus</span>, <span class="lat">res</span>/<span class="lat">distinctio realis</span>, the four <span class="lat">causae</span>, <span class="lat">materia</span>/<span class="lat">forma</span>, <span class="lat">substantia</span>/<span class="lat">accidens</span> — are all different ways of doing what?`,
           latin_tag: `septem distinctiones`,
-          doctrine_line: `Module 0 complete · The seven doors are open.`,
+          doctrine_line: `Module 1 complete · The seven doors are open.`,
           lesson_complete: true,
           payload: {
             options: [
@@ -1378,7 +1378,7 @@ export const m1: ModuleMeta = {
               id: `b`,
               text: `Seeing the real composition of beings — the principles that make them be what they are.`,
               correct: true,
-              feedback: `Respondeo: all six are ways of reading the real structure of things. Not categories we project onto a structureless world, but principles discovered in the world by careful attention. This is the Thomistic realism: the world is intelligible because it really is composed this way. Module 0 complete. Seven doors open. Doors 1 through 17 await.`,
+              feedback: `Respondeo: all six are ways of reading the real structure of things. Not categories we project onto a structureless world, but principles discovered in the world by careful attention. This is the Thomistic realism: the world is intelligible because it really is composed this way. Module 1 complete. Seven doors open. Doors 2 through 18 await.`,
             },
             {
               id: `c`,

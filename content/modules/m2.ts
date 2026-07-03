@@ -9,7 +9,7 @@ export const m2: ModuleMeta = {
   aim: `Every finite being is composed of act (the positive, determining, perfecting principle) and potency (the real capacity to receive or be limited by act). God alone is Pure Act, with no composition. The act/potency distinction is the master key: every other distinction in the system is a species of it.`,
   lessons: [
     {
-      id: `m1-l1`,
+      id: `m2-l1`,
       num: `I`,
       title: `The Two Poles`,
       latin: `actus  ·  potentia`,
@@ -21,7 +21,7 @@ export const m2: ModuleMeta = {
       },
       questions: [
         {
-          id: `m1-l1-q1`,
+          id: `m2-l1-q1`,
           type: "mcq",
           stem: `A sculptor stands before an untouched block of marble. What does the marble already possess, in relation to the statue it might become?`,
           payload: {
@@ -55,7 +55,7 @@ export const m2: ModuleMeta = {
           },
         },
         {
-          id: `m1-l1-q2`,
+          id: `m2-l1-q2`,
           type: "mcq",
           stem: `The sculptor finishes. The marble is fully shaped, the form realized. What principle does the realized form represent?`,
           payload: {
@@ -89,7 +89,7 @@ export const m2: ModuleMeta = {
           },
         },
         {
-          id: `m1-l1-q3`,
+          id: `m2-l1-q3`,
           type: "mcq",
           stem: `Maria can read Greek. Right now she is asleep. Did her ability to read Greek vanish when she fell asleep?`,
           payload: {
@@ -123,7 +123,7 @@ export const m2: ModuleMeta = {
           },
         },
         {
-          id: `m1-l1-q4`,
+          id: `m2-l1-q4`,
           type: "distinction_application",
           stem: `Maria again, awake this time but holding a closed book. She has the unexercised capacity to read Greek. How does her case sit on the act/potency grid?`,
           payload: {
@@ -157,7 +157,7 @@ export const m2: ModuleMeta = {
           },
         },
         {
-          id: `m1-l1-q5`,
+          id: `m2-l1-q5`,
           type: "match_pair",
           stem: `Pair each principle with the role it plays in the metaphysics of finite being. <em>Tap a principle, then tap its role. Tap a paired item to release it.</em>`,
           latin_tag: `actus  ·  potentia`,
@@ -219,7 +219,7 @@ export const m2: ModuleMeta = {
               ]
             ],
             "feedback": {
-              "all_correct": "All four locked. Act is the positive principle; potency is its real receiver; their union is composition; the unique case of act with no potency is Pure Act. The four key terms of M1 in their four roles.",
+              "all_correct": "All four locked. Act is the positive principle; potency is its real receiver; their union is composition; the unique case of act with no potency is Pure Act. The four key terms of M2 in their four roles.",
               "partial_correct": "Some pairs landed; others did not. The four divide cleanly: act and potency are the two principles, composition is their union, Pure Act is the case where there is no composition at all.",
               "per_pair_corrections": [
                 {
@@ -249,7 +249,7 @@ export const m2: ModuleMeta = {
       ],
     },
     {
-      id: `m1-l2`,
+      id: `m2-l2`,
       num: `II`,
       title: `Act is Prior`,
       latin: `actus  ·  prior`,
@@ -261,7 +261,7 @@ export const m2: ModuleMeta = {
       },
       questions: [
         {
-          id: `m1-l2-q1`,
+          id: `m2-l2-q1`,
           type: "mcq",
           stem: `An acorn lies on the ground. Ask it the rudest possible question: what are you <em>for</em>?`,
           payload: {
@@ -295,7 +295,7 @@ export const m2: ModuleMeta = {
           },
         },
         {
-          id: `m1-l2-q2`,
+          id: `m2-l2-q2`,
           type: "mcq",
           stem: `Back to the acorn and its oak. The acorn comes first in time; no one disputes the calendar. But in being, in the order of what exists for the sake of what, which is prior, and why? (The tradition calls this priority in being <em>ontological</em> priority.)`,
           payload: {
@@ -329,7 +329,7 @@ export const m2: ModuleMeta = {
           },
         },
         {
-          id: `m1-l2-q3`,
+          id: `m2-l2-q3`,
           type: "mcq",
           stem: `Your coffee has gone lukewarm. Next to the cold room it counts as hot; next to the kettle it counts as cold. Someone declares: "Nothing can be both hot and cold. That coffee is impossible." What is missing from their sentence?`,
           payload: {
@@ -363,7 +363,7 @@ export const m2: ModuleMeta = {
           },
         },
         {
-          id: `m1-l2-q4`,
+          id: `m2-l2-q4`,
           type: "mcq",
           stem: `Pure potency means potency with no act whatsoever: no form, no determination, bare capacity for nothing in particular. Why can such a world not exist?`,
           payload: {
@@ -397,7 +397,7 @@ export const m2: ModuleMeta = {
           },
         },
         {
-          id: `m1-l2-q5`,
+          id: `m2-l2-q5`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>Act is prior to potency in being because act is always the efficient cause of potency.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
           payload: {
@@ -431,7 +431,7 @@ export const m2: ModuleMeta = {
           },
         },
         {
-          id: `m1-l2-q6`,
+          id: `m2-l2-q6`,
           type: "syllogism_builder",
           stem: `Construct the self-movement argument. Place each statement in its correct role: universal premise, particular premise, conclusion.`,
           latin_tag: `actus  ·  prior`,
@@ -466,7 +466,7 @@ export const m2: ModuleMeta = {
       ],
     },
     {
-      id: `m1-l3`,
+      id: `m2-l3`,
       num: `III`,
       title: `Act/Potency in Change`,
       latin: `mutatio`,
@@ -478,7 +478,7 @@ export const m2: ModuleMeta = {
       },
       questions: [
         {
-          id: `m1-l3-q1`,
+          id: `m2-l3-q1`,
           type: "mcq",
           stem: `Two small disasters at your desk. You bend a paperclip out of shape, and you burn a sheet of paper to ash. Both "changed." Did the same depth of thing happen to each?`,
           payload: {
@@ -512,7 +512,7 @@ export const m2: ModuleMeta = {
           },
         },
         {
-          id: `m1-l3-q2`,
+          id: `m2-l3-q2`,
           type: "mcq",
           stem: `A bronze ingot is melted, poured into a mold, and cast as a horse. The same bronze; a new shape. What kind of change is this, and why?`,
           payload: {
@@ -550,7 +550,7 @@ export const m2: ModuleMeta = {
           },
         },
         {
-          id: `m1-l3-q3`,
+          id: `m2-l3-q3`,
           type: "distinction_application",
           stem: `A caterpillar enters a cocoon and emerges as a butterfly. The same matter persists, but the organism that emerges has fundamentally different organs, operations, and form of life. Accidental or substantial change?`,
           payload: {
@@ -588,7 +588,7 @@ export const m2: ModuleMeta = {
           },
         },
         {
-          id: `m1-l3-q4`,
+          id: `m2-l3-q4`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>In substantial change, what persists through the change is primary matter, not the substance itself.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
           payload: {
@@ -626,7 +626,7 @@ export const m2: ModuleMeta = {
           },
         },
         {
-          id: `m1-l3-q5`,
+          id: `m2-l3-q5`,
           type: "spot_the_fallacy",
           stem: `Three descriptions of a change. Which one gets the act/potency structure of change backwards?`,
           latin_tag: `mutatio`,
@@ -669,7 +669,7 @@ export const m2: ModuleMeta = {
       ],
     },
     {
-      id: `m1-l4`,
+      id: `m2-l4`,
       num: `IV`,
       title: `The First Way`,
       latin: `primum movens`,
@@ -681,7 +681,7 @@ export const m2: ModuleMeta = {
       },
       questions: [
         {
-          id: `m1-l4-q1`,
+          id: `m2-l4-q1`,
           type: "mcq",
           stem: `Whatever is moved is moved by another. A hand moves a stick, which moves a stone. If the hand stops, the stone stops instantly, regardless of how many links are in the chain. What does this show about a series of moved movers?`,
           payload: {
@@ -715,7 +715,7 @@ export const m2: ModuleMeta = {
           },
         },
         {
-          id: `m1-l4-q2`,
+          id: `m2-l4-q2`,
           type: "syllogism_builder",
           stem: `You have walked the chain: the stone, the stick, the hand. Now construct the First Way itself. Place each statement in its correct role: universal premise, particular premise, conclusion.`,
           payload: {
@@ -745,7 +745,7 @@ export const m2: ModuleMeta = {
           },
         },
         {
-          id: `m1-l4-q3`,
+          id: `m2-l4-q3`,
           type: "mcq",
           stem: `The First Way concludes that there must be a first mover, itself unmoved. Which description of this first mover follows necessarily from the argument?`,
           payload: {
@@ -779,7 +779,7 @@ export const m2: ModuleMeta = {
           },
         },
         {
-          id: `m1-l4-q4`,
+          id: `m2-l4-q4`,
           type: "mcq",
           stem: `Pure Act means a being with no potency whatsoever. What follows from this for composition?`,
           latin_tag: `primum movens`,
@@ -818,7 +818,7 @@ export const m2: ModuleMeta = {
       ],
     },
     {
-      id: `m1-l5`,
+      id: `m2-l5`,
       num: `V`,
       title: `Recapitulatio`,
       latin: `recapitulatio`,
@@ -830,7 +830,7 @@ export const m2: ModuleMeta = {
       },
       questions: [
         {
-          id: `m1-l5-q1`,
+          id: `m2-l5-q1`,
           type: "match_pair",
           stem: `Four images carried this module. Pair each with the principle it taught. <em>Tap an image, then tap its principle. Tap a paired item to release it.</em>`,
           payload: {
@@ -896,7 +896,7 @@ export const m2: ModuleMeta = {
           },
         },
         {
-          id: `m1-l5-q2`,
+          id: `m2-l5-q2`,
           type: "distinction_application",
           stem: `A fresh case, no rehearsal. A dry oak log burns in the fireplace until only ash remains. Apply the module's grid: what kind of change is this, and what persists through it?`,
           payload: {
@@ -930,7 +930,7 @@ export const m2: ModuleMeta = {
           },
         },
         {
-          id: `m1-l5-q3`,
+          id: `m2-l5-q3`,
           type: "true_false_with_reason",
           stem: `TRUE or FALSE: <em>Act is prior to potency in every sense, including time.</em><br><br>Pick the correct judgment <em>and</em> the best reason.`,
           payload: {
@@ -964,7 +964,7 @@ export const m2: ModuleMeta = {
           },
         },
         {
-          id: `m1-l5-q4`,
+          id: `m2-l5-q4`,
           type: "mcq",
           stem: `One sentence to carry the whole module out the door. Which is correct?`,
           payload: {
@@ -998,7 +998,7 @@ export const m2: ModuleMeta = {
           },
         },
         {
-          id: `m1-l5-q5`,
+          id: `m2-l5-q5`,
           type: "mcq",
           stem: `Last one. Which sentence uses the module's vocabulary correctly?`,
           latin_tag: `recapitulatio`,
