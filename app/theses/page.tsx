@@ -29,11 +29,9 @@ function EarnedEntry({ thesis, ceremony }: { thesis: Thesis; ceremony: boolean }
     <article className={`thesis-card earned${ceremony ? ' ceremony' : ''}`}>
       <div className="thesis-numeral" aria-hidden="true">{thesis.numeral}</div>
       <div className="thesis-body">
+        <div className="thesis-headline" role={ceremony ? 'status' : undefined}>{thesis.unlock_line}</div>
         <div className="thesis-latin">{thesis.latin}</div>
         <div className="thesis-english">{thesis.english}</div>
-        {ceremony && (
-          <p className="thesis-unlock" role="status">{thesis.unlock_line}</p>
-        )}
       </div>
     </article>
   );

@@ -4,11 +4,11 @@ import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState, Suspense } from 'react';
 import { getModule } from '../../../../content/modules';
 import { playSound, type SoundId } from '../../../../lib/sound';
-import Link from 'next/link';
 import { readProgress } from '../../../../lib/progress';
 import { getRank, getThesesEarned, type Rank } from '../../../../lib/gamification';
 import { THESES, type Thesis } from '../../../../content/theses';
 import Prose from '../../../../components/Prose';
+import ThesisCeremony from '../../../../components/ThesisCeremony';
 
 /* ── Vine Divider ─────────────────────────────────────────── */
 function VineDivider() {
@@ -84,6 +84,9 @@ function FinScreenInner() {
   // now earned, not yet ceremonied). The announcement only; the board itself
   // owns the illuminated-initial animation and the ceremony-once guard.
   const [newTheses, setNewTheses] = useState<Thesis[]>([]);
+  // The ceremony overlay fires before this screen's content is usable; once
+  // dismissed (or if there was nothing to ceremony), the normal fin renders.
+  const [ceremonyDone, setCeremonyDone] = useState(false);
   useEffect(() => {
     const data = readProgress();
     setRank(getRank(data, THESES));
@@ -127,6 +130,18 @@ function FinScreenInner() {
 
   function handleReviewMissed() {
     router.push(`/lesson/${moduleId}/${lessonIdx}?filter=missed&missed=${missedParam}`);
+  }
+
+  // Ceremony gate: fires in place of the fin screen's old inline thesis
+  // announcement, before the rest of this screen is usable.
+  if (newTheses.length > 0 && !ceremonyDone) {
+    return (
+      <ThesisCeremony
+        theses={newTheses}
+        moduleId={moduleId}
+        onDone={() => setCeremonyDone(true)}
+      />
+    );
   }
 
   return (
@@ -240,22 +255,6 @@ function FinScreenInner() {
               {rank}
             </div>
           )
-        )}
-
-        {/* Newly earned theses — the unlock announcement, with a door to the
-            board where the illuminated entry animates. */}
-        {newTheses.length > 0 && (
-          <div className="fin-theses">
-            {newTheses.map(t => (
-              <div className="fin-thesis" key={t.n}>
-                <div className="fin-thesis-earned">Thesis {t.numeral} earned</div>
-                <p className="fin-thesis-line">{t.unlock_line}</p>
-              </div>
-            ))}
-            <Link href="/theses" className="fin-thesis-door">
-              Enter the Theses Board &rarr;
-            </Link>
-          </div>
         )}
 
         {/* Score pips */}

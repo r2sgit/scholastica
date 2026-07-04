@@ -1713,41 +1713,6 @@ a { color: inherit; text-decoration: none; }
   .vocab-pill { transition: border-color .16s, color .16s; }
 }
 
-/* Fin-screen thesis-unlock announcement */
-.fin-theses {
-  margin: 8px auto 4px;
-  max-width: 480px;
-  text-align: center;
-}
-.fin-thesis { margin-bottom: 14px; }
-.fin-thesis-earned {
-  font-family: 'Emeritus', serif;
-  font-size: 18px;
-  color: var(--gold-text);
-  margin-bottom: 4px;
-}
-.fin-thesis-line {
-  font-family: 'Fraunces', serif;
-  font-style: italic;
-  font-size: 15px;
-  line-height: 1.5;
-  color: var(--ink-soft);
-  margin: 0;
-}
-.fin-thesis-door {
-  display: inline-block;
-  margin-top: 6px;
-  font-family: 'Fraunces', serif;
-  font-variant-caps: all-small-caps;
-  letter-spacing: 0.12em;
-  font-size: 14px;
-  color: var(--gold-deep);
-  text-decoration: none;
-  border-bottom: 1px solid var(--gold);
-  padding-bottom: 1px;
-}
-.fin-thesis-door:hover { color: var(--gold); }
-
 /* ═══ Theses Board (/theses) — §20.1 / G2 ═══ */
 .theses-stage {
   width: 100%;
@@ -1823,31 +1788,31 @@ a { color: inherit; text-decoration: none; }
   box-shadow: inset 0 0 0 2px var(--paper), inset 0 0 0 3px color-mix(in oklab, var(--vermillion) 22%, transparent);
   text-shadow: 0 1px 0 color-mix(in oklab, var(--gold-deep) 60%, transparent);
 }
-.thesis-latin {
+/* Inverted hierarchy (gamification v2 B1): the headline celebrates before the
+   plate documents. unlock_line leads; Latin/English follow as the artifact. */
+.thesis-headline {
   font-family: 'Fraunces', serif;
-  font-style: italic;
   font-weight: 500;
   font-size: 17px;
   line-height: 1.5;
   color: var(--ink);
 }
+.thesis-latin {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin-top: 12px;
+}
 .thesis-english {
   font-family: 'Fraunces', serif;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 13px;
   line-height: 1.5;
-  color: var(--ink-soft);
-  margin-top: 8px;
-}
-.thesis-unlock {
-  font-family: 'Fraunces', serif;
-  font-style: italic;
-  font-size: 14.5px;
-  line-height: 1.5;
-  color: var(--gold-deep);
-  border-left: 2px solid var(--gold);
-  padding-left: 12px;
-  margin: 14px 0 2px;
+  color: var(--ink-mute);
+  margin-top: 6px;
 }
 
 /* Locked — dimmed and textless */
@@ -1879,7 +1844,7 @@ a { color: inherit; text-decoration: none; }
 .thesis-card.ceremony .thesis-numeral {
   animation: illuminate 900ms cubic-bezier(0.2, 0.7, 0.25, 1) both, illuminateGlow 1400ms ease 200ms both;
 }
-.thesis-card.ceremony .thesis-unlock { animation: fadeIn 500ms ease 500ms both; }
+.thesis-card.ceremony .thesis-headline { animation: fadeIn 500ms ease 500ms both; }
 
 @media (max-width: 560px) {
   .thesis-card { grid-template-columns: 48px 1fr; gap: 12px; padding: 14px 14px; }
@@ -1889,7 +1854,136 @@ a { color: inherit; text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   .thesis-card.ceremony,
   .thesis-card.ceremony .thesis-numeral,
-  .thesis-card.ceremony .thesis-unlock { animation: none; }
+  .thesis-card.ceremony .thesis-headline { animation: none; }
+}
+
+/* ═══ Thesis unlock ceremony (fin-screen overlay) — gamification v2 B1 ═══ */
+.ceremony-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 40px 24px calc(40px + env(safe-area-inset-bottom, 0px));
+  background:
+    radial-gradient(ellipse at 50% 42%, rgba(217, 189, 130, 0.12), rgba(36, 30, 22, 0) 55%),
+    #241E16;
+  cursor: pointer;
+  animation: fadeIn 400ms ease both;
+}
+.ceremony-inner {
+  margin: auto;
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: default;
+}
+.cer-eyebrow {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.14em;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(250, 246, 238, 0.5);
+}
+.cer-numeral-wrap {
+  position: relative;
+  margin-top: 26px;
+  width: clamp(160px, 48vw, 220px);
+  height: clamp(160px, 48vw, 220px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cer-ring { position: absolute; inset: 0; }
+.cer-ring path { stroke-dasharray: 700; stroke-dashoffset: 700; }
+.beat-on .cer-ring path { animation: ringDraw 2.2s ease-out forwards; }
+@keyframes ringDraw { to { stroke-dashoffset: 0; } }
+.cer-numeral {
+  position: relative;
+  font-size: clamp(104px, 32vw, 150px);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(217, 189, 130, 0.55);
+}
+.cer-numeral .fill {
+  position: absolute;
+  inset: 0;
+  -webkit-text-stroke: 0;
+  background: linear-gradient(160deg, var(--gold-light), var(--gold) 55%, var(--gold-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+}
+.beat-on .cer-numeral .fill { animation: paintIn 2s ease .5s forwards; }
+@keyframes paintIn {
+  from { opacity: 0; filter: brightness(1.6); }
+  60%  { opacity: 1; filter: brightness(1.3); }
+  to   { opacity: 1; filter: brightness(1); }
+}
+.cer-line {
+  margin-top: 30px;
+  max-width: 560px;
+  font-size: clamp(19px, 5vw, 24px);
+  line-height: 1.45;
+  color: var(--paper);
+  font-weight: 400;
+}
+.cer-latin {
+  margin-top: 24px;
+  max-width: 580px;
+  font-size: 15.5px;
+  line-height: 1.6;
+  font-style: italic;
+  color: rgba(217, 189, 130, 0.85);
+}
+.cer-english {
+  margin-top: 10px;
+  max-width: 560px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(250, 246, 238, 0.6);
+}
+.cer-cta {
+  margin-top: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--paper);
+  background: var(--gold);
+  border: 1px solid var(--gold-deep);
+  padding: 14px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 1px 0 var(--gold-deep);
+  transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+}
+.cer-cta:hover {
+  background: var(--gold-deep);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(141,106,44,.28);
+}
+.cer-progress { margin-top: 20px; display: flex; gap: 8px; }
+.cer-progress span {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(250, 246, 238, 0.25);
+}
+.cer-progress span.here { background: var(--gold); }
+.cer-progress span.done { background: rgba(217, 189, 130, 0.55); }
+
+@media (prefers-reduced-motion: reduce) {
+  .ceremony-overlay { animation: none; }
+  .cer-ring path { stroke-dashoffset: 0 !important; animation: none !important; }
+  .cer-numeral .fill { opacity: 1 !important; animation: none !important; }
 }
 
 /* 404 — Non inventum */
