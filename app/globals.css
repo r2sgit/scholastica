@@ -1530,6 +1530,15 @@ a { color: inherit; text-decoration: none; }
   color: var(--ink-mute);
 }
 
+/* Nearest-unlock anticipation line (B2) */
+.cm-next-thesis {
+  font-family: 'Fraunces', serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--gold-text);
+  margin: 2px 0 4px;
+}
+
 /* In scriptorio: being written, not gated — aims still reveal */
 .cm-card.scriptorio { cursor: default; background: transparent; border-style: dashed; }
 .cm-card.scriptorio h3 { color: var(--ink-faint); }
@@ -1748,6 +1757,9 @@ a { color: inherit; text-decoration: none; }
 
 .theses-group { margin-top: 30px; }
 .theses-group-label {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
   font-variant-caps: all-small-caps;
   letter-spacing: 0.22em;
   font-size: 13px;
@@ -1756,6 +1768,20 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 14px;
   border-bottom: 1px solid var(--border-soft);
 }
+.theses-group-label .tally {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.12em;
+  font-size: 12.5px;
+  color: var(--ink-mute);
+}
+/* Division completion beat (B2): a one-time gold flash on the label, the
+   quiet tier per gamification v2 (never the full ceremony). */
+@keyframes divisionFlash {
+  0%   { text-shadow: 0 0 0 rgba(0,0,0,0); }
+  40%  { text-shadow: 0 0 14px color-mix(in oklab, var(--gold) 65%, transparent); }
+  100% { text-shadow: 0 0 0 rgba(0,0,0,0); }
+}
+.theses-group-label.illuminate { animation: divisionFlash 1600ms ease both; }
 .theses-list { display: flex; flex-direction: column; gap: 12px; }
 
 .thesis-card {
@@ -1815,18 +1841,40 @@ a { color: inherit; text-decoration: none; }
   margin-top: 6px;
 }
 
-/* Locked — dimmed and textless */
+/* Locked — the doctrine itself stays textless; the riddle-hint and path
+   tempt without leaking it (B2 anticipation layer). */
 .thesis-card.locked {
   background: transparent;
   border: 1px dashed var(--border);
-  align-items: center;
+  align-items: start;
 }
-.thesis-card.locked .thesis-numeral { color: var(--ink-faint); opacity: 0.5; }
+.thesis-card.locked .thesis-numeral { color: var(--ink-faint); opacity: 0.5; padding-top: 4px; }
 .thesis-locked-line {
   font-variant-caps: all-small-caps;
   letter-spacing: 0.12em;
   font-size: 13px;
   color: var(--ink-mute);
+}
+.thesis-hint {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 15.5px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.thesis-path {
+  margin-top: 8px;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.1em;
+  font-size: 12.5px;
+  color: var(--ink-mute);
+}
+/* Next unlock: the gate is one module away. Gold-light border, the countdown
+   phrase promoted to gold-text (it's a word, not ornament). */
+.thesis-card.locked.next { border-color: var(--gold-light); }
+.thesis-card.locked.next .thesis-path .away {
+  font-weight: 600;
+  color: var(--gold-text);
 }
 
 /* Unlock ceremony — illuminated-initial animation */

@@ -18,6 +18,10 @@ export interface Thesis {
   modules_touch: number[];
   provisional: boolean;
   mapping_note?: string;
+  /** One-line riddle for the locked plate, Commentator register, distinct
+      wording from unlock_line. null when no safe hint could be written
+      without leaking the doctrine (renders numeral-only). */
+  riddle_hint: string | null;
   unlock_line: string;
 }
 

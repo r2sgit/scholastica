@@ -5,7 +5,7 @@ import { useEffect, useState, Suspense } from 'react';
 import { getModule } from '../../../../content/modules';
 import { playSound, type SoundId } from '../../../../lib/sound';
 import { readProgress } from '../../../../lib/progress';
-import { getRank, getThesesEarned, type Rank } from '../../../../lib/gamification';
+import { getRank, getThesesEarned, getNearestUnlock, type Rank } from '../../../../lib/gamification';
 import { THESES, type Thesis } from '../../../../content/theses';
 import Prose from '../../../../components/Prose';
 import ThesisCeremony from '../../../../components/ThesisCeremony';
@@ -87,9 +87,15 @@ function FinScreenInner() {
   // The ceremony overlay fires before this screen's content is usable; once
   // dismissed (or if there was nothing to ceremony), the normal fin renders.
   const [ceremonyDone, setCeremonyDone] = useState(false);
+  // Nearest not-yet-earned thesis, for the "Thesis N is one lesson away"
+  // anticipation line (B2). Computed once at mount from real module progress;
+  // unaffected by the ceremony (that's about thesesEarned bookkeeping, not
+  // module completion, so it can't change the nearest-unlock answer here).
+  const [nearestUnlock, setNearestUnlock] = useState<{ n: number; lessonsAway: number } | null>(null);
   useEffect(() => {
     const data = readProgress();
     setRank(getRank(data, THESES));
+    setNearestUnlock(getNearestUnlock(data, THESES));
     if (isLastLesson) {
       const earned = new Set(getThesesEarned(data, THESES));
       const played = new Set(data.thesesEarned || []);
@@ -269,6 +275,22 @@ function FinScreenInner() {
             style={{ width: 120, height: 'auto', opacity: 0.9 }}
           />
         </div>
+
+        {/* Nearest unlock — anticipation line (B2). Only the single closest
+            not-yet-earned thesis, never a list. */}
+        {nearestUnlock && (
+          <p
+            style={{
+              fontSize: 15,
+              color: 'var(--gold-text)',
+              fontWeight: 500,
+              marginBottom: 8,
+            }}
+          >
+            {`Thesis ${THESES.find(t => t.n === nearestUnlock.n)?.numeral} is `}
+            {nearestUnlock.lessonsAway === 1 ? 'one lesson away' : `${nearestUnlock.lessonsAway} lessons away`}
+          </p>
+        )}
 
         {/* Navigation buttons */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginTop: 24 }}>

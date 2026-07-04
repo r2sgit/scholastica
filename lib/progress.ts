@@ -39,6 +39,7 @@ export interface StorageSchema {
      returning learner who has none of these never loses progress. ── */
   sineErrore: Record<number, boolean[]>;   // moduleId -> per-lesson gold marks, sticky once earned
   thesesEarned: number[];                  // thesis n's whose unlock ceremony has PLAYED (ceremony-once guard)
+  divisionsIlluminated: string[];          // thesis group ids whose completion beat has already played (B2)
   habitus: { days: string[] };             // ISO dates (YYYY-MM-DD, local) on which >=1 lesson completed; append-only, dedup'd, capped
   /* ── Schema version (Great Renumber, P1). Absent or < 2 means module ids
      are still 0-indexed on disk and need the +1 shift below. ── */
@@ -55,6 +56,7 @@ function getDefault(): StorageSchema {
     prefs: { muted: false, latinDensity: 'balanced' },
     sineErrore: {},
     thesesEarned: [],
+    divisionsIlluminated: [],
     habitus: { days: [] },
     schemaVersion: CURRENT_SCHEMA_VERSION,
   };
@@ -268,6 +270,18 @@ export function recordThesesCeremonyPlayed(ns: number[]): void {
   let changed = false;
   for (const n of ns) if (!have.has(n)) { have.add(n); changed = true; }
   if (changed) writeStorage({ ...data, thesesEarned: [...have].sort((a, b) => a - b) });
+}
+
+/** Record division-completion illuminations as played (B2, quiet tier — a
+    one-beat gold flash on the group label, not a full ceremony). Same
+    idempotent standalone pattern as recordThesesCeremonyPlayed. */
+export function recordDivisionsIlluminated(ids: string[]): void {
+  if (typeof window === 'undefined') return;
+  const data = readStorage();
+  const have = new Set(data.divisionsIlluminated || []);
+  let changed = false;
+  for (const id of ids) if (!have.has(id)) { have.add(id); changed = true; }
+  if (changed) writeStorage({ ...data, divisionsIlluminated: [...have] });
 }
 
 export function getMuted(): boolean {

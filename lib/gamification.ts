@@ -80,6 +80,41 @@ export function getRank(data: StorageSchema, theses: ThesisGate[]): Rank {
   return 'incipiens';
 }
 
+/** Lessons remaining until a not-yet-earned thesis unlocks, but only when
+    exactly one of its gating modules is incomplete AND that module has
+    already been started — the "next domino" case worth tempting with a
+    countdown. Two-plus incomplete gating modules, or an unstarted one,
+    return null (B2 anticipation layer only tempts what's actually close). */
+export function lessonsAwayForThesis(data: StorageSchema, thesis: ThesisGate): number | null {
+  const complete = new Set(getModulesComplete(data));
+  const incomplete = thesis.modules_teach.filter(id => !complete.has(id));
+  if (incomplete.length !== 1) return null;
+  const modId = incomplete[0];
+  const mod = MODULES.find(m => m.id === modId);
+  if (!mod) return null;
+  const doneCount = data.progress?.[modId]?.lessonsComplete?.filter(Boolean).length || 0;
+  if (doneCount === 0) return null;
+  return mod.lessons.length - doneCount;
+}
+
+/** The single nearest unlock across all not-yet-earned theses, for the
+    "Thesis N is one lesson away" line on fin screens and the module map
+    (B2). null when nothing is currently in reach this way. */
+export function getNearestUnlock(
+  data: StorageSchema,
+  theses: ThesisGate[],
+): { n: number; lessonsAway: number } | null {
+  const earned = new Set(getThesesEarned(data, theses));
+  let best: { n: number; lessonsAway: number } | null = null;
+  for (const t of theses) {
+    if (earned.has(t.n)) continue;
+    const away = lessonsAwayForThesis(data, t);
+    if (away === null) continue;
+    if (!best || away < best.lessonsAway) best = { n: t.n, lessonsAway: away };
+  }
+  return best;
+}
+
 /* ── Habitus strength (§20.6 / G4) ──────────────────────────────────────
    The pure model lives in ./habitus (dependency-free, unit-tested). This is
    the schema-aware convenience wrapper. */

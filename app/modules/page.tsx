@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { MODULES } from '../../content/modules';
 import { COURSE_MAP, ACTS, type CourseMapEntry } from '../../content/courseMap';
 import { useProgress, type ModuleProgress, type StorageSchema } from '../../lib/progress';
-import { getRank } from '../../lib/gamification';
+import { getRank, getNearestUnlock } from '../../lib/gamification';
 import { THESES } from '../../content/theses';
 import TopBar from '../../components/TopBar';
 import HabitusVine from '../../components/HabitusVine';
@@ -169,6 +169,8 @@ export default function CourseMapPage() {
   const stateById = new Map(states.map(s => [s.id, s]));
 
   const rank = getRank(data as StorageSchema, THESES);
+  const nearestUnlock = getNearestUnlock(data as StorageSchema, THESES);
+  const nearestThesis = nearestUnlock ? THESES.find(t => t.n === nearestUnlock.n) : undefined;
 
   return (
     <div className="map-page">
@@ -191,6 +193,14 @@ export default function CourseMapPage() {
           <HabitusVine />
           <span className="cm-rank" aria-label={`Rank: ${rank}`}>{rank}</span>
         </div>
+
+        {/* Nearest unlock — anticipation line (B2). Single closest thesis only. */}
+        {nearestUnlock && nearestThesis && (
+          <p className="cm-next-thesis">
+            {`Thesis ${nearestThesis.numeral} is `}
+            {nearestUnlock.lessonsAway === 1 ? 'one lesson away' : `${nearestUnlock.lessonsAway} lessons away`}
+          </p>
+        )}
 
         <ContinueHero states={states} />
 

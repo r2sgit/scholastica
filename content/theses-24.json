@@ -18,7 +18,8 @@
       "groups": "Lumbreras' own division: ontology (I-VII), cosmology (VIII-XII), psychology (XIII-XXI), theodicy (XXII-XXIV)."
     },
     "unlock_lines": "One sentence each, Commentator voice per handbook section 7 (Chestertonian: warm, witty, never sneering, deflates itself first). Em-dash-free. Spoken at the section 20.1 unlock ceremony.",
-    "authored": "G-session, 2026-06-12 (Fable window). Claude-proposed mapping under delegated diligence; lines authored this session."
+    "authored": "G-session, 2026-06-12 (Fable window). Claude-proposed mapping under delegated diligence; lines authored this session.",
+    "riddle_hints": "One-line English riddle-hints, Commentator register per handbook section 7, authored for B2 (gamification v2 anticipation layer). Each hint gestures at the thesis's doctrine from an angle distinct from unlock_line's wording and imagery, and never quotes or paraphrases the Latin/English. Em-dash-free. null is reserved for a thesis where no safe hint could be written without leaking (none needed for the current 24)."
   },
   "theses": [
     {
@@ -35,6 +36,7 @@
         18
       ],
       "provisional": false,
+      "riddle_hint": "Why can something both exist and still have more being to gain?",
       "unlock_line": "You have learned the one sentence that sorts everything in existence into two piles, and one of the piles has a single occupant."
     },
     {
@@ -51,6 +53,7 @@
         18
       ],
       "provisional": false,
+      "riddle_hint": "What would a perfection look like with nothing left to receive it?",
       "unlock_line": "Nothing limits a perfection except a capacity for receiving it, which is why your coffee cools and God does not."
     },
     {
@@ -67,6 +70,7 @@
         18
       ],
       "provisional": false,
+      "riddle_hint": "What you are, and that you are, are two separate gifts.",
       "unlock_line": "What a thing is and that it is are really distinct in everything except the One in whom they were never two."
     },
     {
@@ -83,6 +87,7 @@
         18
       ],
       "provisional": true,
+      "riddle_hint": "Call a fox wise and God wise. Are you speaking the same language?",
       "unlock_line": "You can now say that breakfast is good and that God is good without lying in either direction."
     },
     {
@@ -98,6 +103,7 @@
         3
       ],
       "provisional": true,
+      "riddle_hint": "What kind of guest can visit a substance without moving in?",
       "unlock_line": "The apple's blush comes and goes while the apple remains, and you have just earned the metaphysics of both facts."
     },
     {
@@ -111,6 +117,7 @@
       ],
       "modules_touch": [],
       "provisional": true,
+      "riddle_hint": "A relation connects two things without becoming a property of either one.",
       "unlock_line": "Fatherhood is not a thing lodged inside the father, yet it is perfectly real, and you can now defend that without blinking."
     },
     {
@@ -127,6 +134,7 @@
         18
       ],
       "provisional": false,
+      "riddle_hint": "A pure spirit has no matter. Does that make it perfectly one thing?",
       "unlock_line": "Even the angels are composite, which should comfort you and humble them in roughly equal measure."
     },
     {
@@ -142,6 +150,7 @@
         2
       ],
       "provisional": true,
+      "riddle_hint": "What is left of a body once you subtract its shape?",
       "unlock_line": "Every body you have ever met is a partnership of stuff and shape so intimate that neither partner can exist alone."
     },
     {
@@ -155,6 +164,7 @@
       ],
       "modules_touch": [],
       "provisional": true,
+      "riddle_hint": "Matter and form never walk into a room by themselves. Why not?",
       "unlock_line": "Matter and form are principles of a thing rather than things, which is why no one has ever tripped over a form."
     },
     {
@@ -170,6 +180,7 @@
         5
       ],
       "provisional": true,
+      "riddle_hint": "You can shrink or grow and remain exactly who you substantially are.",
       "unlock_line": "A substance is not its size, which is why you remain entirely yourself on a diet."
     },
     {
@@ -183,6 +194,7 @@
       ],
       "modules_touch": [],
       "provisional": true,
+      "riddle_hint": "Two leaves, same species, same form. What makes them two and not one?",
       "unlock_line": "There is exactly one of you, and the reason is your matter rather than your soul, which is more flattering to matter than anyone expected."
     },
     {
@@ -196,6 +208,7 @@
       ],
       "modules_touch": [],
       "provisional": true,
+      "riddle_hint": "Why can't your whole body be in two rooms at once?",
       "unlock_line": "Quantity keeps your body in one place at a time, a courtesy you have enjoyed all your life without once thanking it."
     },
     {
@@ -211,6 +224,7 @@
         4
       ],
       "provisional": true,
+      "riddle_hint": "The instant of death changes nothing you could weigh. What changed?",
       "unlock_line": "The difference between a living thing and a corpse was never the parts; it is the form that made the parts an organism."
     },
     {
@@ -224,6 +238,7 @@
       ],
       "modules_touch": [],
       "provisional": true,
+      "riddle_hint": "Why does a tree's soul never outlive the tree?",
       "unlock_line": "The soul of a geranium is real, does its work faithfully, and perishes with the geranium, having never owned anything in its own name."
     },
     {
@@ -239,6 +254,7 @@
         18
       ],
       "provisional": true,
+      "riddle_hint": "One kind of soul survives its own body. Which, and why should it?",
       "unlock_line": "Your soul subsists, was created, and does not die, which is rather a lot to be told in a single sentence."
     },
     {
@@ -254,6 +270,7 @@
         5
       ],
       "provisional": true,
+      "riddle_hint": "One form. Six ways of describing you. How?",
       "unlock_line": "One form makes you man, animal, living, body, substance, and being, so you are at least six things and exactly one."
     },
     {
@@ -269,6 +286,7 @@
         9
       ],
       "provisional": true,
+      "riddle_hint": "Which of your powers would survive losing every organ?",
       "unlock_line": "Your eyes need your body and your intellect does not, which is why glasses exist and thinking caps never will."
     },
     {
@@ -284,6 +302,7 @@
         18
       ],
       "provisional": true,
+      "riddle_hint": "Understanding scales with freedom from matter. Guess your rank.",
       "unlock_line": "Understanding grows as matter loosens its grip, a scale on which you sit comfortably between the angels and the oysters."
     },
     {
@@ -299,6 +318,7 @@
         11
       ],
       "provisional": true,
+      "riddle_hint": "What in you turns a mere sight into something understood?",
       "unlock_line": "Nothing sensible is intelligible until the agent intellect lights it up, so the owl's lantern was inside you all along."
     },
     {
@@ -314,6 +334,7 @@
         16
       ],
       "provisional": true,
+      "riddle_hint": "You know the kind before you can point to the one. Why?",
       "unlock_line": "The mind grasps the universal straight on and the singular by turning back, like a man who recognizes the crowd before his own brother."
     },
     {
@@ -330,6 +351,7 @@
         14
       ],
       "provisional": true,
+      "riddle_hint": "Your will always wants what looks good. So where is your freedom?",
       "unlock_line": "The will follows the intellect everywhere except into necessity, and that one exception is your freedom."
     },
     {
@@ -347,6 +369,7 @@
       ],
       "provisional": true,
       "mapping_note": "WEAKEST ROW in the mapping. No module is dedicated to natural theology; M2 teaches the First Way, M8 the causal machinery, M18 the convergence. Gated on M18 so the five ways unlock where the course's deepest theses converge. Revisit at the M18 content pass.",
+      "riddle_hint": "You cannot see God directly. Can you still be certain he is there?",
       "unlock_line": "No one intuits God and no one proves him a priori; you climb to him from moved and borrowed things, and the ladder holds."
     },
     {
@@ -362,6 +385,7 @@
         3
       ],
       "provisional": true,
+      "riddle_hint": "You have existence. What would it mean to just be it?",
       "unlock_line": "God is not a being that happens to have existence but subsistent Existence itself, the shortest sentence in theology and the deepest."
     },
     {
@@ -377,6 +401,7 @@
         8
       ],
       "provisional": true,
+      "riddle_hint": "No craftsman has ever made something from nothing. Has Anyone?",
       "unlock_line": "Only the purity of esse creates, which is why nothing you ever make will be from nothing, and why you yourself were."
     }
   ]
