@@ -50,14 +50,11 @@ export default function MCQ({ question, onAnswer, disabled }: MCQProps) {
         const isAnswered = selectedId !== null;
         const isCorrect = isSelected && isCorrectOption(opt);
         const isWrong = isSelected && !isCorrectOption(opt);
-
-        let borderColor = 'var(--border)';
-        let borderWidth = 1;
-        if (isCorrect) { borderColor = 'var(--correct)'; borderWidth = 2; }
-        else if (isWrong) { borderColor = 'var(--wrong)'; borderWidth = 2; }
-
         const dimmed = isAnswered && !isSelected;
-        const opacity = dimmed ? 0.65 : 1;
+
+        const cls = ['exercise-option'];
+        if (isCorrect) cls.push('correct');
+        if (isWrong) cls.push('wrong', 'shake');
 
         return (
           <button
@@ -65,31 +62,14 @@ export default function MCQ({ question, onAnswer, disabled }: MCQProps) {
             type="button"
             onClick={() => handleSelect(opt)}
             disabled={disabled || isAnswered}
-            className={isWrong ? 'shake' : undefined}
+            className={cls.join(' ')}
             style={{
-              display: 'block',
-              width: '100%',
-              textAlign: 'left',
-              background: 'var(--paper)',
-              border: `${borderWidth}px solid ${borderColor}`,
-              borderRadius: 12,
-              padding: '14px 18px',
+              opacity: dimmed ? 0.65 : 1,
+              color: dimmed ? 'var(--ink-mute)' : 'var(--ink)',
               cursor: disabled || isAnswered ? 'default' : 'pointer',
-              transition: 'border-color .18s, opacity .18s',
-              opacity,
-              fontFamily: 'inherit',
             }}
-          >
-            <div
-              style={{
-                fontSize: 18,
-                fontWeight: 400,
-                color: dimmed ? 'var(--ink-mute)' : 'var(--ink)',
-                lineHeight: 1.45,
-              }}
-              dangerouslySetInnerHTML={{ __html: opt.text }}
-            />
-          </button>
+            dangerouslySetInnerHTML={{ __html: opt.text }}
+          />
         );
       })}
     </div>

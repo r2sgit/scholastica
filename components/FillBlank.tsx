@@ -111,7 +111,6 @@ export default function FillBlank({ question, onAnswer, disabled }: FillBlankPro
     <div>
       {bank.length > 0 && (
         <div className="fb-bank">
-          <div className="fb-bank-label">Word bank</div>
           {bank.map(w => {
             const used = usedValues.has(w.toLowerCase());
             return (

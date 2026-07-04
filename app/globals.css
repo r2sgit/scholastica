@@ -20,6 +20,7 @@
   --ink-faint:    #A89C8A;
   --gold:         #B88935;
   --gold-text:    #7A5B22;
+  --gold-light:   #D9BD82;
   --gold-deep:    #8D6A2C;
   --vermillion:   #A42F23;
   --ultramarine:  #2F4A8A;
@@ -941,8 +942,7 @@ a { color: inherit; text-decoration: none; }
   margin: 20px 0;
 }
 .cr-cite {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
   color: var(--ink-mute);
   letter-spacing: 0.1em;
   margin-top: 16px;
@@ -957,7 +957,7 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 18px;
   border-radius: 0 8px 8px 0;
   font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.55;
   color: var(--ink);
   font-style: italic;
@@ -973,6 +973,32 @@ a { color: inherit; text-decoration: none; }
 .feedback-panel em { font-style: italic; font-weight: 500; }
 .feedback-panel .lat { font-style: italic; font-weight: 500; color: var(--vermillion); }
 .feedback-panel .lat-inline { font-style: italic; font-weight: 500; }
+
+/* Shared answer-option surface — MCQ and DialogueBranch (R1: ported wholesale
+   so branch options get the same hover as options). Correctness border-color/
+   width are runtime states applied as modifier classes; idle/hover live here. */
+.exercise-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--paper);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 1.45;
+  color: var(--ink);
+  transition: border-color 180ms ease, opacity 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+.exercise-option:hover:not(:disabled) {
+  border-color: var(--gold-light);
+  box-shadow: var(--shadow-row-hover);
+  transform: translateY(-1px);
+}
+.exercise-option:disabled { cursor: default; }
+.exercise-option.correct { border-color: var(--correct); border-width: 2px; }
+.exercise-option.wrong { border-color: var(--wrong); border-width: 2px; }
 
 /* ============================================================
    Card Vines
@@ -1167,7 +1193,7 @@ a { color: inherit; text-decoration: none; }
   background: var(--paper);
   color: var(--ink);
   font-family: 'Fraunces', serif;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.45;
   cursor: pointer;
   transition: border-color 140ms ease, background 140ms ease, transform 120ms ease;
@@ -1206,17 +1232,17 @@ a { color: inherit; text-decoration: none; }
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: var(--gold);
+  background: var(--gold-deep);
   color: var(--paper);
   font-family: 'Fraunces', serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 13px;
 }
 .match-pair-grid .match-item.correct .pair-badge { background: var(--correct); }
 .match-pair-grid .match-item.wrong .pair-badge { background: var(--wrong); }
 .match-pair-status {
   font-family: 'Fraunces', serif;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--ink-soft);
   font-style: italic;
   margin: 6px 4px 0;
@@ -1231,7 +1257,7 @@ a { color: inherit; text-decoration: none; }
   min-width: 110px;
   padding: 2px 10px;
   margin: 0 4px;
-  border-bottom: 2px solid var(--border);
+  border-bottom: 2px solid var(--ink-soft);
   font-family: 'Fraunces', serif;
   font-style: italic;
   color: var(--ink);
@@ -1251,34 +1277,27 @@ a { color: inherit; text-decoration: none; }
   background: color-mix(in oklab, var(--canvas) 50%, transparent);
   border-radius: 12px;
 }
-.fb-bank-label {
-  font-family: 'Fraunces', serif;
-  font-style: italic;
-  font-size: 12px;
-  color: var(--ink-soft);
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  width: 100%;
-  margin-bottom: 4px;
-}
 .fb-chip {
-  padding: 8px 14px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 18px;
   border: 1px solid var(--border);
   border-radius: 999px;
   background: var(--paper);
   color: var(--ink);
   font-family: 'Fraunces', serif;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
   transition: border-color 140ms ease, background 140ms ease, transform 120ms ease, opacity 140ms ease;
 }
 .fb-chip:hover:not(:disabled) { border-color: var(--ink-soft); transform: translateY(-1px); }
-.fb-chip.used { opacity: 0.35; cursor: default; }
+.fb-chip.used { opacity: 0.55; cursor: default; }
 .fb-chip:disabled { cursor: default; }
 
 /* ── Syllogism builder ── */
 .syllogism-instruction {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--ink-soft);
   margin-bottom: 14px;
   line-height: 1.5;
@@ -1294,20 +1313,23 @@ a { color: inherit; text-decoration: none; }
 .syllogism-role-picker { display: flex; flex-wrap: wrap; gap: 6px; }
 .role-chip {
   font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
-  font-size: 13px;
-  padding: 6px 14px;
+  font-size: 15px;
+  padding: 10px 16px;
+  min-height: 44px;
   border-radius: 999px;
   border: 1px solid var(--border);
   background: var(--paper);
-  color: var(--ink-soft);
+  color: var(--ink);
   cursor: pointer;
   transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
 }
 .role-chip:hover { border-color: var(--ink-soft); }
+/* Selection is not a verdict — green is reserved for the resolved recap.
+   A chosen-but-unchecked role reads as vermillion, matching MatchPair. */
 .role-chip.selected {
-  background: rgba(79, 122, 62, 0.10);
-  border-color: var(--correct);
-  color: var(--correct);
+  background: rgba(164, 47, 35, 0.08);
+  border-color: var(--vermillion);
+  color: var(--vermillion);
   font-weight: 500;
 }
 .syllogism-submit-wrap { margin-top: 18px; display: flex; justify-content: flex-end; }
@@ -1315,7 +1337,7 @@ a { color: inherit; text-decoration: none; }
   opacity: 0.45;
   cursor: not-allowed;
   background: var(--border);
-  color: var(--ink-mute);
+  color: var(--ink-faint);
 }
 .syllogism-recap { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; margin-bottom: 8px; }
 .syllogism-recap-row {
@@ -1332,14 +1354,15 @@ a { color: inherit; text-decoration: none; }
 .recap-roles {
   font-variant-caps: all-small-caps;
   letter-spacing: 0.10em;
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 600;
   color: var(--ink-soft);
   display: flex;
   align-items: center;
   gap: 6px;
 }
 .syllogism-recap-row.no .recap-chosen { color: var(--wrong); }
-.recap-arrow { color: var(--ink-faint); }
+.recap-arrow { color: var(--ink-mute); }
 .recap-correct { color: var(--correct); font-weight: 500; }
 
 /* ═══ Course map (/modules) — from scholastica-module-map-v2-mockup ═══ */

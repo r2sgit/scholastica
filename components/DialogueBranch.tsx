@@ -90,21 +90,8 @@ export default function DialogueBranch({ question, onAnswer, disabled }: Dialogu
               type="button"
               onClick={() => handlePick(i)}
               disabled={resolved || disabled}
-              style={{
-                display: 'block',
-                width: '100%',
-                textAlign: 'left',
-                background: 'var(--paper)',
-                border: `${showCorrect ? 2 : 1}px solid ${showCorrect ? 'var(--correct)' : 'var(--border)'}`,
-                borderRadius: 12,
-                padding: '14px 18px',
-                cursor: resolved || disabled ? 'default' : 'pointer',
-                transition: 'border-color .18s, opacity .18s',
-                fontFamily: 'inherit',
-                fontSize: 18,
-                lineHeight: 1.45,
-                color: 'var(--ink)',
-              }}
+              className={`exercise-option${showCorrect ? ' correct' : ''}`}
+              style={{ cursor: resolved || disabled ? 'default' : 'pointer' }}
               dangerouslySetInnerHTML={{ __html: b.text }}
             />
           );
@@ -129,8 +116,8 @@ export default function DialogueBranch({ question, onAnswer, disabled }: Dialogu
             style={{
               fontVariantCaps: 'all-small-caps',
               letterSpacing: '0.18em',
-              fontSize: 11,
-              fontWeight: 500,
+              fontSize: 13,
+              fontWeight: 600,
               color: 'var(--wrong)',
               marginBottom: 6,
             }}
