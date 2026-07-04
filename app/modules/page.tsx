@@ -7,6 +7,7 @@ import { useProgress, type ModuleProgress, type StorageSchema } from '../../lib/
 import { getRank, getNearestUnlock } from '../../lib/gamification';
 import { THESES } from '../../content/theses';
 import TopBar from '../../components/TopBar';
+import DrolleryCourt from '../../components/DrolleryCourt';
 
 function toRoman(n: number): string {
   const vals = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
@@ -219,6 +220,10 @@ export default function CourseMapPage() {
           </div>
         ))}
       </div>
+
+      {/* Drollery Court (B4): additive, grows in the margins as modules
+          complete; compresses to a row above the colophon ≤640px. */}
+      <DrolleryCourt />
     </div>
   );
 }

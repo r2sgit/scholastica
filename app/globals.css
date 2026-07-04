@@ -285,8 +285,11 @@ a { color: inherit; text-decoration: none; }
   color: var(--ink-mute);
 }
 
-/* ── The Drollery Court ── grows in the Threshold margins as modules
-   complete. Positioned around the centered wordmark, behind the stage. */
+/* ── The Drollery Court (gamification v2 §4.7, B4) ── grows in the module
+   map's margins as modules complete, additive alongside the existing corner
+   four and per-module card drolleries (hard rail 10: nothing existing moves).
+   ≤640px there is no margin to grow into, so it compresses to a row above
+   the site colophon instead (.drollery-court-row). */
 @keyframes drolleryIn {
   from { opacity: 0; transform: translateY(8px) scale(0.96); }
   to   { opacity: 0.92; transform: translateY(0) scale(1); }
@@ -305,7 +308,6 @@ a { color: inherit; text-decoration: none; }
 .court-drollery img { display: block; height: auto; }
 .court-jubilant {
   position: absolute;
-  top: 26px;
   left: 50%;
   transform: translateX(120px);
   animation: drolleryIn 620ms ease 280ms both;
@@ -314,12 +316,30 @@ a { color: inherit; text-decoration: none; }
 }
 .court-jubilant img { display: block; height: auto; }
 
-@media (max-width: 480px) {
-  /* Mobile: the court thins to a curated subset; the leftmost/rightmost
-     outliers fall away so the spread never crowds the copy. */
-  .court-drollery { transform: scale(0.82); }
-  .court-drollery:nth-of-type(n+5) { display: none; }
-  .court-jubilant { transform: translateX(70px); }
+.drollery-court-row {
+  display: none;
+}
+/* 1240px matches .course-margin-art's own cutoff below: true margins for
+   the 1080px content column only exist above that width. The row (spec'd
+   for ≤640px) is safe to extend up to that same line rather than leaving a
+   641–1239px gap where the margin figures would clip into the card grid. */
+@media (max-width: 1240px) {
+  .drollery-court { display: none; }
+  .drollery-court-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 28px auto 4px;
+    padding: 0 20px;
+  }
+  .drollery-court-row img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    opacity: 0.92;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
