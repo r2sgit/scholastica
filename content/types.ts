@@ -31,10 +31,24 @@ export interface Question {
   payload: Record<string, unknown>;
 }
 
+/** The per-lesson reward (gamification v2 §4.2 / B3): the distinction the
+    lesson just taught, handed over as a small illuminated card on the fin
+    screen. latin/english are the pair in each register (e.g. "potentia ·
+    actus" / "potency · act"); gloss is the one-line plain-English take;
+    motif selects the inline-SVG visual-distinctions grammar frame. Optional
+    — a lesson without this field renders fin without a card, no gap. */
+export interface FinDistinction {
+  latin: string;
+  english: string;
+  gloss: string;
+  motif: string;
+}
+
 export interface FinMeta {
   tag: string;
   heading: string;     // may contain <em>
   body: string;        // may contain <em>
+  distinction?: FinDistinction;
 }
 
 export interface LessonMeta {

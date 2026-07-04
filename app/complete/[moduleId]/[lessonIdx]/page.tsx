@@ -9,6 +9,7 @@ import { getRank, getThesesEarned, getNearestUnlock, type Rank } from '../../../
 import { THESES, type Thesis } from '../../../../content/theses';
 import Prose from '../../../../components/Prose';
 import ThesisCeremony from '../../../../components/ThesisCeremony';
+import DistinctionCard from '../../../../components/DistinctionCard';
 
 /* ── Vine Divider ─────────────────────────────────────────── */
 function VineDivider() {
@@ -33,9 +34,12 @@ function VineDivider() {
 }
 
 /* ── Score Pips ───────────────────────────────────────────── */
-function ScorePips({ correct, total, missedIds }: { correct: number; total: number; missedIds: string[] }) {
+function ScorePips({ correct, total, missedIds, sweep }: { correct: number; total: number; missedIds: string[]; sweep: boolean }) {
   return (
-    <div style={{ display: 'flex', gap: 8, justifyContent: 'center', flexWrap: 'wrap', margin: '20px 0' }}>
+    <div
+      className={sweep ? 'pips-sweep' : undefined}
+      style={{ display: 'flex', gap: 8, justifyContent: 'center', flexWrap: 'wrap', margin: '20px 0' }}
+    >
       {Array.from({ length: total }, (_, i) => {
         const isMissed = i >= correct || i >= total - missedIds.length;
         // Simpler: first `correct` are green, rest are red
@@ -43,6 +47,7 @@ function ScorePips({ correct, total, missedIds }: { correct: number; total: numb
         return (
           <div
             key={i}
+            className="pip-dot"
             style={{
               width: 10,
               height: 10,
@@ -54,6 +59,18 @@ function ScorePips({ correct, total, missedIds }: { correct: number; total: numb
         );
       })}
     </div>
+  );
+}
+
+/* ── Sine Errore friar moment (B3, §4.5) ─────────────────────
+   A perfect lesson: the friar noticed. Inline miniature ≤700px, margin
+   figure ≥700px, never viewport-pinned (.sine-friar / .fin-reward-row). */
+function SineFriar() {
+  return (
+    <aside className="sine-friar">
+      <img src="/images/drolleries/dr-05.png" alt="" aria-hidden="true" />
+      <div className="say">A perfect pass. The friar is beside himself.</div>
+    </aside>
   );
 }
 
@@ -263,18 +280,31 @@ function FinScreenInner() {
           )
         )}
 
-        {/* Score pips */}
-        <ScorePips correct={correct} total={total} missedIds={missedIds} />
+        {/* Score pips — gold sweep on a perfect lesson (§4.5) */}
+        <ScorePips correct={correct} total={total} missedIds={missedIds} sweep={isPerfect} />
 
-        {/* Drollery */}
-        <div style={{ margin: '24px 0', display: 'flex', justifyContent: 'center' }}>
-          <img
-            src={isPerfect ? '/images/drolleries/dr-05.png' : '/images/drolleries/dr-07.png'}
-            alt=""
-            aria-hidden="true"
-            style={{ width: 120, height: 'auto', opacity: 0.9 }}
-          />
-        </div>
+        {/* Reward row, beat order per the prototype: sine errore + friar,
+            then the distinction card. Single column ≤700px; ≥700px the
+            friar becomes a margin figure beside the card (.fin-reward-row). */}
+        {(isPerfect || fin.distinction) && (
+          <div className="fin-reward-row">
+            {isPerfect && <SineFriar />}
+            {fin.distinction && <DistinctionCard distinction={fin.distinction} />}
+          </div>
+        )}
+
+        {/* Drollery — the contemplative fallback when the lesson wasn't
+            perfect and there's no distinction card either. */}
+        {!isPerfect && !fin.distinction && (
+          <div style={{ margin: '24px 0', display: 'flex', justifyContent: 'center' }}>
+            <img
+              src="/images/drolleries/dr-07.png"
+              alt=""
+              aria-hidden="true"
+              style={{ width: 120, height: 'auto', opacity: 0.9 }}
+            />
+          </div>
+        )}
 
         {/* Nearest unlock — anticipation line (B2). Only the single closest
             not-yet-earned thesis, never a list. */}

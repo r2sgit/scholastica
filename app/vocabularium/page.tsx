@@ -3,11 +3,40 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import TopBar from '../../components/TopBar';
 import GlossCard from '../../components/GlossCard';
+import DistinctionMotif from '../../components/DistinctionMotif';
 import { useProgress } from '../../lib/progress';
 import { getCourseEntry } from '../../content/courseMap';
+import { MODULES } from '../../content/modules';
+import type { FinDistinction } from '../../content/types';
 import {
   TERMS, isTermEarned, termGroupsInOrder, type Term, type TermModule,
 } from '../../content/terms';
+
+interface CodexEntry {
+  key: string;
+  distinction: FinDistinction;
+}
+
+/* One earned distinction, browsable — the codex shelf (§4.2 / B3). Static
+   (no flip-in; that celebration already happened on its fin screen). */
+function CodexCard({ entry }: { entry: CodexEntry }) {
+  const d = entry.distinction;
+  return (
+    <div className="codex-card">
+      <div className="dcard-pair codex-pair">
+        {d.latin.split('·').map((term, i, arr) => (
+          <span key={i}>
+            <em>{term.trim()}</em>
+            {i < arr.length - 1 && <span className="sep">&middot;</span>}
+          </span>
+        ))}
+      </div>
+      <div className="dcard-pair-en">{d.english}</div>
+      <p className="dcard-gloss">{d.gloss}</p>
+      <DistinctionMotif kind={d.motif} on />
+    </div>
+  );
+}
 
 function groupHead(mod: TermModule): string {
   if (mod === 'structural') return 'Structura';
@@ -36,6 +65,21 @@ export default function VocabulariumPage() {
     return termGroupsInOrder()
       .filter(m => byMod.has(m))
       .map(m => ({ mod: m, terms: byMod.get(m)! }));
+  }, [data]);
+
+  // Distinction Card codex (§4.2): every completed lesson that carries a
+  // fin.distinction, in module/lesson order. Earned cards only.
+  const codex = useMemo(() => {
+    const out: CodexEntry[] = [];
+    for (const mod of MODULES) {
+      const mp = data.progress?.[mod.id];
+      mod.lessons.forEach((lesson, i) => {
+        if (mp?.lessonsComplete?.[i] && lesson.fin.distinction) {
+          out.push({ key: lesson.id, distinction: lesson.fin.distinction });
+        }
+      });
+    }
+    return out;
   }, [data]);
 
   // Modal a11y: focus the close control on open; Escape dismisses.
@@ -88,6 +132,20 @@ export default function VocabulariumPage() {
               </div>
             </section>
           ))
+        )}
+
+        {/* Distinction Card codex (§4.2 / B3) — one room for everything
+            collected-by-understanding. Earned cards only; empty and silent
+            until the first one is owned. */}
+        {codex.length > 0 && (
+          <section className="codex-shelf">
+            <div className="vocab-group-head">
+              <span className="vocab-group-title">The distinctions you own</span>
+            </div>
+            <div className="codex-grid">
+              {codex.map(entry => <CodexCard key={entry.key} entry={entry} />)}
+            </div>
+          </section>
         )}
       </div>
 

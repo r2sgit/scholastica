@@ -18,6 +18,12 @@ export const m2: ModuleMeta = {
         tag: `actus  ·  potentia`,
         heading: `Every finite thing is stretched between two poles. Neither is nothing.`,
         body: `<em>Actus</em> and <em>potentia</em> are not a metaphor. They are the two real principles of which every creature is composed. Aristotle discovered the grammar; Aquinas sharpened it until it could carry the weight of creation itself.`,
+        distinction: {
+          latin: `actus  ·  potentia`,
+          english: `act  ·  potency`,
+          gloss: `Every finite thing is stretched between two poles, and neither one is nothing.`,
+          motif: `seed-tree`,
+        },
       },
       questions: [
         {
@@ -258,6 +264,12 @@ export const m2: ModuleMeta = {
         tag: `actus  ·  prior`,
         heading: `Potency exists for the sake of act. Not the other way.`,
         body: `In time, we often see the potential before the actual: the seed before the tree. But in being, act is always prior. The seed exists <em>for</em> the tree; the capacity exists <em>for</em> what it can receive. A world of pure potency would not exist at all.`,
+        distinction: {
+          latin: `actus  ·  potentia`,
+          english: `act  ·  potency`,
+          gloss: `The seed exists for the tree. Not the tree for the seed.`,
+          motif: `seed-tree-prior`,
+        },
       },
       questions: [
         {
@@ -475,6 +487,12 @@ export const m2: ModuleMeta = {
         tag: `mutatio`,
         heading: `What moves is not what moves itself.`,
         body: `Every change is a passage from potency to act in some subject. The subject persists as what it is; what changes is what it can be. Accidental change leaves the substance standing; substantial change reaches the form itself, leaving only matter. Grasping this distinction is not a fine point. It is the whole metaphysics of motion, and everything that follows about causation depends on it.`,
+        distinction: {
+          latin: `potentia  ·  actus`,
+          english: `potency  ·  act`,
+          gloss: `What changes is not what remains. The subject holds; the act arrives.`,
+          motif: `seed-tree-change`,
+        },
       },
       questions: [
         {
@@ -678,6 +696,12 @@ export const m2: ModuleMeta = {
         tag: `actus purus`,
         heading: `Pure Act. No composition. No limit. No dependence.`,
         body: `Every finite being is composed of act and potency; it has its act from something else. Follow that chain to its necessary terminus and you reach a being that is simply act, with no potency, no unrealized capacity, no receiver. That is what the argument requires.`,
+        distinction: {
+          latin: `potentia  ·  actus purus`,
+          english: `potency  ·  Pure Act`,
+          gloss: `Follow the chain of borrowed act back far enough, and it ends in a source that borrowed none.`,
+          motif: `seed-tree-chain`,
+        },
       },
       questions: [
         {
@@ -827,6 +851,12 @@ export const m2: ModuleMeta = {
         tag: `recapitulatio`,
         heading: `You did not learn a vocabulary. You acquired a grid.`,
         body: `Act and potency are not two words to remember but two poles every finite thing is stretched between, and you can now find them in a marble block, a burning log, and an argument for God. Module 2 asks the question this grid was built for: what happens when act and potency are applied, not to motion, but to being itself. That a thing is, and what a thing is, are about to meet the two poles. Bring the grid.`,
+        distinction: {
+          latin: `actus  ·  potentia`,
+          english: `act  ·  potency`,
+          gloss: `Two poles. Every finite thing you will ever meet is stretched between them.`,
+          motif: `seed-tree`,
+        },
       },
       questions: [
         {

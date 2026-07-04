@@ -16,6 +16,12 @@ export const m1: ModuleMeta = {
         tag: `essentia  ·  esse`,
         heading: `Every thing you will ever examine has two questions in front of it.`,
         body: `<em>Esse</em> is not <em>essentia.</em> That a tree exists is not the same fact as what a tree is. Modernity collapsed these; Aquinas held them apart with a patience that bordered on stubbornness. He was right to. Nearly every argument in the course eventually reaches back to this distinction — which is as good a reason as any to begin here.`,
+        distinction: {
+          latin: `essentia  ·  esse`,
+          english: `essence  ·  existence`,
+          gloss: `What a thing is, and that it is, are two different questions with two different answers.`,
+          motif: `sun-silhouette`,
+        },
       },
       questions: [
         {
@@ -207,6 +213,12 @@ export const m1: ModuleMeta = {
         tag: `potentia  ·  actus`,
         heading: `Change requires that a thing be not yet what it is becoming.`,
         body: `Potency is real capacity; act is real perfection. The marble is potentially a statue — not metaphorically, really. Aristotle built this engine for the physics of change; Aquinas ran it all the way to a conclusion Aristotle did not reach: that there must be something that is Pure Act, with no potency at all. That conclusion is not Module 1. But this lesson is why it is available.`,
+        distinction: {
+          latin: `potentia  ·  actus`,
+          english: `potency  ·  act`,
+          gloss: `What a thing could still become, and what it already is.`,
+          motif: `seed-tree`,
+        },
       },
       questions: [
         {
@@ -398,6 +410,12 @@ export const m1: ModuleMeta = {
         tag: `res  ·  distinctio realis`,
         heading: `Not everything the mind can distinguish is distinguished in the thing.`,
         body: `A real distinction holds independently of whether any mind ever notices it. A notional distinction is the mind’s own construction — useful, sometimes necessary, never to be confused with the real article. The <em>esse</em>/<em>essentia</em> distinction in creatures is real; in God, it is not. Much of later Thomistic argument hangs on getting this diagnostic right before anything else.`,
+        distinction: {
+          latin: `realis  ·  rationis`,
+          english: `real  ·  notional`,
+          gloss: `If two things could exist apart, the mind did not invent the difference between them.`,
+          motif: `diverging-lines`,
+        },
       },
       questions: [
         {
@@ -577,6 +595,12 @@ export const m1: ModuleMeta = {
         tag: `causa materialis  ·  formalis  ·  efficiens  ·  finalis`,
         heading: `One question — <em>Why?</em> — and four answers that cannot be reduced to one.`,
         body: `Modern science narrowed causation to the efficient cause: the push. Aquinas retained all four because reality insisted on it — the stuff something is made of, the form that makes it this thing, the agent that brought it about, and the end toward which it acts. Lose the final cause and you lose the ability to say what anything is <em>for.</em> Most of the modern confusion about nature, ethics, and technology is precisely that loss.`,
+        distinction: {
+          latin: `materialis  ·  finalis`,
+          english: `material  ·  final`,
+          gloss: `The stuff a thing is made of, and the end it is made for, are two different answers to one why.`,
+          motif: `nest-causes`,
+        },
       },
       questions: [
         {
@@ -825,6 +849,12 @@ export const m1: ModuleMeta = {
         tag: `materia  ·  forma`,
         heading: `A body is never bare matter — it is always already <em>this kind</em> of thing.`,
         body: `Matter is pure potency: the sheer capacity to receive form, without any of its own. Form is the act that makes a body what it is. Neither subsists without the other in natural things; you can separate them in the mind, but doing so in reality dissolves the substance. This is hylomorphism — Aristotle’s insight, refined by Aquinas into a precise instrument for every argument about bodies, souls, and sacraments.`,
+        distinction: {
+          latin: `materia  ·  forma`,
+          english: `matter  ·  form`,
+          gloss: `The capacity to be shaped, and the shape that makes it this.`,
+          motif: `clay-form`,
+        },
       },
       questions: [
         {
@@ -1004,6 +1034,12 @@ export const m1: ModuleMeta = {
         tag: `substantia  ·  accidens`,
         heading: `A substance is what a thing <em>is;</em> an accident is what it happens to <em>have.</em>`,
         body: `Substance subsists in itself; accidents inhere in substance as their subject. Socrates is pale, tall, seated — none of that is Socrates, but all of it belongs to him. The distinction sounds harmless until you need it for the harder cases: soul and body, person and nature, the Eucharist. Keep it sharp.`,
+        distinction: {
+          latin: `substantia  ·  accidens`,
+          english: `substance  ·  accident`,
+          gloss: `What a thing is, and what it merely happens to have.`,
+          motif: `concentric`,
+        },
       },
       questions: [
         {
@@ -1189,6 +1225,12 @@ export const m1: ModuleMeta = {
         tag: `septem distinctiones`,
         heading: `Module 1 complete.`,
         body: `Seven distinctions: esse/essentia, actus/potentia, the real/notional divide, the four causes, materia/forma, substantia/accidens. Aquinas did not invent them; he found them in Aristotle, sharpened them, and turned them into instruments of an argument that spans metaphysics, ethics, sacramental theology, and the nature of God. You now hold the kit. Module 6 builds the logical machinery that runs on top of it.`,
+        distinction: {
+          latin: `potentia  ·  actus`,
+          english: `potency  ·  act`,
+          gloss: `Every distinction you just learned runs on this one first. Yours now, without notes.`,
+          motif: `seed-tree`,
+        },
       },
       questions: [
         {
