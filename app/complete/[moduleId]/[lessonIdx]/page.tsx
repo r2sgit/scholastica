@@ -132,7 +132,7 @@ function FinScreenInner() {
   return (
     <div
       style={{
-        minHeight: '100vh',
+        minHeight: '100dvh',
         background: 'var(--canvas)',
         display: 'flex',
         flexDirection: 'column',
@@ -154,7 +154,7 @@ function FinScreenInner() {
             display: 'inline-block',
             fontFamily: '"Emeritus", serif',
             fontSize: 16,
-            color: 'var(--gold)',
+            color: 'var(--gold-text)',
             border: '1px solid var(--gold)',
             borderRadius: 4,
             padding: '4px 14px',
@@ -233,7 +233,7 @@ function FinScreenInner() {
                 fontVariantCaps: 'all-small-caps',
                 letterSpacing: '0.16em',
                 fontSize: 13,
-                color: 'var(--ink-faint)',
+                color: 'var(--ink-mute)',
                 margin: '4px 0 0',
               }}
             >
@@ -327,7 +327,7 @@ function FinScreenInner() {
 export default function FinScreenPage() {
   return (
     <Suspense fallback={
-      <div style={{ minHeight: '100vh', background: 'var(--canvas)', display: 'grid', placeItems: 'center' }}>
+      <div style={{ minHeight: '100dvh', background: 'var(--canvas)', display: 'grid', placeItems: 'center' }}>
         <div style={{ color: 'var(--ink-soft)', fontStyle: 'italic' }}>Loading...</div>
       </div>
     }>

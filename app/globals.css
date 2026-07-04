@@ -15,9 +15,11 @@
   --paper:        #FAF6EE;
   --canvas:       #F1ECE1;
   --ink:          #3B3228;
-  --ink-soft:     #6B5E4F;
+  --ink-soft:     #5C5143;
+  --ink-mute:     #746757;
   --ink-faint:    #A89C8A;
   --gold:         #B88935;
+  --gold-text:    #7A5B22;
   --gold-deep:    #8D6A2C;
   --vermillion:   #A42F23;
   --ultramarine:  #2F4A8A;
@@ -108,7 +110,7 @@ a { color: inherit; text-decoration: none; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 100dvh;
   position: relative;
 }
 
@@ -156,7 +158,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ── Home / landing: the Thomas hero (ships 2026-06-14) ───────── */
-.home-page { min-height: 100vh; display: flex; flex-direction: column; }
+.home-page { min-height: 100dvh; display: flex; flex-direction: column; }
 .home-top { width: 100%; max-width: 1180px; margin: 0 auto; padding: 22px 40px 0; display: flex; }
 .home-top .wordmark { font-size: 30px; }
 .home-top .wordmark .dot { width: 6px; height: 6px; transform: translateY(-7px); }
@@ -279,7 +281,7 @@ a { color: inherit; text-decoration: none; }
   font-variant-caps: all-small-caps;
   letter-spacing: 0.16em;
   font-size: 13px;
-  color: var(--ink-faint);
+  color: var(--ink-mute);
 }
 
 /* ── The Drollery Court ── grows in the Threshold margins as modules
@@ -360,10 +362,11 @@ a { color: inherit; text-decoration: none; }
   justify-self: center;
 }
 .cp-label {
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 600;
   font-style: italic;
   letter-spacing: 0.14em;
-  color: var(--ink-soft);
+  color: var(--ink-mute);
   font-variant-caps: all-small-caps;
 }
 .cp-num {
@@ -385,7 +388,7 @@ a { color: inherit; text-decoration: none; }
   margin: 0 1px;
 }
 .cp-name {
-  font-size: 14px;
+  font-size: 15px;
   font-style: italic;
   color: var(--ink);
   font-weight: 500;
@@ -405,14 +408,17 @@ a { color: inherit; text-decoration: none; }
   font-family: 'Fraunces', Georgia, serif;
   font-variant-caps: all-small-caps;
   letter-spacing: 0.12em;
-  font-size: 13px;
+  font-size: 14.5px;
   color: var(--ink-soft);
+  font-weight: 500;
   text-decoration: none;
   transition: color .15s;
   white-space: nowrap;
+  padding-bottom: 6px;
+  border-bottom: 2px solid transparent;
 }
 .tb-nav-link:hover { color: var(--gold-deep); }
-.tb-nav-link.active { color: var(--gold); }
+.tb-nav-link.active { color: var(--gold-text); border-bottom-color: var(--gold); }
 
 .mute-btn {
   background: none;
@@ -440,6 +446,71 @@ a { color: inherit; text-decoration: none; }
   display: none;
 }
 .env-badge.show { display: inline-block; }
+
+/* Lesson progress hairline — sits under the bar, fills gold as questions
+   advance. Renders only where TopBar is given a progress prop. */
+.tb-hairline {
+  height: 2px;
+  background: var(--border-soft);
+  overflow: hidden;
+}
+.tb-hairline-fill {
+  height: 100%;
+  background: var(--gold);
+  transition: width .3s ease;
+}
+
+/* ============================================================
+   Mobile bottom tab bar — Modules · Theses · Vocabularium
+   ============================================================ */
+.tab-bar {
+  display: none;
+}
+@media (max-width: 640px) {
+  .tab-bar {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    background: var(--canvas);
+    border-top: 1px solid var(--border-soft);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .tab-bar-link {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    min-height: 48px;
+    padding: 6px 4px 4px;
+    font-family: 'Fraunces', Georgia, serif;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.06em;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-top: 2px solid transparent;
+  }
+  .tab-bar-link.active {
+    color: var(--gold-text);
+    border-top-color: var(--gold);
+  }
+  .tb-nav { display: none; }
+
+  /* Clear the fixed tab bar so page content never sits under it. */
+  .map-page,
+  .card-area,
+  .vocab-stage,
+  .theses-stage,
+  .notfound-stage {
+    padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+  }
+}
 
 /* ============================================================
    Module Map
@@ -486,12 +557,12 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 32px;
 }
 .module-copy .eyebrow {
-  font-size: 12px;
-  color: var(--gold);
+  font-size: 13px;
+  color: var(--gold-text);
   font-variant-caps: all-small-caps;
   letter-spacing: 0.12em;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 8px;
 }
 .module-copy h1 {
@@ -534,7 +605,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: 999px;
 }
 .mod-progress .meta {
-  color: var(--ink-faint);
+  color: var(--ink-mute);
   font-size: 13px;
   font-style: italic;
   font-variant-numeric: tabular-nums;
@@ -602,12 +673,12 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 3px;
 }
 .txt .tag {
-  font-size: 12px;
+  font-size: 13px;
   font-variant-caps: all-small-caps;
   letter-spacing: 0.14em;
   color: var(--ink-soft);
   font-style: italic;
-  font-weight: 500;
+  font-weight: 600;
 }
 .txt h3 {
   font-family: "Fraunces", serif;
@@ -639,7 +710,7 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   gap: 7px;
   font-size: 13px;
-  color: var(--ink-faint);
+  color: var(--ink-mute);
   font-style: italic;
   letter-spacing: 0.02em;
 }
@@ -657,7 +728,7 @@ a { color: inherit; text-decoration: none; }
 
 .score-line {
   font-size: 13px;
-  color: var(--ink-faint);
+  color: var(--ink-mute);
   font-variant-caps: all-small-caps;
   letter-spacing: 0.08em;
   font-style: italic;
@@ -687,7 +758,7 @@ a { color: inherit; text-decoration: none; }
 .continue .who { flex: 1; }
 .continue .who .k {
   font-size: 13px;
-  color: var(--gold);
+  color: var(--gold-text);
   font-variant-caps: all-small-caps;
   letter-spacing: 0.14em;
   font-style: italic;
@@ -703,7 +774,7 @@ a { color: inherit; text-decoration: none; }
 }
 .continue .who .t em { font-style: italic; }
 .continue .who .m {
-  color: var(--ink-faint);
+  color: var(--ink-mute);
   font-size: 13px;
   font-style: italic;
 }
@@ -823,14 +894,14 @@ a { color: inherit; text-decoration: none; }
 .le-label {
   font-variant-caps: all-small-caps;
   letter-spacing: 0.18em;
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--gold);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold-text);
 }
 .le-num {
   font-variant-caps: all-small-caps;
   letter-spacing: 0.06em;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--vermillion);
 }
@@ -870,8 +941,9 @@ a { color: inherit; text-decoration: none; }
   margin: 20px 0;
 }
 .cr-cite {
-  font-size: 12px;
-  color: var(--ink-faint);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-mute);
   letter-spacing: 0.1em;
   margin-top: 16px;
   font-style: italic;
@@ -1028,8 +1100,8 @@ a { color: inherit; text-decoration: none; }
   .topbar > div { order: 2; }                 /* nav + mute cluster */
   .curriculum-path { order: 3; flex-basis: 100%; justify-content: flex-start; gap: 6px; }
   .tb-nav { gap: 12px; }
-  .tb-nav-link { font-size: 12px; letter-spacing: 0.08em; }
-  .cp-label  { font-size: 11px; letter-spacing: 0.12em; }
+  .tb-nav-link { font-size: 13px; letter-spacing: 0.08em; }
+  .cp-label  { font-size: 13px; letter-spacing: 0.12em; }
   .cp-num    { font-size: 14px; }
   .cp-fleuron::after { font-size: 10px; }
   .card-area { padding-bottom: 220px; }
@@ -1243,7 +1315,7 @@ a { color: inherit; text-decoration: none; }
   opacity: 0.45;
   cursor: not-allowed;
   background: var(--border);
-  color: var(--ink-faint);
+  color: var(--ink-mute);
 }
 .syllogism-recap { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; margin-bottom: 8px; }
 .syllogism-recap-row {
@@ -1331,10 +1403,10 @@ a { color: inherit; text-decoration: none; }
   right: 14px;
   font-weight: 600;
   font-size: 15px;
-  color: var(--ink-faint);
+  color: var(--ink-mute);
   transition: color .18s;
 }
-.cm-card:hover .cm-numeral { color: var(--gold); }
+.cm-card:hover .cm-numeral { color: var(--gold-text); }
 .cm-card h3 {
   margin: 0 42px 2px 0;
   font-size: 16px;
@@ -1414,8 +1486,9 @@ a { color: inherit; text-decoration: none; }
   font-family: 'Fraunces', Georgia, serif;
   font-variant-caps: all-small-caps;
   letter-spacing: 0.18em;
-  font-size: 11px;
-  color: var(--ink-faint);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-mute);
 }
 .habitus-leaf { opacity: 0; animation: fadeIn 420ms ease both; }
 .habitus-berry { animation: berryIn 480ms ease 700ms both; }
@@ -1429,8 +1502,9 @@ a { color: inherit; text-decoration: none; }
   font-family: 'Fraunces', Georgia, serif;
   font-variant-caps: all-small-caps;
   letter-spacing: 0.16em;
-  font-size: 12px;
-  color: var(--ink-faint);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-mute);
 }
 
 /* In scriptorio: being written, not gated — aims still reveal */
@@ -1444,7 +1518,7 @@ a { color: inherit; text-decoration: none; }
 
 /* Destination: M XVIII */
 .cm-card.destination { border-color: var(--gold); }
-.cm-card.destination .cm-numeral { color: var(--gold); }
+.cm-card.destination .cm-numeral { color: var(--gold-text); }
 .cm-card.destination.scriptorio:hover { border-color: var(--gold); }
 
 /* ═══ Vocabularium (/vocabularium) — §20.3 / G3 ═══ */
@@ -1477,7 +1551,7 @@ a { color: inherit; text-decoration: none; }
   font-family: 'Fraunces', serif;
   font-style: italic;
   font-size: 16px;
-  color: var(--ink-faint);
+  color: var(--ink-mute);
   margin-top: 48px;
 }
 
@@ -1493,7 +1567,7 @@ a { color: inherit; text-decoration: none; }
 .vocab-numeral {
   font-family: 'Emeritus', serif;
   font-size: 22px;
-  color: var(--gold);
+  color: var(--gold-text);
 }
 .vocab-group-title {
   font-variant-caps: all-small-caps;
@@ -1542,8 +1616,9 @@ a { color: inherit; text-decoration: none; }
 .gloss-met {
   font-variant-caps: all-small-caps;
   letter-spacing: 0.1em;
-  font-size: 12px;
-  color: var(--ink-faint);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-mute);
 }
 
 /* Modal */
@@ -1625,7 +1700,7 @@ a { color: inherit; text-decoration: none; }
 .fin-thesis-earned {
   font-family: 'Emeritus', serif;
   font-size: 18px;
-  color: var(--gold);
+  color: var(--gold-text);
   margin-bottom: 4px;
 }
 .fin-thesis-line {
@@ -1763,7 +1838,7 @@ a { color: inherit; text-decoration: none; }
   font-variant-caps: all-small-caps;
   letter-spacing: 0.12em;
   font-size: 13px;
-  color: var(--ink-faint);
+  color: var(--ink-mute);
 }
 
 /* Unlock ceremony — illuminated-initial animation */

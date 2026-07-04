@@ -33,6 +33,21 @@ interface TopBarProps {
   moduleTitle?: string;
   /** Show a "Modules /" crumb linking back to the course map */
   modulesCrumb?: boolean;
+  /** Lesson progress hairline under the bar: fills gold as questions advance. */
+  progress?: { current: number; total: number };
+}
+
+function MuteIcon({ muted }: { muted: boolean }) {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M4 9v6h4l5 5V4L8 9H4Z" fill="currentColor" />
+      {muted ? (
+        <path d="M16 9l5 6M21 9l-5 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      ) : (
+        <path d="M16.5 8.5a5 5 0 0 1 0 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" fill="none" />
+      )}
+    </svg>
+  );
 }
 
 function toRoman(n: number): string {
@@ -51,7 +66,7 @@ const NAV_ITEMS: { href: string; label: string }[] = [
   { href: '/vocabularium', label: 'Vocabularium' },
 ];
 
-function TopBarInner({ moduleId, moduleTitle, modulesCrumb }: TopBarProps) {
+function TopBarInner({ moduleId, moduleTitle, modulesCrumb, progress }: TopBarProps) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const isReview = searchParams.get('review') === '1';
@@ -77,7 +92,12 @@ function TopBarInner({ moduleId, moduleTitle, modulesCrumb }: TopBarProps) {
     return pathname === href || pathname.startsWith(href + '/');
   }
 
+  const progressPct = progress && progress.total > 0
+    ? Math.min(100, Math.round((progress.current / progress.total) * 100))
+    : null;
+
   return (
+    <>
     <div className="topbar">
       {/* Wordmark returns to the Threshold (a place, not an interstitial).
           ?door=1 renders it without auto-forward. */}
@@ -133,10 +153,28 @@ function TopBarInner({ moduleId, moduleTitle, modulesCrumb }: TopBarProps) {
           aria-label={muted ? 'Unmute sound' : 'Mute sound'}
           title={muted ? 'Sound off' : 'Sound on'}
         >
-          {muted ? '\uD83D\uDD07' : '\uD83D\uDD0A'}
+          <MuteIcon muted={muted} />
         </button>
       </div>
     </div>
+    {progressPct !== null && (
+      <div className="tb-hairline" aria-hidden="true">
+        <div className="tb-hairline-fill" style={{ width: `${progressPct}%` }} />
+      </div>
+    )}
+    <nav className="tab-bar" aria-label="Sections">
+      {NAV_ITEMS.map(item => (
+        <Link
+          key={item.href}
+          href={item.href}
+          className={`tab-bar-link${isActive(item.href) ? ' active' : ''}`}
+          aria-current={isActive(item.href) ? 'page' : undefined}
+        >
+          {item.label}
+        </Link>
+      ))}
+    </nav>
+    </>
   );
 }
 

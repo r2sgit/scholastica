@@ -56,7 +56,8 @@ export default function MCQ({ question, onAnswer, disabled }: MCQProps) {
         if (isCorrect) { borderColor = 'var(--correct)'; borderWidth = 2; }
         else if (isWrong) { borderColor = 'var(--wrong)'; borderWidth = 2; }
 
-        const opacity = isAnswered && !isSelected ? 0.4 : 1;
+        const dimmed = isAnswered && !isSelected;
+        const opacity = dimmed ? 0.65 : 1;
 
         return (
           <button
@@ -81,21 +82,9 @@ export default function MCQ({ question, onAnswer, disabled }: MCQProps) {
           >
             <div
               style={{
-                fontVariantCaps: 'all-small-caps',
-                letterSpacing: '0.18em',
-                fontSize: 11,
-                fontWeight: 500,
-                color: 'var(--gold)',
-                marginBottom: 4,
-              }}
-            >
-              {opt.label || 'Respondeo:'}
-            </div>
-            <div
-              style={{
                 fontSize: 18,
                 fontWeight: 400,
-                color: 'var(--ink)',
+                color: dimmed ? 'var(--ink-mute)' : 'var(--ink)',
                 lineHeight: 1.45,
               }}
               dangerouslySetInnerHTML={{ __html: opt.text }}

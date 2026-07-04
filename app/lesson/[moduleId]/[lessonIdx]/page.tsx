@@ -157,6 +157,7 @@ function QuizCardInner() {
         <TopBar
           moduleId={moduleId}
           moduleTitle={mod.title}
+          progress={{ current: questionIdx + (answerState !== 'idle' ? 1 : 0), total: questions.length }}
         />
 
         {/* Review mode question selector */}
@@ -210,8 +211,8 @@ function QuizCardInner() {
                 <span style={{color:'var(--vermillion)',fontVariantCaps:'all-small-caps',letterSpacing:'0.06em'}}>
                   {`QU${String.fromCharCode(198)}STIO`}{' '}{toRoman(questionIdx + 1)}
                 </span>
-                <span style={{color:'var(--ink-faint)',margin:'0 4px'}}>{'·'}</span>
-                <span style={{fontVariantCaps:'all-small-caps',color:'var(--ink-faint)',letterSpacing:'0.06em'}}>
+                <span style={{color:'var(--ink-mute)',margin:'0 4px'}}>{'·'}</span>
+                <span style={{fontVariantCaps:'all-small-caps',color:'var(--ink-mute)',letterSpacing:'0.06em'}}>
                   {toRoman(questions.length).toLowerCase()}
                 </span>
               </span>
@@ -300,7 +301,7 @@ function ExerciseRenderer({
       return <FillBlank question={question} onAnswer={onAnswer} disabled={disabled} />;
     default:
       return (
-        <div style={{ padding: 20, color: 'var(--ink-faint)', fontStyle: 'italic' }}>
+        <div style={{ padding: 20, color: 'var(--ink-mute)', fontStyle: 'italic' }}>
           Exercise type &ldquo;{question.type}&rdquo; not yet implemented.
         </div>
       );

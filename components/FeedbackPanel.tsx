@@ -27,9 +27,9 @@ export default function FeedbackPanel({ type, body, doctrineTag }: FeedbackPanel
         style={{
           fontVariantCaps: 'all-small-caps',
           letterSpacing: '0.18em',
-          fontSize: 11,
-          fontWeight: 500,
-          color: 'var(--gold)',
+          fontSize: 13,
+          fontWeight: 600,
+          color: 'var(--gold-text)',
           marginBottom: 6,
         }}
       >
@@ -51,7 +51,7 @@ export default function FeedbackPanel({ type, body, doctrineTag }: FeedbackPanel
             marginTop: 12,
             fontFamily: '"Emeritus", serif',
             fontSize: 14,
-            color: 'var(--gold)',
+            color: 'var(--gold-text)',
             border: '1px solid var(--gold)',
             borderRadius: 4,
             padding: '2px 10px',
