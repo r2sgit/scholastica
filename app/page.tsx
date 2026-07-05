@@ -56,6 +56,13 @@ function HomeInner() {
   }, [router, deliberate]);
 
   function handleBegin() {
+    if (returning) {
+      // A returning learner revisiting the Threshold deliberately (the
+      // wordmark link) must pick up where they left off, not restart at
+      // M1 L1 — /modules already knows how to route to the real next lesson.
+      router.push('/modules');
+      return;
+    }
     setIntroSeen();
     router.push('/lesson/1/0');
   }
@@ -74,8 +81,13 @@ function HomeInner() {
           <p className="home-sub">
             The sharpest mind the Church ever produced, taught the way you&rsquo;d learn a language, one distinction at a time.
           </p>
-          <button className="home-cta" type="button" onClick={handleBegin} aria-label="Begin the course">
-            Begin <span className="arrow" aria-hidden="true">&rarr;</span>
+          <button
+            className="home-cta"
+            type="button"
+            onClick={handleBegin}
+            aria-label={returning ? 'Continue the course' : 'Begin the course'}
+          >
+            {returning ? 'Continue' : 'Begin'} <span className="arrow" aria-hidden="true">&rarr;</span>
           </button>
           {returning && (
             <p className="threshold-rank">
