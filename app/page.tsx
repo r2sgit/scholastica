@@ -60,8 +60,6 @@ function HomeInner() {
     router.push('/lesson/1/0');
   }
 
-  const complete = returning?.rank === 'perfectus';
-
   return (
     <div className="home-page">
       <header className="home-top">
@@ -89,13 +87,6 @@ function HomeInner() {
         <section className="home-figure" aria-label="Saint Thomas Aquinas">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/images/thomas-hero.png" alt="Saint Thomas Aquinas holding a church and the open Summa" />
-          {complete && (
-            <img
-              className="threshold-complete"
-              src="/images/drolleries/dr-05.png"
-              alt="The friar, jubilant: you have completed every module."
-            />
-          )}
         </section>
       </main>
     </div>
