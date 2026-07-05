@@ -46,7 +46,7 @@ export default function Prose({
     const isLat = m[1] !== undefined;
     const inner = (isLat ? m[1] : m[2]) ?? '';
     const label = isLat ? (
-      <span className="lat" dangerouslySetInnerHTML={{ __html: inner }} />
+      <span className="lat" lang="la" dangerouslySetInnerHTML={{ __html: inner }} />
     ) : (
       <em dangerouslySetInnerHTML={{ __html: inner }} />
     );

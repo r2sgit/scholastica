@@ -87,6 +87,10 @@ function FinScreenInner() {
   const sound = searchParams.get('sound') as SoundId | null;
   const missedParam = searchParams.get('missed') || '';
   const missedIds = missedParam ? missedParam.split(',') : [];
+  // A retake of a lesson already complete before this attempt: identical
+  // flow, but the fin shows "already earned" in place of reward replay — no
+  // pips re-gild, no ceremony replay. §4.3 / app-design-architecture.
+  const alreadyDone = searchParams.get('already') === '1';
 
   const mod = getModule(moduleId);
   const lesson = mod?.lessons[lessonIdx];
@@ -156,8 +160,11 @@ function FinScreenInner() {
   }
 
   // Ceremony gate: fires in place of the fin screen's old inline thesis
-  // announcement, before the rest of this screen is usable.
-  if (newTheses.length > 0 && !ceremonyDone) {
+  // announcement, before the rest of this screen is usable. Never on a
+  // retake of an already-done lesson — the ceremony-once guard already
+  // stops newTheses from repopulating, but alreadyDone is the belt to that
+  // guard's suspenders.
+  if (newTheses.length > 0 && !ceremonyDone && !alreadyDone) {
     return (
       <ThesisCeremony
         theses={newTheses}
@@ -280,13 +287,22 @@ function FinScreenInner() {
           )
         )}
 
-        {/* Score pips — gold sweep on a perfect lesson (§4.5) */}
-        <ScorePips correct={correct} total={total} missedIds={missedIds} sweep={isPerfect} />
+        {/* Score pips — gold sweep on a perfect lesson, but never re-gilded
+            on a retake of an already-done lesson (§4.3). */}
+        <ScorePips correct={correct} total={total} missedIds={missedIds} sweep={isPerfect && !alreadyDone} />
 
         {/* Reward row, beat order per the prototype: sine errore + friar,
             then the distinction card. Single column ≤700px; ≥700px the
-            friar becomes a margin figure beside the card (.fin-reward-row). */}
-        {(isPerfect || fin.distinction) && (
+            friar becomes a margin figure beside the card (.fin-reward-row).
+            A retake of an already-done lesson gets the quiet "already
+            earned" line instead — the reward doesn't replay. */}
+        {alreadyDone ? (
+          (isPerfect || fin.distinction) && (
+            <p className="fin-already-earned">
+              {isPerfect ? 'Already earned, sine errore.' : 'Already earned.'}
+            </p>
+          )
+        ) : (isPerfect || fin.distinction) && (
           <div className="fin-reward-row">
             {isPerfect && <SineFriar />}
             {fin.distinction && <DistinctionCard distinction={fin.distinction} />}

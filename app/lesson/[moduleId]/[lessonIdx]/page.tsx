@@ -33,7 +33,7 @@ function QuizCardInner() {
   const params = useParams();
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { markLessonComplete } = useProgress();
+  const { markLessonComplete, getModuleProgress } = useProgress();
 
   const moduleId = Number(params.moduleId);
   const lessonIdx = Number(params.lessonIdx);
@@ -98,7 +98,13 @@ function QuizCardInner() {
       setFeedbackBody('');
       setFeedbackDoctrineTag(undefined);
     } else {
-      // Lesson complete
+      // Lesson complete. Whether this lesson was already complete BEFORE this
+      // attempt determines the fin's tone: a retake of a done lesson shows
+      // "already earned" in place of reward replay, per the app design
+      // architecture's review-mode rule — read before markLessonComplete
+      // overwrites it.
+      const alreadyDone = getModuleProgress(moduleId)?.lessonsComplete[lessonIdx] === true;
+
       const correctCount = answers.filter(a => a.correct).length;
       const totalCount = questions.length;
       const missedIds = questions
@@ -117,10 +123,10 @@ function QuizCardInner() {
       const sound = isLastLesson ? 'module-complete' : 'lesson-complete';
 
       router.push(
-        `/complete/${moduleId}/${lessonIdx}?correct=${correctCount}&total=${totalCount}&sound=${sound}&missed=${missedIds.join(',')}`
+        `/complete/${moduleId}/${lessonIdx}?correct=${correctCount}&total=${totalCount}&sound=${sound}&missed=${missedIds.join(',')}${alreadyDone ? '&already=1' : ''}`
       );
     }
-  }, [questionIdx, questions, answers, moduleId, lessonIdx, mod, markLessonComplete, router]);
+  }, [questionIdx, questions, answers, moduleId, lessonIdx, mod, markLessonComplete, getModuleProgress, router]);
 
   const handleDotClick = useCallback((idx: number) => {
     if (!reviewMode) return;
@@ -218,16 +224,17 @@ function QuizCardInner() {
               </span>
             </div>
 
-            {/* Stem */}
-            <Prose as="h2" className="quaestio" html={currentQuestion.stem} />
-
-            {/* Exercise renderer */}
-            <ExerciseRenderer
-              key={`${currentQuestion.id}-${questionIdx}`}
-              question={currentQuestion}
-              onAnswer={handleAnswer}
-              disabled={answerState !== 'idle'}
-            />
+            {/* Stem + exercise crossfade together on question change (250ms +
+                8px rise, §4.3) — the key remounts this block each question so
+                the animation retriggers instead of the text just swapping. */}
+            <div key={`${currentQuestion.id}-${questionIdx}`} className="q-crossfade">
+              <Prose as="h2" className="quaestio" html={currentQuestion.stem} />
+              <ExerciseRenderer
+                question={currentQuestion}
+                onAnswer={handleAnswer}
+                disabled={answerState !== 'idle'}
+              />
+            </div>
 
             {/* Feedback panel */}
             {answerState !== 'idle' && (

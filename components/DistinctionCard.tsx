@@ -21,7 +21,7 @@ export default function DistinctionCard({ distinction }: { distinction: FinDisti
     <div className="dcard-wrap">
       <div className={`dcard${on ? ' on' : ''}`}>
         <div className="dcard-eyebrow">you own a new distinction</div>
-        <div className="dcard-pair">
+        <div className="dcard-pair" lang="la">
           {distinction.latin.split('·').map((term, i, arr) => (
             <span key={i}>
               <em>{term.trim()}</em>

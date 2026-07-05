@@ -1,7 +1,10 @@
 'use client';
 
-import { useEffect, Suspense } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { readProgress } from '../lib/progress';
+import { getRank, getThesesEarned, type Rank } from '../lib/gamification';
+import { THESES } from '../content/theses';
 
 const STORAGE_KEY = 'scholastica_v1';
 
@@ -35,16 +38,29 @@ function HomeInner() {
   const searchParams = useSearchParams();
   const deliberate = searchParams.get('door') === '1';
 
+  // Returning-visitor state: only computed for a deliberate revisit (the only
+  // path where a returning learner actually sees this page's content — the
+  // default path forwards away before render). Silence rule holds regardless:
+  // no sound anywhere on this screen. §4.1.
+  const [returning, setReturning] = useState<{ rank: Rank; earned: number } | null>(null);
+
   useEffect(() => {
     if (getIntroSeen() && !deliberate) {
       router.replace('/modules');
+      return;
+    }
+    if (deliberate && getIntroSeen()) {
+      const data = readProgress();
+      setReturning({ rank: getRank(data, THESES), earned: getThesesEarned(data, THESES).length });
     }
   }, [router, deliberate]);
 
   function handleBegin() {
     setIntroSeen();
-    router.push('/modules');
+    router.push('/lesson/1/0');
   }
+
+  const complete = returning?.rank === 'perfectus';
 
   return (
     <div className="home-page">
@@ -63,11 +79,23 @@ function HomeInner() {
           <button className="home-cta" type="button" onClick={handleBegin} aria-label="Begin the course">
             Begin <span className="arrow" aria-hidden="true">&rarr;</span>
           </button>
+          {returning && (
+            <p className="threshold-rank">
+              {returning.rank}{' · '}{returning.earned} of 24 theses earned
+            </p>
+          )}
         </section>
 
         <section className="home-figure" aria-label="Saint Thomas Aquinas">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/images/thomas-hero.png" alt="Saint Thomas Aquinas holding a church and the open Summa" />
+          {complete && (
+            <img
+              className="threshold-complete"
+              src="/images/drolleries/dr-05.png"
+              alt="The friar, jubilant: you have completed every module."
+            />
+          )}
         </section>
       </main>
     </div>

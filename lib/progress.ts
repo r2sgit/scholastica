@@ -33,6 +33,7 @@ export interface StorageSchema {
   prefs: {
     muted: boolean;
     latinDensity: 'ample' | 'balanced' | 'spare';
+    motion: 'full' | 'reduced';
   };
   /* ── Gamification fields (G-session). All optional-with-default for
      migration safety: readStorage() merges over getDefault(), so a
@@ -53,7 +54,7 @@ function getDefault(): StorageSchema {
   return {
     introSeen: false,
     progress: {},
-    prefs: { muted: false, latinDensity: 'balanced' },
+    prefs: { muted: false, latinDensity: 'balanced', motion: 'full' },
     sineErrore: {},
     thesesEarned: [],
     divisionsIlluminated: [],
@@ -109,7 +110,14 @@ function readStorage(): StorageSchema {
       // getDefault() stamps the current version, and merging first would mask
       // legacy (versionless) data as already migrated.
       const storedVersion = parsed.schemaVersion ?? 1;
-      const merged: StorageSchema = { ...getDefault(), ...parsed };
+      // prefs merges field-by-field, not object-by-object: a returning
+      // learner whose stored prefs predate a newly added field (e.g. motion)
+      // gets that field's default instead of undefined.
+      const merged: StorageSchema = {
+        ...getDefault(),
+        ...parsed,
+        prefs: { ...getDefault().prefs, ...parsed.prefs },
+      };
       if (storedVersion < CURRENT_SCHEMA_VERSION) {
         const migrated = migrateSchemaV2({ ...merged, schemaVersion: storedVersion });
         writeStorage(migrated);

@@ -40,6 +40,15 @@
   --shadow-row-hover:
     0 1px 0 rgba(59,50,40,0.04),
     0 4px 10px -2px rgba(59,50,40,0.09);
+
+  /* Motion tiers (§6) — UI (hovers, chips, focus): 120-180ms ease. Transition
+     (screen fades, crossfades, sheets): 250-450ms ease. Reward (card flips,
+     gold sweeps, pip gilding): 700-1100ms spring. Ceremony beats stay
+     hand-tuned per sequence, not tokenized. */
+  --dur-ui: 150ms;
+  --dur-transition: 350ms;
+  --dur-reward: 900ms;
+  --ease-spring: cubic-bezier(.3, 1.4, .5, 1);
 }
 
 /* ============================================================
@@ -62,6 +71,14 @@ body {
 }
 
 a { color: inherit; text-decoration: none; }
+
+/* Global focus ring (§7.1) — every interactive element, not just the few
+   that had already earned their own rule. Component-specific focus-visible
+   rules elsewhere override this where an element needs a tighter offset. */
+:focus-visible {
+  outline: 2px solid var(--gold-deep);
+  outline-offset: 3px;
+}
 
 /* ============================================================
    Shared typography utilities
@@ -87,11 +104,31 @@ a { color: inherit; text-decoration: none; }
   from { opacity: 0; transform: translateY(6px); }
   to   { opacity: 1; transform: none; }
 }
-.fade-in   { animation: fadeIn 600ms ease both; }
-.fade-in-1 { animation: fadeIn 600ms ease 120ms both; }
-.fade-in-2 { animation: fadeIn 600ms ease 240ms both; }
-.fade-in-3 { animation: fadeIn 600ms ease 360ms both; }
-.fade-in-4 { animation: fadeIn 700ms ease 520ms both; }
+.fade-in   { animation: fadeIn calc(var(--dur-transition) * 1.7) ease both; }
+.fade-in-1 { animation: fadeIn calc(var(--dur-transition) * 1.7) ease 120ms both; }
+.fade-in-2 { animation: fadeIn calc(var(--dur-transition) * 1.7) ease 240ms both; }
+.fade-in-3 { animation: fadeIn calc(var(--dur-transition) * 1.7) ease 360ms both; }
+.fade-in-4 { animation: fadeIn calc(var(--dur-transition) * 2) ease 520ms both; }
+
+@keyframes qCrossfade {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+.q-crossfade { animation: qCrossfade 250ms ease both; }
+
+/* Settings sheet "Motion: reduced" (§4.7): the learner's own opt-in, on top
+   of (never instead of) the OS-level prefers-reduced-motion query above.
+   !important is the deliberate exception to this file's no-!important rule
+   — most animations in this codebase are set as inline styles, which no
+   ordinary class-based rule can out-specify. */
+html.motion-reduced *,
+html.motion-reduced *::before,
+html.motion-reduced *::after {
+  animation-duration: 0.001ms !important;
+  animation-delay: 0ms !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
 
 /* ============================================================
    Shake animation (wrong answer)
@@ -186,8 +223,23 @@ a { color: inherit; text-decoration: none; }
 .home-cta:hover { background: var(--gold-deep); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(141,106,44,.28); }
 .home-cta .arrow { transition: transform .15s ease; }
 .home-cta:hover .arrow { transform: translateX(4px); }
-.home-figure { display: flex; justify-content: center; align-items: center; animation: fadeIn .8s ease .12s both; }
+.home-figure { position: relative; display: flex; justify-content: center; align-items: center; animation: fadeIn .8s ease .12s both; }
 .home-figure img { width: 100%; max-width: 440px; height: auto; display: block; border-radius: 10px; box-shadow: 0 22px 50px rgba(59,50,40,.20); }
+/* Course-complete centerpiece: DR-05 takes the Threshold center, joining
+   Thomas at the door rather than sitting off to a corner (§4.1/§4.5). */
+.home-figure img.threshold-complete {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  max-width: none;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+  filter: drop-shadow(0 12px 20px rgba(59,50,40,.4));
+  animation: fadeIn 700ms ease 500ms both;
+}
 @media (max-width: 880px) {
   .home-hero { grid-template-columns: 1fr; text-align: center; gap: 30px; padding: 24px 24px 48px; }
   .home-top { justify-content: center; padding-top: 26px; }
@@ -457,6 +509,103 @@ a { color: inherit; text-decoration: none; }
 }
 .mute-btn:hover { border-color: var(--ink-faint); }
 
+/* Settings sheet (§4.7) — off the topbar's reserved slot, not a page. */
+.settings-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(37, 30, 22, 0.32);
+  z-index: 60;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: fadeIn var(--dur-transition) ease both;
+}
+.settings-sheet {
+  width: 100%;
+  max-width: 420px;
+  background: var(--paper);
+  border-radius: 18px 18px 0 0;
+  box-shadow: 0 -12px 40px rgba(59,50,40,.28);
+  padding: 10px 22px 28px;
+  animation: settingsUp var(--dur-transition) ease both;
+}
+@media (min-width: 641px) {
+  .settings-scrim { align-items: center; }
+  .settings-sheet { border-radius: 18px; margin-bottom: 8vh; }
+}
+@keyframes settingsUp { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+.settings-grip {
+  width: 40px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--border);
+  margin: 8px auto 18px;
+}
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-soft);
+  gap: 16px;
+}
+.settings-row:last-of-type { border-bottom: none; }
+.settings-row-density { flex-wrap: wrap; }
+.settings-label { font-size: 15px; color: var(--ink); }
+.settings-toggle {
+  width: 46px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--border-soft);
+  position: relative;
+  cursor: pointer;
+  min-height: 28px;
+  transition: background .16s, border-color .16s;
+}
+.settings-toggle.on { background: var(--gold-deep); border-color: var(--gold-deep); }
+.settings-toggle-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--paper);
+  box-shadow: 0 1px 3px rgba(59,50,40,.3);
+  transition: transform .16s;
+}
+.settings-toggle.on .settings-toggle-knob { transform: translateX(18px); }
+.settings-segmented { display: flex; gap: 6px; }
+.settings-segment {
+  font-size: 13px;
+  padding: 8px 12px;
+  min-height: 44px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: border-color .16s, color .16s, background .16s;
+}
+.settings-segment.active { background: var(--gold-deep); border-color: var(--gold-deep); color: var(--paper); }
+.settings-close {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 15px;
+  cursor: pointer;
+}
+.settings-close:focus-visible,
+.settings-toggle:focus-visible,
+.settings-segment:focus-visible { outline: 2px solid var(--gold-deep); outline-offset: 2px; }
+
 .env-badge {
   font-size: 11px;
   color: var(--ink-faint);
@@ -603,6 +752,7 @@ a { color: inherit; text-decoration: none; }
   text-wrap: pretty;
 }
 .module-copy .aim em { font-style: italic; font-weight: 500; color: var(--ink); }
+.module-complete-flourish { color: var(--gold-deep); }
 
 /* Module progress strip */
 .mod-progress {
@@ -686,6 +836,11 @@ a { color: inherit; text-decoration: none; }
 }
 .s-progress .numeral { border-color: var(--ink-soft); color: var(--ink); }
 .s-available .numeral { color: var(--ink-soft); }
+/* Next lesson (§4.2): vermillion, the row itself is the one prominent
+   element — a left accent, not a competing card. */
+.lesson.s-next { box-shadow: inset 3px 0 0 var(--vermillion); }
+.s-next .numeral { border-color: var(--vermillion); color: var(--vermillion); }
+.fleuron { color: var(--gold); font-size: 12px; }
 
 .txt .row1 {
   display: flex;
@@ -859,7 +1014,15 @@ a { color: inherit; text-decoration: none; }
   font-size: 14px;
 }
 .lesson.capstone .txt h3 { font-size: 22px; }
-.lesson.capstone .txt .tag { color: var(--gold); }
+.lesson.capstone .txt .tag { color: var(--gold-text); }
+
+/* Thesis promise (§4.2) — the anticipation layer's strongest placement */
+.module-thesis-promise {
+  margin: 4px 0 18px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--gold-text);
+}
 
 /* Canvas art */
 .canvas-art {
@@ -1057,7 +1220,7 @@ a { color: inherit; text-decoration: none; }
   transform-style: preserve-3d;
   text-align: center;
 }
-.dcard.on { animation: cardFlip 900ms cubic-bezier(0.2, 0.7, 0.25, 1) both; }
+.dcard.on { animation: cardFlip var(--dur-reward) cubic-bezier(0.2, 0.7, 0.25, 1) both; }
 @keyframes cardFlip { from { transform: rotateY(90deg); opacity: 0; } to { transform: rotateY(0); opacity: 1; } }
 .dcard-eyebrow {
   font-variant-caps: all-small-caps;
@@ -1147,6 +1310,14 @@ a { color: inherit; text-decoration: none; }
   .sine-friar { flex-direction: column; text-align: center; width: 150px; max-width: none; margin-top: 0; }
   .sine-friar img { width: 100px; margin: 0 auto; }
 }
+/* Retake of an already-done lesson: the reward doesn't replay, just a quiet
+   line standing in its place (§4.3). */
+.fin-already-earned {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--ink-mute);
+  margin: 20px 0 0;
+}
 /* Gold sweep on the score pips — the sine errore moment landing on the
    thing it's actually about (the perfect pass), not a separate ornament. */
 .pips-sweep .pip-dot { position: relative; }
@@ -1156,7 +1327,7 @@ a { color: inherit; text-decoration: none; }
   inset: -3px;
   border-radius: 50%;
   box-shadow: 0 0 0 0 rgba(184, 137, 53, 0);
-  animation: pipSweep 900ms ease-out both;
+  animation: pipSweep var(--dur-reward) ease-out both;
 }
 .pips-sweep .pip-dot:nth-child(1)::after { animation-delay: .05s; }
 .pips-sweep .pip-dot:nth-child(2)::after { animation-delay: .15s; }
@@ -1285,9 +1456,16 @@ a { color: inherit; text-decoration: none; }
 
   .btn { width: 100%; }
 
-  /* Topbar: drop the rigid 3-col grid for a wrapping flex row so the nav
-     cluster never forces horizontal overflow. The breadcrumb wraps to its
-     own line beneath when present. */
+  .card-area { padding-bottom: 220px; }
+}
+
+/* Topbar: drop the rigid 3-col grid for a wrapping flex row so the nav
+   cluster never forces horizontal overflow. The breadcrumb wraps to its
+   own line beneath when present. Threshold matches the "641-1279 mid /
+   ≥1280 wide" tier boundary (not 720px): a long modulesCrumb title (e.g.
+   "Existential Thomism — The Debate") plus the full tb-nav plus the two
+   topbar icon buttons collides with the rigid grid well above 720px. */
+@media (max-width: 1279px) {
   .topbar {
     display: flex;
     flex-wrap: wrap;
@@ -1304,7 +1482,6 @@ a { color: inherit; text-decoration: none; }
   .cp-label  { font-size: 13px; letter-spacing: 0.12em; }
   .cp-num    { font-size: 14px; }
   .cp-fleuron::after { font-size: 10px; }
-  .card-area { padding-bottom: 220px; }
 }
 
 /* ============================================================
@@ -1576,6 +1753,19 @@ a { color: inherit; text-decoration: none; }
 .cm-act.quiet .cm-act-name,
 .cm-act.quiet .cm-act-line { color: var(--ink-mute); }
 
+/* Part II presence: one dashed, textless-of-content card — it names the
+   theology without promising it (§4.6). */
+.part-ii-card {
+  margin-top: 14px;
+  padding: 20px 22px;
+  border: 1px dashed var(--border-soft);
+  border-radius: 14px;
+  color: var(--ink-mute);
+  font-size: 15px;
+  font-style: italic;
+  max-width: 520px;
+}
+
 /* Module rows — full-width, numeral | content | action (B5 §4).
    Numerals in Fraunces, never blackletter (standard §2 numeral rule). */
 .cm-rows { margin-top: 14px; display: flex; flex-direction: column; gap: 12px; }
@@ -1677,6 +1867,8 @@ a { color: inherit; text-decoration: none; }
 .btn.small { font-size: 14px; padding: 10px 18px; }
 .btn.now { background: var(--vermillion); border-color: #7E241B; box-shadow: 0 1px 0 #7E241B; }
 .btn.now:hover { background: #8E2820; }
+.btn.revisit { background: var(--gold-deep); border-color: var(--gold-deep); }
+.btn.revisit:hover { background: var(--gold); }
 
 /* Locked (not built): dashed, muted, textless numeral exception stands */
 .cm-row-locked { cursor: default; background: transparent; border-style: dashed; border-color: var(--border-soft); }
@@ -1766,6 +1958,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--ink-mute);
   margin-top: 48px;
 }
+.vocab-empty-door { color: var(--gold-text); font-style: normal; font-weight: 500; }
 
 .vocab-group { margin-top: 26px; }
 .vocab-group-head {
@@ -1817,6 +2010,26 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
 }
 .codex-pair { font-size: 20px; }
+
+/* The next-acquisition tease: face down, one card max. It tempts, no text
+   leaks — a lone fleuron and a quiet line, nothing named. */
+.codex-facedown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-style: dashed;
+  background: transparent;
+}
+.codex-facedown-mark { font-size: 22px; color: var(--ink-faint); }
+.codex-facedown-say {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--ink-mute);
+  margin: 0;
+}
 
 /* Gloss card (shared by pills modal + inline Term popover) */
 .gloss-card { text-align: left; }
@@ -1949,6 +2162,12 @@ a { color: inherit; text-decoration: none; }
   max-width: 540px;
   margin: 10px auto 0;
   line-height: 1.5;
+}
+.theses-empty-anticipation {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gold-text);
+  margin: 14px 0 0;
 }
 
 .theses-group { margin-top: 30px; }
@@ -2086,7 +2305,7 @@ a { color: inherit; text-decoration: none; }
 }
 .thesis-card.ceremony { animation: fadeIn 600ms ease both; }
 .thesis-card.ceremony .thesis-numeral {
-  animation: illuminate 900ms cubic-bezier(0.2, 0.7, 0.25, 1) both, illuminateGlow 1400ms ease 200ms both;
+  animation: illuminate var(--dur-reward) cubic-bezier(0.2, 0.7, 0.25, 1) both, illuminateGlow 1400ms ease 200ms both;
 }
 .thesis-card.ceremony .thesis-headline { animation: fadeIn 500ms ease 500ms both; }
 
@@ -2117,6 +2336,7 @@ a { color: inherit; text-decoration: none; }
   cursor: pointer;
   animation: fadeIn 400ms ease both;
 }
+.ceremony-overlay:focus { outline: none; }
 .ceremony-inner {
   margin: auto;
   width: 100%;

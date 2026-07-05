@@ -14,6 +14,7 @@ export default function FeedbackPanel({ type, body, doctrineTag }: FeedbackPanel
   return (
     <div
       className="feedback-panel"
+      role="status"
       style={{
         background: 'var(--paper)',
         borderLeft: `3px solid ${borderColor}`,

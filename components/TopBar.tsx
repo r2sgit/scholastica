@@ -3,6 +3,7 @@
 import { Suspense, useState, useEffect } from 'react';
 import { useSearchParams, usePathname } from 'next/navigation';
 import Link from 'next/link';
+import SettingsSheet from './SettingsSheet';
 
 const STORAGE_KEY = 'scholastica_v1';
 
@@ -35,6 +36,18 @@ interface TopBarProps {
   modulesCrumb?: boolean;
   /** Lesson progress hairline under the bar: fills gold as questions advance. */
   progress?: { current: number; total: number };
+}
+
+function SettingsIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="3.2" stroke="currentColor" strokeWidth="1.8" />
+      <path
+        d="M12 3.5v2.3M12 18.2v2.3M4.9 6.5l1.6 1.6M17.5 15.9l1.6 1.6M3.5 12h2.3M18.2 12h2.3M4.9 17.5l1.6-1.6M17.5 8.1l1.6-1.6"
+        stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"
+      />
+    </svg>
+  );
 }
 
 function MuteIcon({ muted }: { muted: boolean }) {
@@ -71,6 +84,7 @@ function TopBarInner({ moduleId, moduleTitle, modulesCrumb, progress }: TopBarPr
   const pathname = usePathname();
   const isReview = searchParams.get('review') === '1';
   const [muted, setMutedState] = useState(false);
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
   useEffect(() => {
     setMutedState(getMuted());
@@ -146,7 +160,6 @@ function TopBarInner({ moduleId, moduleTitle, modulesCrumb, progress }: TopBarPr
             m{moduleId ?? '?'}{' \u00B7 '}prod
           </span>
         )}
-        {/* Settings slot reserved (no settings page yet). */}
         <button
           className="mute-btn"
           onClick={toggleMute}
@@ -155,10 +168,31 @@ function TopBarInner({ moduleId, moduleTitle, modulesCrumb, progress }: TopBarPr
         >
           <MuteIcon muted={muted} />
         </button>
+        <button
+          className="mute-btn"
+          onClick={() => setSettingsOpen(true)}
+          aria-label="Settings"
+          title="Settings"
+        >
+          <SettingsIcon />
+        </button>
       </div>
     </div>
-    {progressPct !== null && (
-      <div className="tb-hairline" aria-hidden="true">
+    <SettingsSheet
+      open={settingsOpen}
+      onClose={() => setSettingsOpen(false)}
+      muted={muted}
+      onToggleMute={toggleMute}
+    />
+    {progressPct !== null && progress && (
+      <div
+        className="tb-hairline"
+        role="progressbar"
+        aria-label={`question ${Math.min(progress.current + 1, progress.total)} of ${progress.total}`}
+        aria-valuenow={progress.current}
+        aria-valuemin={0}
+        aria-valuemax={progress.total}
+      >
         <div className="tb-hairline-fill" style={{ width: `${progressPct}%` }} />
       </div>
     )}

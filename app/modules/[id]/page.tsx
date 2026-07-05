@@ -3,21 +3,11 @@
 import { useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { getModule } from '../../../content/modules';
+import { getCourseEntry } from '../../../content/courseMap';
 import { useProgress } from '../../../lib/progress';
+import { getModulesComplete, getThesesEarned } from '../../../lib/gamification';
+import { THESES } from '../../../content/theses';
 import TopBar from '../../../components/TopBar';
-
-/* Eyebrow Latin + aim copy for modules whose content files predate the
-   latin/aim fields. Newer modules carry these in their own data. */
-const LEGACY_LATIN: Record<number, string> = {
-  1: 'Fundamenta',
-  6: 'Logica',
-  13: 'Lex Naturalis',
-};
-const LEGACY_AIM: Record<number, string> = {
-  1: 'The seven distinctions you need in hand before any Thomistic argument will sit still long enough to be examined.',
-  6: 'Aristotelian logic as Aquinas inherited it — the organon that makes his arguments walk.',
-  13: 'Natural law, the human act, and the moral vocabulary that follows from them.',
-};
 
 function toRoman(n: number): string {
   const vals = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
@@ -87,6 +77,7 @@ export default function ModuleDetailPage() {
   const doneCount = lessonsComplete.filter(Boolean).length;
   const totalLessons = mod.lessons.length;
   const pct = totalLessons > 0 ? Math.round(100 * doneCount / totalLessons) : 0;
+  const isModuleComplete = totalLessons > 0 && doneCount === totalLessons;
 
   // Find next lesson to play. Iterate the lesson list, not the stored
   // array: lessonsComplete is sparse and shorter than the module while
@@ -113,73 +104,92 @@ export default function ModuleDetailPage() {
   }
 
   const nextLesson = mod.lessons[nextIdx];
+  const courseEntry = getCourseEntry(moduleId);
+
+  // Thesis promise (§4.2): theses where this module is the one piece still
+  // missing — finishing it is the domino that unlocks them. The anticipation
+  // layer's strongest placement, since it names the payoff right where the
+  // learner is about to act on it.
+  const modulesDone = new Set(getModulesComplete(data));
+  const earnedNs = new Set(getThesesEarned(data, THESES));
+  const promised = THESES.filter(t =>
+    !earnedNs.has(t.n) &&
+    t.modules_teach.includes(moduleId) &&
+    t.modules_teach.every(id => id === moduleId || modulesDone.has(id))
+  );
 
   return (
     <div className="map-page">
       <TopBar moduleId={moduleId} moduleTitle={mod.title} modulesCrumb />
 
       <div className="map-stage" style={{ animation: 'fadeIn .4s ease both' }}>
-        {/* Module header */}
+        {/* Module header — same card language as the map (courseMap's
+            tone-pass blurb, kept in sync with the /modules row). */}
         <div className="module-hd">
           <div className="module-copy">
             <div className="eyebrow">
               Module {toRoman(moduleId)} &middot; {mod.title} &middot;{' '}
-              <span className="small-caps" style={{ color: 'var(--ink-soft)', letterSpacing: '0.08em', fontSize: 13 }}>
-                {mod.latin ?? LEGACY_LATIN[moduleId] ?? ''}
+              <span className="small-caps" lang="la" style={{ color: 'var(--ink-soft)', letterSpacing: '0.08em', fontSize: 13 }}>
+                {mod.latin ?? courseEntry?.latin ?? ''}
               </span>
+              {isModuleComplete && (
+                <span className="module-complete-flourish" aria-hidden="true">{' '}&#10047;</span>
+              )}
             </div>
             <h1><em>{mod.title}</em></h1>
             <p className="aim">
-              {mod.aim ?? LEGACY_AIM[moduleId] ?? ''}
+              {courseEntry?.aim ?? mod.aim ?? ''}
             </p>
           </div>
         </div>
 
         <VineDivider />
 
-        {/* Module progress */}
+        {/* Module progress. Complete: no "next" to name, so the strip's
+            primary action becomes Revisit instead — reviewing never
+            re-triggers ceremonies or the sine-errore sweep (§4.2/§4.3). */}
         <div className="mod-progress">
           <div className="meta"><b>{doneCount}</b> of {totalLessons} complete</div>
           <div className="bar"><div className="fill" style={{ width: `${pct}%` }} /></div>
-          {nextLesson && doneCount < totalLessons && (
-            <div className="meta" style={{ color: 'var(--gold-deep)' }}>
-              Next: <span className="lat">{nextLesson.latin}</span>
-            </div>
+          {isModuleComplete ? (
+            <button
+              type="button"
+              className="btn small revisit"
+              onClick={() => handleLessonClick(0)}
+            >
+              Revisit <span>&rarr;</span>
+            </button>
+          ) : (
+            nextLesson && (
+              <div className="meta" style={{ color: 'var(--gold-deep)' }}>
+                Next: <span className="lat" lang="la">{nextLesson.latin}</span>
+              </div>
+            )
           )}
         </div>
 
-        {/* Continue card */}
-        {nextLesson && (
-          <div className="continue">
-            <div className="mk">{'☛'}</div>
-            <div className="who">
-              <div className="k">
-                {doneCount === 0 ? 'Begin' : doneCount >= totalLessons ? 'Module complete' : 'Next up'} &middot; <em>Lectio {nextLesson.num}</em>
-              </div>
-              <div className="t">
-                {nextLesson.title} &mdash; <em>{nextLesson.latin}</em>
-              </div>
-              <div className="m">
-                {doneCount === 0 ? 'Not yet begun' : `${doneCount} of ${totalLessons} lessons done`}
-              </div>
-            </div>
-            <button className="btn" onClick={() => handleLessonClick(nextIdx)}>
-              {doneCount === 0 ? <>Begin &mdash; <em>incipit</em></> : <>Continue &mdash; <em>prosequi</em></>}
-            </button>
-          </div>
+        {/* Thesis promise (§4.2): the anticipation layer's strongest
+            placement — the payoff named right where the learner acts. */}
+        {promised.length > 0 && (
+          <p className="module-thesis-promise">
+            {`Finishing this module earns ${promised.length > 1 ? 'Theses' : 'Thesis'} ${promised.map(t => t.numeral).join(' & ')}.`}
+          </p>
         )}
 
-        {/* Lesson list */}
+        {/* Lesson list — done (gold ± sine fleuron) · next (vermillion, the
+            row itself carries the primary button — the one prominent
+            element) · pending (quiet) · capstone (recapitulatio label). */}
         <ul className="lessons">
           {mod.lessons.map((lesson, idx) => {
             const status = getLessonStatus(idx);
             const isCapstone = idx === mod.lessons.length - 1;
+            const isNext = idx === nextIdx && doneCount < totalLessons;
             const blurb = moduleId === 1 ? (M0_BLURBS[lesson.title] || '') : '';
 
             return (
               <li
                 key={lesson.id}
-                className={`lesson s-${status}${isCapstone ? ' capstone' : ''}`}
+                className={`lesson s-${status}${isCapstone ? ' capstone' : ''}${isNext ? ' s-next' : ''}`}
                 onClick={() => handleLessonClick(idx)}
               >
                 <div className="numeral">
@@ -189,28 +199,40 @@ export default function ModuleDetailPage() {
                 </div>
                 <div className="txt">
                   <div className="row1">
-                    <span className="tag">Lectio {lesson.num}</span>
+                    <span className="tag">{isCapstone ? 'recapitulatio' : `Lectio ${lesson.num}`}</span>
                   </div>
                   <h3>{lesson.title}</h3>
                   <div className="sub">
-                    <span className="lat">{lesson.latin}</span>
+                    <span className="lat" lang="la">{lesson.latin}</span>
                     {blurb && <> &middot; {blurb}</>}
                   </div>
                 </div>
                 <div className="rightcol">
-                  <span className="state">
-                    <span className="dot" />
-                    {status === 'available' ? 'Available' : 'Complete'}
-                  </span>
-                  <span className="score-line">
-                    {status === 'available' ? (
-                      'Not yet begun'
-                    ) : status === 'sine' ? (
-                      <><b>{getScoreText(idx)}</b> &middot; <em>sine errore</em></>
-                    ) : (
-                      <b>{getScoreText(idx)}</b>
-                    )}
-                  </span>
+                  {isNext ? (
+                    <button
+                      className="btn small now"
+                      onClick={e => { e.stopPropagation(); handleLessonClick(idx); }}
+                    >
+                      {doneCount === 0 ? 'Begin' : 'Continue'} <span>&rarr;</span>
+                    </button>
+                  ) : (
+                    <>
+                      <span className="state">
+                        <span className="dot" />
+                        {status === 'available' ? 'Available' : 'Complete'}
+                        {status === 'sine' && <span className="fleuron" aria-hidden="true"> &#10047;</span>}
+                      </span>
+                      <span className="score-line">
+                        {status === 'available' ? (
+                          'Not yet begun'
+                        ) : status === 'sine' ? (
+                          <><b>{getScoreText(idx)}</b> &middot; <em>sine errore</em></>
+                        ) : (
+                          <b>{getScoreText(idx)}</b>
+                        )}
+                      </span>
+                    </>
+                  )}
                 </div>
               </li>
             );

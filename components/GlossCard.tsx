@@ -20,7 +20,7 @@ export default function GlossCard({ term }: { term: Term }) {
 
   return (
     <div className="gloss-card">
-      <div className="gloss-latin">{term.latin}</div>
+      <div className="gloss-latin" lang="la">{term.latin}</div>
       <div className="gloss-english">{term.english}</div>
       <p className="gloss-text" dangerouslySetInnerHTML={{ __html: emphasize(term.gloss) }} />
       <div className="gloss-met">{metLine}</div>

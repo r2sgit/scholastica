@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import type { Thesis } from '../content/theses';
 import { playSound } from '../lib/sound';
@@ -29,6 +29,7 @@ function toRoman(n: number): string {
 export default function ThesisCeremony({ theses, moduleId, onDone }: ThesisCeremonyProps) {
   const [index, setIndex] = useState(0);
   const [beatOn, setBeatOn] = useState(false);
+  const overlayRef = useRef<HTMLDivElement>(null);
   const thesis = theses[index];
   const isLast = index === theses.length - 1;
 
@@ -43,6 +44,10 @@ export default function ThesisCeremony({ theses, moduleId, onDone }: ThesisCerem
 
   useEffect(() => {
     setBeatOn(false);
+    // Focus the overlay so the screen reader announces this thesis's line
+    // once, the moment it appears — the same move on every subsequent
+    // thesis in a multi-unlock ceremony.
+    overlayRef.current?.focus();
     const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
     if (reduced) { setBeatOn(true); return; }
     const t = setTimeout(() => setBeatOn(true), 60);
@@ -57,10 +62,12 @@ export default function ThesisCeremony({ theses, moduleId, onDone }: ThesisCerem
 
   return (
     <div
+      ref={overlayRef}
       className={`ceremony-overlay${beatOn ? ' beat-on' : ''}`}
       onClick={advance}
       role="dialog"
-      aria-label={`Thesis ${thesis.numeral} unlocked`}
+      tabIndex={-1}
+      aria-label={`Thesis ${thesis.numeral} earned: ${thesis.unlock_line}`}
     >
       <div className="ceremony-inner">
         <div className="cer-eyebrow">
@@ -80,7 +87,7 @@ export default function ThesisCeremony({ theses, moduleId, onDone }: ThesisCerem
 
         <p className="cer-line">{thesis.unlock_line}</p>
 
-        <p className="cer-latin">{thesis.latin}</p>
+        <p className="cer-latin" lang="la">{thesis.latin}</p>
         <p className="cer-english">{thesis.english}</p>
 
         {isLast ? (

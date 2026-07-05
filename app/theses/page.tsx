@@ -11,6 +11,7 @@ import {
 import { getThesesEarned, lessonsAwayForThesis } from '../../lib/gamification';
 import { playSound } from '../../lib/sound';
 import { COURSE_MAP } from '../../content/courseMap';
+import { MODULES } from '../../content/modules';
 import { THESES, THESIS_GROUPS, type Thesis, type ThesisGroup } from '../../content/theses';
 
 /* ── The Theses Board (§20.1 / G2, anticipation layer B2) ────────────────
@@ -62,7 +63,7 @@ function EarnedEntry({ thesis, ceremony }: { thesis: Thesis; ceremony: boolean }
       <div className="thesis-numeral" aria-hidden="true">{thesis.numeral}</div>
       <div className="thesis-body">
         <div className="thesis-headline" role={ceremony ? 'status' : undefined}>{thesis.unlock_line}</div>
-        <div className="thesis-latin">{thesis.latin}</div>
+        <div className="thesis-latin" lang="la">{thesis.latin}</div>
         <div className="thesis-english">{thesis.english}</div>
       </div>
     </article>
@@ -111,6 +112,22 @@ export default function ThesesBoardPage() {
     () => new Set(getThesesEarned(data, THESES)),
     [data],
   );
+
+  // Fresh-hall anticipation (§4.5): before anything is earned, the shortest
+  // path to the first thesis — the built module with the fewest lessons
+  // among those that alone gate a thesis. Not tied to live progress (a
+  // brand-new learner has none), so this is the course's own answer, not
+  // the state's.
+  const emptyLessonsAway = useMemo(() => {
+    if (earned.size > 0) return null;
+    const singleGateModuleIds = THESES
+      .filter(t => t.modules_teach.length === 1)
+      .map(t => t.modules_teach[0])
+      .filter(modId => MODULES.some(m => m.id === modId));
+    if (singleGateModuleIds.length === 0) return null;
+    const modId = Math.min(...singleGateModuleIds);
+    return MODULES.find(m => m.id === modId)?.lessons.length ?? null;
+  }, [earned]);
 
   // Theses to ceremony this view: earned but whose ceremony has not played
   // (catch-up path only; B1's fin-screen ceremony is the primary path now).
@@ -164,6 +181,11 @@ export default function ThesesBoardPage() {
             The four and twenty theses of Thomism, earned as you learn what they say.
             Each is quoted doctrine; the text itself is the trophy.
           </p>
+          {emptyLessonsAway !== null && (
+            <p className="theses-empty-anticipation">
+              {`Twenty four sentences wait to be earned. The first is ${emptyLessonsAway === 1 ? 'one lesson' : `${emptyLessonsAway} lessons`} away.`}
+            </p>
+          )}
         </header>
 
         {THESIS_GROUPS.map(group => {

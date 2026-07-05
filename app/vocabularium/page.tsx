@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
+import Link from 'next/link';
 import TopBar from '../../components/TopBar';
 import GlossCard from '../../components/GlossCard';
 import DistinctionMotif from '../../components/DistinctionMotif';
@@ -23,7 +24,7 @@ function CodexCard({ entry }: { entry: CodexEntry }) {
   const d = entry.distinction;
   return (
     <div className="codex-card">
-      <div className="dcard-pair codex-pair">
+      <div className="dcard-pair codex-pair" lang="la">
         {d.latin.split('·').map((term, i, arr) => (
           <span key={i}>
             <em>{term.trim()}</em>
@@ -34,6 +35,18 @@ function CodexCard({ entry }: { entry: CodexEntry }) {
       <div className="dcard-pair-en">{d.english}</div>
       <p className="dcard-gloss">{d.gloss}</p>
       <DistinctionMotif kind={d.motif} on />
+    </div>
+  );
+}
+
+/* The next not-yet-earned distinction, face down (§4.4). It tempts; no text
+   leaks — no title, no gloss, not even the motif, just the fact that
+   something is coming. */
+function FacedownCard() {
+  return (
+    <div className="codex-card codex-facedown" aria-hidden="true">
+      <div className="codex-facedown-mark">&#10047;</div>
+      <p className="codex-facedown-say">The next distinction waits.</p>
     </div>
   );
 }
@@ -82,6 +95,19 @@ export default function VocabulariumPage() {
     return out;
   }, [data]);
 
+  // The next-acquisition tease (§4.4): the first lesson in course order that
+  // carries a distinction and isn't complete yet. One card, face down.
+  const hasNextDistinction = useMemo(() => {
+    for (const mod of MODULES) {
+      const mp = data.progress?.[mod.id];
+      for (let i = 0; i < mod.lessons.length; i++) {
+        const lesson = mod.lessons[i];
+        if (lesson.fin.distinction && !mp?.lessonsComplete?.[i]) return true;
+      }
+    }
+    return false;
+  }, [data]);
+
   // Modal a11y: focus the close control on open; Escape dismisses.
   useEffect(() => {
     if (!active) return;
@@ -101,14 +127,32 @@ export default function VocabulariumPage() {
         <header className="vocab-head">
           <h1 className="vocab-title"><em>Vocabularium</em></h1>
           <p className="vocab-sub">
-            Every Latin term gathers here as the module that introduces it is begun.
-            A word earned is a distinction owned.
+            Your Latin, one word at a time. Tap any word for its story.
           </p>
         </header>
 
+        {/* Shelf 1 — Distinctions: the codex of earned Distinction Cards,
+            plus at most one face-down tease for what's coming next (§4.4).
+            Two shelves, one room; this one leads. */}
+        {(codex.length > 0 || hasNextDistinction) && (
+          <section className="codex-shelf">
+            <div className="vocab-group-head">
+              <span className="vocab-group-title">The distinctions you own</span>
+            </div>
+            <div className="codex-grid">
+              {codex.map(entry => <CodexCard key={entry.key} entry={entry} />)}
+              {hasNextDistinction && <FacedownCard />}
+            </div>
+          </section>
+        )}
+
+        {/* Shelf 2 — Words: earned terms as pills, grouped by the module
+            that introduced them. Unearned content never renders — the
+            shelf grows, it does not taunt. */}
         {empty ? (
           <p className="vocab-empty">
-            The shelf is empty. Begin a lesson and the first terms will gather.
+            The first words arrive with your first lesson.{' '}
+            <Link href="/modules/1" className="vocab-empty-door">Begin Module I &rarr;</Link>
           </p>
         ) : (
           groups.map(({ mod, terms }) => (
@@ -126,26 +170,12 @@ export default function VocabulariumPage() {
                     onClick={() => setActive(t)}
                     aria-label={`${t.latin}, ${t.english}`}
                   >
-                    {t.latin}
+                    <span lang="la">{t.latin}</span>
                   </button>
                 ))}
               </div>
             </section>
           ))
-        )}
-
-        {/* Distinction Card codex (§4.2 / B3) — one room for everything
-            collected-by-understanding. Earned cards only; empty and silent
-            until the first one is owned. */}
-        {codex.length > 0 && (
-          <section className="codex-shelf">
-            <div className="vocab-group-head">
-              <span className="vocab-group-title">The distinctions you own</span>
-            </div>
-            <div className="codex-grid">
-              {codex.map(entry => <CodexCard key={entry.key} entry={entry} />)}
-            </div>
-          </section>
         )}
       </div>
 

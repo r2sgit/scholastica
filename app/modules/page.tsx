@@ -88,7 +88,7 @@ function ContinueHero({ states }: { states: ModuleState[] }) {
             ? 'Begin at the Foundations'
             : (
               <>
-                {target.title} &middot; Lesson {lesson.num} <span className="lat">&middot; {lesson.latin}</span>
+                {target.title} &middot; Lesson {lesson.num} <span className="lat" lang="la">&middot; {lesson.latin}</span>
               </>
             )}
         </div>
@@ -148,7 +148,7 @@ function ModuleRow({ entry, state }: { entry: CourseMapEntry; state?: ModuleStat
       <div className="cm-row-numeral">{entry.numeral}</div>
       <div>
         <div className="cm-row-title">
-          {entry.title} <span className="cm-row-latin">{entry.latin}</span>
+          {entry.title} <span className="cm-row-latin" lang="la">{entry.latin}</span>
         </div>
         <p className="cm-row-blurb">{entry.aim}</p>
         {built && state && (
@@ -231,13 +231,25 @@ export default function CourseMapPage() {
           <span className="cm-rank" aria-label={`Rank: ${rank}`}>{rank}</span>
         </div>
 
-        {/* Header: what this course IS, one obvious next step (B5 §1) */}
+        {/* Header: what this course IS, one obvious next step (B5 §1).
+            Perfectus (§4.5): the map's own line becomes the same self-aware
+            joke as the fin screen's — locked copy, verbatim, G1. */}
         <section className="cm-hero">
           <h1>The <em>philosophy</em> of Thomas Aquinas.</h1>
           <p className="cm-lede">
-            Eighteen modules in four acts that teach you to think the way Thomas thought.
-            Each one hands you the tools the next one assumes. His theology comes later, as
-            its own course; this is the ground it stands on.
+            {rank === 'perfectus' ? (
+              <>
+                You are now, by the course&rsquo;s own reckoning, <em>perfectus</em>.
+                Aquinas reserved the word for the saints in glory, so do try to wear
+                it lightly.
+              </>
+            ) : (
+              <>
+                Eighteen modules in four acts that teach you to think the way Thomas thought.
+                Each one hands you the tools the next one assumes. His theology comes later, as
+                its own course; this is the ground it stands on.
+              </>
+            )}
           </p>
           <ContinueHero states={states} />
         </section>
@@ -260,6 +272,20 @@ export default function CourseMapPage() {
             </section>
           );
         })}
+
+        {/* Part II presence (§4.6): names the theology publicly without
+            binding it — no module rows, no numerals, never a nav item,
+            never a date promise. */}
+        <section className="cm-act quiet">
+          <div className="cm-act-kicker">part two &middot; the theology</div>
+          <h2 className="cm-act-name">The Theology</h2>
+          <p className="cm-act-line">
+            Where the philosophy was heading all along. In the scriptorium now; it arrives as its own course.
+          </p>
+          <div className="part-ii-card">
+            In preparation. Everything you earn in the philosophy is the toolkit it will assume.
+          </div>
+        </section>
 
         {/* Collections strip — after the acts; modules lead the page (B5 §5) */}
         <section className="cm-rooms-head">
