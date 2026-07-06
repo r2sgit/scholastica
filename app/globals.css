@@ -52,6 +52,57 @@
 }
 
 /* ============================================================
+   Theologia wing accent (2026-07-05) — gold -> ultramarine
+   ============================================================
+   Two-course IA (scholastica-two-course-nav-prototype.html): gold marks
+   the philosophy wing, ultramarine marks the theology wing, wordmark and
+   vermillion stay constant across both ("one book, two volumes"). Every
+   component in this app reads its accent from --gold/--gold-text/
+   --gold-light/--gold-deep, so redefining just those four inside a scoped
+   wrapper class flips the whole reused UI to the theology accent with no
+   component changes and no risk to the philosophy wing's tokens. Applied
+   by wrapping theologia pages in <div className="theologia-wing">. */
+.theologia-wing {
+  --gold:       #2F4A8A;
+  --gold-text:  #23386B;
+  --gold-light: #6E86BE;
+  --gold-deep:  #243A6E;
+}
+
+/* Course switcher pill (TopBar). Small and quiet -- it is navigation
+   chrome, not a hero element; the wordmark still leads. */
+.course-switch {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--paper);
+  padding: 3px;
+  gap: 2px;
+  flex-shrink: 0;
+}
+.course-switch-btn {
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.08em;
+  border: none;
+  background: none;
+  color: var(--ink-mute);
+  padding: 6px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background var(--dur-ui, 150ms) ease, color var(--dur-ui, 150ms) ease;
+}
+.course-switch-btn.active {
+  background: var(--gold);
+  color: #FAF6EE;
+}
+@media (max-width: 640px) {
+  .course-switch-btn { padding: 6px 9px; font-size: 11.5px; }
+}
+
+/* ============================================================
    Reset
    ============================================================ */
 *, *::before, *::after { box-sizing: border-box; }

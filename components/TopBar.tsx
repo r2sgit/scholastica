@@ -36,6 +36,39 @@ interface TopBarProps {
   modulesCrumb?: boolean;
   /** Lesson progress hairline under the bar: fills gold as questions advance. */
   progress?: { current: number; total: number };
+  /** Which wing this bar renders in. Swaps the section nav and the course
+      switcher's active pill. Default 'philosophia' so every existing call
+      site (none of which pass this prop) is unaffected. */
+  course?: 'philosophia' | 'theologia';
+}
+
+/* Course switcher (two-course IA, scholastica-two-course-nav-prototype.html):
+   a small pill pair above/beside the section nav. Philosophia is the only
+   wing with real content today; Theologia carries a single DRAFT module
+   (R2's explicit call to ship it ahead of the theologian-review gate --
+   see content/theologia/t1.ts). Persists the last-active wing so a bare
+   wordmark click or /modules visit can resolve sensibly later. */
+function CourseSwitcher({ course }: { course: 'philosophia' | 'theologia' }) {
+  return (
+    <div className="course-switch" role="tablist" aria-label="Course">
+      <Link
+        href="/modules"
+        role="tab"
+        aria-selected={course === 'philosophia'}
+        className={`course-switch-btn${course === 'philosophia' ? ' active' : ''}`}
+      >
+        Philosophia
+      </Link>
+      <Link
+        href="/theologia"
+        role="tab"
+        aria-selected={course === 'theologia'}
+        className={`course-switch-btn${course === 'theologia' ? ' active' : ''}`}
+      >
+        Theologia
+      </Link>
+    </div>
+  );
 }
 
 function SettingsIcon() {
@@ -79,7 +112,14 @@ const NAV_ITEMS: { href: string; label: string }[] = [
   { href: '/vocabularium', label: 'Vocabularium' },
 ];
 
-function TopBarInner({ moduleId, moduleTitle, modulesCrumb, progress }: TopBarProps) {
+// Theologia has no Theses/Vocabularium-equivalent room yet (nothing to
+// collect off a single draft module) -- just its own module list. Add rows
+// here as real theology-side mechanics get built, not preemptively.
+const THEOLOGIA_NAV_ITEMS: { href: string; label: string }[] = [
+  { href: '/theologia', label: 'Modules' },
+];
+
+function TopBarInner({ moduleId, moduleTitle, modulesCrumb, progress, course = 'philosophia' }: TopBarProps) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const isReview = searchParams.get('review') === '1';
@@ -103,6 +143,9 @@ function TopBarInner({ moduleId, moduleTitle, modulesCrumb, progress }: TopBarPr
       return pathname === '/modules' || pathname.startsWith('/modules/') ||
         pathname.startsWith('/lesson/') || pathname.startsWith('/complete/');
     }
+    if (href === '/theologia') {
+      return pathname === '/theologia' || pathname.startsWith('/theologia/');
+    }
     return pathname === href || pathname.startsWith(href + '/');
   }
 
@@ -110,21 +153,29 @@ function TopBarInner({ moduleId, moduleTitle, modulesCrumb, progress }: TopBarPr
     ? Math.min(100, Math.round((progress.current / progress.total) * 100))
     : null;
 
+  const navItems = course === 'theologia' ? THEOLOGIA_NAV_ITEMS : NAV_ITEMS;
+
   return (
     <>
     <div className="topbar">
-      {/* Wordmark returns to the Threshold (a place, not an interstitial).
-          ?door=1 renders it without auto-forward. */}
-      <Link href="/?door=1" className="wordmark" style={{ textDecoration: 'none', color: 'inherit' }}>
-        Scholastica<span className="dot" aria-hidden="true" />
-      </Link>
+      {/* First grid column: wordmark + course switcher together, so the
+          topbar's 3-column `1fr auto 1fr` grid (B6 receipt) stays a 3-child
+          grid rather than breaking into 4. */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 14, justifySelf: 'start', minWidth: 0 }}>
+        {/* Wordmark returns to the Threshold (a place, not an interstitial).
+            ?door=1 renders it without auto-forward. */}
+        <Link href="/?door=1" className="wordmark" style={{ textDecoration: 'none', color: 'inherit' }}>
+          Scholastica<span className="dot" aria-hidden="true" />
+        </Link>
+        <CourseSwitcher course={course} />
+      </div>
 
       <nav className="curriculum-path" aria-label="Course location">
         {moduleId !== undefined && (
           <>
             {modulesCrumb && (
               <>
-                <Link href="/modules" className="cp-crumb">Modules</Link>
+                <Link href={course === 'theologia' ? '/theologia' : '/modules'} className="cp-crumb">Modules</Link>
                 <span className="cp-sep">/</span>
               </>
             )}
@@ -144,7 +195,7 @@ function TopBarInner({ moduleId, moduleTitle, modulesCrumb, progress }: TopBarPr
 
       <div style={{ display: 'flex', alignItems: 'center', gap: 14, justifySelf: 'end' }}>
         <nav className="tb-nav" aria-label="Sections">
-          {NAV_ITEMS.map(item => (
+          {navItems.map(item => (
             <Link
               key={item.href}
               href={item.href}
@@ -197,7 +248,7 @@ function TopBarInner({ moduleId, moduleTitle, modulesCrumb, progress }: TopBarPr
       </div>
     )}
     <nav className="tab-bar" aria-label="Sections">
-      {NAV_ITEMS.map(item => (
+      {navItems.map(item => (
         <Link
           key={item.href}
           href={item.href}

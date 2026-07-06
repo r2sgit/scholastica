@@ -273,18 +273,25 @@ export default function CourseMapPage() {
           );
         })}
 
-        {/* Part II presence (§4.6): names the theology publicly without
-            binding it — no module rows, no numerals, never a nav item,
-            never a date promise. */}
+        {/* Part II presence (§4.6, updated 2026-07-05): the theology wing is
+            now real (one draft module, plainly marked pre-review) — this
+            card is a genuine link, per R2's explicit call to put the full
+            expression out there rather than hold it back further. */}
         <section className="cm-act quiet">
           <div className="cm-act-kicker">part two &middot; the theology</div>
           <h2 className="cm-act-name">The Theology</h2>
           <p className="cm-act-line">
-            Where the philosophy was heading all along. In the scriptorium now; it arrives as its own course.
+            Where the philosophy was heading all along. Early: one module exists, marked as a
+            pre-review draft.
           </p>
-          <div className="part-ii-card">
-            In preparation. Everything you earn in the philosophy is the toolkit it will assume.
-          </div>
+          <a
+            className="part-ii-card"
+            href="#"
+            onClick={e => { e.preventDefault(); router.push('/theologia'); }}
+            style={{ display: 'block', textDecoration: 'none', cursor: 'pointer' }}
+          >
+            Enter the Theologia wing &rarr;
+          </a>
         </section>
 
         {/* Collections strip — after the acts; modules lead the page (B5 §5) */}
