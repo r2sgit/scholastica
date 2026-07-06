@@ -70,7 +70,7 @@ export const COURSE_MAP: CourseMapEntry[] = [
     aim: 'True, good, one, and beautiful are not bonus features bolted onto things. They come with existing at all.' },
   { id: 8,  numeral: 'VIII',  title: 'The Four Causes',                  latin: 'Quattuor Causae',        act: 2, built: true,
     aim: 'Four different questions you can ask about anything, and why "what caused it" was never just one question.' },
-  { id: 9,  numeral: 'IX',    title: 'The Soul and Its Faculties',       latin: 'De Anima',               act: 3, built: false,
+  { id: 9,  numeral: 'IX',    title: 'The Soul and Its Faculties',       latin: 'De Anima',               act: 3, built: true,
     aim: 'Not a ghost in the machine. What it actually means to be alive, to sense, and to think.' },
   { id: 10, numeral: 'X',     title: 'Intellect and Knowledge',          latin: 'Intellectus et Cognitio', act: 3, built: false,
     aim: 'How a mind made of matter comes to hold things that are not matter at all. The strange trick of knowing.' },
