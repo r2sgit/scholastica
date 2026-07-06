@@ -1341,6 +1341,39 @@ export const m8: ModuleMeta = {
         },
         {
           id: `m8-l6-q6`,
+          type: "classify",
+          stem: `The gallery returns for one audit: statue, cake, chisel, heart. Eight true answers to eight whys. Sort each into the cause it names.`,
+          latin_tag: `quattuor causae`,
+          payload: {
+            "instruction": `Tap an answer, then the cause it names.`,
+            "categories": [
+              { "id": "c1", "label": "material · out of which" },
+              { "id": "c2", "label": "formal · what it is" },
+              { "id": "c3", "label": "efficient · what made it" },
+              { "id": "c4", "label": "final · what it is for" }
+            ],
+            "items": [
+              { "id": "i1", "text": "the bronze, waiting", "correct_category_id": "c1" },
+              { "id": "i2", "text": "the figure the bronze now bears", "correct_category_id": "c2" },
+              { "id": "i3", "text": "the sculptor's striking hand", "correct_category_id": "c3" },
+              { "id": "i4", "text": "the chisel in that hand", "correct_category_id": "c3" },
+              { "id": "i5", "text": "flour and eggs", "correct_category_id": "c1" },
+              { "id": "i6", "text": "what makes it a cake and not batter", "correct_category_id": "c2" },
+              { "id": "i7", "text": "pumping blood, which the heart is for", "correct_category_id": "c4" },
+              { "id": "i8", "text": "the commission the sculptor worked to fill", "correct_category_id": "c4" }
+            ],
+            "feedback": {
+              "all_correct": `Eight answers, four columns, no remainder: that is what complete explanation means. Two causes live inside the thing (material, formal), two stand outside it (efficient, final), and nothing true about statue, cake, or heart escaped the grid.`,
+              "partial_correct": `Some answers sit in the wrong column. Run the module's own drill: does it name what the thing is made of, what it is, what brought it about, or what it is for? The inner pair and the outer pair sort everything.`,
+              "per_item_corrections": [
+                { "item_id": "i4", "feedback": `The chisel cuts nothing on its own and everything in the sculptor's hand: an instrumental cause, filed in the efficient column, exactly as the module taught with this very tool.` },
+                { "item_id": "i8", "feedback": `The commission is the end the workman intends, finis operantis, beside the heart's built-in finis operis. Two flavors of final, one column.` }
+              ]
+            }
+          },
+        },
+        {
+          id: `m8-l6-q7`,
           type: "mcq",
           stem: `Last question. A skeptic offers the grand summary: "The universe is random; purpose is a human projection." Having finished this module, what is the precise trouble with the claim?`,
           latin_tag: `quattuor causae`,

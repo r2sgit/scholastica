@@ -11,7 +11,9 @@ export type ExerciseType =
   | 'dialogue_branch'
   | 'spot_the_fallacy'
   | 'precision_check'
-  | 'sequence';
+  | 'sequence'
+  | 'classify'
+  | 'place_in_tree';
 
 export interface MCQOption {
   id: string;

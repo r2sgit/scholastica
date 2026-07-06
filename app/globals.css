@@ -1630,6 +1630,192 @@ html.motion-reduced *::after {
 .fb-chip:hover:not(:disabled) { border-color: var(--ink-soft); transform: translateY(-1px); }
 .fb-chip.used { opacity: 0.55; cursor: default; }
 .fb-chip:disabled { cursor: default; }
+/* Selected state, shared by Classify/PlaceInTree's item bank — same
+   vermillion "chosen, not yet a verdict" language as .match-item.selected
+   and .role-chip.selected. FillBlank doesn't use this state (its chips
+   place on tap, with no intermediate selection). */
+.fb-chip.selected {
+  border-color: var(--vermillion);
+  border-width: 2px;
+  padding: 9px 17px;
+  color: var(--vermillion);
+}
+
+/* ── Sequence (R2, place_in_tree/classify/sequence build) ──
+   Numbered slots fill in tap order from the bank below; tapping a filled
+   slot releases it back to the bank. Reuses .fb-chip/.fb-bank for the bank
+   itself so the interaction reads as a sibling of fill_blank. */
+.seq-track {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+.seq-slot-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  cursor: default;
+  transition: border-color 140ms ease, background 140ms ease;
+}
+.seq-slot.filled .seq-slot-btn {
+  border-style: solid;
+  border-color: var(--gold);
+  background: color-mix(in oklab, var(--gold) 8%, var(--paper));
+  cursor: pointer;
+}
+.seq-slot.filled .seq-slot-btn:hover:not(:disabled) { border-color: var(--gold-deep); }
+.seq-slot.correct .seq-slot-btn { border-color: var(--correct); border-style: solid; border-width: 2px; background: color-mix(in oklab, var(--correct) 6%, var(--paper)); }
+.seq-slot.wrong .seq-slot-btn { border-color: var(--wrong); border-style: solid; border-width: 2px; background: color-mix(in oklab, var(--wrong) 6%, var(--paper)); }
+.seq-slot-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--gold-deep);
+  color: var(--paper);
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 13px;
+}
+.seq-slot.correct .seq-slot-num { background: var(--correct); }
+.seq-slot.wrong .seq-slot-num { background: var(--wrong); }
+.seq-slot-empty { color: var(--ink-mute); font-style: italic; font-size: 14px; }
+.seq-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0 8px;
+  padding: 14px 14px 12px;
+  background: color-mix(in oklab, var(--canvas) 50%, transparent);
+  border-radius: 12px;
+}
+
+/* ── Classify (R2, place_in_tree/classify/sequence build) ──
+   Tap an item in the bank to select it (vermillion), then tap a category
+   to drop it there. Categories are reusable buckets, not one-to-one pairs. */
+.classify-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 14px 14px 12px;
+  background: color-mix(in oklab, var(--canvas) 50%, transparent);
+  border-radius: 12px;
+}
+.classify-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.classify-bucket {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--paper);
+  cursor: default;
+  transition: border-color 140ms ease, background 140ms ease;
+}
+.classify-bucket.droppable {
+  cursor: pointer;
+  border-color: var(--gold-light);
+  background: color-mix(in oklab, var(--gold) 5%, var(--paper));
+}
+.classify-bucket-label {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.classify-bucket-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 32px;
+}
+.classify-bucket-empty { color: var(--ink-mute); font-style: italic; font-size: 14px; }
+.classify-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 6px 14px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--gold) 10%, var(--paper));
+  color: var(--ink);
+  font-family: 'Fraunces', serif;
+  font-size: 15px;
+  cursor: pointer;
+}
+.classify-tag:hover:not(:disabled) { border-color: var(--gold-deep); }
+.classify-tag:disabled { cursor: default; }
+.classify-tag.correct { border-color: var(--correct); border-width: 2px; background: color-mix(in oklab, var(--correct) 10%, var(--paper)); }
+.classify-tag.wrong { border-color: var(--wrong); border-width: 2px; background: color-mix(in oklab, var(--wrong) 10%, var(--paper)); }
+
+/* Resolved-state correctness recolors the bucket, not the tag row, since a
+   bucket can hold a mix of correct/wrong items. */
+.seq-slot,
+.classify-bucket,
+.tree-node { list-style: none; }
+
+/* ── Place in Tree (R2, place_in_tree/classify/sequence build) ──
+   Same bank + tap-to-place interaction as Classify; the target is a small
+   indented hierarchy instead of a flat row, so the visual reads as "where
+   in the tree" rather than "which bucket." */
+.tree-nodes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tree-node {
+  position: relative;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--ink-soft);
+  border-radius: 0 10px 10px 0;
+  background: var(--paper);
+  cursor: default;
+  transition: border-color 140ms ease, background 140ms ease;
+}
+.tree-node.droppable {
+  cursor: pointer;
+  border-left-color: var(--gold);
+  background: color-mix(in oklab, var(--gold) 5%, var(--paper));
+}
+.tree-node-label {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--ink);
+}
+.tree-node-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+  min-height: 28px;
+}
+
+@media (max-width: 480px) {
+  .seq-slot-btn { padding: 9px 12px; }
+  .tree-node { padding: 9px 12px; }
+}
 
 /* ── Syllogism builder ── */
 .syllogism-instruction {

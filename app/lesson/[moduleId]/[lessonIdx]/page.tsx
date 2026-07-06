@@ -14,6 +14,9 @@ import MatchPair from '../../../../components/MatchPair';
 import SyllogismBuilder from '../../../../components/SyllogismBuilder';
 import DialogueBranch from '../../../../components/DialogueBranch';
 import FillBlank from '../../../../components/FillBlank';
+import Sequence from '../../../../components/Sequence';
+import Classify from '../../../../components/Classify';
+import PlaceInTree from '../../../../components/PlaceInTree';
 import Prose from '../../../../components/Prose';
 import DrolleryMargin from '../../../../components/DrolleryMargin';
 import DrolleryPendant from '../../../../components/DrolleryPendant';
@@ -288,15 +291,12 @@ function ExerciseRenderer({
   switch (question.type) {
     // Single-select types all share the MCQ UI. precision_check additionally
     // appends its correction to correct-answer feedback (handled in MCQ).
-    // 'sequence' is a single-select over ordering options (payload.options +
-    // correct_option_id), so it renders through the same MCQ UI.
     case 'mcq':
     case 'true_false_with_reason':
     case 'distinction_application':
     case 'spot_the_fallacy':
     case 'close_reading':
     case 'precision_check':
-    case 'sequence':
       return <MCQ question={question} onAnswer={onAnswer} disabled={disabled} />;
     case 'match_pair':
       return <MatchPair question={question} onAnswer={onAnswer} disabled={disabled} />;
@@ -306,6 +306,17 @@ function ExerciseRenderer({
       return <DialogueBranch question={question} onAnswer={onAnswer} disabled={disabled} />;
     case 'fill_blank':
       return <FillBlank question={question} onAnswer={onAnswer} disabled={disabled} />;
+    // Real dedicated renderers (2026-07-05 build, R2's call to build ahead
+    // of content demanding them — see g-session-receipts.md). 'sequence'
+    // previously aliased to MCQ (single-select over pre-built orderings);
+    // that alias is gone now that a genuine ordering UI exists. No shipped
+    // content used the old alias, so this is not a breaking change.
+    case 'sequence':
+      return <Sequence question={question} onAnswer={onAnswer} disabled={disabled} />;
+    case 'classify':
+      return <Classify question={question} onAnswer={onAnswer} disabled={disabled} />;
+    case 'place_in_tree':
+      return <PlaceInTree question={question} onAnswer={onAnswer} disabled={disabled} />;
     default:
       return (
         <div style={{ padding: 20, color: 'var(--ink-mute)', fontStyle: 'italic' }}>
