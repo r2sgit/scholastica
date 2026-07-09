@@ -228,12 +228,21 @@ export default function CourseMapPage() {
       </div>
 
       <div className="cm-stage" style={{ animation: 'fadeIn .4s ease both' }}>
-        {/* Header strip: rank, plus the quiet score line (W3-Score) beside
-            it. No habitus UI in v1 (B3). */}
+        {/* Header strip: the score pill (W3-Score, R2's call 2026-07-09 --
+            standalone and visible, not the ink-faint line the spec doc
+            originally proposed), plus rank. No habitus UI in v1 (B3). */}
         <div className="cm-header">
-          <span className="cm-score" aria-label={`Score: ${score} of ${scoreCeiling}`}>
-            {`score · ${score.toLocaleString()} of ${scoreCeiling.toLocaleString()}`}
-          </span>
+          <a
+            className="cm-score-pill"
+            href="#"
+            onClick={e => { e.preventDefault(); router.push('/record'); }}
+            aria-label={`Score: ${score} of ${scoreCeiling}. View record.`}
+          >
+            <span className="cm-score-pill-label">Score</span>
+            <span className="cm-score-pill-value">{score.toLocaleString()}</span>
+            <span className="cm-score-pill-sep">/</span>
+            <span className="cm-score-pill-ceiling">{scoreCeiling.toLocaleString()}</span>
+          </a>
           <span className="cm-rank" aria-label={`Rank: ${rank}`}>{rank}</span>
         </div>
 

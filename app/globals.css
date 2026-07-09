@@ -2127,19 +2127,51 @@ html.motion-reduced *::after {
 /* Destination: M XVIII */
 .cm-row-destination { border-color: var(--gold-light); }
 
-/* Module-map header strip: rank, plus the quiet score line (W3-Score)
-   beside it. No habitus UI in v1 (B3). */
+/* Module-map header strip: the score pill, plus rank. No habitus UI in
+   v1 (B3). */
 .cm-header {
   display: flex;
   align-items: center;
   min-height: 44px;
   margin: 2px 0 4px;
 }
-.cm-score {
+/* Score pill (W3-Score, R2's call 2026-07-09): standalone and visible,
+   same card language as .cm-room -- paper, border, hover lift -- not the
+   ink-faint line the spec doc originally proposed. Links to /record. */
+.cm-score-pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  background: var(--paper);
+  border: 1px solid var(--gold-light);
+  border-radius: 999px;
+  padding: 8px 18px;
+  text-decoration: none;
+  transition: box-shadow .15s, transform .15s, border-color .15s;
+}
+.cm-score-pill:hover {
+  box-shadow: var(--shadow-row-hover);
+  transform: translateY(-1px);
+  border-color: var(--gold);
+}
+.cm-score-pill-label {
   font-variant-caps: all-small-caps;
   letter-spacing: 0.1em;
+  font-size: 12px;
+  color: var(--ink-mute);
+}
+.cm-score-pill-value {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gold-text);
+}
+.cm-score-pill-sep { font-size: 13px; color: var(--ink-faint); }
+.cm-score-pill-ceiling {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.06em;
   font-size: 13px;
-  color: var(--ink-faint);
+  color: var(--ink-mute);
 }
 .cm-rank {
   margin-left: auto;  /* always pinned right */
