@@ -713,6 +713,7 @@ html.motion-reduced *::after {
   .card-area,
   .vocab-stage,
   .theses-stage,
+  .record-stage,
   .notfound-stage {
     padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
   }
@@ -1353,6 +1354,30 @@ html.motion-reduced *::after {
   font-style: italic;
   color: var(--ink-mute);
   margin: 20px 0 0;
+}
+/* Score tick (W3-Score): the loud transition moment, next to the pips it's
+   about. No new motion tier -- rides the fin card's own single fadeIn. */
+.fin-score-tick {
+  margin: 14px 0 0;
+  text-align: center;
+}
+.fin-score-tick-award {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--gold-text);
+}
+.fin-score-tick-note {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+.fin-score-tick-total {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.08em;
+  font-size: 13px;
+  color: var(--ink-mute);
+  margin-top: 4px;
 }
 /* Gold sweep on the score pips — the sine errore moment landing on the
    thing it's actually about (the perfect pass), not a separate ornament. */
@@ -2102,12 +2127,19 @@ html.motion-reduced *::after {
 /* Destination: M XVIII */
 .cm-row-destination { border-color: var(--gold-light); }
 
-/* Module-map header strip: rank only, subtle. No habitus UI in v1 (B3). */
+/* Module-map header strip: rank, plus the quiet score line (W3-Score)
+   beside it. No habitus UI in v1 (B3). */
 .cm-header {
   display: flex;
   align-items: center;
   min-height: 44px;
   margin: 2px 0 4px;
+}
+.cm-score {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.1em;
+  font-size: 13px;
+  color: var(--ink-faint);
 }
 .cm-rank {
   margin-left: auto;  /* always pinned right */
@@ -2123,7 +2155,7 @@ html.motion-reduced *::after {
 .cm-rooms-head { margin-top: 44px; }
 .cm-rooms-head .t { font-size: 20px; font-weight: 500; color: var(--ink); }
 .cm-rooms-head .line { margin-top: 4px; font-size: 15.5px; color: var(--ink-soft); }
-.cm-rooms { margin-top: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cm-rooms { margin-top: 14px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .cm-room {
   background: var(--paper);
   border: 1px solid var(--border);
@@ -2540,6 +2572,121 @@ html.motion-reduced *::after {
   .thesis-card.ceremony,
   .thesis-card.ceremony .thesis-numeral,
   .thesis-card.ceremony .thesis-headline { animation: none; }
+}
+
+/* ═══ Record (/record) — Registrum-lite, W3-Score §5 ═══ */
+.record-stage {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 16px 28px 24px;
+}
+.record-head { text-align: center; margin: 8px 0 28px; }
+.record-title {
+  font-family: 'Fraunces', serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+}
+.record-title em { font-style: italic; }
+.record-sub {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--ink-soft);
+  max-width: 460px;
+  margin: 10px auto 0;
+  line-height: 1.5;
+}
+.record-rank {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: 'Fraunces', Georgia, serif;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.16em;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-mute);
+}
+
+.record-score {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px 24px;
+  margin-top: 8px;
+}
+.record-score-total {
+  text-align: center;
+  margin-bottom: 16px;
+}
+.record-score-total .n {
+  font-family: 'Fraunces', serif;
+  font-size: 34px;
+  font-weight: 600;
+  color: var(--gold-text);
+}
+.record-score-total .of {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.08em;
+  font-size: 14px;
+  color: var(--ink-mute);
+  margin-left: 8px;
+}
+.record-acts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid var(--border-soft);
+  padding-top: 14px;
+}
+.record-act-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.record-act-row .act-name { color: var(--ink-soft); }
+.record-act-row .act-score {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.04em;
+  color: var(--ink-mute);
+}
+
+.record-collections {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.record-collect-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 14px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: box-shadow .15s, transform .15s, border-color .15s;
+}
+.record-collect-card:not(.static):hover {
+  box-shadow: var(--shadow-row-hover);
+  transform: translateY(-1px);
+  border-color: var(--gold-light);
+}
+.record-collect-card.static { cursor: default; }
+.record-collect-card .t { font-size: 15px; font-weight: 500; color: var(--ink); }
+.record-collect-card .tally {
+  font-size: 13px;
+  color: var(--gold-text);
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.06em;
+}
+@media (max-width: 560px) {
+  .record-stage { padding: 12px 16px 16px; }
+  .record-collections { grid-template-columns: 1fr; }
 }
 
 /* ═══ Thesis unlock ceremony (fin-screen overlay) — gamification v2 B1 ═══ */

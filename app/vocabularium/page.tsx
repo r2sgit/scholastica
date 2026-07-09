@@ -8,15 +8,10 @@ import DistinctionMotif from '../../components/DistinctionMotif';
 import { useProgress } from '../../lib/progress';
 import { getCourseEntry } from '../../content/courseMap';
 import { MODULES } from '../../content/modules';
-import type { FinDistinction } from '../../content/types';
+import { getCodexEntries, type CodexEntry } from '../../lib/gamification';
 import {
   TERMS, isTermEarned, termGroupsInOrder, type Term, type TermModule,
 } from '../../content/terms';
-
-interface CodexEntry {
-  key: string;
-  distinction: FinDistinction;
-}
 
 /* One earned distinction, browsable — the codex shelf (§4.2 / B3). Static
    (no flip-in; that celebration already happened on its fin screen). */
@@ -81,28 +76,10 @@ export default function VocabulariumPage() {
   }, [data]);
 
   // Distinction Card codex (§4.2): every completed lesson that carries a
-  // fin.distinction, in module/lesson order. Earned cards only.
-  const codex = useMemo(() => {
-    const out: CodexEntry[] = [];
-    // Dedupe by the distinction's Latin pair, not by lesson: a capstone
-    // recap deliberately re-presents its module's strongest distinction
-    // rather than teaching a new one (B3's own authoring rule), so the
-    // same pair legitimately appears on two lessons' fin screens. The
-    // codex is "the distinctions you own," one card per distinction —
-    // the earliest lesson that earned it keeps the card.
-    const seen = new Set<string>();
-    for (const mod of MODULES) {
-      const mp = data.progress?.[mod.id];
-      mod.lessons.forEach((lesson, i) => {
-        const d = lesson.fin.distinction;
-        if (mp?.lessonsComplete?.[i] && d && !seen.has(d.latin)) {
-          seen.add(d.latin);
-          out.push({ key: lesson.id, distinction: d });
-        }
-      });
-    }
-    return out;
-  }, [data]);
+  // fin.distinction, deduped by Latin pair, earliest lesson keeps the card
+  // (B3's authoring rule — a capstone recap re-presents, not re-teaches).
+  // Shared with /record via lib/gamification's getCodexEntries.
+  const codex = useMemo(() => getCodexEntries(data), [data]);
 
   // The next-acquisition tease (§4.4): the first lesson in course order that
   // carries a distinction and isn't complete yet. One card, face down.

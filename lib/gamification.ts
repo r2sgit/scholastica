@@ -6,8 +6,9 @@
 
 import type { StorageSchema } from './progress';
 import { MODULES } from '../content/modules';
-import { COURSE_MAP } from '../content/courseMap';
+import { COURSE_MAP, ACTS } from '../content/courseMap';
 import { habitusStrengthFromDays } from './habitus';
+import type { FinDistinction } from '../content/types';
 
 export type Rank = 'incipiens' | 'proficiens' | 'perfectus';
 
@@ -113,6 +114,99 @@ export function getNearestUnlock(
     if (!best || away < best.lessonsAway) best = { n: t.n, lessonsAway: away };
   }
   return best;
+}
+
+/* ── Score (W3-Score, scholastica-prelogin-scoring.md) ──────────────────
+   Precision, not volume: points live on scores[lessonIdx].points (written
+   at markLessonComplete time, see lib/score.ts for the award logic). These
+   are pure sums over that already-decided state — never re-derive an
+   award here. Philosophy only; Theology keeps its own separate total
+   (fast-follow, §8) once progressTheologia tracks sineErrore. */
+
+/** Course score: sum of points across every COURSE_MAP module's lessons.
+    Restricting to COURSE_MAP (not a raw Object.values scan) matches
+    getModulesComplete's own defensive convention above. */
+export function getScore(data: StorageSchema): number {
+  let total = 0;
+  for (const entry of COURSE_MAP) {
+    const mp = data.progress?.[entry.id];
+    if (!mp?.scores) continue;
+    for (const s of mp.scores) {
+      if (s?.points) total += s.points;
+    }
+  }
+  return total;
+}
+
+/** Finite ceiling: 10 * lessons across built modules only, so the ratio
+    stays honest as unbuilt modules gain content. */
+export function getScoreCeiling(): number {
+  let total = 0;
+  for (const entry of COURSE_MAP) {
+    if (!entry.built) continue;
+    const mod = MODULES.find(m => m.id === entry.id);
+    if (mod) total += mod.lessons.length;
+  }
+  return total * 10;
+}
+
+/** Per-act score/ceiling breakdown for /record (handbook §20.2 act
+    structure, read from COURSE_MAP/ACTS rather than a hardcoded id list). */
+export function getActBreakdown(data: StorageSchema): { act: string; score: number; ceiling: number }[] {
+  return ACTS.map(actMeta => {
+    const entries = COURSE_MAP.filter(e => e.act === actMeta.act);
+    let score = 0;
+    let ceiling = 0;
+    for (const entry of entries) {
+      const mp = data.progress?.[entry.id];
+      if (mp?.scores) {
+        for (const s of mp.scores) if (s?.points) score += s.points;
+      }
+      if (entry.built) {
+        const mod = MODULES.find(m => m.id === entry.id);
+        if (mod) ceiling += mod.lessons.length * 10;
+      }
+    }
+    return { act: actMeta.title, score, ceiling };
+  });
+}
+
+/** Count of true marks across sineErrore — how many lessons carry the gold
+    mark, course-wide. For /record; the module map counts per-module. */
+export function getSineErroreTally(data: StorageSchema): number {
+  let total = 0;
+  for (const marks of Object.values(data.sineErrore || {})) {
+    total += marks.filter(Boolean).length;
+  }
+  return total;
+}
+
+export interface CodexEntry {
+  key: string;
+  distinction: FinDistinction;
+}
+
+/** Every completed lesson's distinction card, deduped by Latin pair — a
+    capstone recap deliberately re-presents its module's strongest
+    distinction rather than teaching a new one (B3's own authoring rule),
+    so the same pair can legitimately sit on two lessons; the earliest
+    lesson in course order that earned it keeps the card. Shared by
+    /vocabularium (renders the cards) and /record (just counts them) so
+    the dedup rule lives in exactly one place. */
+export function getCodexEntries(data: StorageSchema): CodexEntry[] {
+  const out: CodexEntry[] = [];
+  const seen = new Set<string>();
+  for (const mod of MODULES) {
+    const mp = data.progress?.[mod.id];
+    mod.lessons.forEach((lesson, i) => {
+      const d = lesson.fin.distinction;
+      if (mp?.lessonsComplete?.[i] && d && !seen.has(d.latin)) {
+        seen.add(d.latin);
+        out.push({ key: lesson.id, distinction: d });
+      }
+    });
+  }
+  return out;
 }
 
 /* ── Habitus strength (§20.6 / G4) ──────────────────────────────────────

@@ -115,7 +115,7 @@ function QuizCardInner() {
         .map(q => q.id);
 
       // Write to localStorage
-      markLessonComplete(moduleId, lessonIdx, {
+      const { event, delta } = markLessonComplete(moduleId, lessonIdx, {
         correct: correctCount,
         total: totalCount,
         missedIds,
@@ -126,7 +126,7 @@ function QuizCardInner() {
       const sound = isLastLesson ? 'module-complete' : 'lesson-complete';
 
       router.push(
-        `/complete/${moduleId}/${lessonIdx}?correct=${correctCount}&total=${totalCount}&sound=${sound}&missed=${missedIds.join(',')}${alreadyDone ? '&already=1' : ''}`
+        `/complete/${moduleId}/${lessonIdx}?correct=${correctCount}&total=${totalCount}&sound=${sound}&missed=${missedIds.join(',')}${alreadyDone ? '&already=1' : ''}&event=${event}&delta=${delta}`
       );
     }
   }, [questionIdx, questions, answers, moduleId, lessonIdx, mod, markLessonComplete, getModuleProgress, router]);

@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { MODULES } from '../../content/modules';
 import { COURSE_MAP, ACTS, type CourseMapEntry } from '../../content/courseMap';
 import { useProgress, type ModuleProgress, type StorageSchema } from '../../lib/progress';
-import { getRank, getThesesEarned, getNearestUnlock } from '../../lib/gamification';
+import { getRank, getThesesEarned, getNearestUnlock, getScore, getScoreCeiling } from '../../lib/gamification';
 import { THESES } from '../../content/theses';
 import { TERMS, isTermEarned } from '../../content/terms';
 import TopBar from '../../components/TopBar';
@@ -207,6 +207,8 @@ export default function CourseMapPage() {
   const stateById = new Map(states.map(s => [s.id, s]));
 
   const rank = getRank(data as StorageSchema, THESES);
+  const score = getScore(data as StorageSchema);
+  const scoreCeiling = getScoreCeiling();
   const nearestUnlock = getNearestUnlock(data as StorageSchema, THESES);
   const nearestThesis = nearestUnlock ? THESES.find(t => t.n === nearestUnlock.n) : undefined;
   const earnedTheses = getThesesEarned(data as StorageSchema, THESES).length;
@@ -226,8 +228,12 @@ export default function CourseMapPage() {
       </div>
 
       <div className="cm-stage" style={{ animation: 'fadeIn .4s ease both' }}>
-        {/* Header strip: rank only, subtle. No habitus UI in v1 (B3). */}
+        {/* Header strip: rank, plus the quiet score line (W3-Score) beside
+            it. No habitus UI in v1 (B3). */}
         <div className="cm-header">
+          <span className="cm-score" aria-label={`Score: ${score} of ${scoreCeiling}`}>
+            {`score · ${score.toLocaleString()} of ${scoreCeiling.toLocaleString()}`}
+          </span>
           <span className="cm-rank" aria-label={`Rank: ${rank}`}>{rank}</span>
         </div>
 
@@ -325,6 +331,16 @@ export default function CourseMapPage() {
             <p className="what">
               Your Latin, one word at a time. Every term you&rsquo;ve met, with its meaning in
               plain English, plus the distinctions you now own.
+            </p>
+          </a>
+          <a className="cm-room" href="#" onClick={e => { e.preventDefault(); router.push('/record'); }}>
+            <div className="name">
+              <span className="t">Record</span>
+              <span className="tally">{`${score.toLocaleString()} of ${scoreCeiling.toLocaleString()}`}</span>
+            </div>
+            <p className="what">
+              The score, by act, plus everything else the course keeps: theses, sine errore,
+              the codex. Quiet and entirely yours.
             </p>
           </a>
         </section>

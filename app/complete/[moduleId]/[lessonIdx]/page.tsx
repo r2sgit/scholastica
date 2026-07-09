@@ -5,7 +5,8 @@ import { useEffect, useState, Suspense } from 'react';
 import { getModule } from '../../../../content/modules';
 import { playSound, type SoundId } from '../../../../lib/sound';
 import { readProgress } from '../../../../lib/progress';
-import { getRank, getThesesEarned, getNearestUnlock, type Rank } from '../../../../lib/gamification';
+import { getRank, getThesesEarned, getNearestUnlock, getScore, getScoreCeiling, type Rank } from '../../../../lib/gamification';
+import type { ScoreEvent } from '../../../../lib/score';
 import { THESES, type Thesis } from '../../../../content/theses';
 import Prose from '../../../../components/Prose';
 import ThesisCeremony from '../../../../components/ThesisCeremony';
@@ -74,6 +75,59 @@ function SineFriar() {
   );
 }
 
+/* ── Score Tick (W3-Score, scholastica-prelogin-scoring.md §4) ───────────
+   Loud, keyed by event, next to the pips it's actually about. Never on a
+   retake of an already-done lesson (no reward replay) or when nothing
+   changed this pass (event 'none') — both guarded by the caller. Rides
+   the same single container fadeIn already on this screen rather than
+   inventing a new motion tier; the count-up itself is a data change, not
+   a CSS animation, and is skipped outright under reduced motion. */
+function scoreTickReducedMotion(): boolean {
+  if (typeof window === 'undefined') return false;
+  return !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+    || document.documentElement.classList.contains('motion-reduced');
+}
+
+const SCORE_TICK_COPY: Record<string, { award: string; note?: string }> = {
+  'first-perfect': { award: '+10' },
+  'first-miss': { award: '+6' },
+  'gap-close': { award: '+3', note: 'You closed the gap. +3.' },
+  'revisit': { award: '+1', note: 'Revisited. +1.' },
+};
+
+function ScoreTick({ event, delta, courseTotal, ceiling }: {
+  event: ScoreEvent; delta: number; courseTotal: number; ceiling: number;
+}) {
+  const copy = SCORE_TICK_COPY[event];
+  const start = Math.max(0, courseTotal - delta);
+  const [shown, setShown] = useState(scoreTickReducedMotion() ? courseTotal : start);
+
+  useEffect(() => {
+    if (scoreTickReducedMotion() || delta <= 0) { setShown(courseTotal); return; }
+    setShown(start);
+    const duration = 600;
+    const t0 = performance.now();
+    let raf = 0;
+    const step = (now: number) => {
+      const t = Math.min(1, (now - t0) / duration);
+      setShown(Math.round(start + (courseTotal - start) * t));
+      if (t < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [courseTotal, start, delta]);
+
+  if (!copy) return null;
+
+  return (
+    <div className="fin-score-tick">
+      <div className="fin-score-tick-award">{copy.award}</div>
+      {copy.note && <div className="fin-score-tick-note">{copy.note}</div>}
+      <div className="fin-score-tick-total">{`${shown.toLocaleString()} of ${ceiling.toLocaleString()}`}</div>
+    </div>
+  );
+}
+
 /* ── FinScreen Inner ──────────────────────────────────────── */
 function FinScreenInner() {
   const params = useParams();
@@ -91,6 +145,10 @@ function FinScreenInner() {
   // flow, but the fin shows "already earned" in place of reward replay — no
   // pips re-gild, no ceremony replay. §4.3 / app-design-architecture.
   const alreadyDone = searchParams.get('already') === '1';
+  // W3-Score: the event/delta markLessonComplete decided at write time,
+  // carried on the redirect (never re-derived here — see lib/score.ts).
+  const scoreEvent = (searchParams.get('event') || 'none') as ScoreEvent;
+  const scoreDelta = Number(searchParams.get('delta') || 0);
 
   const mod = getModule(moduleId);
   const lesson = mod?.lessons[lessonIdx];
@@ -113,10 +171,15 @@ function FinScreenInner() {
   // unaffected by the ceremony (that's about thesesEarned bookkeeping, not
   // module completion, so it can't change the nearest-unlock answer here).
   const [nearestUnlock, setNearestUnlock] = useState<{ n: number; lessonsAway: number } | null>(null);
+  // Course score total, read post-write (markLessonComplete already wrote
+  // this pass's points before this screen mounted). null until the mount
+  // effect runs, same pattern as rank/nearestUnlock above.
+  const [score, setScore] = useState<{ total: number; ceiling: number } | null>(null);
   useEffect(() => {
     const data = readProgress();
     setRank(getRank(data, THESES));
     setNearestUnlock(getNearestUnlock(data, THESES));
+    setScore({ total: getScore(data), ceiling: getScoreCeiling() });
     if (isLastLesson) {
       const earned = new Set(getThesesEarned(data, THESES));
       const played = new Set(data.thesesEarned || []);
@@ -290,6 +353,12 @@ function FinScreenInner() {
         {/* Score pips — gold sweep on a perfect lesson, but never re-gilded
             on a retake of an already-done lesson (§4.3). */}
         <ScorePips correct={correct} total={total} missedIds={missedIds} sweep={isPerfect && !alreadyDone} />
+
+        {/* Score tick (W3-Score): never on a retake (no reward replay) or
+            when this pass earned nothing new. */}
+        {!alreadyDone && scoreEvent !== 'none' && score && (
+          <ScoreTick event={scoreEvent} delta={scoreDelta} courseTotal={score.total} ceiling={score.ceiling} />
+        )}
 
         {/* Reward row, beat order per the prototype: sine errore + friar,
             then the distinction card. Single column ≤700px; ≥700px the

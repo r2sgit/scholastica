@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import { computeScoreUpdate } from './score';
+import { getScore } from './gamification';
 
 const STORAGE_KEY = 'scholastica_v1';
 
@@ -20,6 +22,8 @@ export interface ScoreEntry {
   correct: number;
   total: number;
   missedIds: string[];
+  points?: number;          // accumulated best-ever score for this lesson; monotonic (W3-Score)
+  lastRevisitDay?: string;  // local ISO date of last credited +1 revisit
 }
 
 export interface ModuleProgress {
@@ -182,6 +186,26 @@ export function useProgress() {
     lessonIdx: number,
     score: ScoreEntry
   ) => {
+    // Score write-time decision (W3-Score, scholastica-prelogin-scoring.md
+    // §3): must read prior state BEFORE anything below overwrites it —
+    // "first pass vs. revisit" and "gap closed for the first time" cannot be
+    // recovered after the fact from an overwriting schema.
+    const prevMp = data.progress[moduleId];
+    const wasComplete = prevMp?.lessonsComplete[lessonIdx] === true;
+    const wasPerfect = data.sineErrore?.[moduleId]?.[lessonIdx] === true;
+    const prevEntry = prevMp?.scores[lessonIdx] ?? null;
+    const prevPoints = prevEntry?.points ?? 0;
+    const isPerfectNow = score.missedIds.length === 0 && score.correct === score.total;
+    const today = localISODate();
+    const { points, lastRevisitDay, event, delta } = computeScoreUpdate({
+      wasComplete,
+      wasPerfect,
+      prevPoints,
+      prevRevisitDay: prevEntry?.lastRevisitDay,
+      isPerfectNow,
+      today,
+    });
+
     const next = { ...data, progress: { ...data.progress } };
     if (!next.progress[moduleId]) {
       next.progress[moduleId] = {
@@ -193,13 +217,13 @@ export function useProgress() {
     mp.lessonsComplete = [...mp.lessonsComplete];
     mp.scores = [...mp.scores];
     mp.lessonsComplete[lessonIdx] = true;
-    mp.scores[lessonIdx] = score;
+    mp.scores[lessonIdx] = { ...score, points, lastRevisitDay };
     next.progress[moduleId] = mp;
 
     // Sine Errore mark: a perfect first pass earns the gold mark. Sticky —
     // a later imperfect retake never unsets it (precision was demonstrated,
     // the trace persists). §20.4 / G1.
-    if (score.missedIds.length === 0 && score.correct === score.total) {
+    if (isPerfectNow) {
       const marks = { ...(next.sineErrore || {}) };
       const lessonMarks = [...(marks[moduleId] || [])];
       lessonMarks[lessonIdx] = true;
@@ -210,7 +234,6 @@ export function useProgress() {
     // Habitus: record today (local date) as a day of practice. Append-only,
     // dedup'd, capped. Feeds the Habitus Meter (§20.6 / G4); renders nothing
     // until that vine ships.
-    const today = localISODate();
     const days = next.habitus?.days || [];
     if (!days.includes(today)) {
       const appended = [...days, today];
@@ -220,6 +243,8 @@ export function useProgress() {
     }
 
     save(next);
+
+    return { event, delta, lessonPoints: points, courseTotal: getScore(next) };
   }, [data, save]);
 
   const isIntroSeen = useCallback((): boolean => {
