@@ -89,12 +89,14 @@ def emit_module(mid):
         dist_ts = ''
         if fin.get('distinction'):
             d = fin['distinction']
+            # motif is optional: some theology cards ship without one.
+            motif_ts = f"          motif: {tl(d['motif'])},\n" if d.get('motif') else ''
             dist_ts = (
                 f"        distinction: {{\n"
                 f"          latin: {tl(d['latin'])},\n"
                 f"          english: {tl(d['english'])},\n"
                 f"          gloss: {tl(d['gloss'])},\n"
-                f"          motif: {tl(d['motif'])},\n"
+                f"{motif_ts}"
                 f"        }},\n"
             )
         lessons_ts.append(

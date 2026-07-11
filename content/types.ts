@@ -43,7 +43,11 @@ export interface FinDistinction {
   latin: string;
   english: string;
   gloss: string;
-  motif: string;
+  /** Optional: selects the inline-SVG visual-distinctions grammar frame.
+      Some theology lessons (T8, T14) ship a distinction card with no motif
+      assigned; the card renders text-only, no frame, rather than a
+      mismatched default. */
+  motif?: string;
 }
 
 export interface FinMeta {

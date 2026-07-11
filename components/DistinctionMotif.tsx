@@ -180,7 +180,10 @@ const RENDERERS: Record<MotifKind, () => React.JSX.Element> = {
   'concentric': Concentric,
 };
 
-export default function DistinctionMotif({ kind, on }: { kind: string; on: boolean }) {
+export default function DistinctionMotif({ kind, on }: { kind?: string; on: boolean }) {
+  // No motif assigned (some theology cards): render text-only, no frame,
+  // rather than fall through to a mismatched default.
+  if (!kind) return null;
   const Renderer = RENDERERS[kind as MotifKind] || SeedTree;
   return (
     <svg
