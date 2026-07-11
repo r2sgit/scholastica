@@ -1127,7 +1127,7 @@ export const m6: ModuleMeta = {
         },
         {
           id: `m6-l5-e5`,
-          type: "sequence",
+          type: "mcq",
           stem: `A categorical syllogism has three propositions arranged in a canonical order. Which sequence is correct?`,
           payload: {
             "options": [

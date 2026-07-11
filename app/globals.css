@@ -1171,22 +1171,67 @@ html.motion-reduced *::after {
   .quaestio { font-size: 30px; line-height: 1.35; }
 }
 
-/* Close reading passage */
+/* Close reading passage — reading register, not question-heading scale.
+   A stem that contains a .cr-passage is a reading task, so drop the whole
+   stem from .quaestio's 24/30px down to a calm 17px and give the passage's
+   internal structure (mode labels, cite, audio control) real rules.
+   Keyed off :has() so it covers both wings (philosophy + theologia) with no
+   page.tsx change; the mode labels inherit each wing's accent via --gold-text. */
+.quaestio:has(.cr-passage) {
+  font-size: 17px;
+  line-height: 1.66;
+  font-weight: 400;
+}
+.quaestio:has(.cr-passage) > p { margin: 0 0 14px; }
+.quaestio:has(.cr-passage) > p:last-child { margin: 16px 0 0; font-weight: 500; }
+
+.cr-audio-controls { margin: 0 0 14px; }
+.cr-audio-play {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--paper);
+  color: var(--gold-text);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.08em;
+}
+.cr-audio-icon { font-size: 9px; line-height: 1; }
+
 .cr-passage {
   border-left: 3px solid var(--gold);
-  background: rgba(184, 137, 53, 0.06);
-  padding: 20px 24px;
+  background: rgba(184, 137, 53, 0.05);
+  padding: 15px 20px;
   border-radius: 0 8px 8px 0;
-  font-size: 18px;
+  font-size: 16.5px;
+  line-height: 1.62;
   color: var(--ink);
   font-style: normal;
-  margin: 20px 0;
+  margin: 0;
+}
+.cr-passage p { margin: 0 0 11px; }
+.cr-mode {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--gold-text);
+  font-size: 0.9em;
 }
 .cr-cite {
-  font-size: 14px;
+  display: block;
+  font-size: 13px;
   color: var(--ink-mute);
-  letter-spacing: 0.1em;
-  margin-top: 16px;
+  letter-spacing: 0.06em;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-soft);
   font-style: italic;
 }
 
