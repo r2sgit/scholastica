@@ -5,7 +5,7 @@ import { useEffect, useState, Suspense } from 'react';
 import { getModule } from '../../../../content/modules';
 import { playSound, type SoundId } from '../../../../lib/sound';
 import { readProgress, localISODate } from '../../../../lib/progress';
-import { getRank, getThesesEarned, getNearestUnlock, getScore, getScoreCeiling, getStreak, type Rank } from '../../../../lib/gamification';
+import { getRank, getThesesEarned, getNearestUnlock, getModulesComplete, getScore, getScoreCeiling, getStreak, type Rank } from '../../../../lib/gamification';
 import type { ScoreEvent } from '../../../../lib/score';
 import { THESES, type Thesis } from '../../../../content/theses';
 import type { FinDistinction } from '../../../../content/types';
@@ -131,13 +131,15 @@ const REWARD_AWARD: Record<string, string> = {
    once with final values. */
 function RewardStage({
   event, delta, courseTotal, ceiling, streak, isPerfect, correct, total,
-  distinction, nearestThesisNumeral, lessonsAway, onNext,
+  distinction, nearestThesisNumeral, lessonsAway, crossWing, onNext, onCrossWing,
 }: {
   event: ScoreEvent; delta: number; courseTotal: number; ceiling: number;
   streak: number; isPerfect: boolean; correct: number; total: number;
   distinction: FinDistinction | undefined;
   nearestThesisNumeral: string | null; lessonsAway: number | null;
+  crossWing: boolean;
   onNext: () => void;
+  onCrossWing: () => void;
 }) {
   const reduced = finReducedMotion();
   const [stage, setStage] = useState(reduced ? 5 : 0);
@@ -207,7 +209,7 @@ function RewardStage({
         </div>
       )}
 
-      {nearestThesisNumeral && lessonsAway != null && (
+      {nearestThesisNumeral && lessonsAway != null ? (
         <div>
           <button
             type="button"
@@ -219,7 +221,19 @@ function RewardStage({
             {' '}<span className="arrow" aria-hidden="true">→</span>
           </button>
         </div>
-      )}
+      ) : crossWing ? (
+        // Nothing nearer to unlock in philosophy: point across the wing (§6).
+        <div>
+          <button
+            type="button"
+            className={`fin-nextline${stage >= 5 ? ' in' : ''}`}
+            onClick={onCrossWing}
+          >
+            Theologia is open · T1 · Sacra Doctrina
+            {' '}<span className="arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+      ) : null}
     </>
   );
 }
@@ -315,6 +329,89 @@ function ModuleCompleteBeat({
   );
 }
 
+/* ── The Porta (WP5, spec §6) ─────────────────────────────────────────────
+   Volume I hands over to Volume II. After M18's stat beat (and the perfectus
+   ceremony when it fires), a produced screen: philosophy's gold sun, then the
+   theology wing unlocking with a glint, ultramarine entering. The classical
+   line — philosophy as ancilla theologiae, the handmaid who has finished her
+   work. CTA into T1; the secondary stays in philosophia (gap-closing remains).
+   Copy em-dash-free; final wording R2's at essence-QA. */
+function PortaScreen() {
+  const router = useRouter();
+  const reduced = finReducedMotion();
+  const [stage, setStage] = useState(reduced ? 3 : 0);
+  useEffect(() => {
+    playSound('module-complete');
+    if (reduced) return;
+    const seq = [300, 1600, 2400];
+    const timers = seq.map((t, i) => setTimeout(() => {
+      const s = i + 1;
+      setStage(s);
+      if (s === 2) playSound('sparkle'); // the glint as theology enters
+    }, t));
+    return () => timers.forEach(clearTimeout);
+  }, [reduced]);
+
+  return (
+    <div style={{ minHeight: '100dvh', background: 'var(--canvas)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '56px 24px 80px' }}>
+      <div style={{ maxWidth: 560, width: '100%', textAlign: 'center' }}>
+        {/* The gold sun — philosophy's accomplishment, full and warm. On the
+            glint it gains an ultramarine ring: the next volume entering. */}
+        <div
+          aria-hidden="true"
+          style={{
+            width: 132, height: 132, borderRadius: '50%', margin: '0 auto 28px',
+            background: 'radial-gradient(circle at 50% 45%, var(--gold-light) 0%, var(--gold) 42%, var(--gold-deep) 100%)',
+            boxShadow: stage >= 2
+              ? '0 0 0 6px rgba(47,74,138,0.16), 0 0 60px 12px rgba(184,137,53,0.45)'
+              : '0 0 44px 8px rgba(184,137,53,0.40)',
+            opacity: stage >= 0 ? 1 : 0,
+            transform: stage >= 1 ? 'scale(1)' : 'scale(0.82)',
+            transition: 'transform 1s cubic-bezier(.2,.8,.2,1), box-shadow 1.1s ease',
+          }}
+        />
+        <div style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '0.2em', fontSize: 13, fontWeight: 600, color: 'var(--gold-text)', opacity: stage >= 1 ? 1 : 0, transition: 'opacity .6s ease' }}>
+          Volumen primum absolutum
+        </div>
+        <h1 style={{ fontFamily: '"Fraunces", serif', fontSize: 27, fontWeight: 600, color: 'var(--ink)', lineHeight: 1.3, margin: '10px 0 14px', opacity: stage >= 1 ? 1 : 0, transition: 'opacity .7s ease .1s' }}>
+          Philosophy has finished her work.
+        </h1>
+        <p style={{ fontSize: 17, color: 'var(--ink-soft)', lineHeight: 1.6, maxWidth: 460, margin: '0 auto 8px', opacity: stage >= 1 ? 1 : 0, transition: 'opacity .7s ease .2s' }}>
+          She was never the end of it. Philosophy is <em lang="la">ancilla theologiae</em>, the
+          handmaid of theology: every proof you built by reason was clearing the road for what
+          reason cannot reach on its own, only receive. The road is open now.
+        </p>
+
+        {/* The theology wing entering — ultramarine, on the glint. */}
+        <div className="theologia-wing" style={{ marginTop: 30, opacity: stage >= 2 ? 1 : 0, transform: stage >= 2 ? 'translateY(0)' : 'translateY(8px)', transition: 'opacity .8s ease, transform .8s ease' }}>
+          <button
+            type="button"
+            onClick={() => router.push('/theologia/lesson/1/0')}
+            style={{
+              fontFamily: 'inherit', fontSize: 16, fontWeight: 500, padding: '15px 30px',
+              background: 'var(--gold-deep)', color: 'var(--paper)', border: 'none',
+              borderRadius: 8, cursor: 'pointer', transition: 'background .2s',
+            }}
+            onMouseOver={e => (e.currentTarget.style.background = 'var(--gold)')}
+            onMouseOut={e => (e.currentTarget.style.background = 'var(--gold-deep)')}
+          >
+            Enter Theologia · T1 · Sacra Doctrina →
+          </button>
+        </div>
+        <div style={{ marginTop: 16, opacity: stage >= 2 ? 1 : 0, transition: 'opacity .8s ease .2s' }}>
+          <button
+            type="button"
+            onClick={() => router.push('/modules')}
+            style={{ fontFamily: 'inherit', fontSize: 14, color: 'var(--ink-mute)', background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline', textUnderlineOffset: 3 }}
+          >
+            Stay in philosophy
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ── FinScreen Inner ──────────────────────────────────────── */
 function FinScreenInner() {
   const params = useParams();
@@ -351,14 +448,23 @@ function FinScreenInner() {
   // owns the illuminated-initial animation and the ceremony-once guard.
   const [newTheses, setNewTheses] = useState<Thesis[]>([]);
   // Last-lesson flow phases (RD5): the fin reward stage, then the produced
-  // module-complete stat beat, then (if a thesis was earned) the ceremony.
-  // Non-last lessons never leave 'fin'.
-  const [phase, setPhase] = useState<'fin' | 'module' | 'ceremony'>('fin');
+  // module-complete stat beat, then (if a thesis was earned) the ceremony,
+  // then — on M18 only — the Porta handoff to Volume II (WP5). Non-last
+  // lessons never leave 'fin'. ?porta=1 forces the Porta for QA.
+  const forcePorta = searchParams.get('porta') === '1';
+  const [phase, setPhase] = useState<'fin' | 'module' | 'ceremony' | 'porta'>(forcePorta ? 'porta' : 'fin');
+  const isFinaleModule = moduleId === 18;
   // Nearest not-yet-earned thesis, for the "Thesis N is one lesson away"
   // anticipation line (B2). Computed once at mount from real module progress;
   // unaffected by the ceremony (that's about thesesEarned bookkeeping, not
   // module completion, so it can't change the nearest-unlock answer here).
   const [nearestUnlock, setNearestUnlock] = useState<{ n: number; lessonsAway: number } | null>(null);
+  // Cross-wing pull (WP5, §6): when philosophy has no nearer thesis to unlock
+  // and the learner is deep in the course, the fin's next-pull line points
+  // across the wing to theology instead of showing nothing. Gated on late
+  // progress (>=15 of 18 modules complete) so it never teases prematurely —
+  // "honest distances". Tuning threshold flagged for R2.
+  const [crossWing, setCrossWing] = useState(false);
   // Course score total, read post-write (markLessonComplete already wrote
   // this pass's points before this screen mounted). null until the mount
   // effect runs, same pattern as rank/nearestUnlock above.
@@ -368,7 +474,9 @@ function FinScreenInner() {
   useEffect(() => {
     const data = readProgress();
     setRank(getRank(data, THESES));
-    setNearestUnlock(getNearestUnlock(data, THESES));
+    const nu = getNearestUnlock(data, THESES);
+    setNearestUnlock(nu);
+    setCrossWing(!nu && getModulesComplete(data).length >= 15);
     setScore({ total: getScore(data), ceiling: getScoreCeiling() });
     setStreak(getStreak(data, localISODate()));
     if (isLastLesson) {
@@ -429,10 +537,17 @@ function FinScreenInner() {
         hasThesis={newTheses.length > 0}
         onContinue={() => {
           if (newTheses.length > 0) setPhase('ceremony');
+          else if (isFinaleModule) setPhase('porta');
           else router.push(`/modules/${moduleId}`);
         }}
       />
     );
+  }
+
+  // The Porta: Volume I hands over to Volume II (WP5). Reached after M18's
+  // beat/ceremony, or forced via ?porta=1.
+  if (phase === 'porta') {
+    return <PortaScreen />;
   }
 
   // Thesis ceremony: the crown, after the module beat. The ceremony's own
@@ -444,7 +559,7 @@ function FinScreenInner() {
       <ThesisCeremony
         theses={newTheses}
         moduleId={moduleId}
-        onDone={() => router.push(`/modules/${moduleId}`)}
+        onDone={() => { if (isFinaleModule) setPhase('porta'); else router.push(`/modules/${moduleId}`); }}
       />
     );
   }
@@ -590,7 +705,9 @@ function FinScreenInner() {
             distinction={fin.distinction}
             nearestThesisNumeral={nearestUnlock ? (THESES.find(t => t.n === nearestUnlock.n)?.numeral ?? null) : null}
             lessonsAway={nearestUnlock ? nearestUnlock.lessonsAway : null}
+            crossWing={crossWing}
             onNext={() => router.push('/theses')}
+            onCrossWing={() => router.push('/theologia/lesson/1/0')}
           />
         )}
 
