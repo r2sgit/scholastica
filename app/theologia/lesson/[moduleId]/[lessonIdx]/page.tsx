@@ -39,21 +39,6 @@ function toRoman(n: number): string {
   return result;
 }
 
-function DraftRibbon() {
-  return (
-    <div
-      style={{
-        maxWidth: 640, margin: '0 auto 12px', padding: '8px 14px',
-        border: '1px solid var(--border)', borderRadius: 8,
-        background: 'var(--paper)', color: 'var(--ink-mute)',
-        fontSize: 13, textAlign: 'center', fontStyle: 'italic',
-      }}
-    >
-      Draft &middot; pre-review. This module has not yet been checked by a theologian.
-    </div>
-  );
-}
-
 function QuizCardInner() {
   const params = useParams();
   const router = useRouter();
@@ -138,8 +123,6 @@ function QuizCardInner() {
           modulesCrumb
           progress={{ current: questionIdx + (answerState !== 'idle' ? 1 : 0), total: questions.length }}
         />
-
-        <DraftRibbon />
 
         <div className="card-area">
           <article className="card">

@@ -54,7 +54,6 @@ function ModuleRow({ entry, state }: { entry: TheologiaCourseMapEntry; state?: M
       <div>
         <div className="cm-row-title">
           {entry.title} <span className="cm-row-latin" lang="la">{entry.latin}</span>
-          {entry.draft && <span className="cm-chip" style={{ marginLeft: 8, verticalAlign: 'middle' }}>draft &middot; pre-review</span>}
         </div>
         <p className="cm-row-blurb">{entry.aim}</p>
         {built && state && (
@@ -104,9 +103,7 @@ export default function TheologiaMapPage() {
           <h1>The <em>theology</em> of Thomas Aquinas.</h1>
           <p className="cm-lede">
             Where the philosophy was heading all along: the Summa&rsquo;s three parts, taught the
-            same way, one distinction at a time. This wing is early. One module exists, and it is
-            marked plainly as a pre-review draft &mdash; the doctrine is authored to the same source
-            discipline as the philosophy course, but no theologian has signed off on it yet.
+            same way, one distinction at a time.
           </p>
         </section>
 

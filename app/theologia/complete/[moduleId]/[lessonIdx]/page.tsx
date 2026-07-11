@@ -132,7 +132,7 @@ function FinScreenInner() {
 
         {isLastLesson && (
           <p style={{ fontSize: 14, color: 'var(--ink-mute)', fontStyle: 'italic', margin: '16px 0 0' }}>
-            Module complete. Draft, pre-review: <a href="/theologia">back to Theologia</a>.
+            Module complete. <a href="/theologia">Back to Theologia</a>.
           </p>
         )}
 
