@@ -56,6 +56,9 @@ function QuizCardInner() {
   const [answerState, setAnswerState] = useState<'idle' | 'correct' | 'wrong'>('idle');
   const [feedbackBody, setFeedbackBody] = useState('');
   const [feedbackDoctrineTag, setFeedbackDoctrineTag] = useState<string | undefined>();
+  // In-lesson combo (WP3, parity with philosophy RD2): consecutive correct
+  // answers within this lesson. Shown from x2, resets on a miss / lesson start.
+  const [combo, setCombo] = useState(0);
 
   useEffect(() => {
     if (!lesson) return;
@@ -64,21 +67,48 @@ function QuizCardInner() {
     setAnswers(qs.map(() => ({ correct: false, attempted: false })));
     setQuestionIdx(0);
     setAnswerState('idle');
+    setCombo(0);
+    // A fresh lesson starts with an empty pending chip on the HUD.
+    window.dispatchEvent(new CustomEvent('scholastica:hud', { detail: { pending: null } }));
   }, [lesson]);
 
   const currentQuestion = questions[questionIdx];
+
+  // Pending accrual (WP3 / §4.1) runs only on a genuine first pass — a revisit
+  // of an already-complete lesson awards flat at the fin with no on-camera
+  // assembly. Theology has no review/filter-missed modes, so first pass ==
+  // lesson not yet complete.
+  const isFirstPass = getModuleProgress(moduleId)?.lessonsComplete[lessonIdx] !== true;
 
   const handleAnswer = useCallback((correct: boolean, feedback: string, doctrineTag?: string) => {
     setAnswerState(correct ? 'correct' : 'wrong');
     setFeedbackBody(feedback);
     setFeedbackDoctrineTag(doctrineTag);
-    playSound(correct ? 'correct' : 'wrong');
+    const newCombo = correct ? combo + 1 : 0;
+    setCombo(newCombo);
+    playSound(correct ? 'correct' : 'wrong', newCombo);
+    if (correct) window.setTimeout(() => playSound('tick'), 260);
+
+    // Pending accrual (§4.1): the lesson's flat award visibly assembling on
+    // the HUD. target 10 while clean, 6 once any miss has happened (sine
+    // errore is per-pass). pending = round(correctSoFar / total x target).
+    // Presentation only; nothing written to storage here.
+    if (isFirstPass) {
+      const priorCorrect = answers.filter(a => a.correct).length;
+      const correctSoFar = priorCorrect + (correct ? 1 : 0);
+      const anyMiss = !correct || answers.some(a => a.attempted && !a.correct);
+      const target = anyMiss ? 6 : 10;
+      const total = questions.length;
+      const pending = total > 0 ? Math.round((correctSoFar / total) * target) : 0;
+      window.dispatchEvent(new CustomEvent('scholastica:hud', { detail: { pending } }));
+    }
+
     setAnswers(prev => {
       const next = [...prev];
       next[questionIdx] = { correct, attempted: true };
       return next;
     });
-  }, [questionIdx]);
+  }, [questionIdx, isFirstPass, answers, questions.length, combo]);
 
   const handleContinue = useCallback(() => {
     if (questionIdx < questions.length - 1) {
@@ -92,13 +122,17 @@ function QuizCardInner() {
       const totalCount = questions.length;
       const missedIds = questions.filter((_, i) => !answers[i]?.correct).map(q => q.id);
 
-      markLessonComplete(moduleId, lessonIdx, { correct: correctCount, total: totalCount, missedIds });
+      // Consume the real event object (WP1 return) so the fin renders the
+      // right tick without re-reading (parity with philosophy).
+      const { event, delta } = markLessonComplete(moduleId, lessonIdx, {
+        correct: correctCount, total: totalCount, missedIds,
+      });
 
       const isLastLesson = mod && lessonIdx >= mod.lessons.length - 1;
       const sound = isLastLesson ? 'module-complete' : 'lesson-complete';
 
       router.push(
-        `/theologia/complete/${moduleId}/${lessonIdx}?correct=${correctCount}&total=${totalCount}&sound=${sound}&missed=${missedIds.join(',')}${alreadyDone ? '&already=1' : ''}`
+        `/theologia/complete/${moduleId}/${lessonIdx}?correct=${correctCount}&total=${totalCount}&sound=${sound}&missed=${missedIds.join(',')}${alreadyDone ? '&already=1' : ''}&event=${event}&delta=${delta}`
       );
     }
   }, [questionIdx, questions, answers, moduleId, lessonIdx, mod, markLessonComplete, getModuleProgress, router]);
@@ -127,6 +161,14 @@ function QuizCardInner() {
         <div className="card-area">
           <article className="card">
             <CardVines />
+            {/* Combo counter (WP3, parity with philosophy RD2): from x2.
+                key={combo} remounts it so the pop re-fires each rung. */}
+            {combo >= 2 && (
+              <div className="combo" key={combo} aria-hidden="true">
+                <span className="word">{['Bene!', 'Perge!', 'Optime!'][Math.min(combo - 2, 2)]}</span>
+                <span className="x">&times;{combo}</span>
+              </div>
+            )}
             <div className="card-head">
               <span className="lesson-eyebrow">
                 <span className="le-label">Lesson</span>{' '}
