@@ -97,8 +97,12 @@ function QuizCardInner() {
     setAnswerState(correct ? 'correct' : 'wrong');
     setFeedbackBody(feedback);
     setFeedbackDoctrineTag(doctrineTag);
-    setCombo(prev => (correct ? prev + 1 : 0));
-    playSound(correct ? 'correct' : 'wrong');
+    // The correct cue climbs the pentatonic ladder with the combo (RD6); a
+    // soft felt tick follows shortly after, per the prototype.
+    const newCombo = correct ? combo + 1 : 0;
+    setCombo(newCombo);
+    playSound(correct ? 'correct' : 'wrong', newCombo);
+    if (correct) window.setTimeout(() => playSound('tick'), 260);
 
     // Pending accrual (§4.1): the lesson's flat award visibly assembling on
     // the HUD. target is 10 while the pass is clean, 6 once any miss has
@@ -121,7 +125,7 @@ function QuizCardInner() {
       next[questionIdx] = { correct, attempted: true };
       return next;
     });
-  }, [questionIdx, isFirstPass, answers, questions.length]);
+  }, [questionIdx, isFirstPass, answers, questions.length, combo]);
 
   const handleContinue = useCallback(() => {
     if (questionIdx < questions.length - 1) {

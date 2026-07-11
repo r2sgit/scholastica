@@ -143,11 +143,18 @@ function RewardStage({
   const [stage, setStage] = useState(reduced ? 5 : 0);
   useEffect(() => {
     if (reduced) return;
-    // rl1 score, rl3 streak, rl4 perfect, friar, nextline (prototype timings)
+    // rl1 score, rl3 streak, rl4 perfect, friar, nextline (prototype timings).
+    // Sound cues ride the reveals: a bell as the streak row lands, a sparkle
+    // for the sine-errore row (RD6).
     const seq = [220, 1000, 1700, 2300, 2900];
-    const timers = seq.map((t, i) => setTimeout(() => setStage(i + 1), t));
+    const timers = seq.map((t, i) => setTimeout(() => {
+      const s = i + 1;
+      setStage(s);
+      if (s === 2 && streak > 0) playSound('streak');
+      if (s === 3 && event === 'first-perfect') playSound('sparkle');
+    }, t));
     return () => timers.forEach(clearTimeout);
-  }, [reduced]);
+  }, [reduced, streak, event]);
 
   const award = REWARD_AWARD[event];
   // Reconstruct the in-lesson pending the HUD last showed, so the count-up
@@ -241,7 +248,11 @@ function ModuleCompleteBeat({
     playSound('module-complete');
     if (finReducedMotion()) return;
     const seq = [300, 700, 1100, 1700];
-    const timers = seq.map((t, i) => setTimeout(() => setStage(i + 1), t));
+    const timers = seq.map((t, i) => setTimeout(() => {
+      const s = i + 1;
+      setStage(s);
+      if (s === 3) playSound('sparkle');
+    }, t));
     return () => timers.forEach(clearTimeout);
   }, [moduleId, lessonCount]);
 
