@@ -14,11 +14,10 @@ export interface TheologiaCourseMapEntry {
       theology side; answers "what will I learn here" in one sentence. */
   aim: string;
   built: boolean;
-  draft?: boolean;
 }
 
 export const THEOLOGIA_COURSE_MAP: TheologiaCourseMapEntry[] = [
-  { id: 1,  numeral: 'I',    title: 'Sacra Doctrina: What Theology Is', latin: 'De Sacra Doctrina',          built: true, draft: true,
+  { id: 1,  numeral: 'I',    title: 'Sacra Doctrina: What Theology Is', latin: 'De Sacra Doctrina',          built: true,
     aim: 'What theology is: how a science can rest on what God has revealed, and why faith and reason are not rivals.' },
   { id: 2,  numeral: 'II',   title: 'The Existence of God',             latin: 'De Deo Uno',                 built: false,
     aim: "The five ways: Aquinas's five arguments that God exists, each one starting from something you can see." },
@@ -26,7 +25,7 @@ export const THEOLOGIA_COURSE_MAP: TheologiaCourseMapEntry[] = [
     aim: 'What God is like: simple, perfect, unchanging, eternal, one. And why we say it mostly by saying what God is not.' },
   { id: 4,  numeral: 'IV',   title: 'The Trinity',                     latin: 'De Trinitate',                built: false,
     aim: 'One God, three Persons. What the doctrine actually says, what it does not say, and the precise words the Church uses to keep both straight.' },
-  { id: 5,  numeral: 'V',    title: 'Creation',                        latin: 'De Creatione',                built: false,
+  { id: 5,  numeral: 'V',    title: 'Creation',                        latin: 'De Creatione',                built: true,
     aim: 'Why there is something rather than nothing: what it means that God creates from nothing and holds everything in being right now.' },
   { id: 6,  numeral: 'VI',   title: 'Angels & Governance',             latin: 'De Angelis',                  built: false,
     aim: 'Pure spirits: what angels are, how they know and choose, and how God governs the world through them.' },
