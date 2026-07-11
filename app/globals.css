@@ -1535,6 +1535,99 @@ html.motion-reduced *::after {
   color: var(--ink-mute);
   margin-top: 4px;
 }
+
+/* ── Fin reward stage (redesign-v4, gamification-v3 §5): the produced
+   per-lesson reward, ported from scholastica-redesign-v4-prototype.html.
+   Rows reveal in sequence via the .in class (added by the page's staged
+   timers); the sine-errore row sweeps gold on a perfect first pass. This
+   supersedes the quieter fin-score-tick presentation above (kept for the
+   reduced-motion / theology paths that don't stage). ── */
+.rewardrow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 24px 0 0;
+  text-align: left;
+}
+.rline {
+  opacity: 0;
+  transform: translateY(10px);
+  background: var(--paper);
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.rline.in { animation: rlineIn .5s ease forwards; }
+@keyframes rlineIn { to { opacity: 1; transform: translateY(0); } }
+.rline .lbl { display: flex; align-items: center; gap: 10px; font-size: 15px; color: var(--ink-soft); }
+.rline .lbl .g { font-size: 20px; }
+.rline .amt {
+  font-weight: 600;
+  font-size: 21px;
+  color: var(--gold-deep);
+  font-variant-numeric: tabular-nums;
+}
+.rline.perfect {
+  grid-column: 1 / -1;
+  border-color: var(--gold);
+  background: linear-gradient(100deg, #FBF3DF, #F7EDDA);
+}
+.rline.perfect .amt { color: var(--vermillion); font-size: 18px; }
+.goldsweep { position: relative; overflow: hidden; }
+.goldsweep::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 30%, rgba(217, 189, 130, .6) 50%, transparent 70%);
+  transform: translateX(-120%);
+}
+.goldsweep.sweep::after { animation: goldSweep 1.1s ease .1s; }
+@keyframes goldSweep { to { transform: translateX(120%); } }
+.fin-reward-total {
+  margin-top: 12px;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.08em;
+  font-size: 13px;
+  color: var(--ink-mute);
+  font-variant-numeric: tabular-nums;
+}
+.friarwrap {
+  margin: 26px auto 0;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  opacity: 0;
+  transform: translateY(10px);
+  text-align: left;
+}
+.friarwrap.in { animation: rlineIn .55s ease forwards; }
+.friarwrap img { width: 190px; height: 190px; object-fit: contain; flex: 0 0 auto; }
+.friarwrap .say { font-style: italic; font-size: 17px; line-height: 1.45; color: var(--ink-soft); }
+.fin-nextline {
+  margin-top: 22px;
+  font-size: 15px;
+  color: var(--gold-deep);
+  opacity: 0;
+  cursor: pointer;
+  display: inline-block;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+.fin-nextline.in { animation: rlineIn .5s ease forwards; }
+.fin-nextline .arrow { transition: transform .2s; display: inline-block; }
+.fin-nextline:hover .arrow { transform: translateX(4px); }
+@media (max-width: 640px) {
+  .rewardrow { grid-template-columns: 1fr; }
+  .rline.perfect { grid-column: auto; }
+  .friarwrap { flex-direction: column; text-align: center; gap: 8px; }
+  .friarwrap img { width: 150px; height: 150px; }
+}
 /* Gold sweep on the score pips — the sine errore moment landing on the
    thing it's actually about (the perfect pass), not a separate ornament. */
 .pips-sweep .pip-dot { position: relative; }

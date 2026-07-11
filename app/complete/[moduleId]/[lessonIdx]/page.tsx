@@ -4,10 +4,11 @@ import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState, Suspense } from 'react';
 import { getModule } from '../../../../content/modules';
 import { playSound, type SoundId } from '../../../../lib/sound';
-import { readProgress } from '../../../../lib/progress';
-import { getRank, getThesesEarned, getNearestUnlock, getScore, getScoreCeiling, type Rank } from '../../../../lib/gamification';
+import { readProgress, localISODate } from '../../../../lib/progress';
+import { getRank, getThesesEarned, getNearestUnlock, getScore, getScoreCeiling, getStreak, type Rank } from '../../../../lib/gamification';
 import type { ScoreEvent } from '../../../../lib/score';
 import { THESES, type Thesis } from '../../../../content/theses';
+import type { FinDistinction } from '../../../../content/types';
 import Prose from '../../../../components/Prose';
 import ThesisCeremony from '../../../../components/ThesisCeremony';
 import DistinctionCard from '../../../../components/DistinctionCard';
@@ -63,68 +64,146 @@ function ScorePips({ correct, total, missedIds, sweep }: { correct: number; tota
   );
 }
 
-/* ── Sine Errore friar moment (B3, §4.5) ─────────────────────
-   A perfect lesson: the friar noticed. Inline miniature ≤700px, margin
-   figure ≥700px, never viewport-pinned (.sine-friar / .fin-reward-row). */
-function SineFriar() {
-  return (
-    <aside className="sine-friar">
-      <img src="/images/drolleries/dr-05.png" alt="" aria-hidden="true" />
-      <div className="say">A perfect pass. The friar is beside himself.</div>
-    </aside>
-  );
-}
-
-/* ── Score Tick (W3-Score, scholastica-prelogin-scoring.md §4) ───────────
-   Loud, keyed by event, next to the pips it's actually about. Never on a
-   retake of an already-done lesson (no reward replay) or when nothing
-   changed this pass (event 'none') — both guarded by the caller. Rides
-   the same single container fadeIn already on this screen rather than
-   inventing a new motion tier; the count-up itself is a data change, not
-   a CSS animation, and is skipped outright under reduced motion. */
-function scoreTickReducedMotion(): boolean {
+function finReducedMotion(): boolean {
   if (typeof window === 'undefined') return false;
   return !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
     || document.documentElement.classList.contains('motion-reduced');
 }
 
-const SCORE_TICK_COPY: Record<string, { award: string; note?: string }> = {
-  'first-perfect': { award: '+10' },
-  'first-miss': { award: '+6' },
-  'gap-close': { award: '+3', note: 'You closed the gap. +3.' },
-  'revisit': { award: '+1', note: 'Revisited. +1.' },
-};
-
-function ScoreTick({ event, delta, courseTotal, ceiling }: {
-  event: ScoreEvent; delta: number; courseTotal: number; ceiling: number;
+/* rAF count-up, skipped under reduced motion (shows the final value). */
+function CountUp({ from, to, run, format }: {
+  from: number; to: number; run: boolean; format: (v: number) => string;
 }) {
-  const copy = SCORE_TICK_COPY[event];
-  const start = Math.max(0, courseTotal - delta);
-  const [shown, setShown] = useState(scoreTickReducedMotion() ? courseTotal : start);
-
+  const [shown, setShown] = useState(finReducedMotion() ? to : from);
   useEffect(() => {
-    if (scoreTickReducedMotion() || delta <= 0) { setShown(courseTotal); return; }
-    setShown(start);
+    if (!run) return;
+    if (finReducedMotion() || to === from) { setShown(to); return; }
+    setShown(from);
     const duration = 600;
     const t0 = performance.now();
     let raf = 0;
     const step = (now: number) => {
       const t = Math.min(1, (now - t0) / duration);
-      setShown(Math.round(start + (courseTotal - start) * t));
+      const eased = 1 - Math.pow(1 - t, 3);
+      setShown(Math.round(from + (to - from) * eased));
       if (t < 1) raf = requestAnimationFrame(step);
     };
     raf = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(raf);
-  }, [courseTotal, start, delta]);
+    // Safety net: rAF is paused in a hidden/backgrounded tab, which would
+    // otherwise freeze the count at `from`. This guarantees the true final
+    // value settles regardless.
+    const settle = setTimeout(() => setShown(to), duration + 150);
+    return () => { cancelAnimationFrame(raf); clearTimeout(settle); };
+  }, [from, to, run]);
+  return <>{format(shown)}</>;
+}
 
-  if (!copy) return null;
+/* The friar's reaction line at the fin (RD4). Perfect and non-perfect
+   variants, em-dash-free per handbook §10; ported from the prototype. */
+function friarLine(isPerfect: boolean): string {
+  return isPerfect
+    ? 'A perfect pass, not one stumble. I shall note it in the margin where such things are kept.'
+    : 'A stumble teaches what a stroll cannot. The distinction is yours all the same.';
+}
+
+const REWARD_AWARD: Record<string, string> = {
+  'first-perfect': '+10',
+  'first-miss': '+6',
+  'gap-close': '+3',
+  'revisit': '+1',
+};
+
+/* ── The produced fin reward stage (RD4, gamification-v3 §5) ──────────────
+   Staged rows: score (count-up from the reconstructed pending to the flat
+   award), streak, and — on a perfect first pass — the sine-errore gold
+   sweep. Then the friar at real size with a reaction line, and the
+   next-unlock pull. Reveals in sequence; reduced motion shows it all at
+   once with final values. */
+function RewardStage({
+  event, delta, courseTotal, ceiling, streak, isPerfect, correct, total,
+  distinction, nearestThesisNumeral, lessonsAway, onNext,
+}: {
+  event: ScoreEvent; delta: number; courseTotal: number; ceiling: number;
+  streak: number; isPerfect: boolean; correct: number; total: number;
+  distinction: FinDistinction | undefined;
+  nearestThesisNumeral: string | null; lessonsAway: number | null;
+  onNext: () => void;
+}) {
+  const reduced = finReducedMotion();
+  const [stage, setStage] = useState(reduced ? 5 : 0);
+  useEffect(() => {
+    if (reduced) return;
+    // rl1 score, rl3 streak, rl4 perfect, friar, nextline (prototype timings)
+    const seq = [220, 1000, 1700, 2300, 2900];
+    const timers = seq.map((t, i) => setTimeout(() => setStage(i + 1), t));
+    return () => timers.forEach(clearTimeout);
+  }, [reduced]);
+
+  const award = REWARD_AWARD[event];
+  // Reconstruct the in-lesson pending the HUD last showed, so the count-up
+  // starts where the assembly left off (§4.1): first passes ran the accrual
+  // (target 10 clean / 6 after a miss); gap-close and revisit did not, so
+  // they count up from 0.
+  const isFirstPass = event === 'first-perfect' || event === 'first-miss';
+  const pendingStart = isFirstPass && total > 0
+    ? Math.round((correct / total) * (event === 'first-perfect' ? 10 : 6))
+    : 0;
 
   return (
-    <div className="fin-score-tick">
-      <div className="fin-score-tick-award">{copy.award}</div>
-      {copy.note && <div className="fin-score-tick-note">{copy.note}</div>}
-      <div className="fin-score-tick-total">{`${shown.toLocaleString()} of ${ceiling.toLocaleString()}`}</div>
-    </div>
+    <>
+      <div className="rewardrow">
+        {award && (
+          <div className={`rline${stage >= 1 ? ' in' : ''}`}>
+            <span className="lbl"><span className="g" aria-hidden="true">✦</span> Score</span>
+            <span className="amt">
+              +<CountUp from={pendingStart} to={delta} run={stage >= 1} format={v => `${v}`} />
+            </span>
+          </div>
+        )}
+        {streak > 0 && (
+          <div className={`rline${stage >= 2 ? ' in' : ''}`}>
+            <span className="lbl"><span className="g" aria-hidden="true">🔥</span> Streak</span>
+            <span className="amt">{streak} {streak === 1 ? 'day' : 'days'}</span>
+          </div>
+        )}
+        {event === 'first-perfect' && (
+          <div className={`rline perfect goldsweep${stage >= 3 ? ' in sweep' : ''}`}>
+            <span className="lbl"><span className="g" aria-hidden="true">✶</span> <em>Sine errore</em></span>
+            <span className="amt">perfect · first pass</span>
+          </div>
+        )}
+      </div>
+      {award && (
+        <div className="fin-reward-total">{`${courseTotal.toLocaleString()} of ${ceiling.toLocaleString()}`}</div>
+      )}
+
+      <div className={`friarwrap${stage >= 4 ? ' in' : ''}`}>
+        <img src="/images/drolleries/dr-05.png" alt="" aria-hidden="true" />
+        <div className="say">{friarLine(isPerfect)}</div>
+      </div>
+
+      {/* Distinction card — mounts at the friar stage so its own flip
+          sequences after the reward rows rather than racing them. */}
+      {distinction && stage >= 4 && (
+        <div style={{ display: 'flex', justifyContent: 'center', margin: '24px 0 0' }}>
+          <DistinctionCard distinction={distinction} />
+        </div>
+      )}
+
+      {nearestThesisNumeral && lessonsAway != null && (
+        <div>
+          <button
+            type="button"
+            className={`fin-nextline${stage >= 5 ? ' in' : ''}`}
+            onClick={onNext}
+          >
+            {`Thesis ${nearestThesisNumeral} is `}
+            {lessonsAway === 1 ? 'one lesson away' : `${lessonsAway} lessons away`}
+            {' '}<span className="arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+      )}
+    </>
   );
 }
 
@@ -175,11 +254,14 @@ function FinScreenInner() {
   // this pass's points before this screen mounted). null until the mount
   // effect runs, same pattern as rank/nearestUnlock above.
   const [score, setScore] = useState<{ total: number; ceiling: number } | null>(null);
+  // Strict day streak (RD1/RD4), read post-write for the fin's streak row.
+  const [streak, setStreak] = useState(0);
   useEffect(() => {
     const data = readProgress();
     setRank(getRank(data, THESES));
     setNearestUnlock(getNearestUnlock(data, THESES));
     setScore({ total: getScore(data), ceiling: getScoreCeiling() });
+    setStreak(getStreak(data, localISODate()));
     if (isLastLesson) {
       const earned = new Set(getThesesEarned(data, THESES));
       const played = new Set(data.thesesEarned || []);
@@ -354,57 +436,32 @@ function FinScreenInner() {
             on a retake of an already-done lesson (§4.3). */}
         <ScorePips correct={correct} total={total} missedIds={missedIds} sweep={isPerfect && !alreadyDone} />
 
-        {/* Score tick (W3-Score): never on a retake (no reward replay) or
-            when this pass earned nothing new. */}
-        {!alreadyDone && scoreEvent !== 'none' && score && (
-          <ScoreTick event={scoreEvent} delta={scoreDelta} courseTotal={score.total} ceiling={score.ceiling} />
-        )}
-
-        {/* Reward row, beat order per the prototype: sine errore + friar,
-            then the distinction card. Single column ≤700px; ≥700px the
-            friar becomes a margin figure beside the card (.fin-reward-row).
-            A retake of an already-done lesson gets the quiet "already
-            earned" line instead — the reward doesn't replay. */}
+        {/* The produced fin reward stage (RD4): staged score/streak/sine-errore
+            rows, the friar at real size with a reaction line, the distinction
+            card, and the next-unlock pull. A retake of an already-done lesson
+            keeps the quiet "already earned" tone instead — the reward never
+            replays (§4.3). */}
         {alreadyDone ? (
           (isPerfect || fin.distinction) && (
             <p className="fin-already-earned">
               {isPerfect ? 'Already earned, sine errore.' : 'Already earned.'}
             </p>
           )
-        ) : (isPerfect || fin.distinction) && (
-          <div className="fin-reward-row">
-            {isPerfect && <SineFriar />}
-            {fin.distinction && <DistinctionCard distinction={fin.distinction} />}
-          </div>
-        )}
-
-        {/* Drollery — the contemplative fallback when the lesson wasn't
-            perfect and there's no distinction card either. */}
-        {!isPerfect && !fin.distinction && (
-          <div style={{ margin: '24px 0', display: 'flex', justifyContent: 'center' }}>
-            <img
-              src="/images/drolleries/dr-07.png"
-              alt=""
-              aria-hidden="true"
-              style={{ width: 120, height: 'auto', opacity: 0.9 }}
-            />
-          </div>
-        )}
-
-        {/* Nearest unlock — anticipation line (B2). Only the single closest
-            not-yet-earned thesis, never a list. */}
-        {nearestUnlock && (
-          <p
-            style={{
-              fontSize: 15,
-              color: 'var(--gold-text)',
-              fontWeight: 500,
-              marginBottom: 8,
-            }}
-          >
-            {`Thesis ${THESES.find(t => t.n === nearestUnlock.n)?.numeral} is `}
-            {nearestUnlock.lessonsAway === 1 ? 'one lesson away' : `${nearestUnlock.lessonsAway} lessons away`}
-          </p>
+        ) : score && (
+          <RewardStage
+            event={scoreEvent}
+            delta={scoreDelta}
+            courseTotal={score.total}
+            ceiling={score.ceiling}
+            streak={streak}
+            isPerfect={isPerfect}
+            correct={correct}
+            total={total}
+            distinction={fin.distinction}
+            nearestThesisNumeral={nearestUnlock ? (THESES.find(t => t.n === nearestUnlock.n)?.numeral ?? null) : null}
+            lessonsAway={nearestUnlock ? nearestUnlock.lessonsAway : null}
+            onNext={() => router.push('/theses')}
+          />
         )}
 
         {/* Navigation buttons */}

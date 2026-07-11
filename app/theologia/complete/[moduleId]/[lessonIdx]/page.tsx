@@ -109,11 +109,25 @@ function FinScreenInner() {
             <p style={{ color: 'var(--ink-mute)', fontStyle: 'italic', fontSize: 14 }}>Already earned.</p>
           )
         ) : (
-          fin.distinction && (
-            <div style={{ display: 'flex', justifyContent: 'center', margin: '16px 0' }}>
-              <DistinctionCard distinction={fin.distinction} />
+          <>
+            {/* The friar's reaction (RD4). The theology wing has no score,
+                streak, or sine-errore tracking yet (a fast-follow, §8), so the
+                fin carries the produced warmth it honestly can: the friar with
+                a reaction line. No fabricated reward rows. */}
+            <div className="friarwrap in">
+              <img src="/images/drolleries/dr-05.png" alt="" aria-hidden="true" />
+              <div className="say">
+                {isPerfect
+                  ? 'A perfect pass, not one stumble. I shall note it in the margin where such things are kept.'
+                  : 'A stumble teaches what a stroll cannot. The distinction is yours all the same.'}
+              </div>
             </div>
-          )
+            {fin.distinction && (
+              <div style={{ display: 'flex', justifyContent: 'center', margin: '16px 0' }}>
+                <DistinctionCard distinction={fin.distinction} />
+              </div>
+            )}
+          </>
         )}
 
         {isLastLesson && (
