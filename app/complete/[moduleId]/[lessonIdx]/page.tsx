@@ -13,6 +13,16 @@ import Prose from '../../../../components/Prose';
 import ThesisCeremony from '../../../../components/ThesisCeremony';
 import DistinctionCard from '../../../../components/DistinctionCard';
 
+function toRoman(n: number): string {
+  const vals = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  const syms = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
+  let r = '';
+  for (let i = 0; i < vals.length; i++) {
+    while (n >= vals[i]) { r += syms[i]; n -= vals[i]; }
+  }
+  return r;
+}
+
 /* ── Vine Divider ─────────────────────────────────────────── */
 function VineDivider() {
   return (
@@ -207,6 +217,93 @@ function RewardStage({
   );
 }
 
+/* ── Module-complete stat beat (RD5, gamification-v3 §5) ──────────────────
+   The produced beat between the last lesson's fin and the thesis ceremony:
+   the module's score of its max, lessons done, and sine-errore count, with
+   count-ups and the presiding friar. Reads the module's stats from storage
+   (markLessonComplete has already written this pass). */
+function ModuleCompleteBeat({
+  moduleId, moduleTitle, lessonCount, hasThesis, onContinue,
+}: {
+  moduleId: number; moduleTitle: string; lessonCount: number;
+  hasThesis: boolean; onContinue: () => void;
+}) {
+  const [stats, setStats] = useState<{ score: number; max: number; done: number; sine: number } | null>(null);
+  const [stage, setStage] = useState(finReducedMotion() ? 4 : 0);
+
+  useEffect(() => {
+    const data = readProgress();
+    const mp = data.progress?.[moduleId];
+    const score = mp?.scores?.reduce((s, e) => s + (e?.points || 0), 0) || 0;
+    const done = mp?.lessonsComplete?.filter(Boolean).length || 0;
+    const sine = (data.sineErrore?.[moduleId] || []).filter(Boolean).length;
+    setStats({ score, max: lessonCount * 10, done, sine });
+    playSound('module-complete');
+    if (finReducedMotion()) return;
+    const seq = [300, 700, 1100, 1700];
+    const timers = seq.map((t, i) => setTimeout(() => setStage(i + 1), t));
+    return () => timers.forEach(clearTimeout);
+  }, [moduleId, lessonCount]);
+
+  const friarSay = hasThesis
+    ? 'Module finished, whole. There is a sentence waiting for you; Rome kept it. Come.'
+    : 'Module finished, whole. The next one leans on what you just did. Onward.';
+
+  return (
+    <div style={{ minHeight: '100dvh', background: 'var(--canvas)', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '56px 24px 80px' }}>
+      <div style={{ maxWidth: 620, width: '100%', textAlign: 'center', animation: 'fadeIn .5s ease both' }}>
+        <div style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '0.18em', fontSize: 13, fontWeight: 600, color: 'var(--gold-text)' }}>
+          Modulus absolutus
+        </div>
+        <h2 style={{ fontFamily: '"Fraunces", serif', fontSize: 26, fontWeight: 600, lineHeight: 1.3, margin: '8px 0 4px' }}>
+          Module {toRoman(moduleId)} &middot; {moduleTitle}, complete.
+        </h2>
+        <div style={{ color: 'var(--ink-soft)', fontStyle: 'italic', fontSize: 16.5 }}>
+          Everything after this module leans on what it taught.
+        </div>
+
+        {stats && (
+          <div className="mstats">
+            <div className={`mstat${stage >= 1 ? ' in' : ''}`}>
+              <div className="v">+<CountUp from={0} to={stats.score} run={stage >= 1} format={v => `${v}`} /></div>
+              <div className="k">score · of {stats.max} possible</div>
+            </div>
+            <div className={`mstat${stage >= 2 ? ' in' : ''}`}>
+              <div className="v">{stats.done} / {lessonCount}</div>
+              <div className="k">lessons</div>
+            </div>
+            <div className={`mstat${stage >= 3 ? ' in' : ''}`}>
+              <div className="v"><em>sine errore</em></div>
+              <div className="k">{stats.sine} perfect {stats.sine === 1 ? 'lesson' : 'lessons'}</div>
+            </div>
+          </div>
+        )}
+
+        <div className={`friarwrap${stage >= 4 ? ' in' : ''}`} style={{ justifyContent: 'center' }}>
+          <img src="/images/drolleries/dr-05.png" alt="" aria-hidden="true" />
+          <div className="say">{friarSay}</div>
+        </div>
+
+        <div style={{ marginTop: 24 }}>
+          <button
+            type="button"
+            onClick={onContinue}
+            style={{
+              fontFamily: 'inherit', fontSize: 16, fontWeight: 500, padding: '14px 28px',
+              background: 'var(--gold-deep)', color: 'var(--paper)', border: 'none',
+              borderRadius: 8, cursor: 'pointer', transition: 'background .2s',
+            }}
+            onMouseOver={e => (e.currentTarget.style.background = 'var(--gold)')}
+            onMouseOut={e => (e.currentTarget.style.background = 'var(--gold-deep)')}
+          >
+            {hasThesis ? 'Receive the thesis →' : 'Back to Module →'}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ── FinScreen Inner ──────────────────────────────────────── */
 function FinScreenInner() {
   const params = useParams();
@@ -242,9 +339,10 @@ function FinScreenInner() {
   // now earned, not yet ceremonied). The announcement only; the board itself
   // owns the illuminated-initial animation and the ceremony-once guard.
   const [newTheses, setNewTheses] = useState<Thesis[]>([]);
-  // The ceremony overlay fires before this screen's content is usable; once
-  // dismissed (or if there was nothing to ceremony), the normal fin renders.
-  const [ceremonyDone, setCeremonyDone] = useState(false);
+  // Last-lesson flow phases (RD5): the fin reward stage, then the produced
+  // module-complete stat beat, then (if a thesis was earned) the ceremony.
+  // Non-last lessons never leave 'fin'.
+  const [phase, setPhase] = useState<'fin' | 'module' | 'ceremony'>('fin');
   // Nearest not-yet-earned thesis, for the "Thesis N is one lesson away"
   // anticipation line (B2). Computed once at mount from real module progress;
   // unaffected by the ceremony (that's about thesesEarned bookkeeping, not
@@ -292,11 +390,16 @@ function FinScreenInner() {
   const fin = lesson.fin;
 
   function handleNextLesson() {
-    if (isLastLesson) {
-      // Module complete: back to this module's detail page
+    if (!isLastLesson) {
+      router.push(`/lesson/${moduleId}/${lessonIdx + 1}`);
+      return;
+    }
+    // Last lesson: a fresh completion advances into the module-complete beat;
+    // a retake of an already-done lesson skips it (no reward replay, §4.3).
+    if (alreadyDone) {
       router.push(`/modules/${moduleId}`);
     } else {
-      router.push(`/lesson/${moduleId}/${lessonIdx + 1}`);
+      setPhase('module');
     }
   }
 
@@ -304,17 +407,33 @@ function FinScreenInner() {
     router.push(`/lesson/${moduleId}/${lessonIdx}?filter=missed&missed=${missedParam}`);
   }
 
-  // Ceremony gate: fires in place of the fin screen's old inline thesis
-  // announcement, before the rest of this screen is usable. Never on a
-  // retake of an already-done lesson — the ceremony-once guard already
-  // stops newTheses from repopulating, but alreadyDone is the belt to that
-  // guard's suspenders.
-  if (newTheses.length > 0 && !ceremonyDone && !alreadyDone) {
+  // Module-complete beat: the produced stat beat between the last fin and
+  // the ceremony (RD5). Reached only from a fresh last-lesson completion.
+  if (phase === 'module') {
+    return (
+      <ModuleCompleteBeat
+        moduleId={moduleId}
+        moduleTitle={mod.title}
+        lessonCount={mod.lessons.length}
+        hasThesis={newTheses.length > 0}
+        onContinue={() => {
+          if (newTheses.length > 0) setPhase('ceremony');
+          else router.push(`/modules/${moduleId}`);
+        }}
+      />
+    );
+  }
+
+  // Thesis ceremony: the crown, after the module beat. The ceremony's own
+  // catch-up guard records the theses as played; onDone returns to the
+  // module (its internal CTA offers the Theses Board instead). Never on a
+  // retake of an already-done lesson.
+  if (phase === 'ceremony' && newTheses.length > 0 && !alreadyDone) {
     return (
       <ThesisCeremony
         theses={newTheses}
         moduleId={moduleId}
-        onDone={() => setCeremonyDone(true)}
+        onDone={() => router.push(`/modules/${moduleId}`)}
       />
     );
   }
@@ -485,7 +604,7 @@ function FinScreenInner() {
             onMouseOver={(e) => (e.currentTarget.style.background = 'var(--gold-deep)')}
             onMouseOut={(e) => (e.currentTarget.style.background = 'var(--gold)')}
           >
-            {isLastLesson ? 'Back to Module →' : 'Next Lesson →'}
+            {isLastLesson ? (alreadyDone ? 'Back to Module →' : 'Complete Module →') : 'Next Lesson →'}
           </button>
 
           {missedIds.length > 0 && (

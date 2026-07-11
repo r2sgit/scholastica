@@ -29,6 +29,9 @@ function toRoman(n: number): string {
 export default function ThesisCeremony({ theses, moduleId, onDone }: ThesisCeremonyProps) {
   const [index, setIndex] = useState(0);
   const [beatOn, setBeatOn] = useState(false);
+  // Staged text reveal (RD5): eyebrow -> line -> Latin -> English -> CTA,
+  // timed around the 2.2s numeral paint rather than appearing all at once.
+  const [textStage, setTextStage] = useState(0);
   const overlayRef = useRef<HTMLDivElement>(null);
   const thesis = theses[index];
   const isLast = index === theses.length - 1;
@@ -44,15 +47,20 @@ export default function ThesisCeremony({ theses, moduleId, onDone }: ThesisCerem
 
   useEffect(() => {
     setBeatOn(false);
+    setTextStage(0);
     // Focus the overlay so the screen reader announces this thesis's line
     // once, the moment it appears — the same move on every subsequent
     // thesis in a multi-unlock ceremony.
     overlayRef.current?.focus();
     const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-    if (reduced) { setBeatOn(true); return; }
+    if (reduced) { setBeatOn(true); setTextStage(5); return; }
     const t = setTimeout(() => setBeatOn(true), 60);
     const s = setTimeout(() => playSound('ceremony'), 200);
-    return () => { clearTimeout(t); clearTimeout(s); };
+    // eyebrow, line, Latin, English, CTA — the prototype's timings, landing
+    // as/after the numeral paints (ring 0-2.2s, fill 0.5-2.5s).
+    const seq = [300, 1500, 2100, 2400, 2800];
+    const textTimers = seq.map((ms, i) => setTimeout(() => setTextStage(i + 1), ms));
+    return () => { clearTimeout(t); clearTimeout(s); textTimers.forEach(clearTimeout); };
   }, [index]);
 
   function advance() {
@@ -70,7 +78,7 @@ export default function ThesisCeremony({ theses, moduleId, onDone }: ThesisCerem
       aria-label={`Thesis ${thesis.numeral} earned: ${thesis.unlock_line}`}
     >
       <div className="ceremony-inner">
-        <div className="cer-eyebrow">
+        <div className={`cer-eyebrow${textStage >= 1 ? ' in' : ''}`}>
           {`Module ${toRoman(moduleId)} complete · a thesis is earned`}
         </div>
 
@@ -85,17 +93,17 @@ export default function ThesisCeremony({ theses, moduleId, onDone }: ThesisCerem
           </div>
         </div>
 
-        <p className="cer-line">{thesis.unlock_line}</p>
+        <p className={`cer-line${textStage >= 2 ? ' in' : ''}`}>{thesis.unlock_line}</p>
 
-        <p className="cer-latin" lang="la">{thesis.latin}</p>
-        <p className="cer-english">{thesis.english}</p>
+        <p className={`cer-latin${textStage >= 3 ? ' in' : ''}`} lang="la">{thesis.latin}</p>
+        <p className={`cer-english${textStage >= 4 ? ' in' : ''}`}>{thesis.english}</p>
 
         {isLast ? (
-          <Link href="/theses" className="cer-cta">
+          <Link href="/theses" className={`cer-cta${textStage >= 5 ? ' in' : ''}`}>
             Enter the Theses Board &rarr;
           </Link>
         ) : (
-          <button type="button" className="cer-cta">
+          <button type="button" className={`cer-cta${textStage >= 5 ? ' in' : ''}`}>
             Next thesis &rarr;
           </button>
         )}

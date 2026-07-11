@@ -1628,6 +1628,41 @@ html.motion-reduced *::after {
   .friarwrap { flex-direction: column; text-align: center; gap: 8px; }
   .friarwrap img { width: 150px; height: 150px; }
 }
+
+/* ── Module-complete stat beat (RD5, gamification-v3 §5): the produced beat
+   between the last fin and the thesis ceremony. A stat trio with count-ups
+   and the presiding friar. Ported from the prototype. ── */
+.mstats {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 24px 0 0;
+  flex-wrap: wrap;
+}
+.mstat {
+  opacity: 0;
+  transform: translateY(10px);
+  background: var(--paper);
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  padding: 16px 22px;
+  min-width: 150px;
+}
+.mstat.in { animation: rlineIn .5s ease forwards; }
+.mstat .v {
+  font-weight: 600;
+  font-size: 26px;
+  color: var(--gold-deep);
+  font-variant-numeric: tabular-nums;
+}
+.mstat .v em { font-style: italic; font-size: 20px; }
+.mstat .k {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.12em;
+  font-size: 12.5px;
+  color: var(--ink-mute);
+  margin-top: 2px;
+}
 /* Gold sweep on the score pips — the sine errore moment landing on the
    thing it's actually about (the perfect pass), not a separate ornament. */
 .pips-sweep .pip-dot { position: relative; }
@@ -3094,10 +3129,21 @@ html.motion-reduced *::after {
 .cer-progress span.here { background: var(--gold); }
 .cer-progress span.done { background: rgba(217, 189, 130, 0.55); }
 
+/* Staged text reveal (RD5): the eyebrow, line, Latin, English, and CTA fade
+   in one after another around the 2.2s numeral paint, rather than all at
+   once. The page adds .in to each in sequence; reduced motion shows all. */
+.cer-eyebrow, .cer-line, .cer-latin, .cer-english, .cer-cta { opacity: 0; }
+.cer-eyebrow.in, .cer-line.in, .cer-latin.in, .cer-english.in, .cer-cta.in {
+  animation: rlineIn .6s ease forwards;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .ceremony-overlay { animation: none; }
   .cer-ring path { stroke-dashoffset: 0 !important; animation: none !important; }
   .cer-numeral .fill { opacity: 1 !important; animation: none !important; }
+  .cer-eyebrow, .cer-line, .cer-latin, .cer-english, .cer-cta {
+    opacity: 1 !important; animation: none !important;
+  }
 }
 
 /* 404 — Non inventum */
