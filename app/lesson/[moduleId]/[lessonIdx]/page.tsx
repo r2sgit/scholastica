@@ -81,9 +81,17 @@ function QuizCardInner() {
     setQuestionIdx(0);
     setAnswerState('idle');
     setCombo(0);
+    // A fresh lesson starts with an empty pending chip on the HUD.
+    window.dispatchEvent(new CustomEvent('scholastica:hud', { detail: { pending: null } }));
   }, [lesson, filterMissed, missedParam]);
 
   const currentQuestion = questions[questionIdx];
+
+  // Pending accrual (RD3, §4.1) runs only on a genuine first pass — not
+  // review, not a filter-missed retake, not a revisit of an already-complete
+  // lesson (those award flat at the fin, no on-camera assembly).
+  const isFirstPass = !reviewMode && !filterMissed &&
+    getModuleProgress(moduleId)?.lessonsComplete[lessonIdx] !== true;
 
   const handleAnswer = useCallback((correct: boolean, feedback: string, doctrineTag?: string) => {
     setAnswerState(correct ? 'correct' : 'wrong');
@@ -92,12 +100,28 @@ function QuizCardInner() {
     setCombo(prev => (correct ? prev + 1 : 0));
     playSound(correct ? 'correct' : 'wrong');
 
+    // Pending accrual (§4.1): the lesson's flat award visibly assembling on
+    // the HUD. target is 10 while the pass is clean, 6 once any miss has
+    // happened (sine errore is per-pass, so it never recovers within the
+    // pass). pending = round(correctSoFar / total x target) — under-promises
+    // by construction, settles up at the fin. Presentation only; nothing is
+    // written to storage here.
+    if (isFirstPass) {
+      const priorCorrect = answers.filter(a => a.correct).length;
+      const correctSoFar = priorCorrect + (correct ? 1 : 0);
+      const anyMiss = !correct || answers.some(a => a.attempted && !a.correct);
+      const target = anyMiss ? 6 : 10;
+      const total = questions.length;
+      const pending = total > 0 ? Math.round((correctSoFar / total) * target) : 0;
+      window.dispatchEvent(new CustomEvent('scholastica:hud', { detail: { pending } }));
+    }
+
     setAnswers(prev => {
       const next = [...prev];
       next[questionIdx] = { correct, attempted: true };
       return next;
     });
-  }, [questionIdx]);
+  }, [questionIdx, isFirstPass, answers, questions.length]);
 
   const handleContinue = useCallback(() => {
     if (questionIdx < questions.length - 1) {
