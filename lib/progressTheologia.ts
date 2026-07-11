@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { computeScoreUpdate, type ScoreEvent } from './score';
-import { localISODate } from './progress';
+import { localISODate, recordPracticeDay } from './progress';
 import { THEOLOGIA_MODULES } from '../content/theologia';
 
 // Deliberately separate storage key from lib/progress.ts's `scholastica_v1`.
@@ -118,6 +118,12 @@ export function useTheologiaProgress() {
     }
 
     save(next);
+
+    // One habitus, both wings (WP2): a theology lesson marks the SHARED
+    // practice day in scholastica_v1, so the streak flame counts theology and
+    // philosophy days together. Written to the philosophy store on purpose —
+    // there is no separate theology habitus.
+    recordPracticeDay(today);
 
     return { event, delta, lessonPoints: points, courseTotal: getScoreTheologia(next) };
   }, [data, save]);

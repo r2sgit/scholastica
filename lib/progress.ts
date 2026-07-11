@@ -317,6 +317,25 @@ export function recordDivisionsIlluminated(ids: string[]): void {
   if (changed) writeStorage({ ...data, divisionsIlluminated: [...have] });
 }
 
+/** Append today (local date) to the SHARED habitus practice log in
+    scholastica_v1. Append-only, dedup'd, capped — the same store and rule the
+    philosophy markLessonComplete uses inline. Standalone so the Theology wing
+    can record a day of practice into the one shared streak (WP2: one flame,
+    one streak, both wings). The philosophy hook already records its own days
+    inline, so this is only called from the theology path; idempotent per day,
+    so even a double-call is harmless. Returns nothing. */
+export function recordPracticeDay(day: string = localISODate()): void {
+  if (typeof window === 'undefined') return;
+  const data = readStorage();
+  const days = data.habitus?.days || [];
+  if (days.includes(day)) return;
+  const appended = [...days, day];
+  writeStorage({
+    ...data,
+    habitus: { days: appended.length > HABITUS_CAP ? appended.slice(-HABITUS_CAP) : appended },
+  });
+}
+
 export function getMuted(): boolean {
   if (typeof window === 'undefined') return false;
   try {
