@@ -19,6 +19,8 @@ import Classify from '../../../../../components/Classify';
 import PlaceInTree from '../../../../../components/PlaceInTree';
 import Prose from '../../../../../components/Prose';
 import CardVines from '../../../../../components/CardVines';
+import DistinctionCard from '../../../../../components/DistinctionCard';
+import { getToolRecall } from '../../../../../content/theologia/toolRecall';
 
 /* Theologia's own lesson runner, parallel to app/lesson/[moduleId]/
    [lessonIdx]/page.tsx. Deliberately a sibling file rather than a shared
@@ -59,6 +61,16 @@ function QuizCardInner() {
   // In-lesson combo (WP3, parity with philosophy RD2): consecutive correct
   // answers within this lesson. Shown from x2, resets on a miss / lesson start.
   const [combo, setCombo] = useState(0);
+
+  // Tool-recall cold open (WP6): the first lesson of a module opens by
+  // recalling the Part I Distinction Card it runs on — motif playing, no
+  // narration (§19) — before the first question. Only when a clean mapping
+  // exists (getToolRecall) and only on lesson 0.
+  const toolRecall = lessonIdx === 0 ? getToolRecall(moduleId) : undefined;
+  const [coldOpen, setColdOpen] = useState(false);
+  useEffect(() => {
+    setColdOpen(lessonIdx === 0 && !!getToolRecall(moduleId));
+  }, [moduleId, lessonIdx]);
 
   useEffect(() => {
     if (!lesson) return;
@@ -158,6 +170,32 @@ function QuizCardInner() {
           progress={{ current: questionIdx + (answerState !== 'idle' ? 1 : 0), total: questions.length }}
         />
 
+        {coldOpen && toolRecall ? (
+          /* Tool-recall cold open (WP6): the Part I card this module runs on,
+             motif playing, no narration. A quiet eyebrow names it as recall;
+             "Begin" enters the lesson. */
+          <div className="card-area">
+            <div style={{ maxWidth: 460, margin: '0 auto', textAlign: 'center', animation: 'fadeIn .5s ease both' }}>
+              <div style={{ fontVariantCaps: 'all-small-caps', letterSpacing: '0.18em', fontSize: 13, fontWeight: 600, color: 'var(--gold-text)', marginBottom: 4 }}>
+                The tool you built in Part One
+              </div>
+              <p style={{ fontSize: 15, color: 'var(--ink-mute)', fontStyle: 'italic', margin: '0 0 8px' }}>
+                Everything the philosophy proved was for this.
+              </p>
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <DistinctionCard distinction={toolRecall} />
+              </div>
+              <button
+                type="button"
+                onClick={() => setColdOpen(false)}
+                className="btn"
+                style={{ marginTop: 24, width: '100%', maxWidth: 320, fontSize: 16, padding: '14px 24px', borderRadius: 8 }}
+              >
+                Begin →
+              </button>
+            </div>
+          </div>
+        ) : (
         <div className="card-area">
           <article className="card">
             <CardVines />
@@ -212,6 +250,7 @@ function QuizCardInner() {
             )}
           </article>
         </div>
+        )}
       </div>
     </div>
   );
