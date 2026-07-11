@@ -56,6 +56,7 @@ function ModuleRow({ entry, state }: { entry: TheologiaCourseMapEntry; state?: M
           {entry.title} <span className="cm-row-latin" lang="la">{entry.latin}</span>
           {entry.draft && <span className="cm-chip" style={{ marginLeft: 8, verticalAlign: 'middle' }}>draft &middot; pre-review</span>}
         </div>
+        <p className="cm-row-blurb">{entry.aim}</p>
         {built && state && (
           <div className="cm-row-meta">
             <span className="cm-row-dots">

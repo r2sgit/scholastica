@@ -228,23 +228,9 @@ export default function CourseMapPage() {
       </div>
 
       <div className="cm-stage" style={{ animation: 'fadeIn .4s ease both' }}>
-        {/* Header strip: the score pill (W3-Score, R2's call 2026-07-09 --
-            standalone and visible, not the ink-faint line the spec doc
-            originally proposed), plus rank. No habitus UI in v1 (B3). */}
-        <div className="cm-header">
-          <a
-            className="cm-score-pill"
-            href="#"
-            onClick={e => { e.preventDefault(); router.push('/record'); }}
-            aria-label={`Score: ${score} of ${scoreCeiling}. View record.`}
-          >
-            <span className="cm-score-pill-label">Score</span>
-            <span className="cm-score-pill-value">{score.toLocaleString()}</span>
-            <span className="cm-score-pill-sep">/</span>
-            <span className="cm-score-pill-ceiling">{scoreCeiling.toLocaleString()}</span>
-          </a>
-          <span className="cm-rank" aria-label={`Rank: ${rank}`}>{rank}</span>
-        </div>
+        {/* Header strip retired (RD7): the score pill and rank tag both leave
+            the map header. Score lives in the persistent HUD (click through to
+            the Record); rank lives in the Record and its ceremonies. */}
 
         {/* Header: what this course IS, one obvious next step (B5 §1).
             Perfectus (§4.5): the map's own line becomes the same self-aware
@@ -260,9 +246,9 @@ export default function CourseMapPage() {
               </>
             ) : (
               <>
-                Eighteen modules in four acts that teach you to think the way Thomas thought.
-                Each one hands you the tools the next one assumes. His theology comes later, as
-                its own course; this is the ground it stands on.
+                Eighteen modules that teach you to think the way Thomas Aquinas thought.
+                Start at the beginning: each module builds on the one before it. His theology
+                comes later, as its own course; this is the ground it stands on.
               </>
             )}
           </p>
@@ -313,7 +299,7 @@ export default function CourseMapPage() {
         <section className="cm-rooms-head">
           <div className="t">What you keep as you go</div>
           <p className="line">
-            Two rooms collect everything you earn. Worth a visit whenever something new lands in them.
+            Everything you earn is kept in three places. Visit them anytime; they fill up as you learn.
           </p>
         </section>
         <section className="cm-rooms" aria-label="Your collections">
@@ -323,8 +309,8 @@ export default function CourseMapPage() {
               <span className="tally">{earnedTheses} of 24 earned</span>
             </div>
             <p className="what">
-              The twenty four sentences Rome thought worth defending. You earn each one by
-              understanding it; the hall keeps what you&rsquo;ve won.
+              Twenty-four sentences that carry the heart of Aquinas&rsquo;s system. You earn each
+              one by understanding it, and the hall keeps what you&rsquo;ve won.
             </p>
             <div className="next">
               {nearestUnlock && nearestThesis
@@ -338,8 +324,8 @@ export default function CourseMapPage() {
               <span className="tally">{earnedWords} words</span>
             </div>
             <p className="what">
-              Your Latin, one word at a time. Every term you&rsquo;ve met, with its meaning in
-              plain English, plus the distinctions you now own.
+              Your Latin, one word at a time. Every term you&rsquo;ve met so far, each with its
+              meaning in plain English.
             </p>
           </a>
           <a className="cm-room" href="#" onClick={e => { e.preventDefault(); router.push('/record'); }}>
@@ -348,8 +334,8 @@ export default function CourseMapPage() {
               <span className="tally">{`${score.toLocaleString()} of ${scoreCeiling.toLocaleString()}`}</span>
             </div>
             <p className="what">
-              The score, by act, plus everything else the course keeps: theses, sine errore,
-              the codex. Quiet and entirely yours.
+              Your score and everything behind it: perfect lessons, theses earned, words
+              learned. Entirely yours.
             </p>
           </a>
         </section>
