@@ -1335,7 +1335,7 @@ html.motion-reduced *::after {
   font-size: 18px;
   line-height: 1.45;
   color: var(--ink);
-  transition: border-color 180ms ease, opacity 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+  transition: border-color 180ms ease, background 180ms ease, opacity 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 .exercise-option:hover:not(:disabled) {
   border-color: var(--gold-light);
@@ -1343,8 +1343,59 @@ html.motion-reduced *::after {
   transform: translateY(-1px);
 }
 .exercise-option:disabled { cursor: default; }
-.exercise-option.correct { border-color: var(--correct); border-width: 2px; }
-.exercise-option.wrong { border-color: var(--wrong); border-width: 2px; }
+/* Resolve states gain a soft fill + a beat of motion (redesign-v4): the
+   correct choice fills sage and pops, the wrong one fills rose and shakes.
+   Every renderer that reuses .exercise-option (MCQ and its aliases,
+   DialogueBranch, ...) inherits this with no component change. */
+.exercise-option.correct {
+  border-color: var(--correct);
+  border-width: 2px;
+  background: #EEF2E6;
+  animation: optionPop .35s ease;
+}
+.exercise-option.wrong {
+  border-color: var(--wrong);
+  border-width: 2px;
+  background: #F6E9E6;
+  animation: shake .3s ease;
+}
+@keyframes optionPop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.015); }
+  100% { transform: scale(1); }
+}
+
+/* ── In-lesson combo counter (redesign-v4, gamification-v3 §6.4): the
+   consecutive-correct run within a lesson, shown from x2, in the manuscript
+   identity (Emeritus numeral, Latin encouragement). Anchored to the card's
+   top-right; resets on a miss and on lesson start (handled in the page). ── */
+.combo {
+  position: absolute;
+  top: 18px;
+  right: 26px;
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  pointer-events: none;
+  z-index: 5;
+  animation: comboIn .5s cubic-bezier(.2, 1.4, .4, 1) both;
+}
+.combo .word { font-style: italic; color: var(--gold-deep); font-size: 15px; }
+.combo .x {
+  font-family: "Emeritus", "Fraunces", serif;
+  font-size: 32px;
+  color: var(--vermillion);
+  line-height: 1;
+}
+@keyframes comboIn {
+  0%   { opacity: 0; transform: translateY(-8px) scale(.85); }
+  60%  { opacity: 1; transform: translateY(0) scale(1.15); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@media (max-width: 640px) {
+  .combo { top: 12px; right: 16px; }
+  .combo .x { font-size: 26px; }
+}
 
 /* ============================================================
    Distinction Card — the per-lesson reward (gamification v2 §4.2 / B3)

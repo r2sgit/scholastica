@@ -56,6 +56,9 @@ function QuizCardInner() {
   const [answerState, setAnswerState] = useState<'idle' | 'correct' | 'wrong'>('idle');
   const [feedbackBody, setFeedbackBody] = useState('');
   const [feedbackDoctrineTag, setFeedbackDoctrineTag] = useState<string | undefined>();
+  // In-lesson combo (RD2): consecutive correct answers within this lesson.
+  // Shown from x2, resets to 0 on a miss and on lesson (re)start.
+  const [combo, setCombo] = useState(0);
 
   // URL normalization
   useEffect(() => {
@@ -77,6 +80,7 @@ function QuizCardInner() {
     setAnswers(qs.map(() => ({ correct: false, attempted: false })));
     setQuestionIdx(0);
     setAnswerState('idle');
+    setCombo(0);
   }, [lesson, filterMissed, missedParam]);
 
   const currentQuestion = questions[questionIdx];
@@ -85,6 +89,7 @@ function QuizCardInner() {
     setAnswerState(correct ? 'correct' : 'wrong');
     setFeedbackBody(feedback);
     setFeedbackDoctrineTag(doctrineTag);
+    setCombo(prev => (correct ? prev + 1 : 0));
     playSound(correct ? 'correct' : 'wrong');
 
     setAnswers(prev => {
@@ -195,6 +200,14 @@ function QuizCardInner() {
         <div className="card-area">
           <article className="card">
             <CardVines />
+            {/* Combo counter (RD2): consecutive correct within the lesson,
+                from x2. key={combo} remounts it so the pop re-fires each rung. */}
+            {combo >= 2 && (
+              <div className="combo" key={combo} aria-hidden="true">
+                <span className="word">{['Bene!', 'Perge!', 'Optime!'][Math.min(combo - 2, 2)]}</span>
+                <span className="x">&times;{combo}</span>
+              </div>
+            )}
             {/* Card head — lesson identity leads the card. The lesson name is
                 the title of the question, so it sits at the very top, above the
                 progress/counter row, and larger than the QUÆSTIO counter. */}
