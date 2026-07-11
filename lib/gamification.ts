@@ -7,7 +7,7 @@
 import type { StorageSchema } from './progress';
 import { MODULES } from '../content/modules';
 import { COURSE_MAP, ACTS } from '../content/courseMap';
-import { habitusStrengthFromDays } from './habitus';
+import { habitusStrengthFromDays, currentStreak } from './habitus';
 import type { FinDistinction } from '../content/types';
 
 export type Rank = 'incipiens' | 'proficiens' | 'perfectus';
@@ -217,4 +217,11 @@ export { habitusStrengthFromDays } from './habitus';
 /** Habitus strength (0..1) over the recorded practice days, as of todayISO. */
 export function getHabitusStrength(data: StorageSchema, todayISO: string): number {
   return habitusStrengthFromDays(data.habitus?.days || [], todayISO);
+}
+
+/** Strict day streak for the HUD flame (redesign-v4, R2's call). Schema-aware
+    wrapper over the pure currentStreak; reads the same habitus.days that
+    markLessonComplete already appends to on every lesson complete. */
+export function getStreak(data: StorageSchema, todayISO: string): number {
+  return currentStreak(data.habitus?.days || [], todayISO);
 }

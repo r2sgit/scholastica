@@ -4,6 +4,8 @@ import { Suspense, useState, useEffect } from 'react';
 import { useSearchParams, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import SettingsSheet from './SettingsSheet';
+import { readProgress, localISODate, type StorageSchema } from '../lib/progress';
+import { getScore, getScoreCeiling, getStreak } from '../lib/gamification';
 
 const STORAGE_KEY = 'scholastica_v1';
 
@@ -67,6 +69,75 @@ function CourseSwitcher({ course }: { course: 'philosophia' | 'theologia' }) {
       >
         Theologia
       </Link>
+    </div>
+  );
+}
+
+/* The persistent HUD (redesign-v4, gamification-v3 §4): score + streak, in
+   the manuscript identity, on every TopBar surface — the direct fix for
+   "the scoring is so hard to find." Self-sources from localStorage (TopBar
+   takes no progress props), re-reading on route change so a lesson-complete
+   is reflected the moment the player lands anywhere. A 'scholastica:hud'
+   CustomEvent lets the lesson page push live updates without a re-read:
+   `detail.score` bumps the running total; `detail.pending` drives the
+   in-lesson pending accrual chip (RD3, §4.1). */
+export interface HudEventDetail {
+  score?: number;
+  /** In-lesson pending accrual (§4.1); null/0 clears the chip. */
+  pending?: number | null;
+}
+
+function Hud({ pathname }: { pathname: string }) {
+  const [score, setScore] = useState(0);
+  const [ceiling, setCeiling] = useState(0);
+  const [streak, setStreak] = useState(0);
+  const [pending, setPending] = useState<number | null>(null);
+  const [tick, setTick] = useState(false);
+
+  // Read (and re-read on navigation) the live state from storage. The lesson
+  // page's pending chip is transient, so a route change also clears it.
+  useEffect(() => {
+    const data = readProgress() as StorageSchema;
+    setScore(getScore(data));
+    setCeiling(getScoreCeiling());
+    setStreak(getStreak(data, localISODate()));
+    setPending(null);
+  }, [pathname]);
+
+  // Live pushes from the lesson/fin flow (no storage round-trip needed).
+  useEffect(() => {
+    function onHud(e: Event) {
+      const detail = (e as CustomEvent<HudEventDetail>).detail || {};
+      if (typeof detail.score === 'number') setScore(detail.score);
+      if ('pending' in detail) {
+        setPending(detail.pending ?? null);
+        // Retrigger the little pop on each pending change.
+        setTick(true);
+        window.setTimeout(() => setTick(false), 260);
+      }
+    }
+    window.addEventListener('scholastica:hud', onHud as EventListener);
+    return () => window.removeEventListener('scholastica:hud', onHud as EventListener);
+  }, []);
+
+  return (
+    <div className="hud">
+      <div className="scorebox">
+        <span className="score-row">
+          <span className="score-val">{score.toLocaleString()}</span>
+          <span className={`score-pending${pending ? ' on' : ''}${tick ? ' tick' : ''}`}>
+            {pending ? `+${pending}` : ''}
+          </span>
+        </span>
+        <span className="score-cap">of {ceiling.toLocaleString()}</span>
+      </div>
+      <div className="hud-streak" aria-label={`${streak} day streak`}>
+        <span className="flame" aria-hidden="true">{'🔥'}</span>
+        <span className="streak-col">
+          <span className="streak-val">{streak}</span>
+          <span className="streak-cap">day streak</span>
+        </span>
+      </div>
     </div>
   );
 }
@@ -206,6 +277,7 @@ function TopBarInner({ moduleId, moduleTitle, modulesCrumb, progress, course = '
             </Link>
           ))}
         </nav>
+        <Hud pathname={pathname} />
         {isReview && (
           <span className="env-badge show">
             m{moduleId ?? '?'}{' \u00B7 '}prod

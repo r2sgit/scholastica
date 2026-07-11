@@ -529,6 +529,57 @@ html.motion-reduced *::after {
 .tb-nav-link:hover { color: var(--gold-deep); }
 .tb-nav-link.active { color: var(--gold-text); border-bottom-color: var(--gold); }
 
+/* ── The persistent HUD (redesign-v4, gamification-v3 §4): score · streak,
+   always visible in the right cluster of the top bar. Ported from
+   scholastica-redesign-v4-prototype.html. ── */
+.hud {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-left: 16px;
+  border-left: 1px solid var(--border);
+}
+.scorebox { display: flex; flex-direction: column; line-height: 1.05; align-items: flex-end; }
+.score-row { display: flex; align-items: baseline; gap: 5px; }
+.score-val {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--gold-deep);
+  font-variant-numeric: tabular-nums;
+}
+/* In-lesson pending accrual chip (§4.1); hidden until RD3 pushes a value. */
+.score-pending {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+  opacity: 0;
+  transition: opacity .25s, transform .25s var(--ease-spring);
+}
+.score-pending.on { opacity: 1; }
+.score-pending.tick { transform: scale(1.25); }
+.score-cap {
+  font-size: 9.5px;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.hud-streak { display: flex; align-items: center; gap: 7px; }
+.flame { font-size: 20px; transition: transform .2s var(--ease-spring); line-height: 1; }
+.streak-col { display: flex; flex-direction: column; line-height: 1.05; }
+.streak-val {
+  font-weight: 600;
+  font-size: 19px;
+  color: var(--vermillion);
+  font-variant-numeric: tabular-nums;
+}
+.streak-cap {
+  font-size: 9.5px;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
 .mute-btn {
   background: none;
   border: 1px solid var(--border);
@@ -707,6 +758,15 @@ html.motion-reduced *::after {
     border-top-color: var(--gold);
   }
   .tb-nav { display: none; }
+
+  /* HUD stays visible on phones (the whole point — zero-click score), just
+     compact. The bottom tab bar carries section nav in its place. */
+  .hud { gap: 9px; padding-left: 9px; }
+  .score-val { font-size: 16px; }
+  .score-pending { font-size: 12px; }
+  .score-cap, .streak-cap { font-size: 9px; letter-spacing: 0.08em; }
+  .streak-val { font-size: 15px; }
+  .flame { font-size: 16px; }
 
   /* Clear the fixed tab bar so page content never sits under it. */
   .map-page,

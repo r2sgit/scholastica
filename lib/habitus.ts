@@ -20,6 +20,35 @@ export function daysBetween(aISO: string, bISO: string): number {
   return Math.round((b - a) / 86_400_000);
 }
 
+/** Shift a YYYY-MM-DD date by n whole days (UTC math, DST-safe). */
+export function addDays(iso: string, n: number): string {
+  const d = new Date(Date.parse(iso + 'T00:00:00Z') + n * 86_400_000);
+  return d.toISOString().slice(0, 10);
+}
+
+/** Strict consecutive-day streak (R2's call, redesign-v4). The HUD flame:
+    the run of back-to-back calendar days of practice ending today, or ending
+    yesterday if today isn't practiced yet (the day is still open, so a miss
+    hasn't happened). Any full missed day breaks it — the streak reads 0 once
+    the most recent practice day is older than yesterday. This is deliberately
+    the loud Duolingo streak, distinct from the forgiving habitus STRENGTH
+    model above (which never zeroes); R2 chose the chain for the HUD. */
+export function currentStreak(days: string[], todayISO: string): number {
+  if (!days || days.length === 0) return 0;
+  const set = new Set(days);
+  let anchor: string;
+  if (set.has(todayISO)) anchor = todayISO;
+  else if (set.has(addDays(todayISO, -1))) anchor = addDays(todayISO, -1);
+  else return 0;
+  let count = 0;
+  let cursor = anchor;
+  while (set.has(cursor)) {
+    count++;
+    cursor = addDays(cursor, -1);
+  }
+  return count;
+}
+
 /** Strength in 0..1 from a set of practice days (YYYY-MM-DD) as of todayISO. */
 export function habitusStrengthFromDays(days: string[], todayISO: string): number {
   if (!days || days.length === 0) return 0;
