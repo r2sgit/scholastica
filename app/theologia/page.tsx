@@ -18,15 +18,34 @@ interface ModuleState {
   id: number;
   total: number;
   done: number;
-  pips: ('done' | 'todo')[];
+  sineCount: number;
+  pips: ('sine' | 'done' | 'todo')[];
+  allSineErrore: boolean;
 }
 
-function buildState(entry: TheologiaCourseMapEntry, lessonsComplete: boolean[] | undefined): ModuleState | undefined {
+function buildState(
+  entry: TheologiaCourseMapEntry,
+  lessonsComplete: boolean[] | undefined,
+  marks: boolean[] | undefined,
+): ModuleState | undefined {
   const mod = THEOLOGIA_MODULES.find(m => m.id === entry.id);
   if (!mod) return undefined;
   const lc = lessonsComplete || [];
-  const pips = mod.lessons.map((_, i): 'done' | 'todo' => (lc[i] ? 'done' : 'todo'));
-  return { id: entry.id, total: mod.lessons.length, done: pips.filter(p => p === 'done').length, pips };
+  const sine = marks || [];
+  const pips = mod.lessons.map((_, i): 'sine' | 'done' | 'todo' => {
+    if (!lc[i]) return 'todo';
+    return sine[i] ? 'sine' : 'done';
+  });
+  const done = pips.filter(p => p !== 'todo').length;
+  const sineCount = pips.filter(p => p === 'sine').length;
+  return {
+    id: entry.id,
+    total: mod.lessons.length,
+    done,
+    sineCount,
+    pips,
+    allSineErrore: done === mod.lessons.length && pips.every(p => p === 'sine'),
+  };
 }
 
 function ModuleRow({ entry, state }: { entry: TheologiaCourseMapEntry; state?: ModuleState }) {
@@ -59,12 +78,30 @@ function ModuleRow({ entry, state }: { entry: TheologiaCourseMapEntry; state?: M
         {built && state && (
           <div className="cm-row-meta">
             <span className="cm-row-dots">
-              {state.pips.map((p, i) => <span key={i} className={p === 'done' ? 'done' : ''} />)}
+              {state.pips.map((p, i) => (
+                <span key={i} className={p !== 'todo' ? 'done' : (isNow && i === nextIdx ? 'now' : '')} />
+              ))}
             </span>
-            <span className="cm-row-label">
-              {isDone ? 'complete' : isNow ? `lesson ${done + 1} of ${total}` : `${total} lessons`}
-            </span>
+            {state.allSineErrore ? (
+              <span className="cm-row-sine">sine errore</span>
+            ) : (
+              <span className="cm-row-label">
+                {isDone ? 'complete' : isNow ? `lesson ${done + 1} of ${total}` : `${total} lessons`}
+              </span>
+            )}
+            {/* Mastery tally (WP4): gold count of lessons aced. */}
+            {state.sineCount > 0 && !state.allSineErrore && (
+              <span className="cm-row-sinetally">{`${state.sineCount} of ${total}`}</span>
+            )}
           </div>
+        )}
+        {/* Quiet pull line on a gapped module (WP4). */}
+        {built && state && isDone && !state.allSineErrore && (
+          <p className="cm-row-pull">
+            {total - state.sineCount === 1
+              ? '1 lesson from sine errore'
+              : `${total - state.sineCount} lessons from sine errore`}
+          </p>
         )}
       </div>
       <div className="cm-row-state">
@@ -90,7 +127,7 @@ export default function TheologiaMapPage() {
   const { data, getModuleProgress } = useTheologiaProgress();
 
   const states = THEOLOGIA_COURSE_MAP
-    .map(e => buildState(e, getModuleProgress(e.id)?.lessonsComplete))
+    .map(e => buildState(e, getModuleProgress(e.id)?.lessonsComplete, data.sineErrore?.[e.id]))
     .filter((s): s is ModuleState => !!s);
   const stateById = new Map(states.map(s => [s.id, s]));
 

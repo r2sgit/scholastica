@@ -2372,6 +2372,27 @@ html.motion-reduced *::after {
 }
 .cm-row-sine::before { content: "\2740  "; color: var(--gold); }
 
+/* Per-module mastery chip (WP4): the sine-errore tally in gold, small — how
+   many of a module's lessons carry the gold mark. Distinct from .cm-row-sine
+   (the fully-mastered state); this shows the partial count. */
+.cm-row-sinetally {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold-text);
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.1em;
+}
+.cm-row-sinetally::before { content: "\2726  "; color: var(--gold); }
+/* One quiet pull line on a gapped (finished-but-not-flawless) module (WP4).
+   Modest, its own line, no color — a whisper toward mastery, not a nag. */
+.cm-row-pull {
+  margin: 5px 0 0;
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--ink-mute);
+  letter-spacing: 0.01em;
+}
+
 .cm-row-state { justify-self: end; text-align: right; }
 .cm-chip {
   display: inline-block;

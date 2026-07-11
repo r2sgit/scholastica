@@ -15,6 +15,8 @@ interface ModuleState {
   title: string;
   total: number;
   done: number;
+  /** lessons carrying the sticky gold sine-errore mark (WP4 mastery tally) */
+  sineCount: number;
   /** per-lesson dot: 'sine' (sticky perfect first pass, gold mark) |
       'done' (complete, with mistakes) | 'todo' (not yet begun) */
   pips: ('sine' | 'done' | 'todo')[];
@@ -36,11 +38,13 @@ function buildState(
     return sine[i] ? 'sine' : 'done';
   });
   const done = pips.filter(p => p !== 'todo').length;
+  const sineCount = pips.filter(p => p === 'sine').length;
   return {
     id,
     title: mod.title,
     total: mod.lessons.length,
     done,
+    sineCount,
     pips,
     allSineErrore: done === mod.lessons.length && pips.every(p => p === 'sine'),
   };
@@ -167,7 +171,21 @@ function ModuleRow({ entry, state }: { entry: CourseMapEntry; state?: ModuleStat
             ) : (
               <span className="cm-row-label">{`${total} lessons`}</span>
             )}
+            {/* Mastery tally (WP4): gold count of lessons aced, shown once the
+                module has some progress but is not yet flawless. */}
+            {state.sineCount > 0 && !state.allSineErrore && (
+              <span className="cm-row-sinetally">{`${state.sineCount} of ${total}`}</span>
+            )}
           </div>
+        )}
+        {/* One quiet pull line on a gapped module: finished, but not every
+            lesson gold (WP4). Tempts the return for a flawless pass. */}
+        {isDone && state && !state.allSineErrore && (
+          <p className="cm-row-pull">
+            {total - state.sineCount === 1
+              ? '1 lesson from sine errore'
+              : `${total - state.sineCount} lessons from sine errore`}
+          </p>
         )}
       </div>
       <div className="cm-row-state">
