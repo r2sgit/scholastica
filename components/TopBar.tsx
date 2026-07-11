@@ -6,6 +6,11 @@ import Link from 'next/link';
 import SettingsSheet from './SettingsSheet';
 import { readProgress, localISODate, type StorageSchema } from '../lib/progress';
 import { getScore, getScoreCeiling, getStreak } from '../lib/gamification';
+import {
+  readTheologiaProgress,
+  getScoreTheologia,
+  getScoreCeilingTheologia,
+} from '../lib/progressTheologia';
 
 const STORAGE_KEY = 'scholastica_v1';
 
@@ -96,11 +101,20 @@ function Hud({ pathname }: { pathname: string }) {
 
   // Read (and re-read on navigation) the live state from storage. The lesson
   // page's pending chip is transient, so a route change also clears it.
+  // Wing-aware (WP1): theology surfaces show the theology total/ceiling; the
+  // two are never summed. The streak stays shared — one flame both wings
+  // (WP2) — so it always reads the philosophy store's habitus.days.
   useEffect(() => {
-    const data = readProgress() as StorageSchema;
-    setScore(getScore(data));
-    setCeiling(getScoreCeiling());
-    setStreak(getStreak(data, localISODate()));
+    const philData = readProgress() as StorageSchema;
+    const isTheologia = pathname.startsWith('/theologia');
+    if (isTheologia) {
+      setScore(getScoreTheologia(readTheologiaProgress()));
+      setCeiling(getScoreCeilingTheologia());
+    } else {
+      setScore(getScore(philData));
+      setCeiling(getScoreCeiling());
+    }
+    setStreak(getStreak(philData, localISODate()));
     setPending(null);
   }, [pathname]);
 
