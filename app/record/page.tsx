@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import TopBar from '../../components/TopBar';
 import { useProgress, type StorageSchema } from '../../lib/progress';
@@ -12,6 +13,7 @@ import {
   getSineErroreTally,
   getCodexEntries,
 } from '../../lib/gamification';
+import { readTheologiaProgress, getCodexEntriesTheologia } from '../../lib/progressTheologia';
 import { THESES } from '../../content/theses';
 
 /* ── /record — Registrum-lite (scholastica-prelogin-scoring.md §5) ───────
@@ -31,6 +33,14 @@ export default function RecordPage() {
   const thesesEarned = getThesesEarned(data as StorageSchema, THESES).length;
   const sineErrore = getSineErroreTally(data as StorageSchema);
   const codexCount = getCodexEntries(data as StorageSchema).length;
+
+  // Theology collection count (WP7), per wing — the codex is course-scoped, so
+  // /record shows both totals separately, never summed. Read client-side to
+  // avoid a hydration mismatch (theology store is empty on the server).
+  const [theoCodexCount, setTheoCodexCount] = useState(0);
+  useEffect(() => {
+    setTheoCodexCount(getCodexEntriesTheologia(readTheologiaProgress()).length);
+  }, []);
 
   return (
     <div className="map-page">
@@ -71,8 +81,12 @@ export default function RecordPage() {
             <span className="tally">{`${sineErrore} lesson${sineErrore === 1 ? '' : 's'}`}</span>
           </div>
           <Link href="/vocabularium" className="record-collect-card">
-            <span className="t">Codex</span>
+            <span className="t">Codex · Philosophia</span>
             <span className="tally">{`${codexCount} distinction${codexCount === 1 ? '' : 's'}`}</span>
+          </Link>
+          <Link href="/theologia/vocabularium" className="record-collect-card">
+            <span className="t">Codex · Theologia</span>
+            <span className="tally">{`${theoCodexCount} distinction${theoCodexCount === 1 ? '' : 's'}`}</span>
           </Link>
         </section>
       </div>

@@ -197,11 +197,12 @@ const NAV_ITEMS: { href: string; label: string }[] = [
   { href: '/vocabularium', label: 'Vocabularium' },
 ];
 
-// Theologia has no Theses/Vocabularium-equivalent room yet (nothing to
-// collect off a single draft module) -- just its own module list. Add rows
-// here as real theology-side mechanics get built, not preemptively.
+// Theologia's own rooms. Modules + Vocabularium (the course-scoped codex,
+// WP7); the Oratorium joins here in WP8. Its own Theses-equivalent is the
+// Oratorium, not a second board.
 const THEOLOGIA_NAV_ITEMS: { href: string; label: string }[] = [
   { href: '/theologia', label: 'Modules' },
+  { href: '/theologia/vocabularium', label: 'Vocabularium' },
 ];
 
 function TopBarInner({ moduleId, moduleTitle, modulesCrumb, progress, course = 'philosophia' }: TopBarProps) {
@@ -229,7 +230,12 @@ function TopBarInner({ moduleId, moduleTitle, modulesCrumb, progress, course = '
         pathname.startsWith('/lesson/') || pathname.startsWith('/complete/');
     }
     if (href === '/theologia') {
-      return pathname === '/theologia' || pathname.startsWith('/theologia/');
+      // The theology "Modules" tab: the map and the lesson/complete flow, but
+      // NOT the wing's other rooms (Vocabularium, later Oratorium), which have
+      // their own /theologia/* hrefs and match via the generic branch below.
+      return pathname === '/theologia'
+        || pathname.startsWith('/theologia/lesson')
+        || pathname.startsWith('/theologia/complete');
     }
     return pathname === href || pathname.startsWith(href + '/');
   }

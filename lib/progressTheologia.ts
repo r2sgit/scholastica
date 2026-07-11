@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { computeScoreUpdate, type ScoreEvent } from './score';
 import { localISODate, recordPracticeDay } from './progress';
+import type { CodexEntry } from './gamification';
 import { THEOLOGIA_MODULES } from '../content/theologia';
 
 // Deliberately separate storage key from lib/progress.ts's `scholastica_v1`.
@@ -155,6 +156,26 @@ export function getScoreCeilingTheologia(): number {
   let lessons = 0;
   for (const mod of THEOLOGIA_MODULES) lessons += mod.lessons.length;
   return lessons * 10;
+}
+
+/** Theology codex (WP7): every completed theology lesson's distinction card,
+    deduped by Latin pair, earliest keeps the card — mirrors gamification's
+    getCodexEntries over the theology schema. Course-scoped: the theology
+    Vocabularium shows these; philosophy's shows its own. */
+export function getCodexEntriesTheologia(data: TheologiaStorageSchema): CodexEntry[] {
+  const out: CodexEntry[] = [];
+  const seen = new Set<string>();
+  for (const mod of THEOLOGIA_MODULES) {
+    const mp = data.progress?.[mod.id];
+    mod.lessons.forEach((lesson, i) => {
+      const d = lesson.fin.distinction;
+      if (mp?.lessonsComplete?.[i] && d && !seen.has(d.latin)) {
+        seen.add(d.latin);
+        out.push({ key: lesson.id, distinction: d });
+      }
+    });
+  }
+  return out;
 }
 
 export type { ScoreEvent };
