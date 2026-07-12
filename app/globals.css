@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap');
 
 @font-face {
   font-family: "Emeritus";
@@ -3352,104 +3352,152 @@ html.motion-reduced *::after {
 }
 
 /* ============================================================
-   Portico — Coming-Soon thinker landings (ships 2026-07-12)
+   Portico — Coming-Soon class pages (Fable spec, 2026-07-12)
    ============================================================
-   Five uniform Scholastica-style pages (portico-landing-page-spec.md):
-   Plato, Aristotle, Kant, Hegel, Nietzsche. The ONLY per-thinker
-   variation is a subtle accent color, applied by swapping the --gold
-   token family inside a scoped wrapper — the exact mechanism used by
-   .theologia-wing above. Every other element reuses the app's real
-   home-hero and module-map (cm-*) styles unchanged. Accent picks are
-   restrained and drawn from each concept doc's art direction:
-   Plato marble-blue, Aristotle olive-ochre, Kant Prussian blue,
-   Hegel Romantic amber, Nietzsche deep oxblood. */
-.portico-plato     { --gold:#4A6B9A; --gold-text:#3A567F; --gold-light:#9FB2D2; --gold-deep:#33507A; }
-.portico-aristotle { --gold:#9A7B33; --gold-text:#6F5820; --gold-light:#CFBA82; --gold-deep:#715C22; }
-.portico-kant      { --gold:#35507F; --gold-text:#293E63; --gold-light:#8A9CBE; --gold-deep:#26395C; }
-.portico-hegel     { --gold:#B0792E; --gold-text:#7E5620; --gold-light:#DEB87F; --gold-deep:#6E4B1C; }
-.portico-nietzsche { --gold:#8A2E27; --gold-text:#6B221C; --gold-light:#C99089; --gold-deep:#611F1B; }
+   Five standalone "class" pages (Plato, Aristotle, Kant, Hegel,
+   Nietzsche) implementing portico/portico-class-pages-copy-and-spec.md
+   Part 2 (A-H) + the reference mock. Per-class variation is ONE token:
+   --accent / --accent-text (spec E, verified AA). Reading text is
+   --ink; --ink-faint and raw --gold are banned from text; the accent is
+   a thread (pill, numerals/labels, CTA, two rules), never a wash. */
 
-.portico-page { min-height: 100dvh; display: flex; flex-direction: column; }
+.portico-plato     { --accent:#3D5A73; --accent-text:#3D5A73; }  /* marble blue */
+.portico-aristotle { --accent:#59622F; --accent-text:#59622F; }  /* Lyceum olive */
+.portico-kant      { --accent:#2E4A66; --accent-text:#2E4A66; }  /* Prussian blue */
+.portico-hegel     { --accent:#4E5A66; --accent-text:#4E5A66; }  /* storm slate */
+.portico-nietzsche { --accent:#722F37; --accent-text:#722F37; }  /* oxblood */
 
-/* Shared Thinkers nav — seven destinations, one-way door into the two
-   standalone demos (Aquinas, Augustine). Scholastica idiom, tokens. */
-.thinkers-nav { border-bottom: 1px solid var(--border-soft); background: var(--paper); }
-.tn-inner {
-  width: 100%; max-width: 1180px; margin: 0 auto; padding: 16px 40px;
-  display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
+.portico-page {
+  --pc-shadow: 1px 1px 24px rgba(59,50,40,.08);
+  min-height: 100dvh; background: var(--canvas); color: var(--ink);
+  font-family: "Fraunces", Georgia, serif;
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+  font-weight: 470; font-optical-sizing: auto;
 }
-.tn-mark {
-  font-family: "Emeritus", serif; font-size: 22px; color: var(--ink);
-  letter-spacing: 0.01em; line-height: 1; flex-shrink: 0;
+.portico-page .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+@media (min-width: 880px) { .portico-page .wrap { padding: 0 48px; } }
+
+/* Thinkers nav (one-way door). */
+.pc-nav { border-bottom: 1px solid var(--border-soft); background: var(--canvas); }
+.pc-nav-row {
+  display: flex; gap: 24px; align-items: baseline;
+  padding: 16px 24px; overflow-x: auto; -webkit-overflow-scrolling: touch;
 }
-.tn-links { display: flex; align-items: center; gap: 2px; flex-wrap: wrap; }
-.tn-link {
-  font-family: "Fraunces", Georgia, serif; font-size: 15px; font-weight: 500;
-  color: var(--ink-mute); text-decoration: none; padding: 6px 11px; border-radius: 7px;
-  transition: color .15s ease, background .15s ease;
+@media (min-width: 880px) { .pc-nav-row { padding: 16px 48px; } }
+.pc-nav-row::-webkit-scrollbar { display: none; }
+.pc-nav-mark {
+  font-family: "Emeritus", serif; font-size: 20px; color: var(--ink);
+  white-space: nowrap; text-decoration: none; line-height: 1; margin-right: 8px;
 }
-.tn-link:hover { color: var(--ink); background: rgba(59, 50, 40, 0.05); }
-.tn-link.active {
-  color: var(--gold-text); font-weight: 600;
-  border-bottom: 2px solid var(--gold); border-radius: 0; padding-bottom: 4px;
+.pc-nav-mark::after { content: "\2022"; color: var(--vermillion); margin-left: 3px; font-size: .7em; position: relative; top: -1px; }
+.pc-nav-link {
+  font-family: "Fraunces", serif; font-size: 16px; font-weight: 520; letter-spacing: .01em;
+  color: var(--ink-soft); text-decoration: none; white-space: nowrap; line-height: 1; padding-bottom: 6px;
 }
-.tn-sep { width: 1px; height: 20px; background: var(--border); margin: 0 8px; flex-shrink: 0; }
-.tn-demo { display: inline-flex; align-items: baseline; gap: 6px; color: var(--ink-soft); }
-.tn-demo-note {
-  font-size: 11px; font-style: italic; color: var(--ink-faint);
-  font-variant-caps: all-small-caps; letter-spacing: 0.08em;
+.pc-nav-link:hover { color: var(--ink); }
+.pc-nav-link.active { color: var(--accent-text); font-weight: 600; border-bottom: 3px solid var(--accent); }
+
+/* Hero. */
+.pc-hero { padding: 72px 0 88px; }
+.pc-hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: center; }
+@media (max-width: 879px) { .pc-hero-grid { grid-template-columns: 1fr; gap: 40px; } }
+.pc-pill {
+  display: inline-block; font-family: "Emeritus", serif; font-size: 17px; letter-spacing: .02em;
+  color: var(--accent-text); line-height: 1;
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  border-radius: 999px; padding: 8px 16px 9px;
+}
+.pc-h1 {
+  font-family: "Fraunces", serif; font-size: clamp(48px, 3.4vw + 26px, 72px);
+  font-weight: 700; line-height: 1.06; letter-spacing: -.015em; color: var(--ink);
+  margin: 16px 0 20px; max-width: 15ch; font-variation-settings: "SOFT" 0, "WONK" 0;
+}
+.pc-lede {
+  font-family: "Fraunces", serif; font-size: clamp(19px, .8vw + 14px, 22px);
+  font-weight: 480; line-height: 1.5; color: var(--ink); max-width: 640px;
+}
+.pc-cta-row { margin-top: 28px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.pc-status {
+  font-size: 14px; font-weight: 580; letter-spacing: .08em; font-variant-caps: all-small-caps;
+  color: var(--accent-text); border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  border-radius: 999px; padding: 6px 12px; line-height: 1.3;
+}
+.pc-btn {
+  display: inline-flex; align-items: center; height: 52px; padding: 16px 28px; border-radius: 12px; border: none;
+  background: var(--accent); color: var(--paper);
+  font-family: "Fraunces", serif; font-size: 18px; font-weight: 650; letter-spacing: .01em; line-height: 1;
+  box-shadow: var(--pc-shadow); cursor: pointer; text-decoration: none;
+  transition: filter .16s ease-out, transform .16s ease-out;
+}
+.pc-btn:hover { filter: brightness(.96); transform: translateY(-1px); }
+.pc-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pc-subbtn { margin-top: 10px; font-family: "Fraunces", serif; font-size: 18px; font-weight: 450; color: var(--ink-soft); }
+
+/* Portrait slot: no asset yet -> clean placeholder (spec G). */
+.pc-portrait {
+  aspect-ratio: 4 / 5; border-radius: 16px; border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--accent) 8%, var(--paper));
+  box-shadow: var(--pc-shadow); display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 879px) { .pc-portrait { max-width: 420px; width: 100%; margin: 0 auto; } }
+.pc-portrait-mark { font-family: "Emeritus", serif; font-size: 96px; color: var(--accent); opacity: .25; line-height: 1; }
+
+/* Vision paragraph. */
+.pc-vision-wrap { padding-top: 0; }
+.pc-vision { max-width: 640px; }
+
+/* Hook band (the one moment of theater). */
+.pc-hook {
+  margin-top: 64px; background: var(--paper);
+  border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft);
+  padding: 56px 24px; text-align: center;
+}
+.pc-hook-inner { max-width: 680px; margin: 0 auto; }
+.pc-rule { display: inline-block; width: 40px; height: 2px; background: var(--accent); }
+.pc-hook p {
+  font-family: "Fraunces", serif; font-size: clamp(24px, 1.2vw + 16px, 30px);
+  font-style: italic; font-weight: 500; line-height: 1.35; color: var(--ink); margin: 22px 0;
 }
 
-/* Hero — reuses .home-hero / .home-copy / .home-figure. The "Coming Soon"
-   label sits where Begin/Continue would; a placeholder fills the portrait
-   slot until per-thinker art lands. */
-/* Natural height, not stretched: .home-hero's `flex:1` would grow the hero to
-   fill the viewport and strand the course list below a tall blank gap. */
-.portico-hero { flex: 0 0 auto; align-items: center; padding-top: 56px; }
-.portico-sigil {
-  font-family: "Fraunces", serif; font-style: italic; font-size: 15px; font-weight: 500;
-  color: var(--gold-text); font-variant-caps: all-small-caps; letter-spacing: 0.1em;
-  margin-bottom: 12px;
+/* Sections. */
+.pc-section { padding: 72px 0 8px; }
+.pc-kicker { font-size: 14px; font-weight: 580; letter-spacing: .08em; font-variant-caps: all-small-caps; color: var(--accent-text); }
+.pc-h2 {
+  font-family: "Fraunces", serif; font-size: clamp(28px, 1.6vw + 18px, 36px);
+  font-weight: 680; line-height: 1.12; letter-spacing: -.005em; color: var(--ink); margin: 10px 0 8px;
 }
-.portico-act {
-  margin-top: 20px; font-size: 13.5px; color: var(--ink-mute);
-  font-variant-caps: all-small-caps; letter-spacing: 0.08em;
-}
-.portico-soon {
-  display: inline-block; margin-top: 20px;
-  font-family: "Fraunces", serif; font-size: 15px; font-weight: 600;
-  color: var(--gold-text); font-variant-caps: all-small-caps; letter-spacing: 0.14em;
-  border: 1.5px solid var(--gold); border-radius: 8px; padding: 12px 24px;
-}
-.portico-portrait {
-  width: 100%; max-width: 440px; aspect-ratio: 4 / 5;
-  border: 1.5px dashed var(--gold-light); border-radius: 10px; background: var(--paper);
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
-  box-shadow: var(--shadow-card);
-}
-.pp-name { font-family: "Fraunces", serif; font-size: 26px; font-weight: 500; color: var(--gold-text); }
-.pp-note {
-  font-size: 12.5px; color: var(--ink-faint);
-  font-variant-caps: all-small-caps; letter-spacing: 0.1em;
-}
+.pc-h3 { font-family: "Fraunces", serif; font-size: 22px; font-weight: 640; line-height: 1.25; color: var(--ink); }
+.pc-body { font-family: "Fraunces", serif; font-size: 18px; font-weight: 470; line-height: 1.55; color: var(--ink); max-width: 640px; margin-top: 6px; }
 
-/* Vision paragraph + course summary (module-map cm-* style reused). */
-.portico-stage { padding-top: 4px; }
-.portico-vision {
-  max-width: 760px; margin: 8px auto 0; font-size: 18px; line-height: 1.6;
-  color: var(--ink-soft); text-align: center; text-wrap: pretty;
-}
-.portico-stage .cm-act { margin-top: 46px; }
-/* Source citation in the row's label slot: italic accent, normal case
-   (the module-map's small-caps latin styling would garble "§125" etc.). */
-.portico-source { font-variant-caps: normal; letter-spacing: 0.01em; }
-.portico-closing {
-  margin-top: 22px; font-size: 15px; font-style: italic; color: var(--ink-mute);
-  max-width: 660px;
-}
+/* Moves. */
+.pc-move { display: grid; grid-template-columns: 48px 1fr; gap: 0 8px; padding: 24px 0; border-bottom: 1px solid var(--border-soft); }
+.pc-move:last-child { border-bottom: none; }
+.pc-num { font-family: "Emeritus", serif; font-size: 20px; letter-spacing: .01em; color: var(--accent); line-height: 1.5; }
 
-@media (max-width: 880px) {
-  .tn-inner { padding: 14px 20px; gap: 12px 18px; }
-  .portico-portrait { max-width: 300px; }
-  .portico-vision { text-align: left; }
+/* Curriculum card. */
+.pc-card { background: var(--paper); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--pc-shadow); padding: 40px; margin-top: 24px; }
+@media (max-width: 600px) { .pc-card { padding: 28px 20px; } }
+.pc-card-intro {
+  font-family: "Fraunces", serif; font-size: clamp(19px, .8vw + 14px, 22px);
+  font-weight: 480; font-style: italic; line-height: 1.5; color: var(--ink); max-width: 640px; padding-bottom: 8px;
+}
+.pc-mod { display: grid; grid-template-columns: 48px 1fr; gap: 0 8px; padding: 20px 0; border-bottom: 1px solid var(--border-soft); }
+.pc-mod:last-child { border-bottom: none; padding-bottom: 4px; }
+.pc-src { font-size: 14px; font-weight: 580; letter-spacing: .08em; font-variant-caps: all-small-caps; font-style: italic; color: var(--ink-soft); margin: 2px 0 6px; }
+
+/* Closing CTA. */
+.pc-close { text-align: center; padding: 88px 0 96px; }
+.pc-close .pc-h2 { margin-bottom: 28px; }
+.pc-close .pc-subbtn { margin-top: 14px; }
+
+.pc-footer { border-top: 1px solid var(--border-soft); padding: 28px 0 40px; font-size: 14px; font-weight: 500; letter-spacing: .08em; font-variant-caps: all-small-caps; color: var(--ink-soft); text-align: center; }
+
+/* Motion (spec H): staggered fade-in, once, reduced-motion safe. */
+@media (prefers-reduced-motion: no-preference) {
+  .portico-page .fade { opacity: 0; animation: pcFadeIn .4s ease-out forwards; }
+  .portico-page .fade.d1 { animation-delay: .15s; }
+  .portico-page .fade.d2 { animation-delay: .30s; }
+  .portico-page .fade.d3 { animation-delay: .45s; }
+  .portico-page .fade.d4 { animation-delay: .60s; }
+  @keyframes pcFadeIn { to { opacity: 1; } }
 }

@@ -11,8 +11,8 @@ import { THINKERS } from '../../content/thinkers';
 const thinker = THINKERS.nietzsche;
 
 export const metadata: Metadata = {
-  title: `${thinker.sigil} — ${thinker.headline} · Coming Soon`,
-  description: thinker.description,
+  title: `${thinker.title} · ${thinker.pill} — Coming Soon`,
+  description: thinker.subhead,
   robots: { index: false, follow: false },
 };
 
