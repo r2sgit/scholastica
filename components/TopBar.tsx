@@ -202,6 +202,7 @@ const NAV_ITEMS: { href: string; label: string }[] = [
 // Oratorium, not a second board.
 const THEOLOGIA_NAV_ITEMS: { href: string; label: string }[] = [
   { href: '/theologia', label: 'Modules' },
+  { href: '/theologia/oratorium', label: 'Oratorium' },
   { href: '/theologia/vocabularium', label: 'Vocabularium' },
 ];
 

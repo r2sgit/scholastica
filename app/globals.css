@@ -2393,6 +2393,36 @@ html.motion-reduced *::after {
   letter-spacing: 0.01em;
 }
 
+/* ── The Oratorium (WP8) — theology's hall. Accent reads from --gold, which
+   is ultramarine inside .theologia-wing. ─────────────────────────────────── */
+.orat-stage { max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; }
+.orat-head { text-align: center; margin-bottom: 28px; }
+.orat-title { font-family: "Fraunces", serif; font-size: 34px; font-weight: 600; margin: 0 0 8px; color: var(--ink); }
+.orat-sub { font-size: 16px; color: var(--ink-soft); line-height: 1.55; max-width: 520px; margin: 0 auto; }
+.orat-count { margin-top: 14px; font-variant-caps: all-small-caps; letter-spacing: 0.14em; font-size: 13px; font-weight: 600; color: var(--gold-text); }
+.orat-hymn, .orat-standalone { margin: 26px 0; }
+.orat-hymn-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: 14px; }
+.orat-hymn-title { font-family: "Fraunces", serif; font-size: 19px; font-weight: 600; color: var(--ink); font-style: italic; }
+.orat-hymn-tally { font-variant-caps: all-small-caps; letter-spacing: 0.1em; font-size: 12.5px; font-weight: 600; color: var(--ink-mute); }
+.orat-hymn-complete .orat-hymn-tally { color: var(--gold-text); }
+.orat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+.orat-piece { border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; background: var(--paper); }
+.orat-earned { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold-light) inset; }
+.orat-hymn-complete .orat-earned { box-shadow: 0 0 18px -6px var(--gold), 0 0 0 1px var(--gold-light) inset; }
+.orat-piece-name { font-variant-caps: all-small-caps; letter-spacing: 0.08em; font-size: 12px; font-weight: 600; color: var(--gold-text); margin-bottom: 8px; }
+.orat-latin { font-family: "Fraunces", serif; font-size: 15.5px; line-height: 1.5; color: var(--ink); margin: 0 0 8px; }
+.orat-english { font-size: 13.5px; line-height: 1.5; color: var(--ink-soft); font-style: italic; margin: 0; }
+.orat-pending { font-size: 13.5px; line-height: 1.5; color: var(--ink-mute); font-style: italic; margin: 0; }
+.orat-locked { background: transparent; border-style: dashed; opacity: 0.6; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 96px; }
+.orat-locked-mark { color: var(--ink-mute); font-size: 18px; margin: 0; }
+.orat-locked-say { font-size: 12px; color: var(--ink-mute); font-variant-caps: all-small-caps; letter-spacing: 0.1em; margin: 6px 0 0; }
+
+/* /record — both volumes side by side (WP8). */
+.record-volumes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 8px 0 24px; }
+.record-volume { border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; background: var(--paper); text-align: center; }
+.record-volume-name { font-variant-caps: all-small-caps; letter-spacing: 0.16em; font-size: 13px; font-weight: 600; color: var(--gold-text); margin-bottom: 6px; }
+@media (max-width: 560px) { .record-volumes { grid-template-columns: 1fr; } }
+
 .cm-row-state { justify-self: end; text-align: right; }
 .cm-chip {
   display: inline-block;

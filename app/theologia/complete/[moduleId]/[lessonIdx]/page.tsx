@@ -8,7 +8,9 @@ import {
   readTheologiaProgress,
   getScoreTheologia,
   getScoreCeilingTheologia,
+  getModulesCompleteTheologia,
 } from '../../../../../lib/progressTheologia';
+import { getNextOratoriumPiece } from '../../../../../content/theologia/oratorium';
 import { readProgress, localISODate } from '../../../../../lib/progress';
 import { getStreak } from '../../../../../lib/gamification';
 import type { ScoreEvent } from '../../../../../lib/score';
@@ -76,10 +78,13 @@ const REWARD_AWARD: Record<string, string> = {
    gold sweep. Then the friar and the distinction card. */
 function RewardStage({
   event, delta, courseTotal, ceiling, streak, isPerfect, correct, total, distinction,
+  oratoriumPull, onOratorium,
 }: {
   event: ScoreEvent; delta: number; courseTotal: number; ceiling: number;
   streak: number; isPerfect: boolean; correct: number; total: number;
   distinction: FinDistinction | undefined;
+  oratoriumPull: string | null;
+  onOratorium: () => void;
 }) {
   const reduced = finReducedMotion();
   const [stage, setStage] = useState(reduced ? 5 : 0);
@@ -142,6 +147,18 @@ function RewardStage({
           <DistinctionCard distinction={distinction} />
         </div>
       )}
+
+      {oratoriumPull && (
+        <div>
+          <button
+            type="button"
+            className={`fin-nextline${stage >= 4 ? ' in' : ''}`}
+            onClick={onOratorium}
+          >
+            {oratoriumPull}{' '}<span className="arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+      )}
     </>
   );
 }
@@ -162,6 +179,7 @@ function FinScreenInner() {
 
   const [courseTotal, setCourseTotal] = useState(0);
   const [streak, setStreak] = useState(0);
+  const [oratoriumPull, setOratoriumPull] = useState<string | null>(null);
   const ceiling = getScoreCeilingTheologia();
 
   const mod = getTheologiaModule(moduleId);
@@ -172,8 +190,12 @@ function FinScreenInner() {
   // markLessonComplete already wrote this pass; read the new totals for the
   // reward stage. Streak reads the shared philosophy store (one flame, WP2).
   useEffect(() => {
-    setCourseTotal(getScoreTheologia(readTheologiaProgress()));
+    const td = readTheologiaProgress();
+    setCourseTotal(getScoreTheologia(td));
     setStreak(getStreak(readProgress(), localISODate()));
+    // Nearest-Oratorium pull (WP8, §6): the next prayer/hymn piece waiting.
+    const next = getNextOratoriumPiece(getModulesCompleteTheologia(td));
+    setOratoriumPull(next ? `${next.piece} waits in the Oratorium` : null);
   }, []);
 
   useEffect(() => {
@@ -251,6 +273,8 @@ function FinScreenInner() {
             correct={correct}
             total={total}
             distinction={fin.distinction}
+            oratoriumPull={oratoriumPull}
+            onOratorium={() => router.push('/theologia/oratorium')}
           />
         )}
 

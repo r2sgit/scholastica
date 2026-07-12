@@ -3,8 +3,9 @@
 import { useState, useEffect, useCallback } from 'react';
 import { computeScoreUpdate, type ScoreEvent } from './score';
 import { localISODate, recordPracticeDay } from './progress';
-import type { CodexEntry } from './gamification';
+import type { CodexEntry, Rank } from './gamification';
 import { THEOLOGIA_MODULES } from '../content/theologia';
+import { ORATORIUM } from '../content/theologia/oratorium';
 
 // Deliberately separate storage key from lib/progress.ts's `scholastica_v1`.
 // The Theology wing is its own course with its own progress and its own score
@@ -176,6 +177,50 @@ export function getCodexEntriesTheologia(data: TheologiaStorageSchema): CodexEnt
     });
   }
   return out;
+}
+
+/** Theology module ids where every lesson is complete (WP8). Only wired
+    modules have lessons to complete. */
+export function getModulesCompleteTheologia(data: TheologiaStorageSchema): number[] {
+  const out: number[] = [];
+  for (const mod of THEOLOGIA_MODULES) {
+    const mp = data.progress?.[mod.id];
+    if (!mp?.lessonsComplete || mod.lessons.length === 0) continue;
+    let all = true;
+    for (let i = 0; i < mod.lessons.length; i++) {
+      if (!mp.lessonsComplete[i]) { all = false; break; }
+    }
+    if (all) out.push(mod.id);
+  }
+  return out;
+}
+
+// The De Deo arc (spec §5): T1-T4 is theology's Act-I-equivalent threshold.
+const DE_DEO_IDS = [1, 2, 3, 4];
+const TOTAL_THEOLOGIA_MODULES = 15;
+
+/** Theology rank arc (spec §5), from real state only — never points.
+    - proficiens: T1-T4 (the De Deo arc) complete AND at least half the
+      Oratorium pieces gated within T1-T4 earned.
+    - perfectus: all 15 modules complete AND the full Oratorium earned
+      (unreachable until T5-T7/T15 ship — correct and forward-compatible).
+    - incipiens: default. */
+export function getRankTheologia(data: TheologiaStorageSchema): Rank {
+  const complete = new Set(getModulesCompleteTheologia(data));
+
+  const allModules = complete.size === TOTAL_THEOLOGIA_MODULES;
+  const fullOratorium = ORATORIUM.every(p => complete.has(p.gate));
+  if (allModules && fullOratorium) return 'perfectus';
+
+  const deDeoComplete = DE_DEO_IDS.every(id => complete.has(id));
+  if (deDeoComplete) {
+    const deDeoPieces = ORATORIUM.filter(p => DE_DEO_IDS.includes(p.gate));
+    const earned = deDeoPieces.filter(p => complete.has(p.gate));
+    if (deDeoPieces.length > 0 && earned.length * 2 >= deDeoPieces.length) {
+      return 'proficiens';
+    }
+  }
+  return 'incipiens';
 }
 
 export type { ScoreEvent };
