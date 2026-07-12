@@ -3350,3 +3350,106 @@ html.motion-reduced *::after {
   .continue .btn { justify-content: center; width: 100%; }
   .cm-stage { padding: 8px 16px 56px; }
 }
+
+/* ============================================================
+   Portico — Coming-Soon thinker landings (ships 2026-07-12)
+   ============================================================
+   Five uniform Scholastica-style pages (portico-landing-page-spec.md):
+   Plato, Aristotle, Kant, Hegel, Nietzsche. The ONLY per-thinker
+   variation is a subtle accent color, applied by swapping the --gold
+   token family inside a scoped wrapper — the exact mechanism used by
+   .theologia-wing above. Every other element reuses the app's real
+   home-hero and module-map (cm-*) styles unchanged. Accent picks are
+   restrained and drawn from each concept doc's art direction:
+   Plato marble-blue, Aristotle olive-ochre, Kant Prussian blue,
+   Hegel Romantic amber, Nietzsche deep oxblood. */
+.portico-plato     { --gold:#4A6B9A; --gold-text:#3A567F; --gold-light:#9FB2D2; --gold-deep:#33507A; }
+.portico-aristotle { --gold:#9A7B33; --gold-text:#6F5820; --gold-light:#CFBA82; --gold-deep:#715C22; }
+.portico-kant      { --gold:#35507F; --gold-text:#293E63; --gold-light:#8A9CBE; --gold-deep:#26395C; }
+.portico-hegel     { --gold:#B0792E; --gold-text:#7E5620; --gold-light:#DEB87F; --gold-deep:#6E4B1C; }
+.portico-nietzsche { --gold:#8A2E27; --gold-text:#6B221C; --gold-light:#C99089; --gold-deep:#611F1B; }
+
+.portico-page { min-height: 100dvh; display: flex; flex-direction: column; }
+
+/* Shared Thinkers nav — seven destinations, one-way door into the two
+   standalone demos (Aquinas, Augustine). Scholastica idiom, tokens. */
+.thinkers-nav { border-bottom: 1px solid var(--border-soft); background: var(--paper); }
+.tn-inner {
+  width: 100%; max-width: 1180px; margin: 0 auto; padding: 16px 40px;
+  display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
+}
+.tn-mark {
+  font-family: "Emeritus", serif; font-size: 22px; color: var(--ink);
+  letter-spacing: 0.01em; line-height: 1; flex-shrink: 0;
+}
+.tn-links { display: flex; align-items: center; gap: 2px; flex-wrap: wrap; }
+.tn-link {
+  font-family: "Fraunces", Georgia, serif; font-size: 15px; font-weight: 500;
+  color: var(--ink-mute); text-decoration: none; padding: 6px 11px; border-radius: 7px;
+  transition: color .15s ease, background .15s ease;
+}
+.tn-link:hover { color: var(--ink); background: rgba(59, 50, 40, 0.05); }
+.tn-link.active {
+  color: var(--gold-text); font-weight: 600;
+  border-bottom: 2px solid var(--gold); border-radius: 0; padding-bottom: 4px;
+}
+.tn-sep { width: 1px; height: 20px; background: var(--border); margin: 0 8px; flex-shrink: 0; }
+.tn-demo { display: inline-flex; align-items: baseline; gap: 6px; color: var(--ink-soft); }
+.tn-demo-note {
+  font-size: 11px; font-style: italic; color: var(--ink-faint);
+  font-variant-caps: all-small-caps; letter-spacing: 0.08em;
+}
+
+/* Hero — reuses .home-hero / .home-copy / .home-figure. The "Coming Soon"
+   label sits where Begin/Continue would; a placeholder fills the portrait
+   slot until per-thinker art lands. */
+/* Natural height, not stretched: .home-hero's `flex:1` would grow the hero to
+   fill the viewport and strand the course list below a tall blank gap. */
+.portico-hero { flex: 0 0 auto; align-items: center; padding-top: 56px; }
+.portico-sigil {
+  font-family: "Fraunces", serif; font-style: italic; font-size: 15px; font-weight: 500;
+  color: var(--gold-text); font-variant-caps: all-small-caps; letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+.portico-act {
+  margin-top: 20px; font-size: 13.5px; color: var(--ink-mute);
+  font-variant-caps: all-small-caps; letter-spacing: 0.08em;
+}
+.portico-soon {
+  display: inline-block; margin-top: 20px;
+  font-family: "Fraunces", serif; font-size: 15px; font-weight: 600;
+  color: var(--gold-text); font-variant-caps: all-small-caps; letter-spacing: 0.14em;
+  border: 1.5px solid var(--gold); border-radius: 8px; padding: 12px 24px;
+}
+.portico-portrait {
+  width: 100%; max-width: 440px; aspect-ratio: 4 / 5;
+  border: 1.5px dashed var(--gold-light); border-radius: 10px; background: var(--paper);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  box-shadow: var(--shadow-card);
+}
+.pp-name { font-family: "Fraunces", serif; font-size: 26px; font-weight: 500; color: var(--gold-text); }
+.pp-note {
+  font-size: 12.5px; color: var(--ink-faint);
+  font-variant-caps: all-small-caps; letter-spacing: 0.1em;
+}
+
+/* Vision paragraph + course summary (module-map cm-* style reused). */
+.portico-stage { padding-top: 4px; }
+.portico-vision {
+  max-width: 760px; margin: 8px auto 0; font-size: 18px; line-height: 1.6;
+  color: var(--ink-soft); text-align: center; text-wrap: pretty;
+}
+.portico-stage .cm-act { margin-top: 46px; }
+/* Source citation in the row's label slot: italic accent, normal case
+   (the module-map's small-caps latin styling would garble "§125" etc.). */
+.portico-source { font-variant-caps: normal; letter-spacing: 0.01em; }
+.portico-closing {
+  margin-top: 22px; font-size: 15px; font-style: italic; color: var(--ink-mute);
+  max-width: 660px;
+}
+
+@media (max-width: 880px) {
+  .tn-inner { padding: 14px 20px; gap: 12px 18px; }
+  .portico-portrait { max-width: 300px; }
+  .portico-vision { text-align: left; }
+}
