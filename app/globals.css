@@ -98,8 +98,25 @@
   background: var(--gold);
   color: #FAF6EE;
 }
+/* Coming-Soon entry (Portico Challenge landings, e.g. /nietzsche): a quiet
+   link out, never an active wing. The vermillion "soon" tick marks it apart
+   from the two live Aquinas wings without shouting. */
+.course-switch-btn.coming { color: var(--ink-faint); }
+.course-switch-btn.coming:hover { color: var(--ink-mute); }
+.course-switch-btn.coming .cs-soon {
+  font-size: 8.5px;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.12em;
+  color: var(--paper);
+  background: var(--vermillion);
+  border-radius: 999px;
+  padding: 1px 6px 2px;
+  margin-left: 5px;
+  vertical-align: 1px;
+}
 @media (max-width: 640px) {
   .course-switch-btn { padding: 6px 9px; font-size: 11.5px; }
+  .course-switch-btn.coming .cs-soon { display: none; }
 }
 
 /* ============================================================

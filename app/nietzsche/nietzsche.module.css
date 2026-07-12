@@ -1,0 +1,399 @@
+/* ============================================================
+   /nietzsche — "The Hammer" Coming-Soon landing
+   German Expressionist woodcut. Deliberately apart from the
+   platform's illuminated-manuscript identity (portico-architecture
+   §"Voice & visual logic": each Challenge thinker gets a distinct,
+   modern style). Everything here is scoped under .page so it never
+   touches the manuscript world; this file is the template for the
+   other Challenge landings (Kant, Hegel), each with its own palette.
+
+   Art direction (portico/pitches/nietzsche.md §"Art Direction"):
+   hammer-cut blacks, jagged diagonals, bone-white and blood-red,
+   alpine ridgelines, lightning, the texture of gouged wood and ink.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=UnifrakturCook:wght@700&display=swap');
+
+.page {
+  /* Woodcut palette — bone-white and blood-red on hammer-cut black. */
+  --ink:          #0b0a09;
+  --ink-2:        #16120e;
+  --bone:         #ECE5D2;
+  --bone-dim:     #a89f89;
+  --bone-faint:   #6f6a5c;
+  --blood:        #b21419;
+  --blood-deep:   #7c0c11;
+  --blood-bright: #d8232a;
+
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background: var(--ink);
+  color: var(--bone);
+  font-family: 'Oswald', 'Arial Narrow', system-ui, sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Gouged-ink grain + coarse vertical wood-grain streaks. Absolutely
+   positioned within the (relative) .page so they scroll with the plate
+   like real print texture. Deliberately NOT position:fixed and NOT
+   mix-blend-mode: a fixed, full-viewport blended layer makes Chrome's
+   compositor skip repaints on scroll, blanking everything below the
+   fold. Plain opacity over the dark base is scroll-safe. */
+.page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.06;
+}
+.page::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(0,0,0,0) 0px,
+    rgba(0,0,0,0.28) 1px,
+    rgba(0,0,0,0) 3px,
+    rgba(0,0,0,0) 7px
+  );
+}
+
+.inner {
+  position: relative;
+  z-index: 5;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 28px 120px;
+}
+
+/* ── Top marker bar — bone hammer-line, blood tick ───────────── */
+.marker {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 22px 28px 0;
+  font-size: 12px;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--bone-dim);
+}
+.marker .back {
+  color: var(--bone-dim);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 120ms ease, border-color 120ms ease;
+}
+.marker .back:hover { color: var(--bone); border-color: var(--blood); }
+.marker .stamp { color: var(--blood-bright); font-weight: 600; }
+
+/* ── Hero ───────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  padding: 70px 0 40px;
+  /* Clip the full-bleed slashes here, on this SHORT element, rather than on
+     the tall .page: a huge overflow:hidden element gets promoted to a
+     composited layer whose backing store only paints the first tile, blanking
+     everything below the fold on scroll. Keeping the clip on the hero avoids
+     that while still containing the diagonals. */
+  overflow: hidden;
+}
+
+/* Two blood-red slashes cut diagonally behind the title. */
+.slash {
+  position: absolute;
+  left: -30%;
+  width: 160%;
+  height: 44px;
+  background: var(--blood);
+  transform: skewY(-4deg) skewX(-14deg);
+  z-index: 0;
+  opacity: 0.92;
+}
+.slash1 { top: 120px; height: 26px; background: var(--blood-deep); }
+.slash2 { top: 300px; opacity: 0.82; }
+
+.kicker {
+  position: relative;
+  z-index: 1;
+  font-family: 'UnifrakturCook', 'Oswald', serif;
+  font-size: clamp(20px, 3vw, 30px);
+  color: var(--blood-bright);
+  letter-spacing: 0.02em;
+  margin: 0 0 18px;
+  line-height: 1;
+}
+
+.title {
+  position: relative;
+  z-index: 1;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(48px, 11.5vw, 138px);
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--bone);
+  /* Print misregistration — a blood plate shoved off the bone plate. */
+  text-shadow: 5px 5px 0 var(--blood), 9px 9px 0 rgba(0,0,0,0.55);
+}
+.title .hammer { display: block; }
+.title .rest {
+  display: block;
+  font-size: 0.44em;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  margin-top: 0.18em;
+  color: var(--bone);
+  text-shadow: 3px 3px 0 var(--blood-deep);
+}
+
+.tagline {
+  position: relative;
+  z-index: 1;
+  margin: 34px 0 0;
+  font-size: clamp(13px, 1.7vw, 17px);
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--bone-dim);
+}
+.tagline .soon {
+  color: var(--ink);
+  background: var(--blood);
+  padding: 3px 12px 4px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  white-space: nowrap;
+}
+
+/* Lightning bolt, top-right of the hero. */
+.bolt {
+  position: absolute;
+  top: 40px;
+  right: -8px;
+  width: clamp(70px, 12vw, 150px);
+  height: auto;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+/* ── Woodcut hero-asset slot (generated separately) ──────────── */
+.slot {
+  position: relative;
+  z-index: 1;
+  margin: 56px 0 0;
+  aspect-ratio: 16 / 7;
+  width: 100%;
+  background:
+    repeating-linear-gradient(135deg, rgba(178,20,25,0.06) 0 14px, transparent 14px 28px),
+    var(--ink-2);
+  border: 3px solid var(--bone);
+  outline: 1px solid var(--ink);
+  outline-offset: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 97% 100%, 3% 100%, 0 92%);
+}
+.slotArt { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.5; }
+.slotLabel {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 18px 24px;
+  background: rgba(11,10,9,0.62);
+}
+.slotLabel .tag {
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--blood-bright);
+  font-weight: 600;
+}
+.slotLabel .desc {
+  margin-top: 8px;
+  font-size: clamp(13px, 1.5vw, 16px);
+  color: var(--bone-dim);
+  letter-spacing: 0.04em;
+  max-width: 46ch;
+}
+
+/* ── Alpine ridgeline divider ────────────────────────────────── */
+.ridge { display: block; width: 100%; height: auto; margin: 6px 0 0; }
+
+/* ── Lead ────────────────────────────────────────────────────── */
+.lead {
+  max-width: 30ch;
+  margin: 64px 0 0;
+}
+.lead p {
+  font-size: clamp(22px, 3.4vw, 40px);
+  font-weight: 300;
+  line-height: 1.18;
+  letter-spacing: 0.005em;
+  margin: 0 0 0.7em;
+  color: var(--bone);
+  max-width: 24ch;
+}
+.lead p:last-child { margin-bottom: 0; }
+.lead .hook {
+  font-weight: 500;
+  border-left: 5px solid var(--blood);
+  padding-left: 22px;
+}
+.lead em { font-style: italic; color: var(--blood-bright); font-weight: 400; }
+
+/* ── Rounds (the eight modules, locked teaser) ───────────────── */
+.roundsHead { margin: 92px 0 8px; }
+.roundsHead h2 {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(28px, 5vw, 58px);
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+  margin: 0;
+  color: var(--bone);
+  text-shadow: 3px 3px 0 var(--blood-deep);
+}
+.roundsSub {
+  margin: 20px 0 0;
+  font-size: clamp(14px, 1.7vw, 18px);
+  font-weight: 300;
+  color: var(--bone-dim);
+  max-width: 62ch;
+  line-height: 1.4;
+}
+.roundsSub cite { font-style: italic; color: var(--bone); }
+
+.rounds {
+  margin: 40px 0 0;
+  border-top: 2px solid var(--bone);
+}
+.round {
+  position: relative;
+  display: grid;
+  grid-template-columns: 116px 1fr auto;
+  gap: 28px;
+  align-items: baseline;
+  padding: 26px 8px 26px 4px;
+  border-bottom: 1px solid rgba(236,229,210,0.22);
+  transition: background 140ms ease;
+}
+.round:hover { background: rgba(178,20,25,0.06); }
+.round:hover .num { color: var(--blood-bright); }
+
+.num {
+  font-family: 'UnifrakturCook', serif;
+  font-size: clamp(34px, 4.4vw, 52px);
+  line-height: 0.8;
+  color: var(--bone-faint);
+  font-weight: 700;
+  white-space: nowrap;
+  transition: color 140ms ease;
+}
+.body { min-width: 0; }
+.rtitle {
+  font-size: clamp(20px, 2.6vw, 30px);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: var(--bone);
+  line-height: 1.05;
+  margin: 0;
+}
+.source {
+  margin: 7px 0 0;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blood-bright);
+  font-weight: 500;
+}
+.source em { font-style: italic; letter-spacing: 0.04em; text-transform: none; }
+.gets {
+  margin: 12px 0 0;
+  font-size: clamp(14px, 1.6vw, 17px);
+  font-weight: 300;
+  line-height: 1.42;
+  color: var(--bone-dim);
+  max-width: 60ch;
+}
+.lock {
+  align-self: center;
+  width: 22px;
+  height: 22px;
+  color: var(--bone-faint);
+  flex-shrink: 0;
+}
+
+/* ── Coming-soon affordance (static; no signup) ──────────────── */
+.close {
+  margin: 96px 0 0;
+  text-align: center;
+  position: relative;
+}
+.closeStamp {
+  display: inline-block;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(30px, 7vw, 76px);
+  letter-spacing: 0.06em;
+  color: var(--blood-bright);
+  border: 4px solid var(--blood);
+  padding: 10px 34px 14px;
+  transform: rotate(-4deg);
+  background: rgba(11,10,9,0.4);
+  text-shadow: 3px 3px 0 rgba(0,0,0,0.6);
+}
+.closeLine {
+  margin: 30px auto 0;
+  font-size: clamp(14px, 1.8vw, 18px);
+  font-weight: 300;
+  color: var(--bone-dim);
+  max-width: 52ch;
+  line-height: 1.4;
+}
+
+/* ── Colophon (in-theme; the manuscript one is suppressed here) ─ */
+.colophon {
+  margin: 90px auto 0;
+  padding-top: 26px;
+  border-top: 1px solid rgba(236,229,210,0.22);
+  text-align: center;
+  color: var(--bone-faint);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.colophon .mark { font-family: 'UnifrakturCook', serif; font-size: 20px; color: var(--bone-dim); letter-spacing: 0; }
+.colophon a { color: var(--bone-dim); text-decoration: none; border-bottom: 1px solid var(--blood-deep); }
+.colophon a:hover { color: var(--bone); }
+.colophon .row { margin-top: 12px; }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 720px) {
+  .inner, .marker { padding-left: 18px; padding-right: 18px; }
+  .round { grid-template-columns: 76px 1fr; gap: 16px; }
+  .lock { grid-column: 1 / -1; justify-self: start; margin-top: 4px; }
+  .title { text-shadow: 3px 3px 0 var(--blood), 6px 6px 0 rgba(0,0,0,0.55); }
+  .marker { letter-spacing: 0.2em; font-size: 10.5px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .round, .marker .back, .num { transition: none; }
+}

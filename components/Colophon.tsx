@@ -10,6 +10,9 @@ import { usePathname } from 'next/navigation';
 export default function Colophon() {
   const pathname = usePathname();
   if (pathname === '/') return null;
+  // Act II Challenge landings (e.g. /nietzsche) live in their own visual world
+  // and carry their own in-theme colophon; the manuscript one would clash.
+  if (pathname === '/nietzsche') return null;
 
   return (
     <footer className="site-colophon" role="contentinfo">

@@ -74,6 +74,19 @@ function CourseSwitcher({ course }: { course: 'philosophia' | 'theologia' }) {
       >
         Theologia
       </Link>
+      {/* Portico seed: the first Act II Challenge landing (portico-architecture
+          §"Route structure"). Nietzsche is a separate thinker, not an Aquinas
+          wing, so it reads as a Coming-Soon entry -- a link out to the landing,
+          never an active pill. Kant/Hegel follow the same pattern when built. */}
+      <Link
+        href="/nietzsche"
+        role="tab"
+        aria-selected={false}
+        className="course-switch-btn coming"
+        title="Nietzsche — Coming Soon"
+      >
+        Nietzsche <span className="cs-soon" aria-hidden="true">soon</span>
+      </Link>
     </div>
   );
 }
