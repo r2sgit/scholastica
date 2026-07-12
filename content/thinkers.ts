@@ -101,7 +101,7 @@ export const THINKERS: Record<string, Thinker> = {
     vision:
       'Aristotle was Plato’s best student, and he turned back to the world. He tutored Alexander the Great and dissected cuttlefish, and he treated both jobs the same way: look hard at the thing until you can say what it is made of, what shape it takes, what brought it about, and what it is for. Out of that patient looking he built the toolkit the West still thinks with, mostly without knowing it. This class makes the invisible toolkit visible, one move at a time, every abstraction earned from an object you can hold.',
     hook:
-      'In the Summa, Aquinas never uses his name. He writes "the Philosopher," and everyone knew who. Meet the man under the common sense.',
+      'You have been using his toolkit your whole life. Meet the man who made it.',
     moves: [
       { name: 'Ask the four questions.', text: 'What is it made of, what shape is it, what brought it here, what is it for. Any object on your desk, unlocked.' },
       { name: 'See the oak in the acorn.', text: 'Potential is real. Change stops being magic the moment you can name what a thing could become.' },
@@ -118,7 +118,7 @@ export const THINKERS: Record<string, Thinker> = {
       { numeral: 'IV', title: 'Happiness', source: 'Nicomachean Ethics I', teaser: 'Not a mood: a whole life doing its proper work well. And he shows you the work.' },
       { numeral: 'V', title: 'The Golden Mean', source: 'Nicomachean Ethics II', teaser: 'Virtue as a learnable skill, aimed between too much and too little.' },
       { numeral: 'VI', title: 'Friendship', source: 'Nicomachean Ethics VIII to IX', teaser: 'The three kinds of friends, and the one kind that lasts.' },
-      { numeral: 'VII', title: 'The Unmoved Mover', source: 'Physics VIII, Metaphysics XII', teaser: 'Follow motion all the way up, to the argument a friar finishes seventeen centuries later.' },
+      { numeral: 'VII', title: 'The Unmoved Mover', source: 'Physics VIII, Metaphysics XII', teaser: 'Follow motion all the way up, to something that moves all things without being moved.' },
     ],
     ctaSubline: 'Be told when the workshop opens.',
   },
@@ -128,11 +128,11 @@ export const THINKERS: Record<string, Thinker> = {
     accentClass: 'portico-kant',
     pill: 'Kant',
     title: 'The Tribunal of Reason',
-    headline: '"You can’t prove God." That opinion has an author.',
+    headline: 'Meet the man who put reason itself on trial.',
     subhead:
-      'The strongest objection ever raised against the climb to God, at full strength. By the end you can state it so well a Kantian would sign it.',
+      'He redrew the limits of what anyone can know. By the end you can walk the whole fence line, step by numbered step.',
     vision:
-      'Immanuel Kant was a small, punctual professor in Königsberg; neighbors were said to set their clocks by his afternoon walk. He never traveled, and he quietly rearranged the world. His claim: the mind only ever knows things as they appear to it, never as they are in themselves, so every proof that climbs from the world up to God reaches past the fence. He said he denied knowledge in order to make room for faith. Devout intent, devastating effect. This class gives him the floor, in his own words, and trains you to follow every numbered step.',
+      'Immanuel Kant was a small, punctual professor in Königsberg; neighbors were said to set their clocks by his afternoon walk. He never traveled, and he quietly rearranged the world. His claim: the mind only ever knows things as they appear to it, never as they are in themselves, and every metaphysics that ignores the line is building past its permit. He said he denied knowledge in order to make room for faith, and he meant it. This class walks his argument in his own words, every term defined, every step numbered.',
     hook:
       'Most people saying "you can’t prove God, that’s just faith" are quoting Kant without knowing his name. Come read the actual argument.',
     moves: [
@@ -161,9 +161,9 @@ export const THINKERS: Record<string, Thinker> = {
     title: 'The Owl at Dusk',
     headline: 'He watched Napoleon ride past his window and called him the world-soul. He meant it.',
     subhead:
-      'The most difficult prose in philosophy, told plainly as one unfolding story. By the end you can state him so well a Hegelian would sign it.',
+      'The most difficult prose in philosophy, told plainly as one story. By the end you can run the dialectic on anything that moves: an argument, an age, a life.',
     vision:
-      'In October 1806, a young professor in Jena watched Napoleon ride through the occupied town and wrote to a friend that he had seen the world-soul on horseback. That sentence is the whole class. Hegel’s claim is that truth is not fixed and eternal; it unfolds, and history is the story of reality coming to know itself. He wrote the most notoriously difficult prose in the canon, so this class’s first mercy is clarity: the famous passages walked in plain words, the system told as the story it is. Whether he completed Christianity or dissolved it is one of the great disputes of the modern mind. First, understand him.',
+      'In October 1806, a young professor in Jena watched Napoleon ride through the occupied town and wrote to a friend that he had seen the world-soul on horseback. That sentence is the whole class. Hegel’s claim is that truth is not fixed and eternal; it unfolds, and history is the story of reality coming to know itself. He wrote the most notoriously difficult prose in the canon, so this class’s first mercy is clarity: the famous passages walked in plain words, the system told as the story it is. He called philosophy its own time comprehended in thought. This class takes him at his word.',
     hook:
       'Every "right side of history" is Hegel, secondhand. He is the secret engine of how modern people talk about power and progress. Meet the source.',
     moves: [
@@ -193,7 +193,7 @@ export const THINKERS: Record<string, Thinker> = {
     title: 'The Hammer',
     headline: 'Meet the man who declared war on your morality.',
     subhead:
-      'No softening, no straw men. By the end you can state his case so well his own partisans would sign it.',
+      'No softening, no straw men. By the end you can run his genealogy on any value in the room, including yours.',
     vision:
       'Nietzsche is the most quoted philosopher alive in the culture, and the least met. The captions are famous. The argument underneath is ferocious, and almost nobody has read it. This class does not soften him, and it does not convert you. It puts you in front of the real thing, in his own words, until you can state his case at full voltage. Whatever you believe walking in, you will know exactly what hit the modern world. Most people never do.',
     hook:
