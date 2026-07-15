@@ -1,9 +1,9 @@
 // content/theologia/courseMap.ts
 // The Theology (Part II) skeleton, parallel to content/courseMap.ts.
 // Titles/order per scholastica-theology-blueprint.md v0.1 tool-recall map
-// (six partes + prologue, T1-T15). 12 of 15 built and live: T1-T5, T8-T14
-// (wired by the wing-parity run, WP-A). T6/T7/T15 stay `built: false`
-// ("in the scriptorium") until authored. DRAFT gate lifted wing-wide
+// (six partes + prologue, T1-T15). All 15 built and live: T1-T14 wired by
+// the wing-parity run (WP-A), T6/T7/T15 wired by the theology-wing
+// completion pass. The wing is complete. DRAFT gate lifted wing-wide
 // 2026-07-09; theology ships live like philosophy.
 
 export interface TheologiaCourseMapEntry {
@@ -28,9 +28,9 @@ export const THEOLOGIA_COURSE_MAP: TheologiaCourseMapEntry[] = [
     aim: 'One God, three Persons. What the doctrine actually says, what it does not say, and the precise words the Church uses to keep both straight.' },
   { id: 5,  numeral: 'V',    title: 'Creation',                        latin: 'De Creatione',                built: true,
     aim: 'Why there is something rather than nothing: what it means that God creates from nothing and holds everything in being right now.' },
-  { id: 6,  numeral: 'VI',   title: 'Angels & Governance',             latin: 'De Angelis',                  built: false,
+  { id: 6,  numeral: 'VI',   title: 'Angels & Governance',             latin: 'De Angelis',                  built: true,
     aim: 'Pure spirits: what angels are, how they know and choose, and how God governs the world through them.' },
-  { id: 7,  numeral: 'VII',  title: 'Beatitude',                       latin: 'De Beatitudine',              built: false,
+  { id: 7,  numeral: 'VII',  title: 'Beatitude',                       latin: 'De Beatitudine',              built: true,
     aim: 'What you are for: why no created thing finally satisfies you, and what the vision of God means.' },
   { id: 8,  numeral: 'VIII', title: 'Grace',                           latin: 'De Gratia',                   built: true,
     aim: "God's own life shared with you: what grace is, the kinds there are, and why you cannot earn the beginning of it." },
@@ -46,7 +46,7 @@ export const THEOLOGIA_COURSE_MAP: TheologiaCourseMapEntry[] = [
     aim: 'Signs that do what they say: how the seven sacraments actually cause the grace they signify.' },
   { id: 14, numeral: 'XIV',  title: 'The Eucharist & the Mass',        latin: 'De Eucharistia',              built: true,
     aim: 'The Body of Christ, truly: what transubstantiation means, and why the Mass is a sacrifice and not only a meal.' },
-  { id: 15, numeral: 'XV',   title: 'Last Things',                     latin: 'De Novissimis',               built: false,
+  { id: 15, numeral: 'XV',   title: 'Last Things',                     latin: 'De Novissimis',               built: true,
     aim: 'Death, judgment, heaven, and hell: what happens at the end, for you and for everything.' },
 ];
 
