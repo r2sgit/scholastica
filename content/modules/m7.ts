@@ -18,6 +18,12 @@ export const m7: ModuleMeta = {
         tag: `transcendentalia`,
         heading: `Good coffee, good dog, good argument. The word refused to stay put.`,
         body: `The ten categories you learned in Logic sort beings into kinds. But a handful of words cross every fence: one, thing, something, true, good. The tradition calls them <span class="lat">transcendentalia</span>, the transcendentals, because they climb over (<span class="lat">transcendere</span>) every categorical wall. They are not a super-genus above being. They are being itself, named under aspects it never lacks.`,
+        distinction: {
+          latin: `transcendentalia`,
+          english: `the transcendentals`,
+          gloss: `Some words refuse to stay in one category: wherever being goes, they follow it across every border.`,
+          motif: `beads-thread`,
+        },
       },
       questions: [
         {
@@ -239,6 +245,12 @@ export const m7: ModuleMeta = {
         tag: `unum`,
         heading: `Half a cat is not a smaller cat.`,
         body: `The first transcendental after being itself: <span class="lat">unum</span>, the one. It adds no ingredient. It only says of every being that it is undivided in itself, and undividedness is why halving a cat destroys it instead of shrinking it. The arithmetical 1 lives in the category of quantity. This deeper one lives everywhere.`,
+        distinction: {
+          latin: `unum`,
+          english: `one`,
+          gloss: `Every being is undivided in itself: not a number added to it, but its own integrity said again.`,
+          motif: `concentric`,
+        },
       },
       questions: [
         {
@@ -460,6 +472,12 @@ export const m7: ModuleMeta = {
         tag: `res  ·  aliquid`,
         heading: `A thing with a what; a thing set against others.`,
         body: `Two transcendentals nobody remembers, doing work nobody notices. <span class="lat">Res</span> says every being has an essence, a stable what. <span class="lat">Aliquid</span> says every being stands divided from every other: literally another what, <span class="lat">aliud quid</span>. With <span class="lat">unum</span> they complete being considered in itself and against its neighbors. What remains is being face to face with the soul: the true and the good.`,
+        distinction: {
+          latin: `res  ·  aliquid`,
+          english: `thing  ·  something`,
+          gloss: `Being said from its essence, and being said against every other: the two quiet transcendentals.`,
+          motif: `diverging-lines`,
+        },
       },
       questions: [
         {
@@ -712,6 +730,12 @@ export const m7: ModuleMeta = {
         tag: `verum`,
         heading: `The universe was never gibberish waiting for minds.`,
         body: `<span class="lat">Verum</span> names being as intelligible: the correspondence of being to the knowing power. Things are true first, in themselves, measured by the mind of their Maker; our sentences are true second, when they say of what is, that it is. The famous formula holds the middle: <span class="lat">adaequatio rei et intellectus</span>, the conformity of thing and intellect.`,
+        distinction: {
+          latin: `verum`,
+          english: `true`,
+          gloss: `Being as facing intellect: everything that is, is intelligible, and truth is being's address to a mind.`,
+          motif: `sun-and-mirrors`,
+        },
       },
       questions: [
         {
@@ -933,6 +957,12 @@ export const m7: ModuleMeta = {
         tag: `bonum`,
         heading: `Rust, blindness, lies: holes in being, not rival stuff.`,
         body: `<span class="lat">Bonum</span> names being as desirable: the correspondence of being to the appetitive power, for the good is that which all desire. Every being, insofar as it is, is good; what we call evil is privation, a lack of due being riding on a subject that remains good in what it has. And because the good has the aspect of an end, the next module's fourth cause is already knocking.`,
+        distinction: {
+          latin: `bonum`,
+          english: `good`,
+          gloss: `Being as facing appetite: everything that is, insofar as it is, is desirable, and evil owns nothing.`,
+          motif: `seed-tree`,
+        },
       },
       questions: [
         {
@@ -1154,6 +1184,12 @@ export const m7: ModuleMeta = {
         tag: `pulchrum`,
         heading: `The tradition argues with itself, and the argument is instructive.`,
         body: `<span class="lat">Pulchrum</span>, the beautiful: that which pleases when seen, standing where <span class="lat">verum</span> and <span class="lat">bonum</span> meet, delight riding on apprehension. Aquinas never adds it to the De Veritate roster, and serious Thomists argue both ways to this day: a distinct transcendental, or the splendor of all of them together. The course does not close what the tradition left open. Watching the dispute conducted well is itself part of your formation.`,
+        distinction: {
+          latin: `pulchrum`,
+          english: `the beautiful`,
+          gloss: `What pleases when seen, where the true and the good meet: a door the tradition disputes, and says so.`,
+          motif: `carved-light`,
+        },
       },
       questions: [
         {
@@ -1371,6 +1407,12 @@ export const m7: ModuleMeta = {
         tag: `convertuntur`,
         heading: `The roster is yours: being, named five more ways.`,
         body: `Res, unum, aliquid, verum, bonum: the modes that follow every being whatsoever, adding aspects to our understanding and nothing to the things. Half a cat taught you unity; the set table of the universe taught you truth; the rust taught you what evil is not. One warning travels with the treasure: when these words are said of God, they will have to be said differently. The module that teaches how is called Analogy, and it is waiting for you.`,
+        distinction: {
+          latin: `transcendentalia`,
+          english: `the transcendentals`,
+          gloss: `Some words refuse to stay in one category: wherever being goes, they follow it across every border.`,
+          motif: `beads-thread`,
+        },
       },
       questions: [
         {

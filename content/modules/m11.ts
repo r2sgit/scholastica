@@ -18,6 +18,12 @@ export const m11: ModuleMeta = {
         tag: `signum`,
         heading: `The world has been talking the whole time.`,
         body: `Smoke, rings, octagons, words: creation is thick with things that hand you other things. The tradition's word is <span class="lat">signum</span>: what represents something other than itself to a knowing power. And <span class="lat">significatio</span> names the relation a sign bears to what it signifies. The Church herself builds on this ground; a sacrament, Aquinas says, is the sign of a holy thing so far as it makes men holy (ST III q.60 a.2). That door is named here with reverence and left for another course. Ours opens onto a stranger fact: you have spent your whole life using one kind of sign you have never once seen. Next lesson finds it.`,
+        distinction: {
+          latin: `signum`,
+          english: `sign`,
+          gloss: `Smoke, rings, octagons, words: a sign is what represents something other than itself to a knowing power, and creation is thick with them.`,
+          motif: `smoke-fire`,
+        },
       },
       questions: [
         {
@@ -249,6 +255,12 @@ export const m11: ModuleMeta = {
         tag: `signum formale`,
         heading: `The glass you have never seen.`,
         body: `Every other sign takes its turn on stage before pointing beyond itself. The concept never does. It is pure servant, a <span class="lat">signum formale</span>, a formal sign: that by which the mind knows and not what it knows first. Its opposite number, the <span class="lat">signum instrumentale</span>, must be known first as a thing, like ink, smoke, and octagons. Make the concept one more object and the mind becomes a sealed gallery, guessing at a world it never meets; keep it a formal sign and knowing lands on things. The strict masters, above all John of St. Thomas in his treatise on signs, guarded this door for the whole tradition. Next lesson asks where signs get their authority: from nature, or from us.`,
+        distinction: {
+          latin: `signum formale  ·  instrumentale`,
+          english: `formal sign  ·  instrumental sign`,
+          gloss: `Every other sign takes the stage before it points; the concept never does: pure servant, that by which and never what is known first.`,
+          motif: `window-view`,
+        },
       },
       questions: [
         {
@@ -470,6 +482,12 @@ export const m11: ModuleMeta = {
         tag: `ad placitum`,
         heading: `Nature signs in ink; we sign in pencil.`,
         body: `Smoke would preach fire in a world that never invented an alphabet: the <span class="lat">signum naturale</span> binds by what things are, the same for all. The word smoke holds by appointment, <span class="lat">ad placitum</span>, at pleasure: erase it and another sound takes the shift. Long custom mints a humbler third kind, the customary sign, the napkin that announces dinner; custom's children still are not nature's. And the two cuts cross: formal or instrumental says how a sign meets the knower, natural or appointed says where its bond comes from. One realist nail holds it all down: appointment fixes which sound carries a nature, never what the nature is. Next lesson opens the word itself and finds two things riding in every name.`,
+        distinction: {
+          latin: `signum naturale  ·  ad placitum`,
+          english: `natural sign  ·  appointed sign`,
+          gloss: `Nature signs in ink and we sign in pencil: smoke binds by what things are, the word holds by appointment and can be erased.`,
+          motif: `diverging-lines`,
+        },
       },
       questions: [
         {
@@ -722,6 +740,12 @@ export const m11: ModuleMeta = {
         tag: `modus significandi`,
         heading: `The cargo and the packaging.`,
         body: `Every name, every <span class="lat">nomen</span>, ships a perfection inside a creaturely crate. The <span class="lat">res significata</span> is the cargo: the thing or perfection the name signifies. The <span class="lat">modus significandi</span> is the packaging: the manner of signifying, cut to the shape of the creatures we learned our words among. Said of God, the cargo can hold properly, and more properly than it holds of creatures; the packaging never does (ST I q.13 a.3). This is the hinge on which the whole doctrine of naming God will turn when the course reaches analogy; oil it now. Next lesson: the same word, sent on different errands.`,
+        distinction: {
+          latin: `res significata  ·  modus significandi`,
+          english: `the thing signified  ·  the mode of signifying`,
+          gloss: `Every name ships a perfection in a creaturely crate: said of God, the cargo can hold properly, the packaging never does.`,
+          motif: `cup-water`,
+        },
       },
       questions: [
         {
@@ -953,6 +977,12 @@ export const m11: ModuleMeta = {
         tag: `suppositio`,
         heading: `One word, many errands.`,
         body: `A man is at the door. Man is a species. Man has three letters. One appointed meaning, three errands: for the individual, for the nature as conceived, for the very word. The manuals call the errand <span class="lat">suppositio</span>, supposition: what a term stands for in a given use. The masters of the manual tradition, Peter of Spain and after him John of St. Thomas, sharpened this tool until arguments could be x-rayed with it; half the sophisms ever minted are supposition shifts wearing a syllogism's clothes. The creeds themselves lean on such care, for what a term stands for in God is the difference between confession and confusion; that door is named here with reverence and left shut. Next lesson gathers the whole kit.`,
+        distinction: {
+          latin: `suppositio`,
+          english: `supposition`,
+          gloss: `A man is at the door, man is a species, man has three letters: one meaning, three errands, and half of all sophisms are errand shifts.`,
+          motif: `three-errands`,
+        },
       },
       questions: [
         {
@@ -1174,6 +1204,12 @@ export const m11: ModuleMeta = {
         tag: `recapitulatio`,
         heading: `Ite ad res: go to the things.`,
         body: `The kit, assembled. A <span class="lat">signum</span> represents something other than itself to a knowing power. The concept is the <span class="lat">signum formale</span>, never known first; every other sign is instrumental, a thing before it is a message. Bonds come from nature or by appointment, <span class="lat">ad placitum</span>; words signify conceptions immediately and things by their means; every name parts into <span class="lat">res significata</span> and <span class="lat">modus significandi</span>; and <span class="lat">suppositio</span> names the errand a term runs in this sentence. All of it guards one truth: signs serve knowing, and knowing lands on things. The course now turns from knowing to wanting, for the good, once apprehended, moves. Next module: appetite, will, and the eleven passions.`,
+        distinction: {
+          latin: `signum formale  ·  instrumentale`,
+          english: `formal sign  ·  instrumental sign`,
+          gloss: `Every other sign takes the stage before it points; the concept never does: pure servant, that by which and never what is known first.`,
+          motif: `window-view`,
+        },
       },
       questions: [
         {

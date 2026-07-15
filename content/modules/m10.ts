@@ -18,6 +18,12 @@ export const m10: ModuleMeta = {
         tag: `cognitio`,
         heading: `You did not eat the apple, and you have it anyway.`,
         body: `Dinner destroys what it receives: the apple's form is lost and its matter becomes yours. Knowledge receives without destroying: the apple's form comes to be in you while the apple sits there, unharmed and entirely itself. The tradition measures the difference in one word: matter. What is received into matter is confined to being one thing; what is received without matter is free to be, in a way, all things. <span class="lat">Anima est quodammodo omnia</span>: the soul is in a way all things. How a thousand particular dogs become one universal thought is the next lesson's business, and it involves a light.`,
+        distinction: {
+          latin: `cognitio`,
+          english: `knowledge`,
+          gloss: `Dinner destroys what it receives and knowledge does not: the apple's form comes to be in you while the apple sits there, entirely itself.`,
+          motif: `wax-seal`,
+        },
       },
       questions: [
         {
@@ -251,6 +257,12 @@ export const m10: ModuleMeta = {
         tag: `intellectus agens`,
         heading: `A thousand dogs, one thought.`,
         body: `The senses deliver particulars: this bark, this fur, here, now. The interior senses bind them into the <span class="lat">phantasma</span>. And there the parade would end, in a gallery of singulars, were there not in the soul an active power: <span class="lat">intellectus agens</span>, the agent intellect, which strikes the phantasm the way light strikes a window and frees the nature from its individuating conditions. What it frees, the possible intellect receives. Aristotle put the two in one sentence: in the soul is something by which it becomes all things, and something by which it makes all things. Next lesson climbs the heights this light can reach.`,
+        distinction: {
+          latin: `intellectus agens  ·  possibilis`,
+          english: `agent intellect  ·  possible intellect`,
+          gloss: `Light strikes the phantasm and the nature comes free: in the soul, something by which it makes all things, something by which it becomes them.`,
+          motif: `sun-silhouette`,
+        },
       },
       questions: [
         {
@@ -486,6 +498,12 @@ export const m10: ModuleMeta = {
         tag: `tres gradus`,
         heading: `One apple, three altitudes.`,
         body: `The botanist keeps flesh and seed and drops only the thisness: natural science, the first height. The geometer keeps only the quantity: a sphere needs no ripeness, though it still needs extension: mathematics, the second. The metaphysician considers the apple as a being, one and in act, and what he considers could exist with no matter at all: the third height. Aquinas sketches the ladder at ST I q.85 a.1 and maps it at full length in his commentary on Boethius's De Trinitate; the tradition names it <span class="lat">tres gradus abstractionis</span>, the three degrees of abstraction. The same mind climbs all three; the same apple waits patiently at the bottom. What exactly the mind holds at any height, and what it holds it with, is the next lesson's knife-edge.`,
+        distinction: {
+          latin: `tres gradus abstractionis`,
+          english: `the three degrees of abstraction`,
+          gloss: `One apple, three altitudes: the naturalist drops the thisness, the geometer keeps only the quantity, the metaphysician considers it as being at all.`,
+          motif: `three-altitudes`,
+        },
       },
       questions: [
         {
@@ -707,6 +725,12 @@ export const m10: ModuleMeta = {
         tag: `species`,
         heading: `The window is not the view.`,
         body: `You see the apple, not your retina; you think the dog, not your concept of it. The <span class="lat">species intelligibilis</span> and the interior word the mind forms, the <span class="lat">verbum mentis</span>, are the means of knowing: glass the mind looks through, known themselves only afterward, by reflection. Aquinas pins the whole of realism to this. Make the species the object, and science studies the furniture of the soul, and every seeming becomes true (ST I q.85 a.2). The mind lands on things. That a thought can then be measured against the things it lands on: that is truth, and it is the next lesson entire.`,
+        distinction: {
+          latin: `species intelligibilis  ·  verbum mentis`,
+          english: `intelligible species  ·  interior word`,
+          gloss: `The window is not the view: species and word are that by which the mind knows, known themselves only afterward, by reflection.`,
+          motif: `window-view`,
+        },
       },
       questions: [
         {
@@ -959,6 +983,12 @@ export const m10: ModuleMeta = {
         tag: `veritas`,
         heading: `Say of what is, that it is.`,
         body: `Apprehension grasps what a thing is and affirms nothing; sense presents and never checks. Judgment is where the mind stakes a claim, composing subject and predicate, and there, first, truth or falsity lives: <span class="lat">adaequatio rei et intellectus</span>, the conformity of thing and intellect. Our minds are measured by things; things themselves are measured by the mind that creates them, which is why a stone can be called a true stone (ST I q.16 a.1). A power that can know its own conformity to what is: hold that thought against the next lesson's guest, who composes flawless sentences and knows nothing.`,
+        distinction: {
+          latin: `adaequatio rei et intellectus`,
+          english: `the conformity of thing and intellect`,
+          gloss: `Sense presents and apprehension grasps; judgment alone stakes a claim, and there truth first lives: the mind measured against what is.`,
+          motif: `sun-and-mirrors`,
+        },
       },
       questions: [
         {
@@ -1396,6 +1426,12 @@ export const m10: ModuleMeta = {
         tag: `recapitulatio`,
         heading: `The realist account, owned.`,
         body: `You now hold the whole chain: form received without matter; the agent intellect's light freeing natures from the phantasm; three heights of abstraction; species and word as that by which, never that which; truth landing in judgment as conformity to what is; and a machine met courteously at the door and shown what it lacks. Two doors stand open. The interior word is a sign of the thing, and what a sign is, that strange business of one thing bearing another to a mind, has a module of its own. And being, the intellect's widest object, is said of apples and angels and God not in one flat sense but analogically: the science of that saying awaits. <span class="lat">Intellectus et cognitio</span>: the account is yours now. Spend it.`,
+        distinction: {
+          latin: `species intelligibilis  ·  verbum mentis`,
+          english: `intelligible species  ·  interior word`,
+          gloss: `The window is not the view: species and word are that by which the mind knows, known themselves only afterward, by reflection.`,
+          motif: `window-view`,
+        },
       },
       questions: [
         {

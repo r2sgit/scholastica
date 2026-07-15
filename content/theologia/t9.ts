@@ -19,6 +19,12 @@ export const t9: ModuleMeta = {
         tag: `de auxiliis`,
         heading: `Two truths at one lectern.`,
         body: `The disputation hall again, but grown: the presider is the Pope, and the question is called <span class="lat">de auxiliis</span>, on the helps, the graces God gives for acting. Every doctor in the room confesses both truths before the arguing starts. That grace goes first: unmerited, prevenient, so necessary that no salutary act begins without it. And that the will it moves stays free: really cooperating, able to refuse its consent, anathema on whoever says it sits inert like a stone. The fight is not between a party of grace and a party of freedom. It is between two certainties that seem to crowd each other in one act, and twenty years of the Church's best minds will now dispute where the efficacy of an efficacious grace comes from. Next lesson: the Dominican answer, at full strength.`,
+        distinction: {
+          latin: `auxilium divinum`,
+          english: `divine help`,
+          gloss: `Two truths at one lectern: grace begins every salutary act unmerited, and the will it moves stays free, able to refuse its consent.`,
+          motif: `chisel-hand`,
+        },
       },
       questions: [
         {
@@ -251,6 +257,12 @@ export const t9: ModuleMeta = {
         tag: `praemotio physica`,
         heading: `Moved, and never more your own.`,
         body: `The Dominican account runs on Part I's oldest law: nothing crosses from able-to-act to acting except by something already in act, and at the head of every such chain stands the First Mover. So when a will turns to God, God has moved it: really, not by advertisement, with a motion the school calls <span class="lat">praemotio physica</span>, prior in the order of causes and not in time, physical as opposed to moral suasion, not as opposed to spiritual. And here is the reversal the objectors never expect: this motion is why the act is free. God moves every nature according to its mode, necessary causes necessarily, contingent causes contingently, and the will He made free He moves freely; it would insult His motion for the will to come out necessitated. Efficacy sits inside the gift, and the gift's first fruit is your own free yes. The strongest man in the other chair has read all of this, and is not persuaded. Next lesson: Molina, in his own words.`,
+        distinction: {
+          latin: `praemotio physica`,
+          english: `physical premotion`,
+          gloss: `Moved, and never more your own: God applies the will to its own act, prior in the order of causes, and moves the free thing freely.`,
+          motif: `seed-tree-chain`,
+        },
       },
       questions: [
         {
@@ -482,6 +494,12 @@ export const t9: ModuleMeta = {
         tag: `scientia media`,
         heading: `The knowledge in the middle.`,
         body: `Molina's fear is honorable: that under an unfailing premotion, Trent's power to refuse dies with its boots on. His remedy is an architecture no one had built before. Between God's natural knowledge of all He could make and His free knowledge of all He has decreed, Molina sets <span class="lat">scientia media</span>, middle knowledge: God's sight, before any decree, of what every free will would do in any order of things He might create. Wanting this man's conversion, God consults that sight and gives the grace under which the man would freely say yes. The grace is called efficacious from the outside, <span class="lat">ab extrinseco</span>: from the consent it was foreseen to meet. Freedom stands vivid; no one is moved except as he would move. And the price is already visible on the ledger: what now distinguishes the man who consents from the man who refuses? Both lecterns have their answers. Next lesson they meet.`,
+        distinction: {
+          latin: `scientia media`,
+          english: `middle knowledge`,
+          gloss: `Between all He could make and all He has decreed, Molina sets God's sight of what every will would do: efficacy grounded from without.`,
+          motif: `three-lanes`,
+        },
       },
       questions: [
         {
@@ -1141,6 +1159,12 @@ export const t9: ModuleMeta = {
         tag: `sententia domus`,
         heading: `A verdict with a governed tongue.`,
         body: `Inside Rome's permission, this course keeps a house, and the house holds Banez. Not by inheritance: by the same verdict pattern you watched at <span class="lat">De Esse</span>. The charter reads Thomas whole, through his commentators, and read whole, the first cause's primacy runs unbroken from the Five Ways to the last grace: no one thing better than another unless God willed it greater good, nothing possessed that was not received. Middle knowledge, weighed, asks the school to see a determination nothing determined; the house declines, and calls the account an error. There the tongue meets its governor. Error is the strongest word the house owns here, because heresy was refused by the only court with jurisdiction: the Jesuits are no Pelagians, as the Dominicans are no Calvinists, and the 1607 injunction binds this course as it bound the lecterns. Sufficient grace is real, the fruit is in the flower, and no man is lost except by his own refusal. The recapitulation will ask you for all of it.`,
+        distinction: {
+          latin: `gratia sufficiens  ·  efficax`,
+          english: `sufficient grace  ·  efficacious grace`,
+          gloss: `Real power truly given, the act actually done: the flower contains the fruit, and whoever lacks the fruit resisted the flower.`,
+          motif: `seed-tree`,
+        },
       },
       questions: [
         {
@@ -1364,6 +1388,12 @@ export const t9: ModuleMeta = {
         tag: `recapitulatio`,
         heading: `The course's mature lesson.`,
         body: `Hold the whole case in one hand. Two certainties: grace begins, carries, and completes every salutary act, and the will it moves can refuse. Two schools on the joint between them: efficacy within the gift, God's premotion moving the free will as free; efficacy from without, the consent God foresaw by <span class="lat">scientia media</span> before any decree. One disputation, run in proper form for twenty years. One decree: defend, do not censure, await. And one house verdict, rendered with a governed tongue: the Thomist line at full strength, Molinism error and never heresy, the last word Rome's whenever Rome gives it. This was never only about grace. It was the course showing you how a Catholic mind holds an open question: confession where the deposit speaks, disputation where it is silent, charity under law in both. Every hard question ahead of you, in this course and out of it, gets the pattern you now own. <span class="lat">Deo gratias</span>.`,
+        distinction: {
+          latin: `praemotio physica`,
+          english: `physical premotion`,
+          gloss: `Moved, and never more your own: God applies the will to its own act, prior in the order of causes, and moves the free thing freely.`,
+          motif: `seed-tree-chain`,
+        },
       },
       questions: [
         {

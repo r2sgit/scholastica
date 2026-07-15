@@ -16,6 +16,12 @@ export const m13: ModuleMeta = {
         tag: `actus humanus  ·  actus hominis`,
         heading: `The cut between what a man does and what happens to him.`,
         body: `Aquinas built half a moral theology on a single distinction: the deliberate act is yours; the reflex is not. Every later question in the module presupposes this one — what counts as a moral act in the first place.`,
+        distinction: {
+          latin: `actus humanus  ·  actus hominis`,
+          english: `human act  ·  act of a man`,
+          gloss: `The deliberate act is yours and the reflex only happens in you: half a moral theology built on a single cut.`,
+          motif: `bearer-column`,
+        },
       },
       questions: [
         {
@@ -217,6 +223,12 @@ export const m13: ModuleMeta = {
         tag: `fontes moralitatis`,
         heading: `Object, end, circumstance — and a single rule that governs all three.`,
         body: `An act is good when its object, its end, and its circumstances are all in order. <em>Bonum ex integra causa, malum ex quocumque defectu.</em> The next two lessons supply the faculties — synderesis and conscientia — that the three sources actually run through.`,
+        distinction: {
+          latin: `fontes moralitatis`,
+          english: `the sources of morality`,
+          gloss: `Object, end, circumstances: good from the whole cause, evil from any defect, and no intention launders a bad object.`,
+          motif: `nest-causes`,
+        },
       },
       questions: [
         {
@@ -442,6 +454,12 @@ export const m13: ModuleMeta = {
         tag: `synderesis  ·  bonum est faciendum`,
         heading: `The first principle of practical reason — <em>per se nota</em>.`,
         body: `<em>Synderesis</em> is the natural habit by which practical reason grasps its first principles. The first principle is <em>bonum est faciendum et prosequendum, malum vitandum</em> — good is to be done and pursued; evil is to be avoided. Lesson 4 brings in the faculty that applies it.`,
+        distinction: {
+          latin: `synderesis`,
+          english: `synderesis`,
+          gloss: `The habit practical reason cannot lose: good is to be done and pursued, evil avoided, the premise every choice borrows.`,
+          motif: `wax-seal`,
+        },
       },
       questions: [
         {
@@ -644,6 +662,12 @@ export const m13: ModuleMeta = {
         tag: `conscientia`,
         heading: `An erring conscience binds — and there is a prior duty to form it.`,
         body: `Conscience is real and conscience is fallible. Aquinas holds the two together with a precision modern moral discourse has mostly lost. The duty to follow conscience is matched by the prior duty to <em>form</em> it rightly.`,
+        distinction: {
+          latin: `conscientia`,
+          english: `conscience`,
+          gloss: `Real and fallible: the act applying principle to this case binds even when it errs, and the prior duty is to form it.`,
+          motif: `linked-rings`,
+        },
       },
       questions: [
         {
@@ -867,6 +891,12 @@ export const m13: ModuleMeta = {
         tag: `lex aeterna  ·  naturalis  ·  humana  ·  divina positiva`,
         heading: `Four laws — nested, not competing.`,
         body: `Eternal, natural, human, divine. Natural law is the rational creature’s participation in the eternal; human law is the determination of natural law for the common good; divine positive law reaches beyond what natural reason can disclose.`,
+        distinction: {
+          latin: `lex aeterna  ·  naturalis  ·  humana  ·  divina positiva`,
+          english: `eternal  ·  natural  ·  human  ·  divine positive law`,
+          gloss: `Nested, not competing: the natural law is the creature's participation in the eternal, the human its determination, the divine positive its gift past reason.`,
+          motif: `law-cascade`,
+        },
       },
       questions: [
         {
@@ -1117,6 +1147,12 @@ export const m13: ModuleMeta = {
         tag: `prima principia  ·  praecepta secundaria`,
         heading: `Three orders of inclination; primary precepts indelible; secondary precepts obscurable.`,
         body: `Natural law is structured: orders of inclination, primary precepts, secondary precepts. The structure does the work the modern reduction tries to skip.`,
+        distinction: {
+          latin: `prima principia  ·  praecepta secundaria`,
+          english: `first principles  ·  secondary precepts`,
+          gloss: `The law has structure: three orders of inclination, primary precepts no heart can lose, secondary precepts that custom and fog can bury.`,
+          motif: `porphyry-tree`,
+        },
       },
       questions: [
         {
@@ -1330,6 +1366,12 @@ export const m13: ModuleMeta = {
         tag: `Distinguo`,
         heading: `Module 13 complete.`,
         body: `You can now take a hard moral case and unpack it through the <em>fontes moralitatis</em>, <em>synderesis</em>/<em>conscientia</em>, the practical syllogism, and the fourfold law — without confusing the object with the intention.`,
+        distinction: {
+          latin: `actus humanus  ·  actus hominis`,
+          english: `human act  ·  act of a man`,
+          gloss: `The deliberate act is yours and the reflex only happens in you: half a moral theology built on a single cut.`,
+          motif: `bearer-column`,
+        },
       },
       questions: [
         {

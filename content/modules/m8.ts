@@ -18,6 +18,12 @@ export const m8: ModuleMeta = {
         tag: `causa`,
         heading: `The statue again, and the four questions it has been waiting to answer.`,
         body: `Bronze, figure, sculptor, commission: of-what, what-makes-it-this, who-brought-it-about, what-for. The tradition names them <span class="lat">causa materialis</span>, <span class="lat">formalis</span>, <span class="lat">efficiens</span>, <span class="lat">finalis</span>. They are not four rival theories of the statue. They are four irreducible answers that compose one act of understanding, and Aquinas derives their number with a necessity that will carry the rest of the module.`,
+        distinction: {
+          latin: `quattuor causae`,
+          english: `the four causes`,
+          gloss: `Four true answers to one why: what it is made of, what shapes it, what made it, what it is for.`,
+          motif: `nest-causes`,
+        },
       },
       questions: [
         {
@@ -239,6 +245,12 @@ export const m8: ModuleMeta = {
         tag: `materia  ·  forma`,
         heading: `What the cake is made of, and what makes it a cake and not batter.`,
         body: `The intrinsic pair: <span class="lat">causa materialis</span>, that out of which, and <span class="lat">causa formalis</span>, the form by which the thing is what it is. You met them in Hylomorphism as principles of being; here they return as principles of explanation. Same flour and eggs, batter or cake: the difference is never in the ingredients. And the form that most repays attention is not a silhouette but the one that makes living things alive.`,
+        distinction: {
+          latin: `causa materialis  ·  formalis`,
+          english: `material cause  ·  formal cause`,
+          gloss: `The inner pair: what receives and what determines, composing the thing from inside.`,
+          motif: `clay-form`,
+        },
       },
       questions: [
         {
@@ -473,6 +485,12 @@ export const m8: ModuleMeta = {
         tag: `causa efficiens  ·  instrumentalis`,
         heading: `The sculptor and the chisel; the prompt-giver and the AI.`,
         body: `The efficient cause divides into principal and instrumental: <span class="lat">causa principalis</span>, acting by its own power, and <span class="lat">causa instrumentalis</span>, acting by the power of another while contributing its own mode. The chisel really cuts, and the cutting is the sculptor's act. This course is itself the case: drafted by an artificial instrument, moved and judged by the humans it serves. The tradition had the analysis ready seven centuries early.`,
+        distinction: {
+          latin: `causa efficiens  ·  instrumentalis`,
+          english: `efficient cause  ·  instrumental cause`,
+          gloss: `The chisel really cuts and the sculptor really carves: the tool's whole power is a borrowed power.`,
+          motif: `chisel-hand`,
+        },
       },
       questions: [
         {
@@ -694,6 +712,12 @@ export const m8: ModuleMeta = {
         tag: `causa finalis`,
         heading: `The cause they banned keeps signing its own extradition papers.`,
         body: `<span class="lat">Causa finalis</span>: that for the sake of which. Early modern method ruled it out of natural science, and the ban was never a disproof, only a bracket. The bracket leaks: for pumping, in order to attract, selected for. The tradition also hands you a finer blade: <span class="lat">finis operis</span>, the work's own end, against <span class="lat">finis operantis</span>, the end of the one working. The hammer was made to drive nails; today it propped a window open. Both ends are real, and telling them apart will matter enormously in ethics.`,
+        distinction: {
+          latin: `causa finalis`,
+          english: `the final cause`,
+          gloss: `The banned cause that never left: the end governs the act before the end exists.`,
+          motif: `arrow-mark`,
+        },
       },
       questions: [
         {
@@ -915,6 +939,12 @@ export const m8: ModuleMeta = {
         tag: `casus  ·  per accidens`,
         heading: `The man dug for planting and struck treasure.`,
         body: `One crash, four true answers; one lucky spade, and the tradition's calm verdict: fortune is a per accidens cause of things which are for the sake of something. Chance is real and derivative: it happens where lines of genuine purpose cross unplanned. A world with no per se order toward ends could not even manage an accident. Luck is purpose's shadow, and shadows prove the light.`,
+        distinction: {
+          latin: `casus  ·  fortuna`,
+          english: `chance  ·  fortune`,
+          gloss: `Chance is the crossing of aimed lines: real, and parasitic on the purposes it interrupts.`,
+          motif: `crossing-paths`,
+        },
       },
       questions: [
         {
@@ -1136,6 +1166,12 @@ export const m8: ModuleMeta = {
         tag: `quattuor causae`,
         heading: `The statue, the cake, the chisel, the heart, the lucky spade.`,
         body: `Four causes, held together: matter and form constituting from within, agent and end explaining from without, instruments carrying their master's power with their own signature, chance riding per accidens on the purposes it interrupts. Two doors stand open. Behind one, the soul: the substantial form of the living, where the formal cause becomes the most interesting thing in the world. Behind the other, already visited: the good, which you now know by its working name, the end.`,
+        distinction: {
+          latin: `causa finalis`,
+          english: `the final cause`,
+          gloss: `The banned cause that never left: the end governs the act before the end exists.`,
+          motif: `arrow-mark`,
+        },
       },
       questions: [
         {

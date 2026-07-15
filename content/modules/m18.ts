@@ -241,6 +241,12 @@ export const m18: ModuleMeta = {
         tag: `essentia ut potentia`,
         heading: `The mold is not nothing.`,
         body: `A real limit requires a real limiting principle. <em>Essentia ut potentia</em>: essence as the real, positive potency that receives <em>esse</em> and is not <em>esse</em>. Cajetan held it, John of St. Thomas systematized it, Garrigou-Lagrange defended it before the same modern audience Gilson wrote for, and the Church wrote it into the first of the 24 theses.`,
+        distinction: {
+          latin: `essentia ut potentia`,
+          english: `essence as potency`,
+          gloss: `The mold is not nothing: a real limit requires a real limiting principle, a positive potency that receives esse and is not esse.`,
+          motif: `cup-water`,
+        },
       },
       questions: [
         {
@@ -462,6 +468,12 @@ export const m18: ModuleMeta = {
         tag: `actus omnium actuum`,
         heading: `You were supposed to feel that.`,
         body: `<em>Esse</em>, the act of all acts. Essence, the formal delimitation of a possible being. The reading is beautiful, it is built from Aquinas's own sentences, and it was written by men who loved him. If it did not tempt you, read it again. The disputation needs you tempted.`,
+        distinction: {
+          latin: `actus omnium actuum`,
+          english: `the act of all acts`,
+          gloss: `Esse, the act of all acts, the perfection of all perfections: a reading built from Aquinas's own sentences, and you were supposed to feel its pull.`,
+          motif: `sun-alone`,
+        },
       },
       questions: [
         {
@@ -859,6 +871,12 @@ export const m18: ModuleMeta = {
         tag: `respondeo`,
         heading: `None dismissed. All met.`,
         body: `Aquinas's own sentence closed the strongest objection: <em>esse</em> is determined by essence 'as act by potency.' The nothing-apart argument fell to a distinction between nothing-in-act and nothing-in-potency. The boundary fell to the need for a real receiver. The strict line did not shout; it distinguished.`,
+        distinction: {
+          latin: `sicut actus per potentiam`,
+          english: `as act by potency`,
+          gloss: `The same reply that crowns esse also binds it: determined by essence as act by potency; the strict line reads the whole sentence, the other keeps half.`,
+          motif: `ladder-of-ratios`,
+        },
       },
       questions: [
         {
@@ -1075,6 +1093,12 @@ export const m18: ModuleMeta = {
         tag: `esse ut actus`,
         heading: `The strict line wins, and bows to the loser.`,
         body: `It wins because it keeps the whole of Aquinas's text where the existential reading keeps half, because participation needs a real receiver, and because the Church weighed this dispute and wrote the strict reading into her theses. It bows because Gilson recovered the primacy of <em>esse</em> for a century that had filed being away in catalogues. <em>Esse ut actus, essentia ut potentia</em>: both, or neither.`,
+        distinction: {
+          latin: `esse ut actus  ·  essentia ut potentia`,
+          english: `esse as act  ·  essence as potency`,
+          gloss: `The strict line wins because it keeps the whole sentence and the real receiver, and bows because Gilson gave esse back to a century: both, or neither.`,
+          motif: `sun-silhouette`,
+        },
       },
       questions: [
         {
@@ -1296,6 +1320,12 @@ export const m18: ModuleMeta = {
         tag: `recapitulatio`,
         heading: `Tolle, lege. The course ends where the Summa begins.`,
         body: `Seven distinctions opened the course; the act of all acts closes it. You can now follow the tradition's own arguments about itself, which means you no longer need a game standing between you and the master. Go to the text. Begin at the first question of the Summa, where a Dominican who knew everything this course taught asks, patiently, whether anything beyond philosophy is needed at all. Read him with the <em>Incipiens</em> community, or alone at night, but read him. You are an <em>incipiens</em> now in the only sense that matters: one who has begun.`,
+        distinction: {
+          latin: `esse ut actus  ·  essentia ut potentia`,
+          english: `esse as act  ·  essence as potency`,
+          gloss: `The strict line wins because it keeps the whole sentence and the real receiver, and bows because Gilson gave esse back to a century: both, or neither.`,
+          motif: `sun-silhouette`,
+        },
       },
       questions: [
         {

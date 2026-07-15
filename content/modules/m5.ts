@@ -18,6 +18,12 @@ export const m5: ModuleMeta = {
         tag: `substantia  ·  accidens`,
         heading: `Two ways to be: in yourself, or in another.`,
         body: `<span class="lat">Substantia</span> exists in itself; <span class="lat">accidens</span> exists in another, as the tan in Socrates and the grin in the cat. The substance is no hidden peg under its features: it is the knowable thing itself, showing itself through them. Next: among substances, the one who owns the deeds.`,
+        distinction: {
+          latin: `in se  ·  in alio`,
+          english: `in itself  ·  in another`,
+          gloss: `What exists in itself, and what can only exist in another: the first sorting of everything there is.`,
+          motif: `concentric`,
+        },
       },
       questions: [
         {
@@ -205,6 +211,12 @@ export const m5: ModuleMeta = {
         tag: `suppositum`,
         heading: `Deeds need a doer, and the doer is the whole.`,
         body: `The <span class="lat">suppositum</span>: the complete individual that has the nature, bears the accidents, and does the deeds. <span class="lat">Actiones sunt suppositorum</span>: actions belong to supposits, never to natures and never to parts. The nature answers what; the suppositum is the which-one. Next: the supposits that earn a higher name.`,
+        distinction: {
+          latin: `suppositum`,
+          english: `the bearer of the nature`,
+          gloss: `Natures do not act; the one who has the nature acts, and the deed belongs to the bearer.`,
+          motif: `bearer-column`,
+        },
       },
       questions: [
         {
@@ -392,6 +404,12 @@ export const m5: ModuleMeta = {
         tag: `persona`,
         heading: `An individual substance of a rational nature. You have been one all along.`,
         body: `Boethius's definition, kept by the whole tradition: <span class="lat">naturae rationalis individua substantia</span>. Among supposits, those with dominion over their own acts hold a rank of their own, and the rank is not a score: no degrees, no performances, no borrowed titles. Next: the distinction between nature and person, held apart where it matters most.`,
+        distinction: {
+          latin: `persona`,
+          english: `person`,
+          gloss: `The suppositum of a rational nature: not the what you are, but the who that is it.`,
+          motif: `mask-face`,
+        },
       },
       questions: [
         {
@@ -579,6 +597,12 @@ export const m5: ModuleMeta = {
         tag: `natura  ·  persona`,
         heading: `What you are is shared. Who you are is not.`,
         body: `Nature and person held apart: the distinction Aquinas polished and the creeds require. Theology's doors are named: three persons, one nature; one person, two natures. The course does not enter; it makes the entrances sayable. One lesson remains in the formation block, and it looks back over everything.`,
+        distinction: {
+          latin: `natura  ·  persona`,
+          english: `nature  ·  person`,
+          gloss: `John pays the taxes and human nature never does: what a thing is cannot sign its own deeds.`,
+          motif: `mask-face`,
+        },
       },
       questions: [
         {
@@ -732,6 +756,12 @@ export const m5: ModuleMeta = {
         tag: `recapitulatio formationis`,
         heading: `You now hold the whole frame: being, becoming, body, and the one who bears them.`,
         body: `Foundations gave the distinctions; four modules made them principles. Act and potency, essence and <span class="lat">esse</span>, matter and form, substance and accident, nature and person: not five facts but one grid, and you can now run it on anything that is. Everything after this is the frame put to work: the tools, the world, and the long argument at the end. <em>Proficiens</em>.`,
+        distinction: {
+          latin: `natura  ·  persona`,
+          english: `nature  ·  person`,
+          gloss: `John pays the taxes and human nature never does: what a thing is cannot sign its own deeds.`,
+          motif: `mask-face`,
+        },
       },
       questions: [
         {

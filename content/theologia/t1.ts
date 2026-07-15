@@ -25,6 +25,12 @@ export const t1: ModuleMeta = {
         tag: `praeambula fidei`,
         heading: `The ladder reached the roof.`,
         body: `Eighteen modules of climbing, and the climb was real: the act of being found, defended, and followed to <span class="lat">Ipsum Esse Subsistens</span>. But the philosopher at the top of that ladder knows that God is, and what He is not, and how creatures may speak of Him; the divine essence itself he has never seen. The tradition names his winnings with respect: <span class="lat">praeambula fidei</span>, the preambles of faith, reason's own work, which faith presupposes as grace presupposes nature. And it names his poverty without embarrassment: the truths reason could reach came to few, late, and mixed with errors, and the truths he needs most were never within reach at all. What no eye could climb to can still be spoken from above. Next lesson: God has.`,
+        distinction: {
+          latin: `praeambula fidei`,
+          english: `the preambles of faith`,
+          gloss: `Reason's own work about God, which faith presupposes as grace presupposes nature.`,
+          motif: `ladder-light`,
+        },
       },
       questions: [
         {
@@ -256,6 +262,12 @@ export const t1: ModuleMeta = {
         tag: `depositum fidei`,
         heading: `A letter you could not have written.`,
         body: `Revelation is not humanity's best guess promoted, nor religious experience written up. It is God speaking: truths above reason's ceiling, handed down and handed over. The tradition's word is <span class="lat">depositum fidei</span>, the deposit of faith, and it has a closing date: public revelation was complete with the Apostles, and the claim that it kept growing was condemned by name. The deposit is also one cloth: refuse a single thread on God's authority and what remains is not a smaller faith but no faith, only opinion in the shape of faith. Understanding grows; the deposit does not. How such a letter is received, and by what strange virtue, is the next lesson.`,
+        distinction: {
+          latin: `depositum fidei`,
+          english: `the deposit of faith`,
+          gloss: `Revelation closed with the Apostles and held whole: one cloth, guarded, never grown.`,
+          motif: `wax-seal`,
+        },
       },
       questions: [
         {
@@ -489,6 +501,12 @@ export const t1: ModuleMeta = {
         tag: `fides`,
         heading: `Certainty without seeing.`,
         body: `<span class="lat">Fides</span> is an act of the mind, and the moderns denied precisely that. Their counterfeit was solemnly renounced under oath: faith is not a blind sentiment of religion welling up from the depths of the subconscious, but a genuine assent of the intellect to truth received by hearing. The believer does not see the Trinity; he sees the trustworthiness of the Witness, and his certainty is the Witness's own. That is why faith is dark and firm at once: the obscurity belongs to the object, the firmness to the motive. And it is a supernatural virtue: the assent is God's gift before it is the believer's act. If faith is real knowing on real authority, a stranger question opens: can there be a science of it? Next lesson climbs into the architect's office.`,
+        distinction: {
+          latin: `fides`,
+          english: `faith`,
+          gloss: `Certain assent on the authority of God who reveals: dark where it looks, unshakable where it stands.`,
+          motif: `sun-silhouette`,
+        },
       },
       questions: [
         {
@@ -710,6 +728,12 @@ export const t1: ModuleMeta = {
         tag: `sacra doctrina`,
         heading: `The architect keeps the surveyor.`,
         body: `<span class="lat">Sacra doctrina</span> is a science, and a strange one: it borrows its first principles, the way music borrows from mathematics, from the science of God and the blessed. Its premises are revealed; its arguments are real arguments; its conclusions are owned, not felt. And it employs the whole of Part I: philosophy serves it, in Aquinas's blunt phrase, as of the lesser, and as handmaidens, not because theology is needy but because our intelligence is, climbing more easily from the natural to what is above it. In that court the old rule inverts: the authority argument, weakest in philosophy, is here the strongest of all, for the authority is God revealing. One question remains before the module closes its frame: two lights, one Author. Can they ever really cross? Next lesson.`,
+        distinction: {
+          latin: `sacra doctrina`,
+          english: `sacred doctrine`,
+          gloss: `A true science proceeding from God's own knowledge, with philosophy for its handmaid.`,
+          motif: `ladder-of-ratios`,
+        },
       },
       questions: [
         {
@@ -944,6 +968,12 @@ export const t1: ModuleMeta = {
         tag: `fides et ratio`,
         heading: `Two books, one Author.`,
         body: `The book of creation and the book of revelation carry one signature, so no page of the first can finally contradict a page of the second. Vatican I stated it for the ages: there can never be any real disagreement between faith and reason, since it is the same God who reveals the mysteries and infuses faith, and who has endowed the human mind with the light of reason. When contradiction appears, the Council names the only two suspects: doctrine misread against the mind of the Church, or an unsound view parading as reason's verdict. The believer's discipline follows: hold both lights, recheck both readings, amputate neither. Above reason is not against reason; a mystery exceeds the mind and never insults it. One question remains: who keeps the reading straight? Next lesson: the keeper who owns nothing in the museum.`,
+        distinction: {
+          latin: `fides et ratio`,
+          english: `faith and reason`,
+          gloss: `Two lights from one Author: no true quarrel is possible, and every apparent one has a culprit.`,
+          motif: `lamps-one-sun`,
+        },
       },
       questions: [
         {
@@ -1165,6 +1195,12 @@ export const t1: ModuleMeta = {
         tag: `magisterium`,
         heading: `The keeper owns nothing in the museum.`,
         body: `The Church's teaching office holds the strangest commission ever written: total authority to guard, zero authority to add. Vatican I chiseled it: the Holy Spirit was promised to Peter's successors not so that they might make known some new doctrine, but that they might religiously guard and faithfully expound the deposit. Dogma may be understood ever more deeply, but in the same doctrine, the same sense, the same understanding; the contrary was sworn against by every priest of a generation: handed down in exactly the same meaning and always in the same purport. And the commission binds this course too. Scholastica transmits; it invents nothing; the wall it teaches is the wall it lives under. The frame is set. Next lesson closes it.`,
+        distinction: {
+          latin: `magisterium`,
+          english: `the teaching office`,
+          gloss: `Total authority to guard, none to add: the keeper owns nothing in the museum.`,
+          motif: `borrowed-crown`,
+        },
       },
       questions: [
         {
@@ -1398,6 +1434,12 @@ export const t1: ModuleMeta = {
         tag: `recapitulatio`,
         heading: `You know what kind of course this is.`,
         body: `The frame is set. Reason's ladder reached its roof and was honored, not burned: the <span class="lat">praeambula fidei</span>. God spoke; the letter closed with the Apostles and is held whole, one cloth, the <span class="lat">depositum fidei</span>. It is received by <span class="lat">fides</span>, the intellect's certain assent on the authority of God who can neither deceive nor be deceived, sworn clear of every sentiment theory. <span class="lat">Sacra doctrina</span> works those premises as a true science with philosophy as handmaid; faith and reason keep an unbreakable peace, having one Author; and over it all stands the keeper who owns nothing in the museum, guarding and expounding, adding never. Everything after this module is that commission executed. Next: the road to God reopened, with full equipment. The Five Ways at depth.`,
+        distinction: {
+          latin: `sacra doctrina`,
+          english: `sacred doctrine`,
+          gloss: `A true science proceeding from God's own knowledge, with philosophy for its handmaid.`,
+          motif: `ladder-of-ratios`,
+        },
       },
       questions: [
         {

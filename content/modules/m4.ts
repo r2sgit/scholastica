@@ -18,6 +18,12 @@ export const m4: ModuleMeta = {
         tag: `forma substantialis  ·  forma accidentalis`,
         heading: `The furnace was a test, and the bronze passed it.`,
         body: `Forms come at two depths. <span class="lat">Forma accidentalis</span> modifies what already is: the shape, the color, the edge. <span class="lat">Forma substantialis</span> makes the thing the very kind it is: while it holds, the horse lives; when it goes, no horse remains. The next lesson digs beneath the deepest form, to what receives it.`,
+        distinction: {
+          latin: `forma substantialis  ·  forma accidentalis`,
+          english: `substantial form  ·  accidental form`,
+          gloss: `One form makes the thing what it is; every other form only qualifies what already is.`,
+          motif: `wax-seal`,
+        },
       },
       questions: [
         {
@@ -205,6 +211,12 @@ export const m4: ModuleMeta = {
         tag: `materia prima`,
         heading: `You looked for a thing and found a capacity.`,
         body: `The hunt for what-is-it-made-of ends in <span class="lat">materia prima</span>: pure potency, no size, no color, no kind of its own, never existing bare. It is the silent subject of every deep change, what remained of the paper that was never itself paper. Next: the changes themselves, sorted by depth.`,
+        distinction: {
+          latin: `materia prima`,
+          english: `prime matter`,
+          gloss: `The bottom of the stack: pure capacity to be formed, with no face of its own to show.`,
+          motif: `stack-bottom`,
+        },
       },
       questions: [
         {
@@ -409,6 +421,12 @@ export const m4: ModuleMeta = {
         tag: `generatio  ·  corruptio  ·  alteratio`,
         heading: `Two depths of change, and you can now tell them apart on sight.`,
         body: `<span class="lat">Alteratio</span> modifies a persisting thing. <span class="lat">Generatio</span> and <span class="lat">corruptio</span> exchange the thing itself above bare matter: one event, two descriptions, no gap in between. The next lesson asks a stranger question: when two things share one nature, what makes them two?`,
+        distinction: {
+          latin: `generatio  ·  corruptio`,
+          english: `generation  ·  corruption`,
+          gloss: `When the substantial form goes, the thing does not alter; it ceases, and another thing begins.`,
+          motif: `seed-tree-change`,
+        },
       },
       questions: [
         {
@@ -596,6 +614,12 @@ export const m4: ModuleMeta = {
         tag: `materia signata`,
         heading: `One kind, twice received. The parcel, not the pattern, makes the two.`,
         body: `What multiplies twins and copies is not their what but the matter that bears it: <span class="lat">materia signata quantitate</span>, matter marked out by quantity, this parcel here and not that one there. And the corollary you proved without noticing: whatever has no matter cannot be doubled within its kind. The recapitulation gathers the whole module next.`,
+        distinction: {
+          latin: `materia signata`,
+          english: `designated matter`,
+          gloss: `What makes two of a kind two: not the form, which is shared, but the matter this form is stamped on.`,
+          motif: `clay-form`,
+        },
       },
       questions: [
         {
@@ -783,6 +807,12 @@ export const m4: ModuleMeta = {
         tag: `hylomorphismus`,
         heading: `The physical world, read top to bottom: act and potency all the way down.`,
         body: `Matter under form, form at two depths, change at two depths, individuals by parceled matter, and at the bottom a pure capacity that never stands alone. The grid from the act-and-potency module has now organized bodies as it organized being. One module remains in the formation block, and it is about the one who bears all this: you.`,
+        distinction: {
+          latin: `forma substantialis  ·  forma accidentalis`,
+          english: `substantial form  ·  accidental form`,
+          gloss: `One form makes the thing what it is; every other form only qualifies what already is.`,
+          motif: `wax-seal`,
+        },
       },
       questions: [
         {

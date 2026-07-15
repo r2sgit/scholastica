@@ -19,6 +19,12 @@ export const t12: ModuleMeta = {
         tag: `corpus mysticum`,
         heading: `The body on the public record.`,
         body: `The certificate called the corporation a person, and every lawyer in the room knew the word was borrowed: a fiction with a filing number, useful, bloodless, dissolvable by the same pen that made it. The Church arrives wearing the same grammar, a body with members, and the grammar this time is not borrowed but paid in full. She is <span class="lat">corpus mysticum</span>, the mystical body: many members living one supernatural life that pours from one Head, and visible for exactly the reason your own body is, because a body that cannot be seen is not a body at all. Leo XIII closed the question with a tool you have owned since the philosophy course: soul alone is a ghost, body alone is a corpse, and only the union is a man. So with the Church: strip the visible society and you hold a mist; strip the supernatural life and you hold a bureau. She is one thing from both, and she can be found in the street, which matters, because next lesson you go looking for her marks.`,
+        distinction: {
+          latin: `corpus mysticum`,
+          english: `the mystical body`,
+          gloss: `Not the corporation's borrowed grammar but a body paid in blood: many members, one supernatural life from one Head, visible because bodies are.`,
+          motif: `lamps-one-sun`,
+        },
       },
       questions: [
         {
@@ -250,6 +256,12 @@ export const t12: ModuleMeta = {
         tag: `notae ecclesiae`,
         heading: `The signature is written in public.`,
         body: `Seventeen centuries of Sundays have sung the same four adjectives, and they were never decoration: they are the <span class="lat">notae Ecclesiae</span>, the marks by which the one true Church can be picked out among the claimants. Marks must be visible or they mark nothing; a sign nobody can perceive signifies to nobody, which you learned when the course taught you what a sign is. So the marks stand in daylight: one faith, worship, and government; a holy Founder with holy means and a steady crop of saints; the same whole faith for every nation and century; and an unbroken line back to the Apostles carrying an unchanged deposit. Taken singly they can be counterfeited for a while. Taken together they are a joint signature, and the house that bears all four at once has borne them from the beginning. The claim is public and the evidence is public, which is the whole scandal of it. Next lesson: the first mark has a guarantor, and he holds keys.`,
+        distinction: {
+          latin: `notae Ecclesiae`,
+          english: `the marks of the Church`,
+          gloss: `One, holy, catholic, apostolic: four marks written in daylight, present possessions not aspirations, borne together or borne by no one.`,
+          motif: `beads-thread`,
+        },
       },
       questions: [
         {
@@ -503,6 +515,12 @@ export const t12: ModuleMeta = {
         tag: `ex cathedra`,
         heading: `The keeper receives his keys.`,
         body: `The museum keeper who owns nothing in the museum turns out to hold a commission written in the Gospel's own hand: feed my lambs, feed my sheep, confirm thy brethren. A visible body needs a visible head, and the Lord appointed one, with a primacy of real jurisdiction and not of courtesy, perpetual in his successors. Thomas taught the reason six centuries before the definition: there must be one faith of the whole Church, and one faith requires one final judge of what the faith is. Vatican I drew the charism's exact borders: speaking <span class="lat">ex cathedra</span>, from the Chair, as teacher of all Christians, defining faith or morals for the whole Church, he is kept from error, and his definitions stand of themselves, not from the Church's later consent. Note what the definition does not say: nothing of new revelation, nothing of impeccability, nothing of infallible table talk. The Holy Spirit was not promised to Peter's successors so that they might coin new doctrine, but so that they might guard and expound the deposit. The office's poverty is its glory. And what the keeper guards above all is a door, which is the next lesson, and the hardest.`,
+        distinction: {
+          latin: `ex cathedra`,
+          english: `from the Chair`,
+          gloss: `The keeper's charism has exact borders: defining for the whole Church, guarded from error, adding nothing; irreformable of itself, not from consent.`,
+          motif: `borrowed-crown`,
+        },
       },
       questions: [
         {
@@ -735,6 +753,12 @@ export const t12: ModuleMeta = {
         tag: `extra ecclesiam`,
         heading: `One ark, one door, and the reach of grace.`,
         body: `The ark rides the flood with a single door, and the dogma over the door has been defined three times at the highest level: <span class="lat">extra Ecclesiam nulla salus</span>, outside the Church there is no salvation. The course transmits it at full strength, and in the sense the Church herself gives it, which is the only sense a dogma has. Thomas equipped you centuries early: membership in act and membership in potency, Christ the Head of all men diversely. Trent named the desire, <span class="lat">votum</span>, that reaches the laver before the water does. Pius IX taught invincible ignorance and the one road in consecutive paragraphs of one letter, unembarrassed. And when one century produced both editors, the diluter who made sincerity a sacrament and the hardener who made the axiom crueler than its Author, the same Holy Office corrected both in a single page: no salvation by any sort of desire, only desire informed by supernatural faith and perfect charity; and no reading of the dogma harder than the Church's own. The man saved in invincible ignorance is saved in the ark by desire, not outside it by exception. But he cannot be sure, and he is deprived of many helps; the door exists to be walked through. Who will tell him it is there? Next lesson: the mandate.`,
+        distinction: {
+          latin: `extra Ecclesiam nulla salus`,
+          english: `outside the Church there is no salvation`,
+          gloss: `One ark, one door, defined three times: held in the sense the Church herself gives it, softened for no one and hardened past her for no one.`,
+          motif: `carved-light`,
+        },
       },
       questions: [
         {
@@ -957,6 +981,12 @@ export const t12: ModuleMeta = {
         tag: `mandatum`,
         heading: `The arithmetic of love.`,
         body: `The last lesson's mercy is this lesson's spur. If desire can reach the door, why cross oceans? Because the Lord's parting sentence was an imperative with no expiration: going, therefore, teach ye all nations. The Holy Office called it a very strict mandate in the same letter that taught the <span class="lat">votum</span>, and the two teachings never blink at each other: the man united by desire alone cannot be sure of his salvation and is deprived of many helps, and the Church holds the sure road, the sacraments, the doctrine, in her hands. To withhold the ordinary because God commands the extraordinary is not trust; it is sloth wearing trust's cloak. And the appeal is charity or it is nothing: the same Pius IX who taught the one road forbade unkindness to those off it in the very next paragraph. The confession this course inherits says it without flinching: to renounce the mandate is the gravest of crimes against humanity. A Church commanded to address every nation on earth is already a public thing, with a claim no parlor can contain. What that claim is, the next lesson crowns.`,
+        distinction: {
+          latin: `votum Ecclesiae`,
+          english: `the desire of the Church`,
+          gloss: `Trent's word for the reach of grace: union by desire, informed by faith and charity, real potency to membership where the feet cannot yet walk.`,
+          motif: `seed-tree`,
+        },
       },
       questions: [
         {
@@ -1147,6 +1177,12 @@ export const t12: ModuleMeta = {
         tag: `Christus Rex`,
         heading: `The crown on the prow.`,
         body: `The polite settlement offers Christ a chaplaincy: hearts, Sundays, and silence in the assembly. Pius XI declined on His behalf. The kingship is no metaphor: it is His in the strict and proper sense, by nature, because the Person who is man is God, and by acquired right, because He bought His subjects with His blood. The kingdom is spiritual in its nature and its means, no armies, no tax stamps; and universal in its claim, because there is no difference in this matter between the individual and the family or the State. Rulers owe Him public honor and obedience; laws answer to His law. The century's counter-confession has a name, <span class="lat">laicismus</span>, the plague of secularism: the empire of Christ rejected, His Church leveled with the sects, then chartered beneath the state. Against it the Pope raised not an army but a feast, <span class="lat">Christus Rex</span>, because the Church answers rebellions liturgically: what is confessed every year cannot be legislated out of memory. <span class="lat">Non eripit mortalia qui regna dat caelestia</span>: He who gives heavenly kingdoms does not snatch away mortal ones. The King is not the state's rival; He is its reason. One recapitulation remains.`,
+        distinction: {
+          latin: `Christus Rex`,
+          english: `Christ the King`,
+          gloss: `No chaplaincy accepted: King in the strict and proper sense, by nature and by acquired right, and public law answers to His law.`,
+          motif: `wax-seal`,
+        },
       },
       questions: [
         {
@@ -1378,6 +1414,12 @@ export const t12: ModuleMeta = {
         tag: `recapitulatio`,
         heading: `The whole Church, in one hand.`,
         body: `Hold the module the way you would hold a coin: one thing, faces you can name. A real body, visible because bodies are visible, alive with her Head's own life, the corporation's borrowed grammar paid in blood. Four marks in one signature, borne together or borne by no one. A keeper with keys and a bound tongue: supreme jurisdiction whose whole business is custody, infallible only from the Chair, only on the deposit, guarding, never growing. One ark with one door, and the dogma over the door held exactly as the Church holds it: desire informed by faith and charity can cross a threshold the feet never found, and the mercy makes the mandate more urgent, not less. And on the prow, a crown: the King by nature and by purchase, whose empire includes parliaments, whose feast is the Church's annual refusal to be chartered. This was the module the philosophy could not have written alone: the magisterium taught most of it, because the Church defining herself is the Church teaching, and you now know why that is not circular but constitutional. The visible body acts through visible signs. Seven of them wait, one lesson-door down. <span class="lat">Deo gratias</span>.`,
+        distinction: {
+          latin: `corpus mysticum`,
+          english: `the mystical body`,
+          gloss: `Not the corporation's borrowed grammar but a body paid in blood: many members, one supernatural life from one Head, visible because bodies are.`,
+          motif: `lamps-one-sun`,
+        },
       },
       questions: [
         {

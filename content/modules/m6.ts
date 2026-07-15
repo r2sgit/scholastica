@@ -16,6 +16,12 @@ export const m6: ModuleMeta = {
         tag: `logica  ·  ars artium`,
         heading: `Logic is the art of arts — it governs the use of every other art.`,
         body: `<em>Logica</em> does not tell you what exists; it tells you how to think about what exists without making avoidable errors. The first question it forces is whether you are dealing with necessity or coincidence — whether things are as they are because they must be, or merely because they happen to be. The rest of Module 6 depends on keeping that question in view.`,
+        distinction: {
+          latin: `per se  ·  per accidens`,
+          english: `of itself  ·  by coincidence`,
+          gloss: `What belongs through the nature, and what merely happens alongside: logic begins by telling them apart.`,
+          motif: `diverging-lines`,
+        },
       },
       questions: [
         {
@@ -188,6 +194,12 @@ export const m6: ModuleMeta = {
         tag: `genus  ·  species  ·  differentia  ·  proprium  ·  accidens`,
         heading: `Everything predicated of a subject falls into exactly one of five categories.`,
         body: `Genus, species, differentia, proprium, accidens — not a taxonomy invented for school exercises but a map of how universals relate to their subjects. Differentia is the engine: it carves the genus into species and makes definition possible. The five predicables are what logic reaches for when it wants to say what something <em>is.</em>`,
+        distinction: {
+          latin: `quinque praedicabilia`,
+          english: `the five predicables`,
+          gloss: `Genus, species, difference, property, accident: the five ways a predicate can sit on a subject.`,
+          motif: `porphyry-tree`,
+        },
       },
       questions: [
         {
@@ -472,6 +484,12 @@ export const m6: ModuleMeta = {
         tag: `praedicamenta  ·  substantia  ·  accidens`,
         heading: `Before you reason about things, you need to know what kind of thing you are reasoning about.`,
         body: `Substance, quantity, quality, relation, place, time, posture, habit, action, passion — ten irreducibly different ways a thing can be described. They are not just a list. They are the logical backbone of the distinction between substance and accident that Module 1 introduced in metaphysical terms. Here it becomes operational.`,
+        distinction: {
+          latin: `decem praedicamenta`,
+          english: `the ten categories`,
+          gloss: `Substance and its nine ways of being dressed: the complete wardrobe of finite being.`,
+          motif: `concentric`,
+        },
       },
       questions: [
         {
@@ -744,6 +762,12 @@ export const m6: ModuleMeta = {
         tag: `per se  ·  primo  ·  secundo  ·  tertio  ·  quarto`,
         heading: `Not everything true of a subject belongs to it in the same way.`,
         body: `A predicate belongs to its subject <em>per se</em> in the first mode when it enters the definition; in the second mode when the subject enters the predicate’s definition. The third and fourth modes are rarer but real. The point is that <em>per se</em> is not a single relationship — it has four distinct modes, and demonstration requires knowing which one you are in.`,
+        distinction: {
+          latin: `quattuor modi per se`,
+          english: `the four per se modes`,
+          gloss: `Four grades of belonging of itself, from definition down to cause: demonstration's raw material.`,
+          motif: `porphyry-tree`,
+        },
       },
       questions: [
         {
@@ -987,6 +1011,12 @@ export const m6: ModuleMeta = {
         tag: `syllogismus  ·  figurae`,
         heading: `Conclusion follows necessarily — or the argument is something else.`,
         body: `The syllogism is not a box to fill in; it is the form of every valid deductive inference. Three terms, two premises, one conclusion that follows with necessity. The figures are not arbitrary arrangements — each positions the middle term differently, and each generates different valid conclusions. Knowing the figures is knowing how conclusions can and cannot be produced. Lesson 6 asks what it means for that conclusion to count as knowledge.`,
+        distinction: {
+          latin: `syllogismus`,
+          english: `the syllogism`,
+          gloss: `Two premises sharing a middle term, and a conclusion that cannot be refused: reason's one engine.`,
+          motif: `linked-rings`,
+        },
       },
       questions: [
         {
@@ -1199,6 +1229,12 @@ export const m6: ModuleMeta = {
         tag: `demonstratio  ·  propter quid  ·  quia`,
         heading: `There are two ways to prove something — and only one of them explains it.`,
         body: `<em>Demonstratio propter quid</em> proceeds from cause to effect and produces the highest form of knowledge: you know not only that something is so but why it must be. <em>Demonstratio quia</em> proceeds from effect to cause — it establishes the fact but not the reason. Most of what passes for argument in ordinary life is <em>quia</em> at best. The capstone asks whether first principles can be demonstrated at all.`,
+        distinction: {
+          latin: `demonstratio propter quid  ·  quia`,
+          english: `why-demonstration  ·  that-demonstration`,
+          gloss: `From cause to effect you know why; from effect back to cause you know that. Both are science.`,
+          motif: `diverging-lines`,
+        },
       },
       questions: [
         {
@@ -1399,6 +1435,12 @@ export const m6: ModuleMeta = {
         tag: `principia  ·  primorum  ·  contradictionis`,
         heading: `Module 6 complete.`,
         body: `Logic is the art of arts because it is the instrument of every other science. The syllogism, the five predicables, the ten predicaments, the <em>per se</em> modes, demonstration <em>propter quid</em> and <em>quia</em> — these are the working parts. The principle of non-contradiction is not one instrument among others; it is the ground on which all of them stand. Module 13 puts the whole apparatus to work.`,
+        distinction: {
+          latin: `demonstratio propter quid  ·  quia`,
+          english: `why-demonstration  ·  that-demonstration`,
+          gloss: `From cause to effect you know why; from effect back to cause you know that. Both are science.`,
+          motif: `diverging-lines`,
+        },
       },
       questions: [
         {

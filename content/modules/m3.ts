@@ -18,6 +18,12 @@ export const m3: ModuleMeta = {
         tag: `essentia  ·  esse`,
         heading: `You have been asking two questions since the apple. Now they become two principles.`,
         body: `That a thing is and what a thing is came apart in your hands in Foundations. This module makes the separation precise: <em>essentia</em> and <em>esse</em> are really distinct principles in everything that is not God. The unicorn was the clue. You can know an essence perfectly and still not know whether it is.`,
+        distinction: {
+          latin: `essentia  ·  actus essendi`,
+          english: `essence  ·  the act of being`,
+          gloss: `The first distinction returns at depth: what receives, and the act it receives, meet inside everything that is.`,
+          motif: `sun-silhouette`,
+        },
       },
       questions: [
         {
@@ -205,6 +211,12 @@ export const m3: ModuleMeta = {
         tag: `compositio`,
         heading: `Every creature is composed. That is not a flaw. It is what makes it a creature.`,
         body: `Composition of act and potency is the structure of finitude. What composition shows is dependence, and dependence points to a source.`,
+        distinction: {
+          latin: `compositio realis`,
+          english: `real composition`,
+          gloss: `Essence and existence are not two words for one thing but two principles really composed in every creature.`,
+          motif: `diverging-lines`,
+        },
       },
       questions: [
         {
@@ -441,6 +453,12 @@ export const m3: ModuleMeta = {
         tag: `actus  ·  limitatio`,
         heading: `Act is not limited except by the potency that receives it.`,
         body: `Left to itself, act is unlimited. <em>Esse</em> considered in itself is not this-much or that-much, it simply is. What limits it is the essence that receives it, as a vessel limits the water it holds. That is not a metaphor. It is the argument.`,
+        distinction: {
+          latin: `actus  ·  limitatio`,
+          english: `act  ·  limitation`,
+          gloss: `Act is not limited by itself; wherever a perfection is bounded, a receiving capacity has bounded it.`,
+          motif: `cup-water`,
+        },
       },
       questions: [
         {
@@ -638,6 +656,12 @@ export const m3: ModuleMeta = {
         tag: `participatio`,
         heading: `Everything you have ever met was borrowing.`,
         body: `The moon shines with light that is not its own, the iron burns with borrowed fire, and every creature is with an act of being it received. <em>Participatio</em> is the tradition's name for that universal borrowing. Follow the loans back far enough and you reach the one case that is not a loan.`,
+        distinction: {
+          latin: `participatio`,
+          english: `participation`,
+          gloss: `To have being partially is to have it from another: the lamps are lit, and something is the sun.`,
+          motif: `lamps-one-sun`,
+        },
       },
       questions: [
         {
@@ -825,6 +849,12 @@ export const m3: ModuleMeta = {
         tag: `esse subsistens`,
         heading: `You have read the sentence the whole course turns on.`,
         body: `Aquinas's phoenix is your unicorn: an essence fully known, existence still an open question. From that one observation the real distinction follows, and with it the single exception: a being whose what simply is its that. Module 2 called it Pure Act. This module calls it <em>esse subsistens</em>. They are the same answer arrived at from two roads.`,
+        distinction: {
+          latin: `esse subsistens`,
+          english: `subsistent being`,
+          gloss: `Where what and that coincide, being is not received but simply is: the unreceived act, of itself unique.`,
+          motif: `sun-alone`,
+        },
       },
       questions: [
         {
@@ -978,6 +1008,12 @@ export const m3: ModuleMeta = {
         tag: `recapitulatio`,
         heading: `The most important sentence in the course is now yours.`,
         body: `In everything that is not God, what it is and that it is are really distinct; in God they are identical. You can now say it, defend it, and recognize its counterfeits. Module 4 takes the same grid into wood and bronze and bodies, where matter meets form. The unicorn, the iron, and the phoenix stay with you. They have more work to do.`,
+        distinction: {
+          latin: `participatio`,
+          english: `participation`,
+          gloss: `To have being partially is to have it from another: the lamps are lit, and something is the sun.`,
+          motif: `lamps-one-sun`,
+        },
       },
       questions: [
         {

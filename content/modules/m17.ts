@@ -18,6 +18,12 @@ export const m17: ModuleMeta = {
         tag: `articulus`,
         heading: `The ritual you have been living in.`,
         body: `Open the Summa anywhere and the same choreography repeats, thousands of times: a question posed as open (<span class="lat">utrum</span>), the case against the author's own position stated at full strength (<span class="lat">videtur quod</span>), a short authority marking the turn (<span class="lat">sed contra</span>), the determination argued from principles (<span class="lat">respondeo</span>), and each objection answered, none dismissed (<span class="lat">ad obiecta</span>). It is not decoration; it is a machine for honest thinking, and it is the machine this course has quietly run on since the first apple. Next lesson: why the enemy speaks first, and why he is given the best lines.`,
+        distinction: {
+          latin: `articulus`,
+          english: `the article`,
+          gloss: `Utrum, videtur quod, sed contra, respondeo, ad obiecta: not decoration but a machine for honest thinking, the one this course has quietly run on.`,
+          motif: `beads-thread`,
+        },
       },
       questions: [
         {
@@ -246,6 +252,12 @@ export const m17: ModuleMeta = {
         tag: `videtur quod`,
         heading: `He armed his enemies better than they armed themselves.`,
         body: `The <span class="lat">videtur quod</span> is the article's costliest discipline: the master must state the contrary case so well that its partisans would sign it. Aquinas's argument from evil is still atheism's best opening; his parsimony objection anticipated the razor by a generation. And the objections are never destroyed, only answered: they stand in the article forever, honored guests with their names on the replies. The learner who inherits this form inherits its ethic: no verdict before the best contrary case has spoken, and no contempt for it afterward. Next lesson: the strange short sentence that turns the article, and what quoting an authority actually proves.`,
+        distinction: {
+          latin: `videtur quod`,
+          english: `it seems that`,
+          gloss: `He armed his enemies better than they armed themselves: the contrary case stated so well its partisans would sign it, and never dismissed afterward.`,
+          motif: `diverging-lines`,
+        },
       },
       questions: [
         {
@@ -467,6 +479,12 @@ export const m17: ModuleMeta = {
         tag: `sed contra`,
         heading: `One short sentence tips the court.`,
         body: `Between the objections and the answer stands the article's shortest movement: <span class="lat">sed contra</span>, on the contrary, usually a single authority, marking which way the master will determine. For God's existence it is God's own name: I am Who am. But the tradition keeps strict books on what citation proves. Canonical Scripture argues properly and incontrovertibly, for the faith rests on the revelation made to the apostles and prophets; the doctors of the Church properly but probably; the philosophers as extrinsic and probable witnesses (ST I q.1 a.8 ad 2). The sed contra tips the court; it never excuses the respondeo from arguing. Next lesson: the determination itself, and the art of answering without dismissing.`,
+        distinction: {
+          latin: `sed contra`,
+          english: `on the contrary`,
+          gloss: `One short sentence tips the court: a single authority at its proper weight, Scripture arguing properly, the philosophers as probable witnesses.`,
+          motif: `borrowed-crown`,
+        },
       },
       questions: [
         {
@@ -688,6 +706,12 @@ export const m17: ModuleMeta = {
         tag: `respondeo`,
         heading: `Distinguish, and every prisoner goes home.`,
         body: `The <span class="lat">respondeo</span> is the master's determination: the question, argued to a verdict from principles, because a disputation that never determines is a seminar without an ending. Then the article's mercy: <span class="lat">ad obiecta</span>, the replies, where each objection is answered by finding the truth it saw and giving that truth its lawful home. Evil is real, says the first reply to the strongest objection ever written, and God's omnipotence brings good even out of it: the datum honored, the conclusion declined. Nothing is dismissed; dismissal is the one move the form forbids. Next lesson you stop watching and take the chair: a modern question, run through the whole machine, by you.`,
+        distinction: {
+          latin: `respondeo  ·  ad obiecta`,
+          english: `the determination  ·  the replies`,
+          gloss: `The verdict argued from principles, then the mercy: each objection answered by finding the truth it saw and giving it a lawful home.`,
+          motif: `three-lanes`,
+        },
       },
       questions: [
         {
@@ -940,6 +964,12 @@ export const m17: ModuleMeta = {
         tag: `disputatio`,
         heading: `The chair is yours, and it held.`,
         body: `You posed the question cleanly, built the opponent's syllogism with your own hands, chose the authority that carries the determining principle, ordered the whole court, and answered the objector by distinction from the magister's chair. The question was modern; the machine was thirteenth-century; nothing rattled. That is the discovery worth keeping: the article is not a museum piece but a portable technology for honest thinking, and it runs on any century's questions. One movement remains for the module: owning the whole, and seeing what door it opens.`,
+        distinction: {
+          latin: `disputatio`,
+          english: `disputation`,
+          gloss: `Public argument, objection and reply, compressed into the article: a thirteenth-century machine that runs clean on any century's questions.`,
+          motif: `linked-rings`,
+        },
       },
       questions: [
         {
@@ -1170,6 +1200,12 @@ export const m17: ModuleMeta = {
         tag: `recapitulatio`,
         heading: `You can read him unassisted now.`,
         body: `Open the Summa anywhere tonight and the page has changed: the parts are no longer furniture but moves, and you know each one's office. The question posed open; the enemy's best speech, written by the judge; the authority that tips the court at its proper weight; the determination earned from principles; the objections answered by distinction and sent home honored. You built one yourself, on a question Aquinas never met, and the machine ran clean. One door remains in the course. Behind it, the tradition disputes its own deepest word, <span class="lat">esse</span>, at full strength, every side in its own voice. You now know every move you will watch. Step in.`,
+        distinction: {
+          latin: `articulus`,
+          english: `the article`,
+          gloss: `Utrum, videtur quod, sed contra, respondeo, ad obiecta: not decoration but a machine for honest thinking, the one this course has quietly run on.`,
+          motif: `beads-thread`,
+        },
       },
       questions: [
         {

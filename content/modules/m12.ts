@@ -18,6 +18,12 @@ export const m12: ModuleMeta = {
         tag: `appetitus`,
         heading: `Three rungs, one climb.`,
         body: `The tradition's word is <span class="lat">appetitus</span>: the tendency of a being toward what perfects it. It climbs three rungs. In every form, even the stone's, an inclination: <span class="lat">appetitus naturalis</span>, wanting without noticing. Where the good is sensed, the <span class="lat">appetitus sensitivus</span>, the sense appetite, wanting with the body in tow. Where the good is understood, <span class="lat">voluntas</span>, the will: the intellectual appetite, the only wanting that can hold a fast at eleven at night. But the middle rung is not one country. It is two, and eleven weathers move through them. Next lesson draws the map.`,
+        distinction: {
+          latin: `appetitus naturalis  ·  sensitivus  ·  voluntas`,
+          english: `natural appetite  ·  sense appetite  ·  will`,
+          gloss: `Three rungs of wanting: the stone's without noticing, the fox's with the body in tow, and the will's alone answering the good as understood.`,
+          motif: `arrow-mark`,
+        },
       },
       questions: [
         {
@@ -251,6 +257,12 @@ export const m12: ModuleMeta = {
         tag: `passiones animae`,
         heading: `Eleven weathers, one climate.`,
         body: `The <span class="lat">passiones animae</span>, the passions of the soul, are movements of the sense appetite with the body carried in them: not mere feelings but real motions toward and away from apprehended good and evil. The concupiscible chamber holds six: love and hatred, desire and aversion, joy and sadness. The irascible holds five: hope and despair, fear and daring, and anger, which alone has no contrary (ST I-II q.23 a.4). The grid is generated, not collected: good or evil, present or absent, simple or arduous, and the eleven fall out like a proof. One of the eleven is under all the others. Next lesson digs.`,
+        distinction: {
+          latin: `appetitus concupiscibilis  ·  irascibilis`,
+          english: `concupiscible  ·  irascible appetite`,
+          gloss: `Eleven weathers, one climate: six motions toward the pleasant good, five for the arduous, and anger alone with no contrary.`,
+          motif: `two-inclines`,
+        },
       },
       questions: [
         {
@@ -515,6 +527,12 @@ export const m12: ModuleMeta = {
         tag: `amor`,
         heading: `The weight under everything.`,
         body: `Augustine confessed it once for the whole tradition: my love is my weight; wherever I am carried, it is love that carries me (Conf. XIII.9). <span class="lat">Amor</span> is the appetite's first fit to the good, the yes before any motion; desire is that yes in transit, joy is that yes at rest, and there is no passion of the soul that does not presuppose love of some kind (ST I-II q.27 a.4). This is why the tradition treats disordered fears as mispriced loves, and corrects the passions at the root rather than the branches. And it hands the module its next question: if love answers the apprehended good, then whatever shows the good runs the show. Nothing is willed unless first known. Next lesson.`,
+        distinction: {
+          latin: `amor`,
+          english: `love`,
+          gloss: `My love is my weight: the appetite's first yes to the good, and no passion of the soul that does not presuppose it.`,
+          motif: `seed-tree`,
+        },
       },
       questions: [
         {
@@ -736,6 +754,12 @@ export const m12: ModuleMeta = {
         tag: `voluntas`,
         heading: `The menu writes the dinner.`,
         body: `The old tag holds the lesson: <span class="lat">nihil volitum nisi praecognitum</span>, nothing is willed unless first known. The intellect moves the will not by shoving but as an end: the good understood is the will's object, presented and drawing (ST I q.82 a.4). And since the will can tend only to what wears the good's aspect, whoever governs the presentation leans on the choice; hence temptation, advertising, and propaganda all bid for the same square foot of ground, your attention. The tradition's custody of the eyes is metaphysics applied: the gallery of images the interior senses keep is the will's menu-printer. But if the will follows what reason shows, is it free at all? Next lesson answers with the tradition's chest out.`,
+        distinction: {
+          latin: `nihil volitum nisi praecognitum`,
+          english: `nothing willed unless first known`,
+          gloss: `The menu writes the dinner: the intellect moves the will as an end, so whoever governs the presentation leans on the choice.`,
+          motif: `window-view`,
+        },
       },
       questions: [
         {
@@ -957,6 +981,12 @@ export const m12: ModuleMeta = {
         tag: `liberum arbitrium`,
         heading: `The opening reason keeps.`,
         body: `The stone falls without judgment; the sheep judges the wolf by an instinct that never varies; the man judges by comparing, and so can go two ways (ST I q.83 a.1). <span class="lat">Liberum arbitrium</span>, free choice, is not indifference and not unpredictability: it is the will's dominion over particular goods, kept open because reason sees each of them against the good as such, and none of them closes the question. The determinist was met at the table, granted his every electrode, and answered with a distinction: preparations precede, the comparison decides, and even his plea to be believed was an exhortation. Freedom is the workshop where acts become human and habits become possible. One question remains for the module: are the passions this freedom's enemies, or its raw material? Next lesson: neither Vulcan nor volcano.`,
+        distinction: {
+          latin: `liberum arbitrium`,
+          english: `free choice`,
+          gloss: `The stone falls and the sheep never varies; the man compares each good against the good as such, and none closes the question.`,
+          motif: `diverging-lines`,
+        },
       },
       questions: [
         {
@@ -1171,6 +1201,12 @@ export const m12: ModuleMeta = {
         tag: `passio et ratio`,
         heading: `Neither Vulcan nor volcano.`,
         body: `Two counterfeits of mastery, both refused. The Stoic ideal empties the man: all passions evil, stillness the crown; the sentimentalist inverts him: the feeling is the act's whole worth. Aquinas stands with the Peripatetics, and further: it belongs to the perfection of moral good that a man be moved to the good not only in his will but in his sensitive appetite too, heart and flesh rejoicing together (ST I-II q.24 a.3). Passion before judgment clouds it; passion after judgment crowns it. And reason rules this republic by a politic and royal power, not a despotic one, for the appetite has something of its own and can resist (ST I q.81 a.3 ad 2): citizens, not slaves, which is why mastery is governance and habituation rather than a switch. The settled, second-nature form of that governance is called virtue, and the course is walking toward it. First, the recapitulation.`,
+        distinction: {
+          latin: `passio et ratio`,
+          english: `passion and reason`,
+          gloss: `Neither Vulcan nor volcano: passion before judgment clouds it, passion after judgment crowns it, and reason rules citizens, not slaves.`,
+          motif: `borrowed-crown`,
+        },
       },
       questions: [
         {
@@ -1392,6 +1428,12 @@ export const m12: ModuleMeta = {
         tag: `recapitulatio`,
         heading: `The person, complete in outline.`,
         body: `Count what the course now holds of you: a knower who lands on things, a signifier whose words ride concepts to the world, and now a lover and chooser: <span class="lat">appetitus</span> on three rungs, eleven passions mapped from their objects, <span class="lat">amor</span> under all of them, the will necessitated only by happiness, free over every particular good because reason compares, and the passions ruled as citizens under a politic crown. The map is drawn; what remains is the government. The free act now meets law: what makes an act human, and what makes it good. That is the next module's country.`,
+        distinction: {
+          latin: `amor`,
+          english: `love`,
+          gloss: `My love is my weight: the appetite's first yes to the good, and no passion of the soul that does not presuppose it.`,
+          motif: `seed-tree`,
+        },
       },
       questions: [
         {

@@ -18,6 +18,12 @@ export const m14: ModuleMeta = {
         tag: `habitus`,
         heading: `The vine in the margin has been doctrine all along.`,
         body: `Now it can be told: the quiet vine that grows a little on the days you practice and thins when you are long away is not a decoration. It is <span class="lat">habitus</span> running as software. Aquinas teaches that habits are engendered and strengthened by repeated acts, and diminished or destroyed by long cessation from act, never shattered by a single missed day: a habit is like a second nature, and yet it falls short of it. The tradition refused the brittle streak seven centuries before anyone invented one. Your vine has been measuring the only thing worth measuring: not your attendance, but the slow becoming of a disposition. What practice builds, this module now names, sorts, and crowns.`,
+        distinction: {
+          latin: `habitus`,
+          english: `habit`,
+          gloss: `The margin's quiet vine was doctrine all along: repeated acts deposit a second nature, thinned by long absence, never shattered by one missed day.`,
+          motif: `habitus-vine`,
+        },
       },
       questions: [
         {
@@ -239,6 +245,12 @@ export const m14: ModuleMeta = {
         tag: `virtus`,
         heading: `The con man has the habit and misses the virtue.`,
         body: `Every mark of Lesson 1 can be present, the repetition, the readiness, even the pleasure, and the thing built still be a corruption: skill at lying is a habit that perfects the craft and deforms the man. So the tradition tightens the definition: virtue is a good operative habit, a good quality of the mind, by which we live righteously, of which no one can make bad use. Misuse it as an object, being proud of it, you can; use it as a principle of a bad act, you cannot, for then it was not virtue acting. And the measure runs through the agent, not the output: the craftsman answers for his work, the man answers for his willing. One clause of the old definition has been held back; it waits, on purpose, for Lesson 5.`,
+        distinction: {
+          latin: `virtus`,
+          english: `virtue`,
+          gloss: `The con man has the habit and misses the thing: virtue is the good operative habit, of which no one can make bad use.`,
+          motif: `diverging-lines`,
+        },
       },
       questions: [
         {
@@ -475,6 +487,12 @@ export const m14: ModuleMeta = {
         tag: `virtutes cardinales`,
         heading: `One hard conversation, four hinges turning.`,
         body: `Tell a friend the truth about his failing business and the whole architecture works at once: prudence finds what to say and when; justice pays the truth you owe him; fortitude holds you at the table when fear counsels a compliment; temperance keeps the truth from sharpening into relish. Aquinas derives the four from where reason's good must live: in reason's own act, prudence; put into operations toward others, justice; into passions that incite against reason, temperance the curb; into passions that would desert reason's dictate, fortitude the brace. Four subjects too: reason, will, and the two appetites the passions module mapped. And they hold together by overflow: no true prudence unless just, temperate, and brave. The hinges are four; the door is one life.`,
+        distinction: {
+          latin: `virtutes cardinales`,
+          english: `the cardinal virtues`,
+          gloss: `One hard conversation, four hinges turning: prudence finds the word, justice pays it, fortitude holds the table, temperance keeps truth from sharpening into relish.`,
+          motif: `beads-thread`,
+        },
       },
       questions: [
         {
@@ -727,6 +745,12 @@ export const m14: ModuleMeta = {
         tag: `virtutes intellectuales`,
         heading: `Why a brilliant man can be a fool.`,
         body: `The mind's own virtues, sorted: understanding grasps first principles at once; science demonstrates conclusions, a habit per field; wisdom judges everything from the highest causes, and there is only one. On the practical side, art is right reason about things to be made, prudence about things to be done. And here is the diagnosis the modern world keeps rediscovering with surprise: the speculative virtues confer aptness, never use. A man may possess physics entire and be inclined by nothing in it to live well; the use of what he knows waits on his will, and right use of a life waits on prudence. Brilliance is a real perfection of a real power, and it steers nothing. The chair of wisdom's natural reach is real too, and it has a ceiling; what comes down through that ceiling is the next lesson's whole subject.`,
+        distinction: {
+          latin: `virtutes intellectuales`,
+          english: `the intellectual virtues`,
+          gloss: `Understanding, science, wisdom, art, prudence: the speculative three confer aptness and never use, which is why a brilliant man can be a fool.`,
+          motif: `porphyry-tree`,
+        },
       },
       questions: [
         {
@@ -991,6 +1015,12 @@ export const m14: ModuleMeta = {
         tag: `virtutes theologicae`,
         heading: `What no amount of practice can produce.`,
         body: `The definition's held-back clause finally speaks: which God works in us without us. Drop it, Aquinas says, and the definition fits every virtue; keep it and it names the three that no repetition can build. Man's happiness is twofold: one proportioned to his nature, which the acquired virtues serve, and one surpassing it, a partaking of the divine nature, as kindled wood partakes of fire. For that end, nature's principles do not suffice; so God infuses what directs to it: faith, holding supernatural principles by divine light; hope, tending to the end as attainable; charity, the union that makes the end already begun. Without us, yet not without our consent; and the register matters: this is not the argument's summit but the gift's arrival. The course teaches the grammar of grace here, and takes off its hat.`,
+        distinction: {
+          latin: `virtutes theologicae`,
+          english: `the theological virtues`,
+          gloss: `What no practice can produce: faith, hope, and charity, which God works in us without us, for an end past nature's proportion.`,
+          motif: `ladder-light`,
+        },
       },
       questions: [
         {
@@ -1212,6 +1242,12 @@ export const m14: ModuleMeta = {
         tag: `prudentia`,
         heading: `The horses are strong; someone must hold the reins.`,
         body: `The tradition calls prudence the charioteer of the virtues, and the figure is exact: it does not pull the chariot, and nothing moves rightly without it. <span class="lat">Recta ratio agibilium</span>, right reason about things to be done, completes itself in three acts, counsel, judgment, command, and is named from the last, for deliberation that never commands is prudence unborn. It steers by the concrete: the universal the moral principle supplies, the particular only prudence can read, and the conclusion is an act. Its counterfeits are all in circulation: timidity trading under its name, cleverness serving rotten ends, rule-books pretending to read the room. And it cannot live in a corrupt heart, for in action the end plays the role of first principles: bend the end and every inference reasons from a lie. Strength was never the moral life's scarcity; steering is.`,
+        distinction: {
+          latin: `prudentia`,
+          english: `prudence`,
+          gloss: `The charioteer pulls nothing and nothing moves rightly without it: right reason about things to be done, unborn until it commands.`,
+          motif: `chisel-hand`,
+        },
       },
       questions: [
         {
@@ -1429,6 +1465,12 @@ export const m14: ModuleMeta = {
         tag: `virtutes et habitus`,
         heading: `The architecture of a good life, owned.`,
         body: `The module in one motion: repeated acts deposit habits; habits that perfect the man are virtues; four hinges carry the moral ones, five perfections crown the mind, and prudence, the charioteer, turns all that strength into right acts commanded in the concrete. Above the whole architecture, what practice cannot produce is infused: faith, hope, charity, the gift register the definition kept in its last clause. The vine in the margin grows on. Two rooms remain in this course: one where the master's own method is taken apart and learned, article by article, and one where his heirs dispute his deepest sentence and the strict line answers. You go to both as the tradition's own product: formed, equipped, and, if the vine has done its work, in the habit of showing up.`,
+        distinction: {
+          latin: `habitus`,
+          english: `habit`,
+          gloss: `The margin's quiet vine was doctrine all along: repeated acts deposit a second nature, thinned by long absence, never shattered by one missed day.`,
+          motif: `habitus-vine`,
+        },
       },
       questions: [
         {

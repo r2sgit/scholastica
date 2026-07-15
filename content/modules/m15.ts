@@ -18,6 +18,12 @@ export const m15: ModuleMeta = {
         tag: `distinctio realis · rationis`,
         heading: `The tree outside the window has been waiting since the beginning.`,
         body: `The oldest door in the course finally opens. The tree that stands unwatched, the flame giving heat and light, the rational animal who is the human being: the cases return bearing their full names. <span class="lat">Distinctio realis</span>: a difference in the thing itself, holding whether or not any mind attends. <span class="lat">Distinctio rationis</span>: a difference the mind draws while the thing stays one. The annihilation test tells them apart: silence every mind, and the flame's heat and light still differ; the definitions do not. The heaviest real distinction in the course, essence and esse, now shows what it always was: not one example among many but the case the whole grammar was built to guard.`,
+        distinction: {
+          latin: `distinctio realis  ·  rationis`,
+          english: `real distinction  ·  distinction of reason`,
+          gloss: `The annihilation test: silence every mind, and the flame's heat and light still differ; the definitions do not.`,
+          motif: `minds-line`,
+        },
       },
       questions: [
         {
@@ -252,6 +258,12 @@ export const m15: ModuleMeta = {
         tag: `ratiocinatae · ratiocinantis`,
         heading: `Some of the mind's lines follow the land.`,
         body: `The rational distinctions split by their roots. <span class="lat">Distinctio rationis ratiocinatae</span>: the thing is one, but its richness founds two true concepts, as one Venus really appears at dawn and at dusk, and one simple God really is what mercy and what justice each imperfectly say. <span class="lat">Distinctio rationis ratiocinantis</span>: no root at all, the mind hearing its own echo, sofa and couch, Tully and Cicero. Aquinas holds the divine case with both hands: God is one in reality and multiple in idea, and the many names are not empty and vain, because one simple reality answers to them all in a manifold and imperfect manner. The mind that knows this stops apologizing for its distinctions and starts auditing their roots.`,
+        distinction: {
+          latin: `ratiocinatae  ·  ratiocinantis`,
+          english: `rooted in the thing  ·  the mind's echo`,
+          gloss: `One Venus really appears at dawn and at dusk; sofa and couch differ by nothing: the mind's lines split by their roots.`,
+          motif: `sun-and-mirrors`,
+        },
       },
       questions: [
         {
@@ -484,6 +496,12 @@ export const m15: ModuleMeta = {
         tag: `distinctio formalis`,
         heading: `The Subtle Doctor gets his chair and his due.`,
         body: `Scotus saw the problem exactly: the difference between God's wisdom and His goodness is not our invention, and God is simple. His answer was a third rank: the <span class="lat">distinctio formalis</span>, formalities non-identical from the side of the thing yet inseparable within it. The strict line honors the motive and declines the machinery. Prior to every mind is what 'real' means, so the middle either hardens into real distinction, and composition enters the Simple One, or it softens into a founded rational distinction, which was on offer all along. The Thomist commentators, Cajetan chief among them, call the offer by its own name: the <span class="lat">distinctio virtualis</span>, one eminent reality virtually containing what the mind truly divides. The fight was fair; the grammar held at two kinds and their roots.`,
+        distinction: {
+          latin: `distinctio formalis`,
+          english: `the formal distinction`,
+          gloss: `Scotus's middle rank, heard at strength and declined: before any mind it hardens into composition or softens into the founded distinction on offer all along.`,
+          motif: `diverging-lines`,
+        },
       },
       questions: [
         {
@@ -698,6 +716,12 @@ export const m15: ModuleMeta = {
         tag: `distinctio modalis`,
         heading: `The crease is not the cloth, and not another cloth either.`,
         body: `Refinements, each earning its keep. The real distinction divides: <span class="lat">maior</span> between thing and thing, the fox and the fern; <span class="lat">minor</span> between principles within one thing, essence and esse, matter and form, the soul and its powers, really distinct and never separable as things. Between a thing and its mode stands the <span class="lat">distinctio modalis</span>: the crease really creases the cloth and cannot be taken home without it. And beneath them all, the course's working pairs, per se and per accidens, in se and in alio, first act and second act, turn out to be grammar too: each names the respect in which a comparison holds, because no distinction holds except in a named respect. The toolbox is now complete; what remains is the art of using it in the open street.`,
+        distinction: {
+          latin: `distinctio modalis`,
+          english: `the modal distinction`,
+          gloss: `The crease is not the cloth and not another cloth: between a thing and its mode, less than real, more than the mind's.`,
+          motif: `cup-water`,
+        },
       },
       questions: [
         {
@@ -962,6 +986,12 @@ export const m15: ModuleMeta = {
         tag: `distinguo`,
         heading: `Never flat denial; never surrender; name the senses.`,
         body: `The grammar goes to the street. The scholastic answers a claim three ways: <span class="lat">concedo</span>, I concede; <span class="lat">nego</span>, I deny; <span class="lat">distinguo</span>, I distinguish, granting the claim in one named sense and denying it in another, with a stand taken on each. 'Humans are just animals': that man is an animal, concedo, the tradition said it before the biologists; that he is nothing more, nego, one power in him takes the universal, and no animal measure captures it. The counterfeits are named too: the flat denial that concedes nothing and learns nothing, the shrug that never names its senses, and the fallacy that trades on an unnamed kind, making a founded rational distinction do a real distinction's work. The heron waits; the strike is one clean motion. Watch the equivocation on 'distinct,' and you can referee anything, including the last module of this course.`,
+        distinction: {
+          latin: `concedo  ·  nego  ·  distinguo`,
+          english: `I concede  ·  I deny  ·  I distinguish`,
+          gloss: `Never flat denial, never surrender: grant in one named sense, deny in another, and take a stand on each.`,
+          motif: `three-lanes`,
+        },
       },
       questions: [
         {
@@ -1187,6 +1217,12 @@ export const m15: ModuleMeta = {
         tag: `grammatica distinctionum`,
         heading: `The referee's eyes, earned.`,
         body: `The grammar entire: real distinctions, major and minor, holding in things; rational distinctions, rooted or echoing, holding in the mind; the modal shelf between; the Scotist middle heard at strength and declined; and the distinguo that puts it all to work with named senses and verdicts attached. Two doors stand open. Through one, a single word said of God, of wine, and of an argument without stammering: the ordering of senses is analogy, and it has a module of its own. Through the other, the course's final room, where Thomists dispute Thomists over what kind of distinction divides essence from esse, and where you now arrive not as a spectator but as the referee the fight has been waiting for.`,
+        distinction: {
+          latin: `distinctio realis  ·  rationis`,
+          english: `real distinction  ·  distinction of reason`,
+          gloss: `The annihilation test: silence every mind, and the flame's heat and light still differ; the definitions do not.`,
+          motif: `minds-line`,
+        },
       },
       questions: [
         {

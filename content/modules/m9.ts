@@ -18,6 +18,12 @@ export const m9: ModuleMeta = {
         tag: `anima`,
         heading: `The corpse is missing nothing you could weigh.`,
         body: `Same atoms at 3:06 and 3:08, and everything is different: nourishing, sensing, breathing have stopped, because the principle that made this matter one living man has ceased to inform it. The tradition names that first principle of life <span class="lat">anima</span>, the soul. Not a component, not a vapor, not chemistry's finest layer: the act of the body, as heat is not a body but the act of a body. What exactly such a principle is, and where Descartes politely went wrong, is the next lesson's business.`,
+        distinction: {
+          latin: `anima`,
+          english: `soul`,
+          gloss: `Same atoms at 3:06 and 3:08, everything different: the soul is not a part you could weigh but the first act of the living body.`,
+          motif: `candle-flame`,
+        },
       },
       questions: [
         {
@@ -252,6 +258,12 @@ export const m9: ModuleMeta = {
         tag: `forma corporis`,
         heading: `No one is riding in you.`,
         body: `Descartes made the soul a thinking substance and the body its machine, and honest people have felt like haunted hardware ever since. Aquinas declines the whole picture: the soul is <span class="lat">forma corporis</span>, the substantial form of the body. You are not a ghost operating a machine or a spirit wearing a garment; you are one living composite, so united that your burns are yours without messaging. Death, then, is not the pilot leaving the cockpit. It is the ceasing-to-be, simply, of the composite. What survives that, and how honestly, waits for Lesson 6.`,
+        distinction: {
+          latin: `forma corporis`,
+          english: `the form of the body`,
+          gloss: `No ghost rides the machine: the soul is the body's substantial form, one living composite so united that your burns are yours without messaging.`,
+          motif: `clay-form`,
+        },
       },
       questions: [
         {
@@ -473,6 +485,12 @@ export const m9: ModuleMeta = {
         tag: `anima vegetativa · sensitiva · rationalis`,
         heading: `The fern, the fox, the philosopher.`,
         body: `Three ways of being alive, in order: nourishing without noticing; perceiving and pursuing the particular; grasping the universal and willing the good as known. The grades are <span class="lat">anima vegetativa</span>, <span class="lat">anima sensitiva</span>, <span class="lat">anima rationalis</span>, and they differ in kind, by their objects, not in degree of cleverness. The oyster senses without traveling, the sunflower aims without seeing, and no dolphin has ever asked what a puzzle is. How the higher grades stand to the lower inside one man is Lesson 5's argument; first, the sensitive grade deserves a closer look indoors.`,
+        distinction: {
+          latin: `anima vegetativa  ·  sensitiva  ·  rationalis`,
+          english: `vegetative  ·  sensitive  ·  rational soul`,
+          gloss: `The fern, the fox, the philosopher: three grades of life divided by their objects, differing in kind and not in cleverness.`,
+          motif: `grades-of-life`,
+        },
       },
       questions: [
         {
@@ -737,6 +755,12 @@ export const m9: ModuleMeta = {
         tag: `sensus interni · phantasma`,
         heading: `Close your eyes; the kitchen is still there.`,
         body: `Traffic moves inward: the five exterior senses deliver to the <span class="lat">sensus communis</span>, where yellow is told from sour; the imagination shelves the looks of things as <span class="lat">phantasmata</span>; the cogitative reads enemy and friend off faces that carry no such color; memory files it all as past. The lamb flees, the dog dreams, and you walk dark kitchens with confidence: sensitive life at its interior richest, shared with the beasts. And at the top shelf, a boundary: the phantasm stays particular while your understanding does not. Something is working on those images that no image explains.`,
+        distinction: {
+          latin: `sensus interni  ·  phantasma`,
+          english: `the interior senses  ·  the phantasm`,
+          gloss: `The five senses deliver and the interior four sort, shelve, size up, and file: the phantasm is the image kept, particular to the end.`,
+          motif: `inner-gallery`,
+        },
       },
       questions: [
         {
@@ -972,6 +996,12 @@ export const m9: ModuleMeta = {
         tag: `unica forma substantialis`,
         heading: `You are not a committee.`,
         body: `Plato staffed you with three souls; the moderns keep proposing two. Aquinas's arithmetic is stricter: one substantial form, the rational soul, containing virtually the sensitive and the vegetative as the pentagon contains the tetragon, doing everything from digestion to demonstration, and communicating to the body the very act of existence by which it exists. This is Thesis XVI of the twenty-four, and it is why your stomach's growl and your syllogism belong to the same one being. That one form gone, no man remains: the corpse is matter under new management. What the one form's own destiny is, a neuroscientist is waiting to dispute.`,
+        distinction: {
+          latin: `unica forma substantialis`,
+          english: `one substantial form`,
+          gloss: `You are not a committee: one rational soul does the fern's work and the fox's and its own, from digestion to demonstration.`,
+          motif: `nested-figures`,
+        },
       },
       questions: [
         {
@@ -1193,6 +1223,12 @@ export const m9: ModuleMeta = {
         tag: `anima subsistens`,
         heading: `Grant the findings; keep the distinction.`,
         body: `The tradition meets the laboratory the way Aquinas met the Averroists: no flinch, one distinction. Everything the scans show is granted, for the phantasm is bodily and human thought never proceeds without it. But the intellect's range, all being, forbids any determinate organ to be its subject: the sick tongue and the tinted vase stand guard over that inference still. So the soul subsists, <span class="lat">anima subsistens</span>, with an operation <span class="lat">per se</span>; and it subsists as a form made for matter, so that death is survival into privation, not promotion. No ghost, no machine, no flinch: the strict line, holding.`,
+        distinction: {
+          latin: `anima subsistens`,
+          english: `the subsistent soul`,
+          gloss: `What can know all bodies cannot be one of them: the soul subsists past every organ, and death is survival into privation, not promotion.`,
+          motif: `candle-flame`,
+        },
       },
       questions: [
         {
@@ -1407,6 +1443,12 @@ export const m9: ModuleMeta = {
         tag: `anima et potentiae`,
         heading: `One substance, from stomach to syllogism.`,
         body: `The module closes where the man begins: one living substance, informed by one rational soul that does the fern's work and the fox's and its own, keeps a storehouse of images, and subsists where no organ can follow. Two doors stand open. Through one, the phantasm waits in lamplight for a power that can strip it of matter: how the intellect works is the next question. Through the other, the lamb is still running: appetite, passion, and will have a module of their own. The soul has been mapped; its powers now ask to be met one by one.`,
+        distinction: {
+          latin: `unica forma substantialis`,
+          english: `one substantial form`,
+          gloss: `You are not a committee: one rational soul does the fern's work and the fox's and its own, from digestion to demonstration.`,
+          motif: `nested-figures`,
+        },
       },
       questions: [
         {
